@@ -57,6 +57,26 @@
       "archivo_local": "Desktop/conciliaciones-bancarias/index.html",
       "datos": "data/checklist.json (auto-generado por GitHub Actions)",
       "pestanas": []
+    },
+    {
+      "id": "planta",
+      "nombre": "Dashboard de Planta",
+      "descripcion": "Monitoreo de producción, fermentadores e inventario en tiempo real",
+      "url_github_pages": "https://johnnyartesano26.github.io/madremonte-dashboard/",
+      "url_repo": "https://github.com/johnnyartesano26/madremonte-dashboard",
+      "archivo_local": "",
+      "datos": "Google Sheets / Alegra API",
+      "pestanas": []
+    },
+    {
+      "id": "bar_arqueo",
+      "nombre": "Bar — Arqueo de Caja",
+      "descripcion": "Arqueo diario, efectivo vs datafono, transferencias, control de ventas Bar",
+      "url_github_pages": "https://johnnyartesano26.github.io/bar-madremonte-dashboard/",
+      "url_repo": "https://github.com/johnnyartesano26/bar-madremonte-dashboard",
+      "archivo_local": "",
+      "datos": "Datos de arqueo diario del Bar",
+      "pestanas": []
     }
   ],
   "puentes_api": [

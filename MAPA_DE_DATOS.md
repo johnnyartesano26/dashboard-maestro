@@ -77,3 +77,12 @@ Para agregar un nuevo mes al Dashboard Maestro:
 2. Ejecutar script que regenera `ventas_mensuales.json`
 3. Actualizar `catalogo.json` con los datos del nuevo mes
 4. Push al repo → GitHub Pages se actualiza solo
+
+## ⚠️ Limitaciones técnicas
+
+### Alegra API
+- **Rate limit:** 60 llamadas/minuto
+- Las facturas se exportan mes a mes vía `GET /api/v1/invoices`
+- Para exportar un mes completo (~900 facturas a 30 por página = ~30 llamadas)
+- Si se requieren múltiples meses, hay que espaciar las llamadas (sleep entre lotes)
+- Solo Junio 2026 ha sido exportado como JSON completo

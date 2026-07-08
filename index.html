@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Maestro — Madre Monte | Junio 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI',system-ui,sans-serif; background:#0f1117; color:#e1e4e8; min-height:100vh; }
+  .header { background:linear-gradient(180deg, #1a1f2b 0%, #161b22 100%); border-bottom:1px solid #30363d; padding:16px 24px 0; position:sticky; top:0; z-index:100; }
+  .header h1 { font-size:1.4em; color:#f0c040; }
+  .header .sub { color:#8b949e; font-size:.8em; margin:2px 0 12px; }
+
+  /* ── TAB NAV ── */
+  .tab-nav { display:flex; gap:0; }
+  .tab-btn { padding:10px 24px; background:none; border:none; border-bottom:2px solid transparent; color:#8b949e; font-size:.9em; cursor:pointer; font-family:inherit; transition:all .2s; }
+  .tab-btn:hover { color:#f0c040; background:rgba(240,192,64,.05); }
+  .tab-btn.active { color:#f0c040; border-bottom-color:#f0c040; }
+
+  /* ── MAIN CONTENT ── */
+  .tab-content { display:none; padding:20px 24px; }
+  .tab-content.active { display:block; }
+
+  /* ── KPI ── */
+  .kpi-row { display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap; justify-content:center; }
+  .kpi { background:#161b22; border:1px solid #30363d; border-radius:10px; padding:14px 20px; text-align:center; min-width:140px; flex:1; max-width:200px; }
+  .kpi .val { font-size:1.6em; font-weight:700; }
+  .kpi .lab { font-size:.72em; color:#8b949e; margin-top:4px; }
+  .kpi.compact { padding:10px 14px; min-width:110px; }
+  .kpi.compact .val { font-size:1.3em; }
+  .green { color:#3fb950; } .yellow { color:#d29922; } .red { color:#f85149; } .blue { color:#58a6ff; } .cyan { color:#39d2c0; }
+
+  /* ── GRID & CARDS ── */
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(460px,1fr)); gap:18px; max-width:1500px; margin:0 auto; }
+  .card { background:#161b22; border:1px solid #30363d; border-radius:10px; padding:18px; }
+  .card h2 { font-size:1em; color:#f0c040; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .card h2 span { background:#1f2937; padding:2px 8px; border-radius:4px; font-size:.75em; color:#8b949e; font-weight:normal; }
+  .card.full { grid-column:1/-1; }
+  .card canvas { max-height:320px; }
+
+  /* ── TABLE ── */
+  .filters { display:flex; gap:10px; margin-bottom:14px; flex-wrap:wrap; }
+  .filters input,.filters select { background:#0d1117; border:1px solid #30363d; color:#e1e4e8; padding:8px 12px; border-radius:6px; font-size:.85em; min-width:180px; }
+  .filters input::placeholder { color:#484f58; }
+  table { width:100%; border-collapse:collapse; font-size:.82em; }
+  th { background:#1a1f2b; color:#8b949e; padding:10px 8px; text-align:left; position:sticky; top:0; z-index:1; cursor:pointer; user-select:none; }
+  th:hover { color:#f0c040; }
+  td { padding:7px 8px; border-bottom:1px solid #21262d; }
+  tr:hover { background:#1a1f2b; }
+  .table-wrap { max-height:500px; overflow-y:auto; border:1px solid #30363d; border-radius:8px; }
+  .draft { color:#d29922; } .closed { color:#3fb950; } .sent { color:#58a6ff; }
+  .bar-tag { display:inline-block; background:#d29922; color:#000; padding:2px 8px; border-radius:4px; font-size:.7em; font-weight:700; }
+  .note { background:#1a1f2b; border-left:3px solid #d29922; padding:10px 14px; border-radius:0 6px 6px 0; font-size:.85em; color:#d29922; margin-top:10px; }
+  .note.red { border-left-color:#f85149; color:#f85149; }
+
+  /* ── OVERVIEW SUMMARY CARDS ── */
+  .summary-section { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:18px; margin-bottom:20px; }
+  .summary-card { background:#161b22; border:1px solid #30363d; border-radius:10px; padding:18px; display:flex; gap:16px; align-items:center; }
+  .summary-card .icon { font-size:2em; width:56px; height:56px; display:flex; align-items:center; justify-content:center; background:#1a1f2b; border-radius:12px; }
+  .summary-card .info h3 { font-size:.9em; color:#f0c040; margin-bottom:4px; }
+  .summary-card .info p { font-size:.8em; color:#8b949e; }
+
+  /* ── TOAST ── */
+  .toast { position:fixed; bottom:24px; right:24px; background:#161b22; border:1px solid #f85149; color:#f85149; padding:12px 20px; border-radius:8px; font-size:.85em; z-index:999; display:none; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<div class="header">
+  <h1>🍺 Madre Monte — Dashboard Maestro</h1>
+  <div class="sub">Junio 2026 · Datos Alegra API + Inventario · Lun 23 Jun 2026</div>
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('resumen')">📊 Resumen General</button>
+    <button class="tab-btn" onclick="switchTab('facturacion')">📄 Facturación</button>
+    <button class="tab-btn" onclick="switchTab('inventario')">🍺 Inventario</button>
+  </div>
+</div>
+
+<!-- ═══════════════ TAB: RESUMEN GENERAL ═══════════════ -->
+<div class="tab-content active" id="tab-resumen">
+  <div class="kpi-row">
+    <div class="kpi"><div class="val green">$119.1M</div><div class="lab">Facturación Junio</div></div>
+    <div class="kpi"><div class="val cyan">900</div><div class="lab">Facturas emitidas</div></div>
+    <div class="kpi"><div class="val green">3,272 L</div><div class="lab">Producción activa</div></div>
+    <div class="kpi"><div class="val cyan">1,119</div><div class="lab">Botellas en stock</div></div>
+    <div class="kpi"><div class="val yellow">65%</div><div class="lab">Ocupación tanques</div></div>
+    <div class="kpi"><div class="val red">$3.77M</div><div class="lab">Facturas pendientes</div></div>
+  </div>
+
+  <div class="summary-section">
+    <div class="summary-card">
+      <div class="icon">📄</div>
+      <div class="info">
+        <h3>Facturación — Junio 2026</h3>
+        <p>900 facturas · $119,073,765 COP total<br>$55.1M ventas Bar · $132K promedio/factura<br>35 facturas pendientes (draft)</p>
+      </div>
+    </div>
+    <div class="summary-card">
+      <div class="icon">🍺</div>
+      <div class="info">
+        <h3>Inventario — 23 Jun 2026</h3>
+        <p>7 fermentadores activos · 3,272L en proceso<br>1,119 botellas 330ml en stock<br>160L en barriles · 65% ocupación tanques</p>
+      </div>
+    </div>
+    <div class="summary-card">
+      <div class="icon">⚠️</div>
+      <div class="info">
+        <h3>Alertas</h3>
+        <p>🔴 F3 Principito: 540L en tanque de 400L<br>🟡 60L Stout por embotellar<br>🟡 Malta Pale Ale y Levadura US-05: stock crítico</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card full">
+      <h2>📈 Producción Mensual 2026</h2>
+      <canvas id="chartOverviewProd"></canvas>
+    </div>
+    <div class="card">
+      <h2>📊 Top 5 Clientes — Facturación</h2>
+      <canvas id="chartOverviewTop"></canvas>
+    </div>
+    <div class="card">
+      <h2>📋 Estado de Facturas</h2>
+      <canvas id="chartOverviewStatus"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ TAB: FACTURACIÓN ═══════════════ -->
+<div class="tab-content" id="tab-facturacion">
+  <div class="kpi-row" id="kpiFact"></div>
+
+  <div class="grid" id="gridFact">
+    <div class="card">
+      <h2>🏆 Top 20 Clientes — Junio 2026 <span class="bar-tag">BAR</span> = Consumidor Final</h2>
+      <canvas id="chartTop"></canvas>
+    </div>
+    <div class="card">
+      <h2>📋 Estado de Facturas</h2>
+      <canvas id="chartStatus"></canvas>
+    </div>
+    <div class="card full">
+      <h2>📈 Facturación Diaria — Junio</h2>
+      <canvas id="chartDaily"></canvas>
+    </div>
+    <div class="card full">
+      <h2>🔍 Buscador de Facturas <span style="font-size:.75em;color:#8b949e"> — <span id="totalCount">0</span> registros</span></h2>
+      <div class="filters">
+        <input type="text" id="searchFact" placeholder="🔍 Cliente, factura, fecha..." oninput="filterTable()">
+        <select id="statusFilter" onchange="filterTable()">
+          <option value="">Todos los estados</option>
+          <option value="closed">Cerradas</option>
+          <option value="draft">Draft (pendientes)</option>
+          <option value="sent">Enviadas</option>
+        </select>
+        <span id="count" style="color:#8b949e;align-self:center"></span>
+      </div>
+      <div class="table-wrap">
+        <table id="invTable"><thead><tr>
+          <th onclick="sortTable(0)">#</th><th onclick="sortTable(1)">Factura</th><th onclick="sortTable(2)">Fecha</th><th onclick="sortTable(3)">Cliente</th><th onclick="sortTable(4)">Total</th><th onclick="sortTable(5)">Estado</th>
+        </tr></thead><tbody id="tbodyFact"></tbody></table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ TAB: INVENTARIO ═══════════════ -->
+<div class="tab-content" id="tab-inventario">
+  <div class="kpi-row">
+    <div class="kpi"><div class="val green">3,272 L</div><div class="lab">Producción activa</div></div>
+    <div class="kpi"><div class="val cyan">1,119</div><div class="lab">Botellas en stock</div></div>
+    <div class="kpi"><div class="val blue">160 L</div><div class="lab">Barriles totales</div></div>
+    <div class="kpi"><div class="val yellow">65%</div><div class="lab">Ocupación tanques</div></div>
+    <div class="kpi"><div class="val red">1</div><div class="lab">Alertas críticas</div></div>
+  </div>
+
+  <div class="grid" id="gridInv">
+    <div class="card full">
+      <h2>🛢️ Fermentadores — Litros vs Capacidad <span>actualizado 23 Jun</span></h2>
+      <canvas id="chartFermentadores"></canvas>
+    </div>
+    <div class="card">
+      <h2>📊 Ocupación por Fermentador <span>% de capacidad</span></h2>
+      <canvas id="chartOcupacion"></canvas>
+    </div>
+    <div class="card">
+      <h2>🍾 Botellas 330ml — Stock por Estilo</h2>
+      <canvas id="chartBotellas"></canvas>
+    </div>
+    <div class="card">
+      <h2>🛢️ Barriles — Distribución por Destino</h2>
+      <canvas id="chartBarriles"></canvas>
+    </div>
+    <div class="card full">
+      <h2>📈 Producción Mensual 2026 <span>Litros producidos vs Botellas despachadas</span></h2>
+      <canvas id="chartHistorico"></canvas>
+    </div>
+    <div class="card">
+      <h2>🔄 Cambios vs Semana Anterior</h2>
+      <canvas id="chartComparativa"></canvas>
+    </div>
+    <div class="card">
+      <h2>⚠️ Materia Prima — Niveles Críticos</h2>
+      <canvas id="chartMateria"></canvas>
+    </div>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(460px,1fr)); gap:18px; max-width:1500px; margin:20px auto 0;">
+    <div class="note red">⚠️ <strong>Alerta:</strong> F3 Principito reportado a 540L en tanque de 400L. Verificar medición.</div>
+    <div class="note">📌 <strong>Pendiente:</strong> 60L Stout por embotellar (est. 156-162 botellas 330ml). Embotellar esta semana.</div>
+  </div>
+</div>
+
+<!-- ═══════════════ TOAST ═══════════════ -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══════════════════════════════════════════════════
+// TAB NAVIGATION
+// ═══════════════════════════════════════════════════
+const TAB_STATE = { facturacion: false, inventario: false, resumen: true };
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    if (b.textContent.toLowerCase().includes(name)) b.classList.add('active');
+  });
+
+  if (name === 'facturacion' && !TAB_STATE.facturacion) {
+    TAB_STATE.facturacion = true;
+    loadFacturacionData();
+  }
+  if (name === 'inventario' && !TAB_STATE.inventario) {
+    TAB_STATE.inventario = true;
+    initInventario();
+  }
+  if (name === 'resumen' && !TAB_STATE.resumen) {
+    TAB_STATE.resumen = true;
+    // overview charts use their own init
+  }
+}
+
+// ═══════════════════════════════════════════════════
+// FACTURACIÓN MODULE
+// ═══════════════════════════════════════════════════
+let allData = [];
+let filtered = [];
+let factCharts = {};
+
+function showToast(msg, duration=4000) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.display = 'block';
+  setTimeout(() => { t.style.display = 'none'; }, duration);
+}
+
+async function loadFacturacionData() {
+  try {
+    const r = await fetch('facturas_junio_2026.json');
+    const json = await r.json();
+    allData = (json.facturas || []).map(inv => ({
+      ...inv,
+      cliente: inv.cliente === 'Consumidor Final' ? 'BAR' : inv.cliente
+    }));
+    filtered = [...allData];
+    renderFacturacion();
+  } catch(e) {
+    console.error(e);
+    showToast('❌ No se encontró facturas_junio_2026.json en la carpeta Desktop.\nCopie el archivo JSON junto a este HTML.', 8000);
+    document.getElementById('kpiFact').innerHTML = '<div class="kpi" style="max-width:100%;flex:1"><div class="val red">⚠️ Sin datos</div><div class="lab">Copie facturas_junio_2026.json a la misma carpeta de este dashboard y recargue</div></div>';
+  }
+}
+
+function renderFacturacion() {
+  const total = allData.reduce((s,i) => s + i.total, 0);
+  const drafts = allData.filter(i => i.status === 'draft');
+  const draftTotal = drafts.reduce((s,i) => s + i.total, 0);
+  const barTotal = allData.filter(i => i.cliente === 'BAR').reduce((s,i) => s + i.total, 0);
+
+  document.getElementById('kpiFact').innerHTML = `
+    <div class="kpi"><div class="val cyan">${allData.length}</div><div class="lab">Total Facturas</div></div>
+    <div class="kpi"><div class="val green">$${(total/1e6).toFixed(1)}M</div><div class="lab">Monto Total COP</div></div>
+    <div class="kpi"><div class="val blue">$${(barTotal/1e6).toFixed(1)}M</div><div class="lab">Bar (Consumidor Final)</div></div>
+    <div class="kpi"><div class="val yellow">${drafts.length}</div><div class="lab">Facturas Draft</div></div>
+    <div class="kpi"><div class="val red">$${(draftTotal/1e6).toFixed(2)}M</div><div class="lab">Monto Pendiente</div></div>
+    <div class="kpi"><div class="val green">$${Math.round(total/allData.length).toLocaleString('es-CO')}</div><div class="lab">Promedio por factura</div></div>
+  `;
+  document.getElementById('totalCount').textContent = allData.length;
+
+  renderFactCharts();
+  renderTable();
+}
+
+function renderFactCharts() {
+  // Destroy existing charts
+  Object.values(factCharts).forEach(c => c.destroy());
+  factCharts = {};
+
+  const clients = {};
+  allData.forEach(inv => {
+    const c = inv.cliente;
+    if (!clients[c]) clients[c] = {count:0,total:0};
+    clients[c].count++;
+    clients[c].total += inv.total;
+  });
+  const top = Object.entries(clients).sort((a,b) => b[1].total - a[1].total).slice(0,20);
+
+  factCharts.top = new Chart(document.getElementById('chartTop'), {
+    type:'bar',
+    data:{
+      labels:top.map(t=>t[0].length>28?t[0].substring(0,27)+'…':t[0]),
+      datasets:[{label:'Total COP',data:top.map(t=>t[1].total),backgroundColor:top.map(t=>t[0]==='BAR'?'#d29922':'#58a6ff'),borderRadius:4}]
+    },
+    options:{
+      indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP ('+top[ctx.dataIndex][1].count+' facturas)'}}},
+      scales:{x:{ticks:{color:'#8b949e',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#21262d'}},y:{ticks:{color:'#8b949e',font:{size:10}},grid:{color:'#21262d'}}}
+    }
+  });
+
+  const st = {draft:0,sent:0,closed:0}, stAmt = {draft:0,sent:0,closed:0};
+  allData.forEach(inv=>{st[inv.status]++;stAmt[inv.status]+=inv.total;});
+  factCharts.status = new Chart(document.getElementById('chartStatus'), {
+    type:'doughnut',
+    data:{labels:['Cerradas','Draft (pendientes)','Enviadas'],datasets:[{data:[st.closed,st.draft,st.sent],backgroundColor:['#3fb950','#d29922','#58a6ff'],borderColor:'#161b22',borderWidth:2}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8b949e',font:{size:11},padding:14}},tooltip:{callbacks:{label:ctx=>{const s=['closed','draft','sent'][ctx.dataIndex];return ctx.raw+' facturas — $'+stAmt[s].toLocaleString('es-CO')+' COP';}}}}}
+  });
+
+  const daily = {};
+  allData.forEach(inv=>{
+    const d=inv.fecha||'?';
+    if(!daily[d]) daily[d]={count:0,total:0,barTotal:0};
+    daily[d].count++;daily[d].total+=inv.total;
+    if(inv.cliente==='BAR')daily[d].barTotal+=inv.total;
+  });
+  const days = Object.keys(daily).sort();
+  factCharts.daily = new Chart(document.getElementById('chartDaily'), {
+    type:'bar',
+    data:{labels:days,datasets:[{label:'Total diario',data:days.map(d=>daily[d].total),backgroundColor:'#58a6ff',borderRadius:4},{label:'Bar (Consumidor Final)',data:days.map(d=>daily[d].barTotal),backgroundColor:'#d29922',borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8b949e',font:{size:11}}},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP'}}},scales:{x:{ticks:{color:'#8b949e',font:{size:9},maxRotation:45},grid:{color:'#21262d'}},y:{ticks:{color:'#8b949e',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#21262d'}}}}
+  });
+}
+
+function renderTable() {
+  const tbody = document.getElementById('tbodyFact');
+  tbody.innerHTML = '';
+  filtered.forEach((inv,i)=>{
+    const cls = inv.status === 'draft' ? 'draft' : inv.status === 'closed' ? 'closed' : 'sent';
+    const stLabel = inv.status === 'draft' ? '⚠ Draft' : inv.status === 'closed' ? '✓ Cerrada' : '→ Enviada';
+    const cDisp = inv.cliente === 'BAR' ? '<span class="bar-tag">BAR</span>' : inv.cliente;
+    tbody.innerHTML += `<tr><td style="color:#484f58">${i+1}</td><td style="font-weight:600">FE-${inv.id}</td><td style="color:#8b949e">${inv.fecha}</td><td>${cDisp}</td><td style="font-weight:600">$${inv.total.toLocaleString('es-CO')}</td><td class="${cls}">${stLabel}</td></tr>`;
+  });
+  document.getElementById('count').textContent = `Mostrando ${filtered.length} de ${allData.length}`;
+}
+
+function filterTable() {
+  const q = document.getElementById('searchFact').value.toLowerCase();
+  const st = document.getElementById('statusFilter').value;
+  filtered = allData.filter(inv=>{
+    if(st && inv.status !== st) return false;
+    if(q && !(inv.cliente+' FE-'+inv.id+' '+inv.fecha+' '+inv.status).toLowerCase().includes(q)) return false;
+    return true;
+  });
+  renderTable();
+}
+
+let sortCol = -1, sortAsc = true;
+function sortTable(col) {
+  sortAsc = sortCol===col ? !sortAsc : true; sortCol=col;
+  const keys=['id','id','fecha','cliente','total','status'], key=keys[col];
+  filtered.sort((a,b)=>{
+    let va=a[key], vb=b[key];
+    if(typeof va==='string') va=va.toLowerCase();
+    if(typeof vb==='string') vb=vb.toLowerCase();
+    return va<vb?(sortAsc?-1:1):va>vb?(sortAsc?1:-1):0;
+  });
+  renderTable();
+  document.querySelectorAll('#invTable th').forEach((th,i)=>{
+    th.textContent=th.textContent.replace(' ▲','').replace(' ▼','');
+    if(i===col) th.textContent+=sortAsc?' ▲':' ▼';
+  });
+}
+
+// ═══════════════════════════════════════════════════
+// INVENTARIO MODULE
+// ═══════════════════════════════════════════════════
+let invCharts = {};
+
+function initInventario() {
+  Object.values(invCharts).forEach(c => c.destroy());
+  invCharts = {};
+
+  invCharts.ferm = new Chart(document.getElementById('chartFermentadores'), {
+    type:'bar',
+    data:{
+      labels:['F1 Frankie','F2 Igor','F3 Principito','F4 Gargantua','F5 Pantragruel','F6 Potter','F7 HighLander'],
+      datasets:[
+        {label:'Capacidad (L)',data:[400,1200,400,700,800,1000,500],backgroundColor:'rgba(88,166,255,0.15)',borderColor:'#58a6ff',borderWidth:1.5,borderRadius:4},
+        {label:'Litros actuales',data:[122,580,540,400,680,780,170],backgroundColor:['#3fb950','#3fb950','#f85149','#3fb950','#d29922','#3fb950','#3fb950'],borderColor:'#fff',borderWidth:1,borderRadius:4},
+        {label:'Semana anterior',data:[230,770,350,460,780,790,170],backgroundColor:'rgba(139,148,158,0.3)',borderColor:'#8b949e',borderWidth:1,borderDash:[5,3],borderRadius:4}
+      ]
+    },
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8b949e'}}},scales:{x:{ticks:{color:'#8b949e'},grid:{color:'#21262d'}},y:{title:{display:true,text:'Litros',color:'#8b949e'},ticks:{color:'#8b949e'},grid:{color:'#21262d'}}}}
+  });
+
+  invCharts.ocu = new Chart(document.getElementById('chartOcupacion'), {
+    type:'bar',
+    data:{
+      labels:['F1(400L)','F2(1200L)','F3(400L)','F4(700L)','F5(800L)','F6(1000L)','F7(500L)'],
+      datasets:[{label:'% Ocupación',data:[31,48,135,57,85,78,34],backgroundColor:['#3fb950','#3fb950','#f85149','#3fb950','#d29922','#3fb950','#3fb950'],borderRadius:6}]
+    },
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8b949e',font:{size:10}},grid:{color:'#21262d'}},y:{max:140,title:{display:true,text:'%',color:'#8b949e'},ticks:{color:'#8b949e',callback:v=>v+'%'},grid:{color:'#21262d'}}}}
+  });
+
+  invCharts.bot = new Chart(document.getElementById('chartBotellas'), {
+    type:'bar',
+    data:{
+      labels:['Golden Ale','Irish Red','APA','IPA','Stout'],
+      datasets:[
+        {label:'Semana actual',data:[155,374,94,122,374],backgroundColor:'#3fb950',borderRadius:6},
+        {label:'Semana anterior',data:[0,0,0,48,0],backgroundColor:'#f85149',borderRadius:6}
+      ]
+    },
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8b949e'}}},scales:{x:{ticks:{color:'#8b949e',font:{size:10}},grid:{color:'#21262d'}},y:{title:{display:true,text:'Unidades 330ml',color:'#8b949e'},ticks:{color:'#8b949e'},grid:{color:'#21262d'}}}}
+  });
+
+  invCharts.bar = new Chart(document.getElementById('chartBarriles'), {
+    type:'doughnut',
+    data:{
+      labels:['Stout (embotellar pendiente)','Stout (embotellado)','IPA (bar)','Irish Red (bar)','Stout (bar)'],
+      datasets:[{data:[60,40,20,20,20],backgroundColor:['#d29922','#3fb950','#58a6ff','#f0c040','#39d2c0'],borderColor:'#161b22',borderWidth:2}]
+    },
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8b949e',font:{size:11},padding:12}}}}
+  });
+
+  invCharts.hist = new Chart(document.getElementById('chartHistorico'), {
+    type:'bar',
+    data:{
+      labels:['Ene','Feb','Mar','Abr','May','Jun*'],
+      datasets:[
+        {label:'Litros producidos',data:[1418,1803,2440,2060,1518,917],backgroundColor:'#58a6ff',borderRadius:6,yAxisID:'y'},
+        {label:'Botellas despachadas (und)',data:[37,209,922,1120,1372,571],backgroundColor:'#f0c040',borderRadius:6,yAxisID:'y1'}
+      ]
+    },
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8b949e'}}},scales:{x:{ticks:{color:'#8b949e'},grid:{color:'#21262d'}},y:{position:'left',title:{display:true,text:'Litros',color:'#58a6ff'},ticks:{color:'#58a6ff'},grid:{color:'#21262d'}},y1:{position:'right',title:{display:true,text:'Botellas (und)',color:'#f0c040'},ticks:{color:'#f0c040'},grid:{display:false}}}}
+  });
+
+  invCharts.comp = new Chart(document.getElementById('chartComparativa'), {
+    type:'bar',
+    data:{
+      labels:['Producción (L)','Botellas stock','Barriles (L)','Ferment. ocupados'],
+      datasets:[
+        {label:'Semana 23 (anterior)',data:[3550,55,57,7],backgroundColor:'rgba(248,81,73,0.5)',borderColor:'#f85149',borderWidth:1,borderRadius:4},
+        {label:'Semana 24 (actual)',data:[3272,1119,160,7],backgroundColor:'rgba(63,185,80,0.5)',borderColor:'#3fb950',borderWidth:1,borderRadius:4}
+      ]
+    },
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8b949e'}},tooltip:{callbacks:{label:ctx=>{const l=['Litros totales en tanques','Unidades 330ml','Litros en barriles','Tanques ocupados (de 7)'];return l[ctx.dataIndex]+': '+ctx.raw;}}}},scales:{x:{ticks:{color:'#8b949e',font:{size:10}},grid:{color:'#21262d'}},y:{title:{display:true,text:'Valor',color:'#8b949e'},ticks:{color:'#8b949e'},grid:{color:'#21262d'}}}}
+  });
+
+  invCharts.mat = new Chart(document.getElementById('chartMateria'), {
+    type:'bar',
+    data:{
+      labels:['Malta Pale Ale\n(750g)','Levadura US-05\n(500g)','Malta Pilsen\n(10.2kg)','Lúpulo Cascade\n(340g)','Lúpulo Magnum\n(330g)','Lúpulo Bravo\n(165g)'],
+      datasets:[{label:'Stock actual (g)',data:[750,500,10180,340,330,165],backgroundColor:['#f85149','#f85149','#3fb950','#3fb950','#3fb950','#d29922'],borderRadius:6}]
+    },
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8b949e',font:{size:9},maxRotation:45},grid:{color:'#21262d'}},y:{title:{display:true,text:'Gramos',color:'#8b949e'},ticks:{color:'#8b949e'},grid:{color:'#21262d'}}}}
+  });
+}
+
+// ═══════════════════════════════════════════════════
+// OVERVIEW CHARTS (Resumen General tab)
+// ═══════════════════════════════════════════════════
+function initOverviewCharts() {
+  // Monthly production 2026
+  new Chart(document.getElementById('chartOverviewProd'), {
+    type:'bar',
+    data:{
+      labels:['Ene','Feb','Mar','Abr','May','Jun*'],
+      datasets:[
+        {label:'Litros producidos',data:[1418,1803,2440,2060,1518,917],backgroundColor:'#58a6ff',borderRadius:6,yAxisID:'y'},
+        {label:'Botellas despachadas (und)',data:[37,209,922,1120,1372,571],backgroundColor:'#f0c040',borderRadius:6,yAxisID:'y1'}
+      ]
+    },
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8b949e'}}},scales:{x:{ticks:{color:'#8b949e'},grid:{color:'#21262d'}},y:{position:'left',title:{display:true,text:'Litros',color:'#58a6ff'},ticks:{color:'#58a6ff'},grid:{color:'#21262d'}},y1:{position:'right',title:{display:true,text:'Botellas (und)',color:'#f0c040'},ticks:{color:'#f0c040'},grid:{display:false}}}}
+  });
+
+  // Top 5 clients - load if facturacion data is available, otherwise show placeholder
+  const checkTop5 = setInterval(() => {
+    if (allData.length > 0) {
+      clearInterval(checkTop5);
+      const clients = {};
+      allData.forEach(inv => {
+        const c = inv.cliente;
+        if (!clients[c]) clients[c] = {count:0,total:0};
+        clients[c].count++; clients[c].total += inv.total;
+      });
+      const top5 = Object.entries(clients).sort((a,b) => b[1].total - a[1].total).slice(0,5);
+
+      new Chart(document.getElementById('chartOverviewTop'), {
+        type:'bar',
+        data:{
+          labels:top5.map(t => t[0].length > 20 ? t[0].substring(0,19)+'…' : t[0]),
+          datasets:[{label:'Total COP',data:top5.map(t=>t[1].total),backgroundColor:top5.map(t=>t[0]==='BAR'?'#d29922':'#58a6ff'),borderRadius:4}]
+        },
+        options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP'}}},scales:{x:{ticks:{color:'#8b949e',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#21262d'}},y:{ticks:{color:'#8b949e',font:{size:10}},grid:{color:'#21262d'}}}}
+      });
+
+      const st = {draft:0,sent:0,closed:0}, stAmt = {draft:0,sent:0,closed:0};
+      allData.forEach(inv=>{st[inv.status]++;stAmt[inv.status]+=inv.total;});
+      new Chart(document.getElementById('chartOverviewStatus'), {
+        type:'doughnut',
+        data:{labels:['Cerradas','Draft','Enviadas'],datasets:[{data:[st.closed,st.draft,st.sent],backgroundColor:['#3fb950','#d29922','#58a6ff'],borderColor:'#161b22',borderWidth:2}]},
+        options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8b949e',font:{size:11},padding:14}},tooltip:{callbacks:{label:ctx=>{const s=['closed','draft','sent'][ctx.dataIndex];return ctx.raw+' facturas — $'+stAmt[s].toLocaleString('es-CO')+' COP';}}}}}
+      });
+    }
+  }, 300);
+  // Stop after 10s if data never loads
+  setTimeout(() => clearInterval(checkTop5), 10000);
+}
+
+// ═══════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════
+window.onload = function() {
+  initOverviewCharts();
+  // Pre-load facturacion data in background
+  loadFacturacionDataSilent();
+};
+
+async function loadFacturacionDataSilent() {
+  try {
+    const r = await fetch('facturas_junio_2026.json');
+    const json = await r.json();
+    allData = (json.facturas || []).map(inv => ({
+      ...inv,
+      cliente: inv.cliente === 'Consumidor Final' ? 'BAR' : inv.cliente
+    }));
+    filtered = [...allData];
+    TAB_STATE.facturacion = true;
+    // Update overview Top 5 chart if it hasn't rendered yet
+    updateOverviewTop5();
+  } catch(e) {
+    // Silent fail - will show error when user clicks tab
+  }
+}
+
+function updateOverviewTop5() {
+  if (allData.length === 0) return;
+  // Overview charts will pick up data via the interval
+}
+
+// ═══════════════════════════════════════════════════
+// INIT INVENTARIO (called when tab is first shown)
+// ═══════════════════════════════════════════════════
+// initInventario() is defined above
+</script>
+
+</body>
+</html>

@@ -63,6 +63,14 @@
 
   /* ── TOAST ── */
   .toast { position:fixed; bottom:24px; right:24px; background:#161b22; border:1px solid #f85149; color:#f85149; padding:12px 20px; border-radius:8px; font-size:.85em; z-index:999; display:none; }
+  .loading { text-align:center;padding:20px;color:#8b949e }
+  .clickable-row { cursor:pointer }
+  .clickable-row:hover { background:#1a1f2b !important }
+  .detalle-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:10px }
+  .detalle-mes { background:#0d1117; border:1px solid #21262d; border-radius:6px; padding:12px }
+  .detalle-mes h4 { color:#f0c040; font-size:.85em; margin-bottom:6px }
+  .detalle-mes .fact { font-size:.78em; color:#8b949e; display:flex; justify-content:space-between; padding:2px 0; border-bottom:1px solid #161b22 }
+  .detalle-mes .total-mes { font-size:.82em; color:#3fb950; font-weight:600; margin-top:6px; text-align:right }
 </style>
 </head>
 <body>
@@ -159,9 +167,30 @@
         <table id="invTable"><thead><tr>
           <th onclick="sortTable(0)">#</th><th onclick="sortTable(1)">Factura</th><th onclick="sortTable(2)">Fecha</th><th onclick="sortTable(3)">Cliente</th><th onclick="sortTable(4)">Total</th><th onclick="sortTable(5)">Estado</th>
         </tr></thead><tbody id="tbodyFact"></tbody></table>
+    </div>
+    <div class="card full" id="cardClientes">
+      <h2>👥 Buscador de Clientes <span style="font-size:.75em;color:#8b949e"> — Datos consolidados Dic 2025 - Jun 2026</span></h2>
+      <div class="filters">
+        <input type="text" id="searchCliente" placeholder="🔍 Buscar cliente..." oninput="filtrarClientes()">
+        <select id="filtroMesCliente" onchange="filtrarClientes()">
+          <option value="">Todos los meses</option>
+        </select>
+        <span id="countClientes" style="color:#8b949e;align-self:center;font-size:.85em"></span>
       </div>
+      <div class="table-wrap">
+        <table><thead><tr>
+          <th onclick="sortClientes('cliente')">Cliente</th>
+          <th onclick="sortClientes('total_general')">Total Facturado</th>
+          <th onclick="sortClientes('num_facturas')">Facturas</th>
+          <th>Meses</th>
+        </tr></thead>
+        <tbody id="tbodyClientes"><tr><td colspan="4" class="loading">Cargando datos de clientes...</td></tr></tbody>
+      </table>
+      </div>
+      <div id="detalleCliente" style="display:none;margin-top:14px;padding:14px;background:#1a1f2b;border-radius:8px;border:1px solid #30363d"></div>
     </div>
   </div>
+</div>
 </div>
 
 <!-- ═══════════════ TAB: INVENTARIO ═══════════════ -->
@@ -672,6 +701,120 @@ function initInventario() {
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8b949e',font:{size:9},maxRotation:45},grid:{color:'#21262d'}},y:{title:{display:true,text:'Gramos',color:'#8b949e'},ticks:{color:'#8b949e'},grid:{color:'#21262d'}}}}
   });
 }
+
+// ═══════════════════════════════════════════════════
+// CLIENTES: Buscador con desglose por mes
+// ═══════════════════════════════════════════════════
+let clientesData = [];
+let clientesFiltrados = [];
+let clienteSortCol = 'total_general';
+let clienteSortAsc = false;
+
+async function loadClientesData() {
+  try {
+    const r = await fetch('data/clientes_mensuales.json');
+    clientesData = await r.json();
+    clientesData.forEach(c => {
+      c.num_facturas = Object.values(c.meses).reduce((s, m) => s + m.facturas.length, 0);
+    });
+    // Llenar filtro de meses
+    const mesesSet = new Set();
+    clientesData.forEach(c => Object.keys(c.meses).forEach(m => mesesSet.add(m)));
+    const filtro = document.getElementById('filtroMesCliente');
+    Array.from(mesesSet).sort().forEach(m => {
+      filtro.innerHTML += `<option value="${m}">${m}</option>`;
+    });
+    filtrarClientes();
+  } catch(e) {
+    document.getElementById('tbodyClientes').innerHTML = '<tr><td colspan="4" class="loading">No se pudo cargar clientes_mensuales.json</td></tr>';
+  }
+}
+
+function filtrarClientes() {
+  const search = document.getElementById('searchCliente').value.toLowerCase();
+  const mes = document.getElementById('filtroMesCliente').value;
+
+  clientesFiltrados = clientesData.filter(c => {
+    if (search && !c.cliente.toLowerCase().includes(search)) return false;
+    if (mes && !c.meses[mes]) return false;
+    return true;
+  }).map(c => {
+    let total = c.total_general;
+    let nfact = c.num_facturas;
+    let mesesList = Object.keys(c.meses);
+    if (mes) {
+      total = (c.meses[mes] || {}).total || 0;
+      nfact = ((c.meses[mes] || {}).facturas || []).length;
+      mesesList = [mes];
+    }
+    return { ...c, _total: total, _nfact: nfact, _meses: mesesList };
+  });
+
+  // Ordenar
+  clientesFiltrados.sort((a, b) => {
+    let va = a[clienteSortCol] || a._total || 0;
+    let vb = b[clienteSortCol] || b._total || 0;
+    if (clienteSortCol === 'cliente') { va = a.cliente.toLowerCase(); vb = b.cliente.toLowerCase(); return clienteSortAsc ? va.localeCompare(vb) : vb.localeCompare(va); }
+    if (clienteSortCol === 'num_facturas') { va = a._nfact; vb = b._nfact; }
+    if (clienteSortCol === 'total_general') { va = a._total; vb = b._total; }
+    return clienteSortAsc ? va - vb : vb - va;
+  });
+
+  renderClientesTabla();
+}
+
+function sortClientes(col) {
+  if (clienteSortCol === col) clienteSortAsc = !clienteSortAsc;
+  else { clienteSortCol = col; clienteSortAsc = false; }
+  filtrarClientes();
+}
+
+function renderClientesTabla() {
+  const tbody = document.getElementById('tbodyClientes');
+  if (clientesFiltrados.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;padding:20px;color:#8b949e">Sin resultados</td></tr>';
+    document.getElementById('countClientes').textContent = '';
+    return;
+  }
+  tbody.innerHTML = clientesFiltrados.map((c, i) => `
+    <tr class="clickable-row" onclick="mostrarDetalleCliente('${c.cliente.replace(/'/g,"\\'")}')">
+      <td><strong>${c.cliente}</strong></td>
+      <td>$${c._total.toLocaleString('es-CO')}</td>
+      <td>${c._nfact}</td>
+      <td style="font-size:.78em;color:#8b949e">${c._meses.join(', ')}</td>
+    </tr>
+  `).join('');
+  document.getElementById('countClientes').textContent = `${clientesFiltrados.length} clientes`;
+  document.getElementById('detalleCliente').style.display = 'none';
+}
+
+function mostrarDetalleCliente(nombre) {
+  const c = clientesData.find(x => x.cliente === nombre);
+  if (!c) return;
+
+  const detalle = document.getElementById('detalleCliente');
+  let html = `<h3 style="color:#f0c040;margin-bottom:10px">📋 ${c.cliente} — Total: $${c.total_general.toLocaleString('es-CO')}</h3>`;
+  html += '<div class="detalle-grid">';
+
+  const meses = Object.keys(c.meses).sort();
+  meses.forEach(mes => {
+    const m = c.meses[mes];
+    html += `<div class="detalle-mes">
+      <h4>${mes} — $${m.total.toLocaleString('es-CO')}</h4>`;
+    m.facturas.forEach(f => {
+      html += `<div class="fact"><span>${f.numero}</span><span>${f.fecha} · $${f.valor.toLocaleString('es-CO')}</span></div>`;
+    });
+    html += `<div class="total-mes">${m.facturas.length} facturas · $${m.total.toLocaleString('es-CO')}</div></div>`;
+  });
+
+  html += '</div>';
+  detalle.innerHTML = html;
+  detalle.style.display = 'block';
+  detalle.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Cargar clientes al iniciar (en segundo plano)
+setTimeout(loadClientesData, 1000);
 </script>
 
 </body>

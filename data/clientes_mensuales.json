@@ -1,0 +1,2374 @@
+[
+  {
+    "cliente": "Alejandra Montoya Guerra Café Niquia",
+    "total_general": 269710.0,
+    "meses": {
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe381",
+            "valor": 269710.0,
+            "fecha": "10/03/2026"
+          }
+        ],
+        "total": 269710.0,
+        "domicilio_total": 21000.0
+      }
+    }
+  },
+  {
+    "cliente": "Andrea Alvarez Ordonez (Panfilo)",
+    "total_general": 111150.0,
+    "meses": {
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe489",
+            "valor": 111150.0,
+            "fecha": "20/05/2026"
+          }
+        ],
+        "total": 111150.0,
+        "domicilio_total": 10000.0
+      }
+    }
+  },
+  {
+    "cliente": "Astrid Elena Arango Quiroz DIvergente",
+    "total_general": 530990.0,
+    "meses": {
+      "Abril 2026": {
+        "facturas": [
+          {
+            "numero": "FE449",
+            "valor": 267280.0,
+            "fecha": "20/04/2026"
+          }
+        ],
+        "total": 267280.0,
+        "domicilio_total": 15000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe417",
+            "valor": 263710.0,
+            "fecha": "30/03/2026"
+          }
+        ],
+        "total": 263710.0,
+        "domicilio_total": 15000.0
+      }
+    }
+  },
+  {
+    "cliente": "Automatización",
+    "total_general": 0.0,
+    "meses": {
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe501",
+            "valor": 0.0,
+            "fecha": "26/05/2026"
+          },
+          {
+            "numero": "Fe502",
+            "valor": 0.0,
+            "fecha": "26/05/2026"
+          },
+          {
+            "numero": "Fe503",
+            "valor": 0.0,
+            "fecha": "26/05/2026"
+          },
+          {
+            "numero": "Fe504",
+            "valor": 0.0,
+            "fecha": "27/05/2026"
+          },
+          {
+            "numero": "Fe510",
+            "valor": 0.0,
+            "fecha": "31/05/2026"
+          }
+        ],
+        "total": 0.0,
+        "domicilio_total": 0.0
+      }
+    }
+  },
+  {
+    "cliente": "Bar Garaje",
+    "total_general": 726098.0,
+    "meses": {
+      "Abril 2026": {
+        "facturas": [
+          {
+            "numero": "Fe431",
+            "valor": 257040.0,
+            "fecha": "7/04/2026"
+          }
+        ],
+        "total": 257040.0,
+        "domicilio_total": 0.0
+      },
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe313",
+            "valor": 212018.0,
+            "fecha": "17/01/2026"
+          }
+        ],
+        "total": 212018.0,
+        "domicilio_total": 0.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe428",
+            "valor": 257040.0,
+            "fecha": "31/03/2026"
+          }
+        ],
+        "total": 257040.0,
+        "domicilio_total": 0.0
+      }
+    }
+  },
+  {
+    "cliente": "Bar Madre Monte",
+    "total_general": 7033300.0,
+    "meses": {
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "RC2576",
+            "valor": 333900.0,
+            "fecha": "31/01/2026"
+          }
+        ],
+        "total": 333900.0,
+        "domicilio_total": 0.0
+      },
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "RC2876",
+            "valor": 2261050.0,
+            "fecha": "12/02/2026"
+          },
+          {
+            "numero": "RC2744",
+            "valor": 4438350.0,
+            "fecha": "13/02/2026"
+          }
+        ],
+        "total": 6699400.0,
+        "domicilio_total": 0.0
+      }
+    }
+  },
+  {
+    "cliente": "Bar de los curiosos",
+    "total_general": 1526037.0,
+    "meses": {
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe 303",
+            "valor": 226031.0,
+            "fecha": "14/01/2026"
+          },
+          {
+            "numero": "Fe318",
+            "valor": 224088.0,
+            "fecha": "19/01/2026"
+          },
+          {
+            "numero": "Fe330",
+            "valor": 221491.0,
+            "fecha": "30/01/2026"
+          }
+        ],
+        "total": 671610.0,
+        "domicilio_total": 27070.0
+      },
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe344",
+            "valor": 262989.0,
+            "fecha": "11/02/2026"
+          },
+          {
+            "numero": "Fe358",
+            "valor": 225018.0,
+            "fecha": "16/02/2026"
+          }
+        ],
+        "total": 488007.0,
+        "domicilio_total": 17000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe378",
+            "valor": 366420.0,
+            "fecha": "6/03/2026"
+          }
+        ],
+        "total": 366420.0,
+        "domicilio_total": 8000.0
+      }
+    }
+  },
+  {
+    "cliente": "Bisontalas",
+    "total_general": 4415864.0,
+    "meses": {
+      "Abril 0026": {
+        "facturas": [
+          {
+            "numero": "Fe451",
+            "valor": 2218886.0,
+            "fecha": "22/04/0026"
+          }
+        ],
+        "total": 2218886.0,
+        "domicilio_total": 0.0
+      },
+      "Junio 2026": {
+        "facturas": [
+          {
+            "numero": "Fe439",
+            "valor": 2196978.0,
+            "fecha": "16/06/2026"
+          }
+        ],
+        "total": 2196978.0,
+        "domicilio_total": 0.0
+      }
+    }
+  },
+  {
+    "cliente": "Biviana Marcela Garcia Rendón",
+    "total_general": 221008.0,
+    "meses": {
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe323",
+            "valor": 221008.0,
+            "fecha": "22/01/2026"
+          }
+        ],
+        "total": 221008.0,
+        "domicilio_total": 12000.0
+      }
+    }
+  },
+  {
+    "cliente": "Buenas Birras Social Club",
+    "total_general": 499800.0,
+    "meses": {
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe467",
+            "valor": 499800.0,
+            "fecha": "5/05/2026"
+          }
+        ],
+        "total": 499800.0,
+        "domicilio_total": 0.0
+      }
+    }
+  },
+  {
+    "cliente": "Cafe Zeppeling",
+    "total_general": 6037184.0,
+    "meses": {
+      "Abril 2026": {
+        "facturas": [
+          {
+            "numero": "Fe434",
+            "valor": 397560.0,
+            "fecha": "14/04/2026"
+          },
+          {
+            "numero": "FE448",
+            "valor": 397560.0,
+            "fecha": "20/04/2026"
+          },
+          {
+            "numero": "Fe450",
+            "valor": 281320.0,
+            "fecha": "20/04/2026"
+          }
+        ],
+        "total": 1076440.0,
+        "domicilio_total": 34000.0
+      },
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe 310",
+            "valor": 228072.0,
+            "fecha": "15/01/2026"
+          }
+        ],
+        "total": 228072.0,
+        "domicilio_total": 0.0
+      },
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe349",
+            "valor": 444036.0,
+            "fecha": "12/02/2026"
+          },
+          {
+            "numero": "Fe341",
+            "valor": 647973.0,
+            "fecha": "6/02/2026"
+          }
+        ],
+        "total": 1092009.0,
+        "domicilio_total": 24000.0
+      },
+      "Junio 2026": {
+        "facturas": [
+          {
+            "numero": "Fe341",
+            "valor": 647973.0,
+            "fecha": "2/06/2026"
+          }
+        ],
+        "total": 647973.0,
+        "domicilio_total": 12000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe407",
+            "valor": 497520.0,
+            "fecha": "25/03/2026"
+          },
+          {
+            "numero": "Fe377",
+            "valor": 760560.0,
+            "fecha": "5/03/2026"
+          }
+        ],
+        "total": 1258080.0,
+        "domicilio_total": 30000.0
+      },
+      "Mayo 0026": {
+        "facturas": [
+          {
+            "numero": "Fe463",
+            "valor": 772840.0,
+            "fecha": "2/05/0026"
+          }
+        ],
+        "total": 772840.0,
+        "domicilio_total": 16000.0
+      },
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe480",
+            "valor": 252760.0,
+            "fecha": "14/05/2026"
+          },
+          {
+            "numero": "Fe491",
+            "valor": 388420.0,
+            "fecha": "21/05/2026"
+          },
+          {
+            "numero": "Fe468",
+            "valor": 320590.0,
+            "fecha": "6/05/2026"
+          }
+        ],
+        "total": 961770.0,
+        "domicilio_total": 30000.0
+      }
+    }
+  },
+  {
+    "cliente": "Cerbestial",
+    "total_general": 1213586.0,
+    "meses": {
+      "Abril 2026": {
+        "facturas": [
+          {
+            "numero": "Fe459",
+            "valor": 1213586.0,
+            "fecha": "24/04/2026"
+          }
+        ],
+        "total": 1213586.0,
+        "domicilio_total": 0.0
+      }
+    }
+  },
+  {
+    "cliente": "Cerveceria del Barrio",
+    "total_general": 3497965.0,
+    "meses": {
+      "Abril 2026": {
+        "facturas": [
+          {
+            "numero": "Fe430",
+            "valor": 514080.0,
+            "fecha": "1/04/2026"
+          },
+          {
+            "numero": "Fe432",
+            "valor": 786120.0,
+            "fecha": "7/04/2026"
+          }
+        ],
+        "total": 1300200.0,
+        "domicilio_total": 15000.0
+      },
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe314",
+            "valor": 394092.0,
+            "fecha": "19/01/2026"
+          }
+        ],
+        "total": 394092.0,
+        "domicilio_total": 12045.0
+      },
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe356",
+            "valor": 508033.0,
+            "fecha": "13/02/2026"
+          }
+        ],
+        "total": 508033.0,
+        "domicilio_total": 16000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe415",
+            "valor": 511800.0,
+            "fecha": "30/03/2026"
+          },
+          {
+            "numero": "Fe426",
+            "valor": 269040.0,
+            "fecha": "31/03/2026"
+          }
+        ],
+        "total": 780840.0,
+        "domicilio_total": 24000.0
+      },
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe466",
+            "valor": 514800.0,
+            "fecha": "4/05/2026"
+          }
+        ],
+        "total": 514800.0,
+        "domicilio_total": 15000.0
+      }
+    }
+  },
+  {
+    "cliente": "Chiringuito",
+    "total_general": 532520.0,
+    "meses": {
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe375",
+            "valor": 264760.0,
+            "fecha": "13/02/2026"
+          }
+        ],
+        "total": 264760.0,
+        "domicilio_total": 22000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe422",
+            "valor": 267760.0,
+            "fecha": "31/03/2026"
+          }
+        ],
+        "total": 267760.0,
+        "domicilio_total": 25000.0
+      }
+    }
+  },
+  {
+    "cliente": "Club del ritmo",
+    "total_general": 212018.0,
+    "meses": {
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe319",
+            "valor": 212018.0,
+            "fecha": "18/01/2026"
+          }
+        ],
+        "total": 212018.0,
+        "domicilio_total": 0.0
+      }
+    }
+  },
+  {
+    "cliente": "Comfama",
+    "total_general": 10081680.0,
+    "meses": {
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe492",
+            "valor": 10081680.0,
+            "fecha": "22/05/2026"
+          }
+        ],
+        "total": 10081680.0,
+        "domicilio_total": 0.0
+      }
+    }
+  },
+  {
+    "cliente": "Consumidor FInal",
+    "total_general": 142765.0,
+    "meses": {
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe402",
+            "valor": 76000.0,
+            "fecha": "18/03/2026"
+          },
+          {
+            "numero": "Fe403",
+            "valor": 66765.0,
+            "fecha": "18/03/2026"
+          }
+        ],
+        "total": 142765.0,
+        "domicilio_total": 15000.0
+      }
+    }
+  },
+  {
+    "cliente": "Cristian Alquitran Carmin",
+    "total_general": 494298.0,
+    "meses": {
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe 302",
+            "valor": 227018.0,
+            "fecha": "14/01/2026"
+          }
+        ],
+        "total": 227018.0,
+        "domicilio_total": 15000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe395",
+            "valor": 267280.0,
+            "fecha": "16/03/2026"
+          }
+        ],
+        "total": 267280.0,
+        "domicilio_total": 15000.0
+      }
+    }
+  },
+  {
+    "cliente": "Cumbres de Atrato",
+    "total_general": 425516.0,
+    "meses": {
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe 301",
+            "valor": 425516.0,
+            "fecha": "14/01/2026"
+          }
+        ],
+        "total": 425516.0,
+        "domicilio_total": 7500.0
+      }
+    }
+  },
+  {
+    "cliente": "El Living",
+    "total_general": 416000.0,
+    "meses": {
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe345",
+            "valor": 208000.0,
+            "fecha": "11/02/2026"
+          },
+          {
+            "numero": "Fe346",
+            "valor": 208000.0,
+            "fecha": "11/02/2026"
+          }
+        ],
+        "total": 416000.0,
+        "domicilio_total": 5000.0
+      }
+    }
+  },
+  {
+    "cliente": "El Living Luis Fernando cuervo quintero",
+    "total_general": 264280.0,
+    "meses": {
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe427",
+            "valor": 264280.0,
+            "fecha": "31/03/2026"
+          }
+        ],
+        "total": 264280.0,
+        "domicilio_total": 12000.0
+      }
+    }
+  },
+  {
+    "cliente": "El Tapista",
+    "total_general": 1234000.0,
+    "meses": {
+      "Abril 2026": {
+        "facturas": [
+          {
+            "numero": "RC3825",
+            "valor": 80000.0,
+            "fecha": "22/04/2026"
+          },
+          {
+            "numero": "RC3826",
+            "valor": 163000.0,
+            "fecha": "22/04/2026"
+          }
+        ],
+        "total": 243000.0,
+        "domicilio_total": 20000.0
+      },
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "RC4141",
+            "valor": 102000.0,
+            "fecha": "16/05/2026"
+          },
+          {
+            "numero": "RC4356",
+            "valor": 718000.0,
+            "fecha": "29/05/2026"
+          },
+          {
+            "numero": "RC3966",
+            "valor": 171000.0,
+            "fecha": "4/05/2026"
+          }
+        ],
+        "total": 991000.0,
+        "domicilio_total": 40000.0
+      }
+    }
+  },
+  {
+    "cliente": "Elena",
+    "total_general": 1285308.0,
+    "meses": {
+      "Abril 2026": {
+        "facturas": [
+          {
+            "numero": "Fe437",
+            "valor": 263710.0,
+            "fecha": "15/04/2026"
+          }
+        ],
+        "total": 263710.0,
+        "domicilio_total": 15000.0
+      },
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe354",
+            "valor": 225008.0,
+            "fecha": "12/02/2026"
+          }
+        ],
+        "total": 225008.0,
+        "domicilio_total": 16000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe383",
+            "valor": 263710.0,
+            "fecha": "10/03/2026"
+          }
+        ],
+        "total": 263710.0,
+        "domicilio_total": 15000.0
+      },
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe481",
+            "valor": 263710.0,
+            "fecha": "19/05/2026"
+          },
+          {
+            "numero": "Fe494",
+            "valor": 269170.0,
+            "fecha": "22/05/2026"
+          }
+        ],
+        "total": 532880.0,
+        "domicilio_total": 27000.0
+      }
+    }
+  },
+  {
+    "cliente": "Elena Ossa",
+    "total_general": 445016.0,
+    "meses": {
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe 308",
+            "valor": 221008.0,
+            "fecha": "14/01/2026"
+          },
+          {
+            "numero": "Fe331",
+            "valor": 224008.0,
+            "fecha": "31/01/2026"
+          }
+        ],
+        "total": 445016.0,
+        "domicilio_total": 27000.0
+      }
+    }
+  },
+  {
+    "cliente": "Erika Tatiana Cano",
+    "total_general": 91035.0,
+    "meses": {
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe508",
+            "valor": 91035.0,
+            "fecha": "29/05/2026"
+          }
+        ],
+        "total": 91035.0,
+        "domicilio_total": 0.0
+      }
+    }
+  },
+  {
+    "cliente": "Esteban Jaramillo Jaramillo",
+    "total_general": 283320.0,
+    "meses": {
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe473",
+            "valor": 283320.0,
+            "fecha": "8/05/2026"
+          }
+        ],
+        "total": 283320.0,
+        "domicilio_total": 12000.0
+      }
+    }
+  },
+  {
+    "cliente": "Esteban jaramillo Jaramillo",
+    "total_general": 240000.0,
+    "meses": {
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "RC4234",
+            "valor": 240000.0,
+            "fecha": "22/05/2026"
+          }
+        ],
+        "total": 240000.0,
+        "domicilio_total": 12000.0
+      }
+    }
+  },
+  {
+    "cliente": "Eterna primavera",
+    "total_general": 229558.0,
+    "meses": {
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe317",
+            "valor": 229558.0,
+            "fecha": "19/01/2026"
+          }
+        ],
+        "total": 229558.0,
+        "domicilio_total": 16064.0
+      }
+    }
+  },
+  {
+    "cliente": "Foxey",
+    "total_general": 1014200.0,
+    "meses": {
+      "Diciembre 2025": {
+        "facturas": [
+          {
+            "numero": "Rc2543",
+            "valor": 1014200.0,
+            "fecha": "25/12/2025"
+          }
+        ],
+        "total": 1014200.0,
+        "domicilio_total": 12500.0
+      }
+    }
+  },
+  {
+    "cliente": "Hormiguero",
+    "total_general": 260710.0,
+    "meses": {
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe386",
+            "valor": 260710.0,
+            "fecha": "12/03/2026"
+          }
+        ],
+        "total": 260710.0,
+        "domicilio_total": 12000.0
+      }
+    }
+  },
+  {
+    "cliente": "Hotel 10",
+    "total_general": 937860.0,
+    "meses": {
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe387",
+            "valor": 937860.0,
+            "fecha": "12/03/2026"
+          }
+        ],
+        "total": 937860.0,
+        "domicilio_total": 50000.0
+      }
+    }
+  },
+  {
+    "cliente": "House of Demons",
+    "total_general": 708230.0,
+    "meses": {
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe315",
+            "valor": 226031.0,
+            "fecha": "19/01/2026"
+          }
+        ],
+        "total": 226031.0,
+        "domicilio_total": 10000.0
+      },
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe352",
+            "valor": 280989.0,
+            "fecha": "13/02/2026"
+          }
+        ],
+        "total": 280989.0,
+        "domicilio_total": 14000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe412",
+            "valor": 201210.0,
+            "fecha": "30/03/2026"
+          }
+        ],
+        "total": 201210.0,
+        "domicilio_total": 12000.0
+      }
+    }
+  },
+  {
+    "cliente": "Inversiones de paso",
+    "total_general": 820682.0,
+    "meses": {
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe372",
+            "valor": 820682.0,
+            "fecha": "2/03/2026"
+          }
+        ],
+        "total": 820682.0,
+        "domicilio_total": 26000.0
+      }
+    }
+  },
+  {
+    "cliente": "Jesica Gozales Elementum",
+    "total_general": 412341.0,
+    "meses": {
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe499",
+            "valor": 412341.0,
+            "fecha": "25/05/2026"
+          }
+        ],
+        "total": 412341.0,
+        "domicilio_total": 15000.0
+      }
+    }
+  },
+  {
+    "cliente": "John El Calvo Sanchez Ochoa",
+    "total_general": 259900.0,
+    "meses": {
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe472",
+            "valor": 259900.0,
+            "fecha": "7/05/2026"
+          }
+        ],
+        "total": 259900.0,
+        "domicilio_total": 10000.0
+      }
+    }
+  },
+  {
+    "cliente": "Johnny Guerrero",
+    "total_general": 51765.0,
+    "meses": {
+      "Abril 0226": {
+        "facturas": [
+          {
+            "numero": "Fe440",
+            "valor": 0.0,
+            "fecha": "16/04/0226"
+          }
+        ],
+        "total": 0.0,
+        "domicilio_total": 0.0
+      },
+      "Abril 2026": {
+        "facturas": [
+          {
+            "numero": "FE452",
+            "valor": 0.0,
+            "fecha": "22/04/2026"
+          }
+        ],
+        "total": 0.0,
+        "domicilio_total": 0.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe419",
+            "valor": 51765.0,
+            "fecha": "30/03/2026"
+          }
+        ],
+        "total": 51765.0,
+        "domicilio_total": 0.0
+      }
+    }
+  },
+  {
+    "cliente": "Jose Mauricio Gallego Quintero",
+    "total_general": 526800.0,
+    "meses": {
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe399",
+            "valor": 386280.0,
+            "fecha": "16/03/2026"
+          }
+        ],
+        "total": 386280.0,
+        "domicilio_total": 15000.0
+      },
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe493",
+            "valor": 140520.0,
+            "fecha": "22/05/2026"
+          }
+        ],
+        "total": 140520.0,
+        "domicilio_total": 12000.0
+      }
+    }
+  },
+  {
+    "cliente": "José Daniel Piedrahita Betancur",
+    "total_general": 258710.0,
+    "meses": {
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe507",
+            "valor": 258710.0,
+            "fecha": "29/05/2026"
+          }
+        ],
+        "total": 258710.0,
+        "domicilio_total": 10000.0
+      }
+    }
+  },
+  {
+    "cliente": "Juan Felipe Arteaga Girlado Vulgaro bar",
+    "total_general": 257760.0,
+    "meses": {
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe498",
+            "valor": 257760.0,
+            "fecha": "25/05/2026"
+          }
+        ],
+        "total": 257760.0,
+        "domicilio_total": 15000.0
+      }
+    }
+  },
+  {
+    "cliente": "Juan Felipe Arteaga Vulgaro Bar",
+    "total_general": 1147585.0,
+    "meses": {
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe360",
+            "valor": 212018.0,
+            "fecha": "17/02/2026"
+          },
+          {
+            "numero": "Fe361",
+            "valor": 420047.0,
+            "fecha": "17/02/2026"
+          }
+        ],
+        "total": 632065.0,
+        "domicilio_total": 0.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe400",
+            "valor": 257760.0,
+            "fecha": "16/03/2026"
+          },
+          {
+            "numero": "Fe410",
+            "valor": 257760.0,
+            "fecha": "30/03/2026"
+          }
+        ],
+        "total": 515520.0,
+        "domicilio_total": 30000.0
+      }
+    }
+  },
+  {
+    "cliente": "Juan Hernández",
+    "total_general": 4568504.0,
+    "meses": {
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe326",
+            "valor": 348886.0,
+            "fecha": "25/02/2026"
+          },
+          {
+            "numero": "Fe343",
+            "valor": 0.0,
+            "fecha": "5/02/2026"
+          },
+          {
+            "numero": "Fe342",
+            "valor": 1372809.0,
+            "fecha": "6/02/2026"
+          },
+          {
+            "numero": "Fe342",
+            "valor": 1372809.0,
+            "fecha": "6/02/2026"
+          }
+        ],
+        "total": 3094504.0,
+        "domicilio_total": 40000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "RC3434",
+            "valor": 556000.0,
+            "fecha": "27/03/2026"
+          }
+        ],
+        "total": 556000.0,
+        "domicilio_total": 0.0
+      },
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "RC4353",
+            "valor": 918000.0,
+            "fecha": "29/05/2026"
+          }
+        ],
+        "total": 918000.0,
+        "domicilio_total": 15000.0
+      }
+    }
+  },
+  {
+    "cliente": "Kanana",
+    "total_general": 1274110.0,
+    "meses": {
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe316",
+            "valor": 224030.0,
+            "fecha": "19/01/2026"
+          }
+        ],
+        "total": 224030.0,
+        "domicilio_total": 15022.0
+      },
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe366",
+            "valor": 257760.0,
+            "fecha": "24/02/2026"
+          }
+        ],
+        "total": 257760.0,
+        "domicilio_total": 15000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe389",
+            "valor": 263710.0,
+            "fecha": "12/03/2026"
+          }
+        ],
+        "total": 263710.0,
+        "domicilio_total": 15000.0
+      },
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe477",
+            "valor": 264900.0,
+            "fecha": "13/05/2026"
+          },
+          {
+            "numero": "Fe490",
+            "valor": 263710.0,
+            "fecha": "21/05/2026"
+          }
+        ],
+        "total": 528610.0,
+        "domicilio_total": 30000.0
+      }
+    }
+  },
+  {
+    "cliente": "Km0",
+    "total_general": 5797426.0,
+    "meses": {
+      "Abril 2026": {
+        "facturas": [
+          {
+            "numero": "FE453",
+            "valor": 296410.0,
+            "fecha": "22/04/2026"
+          },
+          {
+            "numero": "Fe454",
+            "valor": 494925.0,
+            "fecha": "22/04/2026"
+          },
+          {
+            "numero": "FE458",
+            "valor": 1631439.0,
+            "fecha": "24/04/2026"
+          }
+        ],
+        "total": 2422774.0,
+        "domicilio_total": 42000.0
+      },
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe 299",
+            "valor": 608042.0,
+            "fecha": "14/01/2026"
+          },
+          {
+            "numero": "Fe324",
+            "valor": 470041.0,
+            "fecha": "25/01/2026"
+          }
+        ],
+        "total": 1078083.0,
+        "domicilio_total": 20000.0
+      },
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe353",
+            "valor": 280489.0,
+            "fecha": "13/02/2026"
+          }
+        ],
+        "total": 280489.0,
+        "domicilio_total": 170000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe371",
+            "valor": 264875.0,
+            "fecha": "2/03/2026"
+          },
+          {
+            "numero": "Fe418",
+            "valor": 467770.0,
+            "fecha": "30/03/2026"
+          }
+        ],
+        "total": 732645.0,
+        "domicilio_total": 24000.0
+      },
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe476",
+            "valor": 317615.0,
+            "fecha": "12/05/2026"
+          },
+          {
+            "numero": "Fe486",
+            "valor": 292625.0,
+            "fecha": "19/05/2026"
+          },
+          {
+            "numero": "Fe488",
+            "valor": 133760.0,
+            "fecha": "20/05/2026"
+          },
+          {
+            "numero": "Fe500",
+            "valor": 267040.0,
+            "fecha": "26/05/2026"
+          },
+          {
+            "numero": "Fe470",
+            "valor": 272395.0,
+            "fecha": "6/05/2026"
+          }
+        ],
+        "total": 1283435.0,
+        "domicilio_total": 40010.0
+      }
+    }
+  },
+  {
+    "cliente": "La Estrada",
+    "total_general": 217000.0,
+    "meses": {
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe373",
+            "valor": 217000.0,
+            "fecha": "2/03/2026"
+          }
+        ],
+        "total": 217000.0,
+        "domicilio_total": 13000.0
+      }
+    }
+  },
+  {
+    "cliente": "La Jaus",
+    "total_general": 760000.0,
+    "meses": {
+      "Abril 2026": {
+        "facturas": [
+          {
+            "numero": "RC3886",
+            "valor": 219000.0,
+            "fecha": "27/04/2026"
+          }
+        ],
+        "total": 219000.0,
+        "domicilio_total": 15000.0
+      },
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "RC4085",
+            "valor": 321000.0,
+            "fecha": "12/05/2026"
+          },
+          {
+            "numero": "RC 4229",
+            "valor": 220000.0,
+            "fecha": "21/05/2026"
+          }
+        ],
+        "total": 541000.0,
+        "domicilio_total": 15000.0
+      }
+    }
+  },
+  {
+    "cliente": "La Local",
+    "total_general": 1648750.0,
+    "meses": {
+      "Abril 2026": {
+        "facturas": [
+          {
+            "numero": "Fe436",
+            "valor": 426740.0,
+            "fecha": "15/04/2026"
+          }
+        ],
+        "total": 426740.0,
+        "domicilio_total": 15000.0
+      },
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe365",
+            "valor": 261900.0,
+            "fecha": "24/02/2026"
+          }
+        ],
+        "total": 261900.0,
+        "domicilio_total": 12000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe374",
+            "valor": 269040.0,
+            "fecha": "5/03/2026"
+          }
+        ],
+        "total": 269040.0,
+        "domicilio_total": 12000.0
+      },
+      "Mayo 2025": {
+        "facturas": [
+          {
+            "numero": "FE465",
+            "valor": 303360.0,
+            "fecha": "4/05/2025"
+          }
+        ],
+        "total": 303360.0,
+        "domicilio_total": 12000.0
+      },
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe509",
+            "valor": 131380.0,
+            "fecha": "29/05/2026"
+          },
+          {
+            "numero": "Fe469",
+            "valor": 256330.0,
+            "fecha": "6/05/2026"
+          }
+        ],
+        "total": 387710.0,
+        "domicilio_total": 20000.0
+      }
+    }
+  },
+  {
+    "cliente": "La cima",
+    "total_general": 348886.0,
+    "meses": {
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe337",
+            "valor": 348886.0,
+            "fecha": "31/01/2026"
+          }
+        ],
+        "total": 348886.0,
+        "domicilio_total": 15000.0
+      }
+    }
+  },
+  {
+    "cliente": "La local Jorge nohava",
+    "total_general": 1283182.0,
+    "meses": {
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe336",
+            "valor": 363012.0,
+            "fecha": "31/01/2026"
+          }
+        ],
+        "total": 363012.0,
+        "domicilio_total": 15000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe394",
+            "valor": 390420.0,
+            "fecha": "16/03/2026"
+          },
+          {
+            "numero": "Fe414",
+            "valor": 274990.0,
+            "fecha": "30/03/2026"
+          },
+          {
+            "numero": "Fe425",
+            "valor": 254760.0,
+            "fecha": "31/03/2026"
+          }
+        ],
+        "total": 920170.0,
+        "domicilio_total": 36000.0
+      }
+    }
+  },
+  {
+    "cliente": "La vendimia",
+    "total_general": 2022236.0,
+    "meses": {
+      "Abril 2026": {
+        "facturas": [
+          {
+            "numero": "Fe461",
+            "valor": 529080.0,
+            "fecha": "28/04/2026"
+          }
+        ],
+        "total": 529080.0,
+        "domicilio_total": 15000.0
+      },
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe347",
+            "valor": 434996.0,
+            "fecha": "12/02/2026"
+          }
+        ],
+        "total": 434996.0,
+        "domicilio_total": 15000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe392",
+            "valor": 529080.0,
+            "fecha": "12/03/2026"
+          },
+          {
+            "numero": "Fe396",
+            "valor": 529080.0,
+            "fecha": "16/03/2026"
+          }
+        ],
+        "total": 1058160.0,
+        "domicilio_total": 30000.0
+      }
+    }
+  },
+  {
+    "cliente": "Latineria",
+    "total_general": 21646097.0,
+    "meses": {
+      "Abril 2026": {
+        "facturas": [
+          {
+            "numero": "Fe438",
+            "valor": 1254141.0,
+            "fecha": "15/04/2026"
+          }
+        ],
+        "total": 1254141.0,
+        "domicilio_total": 0.0
+      },
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe 304",
+            "valor": 2530282.0,
+            "fecha": "14/01/2026"
+          },
+          {
+            "numero": "Fe334",
+            "valor": 3832098.0,
+            "fecha": "29/01/2026"
+          }
+        ],
+        "total": 6362380.0,
+        "domicilio_total": 22000.0
+      },
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe362",
+            "valor": 2602957.0,
+            "fecha": "19/02/2026"
+          }
+        ],
+        "total": 2602957.0,
+        "domicilio_total": 25000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe370",
+            "valor": 2508282.0,
+            "fecha": "2/03/2026"
+          },
+          {
+            "numero": "Fe404",
+            "valor": 3832098.0,
+            "fecha": "24/03/2026"
+          }
+        ],
+        "total": 6340380.0,
+        "domicilio_total": 0.0
+      },
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "FE464",
+            "valor": 5086239.0,
+            "fecha": "4/05/2026"
+          }
+        ],
+        "total": 5086239.0,
+        "domicilio_total": 0.0
+      }
+    }
+  },
+  {
+    "cliente": "Lorepa",
+    "total_general": 248710.0,
+    "meses": {
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe432",
+            "valor": 248710.0,
+            "fecha": "31/03/2026"
+          }
+        ],
+        "total": 248710.0,
+        "domicilio_total": 0.0
+      }
+    }
+  },
+  {
+    "cliente": "Luis fernando cuervo quintero",
+    "total_general": 534560.0,
+    "meses": {
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe387",
+            "valor": 267280.0,
+            "fecha": "16/03/2026"
+          }
+        ],
+        "total": 267280.0,
+        "domicilio_total": 15000.0
+      },
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe482",
+            "valor": 267280.0,
+            "fecha": "19/05/2026"
+          }
+        ],
+        "total": 267280.0,
+        "domicilio_total": 15000.0
+      }
+    }
+  },
+  {
+    "cliente": "Magia Negra",
+    "total_general": 918000.0,
+    "meses": {
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "RC4354",
+            "valor": 918000.0,
+            "fecha": "29/05/2026"
+          }
+        ],
+        "total": 918000.0,
+        "domicilio_total": 15000.0
+      }
+    }
+  },
+  {
+    "cliente": "Maria Barros Retiro",
+    "total_general": 223991.0,
+    "meses": {
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe363",
+            "valor": 223991.0,
+            "fecha": "24/02/2026"
+          }
+        ],
+        "total": 223991.0,
+        "domicilio_total": 20000.0
+      }
+    }
+  },
+  {
+    "cliente": "Monarca Copacabana",
+    "total_general": 1282360.0,
+    "meses": {
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe409",
+            "valor": 1282360.0,
+            "fecha": "30/03/2026"
+          }
+        ],
+        "total": 1282360.0,
+        "domicilio_total": 40000.0
+      }
+    }
+  },
+  {
+    "cliente": "Monica Elena Cardona Alvarez (Quindio)",
+    "total_general": 247520.0,
+    "meses": {
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe406",
+            "valor": 247520.0,
+            "fecha": "25/03/2026"
+          }
+        ],
+        "total": 247520.0,
+        "domicilio_total": 0.0
+      }
+    }
+  },
+  {
+    "cliente": "Mordo",
+    "total_general": 1598250.0,
+    "meses": {
+      "Abril 2026": {
+        "facturas": [
+          {
+            "numero": "Fe457",
+            "valor": 215985.0,
+            "fecha": "24/04/2026"
+          }
+        ],
+        "total": 215985.0,
+        "domicilio_total": 0.0
+      },
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe 300",
+            "valor": 208005.0,
+            "fecha": "14/01/2026"
+          },
+          {
+            "numero": "Fe322",
+            "valor": 211991.0,
+            "fecha": "22/01/2026"
+          },
+          {
+            "numero": "Fe328",
+            "valor": 203991.0,
+            "fecha": "29/01/2026"
+          },
+          {
+            "numero": "Fe338",
+            "valor": 212068.0,
+            "fecha": "31/01/2026"
+          }
+        ],
+        "total": 836055.0,
+        "domicilio_total": 65140.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe382",
+            "valor": 242760.0,
+            "fecha": "10/03/2026"
+          },
+          {
+            "numero": "Fe383",
+            "valor": 101150.0,
+            "fecha": "16/03/2026"
+          },
+          {
+            "numero": "Fe424",
+            "valor": 202300.0,
+            "fecha": "31/03/2026"
+          }
+        ],
+        "total": 546210.0,
+        "domicilio_total": 0.0
+      }
+    }
+  },
+  {
+    "cliente": "Nueva Ola",
+    "total_general": 258330.0,
+    "meses": {
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe413",
+            "valor": 258330.0,
+            "fecha": "30/03/2026"
+          }
+        ],
+        "total": 258330.0,
+        "domicilio_total": 12000.0
+      }
+    }
+  },
+  {
+    "cliente": "Opción 1",
+    "total_general": 0.0,
+    "meses": {
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe484",
+            "valor": 0.0,
+            "fecha": "19/05/2026"
+          },
+          {
+            "numero": "FE485",
+            "valor": 0.0,
+            "fecha": "19/05/2026"
+          },
+          {
+            "numero": "Fe486",
+            "valor": 0.0,
+            "fecha": "20/05/2026"
+          },
+          {
+            "numero": "Fe487",
+            "valor": 0.0,
+            "fecha": "20/05/2026"
+          }
+        ],
+        "total": 0.0,
+        "domicilio_total": 0.0
+      }
+    }
+  },
+  {
+    "cliente": "Pizza y pola",
+    "total_general": 4780927.0,
+    "meses": {
+      "Abril 2026": {
+        "facturas": [
+          {
+            "numero": "Fe429",
+            "valor": 259520.0,
+            "fecha": "1/04/2026"
+          },
+          {
+            "numero": "Fe455",
+            "valor": 261900.0,
+            "fecha": "22/04/2026"
+          },
+          {
+            "numero": "Fe460",
+            "valor": 0,
+            "fecha": "28/04/2026"
+          }
+        ],
+        "total": 521420.0,
+        "domicilio_total": 39000.0
+      },
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe 309",
+            "valor": 433016.0,
+            "fecha": "14/01/2026"
+          },
+          {
+            "numero": "Fe329",
+            "valor": 274489.0,
+            "fecha": "29/01/2026"
+          }
+        ],
+        "total": 707505.0,
+        "domicilio_total": 28500.0
+      },
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe350",
+            "valor": 215991.0,
+            "fecha": "12/02/2026"
+          },
+          {
+            "numero": "Fe351",
+            "valor": 229018.0,
+            "fecha": "13/02/2026"
+          },
+          {
+            "numero": "Fe367",
+            "valor": 575490.0,
+            "fecha": "25/02/2026"
+          },
+          {
+            "numero": "Fe340",
+            "valor": 434023.0,
+            "fecha": "5/02/2026"
+          }
+        ],
+        "total": 1454522.0,
+        "domicilio_total": 54000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe388",
+            "valor": 264900.0,
+            "fecha": "12/03/2026"
+          },
+          {
+            "numero": "Fe405",
+            "valor": 269040.0,
+            "fecha": "25/03/2026"
+          },
+          {
+            "numero": "Fe376",
+            "valor": 264900.0,
+            "fecha": "5/03/2026"
+          }
+        ],
+        "total": 798840.0,
+        "domicilio_total": 42000.0
+      },
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe479",
+            "valor": 454110.0,
+            "fecha": "14/05/2026"
+          },
+          {
+            "numero": "Fe496",
+            "valor": 272040.0,
+            "fecha": "23/05/2026"
+          },
+          {
+            "numero": "Fe474",
+            "valor": 572490.0,
+            "fecha": "9/05/2026"
+          }
+        ],
+        "total": 1298640.0,
+        "domicilio_total": 42000.0
+      }
+    }
+  },
+  {
+    "cliente": "Proyecto Café",
+    "total_general": 254760.0,
+    "meses": {
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe420",
+            "valor": 254760.0,
+            "fecha": "30/03/2026"
+          }
+        ],
+        "total": 254760.0,
+        "domicilio_total": 12000.0
+      }
+    }
+  },
+  {
+    "cliente": "Pulso",
+    "total_general": 2989956.0,
+    "meses": {
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe390",
+            "valor": 432665.0,
+            "fecha": "12/03/2026"
+          },
+          {
+            "numero": "Fe391",
+            "valor": 379140.0,
+            "fecha": "12/03/2026"
+          },
+          {
+            "numero": "Fe369",
+            "valor": 1043010.0,
+            "fecha": "2/03/2026"
+          },
+          {
+            "numero": "Fe408",
+            "valor": 0.0,
+            "fecha": "28/03/2026"
+          },
+          {
+            "numero": "Fe411",
+            "valor": 397341.0,
+            "fecha": "30/03/2026"
+          },
+          {
+            "numero": "Fe416",
+            "valor": 737800.0,
+            "fecha": "30/03/2026"
+          }
+        ],
+        "total": 2989956.0,
+        "domicilio_total": 0.0
+      }
+    }
+  },
+  {
+    "cliente": "Punta Arena",
+    "total_general": 2653993.0,
+    "meses": {
+      "Abril 2026": {
+        "facturas": [
+          {
+            "numero": "Fe433",
+            "valor": 409341.0,
+            "fecha": "7/04/2026"
+          }
+        ],
+        "total": 409341.0,
+        "domicilio_total": 12000.0
+      },
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe 305",
+            "valor": 366238.0,
+            "fecha": "14/01/2026"
+          },
+          {
+            "numero": "Fe 306",
+            "valor": 364561.0,
+            "fecha": "14/01/2026"
+          },
+          {
+            "numero": "Fe332",
+            "valor": 367561.0,
+            "fecha": "31/01/2026"
+          }
+        ],
+        "total": 1098360.0,
+        "domicilio_total": 39000.0
+      },
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe355",
+            "valor": 348886.0,
+            "fecha": "13/02/2026"
+          }
+        ],
+        "total": 348886.0,
+        "domicilio_total": 13000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe385",
+            "valor": 409341.0,
+            "fecha": "12/03/2026"
+          }
+        ],
+        "total": 409341.0,
+        "domicilio_total": 12000.0
+      },
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe495",
+            "valor": 388065.0,
+            "fecha": "22/05/2026"
+          }
+        ],
+        "total": 388065.0,
+        "domicilio_total": 15000.0
+      }
+    }
+  },
+  {
+    "cliente": "Pánfilo Andrea Alvarez Muñoz",
+    "total_general": 259900.0,
+    "meses": {
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe471",
+            "valor": 259900.0,
+            "fecha": "6/05/2026"
+          }
+        ],
+        "total": 259900.0,
+        "domicilio_total": 10000.0
+      }
+    }
+  },
+  {
+    "cliente": "Rafael Kcao Company",
+    "total_general": 367450.0,
+    "meses": {
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "RC3965",
+            "valor": 367450.0,
+            "fecha": "4/05/2026"
+          }
+        ],
+        "total": 367450.0,
+        "domicilio_total": 15000.0
+      }
+    }
+  },
+  {
+    "cliente": "Santiago Bisontalas",
+    "total_general": 4432798.0,
+    "meses": {
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe401",
+            "valor": 4432798.0,
+            "fecha": "17/03/2026"
+          }
+        ],
+        "total": 4432798.0,
+        "domicilio_total": 0.0
+      }
+    }
+  },
+  {
+    "cliente": "Symphony",
+    "total_general": 464760.0,
+    "meses": {
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe379",
+            "valor": 242760.0,
+            "fecha": "9/03/2026"
+          }
+        ],
+        "total": 242760.0,
+        "domicilio_total": 0.0
+      },
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "RC4117",
+            "valor": 222000.0,
+            "fecha": "14/05/2026"
+          }
+        ],
+        "total": 222000.0,
+        "domicilio_total": 12000.0
+      }
+    }
+  },
+  {
+    "cliente": "Trilla",
+    "total_general": 689771.0,
+    "meses": {
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe320",
+            "valor": 215991.0,
+            "fecha": "19/01/2026"
+          }
+        ],
+        "total": 215991.0,
+        "domicilio_total": 12000.0
+      },
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe364",
+            "valor": 254780.0,
+            "fecha": "24/02/2026"
+          }
+        ],
+        "total": 254780.0,
+        "domicilio_total": 12000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "RC3824",
+            "valor": 219000.0,
+            "fecha": "22/03/2026"
+          }
+        ],
+        "total": 219000.0,
+        "domicilio_total": 10000.0
+      }
+    }
+  },
+  {
+    "cliente": "Tómatelo pues",
+    "total_general": 116996.0,
+    "meses": {
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe357",
+            "valor": 116996.0,
+            "fecha": "16/02/2026"
+          }
+        ],
+        "total": 116996.0,
+        "domicilio_total": 15000.0
+      }
+    }
+  },
+  {
+    "cliente": "Valhala",
+    "total_general": 17063128.0,
+    "meses": {
+      "Abril 2026": {
+        "facturas": [
+          {
+            "numero": "Fe435",
+            "valor": 1247082.0,
+            "fecha": "15/04/2026"
+          },
+          {
+            "numero": "Fe456",
+            "valor": 1247082.0,
+            "fecha": "24/04/2026"
+          },
+          {
+            "numero": "Fe462",
+            "valor": 1247082.0,
+            "fecha": "30/04/2026"
+          }
+        ],
+        "total": 3741246.0,
+        "domicilio_total": 72000.0
+      },
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe 298",
+            "valor": 1049756.0,
+            "fecha": "13/01/2026"
+          },
+          {
+            "numero": "Fe327",
+            "valor": 1047756.0,
+            "fecha": "26/01/2026"
+          },
+          {
+            "numero": "Fe335",
+            "valor": 1009057.0,
+            "fecha": "31/01/2026"
+          },
+          {
+            "numero": "Fe 293",
+            "valor": 1049756.0,
+            "fecha": "8/01/2026"
+          }
+        ],
+        "total": 4156325.0,
+        "domicilio_total": 84000.0
+      },
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe359",
+            "valor": 1047756.0,
+            "fecha": "16/02/2026"
+          }
+        ],
+        "total": 1047756.0,
+        "domicilio_total": 20000.0
+      },
+      "Marzo 2026": {
+        "facturas": [
+          {
+            "numero": "Fe380",
+            "valor": 1248082.0,
+            "fecha": "10/03/2026"
+          },
+          {
+            "numero": "Fe398",
+            "valor": 1247082.0,
+            "fecha": "16/03/2026"
+          },
+          {
+            "numero": "Fe368",
+            "valor": 1236940.0,
+            "fecha": "2/03/2026"
+          },
+          {
+            "numero": "Fe421",
+            "valor": 1247082.0,
+            "fecha": "30/03/2026"
+          }
+        ],
+        "total": 4979186.0,
+        "domicilio_total": 89000.0
+      },
+      "Mayo 2026": {
+        "facturas": [
+          {
+            "numero": "FE475",
+            "valor": 1247082.0,
+            "fecha": "11/05/2026"
+          },
+          {
+            "numero": "Fe497",
+            "valor": 641541.0,
+            "fecha": "25/05/2026"
+          },
+          {
+            "numero": "Fe505",
+            "valor": 623541.0,
+            "fecha": "28/05/2026"
+          },
+          {
+            "numero": "Fe506",
+            "valor": 626451.0,
+            "fecha": "29/05/2026"
+          }
+        ],
+        "total": 3138615.0,
+        "domicilio_total": 66000.0
+      }
+    }
+  },
+  {
+    "cliente": "Victor Marabirra",
+    "total_general": 162993.0,
+    "meses": {
+      "Febrero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe348",
+            "valor": 162993.0,
+            "fecha": "12/02/2026"
+          }
+        ],
+        "total": 162993.0,
+        "domicilio_total": 10000.0
+      }
+    }
+  },
+  {
+    "cliente": "Yuyo",
+    "total_general": 352561.0,
+    "meses": {
+      "Enero 2026": {
+        "facturas": [
+          {
+            "numero": "Fe333",
+            "valor": 352561.0,
+            "fecha": "31/01/2026"
+          }
+        ],
+        "total": 352561.0,
+        "domicilio_total": 0.0
+      }
+    }
+  }
+]

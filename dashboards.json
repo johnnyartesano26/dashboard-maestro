@@ -48,6 +48,17 @@
     "facturas_json": "facturas_junio_2026.json",
     "recibos_json": "Documents/Madre Monte/MadreMonte_Contexto/finanzas/recibos_caja_junio_2026.json"
   },
+    {
+      "id": "conciliaciones",
+      "nombre": "Conciliaciones Bancarias",
+      "descripcion": "OCR de comprobantes + conciliación vs extractos bancarios + checklist",
+      "url_github_pages": "https://johnnyartesano26.github.io/conciliaciones-bancarias/",
+      "url_repo": "https://github.com/johnnyartesano26/conciliaciones-bancarias",
+      "archivo_local": "Desktop/conciliaciones-bancarias/index.html",
+      "datos": "data/checklist.json (auto-generado por GitHub Actions)",
+      "pestanas": []
+    }
+  ],
   "puentes_api": [
     {
       "nombre": "Bridge Odysseus",

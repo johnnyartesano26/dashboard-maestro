@@ -1,0 +1,31 @@
+{
+  "proyecto": "Madre Monte — Catálogo de Datos",
+  "actualizado": "2026-07-08",
+  "periodos": [
+    {
+      "mes": "Junio 2026",
+      "facturacion": {
+        "archivo": "facturas_junio_2026.json",
+        "fuente": "Alegra API",
+        "total_facturas": 900,
+        "monto_total": 119073765,
+        "monto_bar": 55100000,
+        "facturas_draft": 35,
+        "monto_pendiente": 3770000
+      },
+      "inventario": {
+        "litros_activos": 3272,
+        "botellas_stock": 1119,
+        "barriles_litros": 160,
+        "ocupacion_tanques": 65,
+        "alertas": 1
+      }
+    }
+  ],
+  "cuentas_bancarias": [
+    {"id": "3598", "nombre": "Cervecería Madre Monte (3598)"},
+    {"id": "1490", "nombre": "Juliana Cardona (1490)"},
+    {"id": "9437", "nombre": "Johnny Guerrero (9437)"},
+    {"id": "2216", "nombre": "Cervecería Madre Monte (2216)"}
+  ]
+}

@@ -280,50 +280,58 @@ function switchTab(name) {
 }
 
 // ═══════════════════════════════════════════════════
-// INIT: Cargar catálogo primero
+// INIT: Cargar todo en paralelo
 // ═══════════════════════════════════════════════════
 window.onload = async function() {
-  // Cargar consolidado de clientes primero
-  try {
-    const rc = await fetch('data/clientes_mensuales.json');
-    const clientesJson = await rc.json();
-    clientesData = clientesJson;
+  document.getElementById('headerSub').textContent = 'Cargando datos...';
+
+  // Cargar todo en paralelo
+  const results = await Promise.allSettled([
+    fetch('catalogo.json').then(r => r.ok ? r.json() : Promise.reject('HTTP '+r.status)),
+    fetch('data/clientes_mensuales.json').then(r => r.ok ? r.json() : Promise.reject('HTTP '+r.status)),
+    fetch('facturas_junio_2026.json').then(r => r.ok ? r.json() : Promise.reject('HTTP '+r.status))
+  ]);
+
+  // 1. Procesar catálogo
+  if (results[0].status === 'fulfilled') {
+    catalogoData = results[0].value;
+    renderPeriodSelector();
+  }
+
+  // 2. Procesar clientes
+  if (results[1].status === 'fulfilled') {
+    clientesData = results[1].value;
     clientesData.forEach(c => {
       c.num_facturas = Object.values(c.meses).reduce((s, m) => s + m.facturas.length, 0);
     });
     totalFacturasConsolidado = clientesData.reduce((s, c) => s + c.num_facturas, 0);
     totalClientesConsolidado = clientesData.length;
     importeConsolidado = clientesData.reduce((s, c) => s + c.total_general, 0);
-    // Llenar filtro de meses del buscador
+    // Llenar filtro de meses
     const mesesSet = new Set();
     clientesData.forEach(c => Object.keys(c.meses).forEach(m => mesesSet.add(m)));
     const filtroMes = document.getElementById('filtroMesCliente');
     if (filtroMes) {
       Array.from(mesesSet).sort().forEach(m => {
-        filtroMes.innerHTML += `<option value="${m}">${m}</option>`;
+        filtroMes.innerHTML += '<option value="' + m + '">' + m + '</option>';
       });
     }
     filtrarClientes();
-  } catch(e) {
-    console.warn('clientes_mensuales.json no disponible:', e);
   }
 
-  try {
-    const r = await fetch('catalogo.json');
-    catalogoData = await r.json();
-    renderPeriodSelector();
-    if (catalogoData.periodos && catalogoData.periodos.length > 0) {
-      cambiarPeriodo(0);
-    }
-  } catch(e) {
-    console.warn('catalogo.json no encontrado, intentando carga directa');
-    periodoActual = {
-      mes: 'Junio 2026',
-      facturacion: { archivo: 'facturas_junio_2026.json' },
-      inventario: { litros_activos: 3272, botellas_stock: 1119, barriles_litros: 160, ocupacion_tanques: 65, alertas: 1 }
-    };
-    document.getElementById('headerSub').textContent = 'Junio 2026 · Datos Alegra API + Inventario';
-    loadFacturacionData('facturas_junio_2026.json');
+  // 3. Seleccionar periodo y cargar datos
+  if (catalogoData && catalogoData.periodos && catalogoData.periodos.length > 0) {
+    cambiarPeriodo(0);
+  } else if (results[2].status === 'fulfilled') {
+    // Sin catálogo, cargar facturación directamente
+    periodoActual = { mes: 'Junio 2026', facturacion: { archivo: 'facturas_junio_2026.json' }, inventario: {}, ventas_bar: {} };
+    allData = (results[2].value.facturas || []).map(inv => ({...inv, cliente: inv.cliente === 'Consumidor Final' ? 'BAR' : inv.cliente}));
+    filtered = [...allData];
+    updateOverviewFromData();
+    renderFacturacionIfActive();
+  } else {
+    document.getElementById('headerSub').textContent = 'Sin datos disponibles';
+    updateOverviewFromCatalogo();
   }
 };
 
@@ -735,16 +743,6 @@ let clientesData = [];
 let clientesFiltrados = [];
 let clienteSortCol = 'total_general';
 let clienteSortAsc = false;
-
-async function loadClientesData() {
-  try {
-    const r = await fetch('data/clientes_mensuales.json');
-    clientesData = await r.json();
-  clientesData.forEach(c => {
-    c.num_facturas = Object.values(c.meses).reduce((s, m) => s + m.facturas.length, 0);
-  });
-  filtrarClientes();
-}
 
 function filtrarClientes() {
   const search = document.getElementById('searchCliente').value.toLowerCase();

@@ -1,0 +1,62 @@
+{
+  "proyecto": "Madre Monte — Dashboards",
+  "actualizado": "2026-07-08",
+  "dashboards": [
+    {
+      "id": "maestro",
+      "nombre": "Dashboard Maestro",
+      "descripcion": "Unifica facturación, inventario y resumen general en un solo lugar",
+      "url_github_pages": "https://johnnyartesano26.github.io/dashboard-maestro/",
+      "url_repo": "https://github.com/johnnyartesano26/dashboard-maestro",
+      "archivo_local": "Desktop/dashboard-maestro/index.html",
+      "datos": "facturas_junio_2026.json (900 facturas)",
+      "pestanas": ["Resumen General", "Facturación", "Inventario"]
+    },
+    {
+      "id": "facturacion",
+      "nombre": "Facturación Junio 2026 (Interactivo)",
+      "descripcion": "Carga datos desde JSON externo, tabla con buscador y filtros",
+      "url_github_pages": "",
+      "url_repo": "",
+      "archivo_local": "Documents/Madre Monte/MadreMonte_Contexto/finanzas/facturas_junio_2026_interactivo.html",
+      "datos": "facturas_junio_2026.json (externo)",
+      "pestanas": []
+    },
+    {
+      "id": "facturacion_standalone",
+      "nombre": "Facturación Junio 2026 (Standalone)",
+      "descripcion": "Datos embebidos, no requiere archivo externo",
+      "url_github_pages": "",
+      "url_repo": "",
+      "archivo_local": "Desktop/dashboard.html",
+      "datos": "Embebidos en el HTML",
+      "pestanas": []
+    },
+    {
+      "id": "inventario",
+      "nombre": "Inventario — Semana 22-28 Junio 2026",
+      "descripcion": "Fermentadores, botellas, barriles, materia prima",
+      "url_github_pages": "",
+      "url_repo": "",
+      "archivo_local": "Documents/Madre Monte/MadreMonte_Contexto/documentos/CEO/dashboard_inventario_22_junio_2026.html",
+      "datos": "Embebidos en el HTML",
+      "pestanas": []
+    }
+  ],
+  "fuentes_de_datos": {
+    "alegra_api": "https://api.alegra.com/api/v1/",
+    "facturas_json": "facturas_junio_2026.json",
+    "recibos_json": "Documents/Madre Monte/MadreMonte_Contexto/finanzas/recibos_caja_junio_2026.json"
+  },
+  "puentes_api": [
+    {
+      "nombre": "Bridge Odysseus",
+      "archivo": "Documents/Madre Monte/MadreMonte_Contexto/documentos/CEO/odysseus_integracion/bridge_odysseus.py",
+      "puerto": 5000
+    },
+    {
+      "nombre": "MCP Server",
+      "archivo": "Documents/Madre Monte/MadreMonte_Contexto/documentos/CEO/odysseus_integracion/mcp_server_host.py"
+    }
+  ]
+}

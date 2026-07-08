@@ -72,8 +72,8 @@
       "id": "bar_arqueo",
       "nombre": "Bar — Arqueo de Caja",
       "descripcion": "Arqueo diario, efectivo vs datafono, transferencias, control de ventas Bar",
-      "url_github_pages": "https://johnnyartesano26.github.io/bar-madremonte-dashboard/",
-      "url_repo": "https://github.com/johnnyartesano26/bar-madremonte-dashboard",
+      "url_github_pages": "https://johnnyartesano26.github.io/madremonte-dashboard/bar.html",
+      "url_repo": "https://github.com/johnnyartesano26/madremonte-dashboard",
       "archivo_local": "",
       "datos": "Datos de arqueo diario del Bar",
       "pestanas": []

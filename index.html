@@ -107,7 +107,7 @@
 
   <div class="grid">
     <div class="card full">
-      <h2>📈 Producción Mensual 2026</h2>
+      <h2>📈 Ventas Mensuales Bar — Nov 2025 a Jun 2026</h2>
       <canvas id="chartOverviewProd"></canvas>
     </div>
     <div class="card">
@@ -127,7 +127,7 @@
 
   <div class="grid" id="gridFact">
     <div class="card">
-      <h2>🏆 Top 20 Clientes — Junio 2026 <span class="bar-tag">BAR</span> = Consumidor Final</h2>
+      <h2>🏆 Top 20 Clientes  <span class="bar-tag">BAR</span> = Consumidor Final</h2>
       <canvas id="chartTop"></canvas>
     </div>
     <div class="card">
@@ -283,11 +283,9 @@ function cambiarPeriodo(idx) {
   }
   if (!catalogoData || !catalogoData.periodos) return;
   periodoActual = catalogoData.periodos[idx];
+  // Actualizar el selector de periodo
   document.getElementById('periodoSelect').value = idx;
-  document.getElementById('headerSub').textContent = periodoActual.mes + ' · Datos Alegra API + Inventario';
 
-  // Recargar facturación para este periodo
-  TAB_STATE.facturacion = false;
   // Destruir gráficas anteriores
   Object.values(factCharts).forEach(c => c.destroy());
   factCharts = {};
@@ -295,7 +293,20 @@ function cambiarPeriodo(idx) {
   overviewCharts = {};
   allData = [];
   filtered = [];
-  loadFacturacionData(periodoActual.facturacion.archivo);
+
+  // Si este periodo tiene facturación detallada (JSON), cargarla
+  if (periodoActual.facturacion && periodoActual.facturacion.archivo) {
+    TAB_STATE.facturacion = false;
+    loadFacturacionData(periodoActual.facturacion.archivo);
+  } else {
+    // Solo hay datos de ventas bar (sin facturación detallada)
+    updateOverviewFromCatalogo();
+    // Mostrar mensaje en la tabla de facturación
+    document.getElementById('kpiFact').innerHTML = '<div class="kpi" style="max-width:100%;flex:1"><div class="val yellow">⚠️ Sin facturas detalladas</div><div class="lab">Solo hay datos de ventas Bar para ' + periodoActual.mes + '. Las facturas detalladas de Alegra solo están disponibles para Junio 2026.</div></div>';
+    document.getElementById('totalCount').textContent = '0';
+    document.getElementById('tbodyFact').innerHTML = '<tr><td colspan="6" style="text-align:center;padding:20px;color:#8b949e">No hay facturas detalladas para este periodo. Disponible: Junio 2026.</td></tr>';
+    document.getElementById('count').textContent = '';
+  }
 }
 
 // ═══════════════════════════════════════════════════
@@ -337,33 +348,43 @@ function updateOverviewFromData() {
   const barTotal = allData.filter(i => i.cliente === 'BAR').reduce((s,i) => s + i.total, 0);
 
   const inv = periodoActual.inventario || {};
+  const vb = periodoActual.ventas_bar || {};
 
   document.getElementById('kpiOverview').innerHTML = `
-    <div class="kpi"><div class="val green">$${(total/1e6).toFixed(1)}M</div><div class="lab">Facturación ${periodoActual.mes}</div></div>
-    <div class="kpi"><div class="val cyan">${allData.length}</div><div class="lab">Facturas emitidas</div></div>
-    <div class="kpi"><div class="val green">${inv.litros_activos ? inv.litros_activos.toLocaleString()+' L' : '--'}</div><div class="lab">Producción activa</div></div>
-    <div class="kpi"><div class="val cyan">${inv.botellas_stock ? inv.botellas_stock.toLocaleString() : '--'}</div><div class="lab">Botellas en stock</div></div>
+    <div class="kpi"><div class="val green">$${vb.total_ventas ? (vb.total_ventas/1e6).toFixed(1)+'M' : '--'}</div><div class="lab">Ventas Bar ${periodoActual.mes}</div></div>
+    <div class="kpi"><div class="val cyan">${allData.length || '--'}</div><div class="lab">Facturas emitidas</div></div>
+    <div class="kpi"><div class="val blue">$${(total/1e6).toFixed(1)}M</div><div class="lab">Facturación total</div></div>
     <div class="kpi"><div class="val yellow">${inv.ocupacion_tanques ? inv.ocupacion_tanques+'%' : '--'}</div><div class="lab">Ocupación tanques</div></div>
+    <div class="kpi"><div class="val green">${inv.litros_activos ? inv.litros_activos.toLocaleString()+' L' : '--'}</div><div class="lab">Producción activa</div></div>
     <div class="kpi"><div class="val red">$${(draftTotal/1e6).toFixed(2)}M</div><div class="lab">Facturas pendientes</div></div>
   `;
 
   document.getElementById('summaryCards').innerHTML = `
     <div class="summary-card">
-      <div class="icon">📄</div>
+      <div class="icon">🍺</div>
       <div class="info">
-        <h3>Facturación — ${periodoActual.mes}</h3>
-        <p>${allData.length} facturas · $${total.toLocaleString('es-CO')} COP total<br>
-        $${(barTotal/1e6).toFixed(1)}M ventas Bar · $${Math.round(total/allData.length).toLocaleString('es-CO')} promedio/factura<br>
-        ${drafts.length} facturas pendientes (draft)</p>
+        <h3>Ventas Bar — ${periodoActual.mes}</h3>
+        <p>${vb.total_ventas ? '$'+vb.total_ventas.toLocaleString('es-CO')+' COP' : 'Sin datos'}<br>
+        ${vb.promedio_diario ? '$'+vb.promedio_diario.toLocaleString()+' promedio/día' : ''} · ${vb.dias_con_dato ? vb.dias_con_dato+' días' : ''}<br>
+        ${vb.crecimiento !== undefined && vb.crecimiento !== null ? 'Crecimiento: '+(vb.crecimiento>0?'+':'')+vb.crecimiento+'%' : ''}</p>
       </div>
     </div>
     <div class="summary-card">
-      <div class="icon">🍺</div>
+      <div class="icon">📄</div>
+      <div class="info">
+        <h3>Facturación — ${periodoActual.mes}</h3>
+        <p>${allData.length ? allData.length+' facturas · $'+total.toLocaleString('es-CO')+' COP' : 'Sin datos detallados'}<br>
+        ${allData.length ? '$'+(barTotal/1e6).toFixed(1)+'M ventas Bar · $'+Math.round(total/allData.length).toLocaleString('es-CO')+' promedio' : ''}<br>
+        ${drafts.length ? drafts.length+' facturas pendientes (draft)' : ''}</p>
+      </div>
+    </div>
+    <div class="summary-card">
+      <div class="icon">🍾</div>
       <div class="info">
         <h3>Inventario — ${periodoActual.mes}</h3>
-        <p>7 fermentadores activos · ${(inv.litros_activos||3272).toLocaleString()}L en proceso<br>
-        ${(inv.botellas_stock||1119).toLocaleString()} botellas 330ml en stock<br>
-        ${(inv.barriles_litros||160)}L en barriles · ${(inv.ocupacion_tanques||65)}% ocupación tanques</p>
+        <p>${inv.litros_activos ? '7 fermentadores · '+inv.litros_activos.toLocaleString()+'L activos' : 'Sin datos de inventario'}<br>
+        ${inv.botellas_stock ? inv.botellas_stock.toLocaleString()+' botellas 330ml en stock' : ''}<br>
+        ${inv.barriles_litros ? inv.barriles_litros+'L en barriles' : ''}</p>
       </div>
     </div>
     <div class="summary-card" style="cursor:pointer" onclick="window.open('https://johnnyartesano26.github.io/conciliaciones-bancarias/','_blank')">
@@ -381,18 +402,54 @@ function updateOverviewFromData() {
 
 function updateOverviewFromCatalogo() {
   if (!periodoActual) return;
-  const f = periodoActual.facturacion || {};
+  const vb = periodoActual.ventas_bar || {};
   const inv = periodoActual.inventario || {};
-  const total = f.monto_total || 0;
-  const facturas = f.total_facturas || 0;
+  const f = periodoActual.facturacion || {};
 
   document.getElementById('kpiOverview').innerHTML = `
-    <div class="kpi"><div class="val green">$${(total/1e6).toFixed(1)}M</div><div class="lab">Facturación ${periodoActual.mes}</div></div>
-    <div class="kpi"><div class="val cyan">${facturas}</div><div class="lab">Facturas emitidas</div></div>
-    <div class="kpi"><div class="val green">${(inv.litros_activos||0).toLocaleString()} L</div><div class="lab">Producción activa</div></div>
-    <div class="kpi"><div class="val cyan">${(inv.botellas_stock||0).toLocaleString()}</div><div class="lab">Botellas en stock</div></div>
-    <div class="kpi"><div class="val yellow">${inv.ocupacion_tanques||0}%</div><div class="lab">Ocupación tanques</div></div>
-    <div class="kpi"><div class="val red">$${((f.monto_pendiente||0)/1e6).toFixed(2)}M</div><div class="lab">Facturas pendientes</div></div>
+    <div class="kpi"><div class="val green">$${vb.total_ventas ? (vb.total_ventas/1e6).toFixed(1)+'M' : '--'}</div><div class="lab">Ventas Bar ${periodoActual.mes}</div></div>
+    <div class="kpi"><div class="val cyan">${f.total_facturas || '--'}</div><div class="lab">Facturas emitidas</div></div>
+    <div class="kpi"><div class="val blue">$${f.monto_total ? (f.monto_total/1e6).toFixed(1)+'M' : '--'}</div><div class="lab">Facturación total</div></div>
+    <div class="kpi"><div class="val yellow">${inv.ocupacion_tanques ? inv.ocupacion_tanques+'%' : '--'}</div><div class="lab">Ocupación tanques</div></div>
+    <div class="kpi"><div class="val green">${inv.litros_activos ? inv.litros_activos.toLocaleString()+' L' : '--'}</div><div class="lab">Producción activa</div></div>
+    <div class="kpi"><div class="val red">$${f.monto_pendiente ? (f.monto_pendiente/1e6).toFixed(2)+'M' : '--'}</div><div class="lab">Facturas pendientes</div></div>
+  `;
+
+  document.getElementById('summaryCards').innerHTML = `
+    <div class="summary-card">
+      <div class="icon">🍺</div>
+      <div class="info">
+        <h3>Ventas Bar — ${periodoActual.mes}</h3>
+        <p>${vb.total_ventas ? '$'+vb.total_ventas.toLocaleString('es-CO')+' COP' : 'Sin datos'}<br>
+        ${vb.promedio_diario ? '$'+vb.promedio_diario.toLocaleString()+' promedio/día' : ''} · ${vb.dias_con_dato||0} días<br>
+        ${vb.crecimiento ? 'Crecimiento: '+(vb.crecimiento>0?'+':'')+vb.crecimiento+'%' : ''}</p>
+      </div>
+    </div>
+    <div class="summary-card">
+      <div class="icon">📄</div>
+      <div class="info">
+        <h3>Facturación — ${periodoActual.mes}</h3>
+        <p>${f.total_facturas ? f.total_facturas+' facturas · $'+f.monto_total.toLocaleString('es-CO')+' COP' : 'Sin datos detallados de Alegra'}<br>
+        ${f.monto_bar ? '$'+(f.monto_bar/1e6).toFixed(1)+'M ventas Bar' : ''}<br>
+        ${f.drafts ? f.drafts+' pendientes' : ''}</p>
+      </div>
+    </div>
+    <div class="summary-card">
+      <div class="icon">🍾</div>
+      <div class="info">
+        <h3>Inventario — ${periodoActual.mes}</h3>
+        <p>${inv.litros_activos ? '7 fermentadores · '+inv.litros_activos.toLocaleString()+'L activos' : 'Sin datos de inventario'}<br>
+        ${inv.botellas_stock ? inv.botellas_stock.toLocaleString()+' botellas 330ml' : ''}<br>
+        ${inv.barriles_litros ? inv.barriles_litros+'L en barriles' : ''}</p>
+      </div>
+    </div>
+    <div class="summary-card" style="cursor:pointer" onclick="window.open('https://johnnyartesano26.github.io/conciliaciones-bancarias/','_blank')">
+      <div class="icon">🏦</div>
+      <div class="info">
+        <h3>Conciliaciones Bancarias 🔗</h3>
+        <p>OCR de comprobantes · Conciliación vs extractos<br>4 cuentas destino · Checklist automático</p>
+      </div>
+    </div>
   `;
 }
 
@@ -403,18 +460,30 @@ function renderOverviewCharts() {
   Object.values(overviewCharts).forEach(c => c.destroy());
   overviewCharts = {};
 
-  // Producción mensual 2026
-  overviewCharts.prod = new Chart(document.getElementById('chartOverviewProd'), {
-    type:'bar',
-    data:{
-      labels:['Ene','Feb','Mar','Abr','May','Jun*'],
-      datasets:[
-        {label:'Litros producidos',data:[1418,1803,2440,2060,1518,917],backgroundColor:'#58a6ff',borderRadius:6,yAxisID:'y'},
-        {label:'Botellas despachadas (und)',data:[37,209,922,1120,1372,571],backgroundColor:'#f0c040',borderRadius:6,yAxisID:'y1'}
-      ]
-    },
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8b949e'}}},scales:{x:{ticks:{color:'#8b949e'},grid:{color:'#21262d'}},y:{position:'left',title:{display:true,text:'Litros',color:'#58a6ff'},ticks:{color:'#58a6ff'},grid:{color:'#21262d'}},y1:{position:'right',title:{display:true,text:'Botellas (und)',color:'#f0c040'},ticks:{color:'#f0c040'},grid:{display:false}}}}
-  });
+  // Ventas mensuales Bar (desde catálogo)
+  if (catalogoData && catalogoData.periodos) {
+    const labels = catalogoData.periodos.map(p => p.mes.replace(' 20',' '));
+    const ventas = catalogoData.periodos.map(p => (p.ventas_bar || {}).total_ventas || 0);
+    const metas = catalogoData.periodos.map(p => (p.ventas_bar || {}).meta_mes || null);
+
+    overviewCharts.ventas = new Chart(document.getElementById('chartOverviewProd'), {
+      type:'bar',
+      data:{
+        labels: labels,
+        datasets: [
+          {label:'Ventas Bar (COP)',data:ventas,backgroundColor:ventas.map((v,i)=>v>=20000000?'#3fb950':'#d29922'),borderRadius:6},
+        ]
+      },
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8b949e'}},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP'}}},scales:{x:{ticks:{color:'#8b949e',font:{size:9}},grid:{color:'#21262d'}},y:{ticks:{color:'#8b949e',callback:v=>'$'+(v/1e6).toFixed(0)+'M'},grid:{color:'#21262d'}}}}
+    });
+  } else {
+    // Fallback hardcoded
+    overviewCharts.prod = new Chart(document.getElementById('chartOverviewProd'), {
+      type:'bar',
+      data:{labels:['Ene','Feb','Mar','Abr','May','Jun*'],datasets:[{label:'Litros producidos',data:[1418,1803,2440,2060,1518,917],backgroundColor:'#58a6ff',borderRadius:6,yAxisID:'y'},{label:'Botellas despachadas (und)',data:[37,209,922,1120,1372,571],backgroundColor:'#f0c040',borderRadius:6,yAxisID:'y1'}]},
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8b949e'}}},scales:{x:{ticks:{color:'#8b949e'},grid:{color:'#21262d'}},y:{position:'left',title:{display:true,text:'Litros',color:'#58a6ff'},ticks:{color:'#58a6ff'},grid:{color:'#21262d'}},y1:{position:'right',title:{display:true,text:'Botellas (und)',color:'#f0c040'},ticks:{color:'#f0c040'},grid:{display:false}}}}
+    });
+  }
 
   if (allData.length === 0) return;
 

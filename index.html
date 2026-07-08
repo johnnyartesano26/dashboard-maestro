@@ -254,6 +254,9 @@ let filtered = [];
 let factCharts = {};
 let overviewCharts = {};
 let TAB_STATE = { facturacion: false, inventario: false, resumen: true };
+let totalFacturasConsolidado = 0;
+let totalClientesConsolidado = 0;
+let importeConsolidado = 0;
 
 // ═══════════════════════════════════════════════════
 // TAB NAVIGATION
@@ -280,17 +283,40 @@ function switchTab(name) {
 // INIT: Cargar catálogo primero
 // ═══════════════════════════════════════════════════
 window.onload = async function() {
+  // Cargar consolidado de clientes primero
+  try {
+    const rc = await fetch('data/clientes_mensuales.json');
+    const clientesJson = await rc.json();
+    clientesData = clientesJson;
+    clientesData.forEach(c => {
+      c.num_facturas = Object.values(c.meses).reduce((s, m) => s + m.facturas.length, 0);
+    });
+    totalFacturasConsolidado = clientesData.reduce((s, c) => s + c.num_facturas, 0);
+    totalClientesConsolidado = clientesData.length;
+    importeConsolidado = clientesData.reduce((s, c) => s + c.total_general, 0);
+    // Llenar filtro de meses del buscador
+    const mesesSet = new Set();
+    clientesData.forEach(c => Object.keys(c.meses).forEach(m => mesesSet.add(m)));
+    const filtroMes = document.getElementById('filtroMesCliente');
+    if (filtroMes) {
+      Array.from(mesesSet).sort().forEach(m => {
+        filtroMes.innerHTML += `<option value="${m}">${m}</option>`;
+      });
+    }
+    filtrarClientes();
+  } catch(e) {
+    console.warn('clientes_mensuales.json no disponible:', e);
+  }
+
   try {
     const r = await fetch('catalogo.json');
     catalogoData = await r.json();
     renderPeriodSelector();
-    // Seleccionar el primer periodo
     if (catalogoData.periodos && catalogoData.periodos.length > 0) {
       cambiarPeriodo(0);
     }
   } catch(e) {
     console.warn('catalogo.json no encontrado, intentando carga directa');
-    // Fallback: intentar cargar facturas_junio_2026.json directamente
     periodoActual = {
       mes: 'Junio 2026',
       facturacion: { archivo: 'facturas_junio_2026.json' },
@@ -386,11 +412,11 @@ function updateOverviewFromData() {
 
   document.getElementById('kpiOverview').innerHTML = `
     <div class="kpi"><div class="val green">$${vb.total_ventas ? (vb.total_ventas/1e6).toFixed(1)+'M' : '--'}</div><div class="lab">Ventas Bar ${periodoActual.mes}</div></div>
-    <div class="kpi"><div class="val cyan">${allData.length || '--'}</div><div class="lab">Facturas emitidas</div></div>
-    <div class="kpi"><div class="val blue">$${(total/1e6).toFixed(1)}M</div><div class="lab">Facturación total</div></div>
+    <div class="kpi"><div class="val cyan">${totalFacturasConsolidado || '--'}</div><div class="lab">Facturas emitidas (consolidado)</div></div>
+    <div class="kpi"><div class="val blue">$${(importeConsolidado/1e6).toFixed(1)}M</div><div class="lab">Total facturado</div></div>
     <div class="kpi"><div class="val yellow">${inv.ocupacion_tanques ? inv.ocupacion_tanques+'%' : '--'}</div><div class="lab">Ocupación tanques</div></div>
     <div class="kpi"><div class="val green">${inv.litros_activos ? inv.litros_activos.toLocaleString()+' L' : '--'}</div><div class="lab">Producción activa</div></div>
-    <div class="kpi"><div class="val red">$${(draftTotal/1e6).toFixed(2)}M</div><div class="lab">Facturas pendientes</div></div>
+    <div class="kpi"><div class="val cyan">${totalClientesConsolidado || '--'}</div><div class="lab">Clientes activos</div></div>
   `;
 
   document.getElementById('summaryCards').innerHTML = `
@@ -406,10 +432,10 @@ function updateOverviewFromData() {
     <div class="summary-card">
       <div class="icon">📄</div>
       <div class="info">
-        <h3>Facturación — ${periodoActual.mes}</h3>
-        <p>${allData.length ? allData.length+' facturas · $'+total.toLocaleString('es-CO')+' COP' : 'Sin datos detallados'}<br>
-        ${allData.length ? '$'+(barTotal/1e6).toFixed(1)+'M ventas Bar · $'+Math.round(total/allData.length).toLocaleString('es-CO')+' promedio' : ''}<br>
-        ${drafts.length ? drafts.length+' facturas pendientes (draft)' : ''}</p>
+        <h3>Facturación Total — Consolidado</h3>
+        <p>${totalFacturasConsolidado} facturas · $${importeConsolidado.toLocaleString('es-CO')} COP<br>
+        ${totalClientesConsolidado} clientes · Dic 2025 - Jun 2026<br>
+        Actualizado desde Google Sheets</p>
       </div>
     </div>
     <div class="summary-card">
@@ -456,11 +482,11 @@ function updateOverviewFromCatalogo() {
 
   document.getElementById('kpiOverview').innerHTML = `
     <div class="kpi"><div class="val green">$${vb.total_ventas ? (vb.total_ventas/1e6).toFixed(1)+'M' : '--'}</div><div class="lab">Ventas Bar ${periodoActual.mes}</div></div>
-    <div class="kpi"><div class="val cyan">${f.total_facturas || '--'}</div><div class="lab">Facturas emitidas</div></div>
-    <div class="kpi"><div class="val blue">$${f.monto_total ? (f.monto_total/1e6).toFixed(1)+'M' : '--'}</div><div class="lab">Facturación total</div></div>
+    <div class="kpi"><div class="val cyan">${totalFacturasConsolidado || '--'}</div><div class="lab">Facturas emitidas (consolidado)</div></div>
+    <div class="kpi"><div class="val blue">$${(importeConsolidado/1e6).toFixed(1)}M</div><div class="lab">Total facturado</div></div>
     <div class="kpi"><div class="val yellow">${inv.ocupacion_tanques ? inv.ocupacion_tanques+'%' : '--'}</div><div class="lab">Ocupación tanques</div></div>
     <div class="kpi"><div class="val green">${inv.litros_activos ? inv.litros_activos.toLocaleString()+' L' : '--'}</div><div class="lab">Producción activa</div></div>
-    <div class="kpi"><div class="val red">$${f.monto_pendiente ? (f.monto_pendiente/1e6).toFixed(2)+'M' : '--'}</div><div class="lab">Facturas pendientes</div></div>
+    <div class="kpi"><div class="val cyan">${totalClientesConsolidado || '--'}</div><div class="lab">Clientes activos</div></div>
   `;
 
   document.getElementById('summaryCards').innerHTML = `
@@ -476,10 +502,10 @@ function updateOverviewFromCatalogo() {
     <div class="summary-card">
       <div class="icon">📄</div>
       <div class="info">
-        <h3>Facturación — ${periodoActual.mes}</h3>
-        <p>${f.total_facturas ? f.total_facturas+' facturas · $'+f.monto_total.toLocaleString('es-CO')+' COP' : 'Sin datos detallados de Alegra'}<br>
-        ${f.monto_bar ? '$'+(f.monto_bar/1e6).toFixed(1)+'M ventas Bar' : ''}<br>
-        ${f.drafts ? f.drafts+' pendientes' : ''}</p>
+        <h3>Facturación Total — Consolidado</h3>
+        <p>${totalFacturasConsolidado} facturas · $${importeConsolidado.toLocaleString('es-CO')} COP<br>
+        ${totalClientesConsolidado} clientes · Dic 2025 - Jun 2026<br>
+        Actualizado desde Google Sheets</p>
       </div>
     </div>
     <div class="summary-card">
@@ -714,20 +740,10 @@ async function loadClientesData() {
   try {
     const r = await fetch('data/clientes_mensuales.json');
     clientesData = await r.json();
-    clientesData.forEach(c => {
-      c.num_facturas = Object.values(c.meses).reduce((s, m) => s + m.facturas.length, 0);
-    });
-    // Llenar filtro de meses
-    const mesesSet = new Set();
-    clientesData.forEach(c => Object.keys(c.meses).forEach(m => mesesSet.add(m)));
-    const filtro = document.getElementById('filtroMesCliente');
-    Array.from(mesesSet).sort().forEach(m => {
-      filtro.innerHTML += `<option value="${m}">${m}</option>`;
-    });
-    filtrarClientes();
-  } catch(e) {
-    document.getElementById('tbodyClientes').innerHTML = '<tr><td colspan="4" class="loading">No se pudo cargar clientes_mensuales.json</td></tr>';
-  }
+  clientesData.forEach(c => {
+    c.num_facturas = Object.values(c.meses).reduce((s, m) => s + m.facturas.length, 0);
+  });
+  filtrarClientes();
 }
 
 function filtrarClientes() {
@@ -813,8 +829,6 @@ function mostrarDetalleCliente(nombre) {
   detalle.scrollIntoView({ behavior: 'smooth' });
 }
 
-// Cargar clientes al iniciar (en segundo plano)
-setTimeout(loadClientesData, 1000);
 </script>
 
 </body>

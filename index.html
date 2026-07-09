@@ -210,12 +210,12 @@
       </p>
     </div>
   </div>
-  <div class="kpi-row">
-    <div class="kpi"><div class="val green">3,272 L</div><div class="lab">Producción activa</div></div>
-    <div class="kpi"><div class="val cyan">1,119</div><div class="lab">Botellas en stock</div></div>
-    <div class="kpi"><div class="val blue">160 L</div><div class="lab">Barriles totales</div></div>
-    <div class="kpi"><div class="val yellow">65%</div><div class="lab">Ocupación tanques</div></div>
-    <div class="kpi"><div class="val red">1</div><div class="lab">Alertas críticas</div></div>
+  <div class="kpi-row" id="kpiInventario">
+    <div class="kpi"><div class="val green">--</div><div class="lab">Producción activa</div></div>
+    <div class="kpi"><div class="val cyan">--</div><div class="lab">Botellas en stock</div></div>
+    <div class="kpi"><div class="val blue">--</div><div class="lab">Barriles totales</div></div>
+    <div class="kpi"><div class="val yellow">--</div><div class="lab">Ocupación tanques</div></div>
+    <div class="kpi"><div class="val red">--</div><div class="lab">Alertas</div></div>
   </div>
 
   <div class="grid" id="gridInv">
@@ -263,6 +263,7 @@
 // GLOBAL STATE
 // ═══════════════════════════════════════════════════
 let catalogoData = null;
+let plantaData = null; // Datos en vivo desde Dashboard de Planta
 let periodoActual = null;
 let allData = [];
 let filtered = [];
@@ -304,7 +305,14 @@ window.onload = async function() {
   const results = await Promise.allSettled([
     fetch('catalogo.json').then(r => r.ok ? r.json() : Promise.reject('HTTP '+r.status)),
     fetch('data/clientes_mensuales.json').then(r => r.ok ? r.json() : Promise.reject('HTTP '+r.status)),
-    fetch('facturas_junio_2026.json').then(r => r.ok ? r.json() : Promise.reject('HTTP '+r.status))
+    fetch('facturas_junio_2026.json').then(r => r.ok ? r.json() : Promise.reject('HTTP '+r.status)),
+    fetch('https://johnnyartesano26.github.io/madremonte-dashboard/')
+      .then(r => r.ok ? r.text() : Promise.reject('HTTP '+r.status))
+      .then(html => {
+        const m = html.match(/window\.DATA\s*=\s*(\{.*?\});/);
+        return m ? JSON.parse(m[1]) : null;
+      })
+      .catch(() => null)
   ]);
 
   // 1. Procesar catálogo
@@ -334,7 +342,25 @@ window.onload = async function() {
     filtrarClientes();
   }
 
-  // 3. Seleccionar periodo y cargar datos
+  // 4. Procesar datos de Planta (desde madremonte-dashboard en vivo)
+  if (results[3].status === 'fulfilled' && results[3].value) {
+    plantaData = results[3].value;
+    document.getElementById('headerSub').textContent = 'Datos cargados — Planta: ' + plantaData.generado;
+    // Actualizar summary de inventario
+    const f = plantaData.fermentadores || [];
+    const b = plantaData.botellas || [];
+    const ba = plantaData.barriles || [];
+    const totL = f.reduce((s,x) => s + x.litros, 0);
+    const totC = f.reduce((s,x) => s + x.capacidad, 0);
+    const totB = b.reduce((s,x) => s + x.cantidad, 0);
+    const totBL = ba.reduce((s,x) => s + x.litros, 0);
+    const el = document.getElementById('sumInv');
+    if (el) el.innerHTML = f.length + ' fermentadores · ' + totL.toLocaleString() + 'L activos (' + Math.round(totL/totC*100) + '%)<br>' +
+      totB.toLocaleString() + ' botellas 330ml en stock<br>' +
+      totBL + 'L en barriles · ' + plantaData.generado;
+  }
+
+  // 5. Seleccionar periodo y cargar datos
   if (catalogoData && catalogoData.periodos && catalogoData.periodos.length > 0) {
     cambiarPeriodo(0);
   } else if (results[2].status === 'fulfilled') {
@@ -464,10 +490,8 @@ function updateOverviewFromData() {
     <div class="summary-card">
       <div class="icon">🍾</div>
       <div class="info">
-        <h3>Inventario — ${periodoActual.mes}</h3>
-        <p>${inv.litros_activos ? '7 fermentadores · '+inv.litros_activos.toLocaleString()+'L activos' : 'Sin datos de inventario'}<br>
-        ${inv.botellas_stock ? inv.botellas_stock.toLocaleString()+' botellas 330ml en stock' : ''}<br>
-        ${inv.barriles_litros ? inv.barriles_litros+'L en barriles' : ''}</p>
+        <h3>Inventario — Planta (en vivo)</h3>
+        <p id="sumInv">Cargando datos de planta...</p>
       </div>
     </div>
     <div class="summary-card" style="cursor:pointer" onclick="window.open('https://johnnyartesano26.github.io/conciliaciones-bancarias/','_blank')">
@@ -495,6 +519,7 @@ function updateOverviewFromData() {
 
   renderOverviewCharts();
   renderFacturacionIfActive();
+  renderPlantaSummary();
 }
 
 function updateOverviewFromCatalogo() {
@@ -562,6 +587,25 @@ function updateOverviewFromCatalogo() {
       </div>
     </div>
   `;
+  renderPlantaSummary();
+}
+
+// ═══════════════════════════════════════════════════
+// PLANTA SUMMARY: actualiza la tarjeta de inventario con datos en vivo
+// ═══════════════════════════════════════════════════
+function renderPlantaSummary() {
+  if (!plantaData) return;
+  const f = plantaData.fermentadores || [];
+  const b = plantaData.botellas || [];
+  const ba = plantaData.barriles || [];
+  const totL = f.reduce((s,x) => s + x.litros, 0);
+  const totC = f.reduce((s,x) => s + x.capacidad, 0);
+  const totB = b.reduce((s,x) => s + x.cantidad, 0);
+  const totBL = ba.reduce((s,x) => s + x.litros, 0);
+  const el = document.getElementById('sumInv');
+  if (el) el.innerHTML = f.length + ' fermentadores · ' + totL.toLocaleString() + 'L activos (' + Math.round(totL/totC*100) + '%)<br>' +
+    totB.toLocaleString() + ' botellas 330ml en stock<br>' +
+    totBL + 'L en barriles · ' + plantaData.generado;
 }
 
 // ═══════════════════════════════════════════════════
@@ -720,31 +764,95 @@ function initInventario() {
   Object.values(invCharts).forEach(c => c.destroy());
   invCharts = {};
 
+  // Usar datos en vivo de planta si están disponibles
+  const ferms = (plantaData && plantaData.fermentadores) ? plantaData.fermentadores : [
+    {nombre:'F1 Frankie',estilo:'Stout',litros:122,capacidad:400,porcentaje:31},
+    {nombre:'F2 Igor',estilo:'Irish Red',litros:580,capacidad:1200,porcentaje:48},
+    {nombre:'F3 Principito',estilo:'APA',litros:540,capacidad:400,porcentaje:135},
+    {nombre:'F4 Gargantua',estilo:'IPA',litros:400,capacidad:700,porcentaje:57},
+    {nombre:'F5 Pantragruel',estilo:'IPA',litros:680,capacidad:800,porcentaje:85},
+    {nombre:'F6 Potter',estilo:'Golden Ale',litros:780,capacidad:1000,porcentaje:78},
+    {nombre:'F7 HighLander',estilo:'Hidromiel',litros:170,capacidad:500,porcentaje:34}
+  ];
+
+  const bots = (plantaData && plantaData.botellas) ? plantaData.botellas : [
+    {estilo:'Golden Ale',cantidad:155},{estilo:'Irish Red Ale',cantidad:374},
+    {estilo:'APA',cantidad:94},{estilo:'IPA',cantidad:122},{estilo:'Stout',cantidad:374}
+  ];
+
+  const barriles = (plantaData && plantaData.barriles) ? plantaData.barriles : [
+    {estilo:'Golden Ale',litros:60},{estilo:'Irish Red Ale',litros:0},
+    {estilo:'APA',litros:0},{estilo:'IPA',litros:80},{estilo:'Stout',litros:30}
+  ];
+
+  // Calcular totales
+  const totLit = ferms.reduce((s,f) => s + f.litros, 0);
+  const totCap = ferms.reduce((s,f) => s + f.capacidad, 0);
+  const totPct = totCap > 0 ? Math.round(totLit / totCap * 100) : 0;
+  const totBots = bots.reduce((s,b) => s + b.cantidad, 0);
+  const totBarrilesL = barriles.reduce((s,b) => s + b.litros, 0);
+  const alertas = ferms.filter(f => f.porcentaje >= 95).length;
+  const fechaPlanta = plantaData ? plantaData.generado : 'cargando...';
+
+  // KPIs dinámicos
+  document.getElementById('kpiInventario').innerHTML = `
+    <div class="kpi"><div class="val green">${totLit.toLocaleString()} L</div><div class="lab">Producción activa</div></div>
+    <div class="kpi"><div class="val cyan">${totBots.toLocaleString()}</div><div class="lab">Botellas en stock</div></div>
+    <div class="kpi"><div class="val blue">${totBarrilesL} L</div><div class="lab">Barriles totales</div></div>
+    <div class="kpi"><div class="val yellow">${totPct}%</div><div class="lab">Ocupación tanques</div></div>
+    <div class="kpi"><div class="val red">${alertas}</div><div class="lab">Alertas críticas</div></div>
+  `;
+
+  // Fermentadores
+  const fermNames = ferms.map(f => f.nombre);
+  const fermLitros = ferms.map(f => f.litros);
+  const fermCap = ferms.map(f => f.capacidad);
+  const fermColors = ferms.map(f => f.porcentaje >= 95 ? '#f85149' : f.porcentaje >= 80 ? '#d29922' : '#3fb950');
+
   invCharts.ferm = new Chart(document.getElementById('chartFermentadores'), {
     type:'bar',
-    data:{labels:['F1 Frankie','F2 Igor','F3 Principito','F4 Gargantua','F5 Pantragruel','F6 Potter','F7 HighLander'],datasets:[{label:'Capacidad (L)',data:[400,1200,400,700,800,1000,500],backgroundColor:'rgba(88,166,255,0.15)',borderColor:'#58a6ff',borderWidth:1.5,borderRadius:4},{label:'Litros actuales',data:[122,580,540,400,680,780,170],backgroundColor:['#3fb950','#3fb950','#f85149','#3fb950','#d29922','#3fb950','#3fb950'],borderColor:'#fff',borderWidth:1,borderRadius:4},{label:'Semana anterior',data:[230,770,350,460,780,790,170],backgroundColor:'rgba(139,148,158,0.3)',borderColor:'#8b949e',borderWidth:1,borderDash:[5,3],borderRadius:4}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8b949e'}}},scales:{x:{ticks:{color:'#8b949e'},grid:{color:'#21262d'}},y:{title:{display:true,text:'Litros',color:'#8b949e'},ticks:{color:'#8b949e'},grid:{color:'#21262d'}}}}
+    data:{labels:fermNames,datasets:[
+      {label:'Capacidad (L)',data:fermCap,backgroundColor:'rgba(88,166,255,0.15)',borderColor:'#58a6ff',borderWidth:1.5,borderRadius:4},
+      {label:'Litros actuales',data:fermLitros,backgroundColor:fermColors,borderColor:'#fff',borderWidth:1,borderRadius:4}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{labels:{color:'#8b949e'}},title:{display:true,text:'Datos: ' + fechaPlanta,color:'#8b949e',font:{size:10},position:'bottom'}},
+      scales:{x:{ticks:{color:'#8b949e'},grid:{color:'#21262d'}},y:{title:{display:true,text:'Litros',color:'#8b949e'},ticks:{color:'#8b949e'},grid:{color:'#21262d'}}}
+    }
   });
+
+  // Ocupación %
+  const ocuLabels = ferms.map(f => f.nombre.replace('F','F') + ' (' + f.capacidad + 'L)');
   invCharts.ocu = new Chart(document.getElementById('chartOcupacion'), {
-    type:'bar',data:{labels:['F1(400L)','F2(1200L)','F3(400L)','F4(700L)','F5(800L)','F6(1000L)','F7(500L)'],datasets:[{label:'% Ocupación',data:[31,48,135,57,85,78,34],backgroundColor:['#3fb950','#3fb950','#f85149','#3fb950','#d29922','#3fb950','#3fb950'],borderRadius:6}]},
+    type:'bar',data:{labels:ocuLabels,datasets:[{label:'% Ocupación',data:ferms.map(f=>Math.round(f.litros/f.capacidad*100)),backgroundColor:fermColors,borderRadius:6}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8b949e',font:{size:10}},grid:{color:'#21262d'}},y:{max:140,title:{display:true,text:'%',color:'#8b949e'},ticks:{color:'#8b949e',callback:v=>v+'%'},grid:{color:'#21262d'}}}}
   });
+
+  // Botellas
   invCharts.bot = new Chart(document.getElementById('chartBotellas'), {
-    type:'bar',data:{labels:['Golden Ale','Irish Red','APA','IPA','Stout'],datasets:[{label:'Semana actual',data:[155,374,94,122,374],backgroundColor:'#3fb950',borderRadius:6},{label:'Semana anterior',data:[0,0,0,48,0],backgroundColor:'#f85149',borderRadius:6}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8b949e'}}},scales:{x:{ticks:{color:'#8b949e',font:{size:10}},grid:{color:'#21262d'}},y:{title:{display:true,text:'Unidades 330ml',color:'#8b949e'},ticks:{color:'#8b949e'},grid:{color:'#21262d'}}}}
+    type:'bar',data:{labels:bots.map(b=>b.estilo),datasets:[{label:'Stock actual',data:bots.map(b=>b.cantidad),backgroundColor:'#3fb950',borderRadius:6}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8b949e',font:{size:10}},grid:{color:'#21262d'}},y:{title:{display:true,text:'Unidades 330ml',color:'#8b949e'},ticks:{color:'#8b949e'},grid:{color:'#21262d'}}}}
   });
+
+  // Barriles
   invCharts.bar = new Chart(document.getElementById('chartBarriles'), {
-    type:'doughnut',data:{labels:['Stout (embotellar pendiente)','Stout (embotellado)','IPA (bar)','Irish Red (bar)','Stout (bar)'],datasets:[{data:[60,40,20,20,20],backgroundColor:['#d29922','#3fb950','#58a6ff','#f0c040','#39d2c0'],borderColor:'#161b22',borderWidth:2}]},
+    type:'doughnut',data:{labels:barriles.map(b=>b.estilo+' ('+b.codigo+')'),datasets:[{data:barriles.map(b=>b.litros),backgroundColor:['#58a6ff','#f0c040','#3fb950','#d29922','#39d2c0'],borderColor:'#161b22',borderWidth:2}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8b949e',font:{size:11},padding:12}}}}
   });
+
+  // Histórico de producción (mantener hardcoded - no viene del API en vivo)
   invCharts.hist = new Chart(document.getElementById('chartHistorico'), {
     type:'bar',data:{labels:['Ene','Feb','Mar','Abr','May','Jun*'],datasets:[{label:'Litros producidos',data:[1418,1803,2440,2060,1518,917],backgroundColor:'#58a6ff',borderRadius:6,yAxisID:'y'},{label:'Botellas despachadas (und)',data:[37,209,922,1120,1372,571],backgroundColor:'#f0c040',borderRadius:6,yAxisID:'y1'}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8b949e'}}},scales:{x:{ticks:{color:'#8b949e'},grid:{color:'#21262d'}},y:{position:'left',title:{display:true,text:'Litros',color:'#58a6ff'},ticks:{color:'#58a6ff'},grid:{color:'#21262d'}},y1:{position:'right',title:{display:true,text:'Botellas (und)',color:'#f0c040'},ticks:{color:'#f0c040'},grid:{display:false}}}}
   });
+
+  // Comparativa (simplificada con datos reales)
   invCharts.comp = new Chart(document.getElementById('chartComparativa'), {
-    type:'bar',data:{labels:['Producción (L)','Botellas stock','Barriles (L)','Ferment. ocupados'],datasets:[{label:'Semana 23 (anterior)',data:[3550,55,57,7],backgroundColor:'rgba(248,81,73,0.5)',borderColor:'#f85149',borderWidth:1,borderRadius:4},{label:'Semana 24 (actual)',data:[3272,1119,160,7],backgroundColor:'rgba(63,185,80,0.5)',borderColor:'#3fb950',borderWidth:1,borderRadius:4}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8b949e'}},tooltip:{callbacks:{label:ctx=>{const l=['Litros totales en tanques','Unidades 330ml','Litros en barriles','Tanques ocupados (de 7)'];return l[ctx.dataIndex]+': '+ctx.raw;}}}},scales:{x:{ticks:{color:'#8b949e',font:{size:10}},grid:{color:'#21262d'}},y:{title:{display:true,text:'Valor',color:'#8b949e'},ticks:{color:'#8b949e'},grid:{color:'#21262d'}}}}
+    type:'bar',data:{labels:['Producción (L)','Botellas stock','Barriles (L)','Ferment. ocupados'],datasets:[{label:'Actual',data:[totLit,totBots,totBarrilesL,ferms.length],backgroundColor:'rgba(63,185,80,0.7)',borderColor:'#3fb950',borderWidth:1,borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8b949e',font:{size:10}},grid:{color:'#21262d'}},y:{title:{display:true,text:'Valor',color:'#8b949e'},ticks:{color:'#8b949e'},grid:{color:'#21262d'}}}}
   });
+
+  // Materia prima (mantener hardcoded)
   invCharts.mat = new Chart(document.getElementById('chartMateria'), {
     type:'bar',data:{labels:['Malta Pale Ale\n(750g)','Levadura US-05\n(500g)','Malta Pilsen\n(10.2kg)','Lúpulo Cascade\n(340g)','Lúpulo Magnum\n(330g)','Lúpulo Bravo\n(165g)'],datasets:[{label:'Stock actual (g)',data:[750,500,10180,340,330,165],backgroundColor:['#f85149','#f85149','#3fb950','#3fb950','#3fb950','#d29922'],borderRadius:6}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8b949e',font:{size:9},maxRotation:45},grid:{color:'#21262d'}},y:{title:{display:true,text:'Gramos',color:'#8b949e'},ticks:{color:'#8b949e'},grid:{color:'#21262d'}}}}

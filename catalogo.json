@@ -4,51 +4,147 @@
   "periodos": [
     {
       "mes": "Noviembre 2025",
-      "ventas_bar": { "total_ventas": 20802596, "dias_con_dato": 28, "promedio_diario": 770467 },
+      "ventas_bar": {
+        "total_ventas": 20802596,
+        "dias_con_dato": 27,
+        "promedio_diario": 770466
+      },
       "inventario": null
     },
     {
       "mes": "Diciembre 2025",
-      "ventas_bar": { "total_ventas": 16757726, "dias_con_dato": 25, "promedio_diario": 670309, "crecimiento": -19.4 },
+      "ventas_bar": {
+        "total_ventas": 16757726,
+        "dias_con_dato": 25,
+        "promedio_diario": 670309,
+        "crecimiento": -19.4
+      },
       "inventario": null
     },
     {
       "mes": "Enero 2026",
-      "ventas_bar": { "total_ventas": 20065500, "dias_con_dato": 27, "promedio_diario": 771750, "crecimiento": 19.7, "meta_mes": 20000000 },
-      "inventario": { "litros_activos": 1418, "botellas_despachadas": 37 }
+      "ventas_bar": {
+        "total_ventas": 20065500,
+        "dias_con_dato": 27,
+        "promedio_diario": 743166,
+        "crecimiento": 19.7,
+        "meta_mes": 20000000
+      },
+      "inventario": {
+        "litros_activos": 1418,
+        "botellas_despachadas": 37
+      }
     },
     {
       "mes": "Febrero 2026",
-      "ventas_bar": { "total_ventas": 24149840, "dias_con_dato": 24, "promedio_diario": 1006243, "crecimiento": 20.4, "meta_mes": 22000000 },
-      "inventario": { "litros_activos": 1803, "botellas_despachadas": 209 }
+      "ventas_bar": {
+        "total_ventas": 24149840,
+        "dias_con_dato": 24,
+        "promedio_diario": 1006243,
+        "crecimiento": 20.4,
+        "meta_mes": 22000000
+      },
+      "inventario": {
+        "litros_activos": 1803,
+        "botellas_despachadas": 209
+      }
     },
     {
       "mes": "Marzo 2026",
-      "ventas_bar": { "total_ventas": 20553000, "dias_con_dato": 26, "promedio_diario": 790500, "crecimiento": -14.9, "meta_mes": 24000000 },
-      "inventario": { "litros_activos": 2440, "botellas_despachadas": 922 }
+      "ventas_bar": {
+        "total_ventas": 20553000,
+        "dias_con_dato": 26,
+        "promedio_diario": 790500,
+        "crecimiento": -14.9,
+        "meta_mes": 24000000
+      },
+      "inventario": {
+        "litros_activos": 2440,
+        "botellas_despachadas": 922
+      }
     },
     {
       "mes": "Abril 2026",
-      "ventas_bar": { "total_ventas": 22828666, "dias_con_dato": 26, "promedio_diario": 878026, "crecimiento": 11.1, "meta_mes": 24000000 },
-      "inventario": { "litros_activos": 2060, "botellas_despachadas": 1120 }
+      "ventas_bar": {
+        "total_ventas": 22828666,
+        "dias_con_dato": 26,
+        "promedio_diario": 878025,
+        "crecimiento": 11.1,
+        "meta_mes": 24000000
+      },
+      "inventario": {
+        "litros_activos": 2060,
+        "botellas_despachadas": 1120
+      }
     },
     {
       "mes": "Mayo 2026",
-      "ventas_bar": { "total_ventas": 20077900, "dias_con_dato": 27, "promedio_diario": 743626, "crecimiento": -12.1, "meta_mes": 24000000 },
-      "inventario": { "litros_activos": 1518, "botellas_despachadas": 1372 }
+      "ventas_bar": {
+        "total_ventas": 20077900,
+        "dias_con_dato": 26,
+        "promedio_diario": 772226,
+        "crecimiento": -12.0,
+        "meta_mes": 24000000
+      },
+      "inventario": {
+        "litros_activos": 1518,
+        "botellas_despachadas": 1372
+      }
     },
     {
       "mes": "Junio 2026",
-      "ventas_bar": { "total_ventas": 8234500, "dias_con_dato": 29, "promedio_diario": 748591, "crecimiento": -59.0, "meta_mes": 24000000 },
-      "facturacion": { "archivo": "facturas_junio_2026.json", "total_facturas": 900, "monto_total": 119073765, "monto_bar": 55100000, "drafts": 35, "monto_pendiente": 3770000 },
-      "inventario": { "litros_activos": 3272, "botellas_stock": 1119, "barriles_litros": 160, "ocupacion_tanques": 65, "alertas": 1, "litros_producidos": 917, "botellas_despachadas": 571 }
+      "ventas_bar": {
+        "total_ventas": 18895500,
+        "dias_con_dato": 26,
+        "promedio_diario": 726750,
+        "crecimiento": -5.9,
+        "meta_mes": 24000000
+      },
+      "facturacion": {
+        "archivo": "facturas_junio_2026.json",
+        "total_facturas": 900,
+        "monto_total": 119073765,
+        "monto_bar": 55100000,
+        "drafts": 35,
+        "monto_pendiente": 3770000
+      },
+      "inventario": {
+        "litros_activos": 3272,
+        "botellas_stock": 1119,
+        "barriles_litros": 160,
+        "ocupacion_tanques": 65,
+        "alertas": 1,
+        "litros_producidos": 917,
+        "botellas_despachadas": 571
+      }
+    },
+    {
+      "mes": "Julio 2026",
+      "ventas_bar": {
+        "total_ventas": 6027500,
+        "dias_con_dato": 7,
+        "promedio_diario": 861071
+      },
+      "inventario": null
     }
   ],
   "cuentas_bancarias": [
-    {"id": "3598", "nombre": "Cervecería Madre Monte (3598)"},
-    {"id": "1490", "nombre": "Juliana Cardona (1490)"},
-    {"id": "9437", "nombre": "Johnny Guerrero (9437)"},
-    {"id": "2216", "nombre": "Cervecería Madre Monte (2216)"}
+    {
+      "id": "3598",
+      "nombre": "Cervecería Madre Monte (3598)"
+    },
+    {
+      "id": "1490",
+      "nombre": "Juliana Cardona (1490)"
+    },
+    {
+      "id": "9437",
+      "nombre": "Johnny Guerrero (9437)"
+    },
+    {
+      "id": "2216",
+      "nombre": "Cervecería Madre Monte (2216)"
+    }
   ],
   "fuentes_de_datos": {
     "ventas_bar": {

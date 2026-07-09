@@ -1,0 +1,58 @@
+name: Catch-up festivos (Maestro)
+
+# El Maestro (catalogo.json) normalmente lo actualiza la PC los lunes.
+# Si el lunes fue festivo (o la PC estuvo apagada) y no se actualizó,
+# el primer día hábil a las 11:00 (hora Colombia) se hace la actualización.
+on:
+  schedule:
+    - cron: '0 16 * * 2-5'   # Mar–Vie 11:00 COT (UTC-5)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  catchup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: ¿Corresponde catch-up?
+        id: chk
+        run: python3 catchup_check.py catalogo.json
+
+      - name: Instalar dependencias
+        if: steps.chk.outputs.run == '1'
+        run: pip install requests openpyxl
+
+      - name: Actualizar catalogo.json desde Google Sheets
+        if: steps.chk.outputs.run == '1'
+        run: python3 update_catalogo_maestro.py
+
+      - name: Publicar cambios (si hay)
+        if: steps.chk.outputs.run == '1'
+        id: publicar
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add catalogo.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios en catalogo.json."
+            echo "cambios=0" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Catch-up festivo Maestro: $(date -u +'%Y-%m-%d %H:%M') UTC"
+            git push
+            echo "cambios=1" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Aviso por Telegram
+        if: steps.chk.outputs.run == '1'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          HUBO_CAMBIOS: ${{ steps.publicar.outputs.cambios }}
+        run: python3 notify_maestro.py

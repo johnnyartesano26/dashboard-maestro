@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recibos de Caja — Madre Monte</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI',system-ui,sans-serif; background:#0f1117; color:#e1e4e8; min-height:100vh; }
+  .header { background:linear-gradient(180deg,#1a1f2b 0%,#161b22 100%); border-bottom:1px solid #30363d; padding:16px 24px; position:sticky; top:0; z-index:100; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+  .header h1 { font-size:1.4em; color:#f0c040; }
+  .header .sub { color:#8b949e; font-size:.8em; margin-top:2px; }
+  .header a { color:#58a6ff; text-decoration:none; font-size:.85em; }
+  .wrap { max-width:900px; margin:0 auto; padding:20px 24px; display:flex; flex-direction:column; gap:18px; }
+  .card { background:#161b22; border:1px solid #30363d; border-radius:10px; padding:18px; }
+  .card h2 { font-size:1em; color:#f0c040; margin-bottom:12px; }
+  label { font-size:.8em; color:#8b949e; display:block; margin-bottom:4px; }
+  input, select { background:#0d1117; border:1px solid #30363d; color:#e1e4e8; padding:8px 12px; border-radius:6px; font-size:.9em; width:100%; font-family:inherit; }
+  input:focus, select:focus { outline:none; border-color:#f0c040; }
+  .row { display:flex; gap:12px; flex-wrap:wrap; }
+  .row > div { flex:1; min-width:130px; }
+  button { background:#f0c040; color:#000; border:none; padding:10px 18px; border-radius:6px; font-size:.9em; font-weight:700; cursor:pointer; font-family:inherit; }
+  button:hover { filter:brightness(1.1); }
+  button.sec { background:#21262d; color:#e1e4e8; border:1px solid #30363d; font-weight:normal; }
+  button.danger { background:none; color:#f85149; border:1px solid #f85149; padding:4px 10px; font-weight:normal; font-size:.8em; }
+  table { width:100%; border-collapse:collapse; font-size:.85em; margin-top:10px; }
+  th { background:#1a1f2b; color:#8b949e; padding:8px; text-align:left; }
+  td { padding:7px 8px; border-bottom:1px solid #21262d; }
+  .right { text-align:right; }
+  .resultado { background:#0d1117; border:1px solid #f0c040; border-radius:8px; padding:14px; font-family:monospace; font-size:.95em; color:#f0c040; word-break:break-word; line-height:1.5; }
+  .detalle { font-size:.85em; color:#8b949e; margin-top:10px; line-height:1.6; }
+  .detalle .total { color:#3fb950; font-weight:700; }
+  .hint { font-size:.75em; color:#484f58; margin-top:6px; }
+  .copied { color:#3fb950; font-size:.8em; margin-left:10px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>🧾 Recibos de Caja — Madre Monte</h1>
+    <div class="sub">Genera el texto del recibo de caja · misma lógica de recibos_de_caja.py</div>
+  </div>
+  <a href="index.html">← Volver al Dashboard Maestro</a>
+</div>
+
+<div class="wrap">
+
+  <div class="card">
+    <h2>📅 Datos del pedido</h2>
+    <div class="row">
+      <div>
+        <label>Fecha (ej: 20/May)</label>
+        <input type="text" id="fecha" placeholder="20/May">
+      </div>
+      <div>
+        <label>Domicilio ($)</label>
+        <input type="number" id="domicilio" value="12000" min="0" step="500">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🍺 Agregar producto</h2>
+    <div class="row">
+      <div>
+        <label>Tipo</label>
+        <select id="tipo">
+          <option value="b">Botella</option>
+          <option value="l">Litro</option>
+        </select>
+      </div>
+      <div>
+        <label>Estilo</label>
+        <select id="estilo">
+          <option value="golden">Golden</option>
+          <option value="apa">APA</option>
+          <option value="ipa">IPA</option>
+          <option value="irish">Irish</option>
+          <option value="stout">Stout</option>
+          <option value="hidromiel">Hidromiel</option>
+        </select>
+      </div>
+      <div>
+        <label>Cantidad</label>
+        <input type="number" id="cantidad" min="0" step="0.01" placeholder="0">
+      </div>
+      <div style="display:flex;align-items:flex-end">
+        <button onclick="agregar()">+ Agregar</button>
+      </div>
+    </div>
+    <div class="hint">Precio automático: botella Golden/APA/Irish/Stout $8.500 · IPA $9.500 · Hidromiel $16.000 — litro $18.000 · IPA $19.000 · Hidromiel $25.000. Máximo 15 productos.</div>
+
+    <table id="tabla" style="display:none">
+      <thead><tr><th>#</th><th>Producto</th><th class="right">Cant.</th><th class="right">Precio</th><th class="right">Total</th><th></th></tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🧾 Recibo generado</h2>
+    <div class="resultado" id="resultado">Agrega productos para generar el recibo…</div>
+    <div class="detalle" id="detalle"></div>
+    <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+      <button onclick="copiar()">📋 Copiar recibo</button>
+      <button class="sec" onclick="limpiar()">🗑️ Limpiar todo</button>
+      <span class="copied" id="copiado"></span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const PRECIOS_BOTELLA = { golden:8500, apa:8500, ipa:9500, irish:8500, stout:8500, hidromiel:16000 };
+const PRECIOS_LITRO   = { golden:18000, apa:18000, ipa:19000, irish:18000, stout:18000, hidromiel:25000 };
+const MOSTRAR = { golden:"Golden", apa:"APA", ipa:"IPA", irish:"Irish", stout:"Stout", hidromiel:"Hidromiel" };
+const MESES = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
+
+let productos = [];
+
+const hoy = new Date();
+document.getElementById("fecha").value = hoy.getDate() + "/" + MESES[hoy.getMonth()];
+
+function fmt(n){ return "$" + n.toLocaleString("en-US", {maximumFractionDigits:0}); }
+
+function cantTexto(p){
+  if (p.tipo === "b") return String(Math.trunc(p.cantidad));
+  return Number.isInteger(p.cantidad) ? String(p.cantidad) : String(+p.cantidad.toFixed(2));
+}
+
+function agregar(){
+  if (productos.length >= 15) { alert("Máximo 15 productos."); return; }
+  const tipo = document.getElementById("tipo").value;
+  const estilo = document.getElementById("estilo").value;
+  let cantidad = parseFloat(document.getElementById("cantidad").value);
+  if (!cantidad || cantidad <= 0) { alert("La cantidad debe ser mayor a 0."); return; }
+  if (tipo === "b") cantidad = Math.trunc(cantidad);
+  const precio = tipo === "b" ? PRECIOS_BOTELLA[estilo] : PRECIOS_LITRO[estilo];
+  const presentacion = tipo === "b" ? MOSTRAR[estilo] + " Bot" : "Litros " + MOSTRAR[estilo];
+  productos.push({ tipo, estilo, cantidad, precio, presentacion, total: cantidad * precio });
+  document.getElementById("cantidad").value = "";
+  render();
+}
+
+function quitar(i){ productos.splice(i, 1); render(); }
+
+function limpiar(){ productos = []; render(); }
+
+function render(){
+  const tabla = document.getElementById("tabla");
+  const tbody = document.getElementById("tbody");
+  tabla.style.display = productos.length ? "table" : "none";
+  tbody.innerHTML = productos.map((p, i) =>
+    `<tr><td>${i+1}</td><td>${p.presentacion}</td><td class="right">${cantTexto(p)}</td>` +
+    `<td class="right">${fmt(p.precio)}</td><td class="right">${fmt(p.total)}</td>` +
+    `<td class="right"><button class="danger" onclick="quitar(${i})">✕</button></td></tr>`
+  ).join("");
+
+  const res = document.getElementById("resultado");
+  const det = document.getElementById("detalle");
+  if (!productos.length) { res.textContent = "Agrega productos para generar el recibo…"; det.innerHTML = ""; return; }
+
+  const fecha = document.getElementById("fecha").value.trim() || "s/f";
+  const domicilio = parseFloat(document.getElementById("domicilio").value) || 0;
+  const partes = productos.map(p =>
+    `(${cantTexto(p)} ${p.presentacion}: ${fmt(p.precio)}=${fmt(p.total)})`
+  );
+  const subtotal = productos.reduce((s, p) => s + p.total, 0);
+  const total = subtotal + domicilio;
+  res.textContent = `${fecha} ${partes.join(" + ")} + (domicilio: ${fmt(domicilio)})=${fmt(total)}`;
+
+  det.innerHTML = productos.map(p =>
+    p.tipo === "b"
+      ? `• ${Math.trunc(p.cantidad)} botella(s) de ${MOSTRAR[p.estilo]}: ${fmt(p.total)}`
+      : `• ${cantTexto(p)} litros de ${MOSTRAR[p.estilo]}: ${fmt(p.total)}`
+  ).join("<br>") +
+  `<br>• Domicilio: ${fmt(domicilio)}<br><span class="total">• TOTAL: ${fmt(total)}</span>`;
+}
+
+function copiar(){
+  const txt = document.getElementById("resultado").textContent;
+  if (!productos.length) return;
+  navigator.clipboard.writeText(txt).then(() => {
+    const c = document.getElementById("copiado");
+    c.textContent = "✅ Copiado";
+    setTimeout(() => c.textContent = "", 2000);
+  });
+}
+
+document.getElementById("fecha").addEventListener("input", render);
+document.getElementById("domicilio").addEventListener("input", render);
+</script>
+
+</body>
+</html>

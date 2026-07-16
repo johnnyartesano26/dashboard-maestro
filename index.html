@@ -10,19 +10,23 @@
     --mm-gold: #c88a3d;
     --mm-gold-light: #e8a84c;
     --mm-gold-pale: #f5e6d3;
-    --mm-dark: #2a241e;
-    --mm-card: #332d26;
-    --mm-border: #3d362e;
-    --mm-text: #e8e0d5;
+    --mm-bg: #fcf9f2;
+    --mm-block: #f5efe6;
+    --mm-card: #ffffff;
+    --mm-border: #e0d6c8;
+    --mm-text: #3d2a1d;
     --mm-dim: #8c7b6b;
     --mm-red: #c9685e;
     --mm-green: #7a9e7a;
     --mm-blue: #58a6ff;
+    --shadow-sm: 0 2px 8px rgba(60,40,20,.05);
+    --shadow: 0 3px 14px rgba(60,40,20,.07);
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { 
     font-family:'Segoe UI',system-ui,sans-serif; 
-    background:var(--mm-dark); 
+    background:var(--mm-bg); 
+    background-image: radial-gradient(ellipse 800px 500px at 10% 0%, rgba(200,138,61,.04) 0%, transparent 55%);
     color:var(--mm-text); 
     min-height:100vh;
     position:relative;
@@ -68,29 +72,26 @@
   }
   
   .header { 
-    background:linear-gradient(180deg, #302a23 0%, #2a241e 100%); 
+    background:rgba(255,255,255,.94); 
+    backdrop-filter:blur(8px);
     border-bottom:1px solid var(--mm-border); 
     padding:16px 24px 0; 
     position:sticky; top:0; z-index:100; 
+    box-shadow: 0 1px 10px rgba(60,40,20,.04);
   }
   .header-top { display:flex; align-items:center; gap:14px; }
   .header-logo {
-    width: 64px; height: 64px;
-    border-radius: 0;
-    background: none;
-    box-shadow: none;
+    width: auto; height: 56px;
     display: flex; align-items: center; justify-content: center;
   }
   .header-logo img {
-    width: 64px; height: 64px;
-    filter: drop-shadow(0 0 16px rgba(200,138,61,.5));
+    height: 56px; width: auto;
+    filter: drop-shadow(0 1px 4px rgba(200,138,61,.20));
   }
   .header h1 { 
     font-size:1.4em; 
-    background: linear-gradient(135deg, var(--mm-gold-light), var(--mm-gold));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--mm-text);
+    font-weight: 700;
   }
   .header .sub { color:var(--mm-dim); font-size:.8em; margin:2px 0 12px; }
 
@@ -100,11 +101,11 @@
     padding:10px 24px; background:none; border:none; border-bottom:2px solid transparent; 
     color:var(--mm-dim); font-size:.9em; cursor:pointer; font-family:inherit; transition:all .2s; 
   }
-  .tab-btn:hover { color:var(--mm-gold-light); background:rgba(200,138,61,.06); }
+  .tab-btn:hover { color:var(--mm-gold); background:var(--mm-gold-pale); }
   .tab-btn.active { 
     color:var(--mm-gold); 
     border-bottom-color:var(--mm-gold);
-    background: linear-gradient(0deg, rgba(200,138,61,.08) 0%, transparent 100%);
+    background: rgba(200,138,61,.08);
   }
 
   /* ── MAIN CONTENT ── */
@@ -116,10 +117,10 @@
   .kpi { 
     background:var(--mm-card); border:1px solid var(--mm-border); border-radius:10px; 
     padding:14px 20px; text-align:center; min-width:140px; flex:1; max-width:200px;
-    transition: border-color .3s;
+    transition: border-color .3s; box-shadow:var(--shadow-sm);
   }
-  .kpi:hover { border-color:var(--mm-gold); }
-  .kpi .val { font-size:1.6em; font-weight:700; }
+  .kpi:hover { border-color:var(--mm-gold); box-shadow:var(--shadow); }
+  .kpi .val { font-size:1.6em; font-weight:700; color:var(--mm-text); }
   .kpi .lab { font-size:.72em; color:var(--mm-dim); margin-top:4px; }
   .green { color:var(--mm-green); } 
   .yellow { color:var(--mm-gold-light); } 
@@ -131,12 +132,12 @@
   .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(460px,1fr)); gap:18px; max-width:1500px; margin:0 auto; }
   .card { 
     background:var(--mm-card); border:1px solid var(--mm-border); border-radius:10px; padding:18px;
-    transition: border-color .3s;
+    transition: border-color .3s; box-shadow:var(--shadow-sm);
   }
-  .card:hover { border-color:rgba(200,138,61,.3); }
-  .card h2 { font-size:1em; color:var(--mm-gold-light); margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .card:hover { border-color:var(--mm-gold); box-shadow:var(--shadow); }
+  .card h2 { font-size:1em; color:var(--mm-text); margin-bottom:12px; display:flex; align-items:center; gap:8px; }
   .card h2 span { 
-    background:rgba(200,138,61,.1); padding:2px 8px; border-radius:4px; 
+    background:var(--mm-block); padding:2px 8px; border-radius:4px; 
     font-size:.75em; color:var(--mm-dim); font-weight:normal; 
   }
   .card.full { grid-column:1/-1; }
@@ -145,17 +146,17 @@
   /* ── TABLE ── */
   .filters { display:flex; gap:10px; margin-bottom:14px; flex-wrap:wrap; }
   .filters input,.filters select { 
-    background:var(--mm-dark); border:1px solid var(--mm-border); color:var(--mm-gold); 
+    background:var(--mm-bg); border:1px solid var(--mm-border); color:var(--mm-gold); 
     padding:8px 12px; border-radius:6px; font-size:.85em; min-width:180px; 
   }
   .filters input::placeholder { color:#484f58; }
   table { width:100%; border-collapse:collapse; font-size:.82em; }
   th { 
-    background:#302a23; color:var(--mm-dim); padding:10px 8px; text-align:left; 
+    background:var(--mm-card); color:var(--mm-dim); padding:10px 8px; text-align:left; 
     position:sticky; top:0; z-index:1; cursor:pointer; 
   }
   th:hover { color:var(--mm-gold-light); }
-  td { padding:7px 8px; border-bottom:1px solid #2a2622; }
+  td { padding:7px 8px; border-bottom:1px solid var(--mm-border); }
   tr:hover { background:rgba(200,138,61,.04); }
   .table-wrap { max-height:500px; overflow-y:auto; border:1px solid var(--mm-border); border-radius:8px; }
   .draft { color:var(--mm-gold-light); } .closed { color:var(--mm-green); }
@@ -164,7 +165,7 @@
     padding:2px 8px; border-radius:4px; font-size:.7em; font-weight:700; 
   }
   .note { 
-    background:#24201c; border-left:3px solid var(--mm-gold); padding:10px 14px; 
+    background:var(--mm-block); border-left:3px solid var(--mm-gold); padding:10px 14px; 
     border-radius:0 6px 6px 0; font-size:.85em; color:var(--mm-gold-light); margin-top:10px; 
   }
   .note.red { border-left-color:var(--mm-red); color:var(--mm-red); }
@@ -174,12 +175,12 @@
   .summary-card { 
     background:var(--mm-card); border:1px solid var(--mm-border); border-radius:10px; 
     padding:18px; display:flex; gap:16px; align-items:center;
-    transition: border-color .3s;
+    transition: border-color .3s; box-shadow:var(--shadow-sm);
   }
-  .summary-card:hover { border-color:var(--mm-gold); }
+  .summary-card:hover { border-color:var(--mm-gold); box-shadow:var(--shadow); }
   .summary-card .icon { 
     font-size:2em; width:56px; height:56px; display:flex; align-items:center; 
-    justify-content:center; background:rgba(200,138,61,.06); border-radius:12px; 
+    justify-content:center; background:var(--mm-block); border-radius:12px; 
   }
 
   .toast {
@@ -193,7 +194,7 @@
   .clickable-row { cursor:pointer; }
   .clickable-row:hover { background:rgba(200,138,61,.06) !important; }
   .detalle-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:10px; }
-  .detalle-mes { background:var(--mm-dark); border:1px solid var(--mm-border); border-radius:6px; padding:12px; }
+  .detalle-mes { background:var(--mm-bg); border:1px solid var(--mm-border); border-radius:6px; padding:12px; }
   .detalle-mes h4 { color:var(--mm-gold); font-size:.85em; margin-bottom:6px; }
   .detalle-mes .fact { font-size:.78em; color:var(--mm-dim); display:flex; justify-content:space-between; padding:2px 0; border-bottom:1px solid var(--mm-card); }
   .detalle-mes .total-mes { font-size:.82em; color:var(--mm-green); font-weight:600; margin-top:6px; text-align:right; }
@@ -236,7 +237,7 @@
     <button class="tab-btn" onclick="switchTab('ventas')">💰 Ventas</button>
   </div>
   <div id="periodSelector" style="display:none;margin-top:8px">
-    <select id="periodoSelect" onchange="cambiarPeriodo()" style="background:#1e1b18;border:1px solid #3d362e;color:#c88a3d;padding:6px 12px;border-radius:6px;font-size:.85em;font-family:inherit"></select>
+    <select id="periodoSelect" onchange="cambiarPeriodo()" style="background:var(--mm-bg);border:1px solid var(--mm-border);color:#c88a3d;padding:6px 12px;border-radius:6px;font-size:.85em;font-family:inherit"></select>
   </div>
 </div>
 
@@ -295,15 +296,15 @@
 
   <div class="grid" id="gridFact">
     <div class="card full" style="cursor:pointer;border:1px solid #c88a3d" onclick="window.open('https://johnnyartesano26.github.io/crear-factura/','_blank')">
-      <h2>📝 Crear Factura — Programa Automático 🔗 <span style="font-size:.75em;color:#8c7b6b;margin-left:8px">Click para abrir</span></h2>
-      <p style="color:#8c7b6b;font-size:.85em">
+      <h2>📝 Crear Factura — Programa Automático 🔗 <span style="font-size:.75em;color:var(--mm-dim);margin-left:8px">Click para abrir</span></h2>
+      <p style="color:var(--mm-dim);font-size:.85em">
         Genera facturas electrónicas vía Alegra API · Catálogo de productos Madre Monte · Historial de facturación<br>
         <strong style="color:#c88a3d">crear factura</strong> — palabra clave del sistema
       </p>
     </div>
     <div class="card full" style="cursor:pointer;border:1px solid #39d2c0" onclick="window.open('recibos.html','_blank')">
-      <h2>🧾 Recibos de Caja 🔗 <span style="font-size:.75em;color:#8c7b6b;margin-left:8px">Click para abrir</span></h2>
-      <p style="color:#8c7b6b;font-size:.85em">
+      <h2>🧾 Recibos de Caja 🔗 <span style="font-size:.75em;color:var(--mm-dim);margin-left:8px">Click para abrir</span></h2>
+      <p style="color:var(--mm-dim);font-size:.85em">
         Calcula el recibo de caja del pedido · Botellas y litros · Domicilio · Copia el texto listo para enviar<br>
         <strong style="color:#39d2c0">recibos de caja</strong> — versión web de recibos_de_caja.py
       </p>
@@ -321,7 +322,7 @@
       <canvas id="chartDaily"></canvas>
     </div>
     <div class="card full">
-      <h2>🔍 Buscador de Facturas <span style="font-size:.75em;color:#8c7b6b"> — <span id="totalCount">0</span> registros</span></h2>
+      <h2>🔍 Buscador de Facturas <span style="font-size:.75em;color:var(--mm-dim)"> — <span id="totalCount">0</span> registros</span></h2>
       <div class="filters">
         <input type="text" id="searchFact" placeholder="🔍 Cliente, factura, fecha..." oninput="filterTable()">
         <select id="statusFilter" onchange="filterTable()">
@@ -330,7 +331,7 @@
           <option value="draft">Draft (pendientes)</option>
           <option value="sent">Enviadas</option>
         </select>
-        <span id="count" style="color:#8c7b6b;align-self:center"></span>
+        <span id="count" style="color:var(--mm-dim);align-self:center"></span>
       </div>
       <div class="table-wrap">
         <table id="invTable"><thead><tr>
@@ -338,13 +339,13 @@
         </tr></thead><tbody id="tbodyFact"></tbody></table>
     </div>
     <div class="card full" id="cardClientes">
-      <h2>👥 Buscador de Clientes <span style="font-size:.75em;color:#8c7b6b"> — Datos consolidados Dic 2025 - Jun 2026</span></h2>
+      <h2>👥 Buscador de Clientes <span style="font-size:.75em;color:var(--mm-dim)"> — Datos consolidados Dic 2025 - Jun 2026</span></h2>
       <div class="filters">
         <input type="text" id="searchCliente" placeholder="🔍 Buscar cliente..." oninput="filtrarClientes()">
         <select id="filtroMesCliente" onchange="filtrarClientes()">
           <option value="">Todos los meses</option>
         </select>
-        <span id="countClientes" style="color:#8c7b6b;align-self:center;font-size:.85em"></span>
+        <span id="countClientes" style="color:var(--mm-dim);align-self:center;font-size:.85em"></span>
       </div>
       <div class="table-wrap">
         <table><thead><tr>
@@ -356,7 +357,7 @@
         <tbody id="tbodyClientes"><tr><td colspan="4" class="loading">Cargando datos de clientes...</td></tr></tbody>
       </table>
       </div>
-      <div id="detalleCliente" style="display:none;margin-top:14px;padding:14px;background:#1a1f2b;border-radius:8px;border:1px solid #3d362e"></div>
+      <div id="detalleCliente" style="display:none;margin-top:14px;padding:14px;background:var(--mm-block);border-radius:8px;border:1px solid var(--mm-border)"></div>
     </div>
   </div>
 </div>
@@ -366,8 +367,8 @@
 <div class="tab-content" id="tab-inventario">
   <div class="grid" style="margin-bottom:16px">
     <div class="card full" style="cursor:pointer;border:1px solid #c88a3d" onclick="window.open('https://johnnyartesano26.github.io/madremonte-dashboard/','_blank')">
-      <h2>🏭 Dashboard de Planta — Inventario en Vivo 🔗 <span style="font-size:.75em;color:#8c7b6b;margin-left:8px">Click para abrir</span></h2>
-      <p style="color:#8c7b6b;font-size:.85em">
+      <h2>🏭 Dashboard de Planta — Inventario en Vivo 🔗 <span style="font-size:.75em;color:var(--mm-dim);margin-left:8px">Click para abrir</span></h2>
+      <p style="color:var(--mm-dim);font-size:.85em">
         Monitoreo de fermentadores · Stock de botellas y barriles · Materia prima · Producción en tiempo real
       </p>
     </div>
@@ -445,7 +446,7 @@
   <div class="card" style="margin-top:18px">
     <h2>📥 Facturas pendientes por descargar <span id="pendientesCount"></span></h2>
     <div class="filters" style="margin-bottom:10px">
-      <select id="filtroMesPendientes" onchange="filtrarPendientes()" style="background:#1e1b18;border:1px solid #3d362e;color:#c88a3d;padding:6px 12px;border-radius:6px;font-size:.85em">
+      <select id="filtroMesPendientes" onchange="filtrarPendientes()" style="background:var(--mm-bg);border:1px solid var(--mm-border);color:#c88a3d;padding:6px 12px;border-radius:6px;font-size:.85em">
         <option value="todos">Todos los meses</option>
         <option value="Enero">Enero</option>
         <option value="Febrero">Febrero</option>
@@ -457,15 +458,15 @@
       </select>
     </div>
     <div id="listaPendientes" style="max-height:400px;overflow-y:auto;font-size:.82em">
-      <p style="color:#8c7b6b">Cargando...</p>
+      <p style="color:var(--mm-dim)">Cargando...</p>
     </div>
-    <p style="color:#8c7b6b;font-size:.75em;margin-top:8px">
+    <p style="color:var(--mm-dim);font-size:.75em;margin-top:8px">
       🔍 = ID estimado (ajustar ±5 si no carga) &nbsp;|&nbsp; 
       Abre el link, descarga el PDF en <b>Facturas/{Mes}/</b>
     </p>
-    <div style="margin-top:12px;background:#1a1f2b;border:1px solid #3d362e;border-radius:8px;padding:14px 18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-      <span style="color:#8c7b6b;font-size:.82em">📥 <a href="https://drive.google.com/drive/folders/1PGX4KmWNl64p7sD2TWCEQVAYQ8ikTrQQ" target="_blank" style="color:#58a6ff">Subir PDFs al Drive</a></span>
-      <code id="syncCmd" style="background:#1e1b18;color:#c88a3d;padding:8px 14px;border-radius:6px;font-size:.78em;white-space:nowrap">python automatizaciones/sincronizar_drive.py --consolidar</code>
+    <div style="margin-top:12px;background:var(--mm-block);border:1px solid var(--mm-border);border-radius:8px;padding:14px 18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+      <span style="color:var(--mm-dim);font-size:.82em">📥 <a href="https://drive.google.com/drive/folders/1PGX4KmWNl64p7sD2TWCEQVAYQ8ikTrQQ" target="_blank" style="color:#58a6ff">Subir PDFs al Drive</a></span>
+      <code id="syncCmd" style="background:var(--mm-bg);color:#c88a3d;padding:8px 14px;border-radius:6px;font-size:.78em;white-space:nowrap">python automatizaciones/sincronizar_drive.py --consolidar</code>
       <button onclick="copiarSync()" style="background:#238636;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:.82em;font-weight:600">📋 Copiar y ejecutar</button>
       <span id="syncMsg" style="color:#7a9e7a;font-size:.78em;display:none">✅ Copiado — pégalo en tu terminal</span>
     </div>
@@ -645,7 +646,7 @@ function cambiarPeriodo(idx) {
     // Mostrar mensaje en la tabla de facturación
     document.getElementById('kpiFact').innerHTML = '<div class="kpi" style="max-width:100%;flex:1"><div class="val yellow">⚠️ Sin facturas detalladas</div><div class="lab">Solo hay datos de ventas Bar para ' + periodoActual.mes + '. Las facturas detalladas de Alegra solo están disponibles para Junio 2026.</div></div>';
     document.getElementById('totalCount').textContent = '0';
-    document.getElementById('tbodyFact').innerHTML = '<tr><td colspan="6" style="text-align:center;padding:20px;color:#8c7b6b">No hay facturas detalladas para este periodo. Disponible: Junio 2026.</td></tr>';
+    document.getElementById('tbodyFact').innerHTML = '<tr><td colspan="6" style="text-align:center;padding:20px;color:var(--mm-dim)">No hay facturas detalladas para este periodo. Disponible: Junio 2026.</td></tr>';
     document.getElementById('count').textContent = '';
   }
 }
@@ -976,7 +977,7 @@ function renderTable() {
     const cls = inv.status === 'draft' ? 'draft' : inv.status === 'closed' ? 'closed' : 'sent';
     const stLabel = inv.status === 'draft' ? '⚠ Draft' : inv.status === 'closed' ? '✓ Cerrada' : '→ Enviada';
     const cDisp = inv.cliente === 'BAR' ? '<span class="bar-tag">BAR</span>' : inv.cliente;
-    tbody.innerHTML += `<tr><td style="color:#484f58">${i+1}</td><td style="font-weight:600">FE-${inv.id}</td><td style="color:#8c7b6b">${inv.fecha}</td><td>${cDisp}</td><td style="font-weight:600">$${inv.total.toLocaleString('es-CO')}</td><td class="${cls}">${stLabel}</td></tr>`;
+    tbody.innerHTML += `<tr><td style="color:#484f58">${i+1}</td><td style="font-weight:600">FE-${inv.id}</td><td style="color:var(--mm-dim)">${inv.fecha}</td><td>${cDisp}</td><td style="font-weight:600">$${inv.total.toLocaleString('es-CO')}</td><td class="${cls}">${stLabel}</td></tr>`;
   });
   document.getElementById('count').textContent = `Mostrando ${filtered.length} de ${allData.length}`;
 }
@@ -1155,7 +1156,7 @@ function sortClientes(col) {
 function renderClientesTabla() {
   const tbody = document.getElementById('tbodyClientes');
   if (clientesFiltrados.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;padding:20px;color:#8c7b6b">Sin resultados</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;padding:20px;color:var(--mm-dim)">Sin resultados</td></tr>';
     document.getElementById('countClientes').textContent = '';
     return;
   }
@@ -1164,7 +1165,7 @@ function renderClientesTabla() {
       <td><strong>${c.cliente}</strong></td>
       <td>$${c._total.toLocaleString('es-CO')}</td>
       <td>${c._nfact}</td>
-      <td style="font-size:.78em;color:#8c7b6b">${c._meses.join(', ')}</td>
+      <td style="font-size:.78em;color:var(--mm-dim)">${c._meses.join(', ')}</td>
     </tr>
   `).join('');
   document.getElementById('countClientes').textContent = `${clientesFiltrados.length} clientes`;
@@ -1393,7 +1394,7 @@ function filtrarPendientes(){
       const id=estId(fe), m=FE_KNOWN[fe]?'✅':'🔍';
       html+=`<a href="https://app.alegra.com/invoices/${id}" target="_blank" style="color:#58a6ff;text-decoration:none;display:inline-block;margin:1px 8px 1px 0;font-size:.82em">${m} FE${fe}</a>`;
     }
-    if(fes.length>items.length)html+=`<span style="color:#8c7b6b;font-size:.78em"> +${fes.length-items.length} más</span>`;
+    if(fes.length>items.length)html+=`<span style="color:var(--mm-dim);font-size:.78em"> +${fes.length-items.length} más</span>`;
   }
   document.getElementById('pendientesCount').textContent=`(${t} pendientes)`;
   document.getElementById('listaPendientes').innerHTML=html||'<p style="color:#7a9e7a">✅ Todas las facturas descargadas</p>';

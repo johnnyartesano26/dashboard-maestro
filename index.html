@@ -83,6 +83,7 @@
     <button class="tab-btn active" onclick="switchTab('resumen')">📊 Resumen General</button>
     <button class="tab-btn" onclick="switchTab('facturacion')">📄 Facturación</button>
     <button class="tab-btn" onclick="switchTab('inventario')">🍺 Inventario</button>
+    <button class="tab-btn" onclick="switchTab('ventas')">💰 Ventas</button>
   </div>
   <div id="periodSelector" style="display:none;margin-top:8px">
     <select id="periodoSelect" onchange="cambiarPeriodo()" style="background:#0d1117;border:1px solid #30363d;color:#f0c040;padding:6px 12px;border-radius:6px;font-size:.85em;font-family:inherit"></select>
@@ -266,6 +267,31 @@
   </div>
 </div>
 
+<!-- ═══════════════ TAB: VENTAS ═══════════════ -->
+<div class="tab-content" id="tab-ventas">
+  <div class="kpi-row" id="kpiVentas">
+    <div class="kpi"><div class="val green" id="vTotal">—</div><div class="lab">Total Facturado</div></div>
+    <div class="kpi"><div class="val blue" id="vNum">—</div><div class="lab">Facturas + RC</div></div>
+    <div class="kpi"><div class="val cyan" id="vDom">—</div><div class="lab">Domicilios</div></div>
+    <div class="kpi"><div class="val red" id="vDebe">—</div><div class="lab">Pendientes (Debe)</div></div>
+  </div>
+
+  <div class="grid">
+    <div class="card full">
+      <h2>📊 Evolución Mensual (Facturas + Domicilios) <span id="vUpdate"></span></h2>
+      <canvas id="chartVentasMensual"></canvas>
+    </div>
+    <div class="card">
+      <h2>🏆 Top 10 Clientes</h2>
+      <canvas id="chartTopClientes"></canvas>
+    </div>
+    <div class="card">
+      <h2>📋 Mix Facturas vs Cuentas de Cobro <span>FE vs RC</span></h2>
+      <canvas id="chartMix"></canvas>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════════ TOAST ═══════════════ -->
 <div class="toast" id="toast"></div>
 
@@ -280,7 +306,7 @@ let allData = [];
 let filtered = [];
 let factCharts = {};
 let overviewCharts = {};
-let TAB_STATE = { facturacion: false, inventario: false, resumen: true };
+let TAB_STATE = { facturacion: false, inventario: false, resumen: true, ventas: false };
 let totalFacturasConsolidado = 0;
 let totalClientesConsolidado = 0;
 let importeConsolidado = 0;
@@ -303,6 +329,10 @@ function switchTab(name) {
   if (name === 'inventario' && !TAB_STATE.inventario) {
     TAB_STATE.inventario = true;
     initInventario();
+  }
+  if (name === 'ventas' && !TAB_STATE.ventas) {
+    TAB_STATE.ventas = true;
+    initVentas();
   }
 }
 
@@ -973,6 +1003,151 @@ function mostrarDetalleCliente(nombre) {
   detalle.innerHTML = html;
   detalle.style.display = 'block';
   detalle.scrollIntoView({ behavior: 'smooth' });
+}
+
+// ═══════════════════════════════════════════════════
+// VENTAS — Consolidado Google Sheets
+// ═══════════════════════════════════════════════════
+const SALES_CSV = "https://docs.google.com/spreadsheets/d/1WFq09-LDg4le6FqC9BnBZfKZXSmb8Kn195wnFZaEMys/gviz/tq?tqx=out:csv&sheet=Respuestas%20de%20formulario%201";
+let ventasCharts = {};
+
+function parseCSVLineV(line) {
+  const r = []; let cur = '', inQ = false;
+  for (let c of line) {
+    if (c === '"') { inQ = !inQ; }
+    else if (c === ',' && !inQ) { r.push(cur); cur = ''; }
+    else { cur += c; }
+  }
+  r.push(cur); return r;
+}
+
+async function initVentas() {
+  try {
+    const resp = await fetch(SALES_CSV);
+    const csv = await resp.text();
+    const lines = csv.trim().split('\n');
+    const data = [];
+    for (let i = 1; i < lines.length; i++) {
+      const cols = parseCSVLineV(lines[i]);
+      if (cols.length < 10) continue;
+      const nombre = (cols[2]||'').trim();
+      const factura = (cols[3]||'').trim();
+      const valor = parseFloat(String(cols[4]||'0').replace(/[$ ]/g,'').replace(/\./g,'').replace(/,/g,'.'))||0;
+      const domicilio = parseFloat(String(cols[5]||'0').replace(/[$ ]/g,'').replace(/\./g,'').replace(/,/g,'.'))||0;
+      const obs = (cols[6]||'').trim();
+      const fechaStr = (cols[1]||'').trim();
+      const cuenta = (cols[8]||'').trim();
+      const pagoR = (cols[9]||'').trim();
+      const nl = nombre.toLowerCase();
+      if (nl.includes('automatización') || nl.includes('opción 1')) continue;
+      if (valor === 0 && domicilio === 0) continue;
+      if (obs.toLowerCase().includes('nota crédito')) continue;
+      const fp = fechaStr.split('/');
+      if (fp.length !== 3) continue;
+      const y = parseInt(fp[2]), m = parseInt(fp[1])-1, d = parseInt(fp[0]);
+      if (y < 2025 || y > 2027) continue;
+      data.push({ nombre, factura, valor, domicilio, fecha: new Date(y,m,d), cuenta, pagoRealizado: pagoR });
+    }
+    renderVentas(data);
+  } catch(e) {
+    document.getElementById('vUpdate').textContent = 'Error cargando datos';
+  }
+}
+
+function renderVentas(data) {
+  const total = data.reduce((s,d) => s + d.valor + d.domicilio, 0);
+  const totalDom = data.reduce((s,d) => s + d.domicilio, 0);
+  const debe = data.filter(d => d.pagoRealizado.toLowerCase()==='debe' || d.cuenta.toLowerCase()==='debe');
+  const totalDebe = debe.reduce((s,d) => s + d.valor + d.domicilio, 0);
+
+  document.getElementById('vTotal').textContent = '$' + total.toLocaleString('es-CO');
+  document.getElementById('vNum').textContent = data.length;
+  document.getElementById('vDom').textContent = '$' + totalDom.toLocaleString('es-CO');
+  document.getElementById('vDebe').textContent = '$' + totalDebe.toLocaleString('es-CO') + ' (' + debe.length + ')';
+  document.getElementById('vUpdate').textContent = 'actualizado ' + new Date().toLocaleString('es-CO',{dateStyle:'short',timeStyle:'short'});
+
+  const monthly = {};
+  data.forEach(d => {
+    const k = d.fecha.getFullYear() + '-' + String(d.fecha.getMonth()+1).padStart(2,'0');
+    if (!monthly[k]) monthly[k] = { valor:0, dom:0 };
+    monthly[k].valor += d.valor;
+    monthly[k].dom += d.domicilio;
+  });
+  const meses = Object.keys(monthly).sort();
+  const mNames = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+  if (ventasCharts.mensual) ventasCharts.mensual.destroy();
+  const ctxM = document.getElementById('chartVentasMensual');
+  if (ctxM) {
+    ventasCharts.mensual = new Chart(ctxM.getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: meses.map(m => mNames[parseInt(m.split('-')[1])-1] + ' ' + m.split('-')[0]),
+        datasets: [
+          { label: 'Facturas', data: meses.map(m => monthly[m].valor), backgroundColor: '#f0c040', borderRadius: 4 },
+          { label: 'Domicilios', data: meses.map(m => monthly[m].dom), backgroundColor: '#3fb950', borderRadius: 4 },
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+          x: { ticks: { color:'#8b949e' }, grid: { color:'#21262d' } },
+          y: { ticks: { color:'#8b949e', callback: v => '$'+(v/1e6).toFixed(1)+'M' }, grid: { color:'#21262d' } },
+        },
+        plugins: { legend: { labels: { color:'#8b949e' } } },
+      }
+    });
+  }
+
+  const clients = {};
+  data.forEach(d => { clients[d.nombre] = (clients[d.nombre]||0) + d.valor + d.domicilio; });
+  const top = Object.entries(clients).sort((a,b) => b[1]-a[1]).slice(0,10);
+  const colors = ['#f0c040','#3fb950','#58a6ff','#d29922','#f85149','#39d2c0','#bc8cff','#f78166','#7ee787','#a5d6ff'];
+
+  if (ventasCharts.clientes) ventasCharts.clientes.destroy();
+  const ctxC = document.getElementById('chartTopClientes');
+  if (ctxC) {
+    ventasCharts.clientes = new Chart(ctxC.getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: top.map(t => t[0]),
+        datasets: [{ data: top.map(t => t[1]), backgroundColor: top.map((_,i) => colors[i]), borderRadius: 4 }]
+      },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        scales: {
+          x: { ticks: { color:'#8b949e', callback: v => '$'+(v/1e6).toFixed(1)+'M' }, grid: { color:'#21262d' } },
+          y: { ticks: { color:'#8b949e', font:{size:10} }, grid: { display:false } },
+        },
+        plugins: { legend: { display:false } },
+      }
+    });
+  }
+
+  let feTotal = 0, rcTotal = 0, feN = 0, rcN = 0;
+  data.forEach(d => {
+    if (d.factura.toUpperCase().startsWith('FE')) { feTotal += d.valor + d.domicilio; feN++; }
+    else { rcTotal += d.valor + d.domicilio; rcN++; }
+  });
+
+  if (ventasCharts.mix) ventasCharts.mix.destroy();
+  const ctxMix = document.getElementById('chartMix');
+  if (ctxMix) {
+    ventasCharts.mix = new Chart(ctxMix.getContext('2d'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Facturas FE ('+feN+')', 'Cuentas Cobro RC ('+rcN+')'],
+        datasets: [{ data: [feTotal, rcTotal], backgroundColor: ['#f0c040','#3fb950'], borderColor:'#0f1117', borderWidth:2 }],
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color:'#8b949e' }, position:'bottom' },
+          tooltip: { callbacks: { label: c => c.label+': $'+c.raw.toLocaleString('es-CO') } },
+        },
+      }
+    });
+  }
 }
 
 </script>

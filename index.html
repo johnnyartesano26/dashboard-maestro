@@ -193,20 +193,16 @@
     transform:translateY(20px); transition:all .3s;
   }
   .toast.show { opacity:1; transform:translateY(0); }
-</style>
-  .summary-card .info h3 { font-size:.9em; color:#c88a3d; margin-bottom:4px; }
-  .summary-card .info p { font-size:.8em; color:#8c7b6b; }
-
-  /* ── TOAST ── */
-  .toast { position:fixed; bottom:24px; right:24px; background:#282420; border:1px solid #c9685e; color:#c9685e; padding:12px 20px; border-radius:8px; font-size:.85em; z-index:999; display:none; }
-  .loading { text-align:center;padding:20px;color:#8c7b6b }
-  .clickable-row { cursor:pointer }
-  .clickable-row:hover { background:#1a1f2b !important }
-  .detalle-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:10px }
-  .detalle-mes { background:#1e1b18; border:1px solid #2a2622; border-radius:6px; padding:12px }
-  .detalle-mes h4 { color:#c88a3d; font-size:.85em; margin-bottom:6px }
-  .detalle-mes .fact { font-size:.78em; color:#8c7b6b; display:flex; justify-content:space-between; padding:2px 0; border-bottom:1px solid #282420 }
-  .detalle-mes .total-mes { font-size:.82em; color:#7a9e7a; font-weight:600; margin-top:6px; text-align:right }
+  .loading { text-align:center;padding:20px;color:var(--mm-dim); }
+  .clickable-row { cursor:pointer; }
+  .clickable-row:hover { background:rgba(200,138,61,.06) !important; }
+  .detalle-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:10px; }
+  .detalle-mes { background:var(--mm-dark); border:1px solid var(--mm-border); border-radius:6px; padding:12px; }
+  .detalle-mes h4 { color:var(--mm-gold); font-size:.85em; margin-bottom:6px; }
+  .detalle-mes .fact { font-size:.78em; color:var(--mm-dim); display:flex; justify-content:space-between; padding:2px 0; border-bottom:1px solid var(--mm-card); }
+  .detalle-mes .total-mes { font-size:.82em; color:var(--mm-green); font-weight:600; margin-top:6px; text-align:right; }
+  .summary-card .info h3 { font-size:.9em; color:var(--mm-gold); margin-bottom:4px; }
+  .summary-card .info p { font-size:.8em; color:var(--mm-dim); }
 </style>
 </head>
 <body>

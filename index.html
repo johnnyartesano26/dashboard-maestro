@@ -6,79 +6,212 @@
 <title>Dashboard Maestro — Madre Monte | Junio 2026</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
+  :root {
+    --mm-gold: #c88a3d;
+    --mm-gold-light: #e8a84c;
+    --mm-gold-pale: #f5e6d3;
+    --mm-dark: #1e1b18;
+    --mm-card: #282420;
+    --mm-border: #3d362e;
+    --mm-text: #e8e0d5;
+    --mm-dim: #8c7b6b;
+    --mm-red: #c9685e;
+    --mm-green: #7a9e7a;
+    --mm-blue: #58a6ff;
+  }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Segoe UI',system-ui,sans-serif; background:#0f1117; color:#e1e4e8; min-height:100vh; }
-  .header { background:linear-gradient(180deg, #1a1f2b 0%, #161b22 100%); border-bottom:1px solid #30363d; padding:16px 24px 0; position:sticky; top:0; z-index:100; }
-  .header h1 { font-size:1.4em; color:#f0c040; }
-  .header .sub { color:#8b949e; font-size:.8em; margin:2px 0 12px; }
+  body { 
+    font-family:'Segoe UI',system-ui,sans-serif; 
+    background:var(--mm-dark); 
+    color:var(--mm-text); 
+    min-height:100vh;
+    position:relative;
+    overflow-x:hidden;
+  }
+  
+  /* ── Burbujas de fondo ── */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(circle 180px at 15% 20%, rgba(200,138,61,.08) 0%, transparent 70%),
+      radial-gradient(circle 250px at 85% 15%, rgba(232,168,76,.05) 0%, transparent 70%),
+      radial-gradient(circle 200px at 50% 80%, rgba(200,138,61,.06) 0%, transparent 70%),
+      radial-gradient(circle 300px at 5% 90%, rgba(122,158,122,.04) 0%, transparent 70%),
+      radial-gradient(circle 150px at 90% 70%, rgba(200,138,61,.05) 0%, transparent 70%);
+  }
+  
+  .bubble {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    animation: floatBubble linear infinite;
+    opacity: .04;
+    background: radial-gradient(circle at 30% 30%, var(--mm-gold-light), var(--mm-gold));
+  }
+  @keyframes floatBubble {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-40px) scale(1.1); }
+    100% { transform: translateY(0) scale(1); }
+  }
+  
+  .header { 
+    background:linear-gradient(180deg, #24201c 0%, #1e1b18 100%); 
+    border-bottom:1px solid var(--mm-border); 
+    padding:16px 24px 0; 
+    position:sticky; top:0; z-index:100; 
+  }
+  .header-top { display:flex; align-items:center; gap:14px; }
+  .header-logo {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--mm-gold-light), var(--mm-gold));
+    box-shadow: 0 0 24px rgba(200,138,61,.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+  }
+  .header h1 { 
+    font-size:1.4em; 
+    background: linear-gradient(135deg, var(--mm-gold-light), var(--mm-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header .sub { color:var(--mm-dim); font-size:.8em; margin:2px 0 12px; }
 
   /* ── TAB NAV ── */
   .tab-nav { display:flex; gap:0; }
-  .tab-btn { padding:10px 24px; background:none; border:none; border-bottom:2px solid transparent; color:#8b949e; font-size:.9em; cursor:pointer; font-family:inherit; transition:all .2s; }
-  .tab-btn:hover { color:#f0c040; background:rgba(240,192,64,.05); }
-  .tab-btn.active { color:#f0c040; border-bottom-color:#f0c040; }
+  .tab-btn { 
+    padding:10px 24px; background:none; border:none; border-bottom:2px solid transparent; 
+    color:var(--mm-dim); font-size:.9em; cursor:pointer; font-family:inherit; transition:all .2s; 
+  }
+  .tab-btn:hover { color:var(--mm-gold-light); background:rgba(200,138,61,.06); }
+  .tab-btn.active { 
+    color:var(--mm-gold); 
+    border-bottom-color:var(--mm-gold);
+    background: linear-gradient(0deg, rgba(200,138,61,.08) 0%, transparent 100%);
+  }
 
   /* ── MAIN CONTENT ── */
-  .tab-content { display:none; padding:20px 24px; }
+  .tab-content { display:none; padding:20px 24px; position:relative; z-index:1; }
   .tab-content.active { display:block; }
 
   /* ── KPI ── */
   .kpi-row { display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap; justify-content:center; }
-  .kpi { background:#161b22; border:1px solid #30363d; border-radius:10px; padding:14px 20px; text-align:center; min-width:140px; flex:1; max-width:200px; }
+  .kpi { 
+    background:var(--mm-card); border:1px solid var(--mm-border); border-radius:10px; 
+    padding:14px 20px; text-align:center; min-width:140px; flex:1; max-width:200px;
+    transition: border-color .3s;
+  }
+  .kpi:hover { border-color:var(--mm-gold); }
   .kpi .val { font-size:1.6em; font-weight:700; }
-  .kpi .lab { font-size:.72em; color:#8b949e; margin-top:4px; }
-  .kpi.compact { padding:10px 14px; min-width:110px; }
-  .kpi.compact .val { font-size:1.3em; }
-  .green { color:#3fb950; } .yellow { color:#d29922; } .red { color:#f85149; } .blue { color:#58a6ff; } .cyan { color:#39d2c0; }
+  .kpi .lab { font-size:.72em; color:var(--mm-dim); margin-top:4px; }
+  .green { color:var(--mm-green); } 
+  .yellow { color:var(--mm-gold-light); } 
+  .red { color:var(--mm-red); } 
+  .blue { color:var(--mm-blue); } 
+  .cyan { color:#39d2c0; }
 
   /* ── GRID & CARDS ── */
   .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(460px,1fr)); gap:18px; max-width:1500px; margin:0 auto; }
-  .card { background:#161b22; border:1px solid #30363d; border-radius:10px; padding:18px; }
-  .card h2 { font-size:1em; color:#f0c040; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
-  .card h2 span { background:#1f2937; padding:2px 8px; border-radius:4px; font-size:.75em; color:#8b949e; font-weight:normal; }
+  .card { 
+    background:var(--mm-card); border:1px solid var(--mm-border); border-radius:10px; padding:18px;
+    transition: border-color .3s;
+  }
+  .card:hover { border-color:rgba(200,138,61,.3); }
+  .card h2 { font-size:1em; color:var(--mm-gold-light); margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .card h2 span { 
+    background:rgba(200,138,61,.1); padding:2px 8px; border-radius:4px; 
+    font-size:.75em; color:var(--mm-dim); font-weight:normal; 
+  }
   .card.full { grid-column:1/-1; }
   .card canvas { max-height:320px; }
 
   /* ── TABLE ── */
   .filters { display:flex; gap:10px; margin-bottom:14px; flex-wrap:wrap; }
-  .filters input,.filters select { background:#0d1117; border:1px solid #30363d; color:#e1e4e8; padding:8px 12px; border-radius:6px; font-size:.85em; min-width:180px; }
+  .filters input,.filters select { 
+    background:var(--mm-dark); border:1px solid var(--mm-border); color:var(--mm-gold); 
+    padding:8px 12px; border-radius:6px; font-size:.85em; min-width:180px; 
+  }
   .filters input::placeholder { color:#484f58; }
   table { width:100%; border-collapse:collapse; font-size:.82em; }
-  th { background:#1a1f2b; color:#8b949e; padding:10px 8px; text-align:left; position:sticky; top:0; z-index:1; cursor:pointer; user-select:none; }
-  th:hover { color:#f0c040; }
-  td { padding:7px 8px; border-bottom:1px solid #21262d; }
-  tr:hover { background:#1a1f2b; }
-  .table-wrap { max-height:500px; overflow-y:auto; border:1px solid #30363d; border-radius:8px; }
-  .draft { color:#d29922; } .closed { color:#3fb950; } .sent { color:#58a6ff; }
-  .bar-tag { display:inline-block; background:#d29922; color:#000; padding:2px 8px; border-radius:4px; font-size:.7em; font-weight:700; }
-  .note { background:#1a1f2b; border-left:3px solid #d29922; padding:10px 14px; border-radius:0 6px 6px 0; font-size:.85em; color:#d29922; margin-top:10px; }
-  .note.red { border-left-color:#f85149; color:#f85149; }
+  th { 
+    background:#24201c; color:var(--mm-dim); padding:10px 8px; text-align:left; 
+    position:sticky; top:0; z-index:1; cursor:pointer; 
+  }
+  th:hover { color:var(--mm-gold-light); }
+  td { padding:7px 8px; border-bottom:1px solid #2a2622; }
+  tr:hover { background:rgba(200,138,61,.04); }
+  .table-wrap { max-height:500px; overflow-y:auto; border:1px solid var(--mm-border); border-radius:8px; }
+  .draft { color:var(--mm-gold-light); } .closed { color:var(--mm-green); }
+  .bar-tag { 
+    display:inline-block; background:var(--mm-gold); color:#fff; 
+    padding:2px 8px; border-radius:4px; font-size:.7em; font-weight:700; 
+  }
+  .note { 
+    background:#24201c; border-left:3px solid var(--mm-gold); padding:10px 14px; 
+    border-radius:0 6px 6px 0; font-size:.85em; color:var(--mm-gold-light); margin-top:10px; 
+  }
+  .note.red { border-left-color:var(--mm-red); color:var(--mm-red); }
 
-  /* ── OVERVIEW SUMMARY CARDS ── */
+  /* ── OVERVIEW ── */
   .summary-section { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:18px; margin-bottom:20px; }
-  .summary-card { background:#161b22; border:1px solid #30363d; border-radius:10px; padding:18px; display:flex; gap:16px; align-items:center; }
-  .summary-card .icon { font-size:2em; width:56px; height:56px; display:flex; align-items:center; justify-content:center; background:#1a1f2b; border-radius:12px; }
-  .summary-card .info h3 { font-size:.9em; color:#f0c040; margin-bottom:4px; }
-  .summary-card .info p { font-size:.8em; color:#8b949e; }
+  .summary-card { 
+    background:var(--mm-card); border:1px solid var(--mm-border); border-radius:10px; 
+    padding:18px; display:flex; gap:16px; align-items:center;
+    transition: border-color .3s;
+  }
+  .summary-card:hover { border-color:var(--mm-gold); }
+  .summary-card .icon { 
+    font-size:2em; width:56px; height:56px; display:flex; align-items:center; 
+    justify-content:center; background:rgba(200,138,61,.06); border-radius:12px; 
+  }
+
+  .toast {
+    position:fixed; bottom:24px; right:24px; background:var(--mm-card);
+    border:1px solid var(--mm-gold); color:var(--mm-text); padding:12px 20px;
+    border-radius:8px; font-size:.85em; z-index:1000; opacity:0;
+    transform:translateY(20px); transition:all .3s;
+  }
+  .toast.show { opacity:1; transform:translateY(0); }
+</style>
+  .summary-card .info h3 { font-size:.9em; color:#c88a3d; margin-bottom:4px; }
+  .summary-card .info p { font-size:.8em; color:#8c7b6b; }
 
   /* ── TOAST ── */
-  .toast { position:fixed; bottom:24px; right:24px; background:#161b22; border:1px solid #f85149; color:#f85149; padding:12px 20px; border-radius:8px; font-size:.85em; z-index:999; display:none; }
-  .loading { text-align:center;padding:20px;color:#8b949e }
+  .toast { position:fixed; bottom:24px; right:24px; background:#282420; border:1px solid #c9685e; color:#c9685e; padding:12px 20px; border-radius:8px; font-size:.85em; z-index:999; display:none; }
+  .loading { text-align:center;padding:20px;color:#8c7b6b }
   .clickable-row { cursor:pointer }
   .clickable-row:hover { background:#1a1f2b !important }
   .detalle-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:10px }
-  .detalle-mes { background:#0d1117; border:1px solid #21262d; border-radius:6px; padding:12px }
-  .detalle-mes h4 { color:#f0c040; font-size:.85em; margin-bottom:6px }
-  .detalle-mes .fact { font-size:.78em; color:#8b949e; display:flex; justify-content:space-between; padding:2px 0; border-bottom:1px solid #161b22 }
-  .detalle-mes .total-mes { font-size:.82em; color:#3fb950; font-weight:600; margin-top:6px; text-align:right }
+  .detalle-mes { background:#1e1b18; border:1px solid #2a2622; border-radius:6px; padding:12px }
+  .detalle-mes h4 { color:#c88a3d; font-size:.85em; margin-bottom:6px }
+  .detalle-mes .fact { font-size:.78em; color:#8c7b6b; display:flex; justify-content:space-between; padding:2px 0; border-bottom:1px solid #282420 }
+  .detalle-mes .total-mes { font-size:.82em; color:#7a9e7a; font-weight:600; margin-top:6px; text-align:right }
 </style>
 </head>
 <body>
 
+<!-- Burbujas decorativas de fondo -->
+<div class="bubble" style="width:180px;height:180px;top:12%;left:8%;animation-duration:18s;"></div>
+<div class="bubble" style="width:120px;height:120px;top:30%;right:12%;animation-duration:22s;animation-delay:-6s;"></div>
+<div class="bubble" style="width:250px;height:250px;bottom:15%;left:5%;animation-duration:25s;animation-delay:-10s;"></div>
+<div class="bubble" style="width:100px;height:100px;top:60%;right:8%;animation-duration:15s;animation-delay:-3s;"></div>
+<div class="bubble" style="width:200px;height:200px;top:75%;left:30%;animation-duration:20s;animation-delay:-14s;"></div>
+
 <!-- ═══════════════ HEADER ═══════════════ -->
 <div class="header">
-  <h1>🍺 Madre Monte — Dashboard Maestro</h1>
-  <div class="sub" id="headerSub">Cargando datos...</div>
+  <div class="header-top">
+    <div class="header-logo">🍺</div>
+    <div>
+      <h1>Madre Monte — Dashboard Maestro</h1>
+      <div class="sub" id="headerSub">Cargando datos...</div>
+    </div>
+  </div>
   <div class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('resumen')">📊 Resumen General</button>
     <button class="tab-btn" onclick="switchTab('facturacion')">📄 Facturación</button>
@@ -86,7 +219,7 @@
     <button class="tab-btn" onclick="switchTab('ventas')">💰 Ventas</button>
   </div>
   <div id="periodSelector" style="display:none;margin-top:8px">
-    <select id="periodoSelect" onchange="cambiarPeriodo()" style="background:#0d1117;border:1px solid #30363d;color:#f0c040;padding:6px 12px;border-radius:6px;font-size:.85em;font-family:inherit"></select>
+    <select id="periodoSelect" onchange="cambiarPeriodo()" style="background:#1e1b18;border:1px solid #3d362e;color:#c88a3d;padding:6px 12px;border-radius:6px;font-size:.85em;font-family:inherit"></select>
   </div>
 </div>
 
@@ -144,16 +277,16 @@
   <div class="kpi-row" id="kpiFact"></div>
 
   <div class="grid" id="gridFact">
-    <div class="card full" style="cursor:pointer;border:1px solid #f0c040" onclick="window.open('https://johnnyartesano26.github.io/crear-factura/','_blank')">
-      <h2>📝 Crear Factura — Programa Automático 🔗 <span style="font-size:.75em;color:#8b949e;margin-left:8px">Click para abrir</span></h2>
-      <p style="color:#8b949e;font-size:.85em">
+    <div class="card full" style="cursor:pointer;border:1px solid #c88a3d" onclick="window.open('https://johnnyartesano26.github.io/crear-factura/','_blank')">
+      <h2>📝 Crear Factura — Programa Automático 🔗 <span style="font-size:.75em;color:#8c7b6b;margin-left:8px">Click para abrir</span></h2>
+      <p style="color:#8c7b6b;font-size:.85em">
         Genera facturas electrónicas vía Alegra API · Catálogo de productos Madre Monte · Historial de facturación<br>
-        <strong style="color:#f0c040">crear factura</strong> — palabra clave del sistema
+        <strong style="color:#c88a3d">crear factura</strong> — palabra clave del sistema
       </p>
     </div>
     <div class="card full" style="cursor:pointer;border:1px solid #39d2c0" onclick="window.open('recibos.html','_blank')">
-      <h2>🧾 Recibos de Caja 🔗 <span style="font-size:.75em;color:#8b949e;margin-left:8px">Click para abrir</span></h2>
-      <p style="color:#8b949e;font-size:.85em">
+      <h2>🧾 Recibos de Caja 🔗 <span style="font-size:.75em;color:#8c7b6b;margin-left:8px">Click para abrir</span></h2>
+      <p style="color:#8c7b6b;font-size:.85em">
         Calcula el recibo de caja del pedido · Botellas y litros · Domicilio · Copia el texto listo para enviar<br>
         <strong style="color:#39d2c0">recibos de caja</strong> — versión web de recibos_de_caja.py
       </p>
@@ -171,7 +304,7 @@
       <canvas id="chartDaily"></canvas>
     </div>
     <div class="card full">
-      <h2>🔍 Buscador de Facturas <span style="font-size:.75em;color:#8b949e"> — <span id="totalCount">0</span> registros</span></h2>
+      <h2>🔍 Buscador de Facturas <span style="font-size:.75em;color:#8c7b6b"> — <span id="totalCount">0</span> registros</span></h2>
       <div class="filters">
         <input type="text" id="searchFact" placeholder="🔍 Cliente, factura, fecha..." oninput="filterTable()">
         <select id="statusFilter" onchange="filterTable()">
@@ -180,7 +313,7 @@
           <option value="draft">Draft (pendientes)</option>
           <option value="sent">Enviadas</option>
         </select>
-        <span id="count" style="color:#8b949e;align-self:center"></span>
+        <span id="count" style="color:#8c7b6b;align-self:center"></span>
       </div>
       <div class="table-wrap">
         <table id="invTable"><thead><tr>
@@ -188,13 +321,13 @@
         </tr></thead><tbody id="tbodyFact"></tbody></table>
     </div>
     <div class="card full" id="cardClientes">
-      <h2>👥 Buscador de Clientes <span style="font-size:.75em;color:#8b949e"> — Datos consolidados Dic 2025 - Jun 2026</span></h2>
+      <h2>👥 Buscador de Clientes <span style="font-size:.75em;color:#8c7b6b"> — Datos consolidados Dic 2025 - Jun 2026</span></h2>
       <div class="filters">
         <input type="text" id="searchCliente" placeholder="🔍 Buscar cliente..." oninput="filtrarClientes()">
         <select id="filtroMesCliente" onchange="filtrarClientes()">
           <option value="">Todos los meses</option>
         </select>
-        <span id="countClientes" style="color:#8b949e;align-self:center;font-size:.85em"></span>
+        <span id="countClientes" style="color:#8c7b6b;align-self:center;font-size:.85em"></span>
       </div>
       <div class="table-wrap">
         <table><thead><tr>
@@ -206,7 +339,7 @@
         <tbody id="tbodyClientes"><tr><td colspan="4" class="loading">Cargando datos de clientes...</td></tr></tbody>
       </table>
       </div>
-      <div id="detalleCliente" style="display:none;margin-top:14px;padding:14px;background:#1a1f2b;border-radius:8px;border:1px solid #30363d"></div>
+      <div id="detalleCliente" style="display:none;margin-top:14px;padding:14px;background:#1a1f2b;border-radius:8px;border:1px solid #3d362e"></div>
     </div>
   </div>
 </div>
@@ -215,9 +348,9 @@
 <!-- ═══════════════ TAB: INVENTARIO ═══════════════ -->
 <div class="tab-content" id="tab-inventario">
   <div class="grid" style="margin-bottom:16px">
-    <div class="card full" style="cursor:pointer;border:1px solid #f0c040" onclick="window.open('https://johnnyartesano26.github.io/madremonte-dashboard/','_blank')">
-      <h2>🏭 Dashboard de Planta — Inventario en Vivo 🔗 <span style="font-size:.75em;color:#8b949e;margin-left:8px">Click para abrir</span></h2>
-      <p style="color:#8b949e;font-size:.85em">
+    <div class="card full" style="cursor:pointer;border:1px solid #c88a3d" onclick="window.open('https://johnnyartesano26.github.io/madremonte-dashboard/','_blank')">
+      <h2>🏭 Dashboard de Planta — Inventario en Vivo 🔗 <span style="font-size:.75em;color:#8c7b6b;margin-left:8px">Click para abrir</span></h2>
+      <p style="color:#8c7b6b;font-size:.85em">
         Monitoreo de fermentadores · Stock de botellas y barriles · Materia prima · Producción en tiempo real
       </p>
     </div>
@@ -295,7 +428,7 @@
   <div class="card" style="margin-top:18px">
     <h2>📥 Facturas pendientes por descargar <span id="pendientesCount"></span></h2>
     <div class="filters" style="margin-bottom:10px">
-      <select id="filtroMesPendientes" onchange="filtrarPendientes()" style="background:#0d1117;border:1px solid #30363d;color:#f0c040;padding:6px 12px;border-radius:6px;font-size:.85em">
+      <select id="filtroMesPendientes" onchange="filtrarPendientes()" style="background:#1e1b18;border:1px solid #3d362e;color:#c88a3d;padding:6px 12px;border-radius:6px;font-size:.85em">
         <option value="todos">Todos los meses</option>
         <option value="Enero">Enero</option>
         <option value="Febrero">Febrero</option>
@@ -307,17 +440,17 @@
       </select>
     </div>
     <div id="listaPendientes" style="max-height:400px;overflow-y:auto;font-size:.82em">
-      <p style="color:#8b949e">Cargando...</p>
+      <p style="color:#8c7b6b">Cargando...</p>
     </div>
-    <p style="color:#8b949e;font-size:.75em;margin-top:8px">
+    <p style="color:#8c7b6b;font-size:.75em;margin-top:8px">
       🔍 = ID estimado (ajustar ±5 si no carga) &nbsp;|&nbsp; 
       Abre el link, descarga el PDF en <b>Facturas/{Mes}/</b>
     </p>
-    <div style="margin-top:12px;background:#1a1f2b;border:1px solid #30363d;border-radius:8px;padding:14px 18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-      <span style="color:#8b949e;font-size:.82em">📥 <a href="https://drive.google.com/drive/folders/1PGX4KmWNl64p7sD2TWCEQVAYQ8ikTrQQ" target="_blank" style="color:#58a6ff">Subir PDFs al Drive</a></span>
-      <code id="syncCmd" style="background:#0d1117;color:#f0c040;padding:8px 14px;border-radius:6px;font-size:.78em;white-space:nowrap">python automatizaciones/sincronizar_drive.py --consolidar</code>
+    <div style="margin-top:12px;background:#1a1f2b;border:1px solid #3d362e;border-radius:8px;padding:14px 18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+      <span style="color:#8c7b6b;font-size:.82em">📥 <a href="https://drive.google.com/drive/folders/1PGX4KmWNl64p7sD2TWCEQVAYQ8ikTrQQ" target="_blank" style="color:#58a6ff">Subir PDFs al Drive</a></span>
+      <code id="syncCmd" style="background:#1e1b18;color:#c88a3d;padding:8px 14px;border-radius:6px;font-size:.78em;white-space:nowrap">python automatizaciones/sincronizar_drive.py --consolidar</code>
       <button onclick="copiarSync()" style="background:#238636;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:.82em;font-weight:600">📋 Copiar y ejecutar</button>
-      <span id="syncMsg" style="color:#3fb950;font-size:.78em;display:none">✅ Copiado — pégalo en tu terminal</span>
+      <span id="syncMsg" style="color:#7a9e7a;font-size:.78em;display:none">✅ Copiado — pégalo en tu terminal</span>
     </div>
   </div>
 </div>
@@ -495,7 +628,7 @@ function cambiarPeriodo(idx) {
     // Mostrar mensaje en la tabla de facturación
     document.getElementById('kpiFact').innerHTML = '<div class="kpi" style="max-width:100%;flex:1"><div class="val yellow">⚠️ Sin facturas detalladas</div><div class="lab">Solo hay datos de ventas Bar para ' + periodoActual.mes + '. Las facturas detalladas de Alegra solo están disponibles para Junio 2026.</div></div>';
     document.getElementById('totalCount').textContent = '0';
-    document.getElementById('tbodyFact').innerHTML = '<tr><td colspan="6" style="text-align:center;padding:20px;color:#8b949e">No hay facturas detalladas para este periodo. Disponible: Junio 2026.</td></tr>';
+    document.getElementById('tbodyFact').innerHTML = '<tr><td colspan="6" style="text-align:center;padding:20px;color:#8c7b6b">No hay facturas detalladas para este periodo. Disponible: Junio 2026.</td></tr>';
     document.getElementById('count').textContent = '';
   }
 }
@@ -722,17 +855,17 @@ function renderOverviewCharts() {
       data:{
         labels: labels,
         datasets: [
-          {label:'Ventas Bar (COP)',data:ventas,backgroundColor:ventas.map((v,i)=>v>=20000000?'#3fb950':'#d29922'),borderRadius:6},
+          {label:'Ventas Bar (COP)',data:ventas,backgroundColor:ventas.map((v,i)=>v>=20000000?'#7a9e7a':'#c88a3d'),borderRadius:6},
         ]
       },
-      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8b949e'}},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP'}}},scales:{x:{ticks:{color:'#8b949e',font:{size:9}},grid:{color:'#21262d'}},y:{ticks:{color:'#8b949e',callback:v=>'$'+(v/1e6).toFixed(0)+'M'},grid:{color:'#21262d'}}}}
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8c7b6b'}},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP'}}},scales:{x:{ticks:{color:'#8c7b6b',font:{size:9}},grid:{color:'#2a2622'}},y:{ticks:{color:'#8c7b6b',callback:v=>'$'+(v/1e6).toFixed(0)+'M'},grid:{color:'#2a2622'}}}}
     });
   } else {
     // Fallback hardcoded
     overviewCharts.prod = new Chart(document.getElementById('chartOverviewProd'), {
       type:'bar',
-      data:{labels:['Ene','Feb','Mar','Abr','May','Jun*'],datasets:[{label:'Litros producidos',data:[1418,1803,2440,2060,1518,917],backgroundColor:'#58a6ff',borderRadius:6,yAxisID:'y'},{label:'Botellas despachadas (und)',data:[37,209,922,1120,1372,571],backgroundColor:'#f0c040',borderRadius:6,yAxisID:'y1'}]},
-      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8b949e'}}},scales:{x:{ticks:{color:'#8b949e'},grid:{color:'#21262d'}},y:{position:'left',title:{display:true,text:'Litros',color:'#58a6ff'},ticks:{color:'#58a6ff'},grid:{color:'#21262d'}},y1:{position:'right',title:{display:true,text:'Botellas (und)',color:'#f0c040'},ticks:{color:'#f0c040'},grid:{display:false}}}}
+      data:{labels:['Ene','Feb','Mar','Abr','May','Jun*'],datasets:[{label:'Litros producidos',data:[1418,1803,2440,2060,1518,917],backgroundColor:'#58a6ff',borderRadius:6,yAxisID:'y'},{label:'Botellas despachadas (und)',data:[37,209,922,1120,1372,571],backgroundColor:'#c88a3d',borderRadius:6,yAxisID:'y1'}]},
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8c7b6b'}}},scales:{x:{ticks:{color:'#8c7b6b'},grid:{color:'#2a2622'}},y:{position:'left',title:{display:true,text:'Litros',color:'#58a6ff'},ticks:{color:'#58a6ff'},grid:{color:'#2a2622'}},y1:{position:'right',title:{display:true,text:'Botellas (und)',color:'#c88a3d'},ticks:{color:'#c88a3d'},grid:{display:false}}}}
     });
   }
 
@@ -745,8 +878,8 @@ function renderOverviewCharts() {
 
   overviewCharts.top = new Chart(document.getElementById('chartOverviewTop'), {
     type:'bar',
-    data:{labels:top5.map(t=>t[0].length>20?t[0].substring(0,19)+'…':t[0]),datasets:[{label:'Total COP',data:top5.map(t=>t[1].total),backgroundColor:top5.map(t=>t[0]==='BAR'?'#d29922':'#58a6ff'),borderRadius:4}]},
-    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP'}}},scales:{x:{ticks:{color:'#8b949e',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#21262d'}},y:{ticks:{color:'#8b949e',font:{size:10}},grid:{color:'#21262d'}}}}
+    data:{labels:top5.map(t=>t[0].length>20?t[0].substring(0,19)+'…':t[0]),datasets:[{label:'Total COP',data:top5.map(t=>t[1].total),backgroundColor:top5.map(t=>t[0]==='BAR'?'#c88a3d':'#58a6ff'),borderRadius:4}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP'}}},scales:{x:{ticks:{color:'#8c7b6b',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#2a2622'}},y:{ticks:{color:'#8c7b6b',font:{size:10}},grid:{color:'#2a2622'}}}}
   });
 
   // Estado facturas
@@ -754,8 +887,8 @@ function renderOverviewCharts() {
   allData.forEach(inv=>{st[inv.status]++;stAmt[inv.status]+=inv.total;});
   overviewCharts.status = new Chart(document.getElementById('chartOverviewStatus'), {
     type:'doughnut',
-    data:{labels:['Cerradas','Draft','Enviadas'],datasets:[{data:[st.closed,st.draft,st.sent],backgroundColor:['#3fb950','#d29922','#58a6ff'],borderColor:'#161b22',borderWidth:2}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8b949e',font:{size:11},padding:14}},tooltip:{callbacks:{label:ctx=>{const s=['closed','draft','sent'][ctx.dataIndex];return ctx.raw+' facturas — $'+stAmt[s].toLocaleString('es-CO')+' COP';}}}}}
+    data:{labels:['Cerradas','Draft','Enviadas'],datasets:[{data:[st.closed,st.draft,st.sent],backgroundColor:['#7a9e7a','#c88a3d','#58a6ff'],borderColor:'#282420',borderWidth:2}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8c7b6b',font:{size:11},padding:14}},tooltip:{callbacks:{label:ctx=>{const s=['closed','draft','sent'][ctx.dataIndex];return ctx.raw+' facturas — $'+stAmt[s].toLocaleString('es-CO')+' COP';}}}}}
   });
 }
 
@@ -797,16 +930,16 @@ function renderFactCharts() {
 
   factCharts.top = new Chart(document.getElementById('chartTop'), {
     type:'bar',
-    data:{labels:top.map(t=>t[0].length>28?t[0].substring(0,27)+'…':t[0]),datasets:[{label:'Total COP',data:top.map(t=>t[1].total),backgroundColor:top.map(t=>t[0]==='BAR'?'#d29922':'#58a6ff'),borderRadius:4}]},
-    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP ('+top[ctx.dataIndex][1].count+' facturas)'}}},scales:{x:{ticks:{color:'#8b949e',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#21262d'}},y:{ticks:{color:'#8b949e',font:{size:10}},grid:{color:'#21262d'}}}}
+    data:{labels:top.map(t=>t[0].length>28?t[0].substring(0,27)+'…':t[0]),datasets:[{label:'Total COP',data:top.map(t=>t[1].total),backgroundColor:top.map(t=>t[0]==='BAR'?'#c88a3d':'#58a6ff'),borderRadius:4}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP ('+top[ctx.dataIndex][1].count+' facturas)'}}},scales:{x:{ticks:{color:'#8c7b6b',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#2a2622'}},y:{ticks:{color:'#8c7b6b',font:{size:10}},grid:{color:'#2a2622'}}}}
   });
 
   const st = {draft:0,sent:0,closed:0}, stAmt = {draft:0,sent:0,closed:0};
   allData.forEach(inv=>{st[inv.status]++;stAmt[inv.status]+=inv.total;});
   factCharts.status = new Chart(document.getElementById('chartStatus'), {
     type:'doughnut',
-    data:{labels:['Cerradas','Draft (pendientes)','Enviadas'],datasets:[{data:[st.closed,st.draft,st.sent],backgroundColor:['#3fb950','#d29922','#58a6ff'],borderColor:'#161b22',borderWidth:2}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8b949e',font:{size:11},padding:14}},tooltip:{callbacks:{label:ctx=>{const s=['closed','draft','sent'][ctx.dataIndex];return ctx.raw+' facturas — $'+stAmt[s].toLocaleString('es-CO')+' COP';}}}}}
+    data:{labels:['Cerradas','Draft (pendientes)','Enviadas'],datasets:[{data:[st.closed,st.draft,st.sent],backgroundColor:['#7a9e7a','#c88a3d','#58a6ff'],borderColor:'#282420',borderWidth:2}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8c7b6b',font:{size:11},padding:14}},tooltip:{callbacks:{label:ctx=>{const s=['closed','draft','sent'][ctx.dataIndex];return ctx.raw+' facturas — $'+stAmt[s].toLocaleString('es-CO')+' COP';}}}}}
   });
 
   const daily = {};
@@ -814,8 +947,8 @@ function renderFactCharts() {
   const days = Object.keys(daily).sort();
   factCharts.daily = new Chart(document.getElementById('chartDaily'), {
     type:'bar',
-    data:{labels:days,datasets:[{label:'Total diario',data:days.map(d=>daily[d].total),backgroundColor:'#58a6ff',borderRadius:4},{label:'Bar (Consumidor Final)',data:days.map(d=>daily[d].barTotal),backgroundColor:'#d29922',borderRadius:4}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8b949e',font:{size:11}}},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP'}}},scales:{x:{ticks:{color:'#8b949e',font:{size:9},maxRotation:45},grid:{color:'#21262d'}},y:{ticks:{color:'#8b949e',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#21262d'}}}}
+    data:{labels:days,datasets:[{label:'Total diario',data:days.map(d=>daily[d].total),backgroundColor:'#58a6ff',borderRadius:4},{label:'Bar (Consumidor Final)',data:days.map(d=>daily[d].barTotal),backgroundColor:'#c88a3d',borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8c7b6b',font:{size:11}}},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP'}}},scales:{x:{ticks:{color:'#8c7b6b',font:{size:9},maxRotation:45},grid:{color:'#2a2622'}},y:{ticks:{color:'#8c7b6b',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#2a2622'}}}}
   });
 }
 
@@ -826,7 +959,7 @@ function renderTable() {
     const cls = inv.status === 'draft' ? 'draft' : inv.status === 'closed' ? 'closed' : 'sent';
     const stLabel = inv.status === 'draft' ? '⚠ Draft' : inv.status === 'closed' ? '✓ Cerrada' : '→ Enviada';
     const cDisp = inv.cliente === 'BAR' ? '<span class="bar-tag">BAR</span>' : inv.cliente;
-    tbody.innerHTML += `<tr><td style="color:#484f58">${i+1}</td><td style="font-weight:600">FE-${inv.id}</td><td style="color:#8b949e">${inv.fecha}</td><td>${cDisp}</td><td style="font-weight:600">$${inv.total.toLocaleString('es-CO')}</td><td class="${cls}">${stLabel}</td></tr>`;
+    tbody.innerHTML += `<tr><td style="color:#484f58">${i+1}</td><td style="font-weight:600">FE-${inv.id}</td><td style="color:#8c7b6b">${inv.fecha}</td><td>${cDisp}</td><td style="font-weight:600">$${inv.total.toLocaleString('es-CO')}</td><td class="${cls}">${stLabel}</td></tr>`;
   });
   document.getElementById('count').textContent = `Mostrando ${filtered.length} de ${allData.length}`;
 }
@@ -903,7 +1036,7 @@ function initInventario() {
   const fermNames = ferms.map(f => f.nombre);
   const fermLitros = ferms.map(f => f.litros);
   const fermCap = ferms.map(f => f.capacidad);
-  const fermColors = ferms.map(f => f.porcentaje >= 95 ? '#f85149' : f.porcentaje >= 80 ? '#d29922' : '#3fb950');
+  const fermColors = ferms.map(f => f.porcentaje >= 95 ? '#c9685e' : f.porcentaje >= 80 ? '#c88a3d' : '#7a9e7a');
 
   invCharts.ferm = new Chart(document.getElementById('chartFermentadores'), {
     type:'bar',
@@ -912,8 +1045,8 @@ function initInventario() {
       {label:'Litros actuales',data:fermLitros,backgroundColor:fermColors,borderColor:'#fff',borderWidth:1,borderRadius:4}
     ]},
     options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{labels:{color:'#8b949e'}},title:{display:true,text:'Datos: ' + fechaPlanta,color:'#8b949e',font:{size:10},position:'bottom'}},
-      scales:{x:{ticks:{color:'#8b949e'},grid:{color:'#21262d'}},y:{title:{display:true,text:'Litros',color:'#8b949e'},ticks:{color:'#8b949e'},grid:{color:'#21262d'}}}
+      plugins:{legend:{labels:{color:'#8c7b6b'}},title:{display:true,text:'Datos: ' + fechaPlanta,color:'#8c7b6b',font:{size:10},position:'bottom'}},
+      scales:{x:{ticks:{color:'#8c7b6b'},grid:{color:'#2a2622'}},y:{title:{display:true,text:'Litros',color:'#8c7b6b'},ticks:{color:'#8c7b6b'},grid:{color:'#2a2622'}}}
     }
   });
 
@@ -921,37 +1054,37 @@ function initInventario() {
   const ocuLabels = ferms.map(f => f.nombre.replace('F','F') + ' (' + f.capacidad + 'L)');
   invCharts.ocu = new Chart(document.getElementById('chartOcupacion'), {
     type:'bar',data:{labels:ocuLabels,datasets:[{label:'% Ocupación',data:ferms.map(f=>Math.round(f.litros/f.capacidad*100)),backgroundColor:fermColors,borderRadius:6}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8b949e',font:{size:10}},grid:{color:'#21262d'}},y:{max:140,title:{display:true,text:'%',color:'#8b949e'},ticks:{color:'#8b949e',callback:v=>v+'%'},grid:{color:'#21262d'}}}}
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8c7b6b',font:{size:10}},grid:{color:'#2a2622'}},y:{max:140,title:{display:true,text:'%',color:'#8c7b6b'},ticks:{color:'#8c7b6b',callback:v=>v+'%'},grid:{color:'#2a2622'}}}}
   });
 
   // Botellas
   invCharts.bot = new Chart(document.getElementById('chartBotellas'), {
-    type:'bar',data:{labels:bots.map(b=>b.estilo),datasets:[{label:'Stock actual',data:bots.map(b=>b.cantidad),backgroundColor:'#3fb950',borderRadius:6}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8b949e',font:{size:10}},grid:{color:'#21262d'}},y:{title:{display:true,text:'Unidades 330ml',color:'#8b949e'},ticks:{color:'#8b949e'},grid:{color:'#21262d'}}}}
+    type:'bar',data:{labels:bots.map(b=>b.estilo),datasets:[{label:'Stock actual',data:bots.map(b=>b.cantidad),backgroundColor:'#7a9e7a',borderRadius:6}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8c7b6b',font:{size:10}},grid:{color:'#2a2622'}},y:{title:{display:true,text:'Unidades 330ml',color:'#8c7b6b'},ticks:{color:'#8c7b6b'},grid:{color:'#2a2622'}}}}
   });
 
   // Barriles
   invCharts.bar = new Chart(document.getElementById('chartBarriles'), {
-    type:'doughnut',data:{labels:barriles.map(b=>b.estilo+' ('+b.codigo+')'),datasets:[{data:barriles.map(b=>b.litros),backgroundColor:['#58a6ff','#f0c040','#3fb950','#d29922','#39d2c0'],borderColor:'#161b22',borderWidth:2}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8b949e',font:{size:11},padding:12}}}}
+    type:'doughnut',data:{labels:barriles.map(b=>b.estilo+' ('+b.codigo+')'),datasets:[{data:barriles.map(b=>b.litros),backgroundColor:['#58a6ff','#c88a3d','#7a9e7a','#c88a3d','#39d2c0'],borderColor:'#282420',borderWidth:2}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8c7b6b',font:{size:11},padding:12}}}}
   });
 
   // Histórico de producción (mantener hardcoded - no viene del API en vivo)
   invCharts.hist = new Chart(document.getElementById('chartHistorico'), {
-    type:'bar',data:{labels:['Ene','Feb','Mar','Abr','May','Jun*'],datasets:[{label:'Litros producidos',data:[1418,1803,2440,2060,1518,917],backgroundColor:'#58a6ff',borderRadius:6,yAxisID:'y'},{label:'Botellas despachadas (und)',data:[37,209,922,1120,1372,571],backgroundColor:'#f0c040',borderRadius:6,yAxisID:'y1'}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8b949e'}}},scales:{x:{ticks:{color:'#8b949e'},grid:{color:'#21262d'}},y:{position:'left',title:{display:true,text:'Litros',color:'#58a6ff'},ticks:{color:'#58a6ff'},grid:{color:'#21262d'}},y1:{position:'right',title:{display:true,text:'Botellas (und)',color:'#f0c040'},ticks:{color:'#f0c040'},grid:{display:false}}}}
+    type:'bar',data:{labels:['Ene','Feb','Mar','Abr','May','Jun*'],datasets:[{label:'Litros producidos',data:[1418,1803,2440,2060,1518,917],backgroundColor:'#58a6ff',borderRadius:6,yAxisID:'y'},{label:'Botellas despachadas (und)',data:[37,209,922,1120,1372,571],backgroundColor:'#c88a3d',borderRadius:6,yAxisID:'y1'}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8c7b6b'}}},scales:{x:{ticks:{color:'#8c7b6b'},grid:{color:'#2a2622'}},y:{position:'left',title:{display:true,text:'Litros',color:'#58a6ff'},ticks:{color:'#58a6ff'},grid:{color:'#2a2622'}},y1:{position:'right',title:{display:true,text:'Botellas (und)',color:'#c88a3d'},ticks:{color:'#c88a3d'},grid:{display:false}}}}
   });
 
   // Comparativa (simplificada con datos reales)
   invCharts.comp = new Chart(document.getElementById('chartComparativa'), {
-    type:'bar',data:{labels:['Producción (L)','Botellas stock','Barriles (L)','Ferment. ocupados'],datasets:[{label:'Actual',data:[totLit,totBots,totBarrilesL,ferms.length],backgroundColor:'rgba(63,185,80,0.7)',borderColor:'#3fb950',borderWidth:1,borderRadius:4}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8b949e',font:{size:10}},grid:{color:'#21262d'}},y:{title:{display:true,text:'Valor',color:'#8b949e'},ticks:{color:'#8b949e'},grid:{color:'#21262d'}}}}
+    type:'bar',data:{labels:['Producción (L)','Botellas stock','Barriles (L)','Ferment. ocupados'],datasets:[{label:'Actual',data:[totLit,totBots,totBarrilesL,ferms.length],backgroundColor:'rgba(63,185,80,0.7)',borderColor:'#7a9e7a',borderWidth:1,borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8c7b6b',font:{size:10}},grid:{color:'#2a2622'}},y:{title:{display:true,text:'Valor',color:'#8c7b6b'},ticks:{color:'#8c7b6b'},grid:{color:'#2a2622'}}}}
   });
 
   // Materia prima (mantener hardcoded)
   invCharts.mat = new Chart(document.getElementById('chartMateria'), {
-    type:'bar',data:{labels:['Malta Pale Ale\n(750g)','Levadura US-05\n(500g)','Malta Pilsen\n(10.2kg)','Lúpulo Cascade\n(340g)','Lúpulo Magnum\n(330g)','Lúpulo Bravo\n(165g)'],datasets:[{label:'Stock actual (g)',data:[750,500,10180,340,330,165],backgroundColor:['#f85149','#f85149','#3fb950','#3fb950','#3fb950','#d29922'],borderRadius:6}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8b949e',font:{size:9},maxRotation:45},grid:{color:'#21262d'}},y:{title:{display:true,text:'Gramos',color:'#8b949e'},ticks:{color:'#8b949e'},grid:{color:'#21262d'}}}}
+    type:'bar',data:{labels:['Malta Pale Ale\n(750g)','Levadura US-05\n(500g)','Malta Pilsen\n(10.2kg)','Lúpulo Cascade\n(340g)','Lúpulo Magnum\n(330g)','Lúpulo Bravo\n(165g)'],datasets:[{label:'Stock actual (g)',data:[750,500,10180,340,330,165],backgroundColor:['#c9685e','#c9685e','#7a9e7a','#7a9e7a','#7a9e7a','#c88a3d'],borderRadius:6}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8c7b6b',font:{size:9},maxRotation:45},grid:{color:'#2a2622'}},y:{title:{display:true,text:'Gramos',color:'#8c7b6b'},ticks:{color:'#8c7b6b'},grid:{color:'#2a2622'}}}}
   });
 }
 
@@ -1005,7 +1138,7 @@ function sortClientes(col) {
 function renderClientesTabla() {
   const tbody = document.getElementById('tbodyClientes');
   if (clientesFiltrados.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;padding:20px;color:#8b949e">Sin resultados</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;padding:20px;color:#8c7b6b">Sin resultados</td></tr>';
     document.getElementById('countClientes').textContent = '';
     return;
   }
@@ -1014,7 +1147,7 @@ function renderClientesTabla() {
       <td><strong>${c.cliente}</strong></td>
       <td>$${c._total.toLocaleString('es-CO')}</td>
       <td>${c._nfact}</td>
-      <td style="font-size:.78em;color:#8b949e">${c._meses.join(', ')}</td>
+      <td style="font-size:.78em;color:#8c7b6b">${c._meses.join(', ')}</td>
     </tr>
   `).join('');
   document.getElementById('countClientes').textContent = `${clientesFiltrados.length} clientes`;
@@ -1026,7 +1159,7 @@ function mostrarDetalleCliente(nombre) {
   if (!c) return;
 
   const detalle = document.getElementById('detalleCliente');
-  let html = `<h3 style="color:#f0c040;margin-bottom:10px">📋 ${c.cliente} — Total: $${c.total_general.toLocaleString('es-CO')}</h3>`;
+  let html = `<h3 style="color:#c88a3d;margin-bottom:10px">📋 ${c.cliente} — Total: $${c.total_general.toLocaleString('es-CO')}</h3>`;
   html += '<div class="detalle-grid">';
 
   const meses = Object.keys(c.meses).sort();
@@ -1127,17 +1260,17 @@ function renderVentas(data) {
       data: {
         labels: meses.map(m => mNames[parseInt(m.split('-')[1])-1] + ' ' + m.split('-')[0]),
         datasets: [
-          { label: 'Facturas', data: meses.map(m => monthly[m].valor), backgroundColor: '#f0c040', borderRadius: 4 },
-          { label: 'Domicilios', data: meses.map(m => monthly[m].dom), backgroundColor: '#3fb950', borderRadius: 4 },
+        { label: 'Facturas', data: meses.map(m => monthly[m].valor), backgroundColor: '#c88a3d', borderRadius: 4 },
+        { label: 'Domicilios', data: meses.map(m => monthly[m].dom), backgroundColor: '#7a9e7a', borderRadius: 4 },
         ]
       },
       options: {
         responsive: true, maintainAspectRatio: false,
         scales: {
-          x: { ticks: { color:'#8b949e' }, grid: { color:'#21262d' } },
-          y: { ticks: { color:'#8b949e', callback: v => '$'+(v/1e6).toFixed(1)+'M' }, grid: { color:'#21262d' } },
+          x: { ticks: { color:'#8c7b6b' }, grid: { color:'#2a2622' } },
+          y: { ticks: { color:'#8c7b6b', callback: v => '$'+(v/1e6).toFixed(1)+'M' }, grid: { color:'#2a2622' } },
         },
-        plugins: { legend: { labels: { color:'#8b949e' } } },
+        plugins: { legend: { labels: { color:'#8c7b6b' } } },
       }
     });
   }
@@ -1145,7 +1278,7 @@ function renderVentas(data) {
   const clients = {};
   data.forEach(d => { clients[d.nombre] = (clients[d.nombre]||0) + d.valor + d.domicilio; });
   const top = Object.entries(clients).sort((a,b) => b[1]-a[1]).slice(0,10);
-  const colors = ['#f0c040','#3fb950','#58a6ff','#d29922','#f85149','#39d2c0','#bc8cff','#f78166','#7ee787','#a5d6ff'];
+  const colors = ['#c88a3d','#e8a84c','#a67c2e','#b03a2e','#7a9e7a','#d68910','#8b6b3d','#5b3a29','#c9685e','#a3b898'];
 
   if (ventasCharts.clientes) ventasCharts.clientes.destroy();
   const ctxC = document.getElementById('chartTopClientes');
@@ -1159,8 +1292,8 @@ function renderVentas(data) {
       options: {
         indexAxis: 'y', responsive: true, maintainAspectRatio: false,
         scales: {
-          x: { ticks: { color:'#8b949e', callback: v => '$'+(v/1e6).toFixed(1)+'M' }, grid: { color:'#21262d' } },
-          y: { ticks: { color:'#8b949e', font:{size:10} }, grid: { display:false } },
+          x: { ticks: { color:'#8c7b6b', callback: v => '$'+(v/1e6).toFixed(1)+'M' }, grid: { color:'#2a2622' } },
+          y: { ticks: { color:'#8c7b6b', font:{size:10} }, grid: { display:false } },
         },
         plugins: { legend: { display:false } },
       }
@@ -1180,12 +1313,12 @@ function renderVentas(data) {
       type: 'doughnut',
       data: {
         labels: ['Facturas FE ('+feN+')', 'Cuentas Cobro RC ('+rcN+')'],
-        datasets: [{ data: [feTotal, rcTotal], backgroundColor: ['#f0c040','#3fb950'], borderColor:'#0f1117', borderWidth:2 }],
+        datasets: [{ data: [feTotal, rcTotal], backgroundColor: ['#c88a3d','#7a9e7a'], borderColor:'#1e1b18', borderWidth:2 }],
       },
       options: {
         responsive: true, maintainAspectRatio: false,
         plugins: {
-          legend: { labels: { color:'#8b949e' }, position:'bottom' },
+          legend: { labels: { color:'#8c7b6b' }, position:'bottom' },
           tooltip: { callbacks: { label: c => c.label+': $'+c.raw.toLocaleString('es-CO') } },
         },
       }
@@ -1237,16 +1370,16 @@ function filtrarPendientes(){
   for(const[mes,fes]of Object.entries(bM)){
     if(!fes.length||(f!=='todos'&&mes!==f))continue;
     t+=fes.length;
-    html+=`<div style="margin-bottom:6px"><strong style="color:#f0c040">📁 ${mes}/</strong> (${fes.length})</div>`;
+    html+=`<div style="margin-bottom:6px"><strong style="color:#c88a3d">📁 ${mes}/</strong> (${fes.length})</div>`;
     const items=fes.slice(0,f==='todos'?10:99);
     for(const fe of items){
       const id=estId(fe), m=FE_KNOWN[fe]?'✅':'🔍';
       html+=`<a href="https://app.alegra.com/invoices/${id}" target="_blank" style="color:#58a6ff;text-decoration:none;display:inline-block;margin:1px 8px 1px 0;font-size:.82em">${m} FE${fe}</a>`;
     }
-    if(fes.length>items.length)html+=`<span style="color:#8b949e;font-size:.78em"> +${fes.length-items.length} más</span>`;
+    if(fes.length>items.length)html+=`<span style="color:#8c7b6b;font-size:.78em"> +${fes.length-items.length} más</span>`;
   }
   document.getElementById('pendientesCount').textContent=`(${t} pendientes)`;
-  document.getElementById('listaPendientes').innerHTML=html||'<p style="color:#3fb950">✅ Todas las facturas descargadas</p>';
+  document.getElementById('listaPendientes').innerHTML=html||'<p style="color:#7a9e7a">✅ Todas las facturas descargadas</p>';
 }
 
 </script>

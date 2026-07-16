@@ -873,7 +873,7 @@ function renderOverviewCharts() {
       data:{
         labels: labels,
         datasets: [
-          {label:'Ventas Bar (COP)',data:ventas,backgroundColor:ventas.map((v,i)=>v>=20000000?'#7a9e7a':'#c88a3d'),borderRadius:6},
+          {label:'Ventas Bar (COP)',data:ventas,backgroundColor:ventas.map((v,i)=>v>=20000000?'#7a9e7a':'#e8a84c'),borderRadius:6},
         ]
       },
       options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8c7b6b'}},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP'}}},scales:{x:{ticks:{color:'#8c7b6b',font:{size:9}},grid:{color:'#2a2622'}},y:{ticks:{color:'#8c7b6b',callback:v=>'$'+(v/1e6).toFixed(0)+'M'},grid:{color:'#2a2622'}}}}
@@ -882,8 +882,8 @@ function renderOverviewCharts() {
     // Fallback hardcoded
     overviewCharts.prod = new Chart(document.getElementById('chartOverviewProd'), {
       type:'bar',
-      data:{labels:['Ene','Feb','Mar','Abr','May','Jun*'],datasets:[{label:'Litros producidos',data:[1418,1803,2440,2060,1518,917],backgroundColor:'#58a6ff',borderRadius:6,yAxisID:'y'},{label:'Botellas despachadas (und)',data:[37,209,922,1120,1372,571],backgroundColor:'#c88a3d',borderRadius:6,yAxisID:'y1'}]},
-      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8c7b6b'}}},scales:{x:{ticks:{color:'#8c7b6b'},grid:{color:'#2a2622'}},y:{position:'left',title:{display:true,text:'Litros',color:'#58a6ff'},ticks:{color:'#58a6ff'},grid:{color:'#2a2622'}},y1:{position:'right',title:{display:true,text:'Botellas (und)',color:'#c88a3d'},ticks:{color:'#c88a3d'},grid:{display:false}}}}
+      data:{labels:['Ene','Feb','Mar','Abr','May','Jun*'],datasets:[{label:'Litros producidos',data:[1418,1803,2440,2060,1518,917],backgroundColor:'#58a6ff',borderRadius:6,yAxisID:'y'},{label:'Botellas despachadas (und)',data:[37,209,922,1120,1372,571],backgroundColor:'#e8a84c',borderRadius:6,yAxisID:'y1'}]},
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8c7b6b'}}},scales:{x:{ticks:{color:'#8c7b6b'},grid:{color:'#2a2622'}},y:{position:'left',title:{display:true,text:'Litros',color:'#58a6ff'},ticks:{color:'#58a6ff'},grid:{color:'#2a2622'}},y1:{position:'right',title:{display:true,text:'Botellas (und)',color:'#e8a84c'},ticks:{color:'#e8a84c'},grid:{display:false}}}}
     });
   }
 
@@ -896,7 +896,7 @@ function renderOverviewCharts() {
 
   overviewCharts.top = new Chart(document.getElementById('chartOverviewTop'), {
     type:'bar',
-    data:{labels:top5.map(t=>t[0].length>20?t[0].substring(0,19)+'…':t[0]),datasets:[{label:'Total COP',data:top5.map(t=>t[1].total),backgroundColor:top5.map(t=>t[0]==='BAR'?'#c88a3d':'#58a6ff'),borderRadius:4}]},
+    data:{labels:top5.map(t=>t[0].length>20?t[0].substring(0,19)+'…':t[0]),datasets:[{label:'Total COP',data:top5.map(t=>t[1].total),backgroundColor:top5.map(t=>t[0]==='BAR'?'#e8a84c':'#58a6ff'),borderRadius:4}]},
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP'}}},scales:{x:{ticks:{color:'#8c7b6b',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#2a2622'}},y:{ticks:{color:'#8c7b6b',font:{size:10}},grid:{color:'#2a2622'}}}}
   });
 
@@ -905,7 +905,7 @@ function renderOverviewCharts() {
   allData.forEach(inv=>{st[inv.status]++;stAmt[inv.status]+=inv.total;});
   overviewCharts.status = new Chart(document.getElementById('chartOverviewStatus'), {
     type:'doughnut',
-    data:{labels:['Cerradas','Draft','Enviadas'],datasets:[{data:[st.closed,st.draft,st.sent],backgroundColor:['#7a9e7a','#c88a3d','#58a6ff'],borderColor:'#282420',borderWidth:2}]},
+    data:{labels:['Cerradas','Draft','Enviadas'],datasets:[{data:[st.closed,st.draft,st.sent],backgroundColor:['#7a9e7a','#e8a84c','#58a6ff'],borderColor:'#fcf9f2',borderWidth:2}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8c7b6b',font:{size:11},padding:14}},tooltip:{callbacks:{label:ctx=>{const s=['closed','draft','sent'][ctx.dataIndex];return ctx.raw+' facturas — $'+stAmt[s].toLocaleString('es-CO')+' COP';}}}}}
   });
 }
@@ -948,7 +948,7 @@ function renderFactCharts() {
 
   factCharts.top = new Chart(document.getElementById('chartTop'), {
     type:'bar',
-    data:{labels:top.map(t=>t[0].length>28?t[0].substring(0,27)+'…':t[0]),datasets:[{label:'Total COP',data:top.map(t=>t[1].total),backgroundColor:top.map(t=>t[0]==='BAR'?'#c88a3d':'#58a6ff'),borderRadius:4}]},
+    data:{labels:top.map(t=>t[0].length>28?t[0].substring(0,27)+'…':t[0]),datasets:[{label:'Total COP',data:top.map(t=>t[1].total),backgroundColor:top.map(t=>t[0]==='BAR'?'#e8a84c':'#58a6ff'),borderRadius:4}]},
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP ('+top[ctx.dataIndex][1].count+' facturas)'}}},scales:{x:{ticks:{color:'#8c7b6b',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#2a2622'}},y:{ticks:{color:'#8c7b6b',font:{size:10}},grid:{color:'#2a2622'}}}}
   });
 
@@ -956,7 +956,7 @@ function renderFactCharts() {
   allData.forEach(inv=>{st[inv.status]++;stAmt[inv.status]+=inv.total;});
   factCharts.status = new Chart(document.getElementById('chartStatus'), {
     type:'doughnut',
-    data:{labels:['Cerradas','Draft (pendientes)','Enviadas'],datasets:[{data:[st.closed,st.draft,st.sent],backgroundColor:['#7a9e7a','#c88a3d','#58a6ff'],borderColor:'#282420',borderWidth:2}]},
+    data:{labels:['Cerradas','Draft (pendientes)','Enviadas'],datasets:[{data:[st.closed,st.draft,st.sent],backgroundColor:['#7a9e7a','#e8a84c','#58a6ff'],borderColor:'#fcf9f2',borderWidth:2}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8c7b6b',font:{size:11},padding:14}},tooltip:{callbacks:{label:ctx=>{const s=['closed','draft','sent'][ctx.dataIndex];return ctx.raw+' facturas — $'+stAmt[s].toLocaleString('es-CO')+' COP';}}}}}
   });
 
@@ -965,7 +965,7 @@ function renderFactCharts() {
   const days = Object.keys(daily).sort();
   factCharts.daily = new Chart(document.getElementById('chartDaily'), {
     type:'bar',
-    data:{labels:days,datasets:[{label:'Total diario',data:days.map(d=>daily[d].total),backgroundColor:'#58a6ff',borderRadius:4},{label:'Bar (Consumidor Final)',data:days.map(d=>daily[d].barTotal),backgroundColor:'#c88a3d',borderRadius:4}]},
+    data:{labels:days,datasets:[{label:'Total diario',data:days.map(d=>daily[d].total),backgroundColor:'#58a6ff',borderRadius:4},{label:'Bar (Consumidor Final)',data:days.map(d=>daily[d].barTotal),backgroundColor:'#e8a84c',borderRadius:4}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8c7b6b',font:{size:11}}},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP'}}},scales:{x:{ticks:{color:'#8c7b6b',font:{size:9},maxRotation:45},grid:{color:'#2a2622'}},y:{ticks:{color:'#8c7b6b',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#2a2622'}}}}
   });
 }
@@ -1054,7 +1054,7 @@ function initInventario() {
   const fermNames = ferms.map(f => f.nombre);
   const fermLitros = ferms.map(f => f.litros);
   const fermCap = ferms.map(f => f.capacidad);
-  const fermColors = ferms.map(f => f.porcentaje >= 95 ? '#c9685e' : f.porcentaje >= 80 ? '#c88a3d' : '#7a9e7a');
+  const fermColors = ferms.map(f => f.porcentaje >= 95 ? '#c9685e' : f.porcentaje >= 80 ? '#e8a84c' : '#7a9e7a');
 
   invCharts.ferm = new Chart(document.getElementById('chartFermentadores'), {
     type:'bar',
@@ -1083,14 +1083,14 @@ function initInventario() {
 
   // Barriles
   invCharts.bar = new Chart(document.getElementById('chartBarriles'), {
-    type:'doughnut',data:{labels:barriles.map(b=>b.estilo+' ('+b.codigo+')'),datasets:[{data:barriles.map(b=>b.litros),backgroundColor:['#58a6ff','#c88a3d','#7a9e7a','#c88a3d','#39d2c0'],borderColor:'#282420',borderWidth:2}]},
+    type:'doughnut',data:{labels:barriles.map(b=>b.estilo+' ('+b.codigo+')'),datasets:[{data:barriles.map(b=>b.litros),backgroundColor:['#58a6ff','#e8a84c','#7a9e7a','#e8a84c','#39d2c0'],borderColor:'#fcf9f2',borderWidth:2}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8c7b6b',font:{size:11},padding:12}}}}
   });
 
   // Histórico de producción (mantener hardcoded - no viene del API en vivo)
   invCharts.hist = new Chart(document.getElementById('chartHistorico'), {
-    type:'bar',data:{labels:['Ene','Feb','Mar','Abr','May','Jun*'],datasets:[{label:'Litros producidos',data:[1418,1803,2440,2060,1518,917],backgroundColor:'#58a6ff',borderRadius:6,yAxisID:'y'},{label:'Botellas despachadas (und)',data:[37,209,922,1120,1372,571],backgroundColor:'#c88a3d',borderRadius:6,yAxisID:'y1'}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8c7b6b'}}},scales:{x:{ticks:{color:'#8c7b6b'},grid:{color:'#2a2622'}},y:{position:'left',title:{display:true,text:'Litros',color:'#58a6ff'},ticks:{color:'#58a6ff'},grid:{color:'#2a2622'}},y1:{position:'right',title:{display:true,text:'Botellas (und)',color:'#c88a3d'},ticks:{color:'#c88a3d'},grid:{display:false}}}}
+    type:'bar',data:{labels:['Ene','Feb','Mar','Abr','May','Jun*'],datasets:[{label:'Litros producidos',data:[1418,1803,2440,2060,1518,917],backgroundColor:'#58a6ff',borderRadius:6,yAxisID:'y'},{label:'Botellas despachadas (und)',data:[37,209,922,1120,1372,571],backgroundColor:'#e8a84c',borderRadius:6,yAxisID:'y1'}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8c7b6b'}}},scales:{x:{ticks:{color:'#8c7b6b'},grid:{color:'#2a2622'}},y:{position:'left',title:{display:true,text:'Litros',color:'#58a6ff'},ticks:{color:'#58a6ff'},grid:{color:'#2a2622'}},y1:{position:'right',title:{display:true,text:'Botellas (und)',color:'#e8a84c'},ticks:{color:'#e8a84c'},grid:{display:false}}}}
   });
 
   // Comparativa (simplificada con datos reales)
@@ -1101,7 +1101,7 @@ function initInventario() {
 
   // Materia prima (mantener hardcoded)
   invCharts.mat = new Chart(document.getElementById('chartMateria'), {
-    type:'bar',data:{labels:['Malta Pale Ale\n(750g)','Levadura US-05\n(500g)','Malta Pilsen\n(10.2kg)','Lúpulo Cascade\n(340g)','Lúpulo Magnum\n(330g)','Lúpulo Bravo\n(165g)'],datasets:[{label:'Stock actual (g)',data:[750,500,10180,340,330,165],backgroundColor:['#c9685e','#c9685e','#7a9e7a','#7a9e7a','#7a9e7a','#c88a3d'],borderRadius:6}]},
+    type:'bar',data:{labels:['Malta Pale Ale\n(750g)','Levadura US-05\n(500g)','Malta Pilsen\n(10.2kg)','Lúpulo Cascade\n(340g)','Lúpulo Magnum\n(330g)','Lúpulo Bravo\n(165g)'],datasets:[{label:'Stock actual (g)',data:[750,500,10180,340,330,165],backgroundColor:['#c9685e','#c9685e','#7a9e7a','#7a9e7a','#7a9e7a','#e8a84c'],borderRadius:6}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8c7b6b',font:{size:9},maxRotation:45},grid:{color:'#2a2622'}},y:{title:{display:true,text:'Gramos',color:'#8c7b6b'},ticks:{color:'#8c7b6b'},grid:{color:'#2a2622'}}}}
   });
 }
@@ -1278,7 +1278,7 @@ function renderVentas(data) {
       data: {
         labels: meses.map(m => mNames[parseInt(m.split('-')[1])-1] + ' ' + m.split('-')[0]),
         datasets: [
-        { label: 'Facturas', data: meses.map(m => monthly[m].valor), backgroundColor: '#c88a3d', borderRadius: 4 },
+        { label: 'Facturas', data: meses.map(m => monthly[m].valor), backgroundColor: '#e8a84c', borderRadius: 4 },
         { label: 'Domicilios', data: meses.map(m => monthly[m].dom), backgroundColor: '#7a9e7a', borderRadius: 4 },
         ]
       },
@@ -1296,7 +1296,7 @@ function renderVentas(data) {
   const clients = {};
   data.forEach(d => { clients[d.nombre] = (clients[d.nombre]||0) + d.valor + d.domicilio; });
   const top = Object.entries(clients).sort((a,b) => b[1]-a[1]).slice(0,10);
-  const colors = ['#c88a3d','#e8a84c','#a67c2e','#b03a2e','#7a9e7a','#d68910','#8b6b3d','#5b3a29','#c9685e','#a3b898'];
+  const colors = ['#e8a84c','#e8a84c','#7a9e7a','#6ba292','#d4a03c','#b8863e','#5b8c6e','#c9974a','#a3b898','#d68910'];
 
   if (ventasCharts.clientes) ventasCharts.clientes.destroy();
   const ctxC = document.getElementById('chartTopClientes');
@@ -1331,7 +1331,7 @@ function renderVentas(data) {
       type: 'doughnut',
       data: {
         labels: ['Facturas FE ('+feN+')', 'Cuentas Cobro RC ('+rcN+')'],
-        datasets: [{ data: [feTotal, rcTotal], backgroundColor: ['#c88a3d','#7a9e7a'], borderColor:'#1e1b18', borderWidth:2 }],
+        datasets: [{ data: [feTotal, rcTotal], backgroundColor: ['#e8a84c','#7a9e7a'], borderColor:'#fcf9f2', borderWidth:2 }],
       },
       options: {
         responsive: true, maintainAspectRatio: false,

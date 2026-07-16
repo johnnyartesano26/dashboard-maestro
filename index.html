@@ -49,14 +49,29 @@
     border-radius: 50%;
     pointer-events: none;
     z-index: 0;
-    animation: floatBubble linear infinite;
-    opacity: .04;
+    opacity: .06;
     background: radial-gradient(circle at 30% 30%, var(--mm-gold-light), var(--mm-gold));
   }
   @keyframes floatBubble {
-    0% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-40px) scale(1.1); }
-    100% { transform: translateY(0) scale(1); }
+    0%   { transform: translateY(0) translateX(0) scale(1); opacity: .04; }
+    25%  { transform: translateY(-60px) translateX(15px) scale(1.3); opacity: .08; }
+    50%  { transform: translateY(-120px) translateX(-10px) scale(1.1); opacity: .03; }
+    75%  { transform: translateY(-40px) translateX(-20px) scale(1.4); opacity: .07; }
+    100% { transform: translateY(0) translateX(0) scale(1); opacity: .04; }
+  }
+  @keyframes riseBubble {
+    0%   { transform: translateY(100vh) scale(.5); opacity: 0; }
+    10%  { opacity: .06; }
+    90%  { opacity: .05; }
+    100% { transform: translateY(-10vh) scale(1.1); opacity: 0; }
+  }
+  .bubble-rise {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    animation: riseBubble linear infinite;
+    background: radial-gradient(circle at 40% 40%, var(--mm-gold-light), transparent);
   }
   
   .header { 
@@ -196,12 +211,22 @@
 </head>
 <body>
 
-<!-- Burbujas decorativas de fondo -->
-<div class="bubble" style="width:180px;height:180px;top:12%;left:8%;animation-duration:18s;"></div>
-<div class="bubble" style="width:120px;height:120px;top:30%;right:12%;animation-duration:22s;animation-delay:-6s;"></div>
-<div class="bubble" style="width:250px;height:250px;bottom:15%;left:5%;animation-duration:25s;animation-delay:-10s;"></div>
-<div class="bubble" style="width:100px;height:100px;top:60%;right:8%;animation-duration:15s;animation-delay:-3s;"></div>
-<div class="bubble" style="width:200px;height:200px;top:75%;left:30%;animation-duration:20s;animation-delay:-14s;"></div>
+<!-- Burbujas efervescentes de fondo -->
+<div class="bubble-rise" style="width:30px;height:30px;left:5%;animation-duration:8s;"></div>
+<div class="bubble-rise" style="width:50px;height:50px;left:12%;animation-duration:12s;animation-delay:-2s;"></div>
+<div class="bubble-rise" style="width:20px;height:20px;left:22%;animation-duration:7s;animation-delay:-5s;"></div>
+<div class="bubble-rise" style="width:40px;height:40px;left:35%;animation-duration:10s;animation-delay:-3s;"></div>
+<div class="bubble-rise" style="width:25px;height:25px;left:48%;animation-duration:9s;animation-delay:-7s;"></div>
+<div class="bubble-rise" style="width:55px;height:55px;left:55%;animation-duration:14s;animation-delay:-1s;"></div>
+<div class="bubble-rise" style="width:18px;height:18px;left:68%;animation-duration:6s;animation-delay:-4s;"></div>
+<div class="bubble-rise" style="width:35px;height:35px;left:75%;animation-duration:11s;animation-delay:-8s;"></div>
+<div class="bubble-rise" style="width:45px;height:45px;left:85%;animation-duration:13s;animation-delay:-6s;"></div>
+<div class="bubble-rise" style="width:22px;height:22px;left:92%;animation-duration:7s;animation-delay:-9s;"></div>
+<div class="bubble-rise" style="width:32px;height:32px;left:18%;animation-duration:15s;animation-delay:-11s;"></div>
+<div class="bubble-rise" style="width:28px;height:28px;left:42%;animation-duration:9s;animation-delay:-13s;"></div>
+<div class="bubble-rise" style="width:15px;height:15px;left:62%;animation-duration:8s;animation-delay:-15s;"></div>
+<div class="bubble-rise" style="width:38px;height:38px;left:80%;animation-duration:12s;animation-delay:-10s;"></div>
+<div class="bubble-rise" style="width:48px;height:48px;left:28%;animation-duration:16s;animation-delay:-14s;"></div>
 
 <!-- ═══════════════ HEADER ═══════════════ -->
 <div class="header">

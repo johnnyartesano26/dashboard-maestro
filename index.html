@@ -290,6 +290,30 @@
       <canvas id="chartMix"></canvas>
     </div>
   </div>
+
+  <!-- Pendientes por descargar -->
+  <div class="card" style="margin-top:18px">
+    <h2>📥 Facturas pendientes por descargar <span id="pendientesCount"></span></h2>
+    <div class="filters" style="margin-bottom:10px">
+      <select id="filtroMesPendientes" onchange="filtrarPendientes()" style="background:#0d1117;border:1px solid #30363d;color:#f0c040;padding:6px 12px;border-radius:6px;font-size:.85em">
+        <option value="todos">Todos los meses</option>
+        <option value="Enero">Enero</option>
+        <option value="Febrero">Febrero</option>
+        <option value="Marzo">Marzo</option>
+        <option value="Abril">Abril</option>
+        <option value="Mayo">Mayo</option>
+        <option value="Junio">Junio</option>
+        <option value="Julio">Julio</option>
+      </select>
+    </div>
+    <div id="listaPendientes" style="max-height:400px;overflow-y:auto;font-size:.82em">
+      <p style="color:#8b949e">Cargando...</p>
+    </div>
+    <p style="color:#8b949e;font-size:.75em;margin-top:8px">
+      🔍 = ID estimado (ajustar ±5 si no carga) &nbsp;|&nbsp; 
+      Abre el link, descarga el PDF en <b>Facturas/{Mes}/</b> y ejecuta <code>consolidar_ventas_pdfs.py --crear</code>
+    </p>
+  </div>
 </div>
 
 <!-- ═══════════════ TOAST ═══════════════ -->
@@ -1066,6 +1090,8 @@ function renderVentas(data) {
   document.getElementById('vDebe').textContent = '$' + totalDebe.toLocaleString('es-CO') + ' (' + debe.length + ')';
   document.getElementById('vUpdate').textContent = 'actualizado ' + new Date().toLocaleString('es-CO',{dateStyle:'short',timeStyle:'short'});
 
+  renderPendingList(data);
+
   const monthly = {};
   data.forEach(d => {
     const k = d.fecha.getFullYear() + '-' + String(d.fecha.getMonth()+1).padStart(2,'0');
@@ -1148,6 +1174,62 @@ function renderVentas(data) {
       }
     });
   }
+}
+
+// ═══════════════════════════════════════════════════
+// PENDIENTES POR DESCARGAR (facturas faltantes en Alegra)
+// ═══════════════════════════════════════════════════
+const FE_KNOWN = {607:4135,606:4134,605:4128,604:4112,603:4111,602:4100,598:4092,596:4090,593:4080,592:4079,591:4076,574:4050};
+let allVentasData = [];
+
+function estId(fe) {
+  if (FE_KNOWN[fe]) return FE_KNOWN[fe];
+  const keys = Object.keys(FE_KNOWN).map(Number).sort((a,b)=>a-b);
+  const lo = Math.max(...keys.filter(k=>k<fe));
+  const hi = Math.min(...keys.filter(k=>k>fe));
+  if (!isFinite(lo)||!isFinite(hi)) return fe+3490;
+  const t = (fe-lo)/(hi-lo);
+  return Math.round(fe + FE_KNOWN[lo]-lo + t*(FE_KNOWN[hi]-hi - (FE_KNOWN[lo]-lo)));
+}
+
+function renderPendingList(data) {
+  const exist = new Set();
+  data.forEach(d=>{const m=d.factura.toUpperCase().match(/FE(\d+)/);if(m)exist.add(+m[1])});
+  const minF=Math.min(...exist), maxF=Math.max(...exist);
+  const mM={Enero:1,Febrero:2,Marzo:3,Abril:4,Mayo:5,Junio:6,Julio:7};
+  const bM={};for(const[n]of Object.entries(mM))bM[n]=[];
+  for(let f=minF;f<=maxF;f++){
+    if(exist.has(f))continue;
+    let best=null,bestD=1e9;
+    for(const d of data){
+      const m2=d.factura.toUpperCase().match(/FE(\d+)/);
+      if(m2&&d.fecha&&d.fecha.getMonth!==undefined){
+        const dist=Math.abs(f- +m2[1]);
+        if(dist<30&&dist<bestD){best=d.fecha.getMonth()+1;bestD=dist;}
+      }
+    }
+    const mn=Object.entries(mM).find(([,v])=>v===best)?.[0]||'Otros';
+    bM[mn].push(f);
+  }
+  allVentasData=data; window._pend=bM; filtrarPendientes();
+}
+
+function filtrarPendientes(){
+  const bM=window._pend||{}; const f=document.getElementById('filtroMesPendientes')?.value||'todos';
+  let t=0, html='';
+  for(const[mes,fes]of Object.entries(bM)){
+    if(!fes.length||(f!=='todos'&&mes!==f))continue;
+    t+=fes.length;
+    html+=`<div style="margin-bottom:6px"><strong style="color:#f0c040">📁 ${mes}/</strong> (${fes.length})</div>`;
+    const items=fes.slice(0,f==='todos'?10:99);
+    for(const fe of items){
+      const id=estId(fe), m=FE_KNOWN[fe]?'✅':'🔍';
+      html+=`<a href="https://app.alegra.com/invoices/${id}" target="_blank" style="color:#58a6ff;text-decoration:none;display:inline-block;margin:1px 8px 1px 0;font-size:.82em">${m} FE${fe}</a>`;
+    }
+    if(fes.length>items.length)html+=`<span style="color:#8b949e;font-size:.78em"> +${fes.length-items.length} más</span>`;
+  }
+  document.getElementById('pendientesCount').textContent=`(${t} pendientes)`;
+  document.getElementById('listaPendientes').innerHTML=html||'<p style="color:#3fb950">✅ Todas las facturas descargadas</p>';
 }
 
 </script>

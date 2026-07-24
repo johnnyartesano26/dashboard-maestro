@@ -129,9 +129,10 @@
         "crecimiento": -30.2
       },
       "inventario": {
-        "litros_activos": 2323,
-        "litros_barril": 493,
-        "botellas_despachadas": 547,
+        "litros_activos": 1857,
+        "litros_barril": 194,
+        "botellas_despachadas": 164,
+        "ventas_semanales_cop": 8016600,
         "fecha_actualizacion": "22/07/2026 12:05:27",
         "responsable": "WILSON"
       }

@@ -101,10 +101,12 @@
     <h2>🧾 Recibo generado</h2>
     <div class="resultado" id="resultado">Agrega productos para generar el recibo…</div>
     <div class="detalle" id="detalle"></div>
-    <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+    <div style="margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
       <button onclick="copiar()">📋 Copiar recibo</button>
+      <button class="sec" onclick="registrar()">💾 Registrar</button>
       <button class="sec" onclick="limpiar()">🗑️ Limpiar todo</button>
       <span class="copied" id="copiado"></span>
+      <span id="pendientes-badge" style="display:none;background:#c88a3d;color:#fff;padding:4px 10px;border-radius:12px;font-size:12px;font-weight:600;cursor:pointer" onclick="exportarPendientes()" title="Clic para exportar pendientes a CSV"></span>
     </div>
   </div>
 
@@ -185,7 +187,78 @@ function copiar(){
     c.textContent = "✅ Copiado";
     setTimeout(() => c.textContent = "", 2000);
   });
+  registrar(); // también guardar automáticamente al copiar
 }
+
+function registrar(){
+  if (!productos.length) return;
+  const fecha = document.getElementById("fecha").value.trim() || "s/f";
+  const domicilio = parseFloat(document.getElementById("domicilio").value) || 0;
+  const recibo = {
+    timestamp: new Date().toISOString(),
+    fecha,
+    domicilio,
+    productos: productos.map(p => ({
+      tipo: p.tipo,
+      estilo: p.estilo,
+      presentacion: p.presentacion,
+      cantidad: p.cantidad,
+      precio: p.precio,
+      total: p.total
+    })),
+    total: productos.reduce((s,p) => s + p.total, 0) + domicilio
+  };
+  
+  let pendientes = [];
+  try {
+    pendientes = JSON.parse(localStorage.getItem("mm_recibos_pendientes") || "[]");
+  } catch(e) {}
+  pendientes.push(recibo);
+  localStorage.setItem("mm_recibos_pendientes", JSON.stringify(pendientes));
+  
+  showPendientes();
+  const c = document.getElementById("copiado");
+  c.textContent = "💾 Guardado (" + pendientes.length + " pend.)";
+  setTimeout(() => showPendientes(), 3000);
+}
+
+function showPendientes(){
+  let pendientes = [];
+  try {
+    pendientes = JSON.parse(localStorage.getItem("mm_recibos_pendientes") || "[]");
+  } catch(e) {}
+  const badge = document.getElementById("pendientes-badge");
+  if (pendientes.length > 0) {
+    badge.style.display = "inline";
+    badge.textContent = "📋 " + pendientes.length + " recibos pendientes";
+  } else {
+    badge.style.display = "none";
+  }
+}
+
+function exportarPendientes(){
+  let pendientes = [];
+  try {
+    pendientes = JSON.parse(localStorage.getItem("mm_recibos_pendientes") || "[]");
+  } catch(e) {}
+  if (!pendientes.length) { alert("No hay recibos pendientes."); return; }
+  
+  // Generar formato compatible para importar en pipeline
+  let csv = "timestamp,fecha,domicilio,total,items\n";
+  pendientes.forEach(r => {
+    const items = r.productos.map(p => 
+      p.cantidad + " " + (p.tipo==='b'?'bot':'L') + " " + MOSTRAR[p.estilo]
+    ).join(" | ");
+    csv += `${r.timestamp},${r.fecha},${r.domicilio},${r.total},"${items}"\n`;
+  });
+  
+  navigator.clipboard.writeText(csv).then(() => {
+    alert(`✅ ${pendientes.length} recibos exportados al portapapeles.\nPega en: consola > pipeline > recibos_pendientes`);
+  });
+}
+
+// Mostrar pendientes al cargar
+showPendientes();
 
 document.getElementById("fecha").addEventListener("input", render);
 document.getElementById("domicilio").addEventListener("input", render);

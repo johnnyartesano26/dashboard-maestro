@@ -2462,5 +2462,27 @@
     "efectivo": 146000.0,
     "transferencias": 338000.0,
     "datafono": 34000.0
+  },
+  {
+    "fecha": "2026-07-21",
+    "mes": "Jul 26",
+    "dia": 21,
+    "dia_semana": "Tuesday",
+    "alegra": 766000.0,
+    "formato": 593400.0,
+    "efectivo": 473000.0,
+    "transferencias": 185000.0,
+    "datafono": 108000.0
+  },
+  {
+    "fecha": "2026-07-22",
+    "mes": "Jul 26",
+    "dia": 22,
+    "dia_semana": "Wednesday",
+    "alegra": 380000.0,
+    "formato": 328555.0,
+    "efectivo": 22000.0,
+    "transferencias": 172000.0,
+    "datafono": 186000.0
   }
 ]

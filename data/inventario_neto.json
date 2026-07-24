@@ -1,0 +1,114 @@
+{
+  "generado": "2026-07-24T18:14:00.988738",
+  "fecha_lectura": "22/07/2026 12:05:27",
+  "fermentadores": [
+    {
+      "nombre": "F1 Frankie",
+      "estilo": "STOUT",
+      "litros": 353.0,
+      "capacidad": 400,
+      "porcentaje": 88
+    },
+    {
+      "nombre": "F2 Igor",
+      "estilo": "IRISH RED ALE",
+      "litros": 680.0,
+      "capacidad": 1200,
+      "porcentaje": 57
+    },
+    {
+      "nombre": "F3 Principito",
+      "estilo": "PTL03 = American Pale Ale - Cienfuegos",
+      "litros": 0.0,
+      "capacidad": 400,
+      "porcentaje": 0
+    },
+    {
+      "nombre": "F4 Gargantua",
+      "estilo": "PTL04 = American India Pale Ale - Vagabundo",
+      "litros": 0.0,
+      "capacidad": 700,
+      "porcentaje": 0
+    },
+    {
+      "nombre": "F5 Pantagruel",
+      "estilo": "PTL04 = American India Pale Ale - Vagabundo",
+      "litros": 660.0,
+      "capacidad": 800,
+      "porcentaje": 82
+    },
+    {
+      "nombre": "F6 Potter",
+      "estilo": "GOLDEN ALE",
+      "litros": 630.0,
+      "capacidad": 1000,
+      "porcentaje": 63
+    },
+    {
+      "nombre": "F7 HighLander",
+      "estilo": "HIDROMIEL",
+      "litros": 0.0,
+      "capacidad": 500,
+      "porcentaje": 0
+    }
+  ],
+  "barriles": [
+    {
+      "codigo": "PTL01",
+      "estilo": "GOLDEN ALE",
+      "litros": 0
+    },
+    {
+      "codigo": "PTL02",
+      "estilo": "IRISH RED ALE",
+      "litros": 0
+    },
+    {
+      "codigo": "PTL03",
+      "estilo": "APA",
+      "litros": 193.5
+    },
+    {
+      "codigo": "PTL04",
+      "estilo": "IPA",
+      "litros": 0
+    },
+    {
+      "codigo": "PTL05",
+      "estilo": "STOUT",
+      "litros": 0
+    }
+  ],
+  "botellas": [
+    {
+      "codigo": "PTB01",
+      "estilo": "GOLDEN ALE",
+      "cantidad": 0
+    },
+    {
+      "codigo": "PTB02",
+      "estilo": "IRISH RED ALE",
+      "cantidad": 0
+    },
+    {
+      "codigo": "PTB03",
+      "estilo": "APA",
+      "cantidad": 0
+    },
+    {
+      "codigo": "PTB04",
+      "estilo": "IPA",
+      "cantidad": 0
+    },
+    {
+      "codigo": "PTB05",
+      "estilo": "STOUT",
+      "cantidad": 0
+    }
+  ],
+  "totales": {
+    "litros_fermentando": 1856,
+    "litros_barril": 193,
+    "ventas_cop": 8436600
+  }
+}

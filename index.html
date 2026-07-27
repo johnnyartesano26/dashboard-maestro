@@ -562,7 +562,9 @@ function switchTab(name) {
 
   if (name === 'facturacion' && !TAB_STATE.facturacion) {
     TAB_STATE.facturacion = true;
-    if (periodoActual) loadFacturacionData(periodoActual.facturacion.archivo);
+    if (periodoActual && periodoActual.facturacion && periodoActual.facturacion.archivo) {
+      loadFacturacionData(periodoActual.facturacion.archivo);
+    }
   }
   if (name === 'inventario' && !TAB_STATE.inventario) {
     TAB_STATE.inventario = true;
@@ -578,6 +580,7 @@ function switchTab(name) {
 // INIT: Cargar todo en paralelo
 // ═══════════════════════════════════════════════════
 window.onload = async function() {
+  try {
   document.getElementById('headerSub').textContent = 'Cargando datos...';
 
   // Cargar todo en paralelo
@@ -652,6 +655,11 @@ window.onload = async function() {
   } else {
     document.getElementById('headerSub').textContent = 'Cervecería Madre Monte — Sin datos disponibles. Verifica la conexión.';
     updateOverviewFromCatalogo();
+  }
+  } catch(e) {
+    console.error('Init error:', e);
+    document.getElementById('headerSub').textContent = '⚠️ Error de inicialización: ' + e.message;
+    document.getElementById('kpiOverview').innerHTML = '<div class="kpi" style="max-width:100%;flex:1"><div class="val red">⚠️ Error</div><div class="lab">' + e.message + '</div></div>';
   }
 };
 
@@ -951,6 +959,7 @@ function renderPlantaSummary() {
 // OVERVIEW CHARTS
 // ═══════════════════════════════════════════════════
 function renderOverviewCharts() {
+  try {
   Object.values(overviewCharts).forEach(c => c.destroy());
   overviewCharts = {};
 
@@ -1018,8 +1027,12 @@ function renderOverviewCharts() {
   overviewCharts.status = new Chart(document.getElementById('chartOverviewStatus'), {
     type:'doughnut',
     data:{labels:['Cerradas','Draft','Enviadas'],datasets:[{data:[st.closed,st.draft,st.sent],backgroundColor:['#7a9e7a','#e8a84c','#58a6ff'],borderColor:'#fcf9f2',borderWidth:2}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8c7b6b',font:{size:11},padding:14}},tooltip:{callbacks:{label:ctx=>{const s=['closed','draft','sent'][ctx.dataIndex];return ctx.raw+' facturas — $'+stAmt[s].toLocaleString('es-CO')+' COP';}}}}}
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8c7b6b',font:{size:11},padding:14}},tooltip:{callbacks:{label:ctx=>{const s=['closed','draft','sent'][ctx.dataIndex];return ctx.raw+' facturas — $'+stAmt[s].toLocaleString('es-CO')+' COP';}}}}}
   });
+  } catch(e) {
+    console.error('renderOverviewCharts error:', e);
+    document.getElementById('headerSub').textContent = '⚠️ Error en gráficos: ' + e.message;
+  }
 }
 
 // ═══════════════════════════════════════════════════

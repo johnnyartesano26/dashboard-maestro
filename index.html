@@ -882,6 +882,35 @@ function updateOverviewFromCatalogo() {
   const inv = periodoActual.inventario || {};
   const f = periodoActual.facturacion || {};
 
+  // Calcular datos de inventario desde plantaData como fallback
+  let plantaOcupacion = null, plantaLitros = null, plantaBotellas = null, plantaBarriles = null, plantaFermentadores = 0;
+  if (plantaData && plantaData.fermentadores) {
+    const totL = plantaData.fermentadores.reduce((s, x) => s + (x.litros || 0), 0);
+    const totC = plantaData.fermentadores.reduce((s, x) => s + (x.capacidad || 0), 0);
+    plantaOcupacion = totC > 0 ? Math.round(totL / totC * 100) : null;
+    plantaLitros = totL;
+    plantaFermentadores = plantaData.fermentadores.length;
+  }
+  if (plantaData && plantaData.botellas) {
+    plantaBotellas = plantaData.botellas.reduce((s, b) => s + (b.cantidad || 0), 0);
+  }
+  if (plantaData && plantaData.barriles) {
+    plantaBarriles = plantaData.barriles.reduce((s, b) => s + (b.litros || 0), 0);
+  }
+
+  // Valores finales: preferir datos del período, fallback a plantaData
+  const ocupacion = inv.ocupacion_tanques ? inv.ocupacion_tanques+'%' : (plantaOcupacion !== null ? plantaOcupacion+'%' : '--');
+  const litrosActivos = inv.litros_activos ? inv.litros_activos.toLocaleString()+' L' : (plantaLitros ? plantaLitros.toLocaleString()+' L' : '--');
+  const invSummary = inv.litros_activos
+    ? (plantaFermentadores || 7)+' fermentadores · '+inv.litros_activos.toLocaleString()+'L activos'
+    : (plantaLitros ? plantaFermentadores+' fermentadores · '+plantaLitros.toLocaleString()+'L activos' : 'Sin datos de inventario');
+  const botSummary = inv.botellas_stock
+    ? inv.botellas_stock.toLocaleString()+' botellas 330ml'
+    : (plantaBotellas ? plantaBotellas.toLocaleString()+' botellas 330ml' : '');
+  const barrSummary = inv.barriles_litros
+    ? inv.barriles_litros+'L en barriles'
+    : (plantaBarriles ? plantaBarriles+'L en barriles' : '');
+
   document.getElementById('kpiOverview').innerHTML = `
     <div class="kpi"><div class="val green">$${vb.total_ventas ? (vb.total_ventas/1e6).toFixed(1)+'M' : '--'}</div><div class="lab">Ventas Bar ${periodoActual.mes}</div></div>
     <div class="kpi"><div class="val cyan">${totalFacturasConsolidado || '--'}</div><div class="lab">Facturas emitidas (consolidado)</div></div>
@@ -913,10 +942,9 @@ function updateOverviewFromCatalogo() {
     <div class="summary-card">
       <div class="icon">🍾</div>
       <div class="info">
-        <h3>Inventario — ${periodoActual.mes}</h3>
-        <p>${inv.litros_activos ? '7 fermentadores · '+inv.litros_activos.toLocaleString()+'L activos' : 'Sin datos de inventario'}<br>
-        ${inv.botellas_stock ? inv.botellas_stock.toLocaleString()+' botellas 330ml' : ''}<br>
-        ${inv.barriles_litros ? inv.barriles_litros+'L en barriles' : ''}</p>
+        <h3>Inventario — ${plantaData ? 'Planta (en vivo)' : periodoActual.mes}</h3>
+        <p>${invSummary}<br>
+        ${botSummary ? botSummary+'<br>' : ''}${barrSummary}</p>
       </div>
     </div>
     <div class="summary-card" style="cursor:pointer" onclick="window.open('https://johnnyartesano26.github.io/conciliaciones-bancarias/','_blank')">
@@ -1080,11 +1108,15 @@ function renderOverviewCharts() {
         const stCard = ctxSt.closest('.card');
         if (stCard) stCard.querySelector('h2').innerHTML = '📋 Estado de Facturas — <span style="font-size:.75em;color:var(--mm-dim)">' + mesActual2 + ' (Google Sheets)</span>';
       } else {
+        // Sin datos para este mes: mostrar indicador visible
         overviewCharts.status = new Chart(ctxSt, {
           type:'doughnut',
-          data:{labels:['Sin datos para '+(mesActual2||'este período')],datasets:[{data:[1],backgroundColor:['#e0d6c8'],borderColor:'#fcf9f2',borderWidth:2}]},
-          options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:()=>'Sin facturas registradas en Google Sheets'}}}}
+          data:{labels:['Sin facturas en Google Sheets para '+(mesActual2||'este período')],datasets:[{data:[1],backgroundColor:['#d4c5b0'],borderColor:'#fcf9f2',borderWidth:2}]},
+          options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8c7b6b',font:{size:10},padding:8}},tooltip:{callbacks:{label:()=>'No hay facturas registradas en Google Sheets para este mes'}}}}
         });
+        // Actualizar título
+        const stCard = ctxSt.closest('.card');
+        if (stCard) stCard.querySelector('h2').innerHTML = '📋 Estado de Facturas — <span style="font-size:.75em;color:var(--mm-dim)">' + (mesActual2 || '') + ' (sin datos)</span>';
       }
     }
     return;

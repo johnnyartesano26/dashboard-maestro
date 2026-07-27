@@ -226,8 +226,8 @@
   <div class="header-top">
     <div class="header-logo"><img src="main-logo.png" alt="Madre Monte"></div>
     <div>
-      <h1>Madre Monte — Dashboard Maestro</h1>
-      <div class="sub" id="headerSub">Cargando datos...</div>
+       <h1>Dashboard Maestro</h1>
+       <div class="sub" id="headerSub">Cervecería Madre Monte — Ventas, Facturación e Inventario en Tiempo Real · Cargando datos...</div>
     </div>
   </div>
   <div class="tab-nav">
@@ -245,6 +245,23 @@
 <div class="tab-content active" id="tab-resumen">
   <div class="kpi-row" id="kpiOverview">
     <div class="kpi"><div class="val">--</div><div class="lab">Cargando...</div></div>
+  </div>
+
+  <!-- ═══ HERO: Resumen Ejecutivo ═══ -->
+  <div class="hero-banner" id="heroBanner" style="background: linear-gradient(135deg, rgba(245,239,230,0.8) 0%, rgba(252,249,242,0.9) 100%); border: 2px solid var(--mm-gold); border-radius: 12px; padding: 22px 28px; margin-bottom: 20px; text-align: center; box-shadow: 0 4px 20px rgba(200,138,61,0.10);">
+    <h2 style="font-size: 1.1em; color: var(--mm-text); margin-bottom: 6px; font-weight: 700;">
+      📊 Dashboard de Gestión — Cervecería Madre Monte
+    </h2>
+    <p style="color: var(--mm-dim); font-size: .85em; max-width: 650px; margin: 0 auto 14px;">
+      Consolida ventas, facturación e inventario en tiempo real.
+      Datos integrados desde Google Sheets, Alegra API y dashboard de planta.
+    </p>
+    <div style="display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; font-size: .82em;">
+      <div><strong style="color: var(--mm-gold); font-size: 1.3em;" id="heroFacturado">$--</strong><br><span style="color: var(--mm-dim)">Total Facturado</span></div>
+      <div><strong style="color: var(--mm-gold); font-size: 1.3em;" id="heroFacturas">--</strong><br><span style="color: var(--mm-dim)">Facturas Emitidas</span></div>
+      <div><strong style="color: var(--mm-gold); font-size: 1.3em;" id="heroClientes">--</strong><br><span style="color: var(--mm-dim)">Clientes Activos</span></div>
+      <div><strong style="color: var(--mm-green); font-size: 1.3em;" id="heroPeriodo">--</strong><br><span style="color: var(--mm-dim)">Período Actual</span></div>
+    </div>
   </div>
 
   <div class="summary-section" id="summaryCards">
@@ -286,6 +303,35 @@
     <div class="card">
       <h2>📋 Estado de Facturas</h2>
       <canvas id="chartOverviewStatus"></canvas>
+    </div>
+  </div>
+
+  <!-- ═══ SOBRE ESTE DASHBOARD ═══ -->
+  <div class="card full" style="margin-top:20px; background: linear-gradient(135deg, rgba(245,239,230,0.6) 0%, rgba(252,249,242,0.8) 100%);">
+    <h2>🛠️ Sobre este Dashboard</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px;">
+      <div>
+        <h4 style="color: var(--mm-gold); margin-bottom: 6px; font-size: .9em;">🎯 Propósito</h4>
+        <p style="color: var(--mm-dim); font-size: .82em; line-height: 1.5;">
+          Este dashboard nació para resolver el caos operativo de una cervecería en crecimiento.
+          Hoy centraliza las decisiones del equipo: producción, facturación, ventas del bar
+          y conciliaciones bancarias, todo basado en datos reales.
+        </p>
+      </div>
+      <div>
+        <h4 style="color: var(--mm-gold); margin-bottom: 6px; font-size: .9em;">⚙️ Stack Técnico</h4>
+        <p style="color: var(--mm-dim); font-size: .82em; line-height: 1.5;">
+          Python · Google Sheets API · Alegra API · OCR (Tesseract) ·
+          Chart.js · HTML/CSS/JS Vanilla · GitHub Pages · GitHub Actions
+        </p>
+      </div>
+      <div>
+        <h4 style="color: var(--mm-gold); margin-bottom: 6px; font-size: .9em;">📡 Fuentes de Datos</h4>
+        <p style="color: var(--mm-dim); font-size: .82em; line-height: 1.5;">
+          Arqueo diario (Google Sheets) · Facturación electrónica (Alegra API) ·
+          Inventario en vivo (Dashboard de Planta) · OCR de comprobantes bancarios
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -578,7 +624,7 @@ window.onload = async function() {
   // 4. Procesar datos de Planta (desde madremonte-dashboard en vivo)
   if (results[3].status === 'fulfilled' && results[3].value) {
     plantaData = results[3].value;
-    document.getElementById('headerSub').textContent = 'Datos cargados — Planta: ' + plantaData.generado;
+    document.getElementById('headerSub').textContent = 'Cervecería Madre Monte — Ventas, Facturación e Inventario en Tiempo Real · ' + plantaData.generado;
     // Actualizar summary de inventario
     const f = plantaData.fermentadores || [];
     const b = plantaData.botellas || [];
@@ -604,7 +650,7 @@ window.onload = async function() {
     updateOverviewFromData();
     renderFacturacionIfActive();
   } else {
-    document.getElementById('headerSub').textContent = 'Sin datos disponibles';
+    document.getElementById('headerSub').textContent = 'Cervecería Madre Monte — Sin datos disponibles. Verifica la conexión.';
     updateOverviewFromCatalogo();
   }
 };
@@ -643,11 +689,34 @@ function cambiarPeriodo(idx) {
   } else {
     // Solo hay datos de ventas bar (sin facturación detallada)
     updateOverviewFromCatalogo();
-    // Mostrar mensaje en la tabla de facturación
-    document.getElementById('kpiFact').innerHTML = '<div class="kpi" style="max-width:100%;flex:1"><div class="val yellow">⚠️ Sin facturas detalladas</div><div class="lab">Solo hay datos de ventas Bar para ' + periodoActual.mes + '. Las facturas detalladas de Alegra solo están disponibles para Junio 2026.</div></div>';
+    // Estado vacío elegante para facturación
+    document.getElementById('kpiFact').innerHTML = '';
     document.getElementById('totalCount').textContent = '0';
-    document.getElementById('tbodyFact').innerHTML = '<tr><td colspan="6" style="text-align:center;padding:20px;color:var(--mm-dim)">No hay facturas detalladas para este periodo. Disponible: Junio 2026.</td></tr>';
     document.getElementById('count').textContent = '';
+    document.getElementById('tbodyFact').innerHTML = '';
+    // Mostrar overlay de estado vacío sobre los gráficos
+    const grid = document.getElementById('gridFact');
+    grid.querySelectorAll('canvas').forEach(c => { const p = c.parentElement; if (p && p.tagName === 'DIV') p.style.display = 'none'; });
+    let emptyEl = document.getElementById('emptyFactMsg');
+    if (!emptyEl) {
+      emptyEl = document.createElement('div');
+      emptyEl.id = 'emptyFactMsg';
+      emptyEl.className = 'card full';
+      emptyEl.style.cssText = 'text-align:center;padding:40px 20px;';
+      grid.insertBefore(emptyEl, grid.firstChild);
+    }
+    emptyEl.style.display = 'block';
+    emptyEl.innerHTML = `
+      <div style="font-size:3em;margin-bottom:12px;">📄</div>
+      <h2 style="color:var(--mm-gold);margin-bottom:8px;">Sin facturas detalladas para ${periodoActual.mes}</h2>
+      <p style="color:var(--mm-dim);font-size:.9em;max-width:500px;margin:0 auto 16px;">
+        Este período solo contiene datos de ventas Bar desde Google Sheets.
+        Las facturas electrónicas detalladas de Alegra están disponibles para <strong>Junio 2026</strong>.
+      </p>
+      <p style="color:var(--mm-dim);font-size:.78em;">
+        Selecciona "Junio 2026" en el selector de período para ver el detalle completo.
+      </p>
+    `;
   }
 }
 
@@ -655,6 +724,12 @@ function cambiarPeriodo(idx) {
 // FACTURACIÓN: Cargar desde JSON
 // ═══════════════════════════════════════════════════
 async function loadFacturacionData(archivo) {
+  // Restaurar gridFact si estaba en estado vacío
+  const emptyEl = document.getElementById('emptyFactMsg');
+  if (emptyEl) emptyEl.style.display = 'none';
+  document.getElementById('gridFact').querySelectorAll('canvas').forEach(c => {
+    const p = c.parentElement; if (p && p.tagName === 'DIV') p.style.display = '';
+  });
   try {
     const r = await fetch(archivo);
     const json = await r.json();
@@ -757,6 +832,7 @@ function updateOverviewFromData() {
     </div>
   `;
 
+  updateHeroBanner();
   renderOverviewCharts();
   renderFacturacionIfActive();
   renderPlantaSummary();
@@ -834,7 +910,22 @@ function updateOverviewFromCatalogo() {
       </div>
     </div>
   `;
+  updateHeroBanner();
   renderPlantaSummary();
+}
+
+// ═══════════════════════════════════════════════════
+// HERO BANNER: actualiza el resumen ejecutivo
+// ═══════════════════════════════════════════════════
+function updateHeroBanner() {
+  const fEl = document.getElementById('heroFacturado');
+  const nEl = document.getElementById('heroFacturas');
+  const cEl = document.getElementById('heroClientes');
+  const pEl = document.getElementById('heroPeriodo');
+  if (fEl) fEl.textContent = '$' + (importeConsolidado / 1e6).toFixed(1) + 'M';
+  if (nEl) nEl.textContent = totalFacturasConsolidado || '--';
+  if (cEl) cEl.textContent = totalClientesConsolidado || '--';
+  if (pEl) pEl.textContent = periodoActual ? periodoActual.mes : '--';
 }
 
 // ═══════════════════════════════════════════════════

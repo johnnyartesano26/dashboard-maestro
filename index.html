@@ -548,6 +548,7 @@ let TAB_STATE = { facturacion: false, inventario: false, resumen: true, ventas: 
 let totalFacturasConsolidado = 0;
 let totalClientesConsolidado = 0;
 let importeConsolidado = 0;
+let ventasSheetData = []; // Datos del Google Sheet para fallback de Estado de Facturas
 
 // ═══════════════════════════════════════════════════
 // TAB NAVIGATION
@@ -594,6 +595,9 @@ window.onload = async function() {
         const m = html.match(/window\.DATA\s*=\s*(\{.*?\});/);
         return m ? JSON.parse(m[1]) : null;
       })
+      .catch(() => null),
+    fetch('https://docs.google.com/spreadsheets/d/1WFq09-LDg4le6FqC9BnBZfKZXSmb8Kn195wnFZaEMys/gviz/tq?tqx=out:csv&sheet=Respuestas%20de%20formulario%201')
+      .then(r => r.ok ? r.text() : Promise.reject('HTTP '+r.status))
       .catch(() => null)
   ]);
 
@@ -640,6 +644,32 @@ window.onload = async function() {
     if (el) el.innerHTML = f.length + ' fermentadores · ' + totL.toLocaleString() + 'L activos (' + Math.round(totL/totC*100) + '%)<br>' +
       totB.toLocaleString() + ' botellas 330ml en stock<br>' +
       totBL + 'L en barriles · ' + plantaData.generado;
+  }
+
+  // 4.5 Procesar datos del Google Sheet (para fallback de Estado de Facturas)
+  if (results[4] && results[4].status === 'fulfilled' && results[4].value) {
+    const csv = results[4].value;
+    const lines = csv.trim().split('\n');
+    for (let i = 1; i < lines.length; i++) {
+      const cols = parseCSVLineV(lines[i]);
+      if (cols.length < 10) continue;
+      const nombre = (cols[2]||'').trim();
+      const factura = (cols[3]||'').trim();
+      const valor = parseFloat(String(cols[4]||'0').replace(/[$ ]/g,'').replace(/\./g,'').replace(/,/g,'.'))||0;
+      const domicilio = parseFloat(String(cols[5]||'0').replace(/[$ ]/g,'').replace(/\./g,'').replace(/,/g,'.'))||0;
+      const obs = (cols[6]||'').trim();
+      const fechaStr = (cols[1]||'').trim();
+      const pagoR = (cols[9]||'').trim();
+      const nl = nombre.toLowerCase();
+      if (nl.includes('automatización') || nl.includes('opción 1')) continue;
+      if (valor === 0 && domicilio === 0) continue;
+      if (obs.toLowerCase().includes('nota crédito')) continue;
+      const fp = fechaStr.split('/');
+      if (fp.length !== 3) continue;
+      const y = parseInt(fp[2]), m = parseInt(fp[1])-1, d = parseInt(fp[0]);
+      if (y < 2025 || y > 2027) continue;
+      ventasSheetData.push({ nombre, factura, valor, domicilio, fecha: new Date(y,m,d), pagoRealizado: pagoR });
+    }
   }
 
   // 5. Seleccionar periodo y cargar datos
@@ -1027,14 +1057,35 @@ function renderOverviewCharts() {
       }
     }
 
-    // Estado facturas: sin datos detallados, mostrar placeholder
+    // Estado facturas: usar datos del Google Sheet como fallback
     const ctxSt = document.getElementById('chartOverviewStatus');
     if (ctxSt) {
-      overviewCharts.status = new Chart(ctxSt, {
-        type:'doughnut',
-        data:{labels:['Sin datos de estado'],datasets:[{data:[1],backgroundColor:['#e0d6c8'],borderColor:'#fcf9f2',borderWidth:2}]},
-        options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:()=>'Sin facturas detalladas para este período'}}}}
+      const mesActual2 = periodoActual ? periodoActual.mes : null;
+      const delMes = ventasSheetData.filter(d => {
+        if (!mesActual2) return false;
+        const mn = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+        return d.fecha && d.fecha.getMonth() === mn.indexOf(mesActual2.split(' ')[0]) && d.fecha.getFullYear() === parseInt(mesActual2.split(' ')[1]);
       });
+      if (delMes.length > 0) {
+        const feN = delMes.filter(d => d.factura.toUpperCase().startsWith('FE')).length;
+        const rcN = delMes.filter(d => !d.factura.toUpperCase().startsWith('FE')).length;
+        const debe = delMes.filter(d => d.pagoRealizado && d.pagoRealizado.toLowerCase() === 'debe').length;
+        const pagadas = delMes.length - debe;
+        overviewCharts.status = new Chart(ctxSt, {
+          type:'doughnut',
+          data:{labels:['Pagadas ('+pagadas+')','Pendientes/DeBe ('+debe+')'],datasets:[{data:[pagadas,debe],backgroundColor:['#7a9e7a','#e8a84c'],borderColor:'#fcf9f2',borderWidth:2}]},
+          options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8c7b6b',font:{size:11},padding:14}},tooltip:{callbacks:{label:ctx=>ctx.raw+' facturas'}}}}
+        });
+        // Actualizar título
+        const stCard = ctxSt.closest('.card');
+        if (stCard) stCard.querySelector('h2').innerHTML = '📋 Estado de Facturas — <span style="font-size:.75em;color:var(--mm-dim)">' + mesActual2 + ' (Google Sheets)</span>';
+      } else {
+        overviewCharts.status = new Chart(ctxSt, {
+          type:'doughnut',
+          data:{labels:['Sin datos para '+(mesActual2||'este período')],datasets:[{data:[1],backgroundColor:['#e0d6c8'],borderColor:'#fcf9f2',borderWidth:2}]},
+          options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:()=>'Sin facturas registradas en Google Sheets'}}}}
+        });
+      }
     }
     return;
   }
@@ -1056,13 +1107,18 @@ function renderOverviewCharts() {
   }
 
   // Estado facturas
-  const st = {draft:0,sent:0,closed:0}, stAmt = {draft:0,sent:0,closed:0};
-  allData.forEach(inv=>{st[inv.status]++;stAmt[inv.status]+=inv.total;});
+  const st = {draft:0,sent:0,closed:0,open:0}, stAmt = {draft:0,sent:0,closed:0,open:0};
+  allData.forEach(inv=>{if(st[inv.status]!==undefined){st[inv.status]++;stAmt[inv.status]+=inv.total;}});
+  const stLabels = ['Cerradas','Draft','Enviadas','Abiertas'];
+  const stColors = ['#7a9e7a','#e8a84c','#58a6ff','#c9685e'];
   overviewCharts.status = new Chart(document.getElementById('chartOverviewStatus'), {
     type:'doughnut',
-    data:{labels:['Cerradas','Draft','Enviadas'],datasets:[{data:[st.closed,st.draft,st.sent],backgroundColor:['#7a9e7a','#e8a84c','#58a6ff'],borderColor:'#fcf9f2',borderWidth:2}]},
-      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8c7b6b',font:{size:11},padding:14}},tooltip:{callbacks:{label:ctx=>{const s=['closed','draft','sent'][ctx.dataIndex];return ctx.raw+' facturas — $'+stAmt[s].toLocaleString('es-CO')+' COP';}}}}}
+    data:{labels:stLabels,datasets:[{data:[st.closed,st.draft,st.sent,st.open],backgroundColor:stColors,borderColor:'#fcf9f2',borderWidth:2}]},
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8c7b6b',font:{size:11},padding:14}},tooltip:{callbacks:{label:ctx=>{const s=['closed','draft','sent','open'][ctx.dataIndex];return ctx.raw+' facturas — $'+stAmt[s].toLocaleString('es-CO')+' COP';}}}}}
   });
+  // Actualizar título
+  const stCard2 = document.getElementById('chartOverviewStatus').closest('.card');
+  if (stCard2) stCard2.querySelector('h2').innerHTML = '📋 Estado de Facturas — <span style="font-size:.75em;color:var(--mm-dim)">' + (periodoActual ? periodoActual.mes : '') + ' (Alegra)</span>';
   } catch(e) {
     console.error('renderOverviewCharts error:', e);
     document.getElementById('headerSub').textContent = '⚠️ Error en gráficos: ' + e.message;
@@ -1111,12 +1167,12 @@ function renderFactCharts() {
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP ('+top[ctx.dataIndex][1].count+' facturas)'}}},scales:{x:{ticks:{color:'#8c7b6b',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#2a2622'}},y:{ticks:{color:'#8c7b6b',font:{size:10}},grid:{color:'#2a2622'}}}}
   });
 
-  const st = {draft:0,sent:0,closed:0}, stAmt = {draft:0,sent:0,closed:0};
-  allData.forEach(inv=>{st[inv.status]++;stAmt[inv.status]+=inv.total;});
+  const st = {draft:0,sent:0,closed:0,open:0}, stAmt = {draft:0,sent:0,closed:0,open:0};
+  allData.forEach(inv=>{if(st[inv.status]!==undefined){st[inv.status]++;stAmt[inv.status]+=inv.total;}});
   factCharts.status = new Chart(document.getElementById('chartStatus'), {
     type:'doughnut',
-    data:{labels:['Cerradas','Draft (pendientes)','Enviadas'],datasets:[{data:[st.closed,st.draft,st.sent],backgroundColor:['#7a9e7a','#e8a84c','#58a6ff'],borderColor:'#fcf9f2',borderWidth:2}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8c7b6b',font:{size:11},padding:14}},tooltip:{callbacks:{label:ctx=>{const s=['closed','draft','sent'][ctx.dataIndex];return ctx.raw+' facturas — $'+stAmt[s].toLocaleString('es-CO')+' COP';}}}}}
+    data:{labels:['Cerradas','Draft (pendientes)','Enviadas','Abiertas'],datasets:[{data:[st.closed,st.draft,st.sent,st.open],backgroundColor:['#7a9e7a','#e8a84c','#58a6ff','#c9685e'],borderColor:'#fcf9f2',borderWidth:2}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8c7b6b',font:{size:11},padding:14}},tooltip:{callbacks:{label:ctx=>{const s=['closed','draft','sent','open'][ctx.dataIndex];return ctx.raw+' facturas — $'+stAmt[s].toLocaleString('es-CO')+' COP';}}}}}
   });
 
   const daily = {};

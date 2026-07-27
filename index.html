@@ -911,6 +911,7 @@ function updateOverviewFromCatalogo() {
     </div>
   `;
   updateHeroBanner();
+  renderOverviewCharts();
   renderPlantaSummary();
 }
 
@@ -978,7 +979,27 @@ function renderOverviewCharts() {
     });
   }
 
-  if (allData.length === 0) return;
+  if (allData.length === 0) {
+    // Sin facturación detallada: usar datos consolidados de clientes
+    if (clientesData && clientesData.length > 0) {
+      const top5 = clientesData.slice().sort((a,b) => b.total_general - a.total_general).slice(0,5);
+      overviewCharts.top = new Chart(document.getElementById('chartOverviewTop'), {
+        type:'bar',
+        data:{labels:top5.map(t=>t.cliente.length>20?t.cliente.substring(0,19)+'…':t.cliente),datasets:[{label:'Total COP',data:top5.map(t=>t.total_general),backgroundColor:top5.map((_,i)=>['#e8a84c','#58a6ff','#7a9e7a','#39d2c0','#c9685e'][i]||'#58a6ff'),borderRadius:4}]},
+        options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP'}}},scales:{x:{ticks:{color:'#8c7b6b',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#2a2622'}},y:{ticks:{color:'#8c7b6b',font:{size:10}},grid:{color:'#2a2622'}}}
+      });
+    }
+    // Estado facturas: sin datos detallados, mostrar placeholder
+    const ctxSt = document.getElementById('chartOverviewStatus');
+    if (ctxSt) {
+      overviewCharts.status = new Chart(ctxSt, {
+        type:'doughnut',
+        data:{labels:['Sin datos de estado'],datasets:[{data:[1],backgroundColor:['#e0d6c8'],borderColor:'#fcf9f2',borderWidth:2}]},
+        options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:()=>'Sin facturas detalladas para este período'}}}}
+      });
+    }
+    return;
+  }
 
   // Top 5 clientes
   const clients = {};

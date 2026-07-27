@@ -989,15 +989,44 @@ function renderOverviewCharts() {
   }
 
   if (allData.length === 0) {
-    // Sin facturación detallada: usar datos consolidados de clientes
-    if (clientesData && clientesData.length > 0) {
-      const top5 = clientesData.slice().sort((a,b) => b.total_general - a.total_general).slice(0,5);
+    // Sin facturación detallada: intentar usar datos del mes actual desde clientesData
+    const mesActual = periodoActual ? periodoActual.mes : null;
+    let top5Data = [];
+    let top5Label = 'Consolidado Dic 2025 - Jun 2026';
+
+    if (clientesData && clientesData.length > 0 && mesActual) {
+      // Buscar clientes con facturación en el mes actual
+      const delMes = clientesData
+        .filter(c => c.meses && c.meses[mesActual])
+        .map(c => ({ nombre: c.cliente, total: c.meses[mesActual].total || 0 }))
+        .sort((a, b) => b.total - a.total)
+        .slice(0, 5);
+      if (delMes.length > 0 && delMes[0].total > 0) {
+        top5Data = delMes;
+        top5Label = mesActual;
+      }
+    }
+
+    // Fallback: usar datos consolidados
+    if (top5Data.length === 0 && clientesData && clientesData.length > 0) {
+      top5Data = clientesData
+        .slice().sort((a, b) => b.total_general - a.total_general).slice(0, 5)
+        .map(c => ({ nombre: c.cliente, total: c.total_general }));
+    }
+
+    if (top5Data.length > 0) {
       overviewCharts.top = new Chart(document.getElementById('chartOverviewTop'), {
         type:'bar',
-        data:{labels:top5.map(t=>t.cliente.length>20?t.cliente.substring(0,19)+'…':t.cliente),datasets:[{label:'Total COP',data:top5.map(t=>t.total_general),backgroundColor:top5.map((_,i)=>['#e8a84c','#58a6ff','#7a9e7a','#39d2c0','#c9685e'][i]||'#58a6ff'),borderRadius:4}]},
-        options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP'}}},scales:{x:{ticks:{color:'#8c7b6b',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#2a2622'}},y:{ticks:{color:'#8c7b6b',font:{size:10}},grid:{color:'#2a2622'}}}}
-      });
+        data:{labels:top5Data.map(t=>t.nombre.length>20?t.nombre.substring(0,19)+'…':t.nombre),datasets:[{label:'Total COP',data:top5Data.map(t=>t.total),backgroundColor:top5Data.map((_,i)=>['#e8a84c','#58a6ff','#7a9e7a','#39d2c0','#c9685e'][i]||'#58a6ff'),borderRadius:4}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP'}}},scales:{x:{ticks:{color:'#8c7b6b',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#2a2622'}},y:{ticks:{color:'#8c7b6b',font:{size:10}},grid:{color:'#2a2622'}}}}
+  });
+  // Actualizar título de la card
+      const topCard = document.getElementById('chartOverviewTop').closest('.card');
+      if (topCard) {
+        topCard.querySelector('h2').innerHTML = '📊 Top 5 Clientes — <span style="font-size:.75em;color:var(--mm-dim)">' + top5Label + '</span>';
+      }
     }
+
     // Estado facturas: sin datos detallados, mostrar placeholder
     const ctxSt = document.getElementById('chartOverviewStatus');
     if (ctxSt) {
@@ -1020,6 +1049,11 @@ function renderOverviewCharts() {
     data:{labels:top5.map(t=>t[0].length>20?t[0].substring(0,19)+'…':t[0]),datasets:[{label:'Total COP',data:top5.map(t=>t[1].total),backgroundColor:top5.map(t=>t[0]==='BAR'?'#e8a84c':'#58a6ff'),borderRadius:4}]},
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP'}}},scales:{x:{ticks:{color:'#8c7b6b',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#2a2622'}},y:{ticks:{color:'#8c7b6b',font:{size:10}},grid:{color:'#2a2622'}}}}
   });
+  // Actualizar título con el período actual
+  const topCard3 = document.getElementById('chartOverviewTop').closest('.card');
+  if (topCard3) {
+    topCard3.querySelector('h2').innerHTML = '📊 Top 5 Clientes — <span style="font-size:.75em;color:var(--mm-dim)">' + (periodoActual ? periodoActual.mes : '') + '</span>';
+  }
 
   // Estado facturas
   const st = {draft:0,sent:0,closed:0}, stAmt = {draft:0,sent:0,closed:0};

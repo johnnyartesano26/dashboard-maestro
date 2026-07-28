@@ -1,0 +1,1311 @@
+{
+  "fecha": "2026-07-28",
+  "total": 186,
+  "monto": 26742819,
+  "drafts": 0,
+  "drafts_monto": 0,
+  "facturas": [
+    {
+      "id": "549",
+      "cliente": "Consumidor Final",
+      "total": 50000,
+      "status": "closed",
+      "fecha": "2025-08-31"
+    },
+    {
+      "id": "548",
+      "cliente": "Consumidor Final",
+      "total": 42000,
+      "status": "closed",
+      "fecha": "2025-08-31"
+    },
+    {
+      "id": "547",
+      "cliente": "Consumidor Final",
+      "total": 32000,
+      "status": "closed",
+      "fecha": "2025-08-31"
+    },
+    {
+      "id": "546",
+      "cliente": "Consumidor Final",
+      "total": 32000,
+      "status": "closed",
+      "fecha": "2025-08-31"
+    },
+    {
+      "id": "545",
+      "cliente": "Consumidor Final",
+      "total": 48000,
+      "status": "closed",
+      "fecha": "2025-08-31"
+    },
+    {
+      "id": "544",
+      "cliente": "Consumidor Final",
+      "total": 137000,
+      "status": "closed",
+      "fecha": "2025-08-31"
+    },
+    {
+      "id": "543",
+      "cliente": "Consumidor Final",
+      "total": 50000,
+      "status": "closed",
+      "fecha": "2025-08-30"
+    },
+    {
+      "id": "542",
+      "cliente": "Consumidor Final",
+      "total": 55000,
+      "status": "closed",
+      "fecha": "2025-08-30"
+    },
+    {
+      "id": "541",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2025-08-30"
+    },
+    {
+      "id": "540",
+      "cliente": "Consumidor Final",
+      "total": 61000,
+      "status": "closed",
+      "fecha": "2025-08-30"
+    },
+    {
+      "id": "539",
+      "cliente": "Consumidor Final",
+      "total": 30000,
+      "status": "closed",
+      "fecha": "2025-08-30"
+    },
+    {
+      "id": "538",
+      "cliente": "Consumidor Final",
+      "total": 34000,
+      "status": "closed",
+      "fecha": "2025-08-30"
+    },
+    {
+      "id": "537",
+      "cliente": "Consumidor Final",
+      "total": 28000,
+      "status": "closed",
+      "fecha": "2025-08-30"
+    },
+    {
+      "id": "536",
+      "cliente": "Consumidor Final",
+      "total": 10000,
+      "status": "closed",
+      "fecha": "2025-08-30"
+    },
+    {
+      "id": "535",
+      "cliente": "Consumidor Final",
+      "total": 10000,
+      "status": "closed",
+      "fecha": "2025-08-30"
+    },
+    {
+      "id": "534",
+      "cliente": "Consumidor Final",
+      "total": 52000,
+      "status": "closed",
+      "fecha": "2025-08-30"
+    },
+    {
+      "id": "533",
+      "cliente": "Consumidor Final",
+      "total": 49000,
+      "status": "closed",
+      "fecha": "2025-08-30"
+    },
+    {
+      "id": "532",
+      "cliente": "Consumidor Final",
+      "total": 197000,
+      "status": "closed",
+      "fecha": "2025-08-30"
+    },
+    {
+      "id": "531",
+      "cliente": "Consumidor Final",
+      "total": 127000,
+      "status": "closed",
+      "fecha": "2025-08-30"
+    },
+    {
+      "id": "530",
+      "cliente": "Consumidor Final",
+      "total": 75000,
+      "status": "closed",
+      "fecha": "2025-08-30"
+    },
+    {
+      "id": "529",
+      "cliente": "Consumidor Final",
+      "total": 105000,
+      "status": "closed",
+      "fecha": "2025-08-30"
+    },
+    {
+      "id": "528",
+      "cliente": "Consumidor Final",
+      "total": 30000,
+      "status": "closed",
+      "fecha": "2025-08-29"
+    },
+    {
+      "id": "527",
+      "cliente": "Consumidor Final",
+      "total": 35000,
+      "status": "closed",
+      "fecha": "2025-08-29"
+    },
+    {
+      "id": "526",
+      "cliente": "Consumidor Final",
+      "total": 65000,
+      "status": "closed",
+      "fecha": "2025-08-29"
+    },
+    {
+      "id": "525",
+      "cliente": "Consumidor Final",
+      "total": 28000,
+      "status": "closed",
+      "fecha": "2025-08-29"
+    },
+    {
+      "id": "524",
+      "cliente": "Consumidor Final",
+      "total": 42000,
+      "status": "closed",
+      "fecha": "2025-08-29"
+    },
+    {
+      "id": "523",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2025-08-29"
+    },
+    {
+      "id": "522",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2025-08-29"
+    },
+    {
+      "id": "521",
+      "cliente": "INVERSIONES LATINERIA S.A.S",
+      "total": 4346484,
+      "status": "closed",
+      "fecha": "2025-08-29"
+    },
+    {
+      "id": "520",
+      "cliente": "CORPORACIÓN FERNANDO GONZALEZ - OTRAPARTE",
+      "total": 325590,
+      "status": "open",
+      "fecha": "2025-08-29"
+    },
+    {
+      "id": "519",
+      "cliente": "Consumidor Final",
+      "total": 39000,
+      "status": "closed",
+      "fecha": "2025-08-29"
+    },
+    {
+      "id": "518",
+      "cliente": "Consumidor Final",
+      "total": 105000,
+      "status": "closed",
+      "fecha": "2025-08-28"
+    },
+    {
+      "id": "517",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2025-08-28"
+    },
+    {
+      "id": "516",
+      "cliente": "Consumidor Final",
+      "total": 39000,
+      "status": "closed",
+      "fecha": "2025-08-28"
+    },
+    {
+      "id": "515",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2025-08-28"
+    },
+    {
+      "id": "514",
+      "cliente": "Consumidor Final",
+      "total": 30000,
+      "status": "closed",
+      "fecha": "2025-08-28"
+    },
+    {
+      "id": "513",
+      "cliente": "Consumidor Final",
+      "total": 30000,
+      "status": "closed",
+      "fecha": "2025-08-28"
+    },
+    {
+      "id": "512",
+      "cliente": "Consumidor Final",
+      "total": 10000,
+      "status": "closed",
+      "fecha": "2025-08-28"
+    },
+    {
+      "id": "511",
+      "cliente": "Restaurante bar Mirador de la Eterna Primavera",
+      "total": 305987,
+      "status": "closed",
+      "fecha": "2025-08-28"
+    },
+    {
+      "id": "510",
+      "cliente": "Martha Bibiana Quintero Escallón",
+      "total": 427982,
+      "status": "open",
+      "fecha": "2025-08-28"
+    },
+    {
+      "id": "509",
+      "cliente": "MARTHA ELENA  (Punta Arena) PERDOMO JIMENEZ",
+      "total": 364435,
+      "status": "closed",
+      "fecha": "2025-08-26"
+    },
+    {
+      "id": "508",
+      "cliente": "Hans Sucerquia",
+      "total": 330000,
+      "status": "closed",
+      "fecha": "2025-08-26"
+    },
+    {
+      "id": "507",
+      "cliente": "Leonardo Gaitan Zuluaga",
+      "total": 327986,
+      "status": "closed",
+      "fecha": "2025-08-25"
+    },
+    {
+      "id": "506",
+      "cliente": "Consumidor Final",
+      "total": 245000,
+      "status": "closed",
+      "fecha": "2025-08-24"
+    },
+    {
+      "id": "505",
+      "cliente": "Consumidor Final",
+      "total": 30000,
+      "status": "closed",
+      "fecha": "2025-08-24"
+    },
+    {
+      "id": "504",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2025-08-24"
+    },
+    {
+      "id": "503",
+      "cliente": "Consumidor Final",
+      "total": 36000,
+      "status": "closed",
+      "fecha": "2025-08-23"
+    },
+    {
+      "id": "502",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2025-08-23"
+    },
+    {
+      "id": "501",
+      "cliente": "Consumidor Final",
+      "total": 33000,
+      "status": "closed",
+      "fecha": "2025-08-23"
+    },
+    {
+      "id": "500",
+      "cliente": "Consumidor Final",
+      "total": 18000,
+      "status": "closed",
+      "fecha": "2025-08-23"
+    },
+    {
+      "id": "499",
+      "cliente": "Consumidor Final",
+      "total": 100000,
+      "status": "closed",
+      "fecha": "2025-08-23"
+    },
+    {
+      "id": "498",
+      "cliente": "Consumidor Final",
+      "total": 25500,
+      "status": "closed",
+      "fecha": "2025-08-23"
+    },
+    {
+      "id": "497",
+      "cliente": "Consumidor Final",
+      "total": 33000,
+      "status": "closed",
+      "fecha": "2025-08-23"
+    },
+    {
+      "id": "496",
+      "cliente": "Consumidor Final",
+      "total": 69000,
+      "status": "closed",
+      "fecha": "2025-08-23"
+    },
+    {
+      "id": "495",
+      "cliente": "Consumidor Final",
+      "total": 10000,
+      "status": "closed",
+      "fecha": "2025-08-23"
+    },
+    {
+      "id": "494",
+      "cliente": "Consumidor Final",
+      "total": 20000,
+      "status": "closed",
+      "fecha": "2025-08-23"
+    },
+    {
+      "id": "493",
+      "cliente": "Consumidor Final",
+      "total": 70000,
+      "status": "closed",
+      "fecha": "2025-08-23"
+    },
+    {
+      "id": "492",
+      "cliente": "Consumidor Final",
+      "total": 28000,
+      "status": "closed",
+      "fecha": "2025-08-23"
+    },
+    {
+      "id": "491",
+      "cliente": "Consumidor Final",
+      "total": 309000,
+      "status": "closed",
+      "fecha": "2025-08-23"
+    },
+    {
+      "id": "490",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2025-08-22"
+    },
+    {
+      "id": "489",
+      "cliente": "Consumidor Final",
+      "total": 218000,
+      "status": "closed",
+      "fecha": "2025-08-22"
+    },
+    {
+      "id": "488",
+      "cliente": "Consumidor Final",
+      "total": 74000,
+      "status": "closed",
+      "fecha": "2025-08-22"
+    },
+    {
+      "id": "487",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2025-08-22"
+    },
+    {
+      "id": "486",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2025-08-22"
+    },
+    {
+      "id": "485",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2025-08-22"
+    },
+    {
+      "id": "484",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2025-08-22"
+    },
+    {
+      "id": "483",
+      "cliente": "Consumidor Final",
+      "total": 70000,
+      "status": "closed",
+      "fecha": "2025-08-22"
+    },
+    {
+      "id": "482",
+      "cliente": "Consumidor Final",
+      "total": 57000,
+      "status": "closed",
+      "fecha": "2025-08-22"
+    },
+    {
+      "id": "481",
+      "cliente": "Consumidor Final",
+      "total": 18000,
+      "status": "closed",
+      "fecha": "2025-08-22"
+    },
+    {
+      "id": "480",
+      "cliente": "Consumidor Final",
+      "total": 33000,
+      "status": "closed",
+      "fecha": "2025-08-22"
+    },
+    {
+      "id": "479",
+      "cliente": "Consumidor Final",
+      "total": 52000,
+      "status": "closed",
+      "fecha": "2025-08-22"
+    },
+    {
+      "id": "478",
+      "cliente": "Consumidor Final",
+      "total": 18000,
+      "status": "closed",
+      "fecha": "2025-08-22"
+    },
+    {
+      "id": "477",
+      "cliente": "CORPORACIÓN FERNANDO GONZALEZ - OTRAPARTE",
+      "total": 514800,
+      "status": "open",
+      "fecha": "2025-08-22"
+    },
+    {
+      "id": "476",
+      "cliente": "MEDELLÍN COFFEE PROJECTS S.A.S.",
+      "total": 260710,
+      "status": "open",
+      "fecha": "2025-08-22"
+    },
+    {
+      "id": "475",
+      "cliente": "Consumidor Final",
+      "total": 210000,
+      "status": "closed",
+      "fecha": "2025-08-22"
+    },
+    {
+      "id": "474",
+      "cliente": "Consumidor Final",
+      "total": 99000,
+      "status": "closed",
+      "fecha": "2025-08-22"
+    },
+    {
+      "id": "473",
+      "cliente": "Consumidor Final",
+      "total": 111000,
+      "status": "closed",
+      "fecha": "2025-08-21"
+    },
+    {
+      "id": "472",
+      "cliente": "Consumidor Final",
+      "total": 46000,
+      "status": "closed",
+      "fecha": "2025-08-21"
+    },
+    {
+      "id": "471",
+      "cliente": "Consumidor Final",
+      "total": 63000,
+      "status": "closed",
+      "fecha": "2025-08-21"
+    },
+    {
+      "id": "470",
+      "cliente": "Consumidor Final",
+      "total": 184000,
+      "status": "closed",
+      "fecha": "2025-08-21"
+    },
+    {
+      "id": "469",
+      "cliente": "Consumidor Final",
+      "total": 17000,
+      "status": "closed",
+      "fecha": "2025-08-21"
+    },
+    {
+      "id": "468",
+      "cliente": "Consumidor Final",
+      "total": 24000,
+      "status": "closed",
+      "fecha": "2025-08-20"
+    },
+    {
+      "id": "467",
+      "cliente": "Consumidor Final",
+      "total": 32000,
+      "status": "closed",
+      "fecha": "2025-08-20"
+    },
+    {
+      "id": "466",
+      "cliente": "Consumidor Final",
+      "total": 30000,
+      "status": "closed",
+      "fecha": "2025-08-20"
+    },
+    {
+      "id": "465",
+      "cliente": "INVERSIONES LATINERIA S.A.S",
+      "total": 3448888,
+      "status": "closed",
+      "fecha": "2025-08-19"
+    },
+    {
+      "id": "464",
+      "cliente": "Consumidor Final",
+      "total": 216333,
+      "status": "closed",
+      "fecha": "2025-08-18"
+    },
+    {
+      "id": "463",
+      "cliente": "Consumidor Final",
+      "total": 178093,
+      "status": "closed",
+      "fecha": "2025-08-18"
+    },
+    {
+      "id": "462",
+      "cliente": "Consumidor Final",
+      "total": 101611,
+      "status": "closed",
+      "fecha": "2025-08-17"
+    },
+    {
+      "id": "461",
+      "cliente": "Consumidor Final",
+      "total": 59000,
+      "status": "closed",
+      "fecha": "2025-08-17"
+    },
+    {
+      "id": "460",
+      "cliente": "Consumidor Final",
+      "total": 37148,
+      "status": "closed",
+      "fecha": "2025-08-17"
+    },
+    {
+      "id": "459",
+      "cliente": "Consumidor Final",
+      "total": 15296,
+      "status": "closed",
+      "fecha": "2025-08-17"
+    },
+    {
+      "id": "458",
+      "cliente": "Consumidor Final",
+      "total": 30593,
+      "status": "closed",
+      "fecha": "2025-08-17"
+    },
+    {
+      "id": "457",
+      "cliente": "Consumidor Final",
+      "total": 50000,
+      "status": "closed",
+      "fecha": "2025-08-17"
+    },
+    {
+      "id": "456",
+      "cliente": "Consumidor Final",
+      "total": 91000,
+      "status": "closed",
+      "fecha": "2025-08-17"
+    },
+    {
+      "id": "455",
+      "cliente": "Consumidor Final",
+      "total": 104000,
+      "status": "closed",
+      "fecha": "2025-08-17"
+    },
+    {
+      "id": "454",
+      "cliente": "Consumidor Final",
+      "total": 143130,
+      "status": "closed",
+      "fecha": "2025-08-16"
+    },
+    {
+      "id": "453",
+      "cliente": "Consumidor Final",
+      "total": 67741,
+      "status": "closed",
+      "fecha": "2025-08-16"
+    },
+    {
+      "id": "452",
+      "cliente": "Consumidor Final",
+      "total": 12255,
+      "status": "closed",
+      "fecha": "2025-08-16"
+    },
+    {
+      "id": "451",
+      "cliente": "Consumidor Final",
+      "total": 37148,
+      "status": "closed",
+      "fecha": "2025-08-16"
+    },
+    {
+      "id": "450",
+      "cliente": "Consumidor Final",
+      "total": 37148,
+      "status": "closed",
+      "fecha": "2025-08-16"
+    },
+    {
+      "id": "449",
+      "cliente": "Consumidor Final",
+      "total": 73204,
+      "status": "closed",
+      "fecha": "2025-08-16"
+    },
+    {
+      "id": "448",
+      "cliente": "Consumidor Final",
+      "total": 32778,
+      "status": "closed",
+      "fecha": "2025-08-16"
+    },
+    {
+      "id": "447",
+      "cliente": "Consumidor Final",
+      "total": 18000,
+      "status": "closed",
+      "fecha": "2025-08-16"
+    },
+    {
+      "id": "446",
+      "cliente": "Consumidor Final",
+      "total": 146000,
+      "status": "closed",
+      "fecha": "2025-08-16"
+    },
+    {
+      "id": "445",
+      "cliente": "Consumidor Final",
+      "total": 181000,
+      "status": "closed",
+      "fecha": "2025-08-16"
+    },
+    {
+      "id": "444",
+      "cliente": "Consumidor Final",
+      "total": 118000,
+      "status": "closed",
+      "fecha": "2025-08-16"
+    },
+    {
+      "id": "443",
+      "cliente": "Consumidor Final",
+      "total": 63000,
+      "status": "closed",
+      "fecha": "2025-08-15"
+    },
+    {
+      "id": "442",
+      "cliente": "Consumidor Final",
+      "total": 240000,
+      "status": "closed",
+      "fecha": "2025-08-15"
+    },
+    {
+      "id": "441",
+      "cliente": "Consumidor Final",
+      "total": 33000,
+      "status": "closed",
+      "fecha": "2025-08-15"
+    },
+    {
+      "id": "440",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2025-08-15"
+    },
+    {
+      "id": "439",
+      "cliente": "Consumidor Final",
+      "total": 17000,
+      "status": "closed",
+      "fecha": "2025-08-15"
+    },
+    {
+      "id": "438",
+      "cliente": "Consumidor Final",
+      "total": 91000,
+      "status": "closed",
+      "fecha": "2025-08-15"
+    },
+    {
+      "id": "437",
+      "cliente": "Consumidor Final",
+      "total": 172000,
+      "status": "closed",
+      "fecha": "2025-08-14"
+    },
+    {
+      "id": "436",
+      "cliente": "Consumidor Final",
+      "total": 316000,
+      "status": "closed",
+      "fecha": "2025-08-14"
+    },
+    {
+      "id": "435",
+      "cliente": "Consumidor Final",
+      "total": 31000,
+      "status": "closed",
+      "fecha": "2025-08-14"
+    },
+    {
+      "id": "434",
+      "cliente": "Consumidor Final",
+      "total": 10000,
+      "status": "closed",
+      "fecha": "2025-08-14"
+    },
+    {
+      "id": "433",
+      "cliente": "Consumidor Final",
+      "total": 30000,
+      "status": "closed",
+      "fecha": "2025-08-14"
+    },
+    {
+      "id": "432",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2025-08-14"
+    },
+    {
+      "id": "431",
+      "cliente": "Consumidor Final",
+      "total": 48000,
+      "status": "closed",
+      "fecha": "2025-08-13"
+    },
+    {
+      "id": "430",
+      "cliente": "INVERSIONES LATINERIA S.A.S",
+      "total": 4577615,
+      "status": "closed",
+      "fecha": "2025-08-11"
+    },
+    {
+      "id": "429",
+      "cliente": "Consumidor Final",
+      "total": 68000,
+      "status": "closed",
+      "fecha": "2025-08-10"
+    },
+    {
+      "id": "428",
+      "cliente": "Consumidor Final",
+      "total": 51000,
+      "status": "closed",
+      "fecha": "2025-08-10"
+    },
+    {
+      "id": "427",
+      "cliente": "Consumidor Final",
+      "total": 222000,
+      "status": "closed",
+      "fecha": "2025-08-10"
+    },
+    {
+      "id": "426",
+      "cliente": "Consumidor Final",
+      "total": 17000,
+      "status": "closed",
+      "fecha": "2025-08-10"
+    },
+    {
+      "id": "425",
+      "cliente": "Consumidor Final",
+      "total": 124000,
+      "status": "closed",
+      "fecha": "2025-08-10"
+    },
+    {
+      "id": "424",
+      "cliente": "Consumidor Final",
+      "total": 105000,
+      "status": "closed",
+      "fecha": "2025-08-09"
+    },
+    {
+      "id": "423",
+      "cliente": "Consumidor Final",
+      "total": 27000,
+      "status": "closed",
+      "fecha": "2025-08-09"
+    },
+    {
+      "id": "422",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2025-08-09"
+    },
+    {
+      "id": "421",
+      "cliente": "Consumidor Final",
+      "total": 44000,
+      "status": "closed",
+      "fecha": "2025-08-09"
+    },
+    {
+      "id": "420",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2025-08-08"
+    },
+    {
+      "id": "419",
+      "cliente": "Consumidor Final",
+      "total": 50000,
+      "status": "closed",
+      "fecha": "2025-08-07"
+    },
+    {
+      "id": "418",
+      "cliente": "Consumidor Final",
+      "total": 32000,
+      "status": "closed",
+      "fecha": "2025-08-07"
+    },
+    {
+      "id": "417",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2025-08-07"
+    },
+    {
+      "id": "416",
+      "cliente": "Consumidor Final",
+      "total": 35000,
+      "status": "closed",
+      "fecha": "2025-08-07"
+    },
+    {
+      "id": "415",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2025-08-07"
+    },
+    {
+      "id": "414",
+      "cliente": "Consumidor Final",
+      "total": 28000,
+      "status": "closed",
+      "fecha": "2025-08-07"
+    },
+    {
+      "id": "413",
+      "cliente": "Consumidor Final",
+      "total": 72000,
+      "status": "closed",
+      "fecha": "2025-08-07"
+    },
+    {
+      "id": "412",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2025-08-07"
+    },
+    {
+      "id": "411",
+      "cliente": "Consumidor Final",
+      "total": 68000,
+      "status": "closed",
+      "fecha": "2025-08-07"
+    },
+    {
+      "id": "410",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2025-08-07"
+    },
+    {
+      "id": "409",
+      "cliente": "Consumidor Final",
+      "total": 30000,
+      "status": "closed",
+      "fecha": "2025-08-07"
+    },
+    {
+      "id": "408",
+      "cliente": "Consumidor Final",
+      "total": 200000,
+      "status": "closed",
+      "fecha": "2025-08-07"
+    },
+    {
+      "id": "407",
+      "cliente": "Consumidor Final",
+      "total": 32000,
+      "status": "closed",
+      "fecha": "2025-08-07"
+    },
+    {
+      "id": "406",
+      "cliente": "Consumidor Final",
+      "total": 54000,
+      "status": "closed",
+      "fecha": "2025-08-07"
+    },
+    {
+      "id": "405",
+      "cliente": "Consumidor Final",
+      "total": 17000,
+      "status": "closed",
+      "fecha": "2025-08-06"
+    },
+    {
+      "id": "404",
+      "cliente": "Consumidor Final",
+      "total": 53000,
+      "status": "closed",
+      "fecha": "2025-08-06"
+    },
+    {
+      "id": "403",
+      "cliente": "Consumidor Final",
+      "total": 127000,
+      "status": "closed",
+      "fecha": "2025-08-06"
+    },
+    {
+      "id": "402",
+      "cliente": "Consumidor Final",
+      "total": 104000,
+      "status": "closed",
+      "fecha": "2025-08-06"
+    },
+    {
+      "id": "401",
+      "cliente": "Consumidor Final",
+      "total": 17000,
+      "status": "closed",
+      "fecha": "2025-08-06"
+    },
+    {
+      "id": "400",
+      "cliente": "Consumidor Final",
+      "total": 54000,
+      "status": "closed",
+      "fecha": "2025-08-06"
+    },
+    {
+      "id": "399",
+      "cliente": "Consumidor Final",
+      "total": 17000,
+      "status": "closed",
+      "fecha": "2025-08-06"
+    },
+    {
+      "id": "398",
+      "cliente": "Consumidor Final",
+      "total": 32000,
+      "status": "closed",
+      "fecha": "2025-08-06"
+    },
+    {
+      "id": "397",
+      "cliente": "Inversiones Zeppeling S.A.S",
+      "total": 242760,
+      "status": "closed",
+      "fecha": "2025-08-06"
+    },
+    {
+      "id": "396",
+      "cliente": "MEDELLÍN COFFEE PROJECTS S.A.S.",
+      "total": 264900,
+      "status": "closed",
+      "fecha": "2025-08-04"
+    },
+    {
+      "id": "395",
+      "cliente": "Consumidor Final",
+      "total": 20000,
+      "status": "closed",
+      "fecha": "2025-08-03"
+    },
+    {
+      "id": "394",
+      "cliente": "Consumidor Final",
+      "total": 107074,
+      "status": "closed",
+      "fecha": "2025-08-03"
+    },
+    {
+      "id": "393",
+      "cliente": "Consumidor Final",
+      "total": 34963,
+      "status": "closed",
+      "fecha": "2025-08-02"
+    },
+    {
+      "id": "392",
+      "cliente": "Consumidor Final",
+      "total": 34963,
+      "status": "closed",
+      "fecha": "2025-08-02"
+    },
+    {
+      "id": "391",
+      "cliente": "Consumidor Final",
+      "total": 66000,
+      "status": "closed",
+      "fecha": "2025-08-02"
+    },
+    {
+      "id": "390",
+      "cliente": "Consumidor Final",
+      "total": 111444,
+      "status": "closed",
+      "fecha": "2025-08-02"
+    },
+    {
+      "id": "389",
+      "cliente": "Consumidor Final",
+      "total": 40000,
+      "status": "closed",
+      "fecha": "2025-08-02"
+    },
+    {
+      "id": "388",
+      "cliente": "Consumidor Final",
+      "total": 28000,
+      "status": "closed",
+      "fecha": "2025-08-02"
+    },
+    {
+      "id": "387",
+      "cliente": "Consumidor Final",
+      "total": 45889,
+      "status": "closed",
+      "fecha": "2025-08-02"
+    },
+    {
+      "id": "386",
+      "cliente": "Consumidor Final",
+      "total": 32778,
+      "status": "closed",
+      "fecha": "2025-08-02"
+    },
+    {
+      "id": "385",
+      "cliente": "Consumidor Final",
+      "total": 30593,
+      "status": "closed",
+      "fecha": "2025-08-02"
+    },
+    {
+      "id": "384",
+      "cliente": "Consumidor Final",
+      "total": 15000,
+      "status": "closed",
+      "fecha": "2025-08-02"
+    },
+    {
+      "id": "383",
+      "cliente": "Consumidor Final",
+      "total": 102000,
+      "status": "closed",
+      "fecha": "2025-08-02"
+    },
+    {
+      "id": "382",
+      "cliente": "Consumidor Final",
+      "total": 102000,
+      "status": "void",
+      "fecha": "2025-08-02"
+    },
+    {
+      "id": "381",
+      "cliente": "Consumidor Final",
+      "total": 59000,
+      "status": "closed",
+      "fecha": "2025-08-02"
+    },
+    {
+      "id": "380",
+      "cliente": "Consumidor Final",
+      "total": 60000,
+      "status": "closed",
+      "fecha": "2025-08-02"
+    },
+    {
+      "id": "379",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2025-08-02"
+    },
+    {
+      "id": "378",
+      "cliente": "Consumidor Final",
+      "total": 34000,
+      "status": "closed",
+      "fecha": "2025-08-02"
+    },
+    {
+      "id": "377",
+      "cliente": "Consumidor Final",
+      "total": 28000,
+      "status": "closed",
+      "fecha": "2025-08-01"
+    },
+    {
+      "id": "376",
+      "cliente": "Consumidor Final",
+      "total": 34000,
+      "status": "closed",
+      "fecha": "2025-08-01"
+    },
+    {
+      "id": "375",
+      "cliente": "Consumidor Final",
+      "total": 90000,
+      "status": "closed",
+      "fecha": "2025-08-01"
+    },
+    {
+      "id": "374",
+      "cliente": "Consumidor Final",
+      "total": 167000,
+      "status": "closed",
+      "fecha": "2025-08-01"
+    },
+    {
+      "id": "373",
+      "cliente": "Consumidor Final",
+      "total": 55000,
+      "status": "closed",
+      "fecha": "2025-08-01"
+    },
+    {
+      "id": "372",
+      "cliente": "Consumidor Final",
+      "total": 55000,
+      "status": "closed",
+      "fecha": "2025-08-01"
+    },
+    {
+      "id": "371",
+      "cliente": "Consumidor Final",
+      "total": 110000,
+      "status": "closed",
+      "fecha": "2025-08-01"
+    },
+    {
+      "id": "370",
+      "cliente": "Consumidor Final",
+      "total": 77000,
+      "status": "closed",
+      "fecha": "2025-08-01"
+    },
+    {
+      "id": "369",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2025-08-01"
+    },
+    {
+      "id": "368",
+      "cliente": "Consumidor Final",
+      "total": 52000,
+      "status": "closed",
+      "fecha": "2025-08-01"
+    },
+    {
+      "id": "367",
+      "cliente": "Consumidor Final",
+      "total": 56000,
+      "status": "closed",
+      "fecha": "2025-08-01"
+    },
+    {
+      "id": "366",
+      "cliente": "Consumidor Final",
+      "total": 56000,
+      "status": "void",
+      "fecha": "2025-08-01"
+    },
+    {
+      "id": "365",
+      "cliente": "Consumidor Final",
+      "total": 312000,
+      "status": "closed",
+      "fecha": "2025-08-01"
+    },
+    {
+      "id": "364",
+      "cliente": "Consumidor Final",
+      "total": 123000,
+      "status": "closed",
+      "fecha": "2025-08-01"
+    }
+  ]
+}

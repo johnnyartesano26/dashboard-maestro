@@ -1,6 +1,6 @@
 {
   "proyecto": "Madre Monte — Catálogo de Datos",
-  "actualizado": "2026-07-27",
+  "actualizado": "2026-07-28T16:00:00",
   "periodos": [
     {
       "mes": "Noviembre 2025",
@@ -9,7 +9,10 @@
         "dias_con_dato": 27,
         "promedio_diario": 770466
       },
-      "inventario": null
+      "inventario": null,
+      "facturacion": {
+        "archivo": "data/facturas_2025-11.json"
+      }
     },
     {
       "mes": "Diciembre 2025",
@@ -19,7 +22,10 @@
         "promedio_diario": 670309,
         "crecimiento": -19.4
       },
-      "inventario": null
+      "inventario": null,
+      "facturacion": {
+        "archivo": "data/facturas_2025-12.json"
+      }
     },
     {
       "mes": "Enero 2026",
@@ -33,6 +39,9 @@
       "inventario": {
         "litros_activos": 1418,
         "botellas_despachadas": 37
+      },
+      "facturacion": {
+        "archivo": "data/facturas_2026-01.json"
       }
     },
     {
@@ -47,6 +56,9 @@
       "inventario": {
         "litros_activos": 1803,
         "botellas_despachadas": 209
+      },
+      "facturacion": {
+        "archivo": "data/facturas_2026-02.json"
       }
     },
     {
@@ -61,6 +73,9 @@
       "inventario": {
         "litros_activos": 2440,
         "botellas_despachadas": 922
+      },
+      "facturacion": {
+        "archivo": "data/facturas_2026-03.json"
       }
     },
     {
@@ -75,6 +90,9 @@
       "inventario": {
         "litros_activos": 2060,
         "botellas_despachadas": 1120
+      },
+      "facturacion": {
+        "archivo": "data/facturas_2026-04.json"
       }
     },
     {
@@ -89,6 +107,9 @@
       "inventario": {
         "litros_activos": 1518,
         "botellas_despachadas": 1372
+      },
+      "facturacion": {
+        "archivo": "data/facturas_2026-05.json"
       }
     },
     {
@@ -127,6 +148,9 @@
         "crecimiento": -4.6,
         "meta_mes": 24000000
       },
+      "facturacion": {
+        "archivo": "data/facturas_2026-07.json"
+      },
       "inventario": {
         "litros_activos": 1856,
         "litros_barril": 193,
@@ -162,9 +186,8 @@
       "rango": "Nov 2025 - Jun 2026"
     },
     "facturacion": {
-      "junio_2026": "facturas_junio_2026.json",
       "origen": "Alegra API",
-      "nota": "Solo Jun 2026 tiene facturas detalladas. Otros meses pendientes de exportar."
+      "nota": "Todos los meses Nov 2025 - Jul 2026 tienen facturacion detallada desde Alegra API."
     },
     "inventario": {
       "snapshot_junio": "inventario/registro_de_inventario/ultimo_inventario_local.json",

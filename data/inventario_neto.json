@@ -1,52 +1,52 @@
 {
-  "generado": "2026-07-24T18:14:00.988738",
-  "fecha_lectura": "22/07/2026 12:05:27",
+  "generado": "2026-07-28T15:38:58.824828",
+  "fecha_lectura": "27/07/2026 13:14:21",
   "fermentadores": [
     {
       "nombre": "F1 Frankie",
       "estilo": "STOUT",
-      "litros": 353.0,
+      "litros": 290.0,
       "capacidad": 400,
-      "porcentaje": 88
+      "porcentaje": 72
     },
     {
       "nombre": "F2 Igor",
       "estilo": "IRISH RED ALE",
-      "litros": 680.0,
+      "litros": 600.0,
       "capacidad": 1200,
-      "porcentaje": 57
+      "porcentaje": 50
     },
     {
       "nombre": "F3 Principito",
-      "estilo": "PTL03 = American Pale Ale - Cienfuegos",
-      "litros": 0.0,
+      "estilo": "GERMAN PILS",
+      "litros": 320.0,
       "capacidad": 400,
-      "porcentaje": 0
+      "porcentaje": 80
     },
     {
       "nombre": "F4 Gargantua",
-      "estilo": "PTL04 = American India Pale Ale - Vagabundo",
+      "estilo": "VACIO",
       "litros": 0.0,
       "capacidad": 700,
       "porcentaje": 0
     },
     {
       "nombre": "F5 Pantagruel",
-      "estilo": "PTL04 = American India Pale Ale - Vagabundo",
-      "litros": 660.0,
+      "estilo": "IPA",
+      "litros": 490.0,
       "capacidad": 800,
-      "porcentaje": 82
+      "porcentaje": 61
     },
     {
       "nombre": "F6 Potter",
       "estilo": "GOLDEN ALE",
-      "litros": 630.0,
+      "litros": 550.0,
       "capacidad": 1000,
-      "porcentaje": 63
+      "porcentaje": 55
     },
     {
       "nombre": "F7 HighLander",
-      "estilo": "HIDROMIEL",
+      "estilo": "VACIO",
       "litros": 0.0,
       "capacidad": 500,
       "porcentaje": 0
@@ -66,12 +66,12 @@
     {
       "codigo": "PTL03",
       "estilo": "APA",
-      "litros": 193.5
+      "litros": 156.5
     },
     {
       "codigo": "PTL04",
       "estilo": "IPA",
-      "litros": 0
+      "litros": 15.7
     },
     {
       "codigo": "PTL05",
@@ -107,8 +107,8 @@
     }
   ],
   "totales": {
-    "litros_fermentando": 1856,
-    "litros_barril": 193,
-    "ventas_cop": 8436600
+    "litros_fermentando": 2102,
+    "litros_barril": 172,
+    "ventas_cop": 11159200
   }
 }

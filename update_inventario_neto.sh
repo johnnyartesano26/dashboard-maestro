@@ -3,7 +3,14 @@
 # Ejecutado por cron: 11:00 AM y 5:30 PM
 set -e
 
-export MADREMONTE_KEY="Anderle01!"
+# Cargar credenciales desde .env (fuera del repo, nunca en GitHub)
+ENV_FILE="$HOME/.config/madremonte/.env"
+if [ -f "$ENV_FILE" ]; then
+    set -a; source "$ENV_FILE"; set +a
+else
+    echo "[$(date)] ⚠️  $ENV_FILE no encontrado. Algunas funciones fallarán." >&2
+fi
+
 LOG=/tmp/inventario_neto.log
 NUCLEO_DIR="/mnt/c/Users/USUARIO/Documents/Madre Monte/MadreMonte_Contexto/inventario/registro_de_inventario"
 REPO_DIR="/mnt/c/Users/USUARIO/dashboard-maestro"
@@ -72,10 +79,10 @@ print(f'Inv: {t.get(\"litros_fermentando\",0)}L ferm | {barr}L barril | {bot} bo
     # Telegram
     python3 -c "
 import sys; sys.path.insert(0,'/mnt/c/DeepAgente')
-import os; os.environ['MADREMONTE_KEY']='Anderle01!'
+import os
 from env_loader import load_credentials; load_credentials()
 token = os.getenv('TELEGRAM_BOT_TOKEN','')
-cid = os.getenv('TELEGRAM_CHAT_ID','8068061566')
+cid = os.getenv('TELEGRAM_CHAT_ID','')
 if token:
     import json, requests
     with open('$JSON_FILE') as f:

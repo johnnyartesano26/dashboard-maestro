@@ -3,13 +3,20 @@
 # Ejecutado por cron diario a las 2 PM.
 set -e
 
-export MADREMONTE_KEY="Anderle01!"
+# Cargar credenciales desde .env (fuera del repo, nunca en GitHub)
+ENV_FILE="$HOME/.config/madremonte/.env"
+if [ -f "$ENV_FILE" ]; then
+    set -a; source "$ENV_FILE"; set +a
+else
+    echo "[$(date)] ⚠️  $ENV_FILE no encontrado. Algunas funciones fallarán." >&2
+fi
+
 LOG=/tmp/madremonte_all_dashboards.log
 
-# Obtener token de GitHub para push HTTPS (SSH:22 bloqueado en esta red)
+# Obtener token de GitHub para push
 GH_TOKEN=$(python3 -c "
 import sys; sys.path.insert(0,'/mnt/c/DeepAgente')
-import os; os.environ['MADREMONTE_KEY']='Anderle01!'
+import os
 from env_loader import load_credentials; load_credentials()
 print(os.getenv('GITHUB_TOKEN',''))
 ")
@@ -60,10 +67,10 @@ fi
 echo "[$(date)] Paso 3: Enviando informe..." >> $LOG
 python3 -c "
 import sys; sys.path.insert(0,'/mnt/c/DeepAgente')
-import os; os.environ['MADREMONTE_KEY']='Anderle01!'
+import os
 from env_loader import load_credentials; load_credentials()
 token = os.getenv('TELEGRAM_BOT_TOKEN','')
-cid = os.getenv('TELEGRAM_CHAT_ID','8068061566')
+cid = os.getenv('TELEGRAM_CHAT_ID','')
 
 import json, re, requests
 

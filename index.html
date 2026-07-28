@@ -715,8 +715,8 @@ window.onload = async function() {
   }
   } catch(e) {
     console.error('Init error:', e);
-    document.getElementById('headerSub').textContent = '⚠️ Error de inicialización: ' + e.message;
-    document.getElementById('kpiOverview').innerHTML = '<div class="kpi" style="max-width:100%;flex:1"><div class="val red">⚠️ Error</div><div class="lab">' + e.message + '</div></div>';
+    document.getElementById('headerSub').textContent = '⚠️ Error al cargar los datos. Intenta de nuevo más tarde.';
+    document.getElementById('kpiOverview').innerHTML = '<div class="kpi" style="max-width:100%;flex:1"><div class="val red">⚠️ Error</div><div class="lab">No se pudieron cargar los datos. Verifica tu conexión.</div></div>';
   }
 };
 
@@ -837,7 +837,7 @@ async function loadFacturacionData(archivo) {
     renderFacturacionIfActive();
   } catch(e) {
     console.error('Error cargando', archivo, e);
-    showToast('❌ No se pudo cargar ' + archivo);
+    showToast('❌ Error al cargar los datos. Intenta de nuevo.');
     // Usar datos del catálogo como fallback
     updateOverviewFromCatalogo();
   }
@@ -1251,7 +1251,7 @@ function renderFactCharts() {
 
   factCharts.top = new Chart(document.getElementById('chartTop'), {
     type:'bar',
-    data:{labels:top.map(t=>t[0].length>28?t[0].substring(0,27)+'…':t[0]),datasets:[{label:'Total COP',data:top.map(t=>t[1].total),backgroundColor:top.map(t=>t[0]==='BAR'?'#e8a84c':'#58a6ff'),borderRadius:4}]},
+    data:{labels:top.map(t=>t[0]==='BAR'?'BAR':(t[0].length>8?t[0].substring(0,8)+'…':t[0])),datasets:[{label:'Total COP',data:top.map(t=>t[1].total),backgroundColor:top.map(t=>t[0]==='BAR'?'#e8a84c':'#58a6ff'),borderRadius:4}]},
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw.toLocaleString('es-CO')+' COP ('+top[ctx.dataIndex][1].count+' facturas)'}}},scales:{x:{ticks:{color:'#8c7b6b',callback:v=>'$'+(v/1e6).toFixed(1)+'M'},grid:{color:'#2a2622'}},y:{ticks:{color:'#8c7b6b',font:{size:10}},grid:{color:'#2a2622'}}}}
   });
 
@@ -1279,7 +1279,7 @@ function renderTable() {
   filtered.forEach((inv,i)=>{
     const cls = inv.status === 'draft' ? 'draft' : inv.status === 'closed' ? 'closed' : 'sent';
     const stLabel = inv.status === 'draft' ? '⚠ Draft' : inv.status === 'closed' ? '✓ Cerrada' : '→ Enviada';
-    const cDisp = inv.cliente === 'BAR' ? '<span class="bar-tag">BAR</span>' : inv.cliente;
+    const cDisp = inv.cliente === 'BAR' ? '<span class="bar-tag">BAR</span>' : (inv.cliente.length > 8 ? inv.cliente.slice(0,8)+'…' : inv.cliente);
     tbody.innerHTML += `<tr><td style="color:#484f58">${i+1}</td><td style="font-weight:600">FE-${inv.id}</td><td style="color:var(--mm-dim)">${inv.fecha}</td><td>${cDisp}</td><td style="font-weight:600">$${inv.total.toLocaleString('es-CO')}</td><td class="${cls}">${stLabel}</td></tr>`;
   });
   document.getElementById('count').textContent = `Mostrando ${filtered.length} de ${allData.length}`;
@@ -1469,14 +1469,16 @@ function renderClientesTabla() {
     document.getElementById('countClientes').textContent = '';
     return;
   }
-  tbody.innerHTML = clientesFiltrados.map((c, i) => `
-    <tr class="clickable-row" onclick="mostrarDetalleCliente('${c.cliente.replace(/'/g,"\\'")}')">
-      <td><strong>${c.cliente}</strong></td>
+  tbody.innerHTML = clientesFiltrados.map((c, i) => {
+    const nombre = c.cliente.length > 6 ? c.cliente.slice(0, 6) + '…' : c.cliente;
+    return `
+    <tr>
+      <td><strong>${nombre}</strong></td>
       <td>$${c._total.toLocaleString('es-CO')}</td>
       <td>${c._nfact}</td>
       <td style="font-size:.78em;color:var(--mm-dim)">${c._meses.join(', ')}</td>
-    </tr>
-  `).join('');
+    </tr>`;
+  }).join('');
   document.getElementById('countClientes').textContent = `${clientesFiltrados.length} clientes`;
   document.getElementById('detalleCliente').style.display = 'none';
 }
@@ -1613,7 +1615,7 @@ function renderVentas(data) {
     ventasCharts.clientes = new Chart(ctxC.getContext('2d'), {
       type: 'bar',
       data: {
-        labels: top.map(t => t[0]),
+        labels: top.map(t => t[0].length > 8 ? t[0].slice(0, 8) + '…' : t[0]),
         datasets: [{ data: top.map(t => t[1]), backgroundColor: top.map((_,i) => colors[i]), borderRadius: 4 }]
       },
       options: {

@@ -1,0 +1,19 @@
+# ── Entorno ──
+.env
+*.env
+.env.*
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# ── Sistema ──
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+tmp/

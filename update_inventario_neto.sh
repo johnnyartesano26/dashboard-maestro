@@ -78,9 +78,8 @@ print(f'Inv: {t.get(\"litros_fermentando\",0)}L ferm | {barr}L barril | {bot} bo
 
     # Telegram
     python3 -c "
-import sys; sys.path.insert(0,'/mnt/c/DeepAgente')
-import os
-from env_loader import load_credentials; load_credentials()
+import os, json, requests
+
 token = os.getenv('TELEGRAM_BOT_TOKEN','')
 cid = os.getenv('TELEGRAM_CHAT_ID','')
 if token:

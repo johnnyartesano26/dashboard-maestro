@@ -14,12 +14,7 @@ fi
 LOG=/tmp/madremonte_all_dashboards.log
 
 # Obtener token de GitHub para push
-GH_TOKEN=$(python3 -c "
-import sys; sys.path.insert(0,'/mnt/c/DeepAgente')
-import os
-from env_loader import load_credentials; load_credentials()
-print(os.getenv('GITHUB_TOKEN',''))
-")
+GH_TOKEN="${GITHUB_TOKEN}"
 
 git_push() {
     # $1 = repo dir, $2 = repo path (owner/repo)
@@ -66,9 +61,8 @@ fi
 # ── 3. Informe Telegram ──
 echo "[$(date)] Paso 3: Enviando informe..." >> $LOG
 python3 -c "
-import sys; sys.path.insert(0,'/mnt/c/DeepAgente')
-import os
-from env_loader import load_credentials; load_credentials()
+import os, json, re, requests
+
 token = os.getenv('TELEGRAM_BOT_TOKEN','')
 cid = os.getenv('TELEGRAM_CHAT_ID','')
 

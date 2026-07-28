@@ -368,7 +368,7 @@
       <canvas id="chartDaily"></canvas>
     </div>
     <div class="card full">
-      <h2>🔍 Buscador de Facturas <span style="font-size:.75em;color:var(--mm-dim)"> — <span id="totalCount">0</span> registros</span></h2>
+      <h2>🔍 Buscador de Facturas <span style="font-size:.75em;color:var(--mm-dim)"> — <span id="totalCount">—</span> Selecciona un mes</span></h2>
       <div class="filters">
         <input type="text" id="searchFact" placeholder="🔍 Cliente, factura, fecha..." oninput="filterTable()">
         <select id="statusFilter" onchange="filterTable()">
@@ -387,7 +387,7 @@
     <div class="card full" id="cardClientes">
       <h2>👥 Buscador de Clientes <span style="font-size:.75em;color:var(--mm-dim)"> — Datos consolidados Dic 2025 - Jun 2026</span></h2>
       <div class="filters">
-        <input type="text" id="searchCliente" placeholder="🔍 Buscar cliente..." oninput="filtrarClientes()">
+        <input type="text" id="searchCliente" placeholder="🔍 Buscar cliente..." oninput="debounceClientes()">
         <select id="filtroMesCliente" onchange="filtrarClientes()">
           <option value="">Todos los meses</option>
         </select>
@@ -597,6 +597,16 @@ window.onload = async function() {
   try {
   document.getElementById('headerSub').textContent = 'Cargando datos...';
 
+  // Timeout: si clientes tardan >12s, mostrar aviso
+  const clientesTimeout = setTimeout(() => {
+    if (!clientesData || clientesData.length === 0) {
+      const tbody = document.getElementById('tbodyClientes');
+      if (tbody && tbody.textContent.includes('Cargando')) {
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;padding:20px;color:var(--mm-red)">⏳ La carga está tardando demasiado. <a href="javascript:location.reload()" style="color:var(--mm-blue)">Reintentar</a></td></tr>';
+      }
+    }
+  }, 12000);
+
   // Cargar todo en paralelo
   const results = await Promise.allSettled([
     fetch('catalogo.json').then(r => r.ok ? r.json() : Promise.reject('HTTP '+r.status)),
@@ -622,6 +632,7 @@ window.onload = async function() {
 
   // 2. Procesar clientes
   if (results[1].status === 'fulfilled') {
+    clearTimeout(clientesTimeout);
     clientesData = results[1].value;
     clientesData.forEach(c => {
       c.num_facturas = Object.values(c.meses).reduce((s, m) => s + m.facturas.length, 0);
@@ -639,6 +650,9 @@ window.onload = async function() {
       });
     }
     filtrarClientes();
+  } else {
+    const tbody = document.getElementById('tbodyClientes');
+    if (tbody) tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;padding:20px;color:var(--mm-red)">⚠️ No se pudieron cargar los datos de clientes. <a href="javascript:location.reload()" style="color:var(--mm-blue)">Reintentar</a></td></tr>';
   }
 
   // 4. Procesar datos de Planta (desde madremonte-dashboard en vivo)
@@ -1402,6 +1416,12 @@ let clientesData = [];
 let clientesFiltrados = [];
 let clienteSortCol = 'total_general';
 let clienteSortAsc = false;
+let _debounceTimer = null;
+
+function debounceClientes() {
+  if (_debounceTimer) clearTimeout(_debounceTimer);
+  _debounceTimer = setTimeout(filtrarClientes, 300);
+}
 
 function filtrarClientes() {
   const search = document.getElementById('searchCliente').value.toLowerCase();

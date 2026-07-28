@@ -20,17 +20,8 @@ for i in $(seq 1 24); do
     sleep 5
 done
 
-# Cargar token de GitHub
-GH_TOKEN=$(python3 -c "
-import sys; sys.path.insert(0,'/mnt/c/DeepAgente')
-import os; os.environ['MADREMONTE_KEY']='Anderle01!'
-from env_loader import load_credentials; load_credentials()
-print(os.getenv('GITHUB_TOKEN',''))
-" 2>>$LOG)
-
-if [ -z "$GH_TOKEN" ]; then
-    echo "[$(date)] ⚠️ No se pudo cargar GITHUB_TOKEN. Intentando continuar..." >> $LOG
-fi
+# Asegurar que el remote use SSH (HTTPS token puede expirar)
+git -C "$REPO_DIR" remote set-url origin git@github.com:johnnyartesano26/dashboard-maestro.git 2>>$LOG
 
 # Backup del JSON anterior
 cp "$REPO_DIR/data/inventario_neto.json" /tmp/inventario_neto_backup.json 2>/dev/null || true
@@ -75,14 +66,8 @@ print(f'Inv: {t.get(\"litros_fermentando\",0)}L ferm | {barr}L barril | {bot} bo
     
     git commit -m "Auto-inv: $(date '+%Y-%m-%d %H:%M') — $RESUMEN" >> $LOG 2>&1
     
-    # Push con token
-    if [ -n "$GH_TOKEN" ]; then
-        git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/johnnyartesano26/dashboard-maestro.git"
-    fi
+    # Push con SSH
     git push origin main >> $LOG 2>&1 && echo "[$(date)] ✅ Push OK" >> $LOG || echo "[$(date)] ⚠️ Push falló" >> $LOG
-    if [ -n "$GH_TOKEN" ]; then
-        git remote set-url origin "https://github.com/johnnyartesano26/dashboard-maestro.git"
-    fi
 
     # Telegram
     python3 -c "

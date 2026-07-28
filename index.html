@@ -565,6 +565,8 @@ function switchTab(name) {
     TAB_STATE.facturacion = true;
     if (periodoActual && periodoActual.facturacion && periodoActual.facturacion.archivo) {
       loadFacturacionData(periodoActual.facturacion.archivo);
+    } else if (allData.length > 0) {
+      renderFacturacion();
     }
   }
   if (name === 'inventario' && !TAB_STATE.inventario) {
@@ -725,34 +727,63 @@ function cambiarPeriodo(idx) {
     TAB_STATE.facturacion = false;
     loadFacturacionData(periodoActual.facturacion.archivo);
   } else {
-    // Solo hay datos de ventas bar (sin facturación detallada)
+    // Sin JSON de Alegra: usar datos de Google Sheets como fuente
     updateOverviewFromCatalogo();
-    // Estado vacío elegante para facturación
+    // Restaurar visibilidad de canvas (pueden estar ocultos)
+    const grid = document.getElementById('gridFact');
+    grid.querySelectorAll('canvas').forEach(c => {
+      const p = c.parentElement; if (p && p.tagName === 'DIV') p.style.display = '';
+    });
+    const emptyEl = document.getElementById('emptyFactMsg');
+    if (emptyEl) emptyEl.style.display = 'none';
+
+    if (ventasSheetData && ventasSheetData.length > 0) {
+      const mesActual = periodoActual.mes;
+      const mn = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+      const [nombreMes, anio] = mesActual.split(' ');
+      const mesIdx = mn.indexOf(nombreMes);
+      const y = parseInt(anio);
+
+      allData = ventasSheetData
+        .filter(d => d.fecha && d.fecha.getMonth() === mesIdx && d.fecha.getFullYear() === y)
+        .map(d => ({
+          id: d.factura ? d.factura.replace(/^FE-?/i,'') : ('GS-'+Math.random().toString(36).slice(2,8)),
+          cliente: (d.nombre === 'Consumidor Final' ? 'BAR' : d.nombre) || 'Cliente',
+          total: (d.valor || 0) + (d.domicilio || 0),
+          status: d.pagoRealizado && d.pagoRealizado.toLowerCase() === 'debe' ? 'draft' : 'closed',
+          fecha: d.fecha.toISOString().split('T')[0]
+        }));
+
+      if (allData.length > 0) {
+        filtered = [...allData];
+        updateOverviewFromData();
+        renderFacturacionIfActive();
+        return;
+      }
+    }
+    // Si no hay datos de Google Sheets para este mes
     document.getElementById('kpiFact').innerHTML = '';
     document.getElementById('totalCount').textContent = '0';
     document.getElementById('count').textContent = '';
     document.getElementById('tbodyFact').innerHTML = '';
-    // Mostrar overlay de estado vacío sobre los gráficos
-    const grid = document.getElementById('gridFact');
-    grid.querySelectorAll('canvas').forEach(c => { const p = c.parentElement; if (p && p.tagName === 'DIV') p.style.display = 'none'; });
-    let emptyEl = document.getElementById('emptyFactMsg');
-    if (!emptyEl) {
-      emptyEl = document.createElement('div');
-      emptyEl.id = 'emptyFactMsg';
-      emptyEl.className = 'card full';
-      emptyEl.style.cssText = 'text-align:center;padding:40px 20px;';
-      grid.insertBefore(emptyEl, grid.firstChild);
+    let emptyMsg = document.getElementById('emptyFactMsg');
+    if (!emptyMsg) {
+      emptyMsg = document.createElement('div');
+      emptyMsg.id = 'emptyFactMsg';
+      emptyMsg.className = 'card full';
+      emptyMsg.style.cssText = 'text-align:center;padding:40px 20px;';
+      grid.insertBefore(emptyMsg, grid.firstChild);
     }
-    emptyEl.style.display = 'block';
-    emptyEl.innerHTML = `
-      <div style="font-size:3em;margin-bottom:12px;">📄</div>
-      <h2 style="color:var(--mm-gold);margin-bottom:8px;">Sin facturas detalladas para ${periodoActual.mes}</h2>
+    emptyMsg.style.display = 'block';
+    grid.querySelectorAll('canvas').forEach(c => {
+      const p = c.parentElement; if (p && p.tagName === 'DIV') p.style.display = 'none';
+    });
+    emptyMsg.innerHTML = `
+      <div style="font-size:3em;margin-bottom:12px;">📋</div>
+      <h2 style="color:var(--mm-gold);margin-bottom:8px;">Sin datos de facturación para ${periodoActual.mes}</h2>
       <p style="color:var(--mm-dim);font-size:.9em;max-width:500px;margin:0 auto 16px;">
-        Este período solo contiene datos de ventas Bar desde Google Sheets.
-        Las facturas electrónicas detalladas de Alegra están disponibles para <strong>Junio 2026</strong>.
-      </p>
-      <p style="color:var(--mm-dim);font-size:.78em;">
-        Selecciona "Junio 2026" en el selector de período para ver el detalle completo.
+        No se encontraron facturas en Google Sheets para este período.
+        Las facturas electrónicas de Alegra están disponibles para <strong>Junio 2026</strong>.
       </p>
     `;
   }

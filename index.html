@@ -466,6 +466,13 @@
 
 <!-- ═══════════════ TAB: VENTAS ═══════════════ -->
 <div class="tab-content" id="tab-ventas">
+  <div class="kpi-row" id="kpiConsolidado">
+    <div class="kpi"><div class="val green" id="vcTotal">—</div><div class="lab">Ingresos Totales</div></div>
+    <div class="kpi"><div class="val blue" id="vcFacturacion">—</div><div class="lab">Facturación</div></div>
+    <div class="kpi"><div class="val yellow" id="vcBar">—</div><div class="lab">Bar</div></div>
+    <div class="kpi"><div class="val cyan" id="vcMeses">—</div><div class="lab">Meses con datos</div></div>
+  </div>
+
   <div class="kpi-row" id="kpiVentas">
     <div class="kpi"><div class="val green" id="vTotal">—</div><div class="lab">Total Facturado</div></div>
     <div class="kpi"><div class="val blue" id="vNum">—</div><div class="lab">Facturas + RC</div></div>
@@ -474,6 +481,10 @@
   </div>
 
   <div class="grid">
+    <div class="card full">
+      <h2>📊 Ingresos Consolidados — Facturación vs Bar <span id="vcUpdate"></span></h2>
+      <canvas id="chartConsolidadoIngresos"></canvas>
+    </div>
     <div class="card full">
       <h2>📊 Evolución Mensual (Facturas + Domicilios) <span id="vUpdate"></span></h2>
       <canvas id="chartVentasMensual"></canvas>
@@ -1620,6 +1631,103 @@ function renderVentas(data) {
       }
     });
   }
+  renderConsolidadoIngresos(data);
+}
+
+// ═══════════════════════════════════════════════════
+// CONSOLIDADO: Facturacion vs Bar — Ingresos Mensuales
+// ═══════════════════════════════════════════════════
+function renderConsolidadoIngresos(sheetData) {
+  if (!catalogoData || !catalogoData.periodos) return;
+
+  const mNames = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  const monthKey = (y, m) => mNames[m] + ' ' + y.toString().slice(2);
+
+  // Facturacion mensual desde Google Sheets (todos los meses)
+  const facMensual = {};
+  if (ventasSheetData && ventasSheetData.length > 0) {
+    ventasSheetData.forEach(d => {
+      if (!d.fecha) return;
+      const k = d.fecha.getFullYear() + '-' + String(d.fecha.getMonth()+1).padStart(2,'0');
+      if (!facMensual[k]) facMensual[k] = 0;
+      facMensual[k] += (d.valor || 0) + (d.domicilio || 0);
+    });
+  }
+
+  // Bar mensual desde catalogo
+  const barMensual = {};
+  catalogoData.periodos.forEach(p => {
+    const vb = p.ventas_bar || {};
+    if (!vb.total_ventas) return;
+    // Extraer mes/año del nombre "Noviembre 2025"
+    const mn = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+    for (let i = 0; i < mn.length; i++) {
+      if (p.mes.startsWith(mn[i])) {
+        const anio = p.mes.split(' ').pop();
+        const k = anio + '-' + String(i+1).padStart(2,'0');
+        barMensual[k] = vb.total_ventas;
+        break;
+      }
+    }
+  });
+
+  // Unir meses y ordenar
+  const allKeys = new Set([...Object.keys(facMensual), ...Object.keys(barMensual)]);
+  const meses = [...allKeys].sort();
+  if (meses.length === 0) return;
+
+  const labels = meses.map(k => {
+    const [y, m] = k.split('-');
+    return mNames[parseInt(m)-1] + ' ' + y.slice(2);
+  });
+
+  const facValues = meses.map(k => facMensual[k] || 0);
+  const barValues = meses.map(k => barMensual[k] || 0);
+  const totalValues = meses.map((k, i) => facValues[i] + barValues[i]);
+
+  // KPIs consolidados
+  const totalFac = facValues.reduce((s, v) => s + v, 0);
+  const totalBar = barValues.reduce((s, v) => s + v, 0);
+  const totalAll = totalFac + totalBar;
+
+  const elTotal = document.getElementById('vcTotal');
+  const elFac = document.getElementById('vcFacturacion');
+  const elBar = document.getElementById('vcBar');
+  const elMeses = document.getElementById('vcMeses');
+  const elUpdate = document.getElementById('vcUpdate');
+
+  if (elTotal) elTotal.textContent = '$' + (totalAll/1e6).toFixed(1) + 'M';
+  if (elFac) elFac.textContent = '$' + (totalFac/1e6).toFixed(1) + 'M';
+  if (elBar) elBar.textContent = '$' + (totalBar/1e6).toFixed(1) + 'M';
+  if (elMeses) elMeses.textContent = meses.length;
+  if (elUpdate) elUpdate.textContent = 'actualizado ' + new Date().toLocaleString('es-CO',{dateStyle:'short',timeStyle:'short'});
+
+  // Grafico
+  if (ventasCharts.consolidado) ventasCharts.consolidado.destroy();
+  const ctx = document.getElementById('chartConsolidadoIngresos');
+  if (!ctx) return;
+
+  ventasCharts.consolidado = new Chart(ctx.getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        { label: 'Facturación', data: facValues, backgroundColor: '#58a6ff', borderRadius: 4 },
+        { label: 'Bar', data: barValues, backgroundColor: '#e8a84c', borderRadius: 4 },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { ticks: { color:'#8c7b6b', font:{size:10} }, grid: { color:'#2a2622' } },
+        y: { ticks: { color:'#8c7b6b', callback: v => '$'+(v/1e6).toFixed(1)+'M' }, grid: { color:'#2a2622' } },
+      },
+      plugins: {
+        legend: { labels: { color:'#8c7b6b', font:{size:11} } },
+        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': $' + ctx.raw.toLocaleString('es-CO') + ' COP' } },
+      },
+    }
+  });
 }
 
 // ═══════════════════════════════════════════════════

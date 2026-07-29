@@ -105,15 +105,15 @@
   },
   {
     "mes": "Jul 26",
-    "total_ventas": 13192426.0,
-    "crecimiento": -30.2,
-    "formato_liquido": 11014939.0,
-    "diferencia": 2177487.0,
-    "efectivo_pct": 22.3,
-    "transferencia_pct": 30.1,
-    "datafono_pct": 47.6,
-    "dias_con_dato": 19,
-    "promedio_diario": 694338.2,
+    "total_ventas": 18017426.0,
+    "crecimiento": -4.6,
+    "formato_liquido": 14934714.0,
+    "diferencia": 3082712.0,
+    "efectivo_pct": 20.6,
+    "transferencia_pct": 29.5,
+    "datafono_pct": 49.9,
+    "dias_con_dato": 23,
+    "promedio_diario": 783366.3,
     "meta_mes": 24000000
   }
 ]

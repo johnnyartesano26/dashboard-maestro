@@ -2484,5 +2484,49 @@
     "efectivo": 22000.0,
     "transferencias": 172000.0,
     "datafono": 186000.0
+  },
+  {
+    "fecha": "2026-07-23",
+    "mes": "Jul 26",
+    "dia": 23,
+    "dia_semana": "Thursday",
+    "alegra": 718000.0,
+    "formato": 539120.0,
+    "efectivo": 153000.0,
+    "transferencias": 35000.0,
+    "datafono": 530000.0
+  },
+  {
+    "fecha": "2026-07-24",
+    "mes": "Jul 26",
+    "dia": 24,
+    "dia_semana": "Friday",
+    "alegra": 3056000.0,
+    "formato": 2396600.0,
+    "efectivo": 305000.0,
+    "transferencias": 1269000.0,
+    "datafono": 1482000.0
+  },
+  {
+    "fecha": "2026-07-25",
+    "mes": "Jul 26",
+    "dia": 25,
+    "dia_semana": "Saturday",
+    "alegra": 574000.0,
+    "formato": 543720.0,
+    "efectivo": 239000.0,
+    "transferencias": 0.0,
+    "datafono": 335000.0
+  },
+  {
+    "fecha": "2026-07-26",
+    "mes": "Jul 26",
+    "dia": 26,
+    "dia_semana": "Sunday",
+    "alegra": 477000.0,
+    "formato": 440335.0,
+    "efectivo": 80000.0,
+    "transferencias": 35000.0,
+    "datafono": 362000.0
   }
 ]

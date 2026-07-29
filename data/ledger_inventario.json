@@ -1,0 +1,255 @@
+{
+  "version": "1.0",
+  "actualizado": "2026-07-29T13:14:03.320713",
+  "movimientos": [
+    {
+      "id": "mov_0001",
+      "fecha": "2026-07-29",
+      "tipo": "ENTRADA",
+      "origen": "nucleo_snapshot",
+      "estilo": "GOLDEN ALE",
+      "capa": "fermentador_litros",
+      "cantidad": 550.0,
+      "nota": "Anterior: 0L → Actual: 550.0L (delta: +550.0L)",
+      "saldo_capa": 550.0
+    },
+    {
+      "id": "mov_0002",
+      "fecha": "2026-07-29",
+      "tipo": "ENTRADA",
+      "origen": "nucleo_snapshot",
+      "estilo": "IRISH RED ALE",
+      "capa": "fermentador_litros",
+      "cantidad": 600.0,
+      "nota": "Anterior: 0L → Actual: 600.0L (delta: +600.0L)",
+      "saldo_capa": 600.0
+    },
+    {
+      "id": "mov_0003",
+      "fecha": "2026-07-29",
+      "tipo": "ENTRADA",
+      "origen": "nucleo_snapshot",
+      "estilo": "IPA",
+      "capa": "fermentador_litros",
+      "cantidad": 490.0,
+      "nota": "Anterior: 0L → Actual: 490.0L (delta: +490.0L)",
+      "saldo_capa": 490.0
+    },
+    {
+      "id": "mov_0004",
+      "fecha": "2026-07-29",
+      "tipo": "ENTRADA",
+      "origen": "nucleo_snapshot",
+      "estilo": "STOUT",
+      "capa": "fermentador_litros",
+      "cantidad": 290.0,
+      "nota": "Anterior: 0L → Actual: 290.0L (delta: +290.0L)",
+      "saldo_capa": 290.0
+    },
+    {
+      "id": "mov_0005",
+      "fecha": "2026-07-29",
+      "tipo": "ENTRADA",
+      "origen": "nucleo_delta_barril",
+      "estilo": "APA",
+      "capa": "barril_litros",
+      "cantidad": 156.5,
+      "nota": "Anterior: 0L → Actual: 156.5L (delta: +156.5L)",
+      "saldo_capa": 156.5
+    },
+    {
+      "id": "mov_0006",
+      "fecha": "2026-07-29",
+      "tipo": "ENTRADA",
+      "origen": "nucleo_delta_barril",
+      "estilo": "IPA",
+      "capa": "barril_litros",
+      "cantidad": 15.7,
+      "nota": "Anterior: 0L → Actual: 15.7L (delta: +15.7L)",
+      "saldo_capa": 15.7
+    }
+  ],
+  "saldos": {
+    "fermentador": {
+      "GOLDEN ALE": {
+        "litros": 550.0,
+        "fermentadores": [
+          {
+            "nombre": "F6 Potter",
+            "litros": 550.0,
+            "capacidad": 1000,
+            "porcentaje": 55
+          }
+        ],
+        "pct_max": 55,
+        "alerta": "verde"
+      },
+      "IRISH RED ALE": {
+        "litros": 600.0,
+        "fermentadores": [
+          {
+            "nombre": "F2 Igor",
+            "litros": 600.0,
+            "capacidad": 1200,
+            "porcentaje": 50
+          }
+        ],
+        "pct_max": 50,
+        "alerta": "verde"
+      },
+      "APA": {
+        "litros": 0,
+        "fermentadores": [],
+        "pct_max": 0,
+        "alerta": "roja"
+      },
+      "IPA": {
+        "litros": 490.0,
+        "fermentadores": [
+          {
+            "nombre": "F5 Pantagruel",
+            "litros": 490.0,
+            "capacidad": 800,
+            "porcentaje": 61
+          }
+        ],
+        "pct_max": 61,
+        "alerta": "verde"
+      },
+      "STOUT": {
+        "litros": 290.0,
+        "fermentadores": [
+          {
+            "nombre": "F1 Frankie",
+            "litros": 290.0,
+            "capacidad": 400,
+            "porcentaje": 72
+          }
+        ],
+        "pct_max": 72,
+        "alerta": "verde"
+      }
+    },
+    "barril": {
+      "GOLDEN ALE": {
+        "litros": 0,
+        "comprometido": 0,
+        "disponible": 0
+      },
+      "IRISH RED ALE": {
+        "litros": 0,
+        "comprometido": 0,
+        "disponible": 0
+      },
+      "APA": {
+        "litros": 156.5,
+        "comprometido": 0,
+        "disponible": 156.5
+      },
+      "IPA": {
+        "litros": 15.7,
+        "comprometido": 0,
+        "disponible": 15.7
+      },
+      "STOUT": {
+        "litros": 0,
+        "comprometido": 0,
+        "disponible": 0
+      }
+    },
+    "botella": {
+      "GOLDEN ALE": {
+        "unidades": 0,
+        "comprometido": 0,
+        "disponible": 0
+      },
+      "IRISH RED ALE": {
+        "unidades": 0,
+        "comprometido": 0,
+        "disponible": 0
+      },
+      "APA": {
+        "unidades": 0,
+        "comprometido": 0,
+        "disponible": 0
+      },
+      "IPA": {
+        "unidades": 0,
+        "comprometido": 0,
+        "disponible": 0
+      },
+      "STOUT": {
+        "unidades": 0,
+        "comprometido": 0,
+        "disponible": 0
+      }
+    }
+  },
+  "insumos": {
+    "botellas_vacias_limpias": {
+      "stock": 0,
+      "unidades_por_pedido": 1920,
+      "estado": "AGOTADO"
+    }
+  },
+  "cronograma": [],
+  "alertas": [
+    {
+      "tipo": "BOTELLAS_VACIAS",
+      "urgencia": "critica",
+      "mensaje": "Stock de botellas vacías limpias: 0. Se necesitan 1920 und (próximo pedido: None)"
+    },
+    {
+      "tipo": "EMBOTELLAR_PENDIENTE",
+      "urgencia": "alta",
+      "estilo": "GOLDEN ALE",
+      "mensaje": "GOLDEN ALE: 550L en fermentador → solo 0 botellas disponibles. Se necesita embotellar.",
+      "fermentadores": []
+    },
+    {
+      "tipo": "EMBOTELLAR_PENDIENTE",
+      "urgencia": "alta",
+      "estilo": "IRISH RED ALE",
+      "mensaje": "IRISH RED ALE: 600L en fermentador → solo 0 botellas disponibles. Se necesita embotellar.",
+      "fermentadores": []
+    },
+    {
+      "tipo": "EMBOTELLAR_PENDIENTE",
+      "urgencia": "alta",
+      "estilo": "IPA",
+      "mensaje": "IPA: 490L en fermentador → solo 0 botellas disponibles. Se necesita embotellar.",
+      "fermentadores": []
+    },
+    {
+      "tipo": "EMBOTELLAR_PENDIENTE",
+      "urgencia": "alta",
+      "estilo": "STOUT",
+      "mensaje": "STOUT: 290L en fermentador → solo 0 botellas disponibles. Se necesita embotellar.",
+      "fermentadores": []
+    },
+    {
+      "tipo": "EMBARRILAR_PENDIENTE",
+      "urgencia": "alta",
+      "estilo": "GOLDEN ALE",
+      "mensaje": "GOLDEN ALE: 550L en fermentador → solo 0.0L en barril. Se necesita embarrilar."
+    },
+    {
+      "tipo": "EMBARRILAR_PENDIENTE",
+      "urgencia": "alta",
+      "estilo": "IRISH RED ALE",
+      "mensaje": "IRISH RED ALE: 600L en fermentador → solo 0.0L en barril. Se necesita embarrilar."
+    },
+    {
+      "tipo": "EMBARRILAR_PENDIENTE",
+      "urgencia": "media",
+      "estilo": "IPA",
+      "mensaje": "IPA: 490L en fermentador → solo 15.7L en barril. Se necesita embarrilar."
+    },
+    {
+      "tipo": "EMBARRILAR_PENDIENTE",
+      "urgencia": "alta",
+      "estilo": "STOUT",
+      "mensaje": "STOUT: 290L en fermentador → solo 0.0L en barril. Se necesita embarrilar."
+    }
+  ]
+}

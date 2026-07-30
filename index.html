@@ -235,6 +235,7 @@
     <button class="tab-btn" onclick="switchTab('facturacion')">📄 Facturación</button>
     <button class="tab-btn" onclick="switchTab('inventario')">🍺 Inventario</button>
     <button class="tab-btn" onclick="switchTab('ventas')">💰 Ventas</button>
+    <button class="tab-btn" onclick="switchTab('clientes')">👥 Análisis de Clientes</button>
   </div>
   <div id="periodSelector" style="display:none;margin-top:8px">
     <select id="periodoSelect" onchange="cambiarPeriodo()" style="background:var(--mm-bg);border:1px solid var(--mm-border);color:#c88a3d;padding:6px 12px;border-radius:6px;font-size:.85em;font-family:inherit"></select>
@@ -541,6 +542,11 @@ function copiarSync() {
 </script>
 </div>
 
+<!-- ═══════════════ TAB: ANALISIS DE CLIENTES ═══════════════ -->
+<div class="tab-content" id="tab-clientes">
+  <iframe src="agenda-clientes.html" style="width:100%;height:calc(100vh - 150px);border:none;border-radius:8px" title="Análisis de Clientes"></iframe>
+</div>
+
 <!-- ═══════════════ TOAST ═══════════════ -->
 <div class="toast" id="toast"></div>
 
@@ -555,7 +561,7 @@ let allData = [];
 let filtered = [];
 let factCharts = {};
 let overviewCharts = {};
-let TAB_STATE = { facturacion: false, inventario: false, resumen: true, ventas: false };
+let TAB_STATE = { facturacion: false, inventario: false, resumen: true, ventas: false, clientes: false };
 let totalFacturasConsolidado = 0;
 let totalClientesConsolidado = 0;
 let importeConsolidado = 0;
@@ -587,6 +593,9 @@ function switchTab(name) {
   if (name === 'ventas' && !TAB_STATE.ventas) {
     TAB_STATE.ventas = true;
     initVentas();
+  }
+  if (name === 'clientes' && !TAB_STATE.clientes) {
+    TAB_STATE.clientes = true;
   }
 }
 

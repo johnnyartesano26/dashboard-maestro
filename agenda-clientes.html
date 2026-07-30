@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis de Clientes — Madre Monte</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0f172a; --surface: #1e293b; --surface2: #334155;
+    --primary: #38bdf8; --accent: #818cf8; --success: #34d399;
+    --warning: #fbbf24; --danger: #f87171; --text: #e2e8f0;
+    --text2: #94a3b8; --border: #475569; --radius: 10px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 20px; }
+  .dashboard { max-width: 1440px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; color: var(--primary); margin-bottom: 4px; }
+  .subtitle { color: var(--text2); font-size: 0.85rem; margin-bottom: 20px; }
+  .controls { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 16px; }
+  .controls select, .controls button {
+    background: var(--surface); color: var(--text); border: 1px solid var(--border);
+    padding: 8px 16px; border-radius: var(--radius); cursor: pointer; font-size: 0.9rem;
+  }
+  .controls button { background: var(--primary); color: #0f172a; font-weight: 600; border: none; }
+  .controls button:hover { opacity: 0.9; }
+  .grid { display: grid; gap: 16px; }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px;
+  }
+  .card h3 { font-size: 0.85rem; color: var(--text2); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+  .kpi { font-size: 1.8rem; font-weight: 700; }
+  .kpi.positive { color: var(--success); } .kpi.warning { color: var(--warning); } .kpi.danger { color: var(--danger); }
+  .kpi.info { color: var(--primary); }
+  .tag {
+    display: inline-block; padding: 2px 10px; border-radius: 20px;
+    font-size: 0.75rem; font-weight: 600; margin: 2px;
+  }
+  .tag-A { background: #064e3b; color: #10b981; cursor: help; }
+  .tag-B { background: #78350f; color: #f59e0b; cursor: help; }
+  .tag-C { background: #7f1d1d; color: #ef4444; cursor: help; } .tag-A-plus { background: #2a0744; color: #c084fc; cursor: help; font-weight: 700; border: 1px solid #a855f7; }
+  .tag-tipo { background: #1e3a5f; color: #38bdf8; margin-left: 4px; cursor: help; }
+  /* Recompra breakdown */
+  .breakdown-bar { height: 16px; border-radius: 6px; overflow: hidden; display: flex; margin-top: 6px; }
+  .breakdown-bar .seg { height: 100%; transition: width 0.5s; position: relative; }
+  .breakdown-bar .seg:first-child { border-radius: 6px 0 0 6px; }
+  .breakdown-bar .seg:last-child { border-radius: 0 6px 6px 0; }
+  .breakdown-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; font-size: 0.62rem; }
+  .breakdown-legend span { display: flex; align-items: center; gap: 4px; color: var(--text2); }
+  .breakdown-legend .dot { width: 8px; height: 8px; border-radius: 2px; display: inline-block; }
+  .chart-container { position: relative; height: 280px; }
+  .chart-container.tall { height: 350px; }
+  .chart-container.spark { height: 60px; width: 100%; }
+  .strategy-item {
+    padding: 10px 0; border-bottom: 1px solid var(--border);
+  }
+  .strategy-item:last-child { border-bottom: none; }
+  .strategy-item h4 { font-size: 0.9rem; color: var(--accent); }
+  .strategy-item p { font-size: 0.8rem; color: var(--text2); margin-top: 2px; }
+  .badge { font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; margin-left: 6px; }
+  .badge-urgente { background: var(--danger); color: #fff; }
+  .badge-oportunidad { background: var(--success); color: #000; }
+  .badge-seguimiento { background: var(--warning); color: #000; }
+  .progress-bar {
+    height: 6px; background: var(--surface2); border-radius: 3px; margin-top: 4px;
+    overflow: hidden;
+  }
+  .progress-fill { height: 100%; border-radius: 3px; transition: width 0.5s; }
+  .progress-fill.high { background: var(--success); }
+  .progress-fill.med { background: #f59e0b; }
+  .progress-fill.low { background: var(--danger); }
+  .section-title { margin-top: 20px; margin-bottom: 10px; color: var(--primary); font-size: 1rem; }
+
+  /* Methodology panel */
+  .method-toggle {
+    background: var(--surface); border: 1px solid var(--border); color: var(--text2);
+    padding: 6px 14px; border-radius: var(--radius); cursor: pointer; font-size: 0.82rem;
+    margin-bottom: 10px; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .method-toggle:hover { color: var(--primary); border-color: var(--primary); }
+  .method-panel {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px; margin-bottom: 16px; display: none;
+  }
+  .method-panel.show { display: block; }
+  .method-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .method-item { font-size: 0.8rem; padding: 8px; }
+  .method-item strong { color: var(--primary); display: block; margin-bottom: 2px; font-size: 0.82rem; }
+  .method-item span { color: var(--text2); }
+  .method-item .weight { color: var(--accent); font-size: 0.7rem; }
+
+  /* KPI detail row */
+  .kpi-meta { font-size: 0.7rem; color: var(--text2); margin-top: 4px; }
+  .kpi-meta strong { color: var(--text); }
+
+  /* Order peaks table */
+  .order-table { width: 100%; font-size: 0.78rem; border-collapse: collapse; margin-top: 6px; }
+  .order-table th { text-align: left; color: var(--text2); font-weight: 500; padding: 4px 8px; border-bottom: 1px solid var(--border); }
+  .order-table td { padding: 4px 8px; border-bottom: 1px solid var(--surface2); }
+  .order-table tr:last-child td { border-bottom: none; }
+  .order-peak { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+  .peak-high { background: var(--success); } .peak-med { background: var(--warning); } .peak-low { background: var(--danger); }
+
+  /* Edit panel */
+  .edit-toggle {
+    background: var(--surface); border: 1px solid var(--accent); color: var(--accent);
+    padding: 6px 14px; border-radius: var(--radius); cursor: pointer; font-size: 0.82rem;
+    display: none; align-items: center; gap: 6px;
+  }
+  .edit-toggle.show { display: inline-flex; }
+  .edit-panel { display: none; background: var(--surface); border: 1px solid var(--accent); border-radius: var(--radius); padding: 16px; margin-bottom: 16px; }
+  .edit-panel.show { display: block; }
+  .edit-panel h3 { color: var(--accent); font-size: 0.85rem; margin-bottom: 4px; }
+  .edit-panel .edit-subtitle { font-size: 0.7rem; color: var(--text2); margin-bottom: 12px; }
+  .edit-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: end; margin-bottom: 10px; }
+  .edit-field { flex: 1; min-width: 130px; }
+  .edit-field label { display: block; font-size: 0.68rem; color: var(--text2); margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.03em; }
+  .edit-field input { width: 100%; padding: 6px 10px; background: #0f172a; color: var(--text); border: 1px solid var(--border); border-radius: 6px; font-size: 0.85rem; }
+  .edit-field input:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 2px rgba(129,140,248,0.2); }
+  .edit-field input[type="range"] { padding: 0; accent-color: var(--accent); }
+  .edit-field .hint { font-size: 0.62rem; color: var(--text2); margin-top: 1px; }
+  .edit-field .current-val { font-size: 0.65rem; color: var(--primary); }
+.edit-field .current-val { font-size: 0.65rem; color: var(--primary); }
+
+/* ── Cuestionario Churn 1-5 ── */
+.churn-quest-section { margin-top: 16px; border-top: 2px solid var(--primary); padding-top: 14px; }
+.churn-quest-section h3 { color: var(--primary); font-size: 0.85rem; margin-bottom: 2px; }
+.churn-quest-section .quest-subtitle { font-size: 0.68rem; color: var(--text2); margin-bottom: 12px; }
+.churn-quest-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--surface2); }
+.churn-quest-row:last-child { border-bottom: none; }
+.churn-quest-label { flex: 1; min-width: 180px; }
+.churn-quest-label strong { display: block; font-size: 0.78rem; color: var(--text); }
+.churn-quest-label span { font-size: 0.65rem; color: var(--text2); }
+.churn-quest-rating { display: flex; gap: 4px; align-items: center; }
+.churn-star { width: 32px; height: 32px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface); color: var(--text2); font-size: 0.78rem; cursor: pointer; transition: all .15s; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+.churn-star:hover { border-color: var(--primary); color: var(--primary); transform: scale(1.08); }
+.churn-star.sel-1 { background: #064e3b; color: #10b981; border-color: #10b981; }
+.churn-star.sel-2 { background: #1a3a1a; color: #34d399; border-color: #34d399; }
+.churn-star.sel-3 { background: #78350f; color: #f59e0b; border-color: #f59e0b; }
+.churn-star.sel-4 { background: #7f1d1d; color: #f87171; border-color: #f87171; }
+.churn-star.sel-5 { background: #450a0a; color: #ef4444; border-color: #ef4444; }
+.churn-quest-impact { font-size: 0.7rem; color: var(--accent); white-space: nowrap; min-width: 55px; text-align: right; font-weight: 600; }
+.churn-quest-total { margin-top: 12px; padding: 10px 14px; background: rgba(56,189,248,0.06); border: 1px solid var(--primary); border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+.churn-quest-total .total-label { font-size: 0.8rem; font-weight: 600; }
+.churn-quest-total .total-value { font-size: 1.4rem; font-weight: 700; }
+.churn-quest-total .total-sem { font-size: 0.7rem; padding: 2px 10px; border-radius: 10px; margin-left: 8px; }
+.churn-quest-ref { font-size: 0.62rem; color: var(--text2); margin-top: 6px; text-align: right; }
+
+/* ── Inline churn questionnaire (compact card version) ── */
+.churn-dot { width: 18px; height: 18px; border-radius: 4px; border: 1px solid var(--border); background: var(--surface); color: var(--text2); font-size: 0.55rem; cursor: pointer; padding: 0; display: inline-flex; align-items: center; justify-content: center; transition: all .12s; line-height: 1; }
+.churn-dot:hover { border-color: var(--primary); transform: scale(1.12); }
+.churn-dot.sel-1 { background: #064e3b; color: #10b981; border-color: #10b981; }
+.churn-dot.sel-2 { background: #1a3a1a; color: #34d399; border-color: #34d399; }
+.churn-dot.sel-3 { background: #78350f; color: #f59e0b; border-color: #f59e0b; }
+.churn-dot.sel-4 { background: #7f1d1d; color: #f87171; border-color: #f87171; }
+.churn-dot.sel-5 { background: #450a0a; color: #ef4444; border-color: #ef4444; }
+  .delta { font-size: 0.7rem; }
+  .delta.pos { color: var(--success); } .delta.neg { color: var(--danger); } .delta.neu { color: var(--text2); }
+
+  /* Activacion tracking panel */
+  .activacion-section { margin-top: 14px; border-top: 1px solid var(--border); padding-top: 12px; }
+  .activacion-section h4 { color: var(--success); font-size: 0.8rem; margin-bottom: 2px; }
+  .activacion-section.disabled { opacity: 0.35; }
+  .activacion-section.disabled .activacion-table,
+  .activacion-section.disabled .activacion-score,
+  .activacion-section.disabled button { pointer-events: none; }
+  .activacion-section.disabled::after { content: " DESACTIVADO — Cliente con Marca Propia"; color: var(--warning); font-size: 0.7rem; display: block; margin-top: 4px; }
+  .activacion-table { width: 100%; font-size: 0.78rem; border-collapse: collapse; margin-top: 8px; }
+  .activacion-table th { text-align: left; color: var(--text2); font-weight: 500; padding: 5px 8px; border-bottom: 1px solid var(--border); font-size: 0.7rem; text-transform: uppercase; }
+  .activacion-table td { padding: 5px 8px; border-bottom: 1px solid var(--surface2); }
+  .activacion-table tr:last-child td { border-bottom: none; }
+  .activacion-table input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--success); cursor: pointer; }
+  .activacion-table input[type="date"] { background: var(--surface2); color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px; font-size: 0.75rem; }
+  .activacion-table td.sub { padding-left: 24px; font-size: 0.72rem; color: var(--text2); }
+  .activacion-table .parent-row { background: rgba(129,140,248,0.06); }
+  .activacion-score { font-size: 1.2rem; font-weight: 700; margin-top: 8px; }
+  .activacion-score .bar-container { display: inline-block; width: 120px; height: 8px; background: var(--surface2); border-radius: 4px; margin: 0 8px; vertical-align: middle; overflow: hidden; }
+  .activacion-score .bar-fill { height: 100%; border-radius: 4px; background: var(--success); transition: width 0.4s; }
+  .tag-hecho { font-size: 0.65rem; padding: 2px 8px; border-radius: 10px; background: #166534; color: #34d399; }
+  .tag-pendiente { font-size: 0.65rem; padding: 2px 8px; border-radius: 10px; background: #334155; color: #94a3b8; }
+  .marca-propia-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; padding: 8px 12px; background: rgba(251,191,36,0.08); border: 1px dashed var(--warning); border-radius: 6px; }
+  .marca-propia-row label { color: var(--warning); font-size: 0.75rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+  .marca-propia-row input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--warning); }
+  .memoria-toggle { font-size: 0.72rem; color: var(--accent); cursor: pointer; margin-top: 6px; display: inline-block; }
+  .memoria-toggle:hover { text-decoration: underline; }
+
+  @media (max-width: 900px) {
+    .grid-4 { grid-template-columns: 1fr 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .method-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="dashboard">
+
+  <h1>Análisis de Clientes — Cerveza Artesanal Madre Monte</h1>
+  <p class="subtitle">Estrategias de Ventas · Optimización de Ticket de Compra · <strong style="color:var(--danger);">PRIVADO — DATOS CONFIDENCIALES DE CLIENTES</strong></p>
+
+  <div class="controls">
+    <select id="customerSelect" onchange="renderCustomer()">
+      <option value="all">Todos los clientes (resumen comparativo)</option>
+    </select>
+    <button onclick="renderCustomer()">Actualizar</button>
+    <button onclick="exportReport()" style="background:var(--accent)">Exportar Reporte</button>
+    <button class="method-toggle" onclick="toggleMethod()" id="methodBtn">📋 Metodología: ¿cómo se mide cada variable?</button>
+  </div>
+
+  <!-- Methodology panel -->
+  <div class="method-panel" id="methodPanel">
+    <h3 style="margin-bottom:12px;">Metodología de Variables y KPIs Predictivos</h3>
+    <div class="method-grid">
+      <div class="method-item">
+        <strong>Probabilidad de Recompra (30d)</strong>
+        <span>Peso: 30% Frecuencia de compra (3+/mes=muy bueno, 2/mes=bueno, 1/mes=normal, 0.67/mes=regular, 0.5/mes=bajo) + 30% Días desde última compra + 20% Calidad de servicio + 20% Tasa de conversión (blend: 50% visitas concretadas/enviadas + 50% tracking PLV/Capacit./Eventos)</span>
+        <div class="weight">Fuente: Google Sheets (fecha última compra + frecuencia mensual)</div>
+      </div>
+      <div class="method-item">
+        <strong>Upsell Potential Score</strong>
+        <span>Peso: 25% Conversión de activaciones + 25% Activación de producto + 20% Potencial de crecimiento + 15% Ticket vs segmento + 15% Participación en eventos</span>
+        <div class="weight">Fuente: histórico de aceptación de propuestas + variedad de productos comprados</div>
+      </div>
+      <div class="method-item">
+        <strong>Riesgo de Churn</strong>
+        <span>Peso: 30% Tendencia de frecuencia (decreciente/estable/creciente) + 20% Sensibilidad tributaria + 15% Quejas de servicio + 15% Entregas fuera de tiempo + 20% Rechazo de activaciones</span>
+        <div class="weight">Fuente: Google Sheets (fechas, quejas, % entregas a tiempo)</div>
+      </div>
+      <div class="method-item">
+        <strong>Ticket Estimado (Próxima Compra)</strong>
+        <span>Ticket actual × (1 + factor crecimiento + factor temporada + factor activaciones − factor riesgo churn)</span>
+        <div class="weight">Fuente: ticket_promedio histórico × multiplicadores contextuales</div>
+      </div>
+      <div class="method-item">
+        <strong>Potencial de Crecimiento</strong>
+        <span>Variedad de productos × 1.3 + Frecuencia mensual × 0.4 + Bonus por tipo de negocio (Gastronómico +3, Eventos +1.5)</span>
+        <div class="weight">Fuente: variedad comprada + frecuencia + tipo de cliente</div>
+      </div>
+      <div class="method-item">
+        <strong>Calidad de Servicio</strong>
+        <span>Domicilio incluido (% de órdenes) + Tasa de crédito + Variedad de productos + Responsable de cuenta</span>
+        <div class="weight">Fuente: Google Sheets (domicilio, pago, variedad)</div>
+      </div>
+      <div class="method-item">
+        <strong>Sensibilidad Tributaria</strong>
+        <span>Inversa del % de facturación: a menor facturación, mayor sensibilidad a cambios de IVA/impuestos. Ajustado por tipo de negocio y % crédito.</span>
+        <div class="weight">Fuente: campo "Facturar" en Google Forms</div>
+      </div>
+      <div class="method-item">
+        <strong>Estacionalidad</strong>
+        <span>Índice basado en concentración de compras en meses pico (Jun—Ago = Feria de las Flores). Mayor índice = más estacional.</span>
+        <div class="weight">Fuente: fechas de pedido en Google Sheets</div>
+      </div>
+      <div class="method-item">
+        <strong>Sensibilidad Climática</strong>
+        <span>Afectación por lluvia y calor: alta para gastronómicos/eventos (0.35-0.55), media para bares/minimercados (0.15-0.35), baja para distribuidores/particulares (0.02-0.18).</span>
+        <div class="weight">Fuente: inferido del tipo de negocio + ubicación (Medellín, clima tropical)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="grid grid-4" id="kpiContainer"></div>
+
+  <!-- Editor de Variables (solo visible con cliente seleccionado) -->
+  <button class="edit-toggle" id="editToggleBtn" onclick="toggleEditPanel()"> Editar Variables (activaciones, quejas, entregas...)</button>
+  <div class="edit-panel" id="editPanel">
+    <h3>Editor de Variables — Ajusta los datos y recalcula KPIs en tiempo real</h3>
+    <p class="edit-subtitle">Los cambios se aplican al vuelo sobre las fórmulas predictivas. El valor original del JSON se muestra como referencia.</p>
+    <div id="editFields"></div>
+  <div id="churnQuestionnaire"></div>
+  </div>
+
+  <!-- Order History Peaks -->
+  <div id="orderHistoryContainer"></div>
+
+  <!-- Charts: Customer detail -->
+  <div id="customerCharts"></div>
+
+  <!-- Estrategias -->
+  <div class="section-title">Estrategias Recomendadas</div>
+  <div id="strategiesContainer" class="grid grid-2"></div>
+
+</div>
+
+<!-- EMBEDDED DATA -->
+<script>
+let customers = [];
+let charts = {};
+let customerOverrides = {};   // { CLI-001: { propuestas_de_activacion: { enviadas_12m: 20, aceptadas: 8 }, ... } }
+let currentKpiCache = {};     // stores original KPI values before recalc
+
+function getVal(c, path) {
+  // path = "propuestas_de_activacion.tasa_conversion" or "calidad_del_servicio.quejas_ultimo_trimestre"
+  const override = customerOverrides[c.id];
+  if (!override) return getNested(c, path);
+
+  // Check if any parent key or exact path is overridden
+  const parts = path.split('.');
+  let ov = override;
+  for (const p of parts) {
+    if (ov && typeof ov === 'object' && p in ov) {
+      ov = ov[p];
+    } else {
+      return getNested(c, path);
+    }
+  }
+  return ov;
+}
+
+function getNested(obj, path) {
+  return path.split('.').reduce((o, k) => (o && o[k] !== undefined) ? o[k] : 0, obj);
+}
+
+function setOverride(cid, path, value) {
+  if (!customerOverrides[cid]) customerOverrides[cid] = {};
+  const parts = path.split('.');
+  let target = customerOverrides[cid];
+  for (let i = 0; i < parts.length - 1; i++) {
+    if (!target[parts[i]]) target[parts[i]] = {};
+    target = target[parts[i]];
+  }
+  target[parts[parts.length - 1]] = value;
+}
+
+function toggleEditPanel() {
+  const panel = document.getElementById('editPanel');
+  const btn = document.getElementById('editToggleBtn');
+  panel.classList.toggle('show');
+  btn.textContent = panel.classList.contains('show')
+    ? ' Ocultar Editor'
+    : ' Editar Variables (activaciones, quejas, entregas...)';
+}
+
+function buildEditFields(c) {
+  const orig = (path) => getNested(c, path);
+  const curr = (path) => getVal(c, path);
+  const hasOverride = (path) => customerOverrides[c.id] && customerOverrides[c.id][path.split('.')[0]];
+
+  const fields = [
+    { path: 'propuestas_de_activacion.enviadas_12m', label: 'Visitas/Ofertas enviadas (12m)', orig: orig('propuestas_de_activacion.enviadas_12m'), type: 'number', min: 0, max: 100, hint: 'Total de visitas, llamadas, emails y ofertas enviadas al cliente en 12 meses' },
+    { path: 'propuestas_de_activacion.aceptadas', label: 'Visitas/Ofertas concretadas (12m)', orig: orig('propuestas_de_activacion.aceptadas'), type: 'number', min: 0, max: 100, hint: 'Cuántas de esas visitas/ofertas resultaron en un pedido. Define la tasa de conversión' },
+    { path: 'propuestas_activacion_producto.enviadas_12m', label: 'Cross-sell enviados (12m)', orig: orig('propuestas_activacion_producto.enviadas_12m'), type: 'number', min: 0, max: 100, hint: 'Propuestas de nuevos estilos de cerveza que el cliente no ha comprado antes' },
+    { path: 'propuestas_activacion_producto.aceptadas', label: 'Cross-sell aceptados (12m)', orig: orig('propuestas_activacion_producto.aceptadas'), type: 'number', min: 0, max: 100, hint: 'Cuántos estilos nuevos aceptó probar. Alimenta el Upsell Potential' },
+    { path: 'calidad_del_servicio.quejas_ultimo_trimestre', label: 'Quejas (último trimestre)', orig: orig('calidad_del_servicio.quejas_ultimo_trimestre'), type: 'number', min: 0, max: 50, hint: 'A mayor número de quejas, mayor riesgo de churn' },
+    { path: 'tiempo_de_entrega.entregas_a_tiempo_pct', label: 'Entregas a tiempo', orig: Math.round(orig('tiempo_de_entrega.entregas_a_tiempo_pct')*100), type: 'select', hint: 'Tiempo real de entrega. Afecta riesgo de churn y calidad de servicio',
+      options: [
+        { val: 1.00, label: 'Mismo día — 100%' },
+        { val: 0.90, label: 'Al día siguiente — 90%' },
+        { val: 0.50, label: 'A los 3 días — 50%' },
+        { val: 0.35, label: 'A los 5 días — 35%' },
+        { val: 0.40, label: 'A los 8 días — 40%' },
+        { val: 0.30, label: 'A los 15 días — 30%' },
+      ]},
+    { path: 'participacion_en_eventos.asistencias', label: 'Asistencias a eventos (12m)', orig: orig('participacion_en_eventos.asistencias'), type: 'number', min: 0, max: 20, hint: 'A mayor participación, mejor upsell potential' },
+  ];
+
+  let html = '<div class="edit-row">';
+  fields.forEach((f, i) => {
+    // Show the saved override value, or 0 if never edited
+    const savedVal = loadEditorOverrides(c.id);
+    const displayVal = (savedVal && savedVal[f.path] !== undefined) ? savedVal[f.path] : 0;
+    const isEdited = (savedVal && savedVal[f.path] !== undefined);
+
+    html += `<div class="edit-field">
+      <label>${f.label} ${isEdited ? '<span class="delta pos">(guardado)</span>' : ''}</label>`;
+    if (f.type === 'range') {
+      html += `<input type="range" id="edit_${f.path.replace(/\./g,'_')}" value="${displayVal}" min="${f.min}" max="${f.max}" oninput="onEditField('${c.id}','${f.path}',this.value,'range')">
+        <div class="current-val">Guardado: <strong>${displayVal}%</strong> | JSON original: ${f.orig}%</div>`;
+    } else if (f.type === 'select') {
+      html += `<select id="edit_${f.path.replace(/\./g,'_')}" onchange="onEditField('${c.id}','${f.path}',this.value,'select')" style="width:100%;padding:6px 10px;background:#0f172a;color:var(--text);border:1px solid var(--border);border-radius:6px;font-size:0.85rem;">`;
+      f.options.forEach(opt => {
+        const sel = Math.abs(displayVal - opt.val) < 0.01 ? 'selected' : '';
+        html += `<option value="${opt.val}" ${sel}>${opt.label}</option>`;
+      });
+      html += `</select>
+        <div class="current-val">JSON original: ${Math.round(f.orig)}%</div>`;
+    } else {
+      html += `<input type="number" id="edit_${f.path.replace(/\./g,'_')}" value="${displayVal}" min="${f.min}" max="${f.max}" onchange="onEditField('${c.id}','${f.path}',this.value,'number')">
+        <div class="current-val">JSON original de referencia: <strong>${f.orig}</strong></div>`;
+    }
+    html += `<div class="hint">${f.hint}</div></div>`;
+    if ((i+1) % 4 === 0 && i < fields.length - 1) html += '</div><div class="edit-row">';
+  });
+  html += '</div>';
+  // Add activaciones detalladas section
+  html += buildActivacionHTML(c);
+  setTimeout(() => renderChurnQuestionnaire(c.id), 100);
+  html += `<div class="edit-row" style="margin-top:8px;">
+    <button onclick="saveAndRecalc('${c.id}')" style="background:var(--success);color:#000;border:none;padding:8px 20px;border-radius:6px;cursor:pointer;font-weight:600;"> Guardar y Recalcular KPIs</button>
+    <button onclick="resetOverrides('${c.id}')" style="background:var(--surface2);color:var(--text);border:1px solid var(--border);padding:8px 20px;border-radius:6px;cursor:pointer;">↩ Restaurar valores originales</button>
+  </div>`;
+  return html;
+}
+
+// === PERSISTENCIA EN LOCALSTORAGE PARA EL EDITOR ===
+function loadEditorOverrides(cid) {
+  try {
+    const raw = localStorage.getItem('edit_' + cid);
+    return raw ? JSON.parse(raw) : {};
+  } catch(e) { return {}; }
+}
+
+function saveEditorOverrides(cid, data) {
+  localStorage.setItem('edit_' + cid, JSON.stringify(data));
+}
+
+function saveAndRecalc(cid) {
+  const c = getCustomer(cid);
+  if (!c) return;
+  const editorData = {};
+  const fieldPaths = [
+    'propuestas_de_activacion.enviadas_12m',
+    'propuestas_de_activacion.aceptadas',
+    'propuestas_activacion_producto.enviadas_12m',
+    'propuestas_activacion_producto.aceptadas',
+    'calidad_del_servicio.quejas_ultimo_trimestre',
+    'tiempo_de_entrega.entregas_a_tiempo_pct',
+    'participacion_en_eventos.asistencias',
+  ];
+  fieldPaths.forEach(path => {
+    const el = document.getElementById('edit_' + path.replace(/\./g,'_'));
+    if (el) {
+      const val = parseFloat(el.value) || 0;
+      editorData[path] = val;
+    }
+  });
+  saveEditorOverrides(cid, editorData);
+  // Sync overrides to getVal system
+  if (!customerOverrides[cid]) customerOverrides[cid] = {};
+  Object.entries(editorData).forEach(([path, val]) => setOverride(cid, path, val));
+  // Destroy sparkline before re-render
+  if (charts['chartSpark']) { charts['chartSpark'].destroy(); delete charts['chartSpark']; }
+  if (charts['chartPeaks']) { charts['chartPeaks'].destroy(); delete charts['chartPeaks']; }
+  // Recalc
+  renderCustomerKPIs(c);
+  renderOrderHistory(c);
+  renderChurnQuestionnaire(c.id);
+  renderStrategiesSingle(c);
+  // Flash feedback
+  const btns = document.querySelectorAll('button');
+  btns.forEach(b => { if (b.textContent.includes('Guardar')) { b.textContent = ' Guardado — KPIs actualizados'; b.style.background = '#166534'; setTimeout(() => { b.textContent = ' Guardar y Recalcular KPIs'; b.style.background = ''; }, 2000); } });
+}
+
+function onEditField(cid, path, value, type) {
+  const el = document.getElementById('edit_' + path.replace(/\./g,'_'));
+  if (type === 'range' || type === 'select') {
+    const field = el ? el.closest('.edit-field') : null;
+    if (field && type === 'range') {
+      const cv = field.querySelector('.current-val');
+      if (cv) {
+        const origMatch = cv.textContent.match(/JSON original: (\d+)%/);
+        const orig = origMatch ? origMatch[1] : '?';
+        cv.innerHTML = `Guardado: <strong>${value}%</strong> | JSON original: ${orig}%`;
+      }
+    }
+  }
+}
+
+function recalcSingleCustomer(cid) {
+  const c = getCustomer(cid);
+  if (!c) return;
+  if (charts['chartSpark']) { charts['chartSpark'].destroy(); delete charts['chartSpark']; }
+  if (charts['chartPeaks']) { charts['chartPeaks'].destroy(); delete charts['chartPeaks']; }
+  renderCustomerKPIs(c);
+  renderStrategiesSingle(c);
+}
+
+function resetOverrides(cid) {
+  delete customerOverrides[cid];
+  localStorage.removeItem('act_' + cid);
+  currentKpiCache = {};
+  const c = getCustomer(cid);
+  if (!c) return;
+  // Reset edit fields
+  buildEditFieldsForPanel(c);
+  renderCustomerKPIs(c);
+  renderStrategiesSingle(c);
+}
+
+function buildEditFieldsForPanel(c) {
+  const panel = document.getElementById('editFields');
+  if (panel) panel.innerHTML = buildEditFields(c);
+  renderChurnQuestionnaire(c.id);
+}
+
+// === SISTEMA DE ACTIVACIONES DETALLADAS (PLV, vasos, posavasos, habladores, capacitaciones, eventos) ===
+// PLV es el indicador padre, compuesto por 3 sub-items
+// Capacitaciones: max 2/mes (24/año). Eventos: max 1/bimestre (6/año).
+const ACTIVACIONES_CONFIG = [
+  { key: 'plv', label: 'Material PLV', peso: 35, hint: 'Indicador principal de punto de venta', isParent: true,
+    subItems: [
+      { key: 'plv_vasos', label: 'Entrega de Vasos', pesoInterno: 33, hint: 'Vasos de marca en el punto' },
+      { key: 'plv_posavasos', label: 'Entrega de Posavasos', pesoInterno: 33, hint: 'Posavasos personalizados' },
+      { key: 'plv_habladores', label: 'Entrega de Habladores', pesoInterno: 34, hint: 'Habladores de mesa / table talkers' }
+    ]},
+  { key: 'capacitaciones', label: 'Capacitaciones', peso: 35, hint: 'Formación al personal del cliente. Máximo 2 mensuales (24 al año)', maxAnual: 24, type: 'progress' },
+  { key: 'eventos', label: 'Eventos', peso: 30, hint: 'Participación en catas, ferias o activaciones. Máximo 1 bimensual (6 al año)', maxAnual: 6, type: 'progress' },
+];
+
+function isMarcaPropia(cid) {
+  try {
+    const raw = localStorage.getItem('act_' + cid);
+    if (!raw) return false;
+    const data = JSON.parse(raw);
+    return data._marcaPropia === true;
+  } catch(e) { return false; }
+}
+
+function toggleMarcaPropia(cid, checked) {
+  const data = loadActivaciones(cid);
+  data._marcaPropia = checked;
+  saveActivaciones(cid, data);
+  const c = getCustomer(cid);
+  if (c) {
+    buildEditFieldsForPanel(c);
+    recalcSingleCustomer(cid);
+  }
+}
+
+function loadActivaciones(cid) {
+  try {
+    const raw = localStorage.getItem('act_' + cid);
+    return raw ? JSON.parse(raw) : {};
+  } catch(e) { return {}; }
+}
+
+function saveActivaciones(cid, data) {
+  localStorage.setItem('act_' + cid, JSON.stringify(data));
+}
+
+function calcActivacionScore(cid) {
+  if (isMarcaPropia(cid)) return 0;
+  const data = loadActivaciones(cid);
+  let score = 0;
+  ACTIVACIONES_CONFIG.forEach(a => {
+    if (a.type === 'progress') {
+      const val = (data[a.key] && data[a.key].count) || 0;
+      const pct = a.maxAnual ? Math.min(val / a.maxAnual, 1) : 0;
+      score += pct * a.peso;
+    } else if (a.isParent) {
+      // PLV: compuesto por 3 sub-items, cada uno contribuye 1/3 del peso
+      let subPct = 0;
+      if (a.subItems) {
+        a.subItems.forEach(sub => {
+          if (data[sub.key] && data[sub.key].hecho) subPct += sub.pesoInterno / 100;
+        });
+      }
+      score += subPct * a.peso;
+    }
+  });
+  return Math.round(score);
+}
+
+function toggleActivacion(cid, key, checked) {
+  const data = loadActivaciones(cid);
+  const hoy = new Date().toISOString().slice(0, 10);
+  if (checked) {
+    data[key] = { hecho: true, fecha: hoy, count: (data[key] && data[key].count) || 0 };
+  } else {
+    if (data[key]) data[key] = { hecho: false, fecha: null, count: (data[key] && data[key].count) || 0 };
+  }
+  saveActivaciones(cid, data);
+  updateActivacionScoreDisplay(cid);
+  recalcSingleCustomer(cid);
+}
+
+function changeActivacionFecha(cid, key, fecha) {
+  const data = loadActivaciones(cid);
+  if (!data[key]) data[key] = { hecho: false, fecha: null, count: 0 };
+  data[key].fecha = fecha || null;
+  saveActivaciones(cid, data);
+}
+
+function changeActivacionCount(cid, key, value) {
+  const data = loadActivaciones(cid);
+  const count = Math.max(0, parseInt(value) || 0);
+  if (!data[key]) data[key] = { hecho: false, fecha: null, count: 0 };
+  data[key].count = count;
+  data[key].hecho = count > 0;
+  if (count > 0 && !data[key].fecha) {
+    data[key].fecha = new Date().toISOString().slice(0, 10);
+  }
+  saveActivaciones(cid, data);
+  updateActivacionScoreDisplay(cid);
+  recalcSingleCustomer(cid);
+}
+
+function updateActivacionScoreDisplay(cid) {
+  const scoreEl = document.getElementById('activacion_score_' + cid);
+  const barEl = document.getElementById('activacion_bar_' + cid);
+  if (!scoreEl || !barEl) return;
+  const score = calcActivacionScore(cid);
+  scoreEl.textContent = score + '%';
+  scoreEl.style.color = score >= 60 ? 'var(--success)' : score >= 30 ? 'var(--warning)' : 'var(--danger)';
+  barEl.style.width = score + '%';
+}
+
+function buildActivacionHTML(c) {
+  const cid = c.id;
+  const data = loadActivaciones(cid);
+  const score = calcActivacionScore(cid);
+  const disabled = isMarcaPropia(cid);
+  const marca = data._marcaPropia || false;
+
+  let html = `<div class="activacion-section${disabled ? ' disabled' : ''}">
+    <div class="marca-propia-row">
+      <label>
+        <input type="checkbox" ${marca ? 'checked' : ''} onchange="toggleMarcaPropia('${cid}',this.checked)">
+        Cliente con MARCA PROPIA — NO aplican activaciones (PLV, capacitaciones, eventos)
+      </label>
+    </div>
+    <h4>Seguimiento de Actividades de Activacion</h4>
+    <p style="font-size:0.68rem;color:var(--text2);margin-bottom:6px;">PLV agrupa Vasos + Posavasos + Habladores. Capacitaciones y Eventos usan barras de progreso con max anual.</p>
+    <table class="activacion-table">
+      <tr><th>Hecho</th><th>Actividad</th><th>Peso</th><th>Detalle</th><th>Estado</th></tr>`;
+
+  ACTIVACIONES_CONFIG.forEach(a => {
+    if (a.isParent) {
+      const act = data[a.key] || { hecho: false, fecha: null };
+      const checked = act.hecho ? 'checked' : '';
+      const fecha = act.fecha || '';
+      const tag = act.hecho
+        ? `<span class="tag-hecho">ENTREGADO ${act.fecha ? formatFecha(act.fecha) : ''}</span>`
+        : `<span class="tag-pendiente">PENDIENTE</span>`;
+
+      html += `<tr class="parent-row">
+        <td><input type="checkbox" ${checked} onchange="toggleActivacion('${cid}','${a.key}',this.checked)"></td>
+        <td><strong>${a.label}</strong><br><span style="font-size:0.62rem;color:var(--text2);">${a.hint}</span></td>
+        <td style="color:var(--accent);font-weight:600;">${a.peso}%</td>
+        <td><input type="date" value="${fecha}" onchange="changeActivacionFecha('${cid}','${a.key}',this.value)" style="width:120px;"></td>
+        <td>${tag}</td>
+      </tr>`;
+
+      if (a.subItems) {
+        a.subItems.forEach(sub => {
+          const subAct = data[sub.key] || { hecho: false, fecha: null };
+          const subChecked = subAct.hecho ? 'checked' : '';
+          const subFecha = subAct.fecha || '';
+          const subTag = subAct.hecho
+            ? `<span class="tag-hecho">HECHO</span>`
+            : `<span class="tag-pendiente">PENDIENTE</span>`;
+
+          html += `<tr>
+            <td><input type="checkbox" ${subChecked} onchange="toggleActivacion('${cid}','${sub.key}',this.checked)"></td>
+            <td class="sub">↳ ${sub.label}<br><span style="font-size:0.6rem;color:var(--text2);">${sub.hint}</span></td>
+            <td style="color:var(--text2);font-size:0.72rem;">${sub.pesoInterno}% del PLV</td>
+            <td><input type="date" value="${subFecha}" onchange="changeActivacionFecha('${cid}','${sub.key}',this.value)" style="width:120px;"></td>
+            <td>${subTag}</td>
+          </tr>`;
+        });
+      }
+    } else if (a.type === 'progress') {
+      const act = data[a.key] || { count: 0, fecha: null };
+      const count = act.count || 0;
+      const max = a.maxAnual || 1;
+      const pct = Math.round(count / max * 100);
+      const tag = count > 0
+        ? `<span class="tag-hecho">${count}/${max} (${pct}%)</span>`
+        : `<span class="tag-pendiente">0/${max}</span>`;
+
+      html += `<tr>
+        <td>—</td>
+        <td><strong>${a.label}</strong><br><span style="font-size:0.62rem;color:var(--text2);">${a.hint}</span></td>
+        <td style="color:var(--accent);font-weight:600;">${a.peso}%</td>
+        <td>
+          <input type="number" value="${count}" min="0" max="${max}" onchange="changeActivacionCount('${cid}','${a.key}',this.value)" style="width:55px;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:4px;padding:4px;font-size:0.8rem;text-align:center;">
+          <span style="font-size:0.65rem;color:var(--text2);margin-left:4px;">/ ${max}</span>
+          <div style="width:100px;height:5px;background:var(--surface2);border-radius:3px;margin-top:3px;overflow:hidden;">
+            <div style="width:${pct}%;height:100%;background:${pct>=60?'var(--success)':pct>=30?'var(--warning)':'var(--danger)'};border-radius:3px;transition:width 0.4s;"></div>
+          </div>
+        </td>
+        <td>${tag}</td>
+      </tr>`;
+    }
+  });
+
+  html += `</table>
+    <div class="activacion-score" style="margin-top:10px;">
+      Puntaje de Activacion: <span id="activacion_score_${cid}">${score}%</span>
+      <span class="bar-container"><span id="activacion_bar_${cid}" class="bar-fill" style="width:${score}%;"></span></span>
+      <span style="font-size:0.65rem;color:var(--text2);">(${score}/100 → bonus en KPIs)</span>
+      ${disabled ? '<br><span style="color:var(--warning);font-size:0.7rem;">Desactivado por Marca Propia — puntaje = 0%</span>' : ''}
+    </div>
+    <button onclick="exportActivaciones('${cid}')" style="background:var(--surface2);color:var(--text);border:1px solid var(--border);padding:6px 12px;border-radius:4px;cursor:pointer;font-size:0.7rem;margin-top:6px;">📥 Exportar Memoria (JSON)</button>
+  </div>`;
+
+  return html;
+}
+
+function exportActivaciones(cid) {
+  const data = loadActivaciones(cid);
+  const c = getCustomer(cid);
+  const memoria = {
+    cliente: c ? c.nombre : cid,
+    id: cid,
+    marca_propia: data._marcaPropia || false,
+    exportado: new Date().toISOString(),
+    puntaje_total: calcActivacionScore(cid) + '%',
+    actividades: []
+  };
+  ACTIVACIONES_CONFIG.forEach(a => {
+    if (a.isParent) {
+      const act = data[a.key] || {};
+      memoria.actividades.push({
+        actividad: a.label,
+        peso: a.peso + '%',
+        hecho: act.hecho || false,
+        fecha: act.fecha || null
+      });
+      if (a.subItems) {
+        a.subItems.forEach(sub => {
+          const subAct = data[sub.key] || {};
+          memoria.actividades.push({
+            actividad: '  └ ' + sub.label,
+            peso: sub.pesoInterno + '% del PLV',
+            hecho: subAct.hecho || false,
+            fecha: subAct.fecha || null
+          });
+        });
+      }
+    } else if (a.type === 'progress') {
+      const act = data[a.key] || {};
+      memoria.actividades.push({
+        actividad: a.label,
+        peso: a.peso + '%',
+        cantidad: (act.count || 0) + '/' + (a.maxAnual || 0),
+        fecha: act.fecha || null
+      });
+    }
+  });
+  const blob = new Blob([JSON.stringify(memoria, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `memoria_activaciones_${cid}_${new Date().toISOString().slice(0,10)}.json`;
+  a.click(); URL.revokeObjectURL(url);
+}
+
+const EMBEDDED_DATA = {"customers":[{"id":"CLI-000","nombre":"BAR MADRE MONTE (Propio)","tipo_negocio":"Bar Propio - Canal Directo","epoca_del_ano":{"preferencia":"Q1-Q2","meses_fuertes":[2,4,6,7,8],"estacionalidad_index":0.65},"clima":{"sensibilidad":"alta","clima_favorable":"templado/seco","afectacion_lluvia":0.35,"afectacion_calor":0.25},"calidad_del_servicio":{"score":9.5,"ultima_evaluacion":"2026-07-27","quejas_ultimo_trimestre":0,"nps":90},"ubicacion":{"region":"Antioquia","ciudad":"Medellin","zona_logistica":"A","distancia_centro_dist_km":0,"tipo_negocio":"Bar Propio"},"tensiones_tributarias":{"sensibilidad":"baja","score_afectacion":2.0,"regimen":"general","ultimo_incremento_iva_impacto":0.0},"calidad_del_producto":{"score":9.0,"devoluciones_pct":0.0,"reclamos_calidad_12m":0,"producto_top":"Rotacion Completa","variedad":6,"productos":{"Red IPA":40,"Golden Ale":35,"Irish Red":35,"IPA Vagabundo":30,"Stout":25,"Session IPA":20},"formato":"botella 330ml"},"tiempo_de_entrega":{"promedio_dias":0.0,"tolerancia_maxima_dias":0.0,"entregas_a_tiempo_pct":1.0,"score_satisfaccion":9.8},"propuestas_de_activacion":{"enviadas_12m":24,"aceptadas":22,"tasa_conversion":0.92,"ultima_aceptada":"2026-07-27","tipo_preferido":"vasos_marca_y_catas"},"propuestas_activacion_producto":{"enviadas_12m":18,"aceptadas":15,"tasa_conversion":0.83,"categoria_interes":"linea_premium"},"participacion_en_eventos":{"invitaciones_12m":12,"asistencias":12,"ultimo_evento":"2026-07-20","tipo_evento_preferido":"cata_cerveza"},"ticket_promedio":20352017.11,"frecuencia_de_compra":{"promedio_mensual":30.0,"tendencia":"estable","ultima_compra":"2026-07-27","total_ordenes":236},"valor_de_vida":183168154,"total_unidades":629.3,"segmento":"A+","potencial_de_crecimiento":9.5,"pago":{"forma":"interno","medio":"Consumo Interno","credito_pct":0.0,"responsable":"Bar Madre Monte"},"historial_compras":[{"fecha":"2025-11-15","ticket":20802596.0,"productos":{"Cerveza Artesanal":{"cantidad":224,"formato":"botella 330ml"}},"domicilio":0.0,"comentario":"28 dias operacion - Nov 2025"},{"fecha":"2025-12-15","ticket":16757726.0,"productos":{"Cerveza Artesanal":{"cantidad":200,"formato":"botella 330ml"}},"domicilio":0.0,"comentario":"25 dias operacion - Dic 2025"},{"fecha":"2026-01-15","ticket":20065500.0,"productos":{"Cerveza Artesanal":{"cantidad":216,"formato":"botella 330ml"}},"domicilio":0.0,"comentario":"27 dias operacion - Ene 2026"},{"fecha":"2026-02-15","ticket":24149840.0,"productos":{"Cerveza Artesanal":{"cantidad":192,"formato":"botella 330ml"}},"domicilio":0.0,"comentario":"24 dias operacion - Feb 2026"},{"fecha":"2026-03-15","ticket":20553000.0,"productos":{"Cerveza Artesanal":{"cantidad":208,"formato":"botella 330ml"}},"domicilio":0.0,"comentario":"26 dias operacion - Mar 2026"},{"fecha":"2026-04-15","ticket":22828666.0,"productos":{"Cerveza Artesanal":{"cantidad":208,"formato":"botella 330ml"}},"domicilio":0.0,"comentario":"26 dias operacion - Abr 2026"},{"fecha":"2026-05-15","ticket":20077900.0,"productos":{"Cerveza Artesanal":{"cantidad":216,"formato":"botella 330ml"}},"domicilio":0.0,"comentario":"27 dias operacion - May 2026"},{"fecha":"2026-06-15","ticket":18895500.0,"productos":{"Cerveza Artesanal":{"cantidad":208,"formato":"botella 330ml"}},"domicilio":0.0,"comentario":"26 dias operacion - Jun 2026"},{"fecha":"2026-07-15","ticket":19037426.0,"productos":{"Cerveza Artesanal":{"cantidad":216,"formato":"botella 330ml"}},"domicilio":0.0,"comentario":"27 dias operacion - Jul 2026"}],"ticket_min":16757726.0,"ticket_max":24149840.0,"ticket_tendencia_pct":100.7,"es_interno":true},{"id":"CLI-001","nombre":"Juan Carlos Orrego Zapata","tipo_negocio":"Distribuidor/Bar","epoca_del_ano":{"preferencia":"Q2-Q3","meses_fuertes":[6,7,8],"estacionalidad_index":0.78},"clima":{"sensibilidad":"baja","clima_favorable":"templado/seco","afectacion_lluvia":0.12,"afectacion_calor":0.09},"calidad_del_servicio":{"score":8.4,"ultima_evaluacion":"2026-07-28","quejas_ultimo_trimestre":1,"nps":70},"ubicacion":{"region":"Antioquia","ciudad":"Medellin","zona_logistica":"B","distancia_centro_dist_km":10,"tipo_negocio":"Distribuidor/Bar"},"tensiones_tributarias":{"sensibilidad":"media","score_afectacion":5.2,"regimen":"general","ultimo_incremento_iva_impacto":0.12},"calidad_del_producto":{"score":8.0,"devoluciones_pct":0.014,"reclamos_calidad_12m":1,"producto_top":"Irish Red","variedad":1,"productos":{"Irish Red":428.7},"formato":"litro"},"tiempo_de_entrega":{"promedio_dias":1.7,"tolerancia_maxima_dias":2.0,"entregas_a_tiempo_pct":0.88,"score_satisfaccion":7.2},"propuestas_de_activacion":{"enviadas_12m":18,"aceptadas":5,"tasa_conversion":0.28,"ultima_aceptada":"2026-07-28","tipo_preferido":"descuento_por_volumen"},"propuestas_activacion_producto":{"enviadas_12m":9,"aceptadas":4,"tasa_conversion":0.44,"categoria_interes":"linea_economica"},"participacion_en_eventos":{"invitaciones_12m":8,"asistencias":6,"ultimo_evento":"2026-07-20","tipo_evento_preferido":"rueda_negocios"},"ticket_promedio":1350845.78,"frecuencia_de_compra":{"promedio_mensual":5.74,"tendencia":"creciente","ultima_compra":"2026-07-28","total_ordenes":9},"valor_de_vida":12157612.0,"total_unidades":428.7,"segmento":"A","potencial_de_crecimiento":4.1,"pago":{"forma":"contado","medio":"Tranferencia débito","credito_pct":11.1,"responsable":"Johnny"},"historial_compras":[{"fecha":"2026-06-26","ticket":1618800.0,"productos":{"Irish Red":{"cantidad":57.1,"formato":"litro"}},"domicilio":20000.0},{"fecha":"2026-07-02","ticket":1635400.0,"productos":{"Irish Red":{"cantidad":57.55,"formato":"litro"}},"domicilio":24000.0},{"fecha":"2026-07-09","ticket":1618800.0,"productos":{"Irish Red":{"cantidad":57.1,"formato":"litro"}},"domicilio":20000.0},{"fecha":"2026-07-15","ticket":1618800.0,"productos":{"Irish Red":{"cantidad":57.1,"formato":"litro"}},"domicilio":20000.0},{"fecha":"2026-07-28","ticket":1618800.0,"productos":{"Irish Red":{"cantidad":57.1,"formato":"litro"}},"domicilio":20000.0}],"ticket_min":799412.0,"ticket_max":1635400.0,"ticket_tendencia_pct":102.5},{"id":"CLI-002","nombre":"INVERSIONES LATINERIA S.A.S","tipo_negocio":"Empresa","epoca_del_ano":{"preferencia":"Q2-Q3","meses_fuertes":[6,7,8],"estacionalidad_index":0.6},"clima":{"sensibilidad":"baja","clima_favorable":"templado/seco","afectacion_lluvia":0.03,"afectacion_calor":0.03},"calidad_del_servicio":{"score":8.6,"ultima_evaluacion":"2026-06-26","quejas_ultimo_trimestre":2,"nps":77},"ubicacion":{"region":"Antioquia","ciudad":"Medellin","zona_logistica":"A","distancia_centro_dist_km":9,"tipo_negocio":"Empresa"},"tensiones_tributarias":{"sensibilidad":"media","score_afectacion":5.4,"regimen":"general","ultimo_incremento_iva_impacto":0.094},"calidad_del_producto":{"score":8.8,"devoluciones_pct":0.018,"reclamos_calidad_12m":0,"producto_top":"Golden Ale","variedad":4,"productos":{"Golden Ale":58.5,"IPA Vagabundo":58.5,"Irish Red":58.5,"Stout":58.5},"formato":"litro"},"tiempo_de_entrega":{"promedio_dias":1.4,"tolerancia_maxima_dias":2.0,"entregas_a_tiempo_pct":0.94,"score_satisfaccion":7.5},"propuestas_de_activacion":{"enviadas_12m":2,"aceptadas":0,"tasa_conversion":0.0,"ultima_aceptada":null,"tipo_preferido":"envio_gratis"},"propuestas_activacion_producto":{"enviadas_12m":1,"aceptadas":0,"tasa_conversion":0.0,"categoria_interes":"linea_premium"},"participacion_en_eventos":{"invitaciones_12m":3,"asistencias":1,"ultimo_evento":"2026-06-15","tipo_evento_preferido":"feria_comercial"},"ticket_promedio":6557600.0,"frecuencia_de_compra":{"promedio_mensual":0.8,"tendencia":"nuevo","ultima_compra":"2026-06-26","total_ordenes":1},"valor_de_vida":6557600.0,"total_unidades":234.2,"segmento":"A","potencial_de_crecimiento":6.0,"pago":{"forma":"contado","medio":"Tranferencia débito","credito_pct":0.0,"responsable":"Johnny"},"historial_compras":[{"fecha":"2026-06-26","ticket":6557600.0,"productos":{"Golden Ale":{"cantidad":58.55,"formato":"litro"},"IPA Vagabundo":{"cantidad":58.55,"formato":"litro"},"Irish Red":{"cantidad":58.55,"formato":"litro"},"Stout":{"cantidad":58.55,"formato":"litro"}},"domicilio":0}],"ticket_min":6557600.0,"ticket_max":6557600.0,"ticket_tendencia_pct":0},{"id":"CLI-003","nombre":"Johnny Anderle Guerrero Bucheli","tipo_negocio":"Interno/Pruebas","epoca_del_ano":{"preferencia":"Q2-Q3","meses_fuertes":[6,7,8],"estacionalidad_index":0.66},"clima":{"sensibilidad":"baja","clima_favorable":"templado/seco","afectacion_lluvia":0.07,"afectacion_calor":0.03},"calidad_del_servicio":{"score":9.1,"ultima_evaluacion":"2026-07-21","quejas_ultimo_trimestre":0,"nps":81},"ubicacion":{"region":"Antioquia","ciudad":"Medellin","zona_logistica":"B","distancia_centro_dist_km":28,"tipo_negocio":"Interno/Pruebas"},"tensiones_tributarias":{"sensibilidad":"media","score_afectacion":4.3,"regimen":"general","ultimo_incremento_iva_impacto":0.078},"calidad_del_producto":{"score":9.6,"devoluciones_pct":0.013,"reclamos_calidad_12m":1,"producto_top":"Golden Ale","variedad":4,"productos":{"Golden Ale":45.1,"IPA Vagabundo":18.6,"Irish Red":18.6,"APA Cienfuegos":1.0},"formato":"litro"},"tiempo_de_entrega":{"promedio_dias":2.6,"tolerancia_maxima_dias":4.0,"entregas_a_tiempo_pct":0.85,"score_satisfaccion":6.7},"propuestas_de_activacion":{"enviadas_12m":20,"aceptadas":6,"tasa_conversion":0.3,"ultima_aceptada":"2026-07-21","tipo_preferido":"descuento_por_volumen"},"propuestas_activacion_producto":{"enviadas_12m":10,"aceptadas":5,"tasa_conversion":0.5,"categoria_interes":"linea_premium"},"participacion_en_eventos":{"invitaciones_12m":8,"asistencias":6,"ultimo_evento":"2026-07-20","tipo_evento_preferido":"rueda_negocios"},"ticket_promedio":219268.1,"frecuencia_de_compra":{"promedio_mensual":7.14,"tendencia":"creciente","ultima_compra":"2026-07-21","total_ordenes":10},"valor_de_vida":2192681.0,"total_unidades":83.2,"segmento":"A","potencial_de_crecimiento":8.6,"pago":{"forma":"contado","medio":"Tranferencia débito","credito_pct":20.0,"responsable":"Johnny"},"historial_compras":[{"fecha":"2026-06-09","ticket":10012.0,"productos":{"Golden Ale":{"cantidad":1.0,"formato":"botella"}},"domicilio":12.0},{"fecha":"2026-06-09","ticket":529415.0,"productos":{"Golden Ale":{"cantidad":1.0,"formato":"botella"},"Irish Red":{"cantidad":18.55,"formato":"litro"}},"domicilio":15.0},{"fecha":"2026-06-09","ticket":519415.0,"productos":{"Golden Ale":{"cantidad":18.55,"formato":"litro"}},"domicilio":15.0},{"fecha":"2026-07-21","ticket":10000.0,"productos":{"Golden Ale":{"cantidad":1.0,"formato":"botella"}},"domicilio":0},{"fecha":"2026-07-21","ticket":10000.0,"productos":{"Golden Ale":{"cantidad":1.0,"formato":"botella"}},"domicilio":0}],"ticket_min":10000.0,"ticket_max":544400.0,"ticket_tendencia_pct":-98.1},{"id":"CLI-004","nombre":"CECILIA ALICIA BRAVO DE NOHAVA","tipo_negocio":"Particular/Alto Consumo","epoca_del_ano":{"preferencia":"Q2-Q3","meses_fuertes":[6,7,8],"estacionalidad_index":0.76},"clima":{"sensibilidad":"baja","clima_favorable":"templado/seco","afectacion_lluvia":0.08,"afectacion_calor":0.15},"calidad_del_servicio":{"score":6.8,"ultima_evaluacion":"2026-07-09","quejas_ultimo_trimestre":4,"nps":69},"ubicacion":{"region":"Antioquia","ciudad":"Medellin","zona_logistica":"B","distancia_centro_dist_km":9,"tipo_negocio":"Particular/Alto Consumo"},"tensiones_tributarias":{"sensibilidad":"media","score_afectacion":6.7,"regimen":"simplificado","ultimo_incremento_iva_impacto":0.125},"calidad_del_producto":{"score":7.7,"devoluciones_pct":0.016,"reclamos_calidad_12m":3,"producto_top":"IPA Vagabundo","variedad":2,"productos":{"IPA Vagabundo":28.0,"Golden Ale":24.0},"formato":"botella"},"tiempo_de_entrega":{"promedio_dias":1.6,"tolerancia_maxima_dias":2.0,"entregas_a_tiempo_pct":0.92,"score_satisfaccion":7.2},"propuestas_de_activacion":{"enviadas_12m":6,"aceptadas":1,"tasa_conversion":0.17,"ultima_aceptada":"2026-07-09","tipo_preferido":"descuento_por_volumen"},"propuestas_activacion_producto":{"enviadas_12m":3,"aceptadas":1,"tasa_conversion":0.33,"categoria_interes":"linea_media"},"participacion_en_eventos":{"invitaciones_12m":5,"asistencias":3,"ultimo_evento":"2026-06-15","tipo_evento_preferido":"rueda_negocios"},"ticket_promedio":255333.33,"frecuencia_de_compra":{"promedio_mensual":3.46,"tendencia":"estable","ultima_compra":"2026-07-09","total_ordenes":3},"valor_de_vida":766000.0,"total_unidades":52.0,"segmento":"B","potencial_de_crecimiento":4.5,"pago":{"forma":"contado","medio":"Tranferencia débito","credito_pct":33.3,"responsable":"Otro"},"historial_compras":[{"fecha":"2026-06-13","ticket":150000.0,"productos":{"Golden Ale":{"cantidad":6.0,"formato":"botella"},"IPA Vagabundo":{"cantidad":8.0,"formato":"botella"}},"domicilio":10000.0},{"fecha":"2026-06-19","ticket":150000.0,"productos":{"Golden Ale":{"cantidad":6.0,"formato":"botella"},"IPA Vagabundo":{"cantidad":8.0,"formato":"botella"}},"domicilio":10000.0},{"fecha":"2026-07-09","ticket":466000.0,"productos":{"Golden Ale":{"cantidad":12.0,"formato":"litro"},"IPA Vagabundo":{"cantidad":12.0,"formato":"botella"}},"domicilio":10000.0}],"ticket_min":150000.0,"ticket_max":466000.0,"ticket_tendencia_pct":210.7},{"id":"CLI-005","nombre":"Leonardo Gaitan Zuluaga","tipo_negocio":"Bar/Restaurante","epoca_del_ano":{"preferencia":"Q2-Q3","meses_fuertes":[6,7,8],"estacionalidad_index":0.79},"clima":{"sensibilidad":"media","clima_favorable":"templado/seco","afectacion_lluvia":0.18,"afectacion_calor":0.12},"calidad_del_servicio":{"score":8.1,"ultima_evaluacion":"2026-07-27","quejas_ultimo_trimestre":1,"nps":60},"ubicacion":{"region":"Antioquia","ciudad":"Medellin","zona_logistica":"B","distancia_centro_dist_km":25,"tipo_negocio":"Bar/Restaurante"},"tensiones_tributarias":{"sensibilidad":"media","score_afectacion":5.6,"regimen":"simplificado","ultimo_incremento_iva_impacto":0.095},"calidad_del_producto":{"score":8.9,"devoluciones_pct":0.017,"reclamos_calidad_12m":1,"producto_top":"Golden Ale","variedad":4,"productos":{"Golden Ale":31.0,"IPA Vagabundo":27.0,"Irish Red":10.0,"APA Cienfuegos":4.0},"formato":"botella"},"tiempo_de_entrega":{"promedio_dias":2.1,"tolerancia_maxima_dias":3.0,"entregas_a_tiempo_pct":0.91,"score_satisfaccion":7.4},"propuestas_de_activacion":{"enviadas_12m":6,"aceptadas":1,"tasa_conversion":0.17,"ultima_aceptada":"2026-07-27","tipo_preferido":"descuento_por_volumen"},"propuestas_activacion_producto":{"enviadas_12m":3,"aceptadas":1,"tasa_conversion":0.33,"categoria_interes":"linea_premium"},"participacion_en_eventos":{"invitaciones_12m":5,"asistencias":3,"ultimo_evento":"2026-07-20","tipo_evento_preferido":"rueda_negocios"},"ticket_promedio":246670.67,"frecuencia_de_compra":{"promedio_mensual":3.6,"tendencia":"estable","ultima_compra":"2026-07-27","total_ordenes":3},"valor_de_vida":740012.0,"total_unidades":72.0,"segmento":"B","potencial_de_crecimiento":7.6,"pago":{"forma":"credito","medio":"Tranferencia débito","credito_pct":100.0,"responsable":"Mauricio"},"historial_compras":[{"fecha":"2026-07-02","ticket":340012.0,"productos":{"Golden Ale":{"cantidad":13.0,"formato":"botella"},"IPA Vagabundo":{"cantidad":13.0,"formato":"botella"},"APA Cienfuegos":{"cantidad":4.0,"formato":"botella"},"Irish Red":{"cantidad":4.0,"formato":"botella"}},"domicilio":12.0},{"fecha":"2026-07-21","ticket":250000.0,"productos":{"Golden Ale":{"cantidad":18.0,"formato":"botella"},"Irish Red":{"cantidad":6.0,"formato":"botella"}},"domicilio":10000.0},{"fecha":"2026-07-27","ticket":150000.0,"productos":{"IPA Vagabundo":{"cantidad":14.0,"formato":"botella"}},"domicilio":10000.0}],"ticket_min":150000.0,"ticket_max":340012.0,"ticket_tendencia_pct":-55.9},{"id":"CLI-006","nombre":"CHARCUTERIA CERDEÑA","tipo_negocio":"Gastronomico","epoca_del_ano":{"preferencia":"Q2-Q3","meses_fuertes":[6,7,8],"estacionalidad_index":0.83},"clima":{"sensibilidad":"alta","clima_favorable":"templado/seco","afectacion_lluvia":0.47,"afectacion_calor":0.28},"calidad_del_servicio":{"score":8.6,"ultima_evaluacion":"2026-07-10","quejas_ultimo_trimestre":3,"nps":76},"ubicacion":{"region":"Antioquia","ciudad":"Medellin","zona_logistica":"A","distancia_centro_dist_km":3,"tipo_negocio":"Gastronomico"},"tensiones_tributarias":{"sensibilidad":"media","score_afectacion":4.8,"regimen":"simplificado","ultimo_incremento_iva_impacto":0.08},"calidad_del_producto":{"score":9.4,"devoluciones_pct":0.005,"reclamos_calidad_12m":0,"producto_top":"IPA Vagabundo","variedad":4,"productos":{"IPA Vagabundo":36.0,"Golden Ale":12.0,"Stout":12.0,"Irish Red":6.0},"formato":"botella"},"tiempo_de_entrega":{"promedio_dias":1.5,"tolerancia_maxima_dias":2.0,"entregas_a_tiempo_pct":0.89,"score_satisfaccion":7.8},"propuestas_de_activacion":{"enviadas_12m":2,"aceptadas":0,"tasa_conversion":0.0,"ultima_aceptada":null,"tipo_preferido":"envio_gratis"},"propuestas_activacion_producto":{"enviadas_12m":1,"aceptadas":0,"tasa_conversion":0.0,"categoria_interes":"linea_premium"},"participacion_en_eventos":{"invitaciones_12m":5,"asistencias":3,"ultimo_evento":"2026-06-15","tipo_evento_preferido":"cata_cerveza"},"ticket_promedio":660000.0,"frecuencia_de_compra":{"promedio_mensual":0.8,"tendencia":"nuevo","ultima_compra":"2026-07-10","total_ordenes":1},"valor_de_vida":660000.0,"total_unidades":66.0,"segmento":"B","potencial_de_crecimiento":8.5,"pago":{"forma":"credito","medio":"Tranferencia débito","credito_pct":100.0,"responsable":"Mauricio"},"historial_compras":[{"fecha":"2026-07-10","ticket":660000.0,"productos":{"Golden Ale":{"cantidad":12.0,"formato":"botella"},"IPA Vagabundo":{"cantidad":36.0,"formato":"botella"},"Irish Red":{"cantidad":6.0,"formato":"botella"},"Stout":{"cantidad":12.0,"formato":"botella"}},"domicilio":0}],"ticket_min":660000.0,"ticket_max":660000.0,"ticket_tendencia_pct":0},{"id":"CLI-007","nombre":"Café Zeppelin (Daniel Schmutte)","tipo_negocio":"Café/Bar","epoca_del_ano":{"preferencia":"Q2-Q3","meses_fuertes":[6,7,8],"estacionalidad_index":0.57},"clima":{"sensibilidad":"media","clima_favorable":"templado/seco","afectacion_lluvia":0.15,"afectacion_calor":0.21},"calidad_del_servicio":{"score":7.9,"ultima_evaluacion":"2026-07-24","quejas_ultimo_trimestre":1,"nps":75},"ubicacion":{"region":"Antioquia","ciudad":"Medellin","zona_logistica":"B","distancia_centro_dist_km":22,"tipo_negocio":"Café/Bar"},"tensiones_tributarias":{"sensibilidad":"media","score_afectacion":6.7,"regimen":"simplificado","ultimo_incremento_iva_impacto":0.135},"calidad_del_producto":{"score":8.0,"devoluciones_pct":0.024,"reclamos_calidad_12m":1,"producto_top":"IPA Vagabundo","variedad":3,"productos":{"IPA Vagabundo":24.0,"Stout":24.0,"Irish Red":12.0},"formato":"botella"},"tiempo_de_entrega":{"promedio_dias":2.4,"tolerancia_maxima_dias":3.0,"entregas_a_tiempo_pct":0.87,"score_satisfaccion":6.7},"propuestas_de_activacion":{"enviadas_12m":2,"aceptadas":0,"tasa_conversion":0.0,"ultima_aceptada":null,"tipo_preferido":"envio_gratis"},"propuestas_activacion_producto":{"enviadas_12m":1,"aceptadas":0,"tasa_conversion":0.0,"categoria_interes":"linea_media"},"participacion_en_eventos":{"invitaciones_12m":3,"asistencias":1,"ultimo_evento":"2026-07-20","tipo_evento_preferido":"rueda_negocios"},"ticket_promedio":614000.0,"frecuencia_de_compra":{"promedio_mensual":0.8,"tendencia":"nuevo","ultima_compra":"2026-07-24","total_ordenes":1},"valor_de_vida":614000.0,"total_unidades":60.0,"segmento":"B","potencial_de_crecimiento":5.2,"pago":{"forma":"credito","medio":"Tranferencia débito","credito_pct":100.0,"responsable":"Mauricio"},"historial_compras":[{"fecha":"2026-07-24","ticket":614000.0,"productos":{"IPA Vagabundo":{"cantidad":24.0,"formato":"botella"},"Irish Red":{"cantidad":12.0,"formato":"botella"},"Stout":{"cantidad":24.0,"formato":"botella"}},"domicilio":14000.0}],"ticket_min":614000.0,"ticket_max":614000.0,"ticket_tendencia_pct":0},{"id":"CLI-008","nombre":"METAMORFOSIS MEDELLÍN S.A.S","tipo_negocio":"Eventos","epoca_del_ano":{"preferencia":"Q2-Q3","meses_fuertes":[6,7,8],"estacionalidad_index":0.77},"clima":{"sensibilidad":"alta","clima_favorable":"templado/seco","afectacion_lluvia":0.46,"afectacion_calor":0.2},"calidad_del_servicio":{"score":8.0,"ultima_evaluacion":"2026-06-13","quejas_ultimo_trimestre":1,"nps":75},"ubicacion":{"region":"Antioquia","ciudad":"Medellin","zona_logistica":"B","distancia_centro_dist_km":16,"tipo_negocio":"Eventos"},"tensiones_tributarias":{"sensibilidad":"alta","score_afectacion":7.4,"regimen":"simplificado","ultimo_incremento_iva_impacto":0.148},"calidad_del_producto":{"score":8.5,"devoluciones_pct":0.022,"reclamos_calidad_12m":2,"producto_top":"Stout","variedad":1,"productos":{"Stout":48.0},"formato":"botella"},"tiempo_de_entrega":{"promedio_dias":1.6,"tolerancia_maxima_dias":3.0,"entregas_a_tiempo_pct":0.91,"score_satisfaccion":7.8},"propuestas_de_activacion":{"enviadas_12m":2,"aceptadas":0,"tasa_conversion":0.0,"ultima_aceptada":null,"tipo_preferido":"precio_especial"},"propuestas_activacion_producto":{"enviadas_12m":1,"aceptadas":0,"tasa_conversion":0.0,"categoria_interes":"linea_economica"},"participacion_en_eventos":{"invitaciones_12m":5,"asistencias":3,"ultimo_evento":"2026-06-15","tipo_evento_preferido":"rueda_negocios"},"ticket_promedio":495000.0,"frecuencia_de_compra":{"promedio_mensual":0.8,"tendencia":"nuevo","ultima_compra":"2026-06-13","total_ordenes":1},"valor_de_vida":495000.0,"total_unidades":48.0,"segmento":"C","potencial_de_crecimiento":3.1,"pago":{"forma":"contado","medio":"Tranferencia débito","credito_pct":0.0,"responsable":"Johnny"},"historial_compras":[{"fecha":"2026-06-13","ticket":495000.0,"productos":{"Stout":{"cantidad":48.0,"formato":"botella"}},"domicilio":15000.0}],"ticket_min":495000.0,"ticket_max":495000.0,"ticket_tendencia_pct":0},{"id":"CLI-009","nombre":"Astrid Veronica Porras Giraldo","tipo_negocio":"Particular/Alto Consumo","epoca_del_ano":{"preferencia":"Q2-Q3","meses_fuertes":[7,8],"estacionalidad_index":0.4},"clima":{"sensibilidad":"baja","clima_favorable":"templado/seco","afectacion_lluvia":0.13,"afectacion_calor":0.14},"calidad_del_servicio":{"score":6.5,"ultima_evaluacion":"2026-06-19","quejas_ultimo_trimestre":3,"nps":56},"ubicacion":{"region":"Antioquia","ciudad":"Medellin","zona_logistica":"B","distancia_centro_dist_km":36,"tipo_negocio":"Particular/Alto Consumo"},"tensiones_tributarias":{"sensibilidad":"alta","score_afectacion":9.3,"regimen":"simplificado","ultimo_incremento_iva_impacto":0.169},"calidad_del_producto":{"score":9.3,"devoluciones_pct":0.005,"reclamos_calidad_12m":3,"producto_top":"Golden Ale","variedad":5,"productos":{"Golden Ale":10.0,"IPA Vagabundo":10.0,"APA Cienfuegos":10.0,"Irish Red":10.0,"Stout":8.0},"formato":"botella"},"tiempo_de_entrega":{"promedio_dias":3.2,"tolerancia_maxima_dias":5.0,"entregas_a_tiempo_pct":0.86,"score_satisfaccion":6.2},"propuestas_de_activacion":{"enviadas_12m":2,"aceptadas":0,"tasa_conversion":0.0,"ultima_aceptada":null,"tipo_preferido":"envio_gratis"},"propuestas_activacion_producto":{"enviadas_12m":1,"aceptadas":0,"tasa_conversion":0.0,"categoria_interes":"linea_premium"},"participacion_en_eventos":{"invitaciones_12m":3,"asistencias":1,"ultimo_evento":"2026-06-15","tipo_evento_preferido":"rueda_negocios"},"ticket_promedio":495000.0,"frecuencia_de_compra":{"promedio_mensual":0.8,"tendencia":"nuevo","ultima_compra":"2026-06-19","total_ordenes":1},"valor_de_vida":495000.0,"total_unidades":48.0,"segmento":"C","potencial_de_crecimiento":7.3,"pago":{"forma":"contado","medio":"Tranferencia débito","credito_pct":0.0,"responsable":"Johnny"},"historial_compras":[{"fecha":"2026-06-19","ticket":495000.0,"productos":{"Golden Ale":{"cantidad":10.0,"formato":"botella"},"IPA Vagabundo":{"cantidad":10.0,"formato":"botella"},"APA Cienfuegos":{"cantidad":10.0,"formato":"botella"},"Irish Red":{"cantidad":10.0,"formato":"botella"},"Stout":{"cantidad":8.0,"formato":"botella"}},"domicilio":15000.0}],"ticket_min":495000.0,"ticket_max":495000.0,"ticket_tendencia_pct":0},{"id":"CLI-010","nombre":"SEVEN MINIMERCADO","tipo_negocio":"Minimercado","epoca_del_ano":{"preferencia":"Q2-Q3","meses_fuertes":[6,7,8],"estacionalidad_index":0.53},"clima":{"sensibilidad":"media","clima_favorable":"templado/seco","afectacion_lluvia":0.15,"afectacion_calor":0.18},"calidad_del_servicio":{"score":7.4,"ultima_evaluacion":"2026-07-24","quejas_ultimo_trimestre":2,"nps":60},"ubicacion":{"region":"Antioquia","ciudad":"Medellin","zona_logistica":"B","distancia_centro_dist_km":22,"tipo_negocio":"Minimercado"},"tensiones_tributarias":{"sensibilidad":"alta","score_afectacion":8.5,"regimen":"simplificado","ultimo_incremento_iva_impacto":0.176},"calidad_del_producto":{"score":8.5,"devoluciones_pct":0.019,"reclamos_calidad_12m":3,"producto_top":"IPA Vagabundo","variedad":5,"productos":{"IPA Vagabundo":16.0,"Golden Ale":10.0,"Irish Red":8.0,"APA Cienfuegos":7.0,"Stout":7.0},"formato":"botella"},"tiempo_de_entrega":{"promedio_dias":2.5,"tolerancia_maxima_dias":3.0,"entregas_a_tiempo_pct":0.87,"score_satisfaccion":6.6},"propuestas_de_activacion":{"enviadas_12m":4,"aceptadas":1,"tasa_conversion":0.25,"ultima_aceptada":"2026-07-24","tipo_preferido":"envio_gratis"},"propuestas_activacion_producto":{"enviadas_12m":2,"aceptadas":1,"tasa_conversion":0.5,"categoria_interes":"linea_premium"},"participacion_en_eventos":{"invitaciones_12m":4,"asistencias":2,"ultimo_evento":"2026-07-20","tipo_evento_preferido":"rueda_negocios"},"ticket_promedio":245005.0,"frecuencia_de_compra":{"promedio_mensual":2.73,"tendencia":"estable","ultima_compra":"2026-07-24","total_ordenes":2},"valor_de_vida":490010.0,"total_unidades":48.0,"segmento":"C","potencial_de_crecimiento":8.1,"pago":{"forma":"contado","medio":"Tranferencia débito","credito_pct":50.0,"responsable":"Otro"},"historial_compras":[{"fecha":"2026-07-02","ticket":240010.0,"productos":{"Golden Ale":{"cantidad":4.0,"formato":"botella"},"IPA Vagabundo":{"cantidad":4.0,"formato":"botella"},"APA Cienfuegos":{"cantidad":4.0,"formato":"botella"},"Irish Red":{"cantidad":8.0,"formato":"botella"},"Stout":{"cantidad":4.0,"formato":"botella"}},"domicilio":10.0},{"fecha":"2026-07-24","ticket":250000.0,"productos":{"Golden Ale":{"cantidad":6.0,"formato":"botella"},"IPA Vagabundo":{"cantidad":12.0,"formato":"botella"},"APA Cienfuegos":{"cantidad":3.0,"formato":"botella"},"Stout":{"cantidad":3.0,"formato":"botella"}},"domicilio":10000.0}],"ticket_min":240010.0,"ticket_max":250000.0,"ticket_tendencia_pct":4.2}]};;
+
+function init() {
+  customers = EMBEDDED_DATA.customers;
+  const sel = document.getElementById('customerSelect');
+  customers.forEach(c => {
+    const opt = document.createElement('option');
+    opt.value = c.id;
+    opt.textContent = c.id + ' — ' + c.nombre;
+    sel.appendChild(opt);
+  });
+  // Restaurar último cliente seleccionado
+  const savedId = localStorage.getItem('selectedCustomer');
+  if (savedId && customers.find(c => c.id === savedId)) {
+    sel.value = savedId;
+  }
+  sel.addEventListener('change', () => {
+    localStorage.setItem('selectedCustomer', sel.value);
+  });
+  renderCustomer();
+}
+
+function getCustomer(id) {
+  if (id === 'all') return null;
+  return customers.find(c => c.id === id);
+}
+
+function toggleMethod() {
+  const p = document.getElementById('methodPanel');
+  p.classList.toggle('show');
+  const btn = document.getElementById('methodBtn');
+  btn.textContent = p.classList.contains('show')
+    ? '📋 Ocultar Metodología'
+    : '📋 Metodología: ¿cómo se mide cada variable?';
+}
+
+function renderCustomer() {
+  const id = document.getElementById('customerSelect').value;
+  Object.values(charts).forEach(c => c.destroy());
+  charts = {};
+
+  const editToggle = document.getElementById('editToggleBtn');
+  const editPanel = document.getElementById('editPanel');
+
+  if (id === 'all') {
+    editToggle.classList.remove('show');
+    editPanel.classList.remove('show');
+    document.getElementById('orderHistoryContainer').innerHTML = '';
+    renderAllKPIs();
+    renderComparisonCharts();
+    renderStrategiesAll();
+  } else {
+    const c = getCustomer(id);
+    if (!c) return;
+    editToggle.classList.add('show');
+    document.getElementById('editFields').innerHTML = buildEditFields(c);
+    renderCustomerKPIs(c);
+    renderOrderHistory(c);
+    renderCustomerDetail(c);
+    renderStrategiesSingle(c);
+  }
+}
+
+// === KPI GLOBAL ===
+function renderAllKPIs() {
+  const totalClients = customers.length;
+  const avgTicket = customers.reduce((s,c)=>s+c.ticket_promedio,0)/totalClients;
+  const avgGrowth = customers.reduce((s,c)=>s+c.potencial_de_crecimiento,0)/totalClients;
+  const activationsRate = customers.reduce((s,c)=>s+c.propuestas_de_activacion.tasa_conversion,0)/totalClients * 100;
+  const highRisk = customers.filter(c => c.frecuencia_de_compra.tendencia === 'decreciente').length;
+
+  document.getElementById('kpiContainer').innerHTML = `
+    <div class="card"><h3>Ticket Promedio General</h3><div class="kpi info">$${avgTicket.toLocaleString('es-ES',{maximumFractionDigits:0})}</div></div>
+    <div class="card"><h3>Potencial Crecimiento Medio</h3><div class="kpi ${avgGrowth>=7?'positive':avgGrowth>=5?'warning':'danger'}">${avgGrowth.toFixed(1)}/10</div></div>
+    <div class="card"><h3>Tasa Conversion Visitas/Ofertas</h3><div class="kpi ${activationsRate>=60?'positive':'warning'}">${activationsRate.toFixed(1)}%</div></div>
+    <div class="card"><h3>Clientes en Riesgo (Churn)</h3><div class="kpi ${highRisk<=2?'positive':highRisk<=4?'warning':'danger'}">${highRisk}</div></div>
+  `;
+}
+
+// === GRAFICAS DE COMPARACION (todos los clientes) ===
+function renderComparisonCharts() {
+  document.getElementById('customerCharts').innerHTML = `
+    <div class="grid grid-2">
+      <div class="card"><h3>Ticket por Cliente (con Picos min—max)</h3><div class="chart-container tall"><canvas id="chartTicket"></canvas></div></div>
+      <div class="card"><h3>Potencial de Crecimiento por Cliente</h3><div class="chart-container tall"><canvas id="chartGrowth"></canvas></div></div>
+    </div>
+    <div class="grid grid-2">
+      <div class="card"><h3>Calidad de Servicio vs Producto</h3><div class="chart-container tall"><canvas id="chartQuality"></canvas></div></div>
+      <div class="card"><h3>Tasa de Conversion (Visitas → Pedidos)</h3><div class="chart-container tall"><canvas id="chartActivation"></canvas></div></div>
+    </div>
+    <div class="grid grid-2">
+      <div class="card"><h3>Sensibilidad Tributaria y su Impacto</h3><div class="chart-container tall"><canvas id="chartTax"></canvas></div></div>
+      <div class="card"><h3>Frecuencia de Compra Mensual</h3><div class="chart-container tall"><canvas id="chartFreq"></canvas></div></div>
+    </div>
+  `;
+
+  const names = customers.map(c => c.id);
+  const colors = customers.map(c => c.segmento==='A+'?'#c084fc':c.segmento==='A'?'#10b981':c.segmento==='B'?'#f59e0b':'#ef4444');
+
+  // Helper: promedio del array repetido N veces para linea de referencia
+  const avgLine = (arr) => {
+    const avg = arr.reduce((a,b)=>a+b,0)/arr.length;
+    return Array(arr.length).fill(avg);
+  };
+
+  makeBar('chartTicket', names,
+    [
+      { label:'Ticket Máximo ($)', data:customers.map(c=>c.ticket_max||c.ticket_promedio), bg:customers.map(()=>'rgba(56,189,248,0.12)'), order: 1 },
+      { label:'Ticket Promedio ($)', data:customers.map(c=>c.ticket_promedio), bg:colors, order: 2 },
+      { label:'Ticket Mínimo ($)', data:customers.map(c=>c.ticket_min||c.ticket_promedio), bg:customers.map(()=>'rgba(248,113,113,0.20)'), order: 1 },
+      { label:'Promedio General', data: avgLine(customers.map(c=>c.ticket_promedio)), type: 'line', borderColor: '#fbbf24', borderDash: [5,5], borderWidth: 2, pointRadius: 0, order: 3 },
+    ],
+    { yTitle:'$' });
+
+  makeBar('chartGrowth', names,
+    [
+      { label:'Potencial de Crecimiento', data:customers.map(c=>c.potencial_de_crecimiento*10), bg:colors, order: 2 },
+      { label:'Promedio Segmentos', data: avgLine(customers.map(c=>c.potencial_de_crecimiento*10)), type: 'line', borderColor: '#fbbf24', borderDash: [5,5], borderWidth: 2, pointRadius: 0, order: 3 },
+    ],
+    { yTitle:'% Score', yMax:100 });
+
+  makeBar('chartQuality', names,
+    [
+      { label:'Calidad Servicio', data:customers.map(c=>c.calidad_del_servicio.score*10), bg:customers.map(()=>'#38bdf8'), order: 2 },
+      { label:'Calidad Producto', data:customers.map(c=>c.calidad_del_producto.score*10), bg:customers.map(()=>'#818cf8'), order: 2 },
+      { label:'Promedio Servicio', data: avgLine(customers.map(c=>c.calidad_del_servicio.score*10)), type: 'line', borderColor: '#38bdf8', borderDash: [3,3], borderWidth: 1, pointRadius: 0, order: 3 },
+      { label:'Promedio Producto', data: avgLine(customers.map(c=>c.calidad_del_producto.score*10)), type: 'line', borderColor: '#818cf8', borderDash: [3,3], borderWidth: 1, pointRadius: 0, order: 3 },
+    ],
+    { yMax:100 });
+
+  makeBar('chartActivation', names,
+    [
+      { label:'Conversion Visitas (%)', data:customers.map(c=>c.propuestas_de_activacion.tasa_conversion*100), bg:customers.map(()=>'#34d399'), order: 2 },
+      { label:'Cross-sell (%)', data:customers.map(c=>c.propuestas_activacion_producto.tasa_conversion*100), bg:customers.map(()=>'#a78bfa'), order: 2 },
+      { label:'Promedio Visitas', data: avgLine(customers.map(c=>c.propuestas_de_activacion.tasa_conversion*100)), type: 'line', borderColor: '#34d399', borderDash: [3,3], borderWidth: 1, pointRadius: 0, order: 3 },
+    ],
+    { yMax:100 });
+
+  makeBar('chartTax', names,
+    [
+      { label:'Sensibilidad Tributaria (1-10)', data:customers.map(c=>c.tensiones_tributarias.score_afectacion), bg:customers.map(c=>c.tensiones_tributarias.score_afectacion>=7?'#ef4444':c.tensiones_tributarias.score_afectacion>=5?'#f59e0b':'#10b981'), order: 2 },
+      { label:'Impacto IVA (%)', data:customers.map(c=>c.tensiones_tributarias.ultimo_incremento_iva_impacto*100), bg:customers.map(()=>'#94a3b8'), order: 2 },
+      { label:'Promedio Sensib.', data: avgLine(customers.map(c=>c.tensiones_tributarias.score_afectacion)), type: 'line', borderColor: '#fbbf24', borderDash: [5,5], borderWidth: 2, pointRadius: 0, order: 3 },
+    ],
+    { yMax:100 });
+
+  makeBar('chartFreq', names,
+    [
+      { label:'Frecuencia Compra (mensual)', data:customers.map(c=>c.frecuencia_de_compra.promedio_mensual), bg:colors, order: 2 },
+      { label:'Entregas a Tiempo (%)', data:customers.map(c=>c.tiempo_de_entrega.entregas_a_tiempo_pct*100), bg:customers.map(()=>'#38bdf8'), order: 2 },
+      { label:'Promedio Frecuencia', data: avgLine(customers.map(c=>c.frecuencia_de_compra.promedio_mensual)), type: 'line', borderColor: '#fbbf24', borderDash: [5,5], borderWidth: 2, pointRadius: 0, order: 3 },
+    ],
+    { yMax:100 });
+}
+
+// === KPI CLIENTE INDIVIDUAL (con fecha ultima compra, sparkline y datos dinamicos) ===
+function renderCustomerKPIs(c) {
+  const probRecompra = predictRepurchase(c);
+  const upsellScore = predictUpsell(c);
+  const churnRisk = predictChurn(c);
+  const nextTicket = predictNextTicket(c);
+  const ultimaFecha = c.frecuencia_de_compra.ultima_compra;
+  const diasDesdeUltima = Math.round((new Date('2026-07-29') - new Date(ultimaFecha)) / (1000*60*60*24));
+  const freq = getVal(c, 'frecuencia_de_compra.promedio_mensual');
+  const tendencia = getVal(c, 'frecuencia_de_compra.tendencia');
+
+  // Dynamic activation rate (blended: tracking + tradicional)
+  const actRate = Math.round(getActivacionRate(c) * 100);
+  const actDetalle = calcActivacionScore(c.id);
+
+  // Sparkline data
+  const hist = c.historial_compras || [];
+  const sparkData = hist.map(h => h.ticket);
+  const sparkLabels = hist.map(h => {
+    const d = new Date(h.fecha + 'T00:00:00');
+    return d.toLocaleDateString('es', {day:'2-digit', month:'short'});
+  });
+
+  document.getElementById('kpiContainer').innerHTML = `
+    <div class="card">
+      <h3>Cliente</h3>
+      <div style="font-weight:700;font-size:1.2rem;">${c.id}</div>
+      <div style="color:var(--text2);margin-top:2px;">${c.nombre}</div>
+      <span class="tag tag-${c.segmento === 'A+' ? 'A-plus' : c.segmento}" title="Segmento ${c.segmento}: ${c.segmento==='A+'?'LTV > $20,000,000 — Canal Propio VIP':c.segmento==='A'?'LTV > $2,000,000 — Premium':c.segmento==='B'?'LTV $600K–$2M — Crecimiento':c.segmento==='C'?'LTV < $600K — Nuevo/Bajo volumen':''}">Segmento ${c.segmento}</span>
+      <span class="tag tag-tipo" title="Tipo de negocio: ${c.tipo_negocio}">${c.tipo_negocio}</span>
+    </div>
+    <div class="card">
+      <h3>Probabilidad Recompra 30d</h3>
+      <div class="kpi ${probRecompra>=0.7?'positive':probRecompra>=0.4?'warning':'danger'}">${(probRecompra*100).toFixed(0)}%</div>
+      <div class="progress-bar"><div class="progress-fill ${probRecompra>=0.7?'high':probRecompra>=0.4?'med':'low'}" style="width:${probRecompra*100}%"></div></div>
+      <div class="kpi-meta">Última compra: <strong>${formatFecha(ultimaFecha)}</strong> (hace ${diasDesdeUltima}d)</div>
+      <div class="kpi-meta">Activaciones (blend 50/50): <strong>${actRate}%</strong> — Seguimiento: <strong>${actDetalle}%</strong> (PLV + Capacit. + Eventos)</div>
+      <div style="margin-top:8px;font-size:0.65rem;color:var(--text2);">Desglose de la fórmula:</div>
+      ${buildBreakdownBar(c, probRecompra)}
+      <div class="chart-container spark" style="margin-top:6px;"><canvas id="chartSpark"></canvas></div>
+    </div>
+    <div class="card">
+      <h3>Upsell Potential Score</h3>
+      <div class="kpi ${upsellScore>=0.7?'positive':upsellScore>=0.4?'warning':'danger'}">${(upsellScore*100).toFixed(0)}%</div>
+      <div class="progress-bar"><div class="progress-fill ${upsellScore>=0.7?'high':upsellScore>=0.4?'med':'low'}" style="width:${upsellScore*100}%"></div></div>
+      <div class="kpi-meta">Variedad comprada: <strong>${c.calidad_del_producto.variedad}/5 estilos</strong></div>
+    </div>
+    <div class="card">
+      <h3>Riesgo de Churn</h3>
+      <div class="kpi ${churnRisk<=0.3?'positive':churnRisk<=0.6?'warning':'danger'}">${(churnRisk*100).toFixed(0)}%</div>
+      <div class="progress-bar"><div class="progress-fill ${churnRisk<=0.3?'high':churnRisk<=0.6?'med':'low'}" style="width:${churnRisk*100}%"></div></div>
+      <div class="kpi-meta">Tendencia: <strong>${(tendencia||'').toUpperCase()}</strong> | Quejas: <strong>${getVal(c,'calidad_del_servicio.quejas_ultimo_trimestre')}</strong> | Freq: <strong>${freq}/mes (${freq>=3?'Muy bueno':freq>=2?'Bueno':freq>=1?'Normal':freq>=0.67?'Regular':'Bajo'})</strong></div>
+      ${renderChurnInlineQuestionnaire(c)}
+    </div>
+    <div class="card">
+      <h3>Ticket Estimado Próxima Compra</h3>
+      <div class="kpi info">$${nextTicket.toLocaleString('es-ES',{maximumFractionDigits:0})}</div>
+      <div class="kpi-meta">Actual: $${(getVal(c,'ticket_promedio')||c.ticket_promedio).toLocaleString('es-ES',{maximumFractionDigits:0})} | Min: $${(c.ticket_min||0).toLocaleString()} | Max: $${(c.ticket_max||0).toLocaleString()}</div>
+      <div class="kpi-meta">Tendencia ticket: <strong style="color:${c.ticket_tendencia_pct>=0?'var(--success)':'var(--danger)'}">${c.ticket_tendencia_pct>=0?'+':''}${c.ticket_tendencia_pct||0}%</strong></div>
+    </div>
+  `;
+
+  // Draw sparkline (1 punto = dot, 2+ = linea)
+  if (sparkData.length >= 1) {
+    setTimeout(()=>{
+      const ctx = document.getElementById('chartSpark');
+      if (!ctx) return;
+      const existing = Chart.getChart(ctx);
+      if (existing) existing.destroy();
+      const isSingle = sparkData.length === 1;
+      charts['chartSpark'] = new Chart(ctx, {
+        type: isSingle ? 'scatter' : 'line',
+        data: {
+          labels: sparkLabels,
+          datasets: [{
+            data: sparkData,
+            borderColor: '#38bdf8',
+            borderWidth: isSingle ? 0 : 2,
+            pointRadius: isSingle ? 8 : 3,
+            pointBackgroundColor: '#38bdf8',
+            pointBorderColor: '#38bdf8',
+            fill: false,
+            tension: 0.3,
+            showLine: !isSingle
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { ticks: { color: '#64748b', font: { size: 9 }, maxRotation: 0 }, grid: { display: false } },
+            y: { ticks: { color: '#64748b', font: { size: 9 }, callback: v => (v/1000).toFixed(0)+'k' }, grid: { color: '#334155' }, min: isSingle ? sparkData[0]*0.5 : undefined }
+          }
+        }
+      });
+    }, 100);
+  }
+}
+
+// === HISTORIAL DE COMPRAS - DIAGRAMA DE PICOS ===
+function renderOrderHistory(c) {
+  const hist = c.historial_compras || [];
+  if (hist.length === 0) {
+    document.getElementById('orderHistoryContainer').innerHTML = '';
+    return;
+  }
+
+  const avgTicket = c.ticket_promedio;
+  const peaks = hist.map(h => {
+    const ratio = h.ticket / avgTicket;
+    let cls = 'peak-med';
+    if (ratio >= 1.3) cls = 'peak-high';
+    if (ratio <= 0.7) cls = 'peak-low';
+    return { ...h, ratio, cls };
+  });
+
+  document.getElementById('orderHistoryContainer').innerHTML = `
+    <div class="section-title">Diagrama de Picos — Historial de Compras</div>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Últimas ${hist.length} Compras (Fechas y Montos)</h3>
+        <table class="order-table">
+          <tr><th>#</th><th>Fecha</th><th>Monto</th><th>vs Promedio</th><th>Productos</th></tr>
+          ${peaks.map((p,i) => `
+            <tr>
+              <td>${i+1}</td>
+              <td>${formatFecha(p.fecha)}</td>
+              <td><strong>$${p.ticket.toLocaleString('es-ES',{maximumFractionDigits:0})}</strong></td>
+              <td><span class="order-peak ${p.cls}"></span>${p.ratio>=1?'+':''}${((p.ratio-1)*100).toFixed(0)}%</td>
+              <td style="color:var(--text2);font-size:0.7rem;">${Object.keys(p.productos||{}).join(', ') || 'N/A'}</td>
+            </tr>
+          `).join('')}
+        </table>
+        <div style="font-size:0.7rem;color:var(--text2);margin-top:8px;">
+          <span class="order-peak peak-high"></span> Pico alto (>30% sobre promedio) &nbsp;
+          <span class="order-peak peak-med"></span> Normal &nbsp;
+          <span class="order-peak peak-low"></span> Valle (>30% bajo promedio)
+        </div>
+      </div>
+      <div class="card">
+        <h3>Gráfico de Picos (Ticket por Compra)</h3>
+        <div class="chart-container"><canvas id="chartPeaks"></canvas></div>
+      </div>
+    </div>
+  `;
+
+  setTimeout(()=>{
+    const ctx = document.getElementById('chartPeaks');
+    if (!ctx) return;
+    const labels = peaks.map(p => {
+      const d = new Date(p.fecha + 'T00:00:00');
+      return d.toLocaleDateString('es', {day:'2-digit', month:'short'});
+    });
+    const bgColors = peaks.map(p => p.ratio >= 1.3 ? '#34d399' : p.ratio <= 0.7 ? '#f87171' : '#38bdf8');
+    const avgLine = Array(peaks.length).fill(avgTicket);
+
+    const existingP = Chart.getChart(ctx);
+    if (existingP) existingP.destroy();
+    charts['chartPeaks'] = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [
+          { label: 'Ticket por orden', data: peaks.map(p=>p.ticket), backgroundColor: bgColors, borderRadius: 4, order: 2 },
+          { label: 'Ticket Promedio', data: avgLine, type: 'line', borderColor: '#fbbf24', borderDash: [5,5], borderWidth: 1.5, pointRadius: 0, order: 1 }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { labels: { color: '#94a3b8', font: { size: 11 }, padding: 12 } } },
+        scales: {
+          x: { ticks: { color: '#94a3b8', font: { size: 10 } }, grid: { display: false } },
+          y: { ticks: { color: '#94a3b8', callback: v => '$'+(v/1000).toFixed(0)+'k' }, grid: { color: '#334155' } }
+        }
+      }
+    });
+  }, 200);
+}
+
+// === GRAFICAS DE DETALLE (cliente individual) ===
+function renderCustomerDetail(c) {
+  document.getElementById('customerCharts').innerHTML = `
+    <div class="grid grid-2">
+      <div class="card"><h3>Variables de Servicio y Calidad</h3><div class="chart-container"><canvas id="chartDetail1"></canvas></div></div>
+      <div class="card"><h3>Activaciones y Participacion en Eventos</h3><div class="chart-container"><canvas id="chartDetail2"></canvas></div></div>
+    </div>
+    <div class="grid grid-2">
+      <div class="card"><h3>Sensibilidad a Variables Externas</h3><div class="chart-container"><canvas id="chartDetail3"></canvas></div></div>
+      <div class="card"><h3>Metricas Financieras</h3><div class="chart-container"><canvas id="chartDetail4"></canvas></div></div>
+    </div>
+    <div class="grid grid-2">
+      <div class="card"><h3>Comparacion vs Promedio del Segmento</h3><div class="chart-container"><canvas id="chartDetail5"></canvas></div></div>
+      <div class="card"><h3>Tiempo de Entrega y Logistica</h3><div class="chart-container"><canvas id="chartDetail6"></canvas></div></div>
+    </div>
+  `;
+
+  makeBar('chartDetail1', ['Calidad Servicio','Calidad Producto','NPS (x10)'],
+    [{ label:c.id, data:[c.calidad_del_servicio.score*10, c.calidad_del_producto.score*10, c.calidad_del_servicio.nps/10],
+       bg:['#38bdf8','#818cf8','#a78bfa'] }], { yMax:100 });
+
+  makeBar('chartDetail2', ['Activ. General','Activ. Producto','Eventos Asistidos'],
+    [{ label:c.id, data:[c.propuestas_de_activacion.aceptadas, c.propuestas_activacion_producto.aceptadas, c.participacion_en_eventos.asistencias],
+       bg:['#34d399','#a78bfa','#fbbf24'] }], { yTitle:'Cantidad en 12 meses' });
+
+  makeBar('chartDetail3', ['Estacionalidad','Lluvia','Calor','Sensib. Tribut.'],
+    [{ label:c.id, data:[c.epoca_del_ano.estacionalidad_index*100, c.clima.afectacion_lluvia*100, c.clima.afectacion_calor*100, c.tensiones_tributarias.score_afectacion*10],
+       bg:['#38bdf8','#60a5fa','#93c5fd','#f87171'] }], { yMax:100 });
+
+  const ltvK = c.valor_de_vida/1000;
+  const ticketK = c.ticket_promedio/100;
+  makeBar('chartDetail4', ['Ticket Prom. (x$100)','Valor Vida (x$1K)','Free Compra (x10)'],
+    [{ label:c.id, data:[ticketK, ltvK, c.frecuencia_de_compra.promedio_mensual*10], bg:['#34d399','#818cf8','#38bdf8'] }]);
+
+  const segAvg = getSegmentAverage(c.segmento);
+  makeBar('chartDetail5', ['Ticket Prom.','Frec. Compra','Crecimiento'],
+    [
+      { label:c.id, data:[c.ticket_promedio/1000, c.frecuencia_de_compra.promedio_mensual, c.potencial_de_crecimiento], bg:['#38bdf8','#38bdf8','#38bdf8'] },
+      { label:'Seg. '+c.segmento, data:[segAvg.ticket/1000, segAvg.freq, segAvg.growth], bg:['#94a3b8','#94a3b8','#94a3b8'] }
+    ]);
+
+  makeBar('chartDetail6', ['Entrega (dias)','Tolerancia (dias)','A Tiempo (%)'],
+    [{ label:c.id, data:[c.tiempo_de_entrega.promedio_dias, c.tiempo_de_entrega.tolerancia_maxima_dias, c.tiempo_de_entrega.entregas_a_tiempo_pct*100],
+       bg:['#fbbf24','#f59e0b','#34d399'] }], { yMax:100 });
+}
+
+// === FUNCIONES PREDICTIVAS (con documentacion de pesos y usando getVal para overrides) ===
+// Frecuencia realista para cerveza artesanal:
+// 3+/mes = muy bueno (score 1.0), 2/mes = bueno (0.8), 1/mes = normal (0.5),
+// 0.67/mes = regular (0.3), 0.5/mes = baja (0.15), <0.5 proporcional
+function freqToScore(freq) {
+  if (freq >= 3) return 1.0;
+  if (freq >= 2) return 0.8;
+  if (freq >= 1) return 0.5;
+  if (freq >= 0.67) return 0.3;
+  if (freq >= 0.5) return 0.15;
+  return Math.max(0, freq / 4);
+}
+
+function buildBreakdownBar(c, total) {
+  const freqRaw = getVal(c, 'frecuencia_de_compra.promedio_mensual');
+  const freqScore = freqToScore(freqRaw);
+  const ultima = getVal(c, 'frecuencia_de_compra.ultima_compra') || c.frecuencia_de_compra.ultima_compra;
+  const daysSinceLast = (new Date('2026-07-29') - new Date(ultima)) / (1000*60*60*24);
+  const recencyScore = Math.max(0, 1 - daysSinceLast/30);
+  const serviceScore = getVal(c, 'calidad_del_servicio.score') / 10;
+  const activationScore = getActivacionRate(c);
+
+  const wFreq = freqScore * 0.30;
+  const wRec = recencyScore * 0.30;
+  const wServ = serviceScore * 0.20;
+  const wAct = activationScore * 0.20;
+  const pct = (v) => (v * 100).toFixed(0);
+
+  const freqLabel = freqRaw >= 3 ? 'Muy bueno' : freqRaw >= 2 ? 'Bueno' : freqRaw >= 1 ? 'Normal' : freqRaw >= 0.67 ? 'Regular' : 'Bajo';
+
+  const segments = [
+    { label: 'Frecuencia', value: wFreq, color: '#38bdf8', detail: `${freqRaw.toFixed(1)}/mes (${freqLabel})` },
+    { label: 'Recencia', value: wRec, color: '#818cf8', detail: `${daysSinceLast.toFixed(0)}d` },
+    { label: 'Servicio', value: wServ, color: '#a78bfa', detail: `${(getVal(c,'calidad_del_servicio.score')).toFixed(1)}/10` },
+    { label: 'Activac.', value: wAct, color: '#34d399', detail: `${(activationScore*100).toFixed(0)}%` },
+  ];
+
+  const barHtml = segments.map(s =>
+    `<div class="seg" style="width:${pct(s.value/total)}%;background:${s.color};" title="${s.label}: ${pct(s.value)}% (${s.detail})"></div>`
+  ).join('');
+
+  const legendHtml = segments.map(s =>
+    `<span><span class="dot" style="background:${s.color};"></span>${s.label} ${pct(s.value)}%</span>`
+  ).join('');
+
+  return `<div class="breakdown-bar">${barHtml}</div><div class="breakdown-legend">${legendHtml}</div>`;
+}
+
+// Blended activation score: 50% del tracking detallado (PLV, vasos, etc) + 50% de tasa tradicional
+function getActivacionRate(c) {
+  if (isMarcaPropia(c.id)) return 0;
+  const detalleScore = calcActivacionScore(c.id) / 100;
+  const actEnviadas = getVal(c, 'propuestas_de_activacion.enviadas_12m');
+  const actAceptadas = getVal(c, 'propuestas_de_activacion.aceptadas');
+  const tradicionalRate = actEnviadas > 0 ? actAceptadas / actEnviadas : 0;
+  return detalleScore * 0.50 + tradicionalRate * 0.50;
+}
+
+function predictRepurchase(c) {
+  const freqRaw = getVal(c, 'frecuencia_de_compra.promedio_mensual');
+  const freqScore = freqToScore(freqRaw);
+  const ultima = getVal(c, 'frecuencia_de_compra.ultima_compra') || c.frecuencia_de_compra.ultima_compra;
+  const daysSinceLast = (new Date('2026-07-29') - new Date(ultima)) / (1000*60*60*24);
+  const recencyScore = Math.max(0, 1 - daysSinceLast/30);
+  const serviceScore = getVal(c, 'calidad_del_servicio.score') / 10;
+  const activationScore = getActivacionRate(c);
+  return freqScore*0.30 + recencyScore*0.30 + serviceScore*0.20 + activationScore*0.20;
+}
+
+function predictUpsell(c) {
+  const ticketVsSegment = Math.min(getVal(c, 'ticket_promedio') / (getSegmentAverage(getVal(c, 'segmento')||c.segmento).ticket||1), 2) / 2;
+  const activationScore = getActivacionRate(c);
+  const prodEnv = getVal(c, 'propuestas_activacion_producto.enviadas_12m');
+  const prodAcep = getVal(c, 'propuestas_activacion_producto.aceptadas');
+  const productActivation = prodEnv > 0 ? prodAcep / prodEnv : 0;
+  const evAsist = getVal(c, 'participacion_en_eventos.asistencias');
+  const eventScore = Math.min(evAsist / 10, 1);
+  const growth = getVal(c, 'potencial_de_crecimiento') / 10;
+  return ticketVsSegment*0.15 + activationScore*0.25 + productActivation*0.25 + eventScore*0.15 + growth*0.20;
+}
+
+// === CUESTIONARIO CHURN 1-5 (por cliente, guardado en localStorage) ===
+const CHURN_FACTORS = [
+  { key: 'tendencia', label: 'Tendencia de frecuencia', hint: 'Como evoluciona la frecuencia de compra', weight: 0.30,
+    options: ['Creciendo fuerte', 'Creciendo leve', 'Estable', 'Bajando', 'Desplomandose'],
+    scores: [0.05, 0.15, 0.30, 0.60, 0.90] },
+  { key: 'tributaria', label: 'Sensibilidad tributaria', hint: 'Que tanto le afectan cambios de IVA/impuestos', weight: 0.20,
+    options: ['Inmune', 'Baja', 'Media', 'Alta', 'Extrema'],
+    scores: [0.00, 0.25, 0.50, 0.75, 1.00] },
+  { key: 'quejas', label: 'Quejas de servicio', hint: 'Cantidad de quejas en el ultimo trimestre', weight: 0.15,
+    options: ['Ninguna', '1 queja', '2-3 quejas', '4-5 quejas', '6+ quejas'],
+    scores: [0.00, 0.25, 0.50, 0.75, 1.00] },
+  { key: 'entregas', label: 'Entregas a tiempo', hint: 'Porcentaje de pedidos entregados a tiempo', weight: 0.15,
+    options: ['Siempre (100%)', 'Casi siempre (>90%)', 'Frecuente (70-90%)', 'Irregular (50-70%)', 'Muy demorado (<50%)'],
+    scores: [0.00, 0.25, 0.50, 0.75, 1.00] },
+  { key: 'activaciones', label: 'Aceptacion de activaciones', hint: 'Que tanto acepta PLV, catas, cross-sell, eventos', weight: 0.20,
+    options: ['Acepta todo (>90%)', 'Acepta mucho (70-90%)', 'Acepta algo (40-70%)', 'Acepta poco (10-40%)', 'Rechaza todo (<10%)'],
+    scores: [0.00, 0.25, 0.50, 0.75, 1.00] },
+];
+
+function loadChurnRatings(cid) {
+  try { const raw = localStorage.getItem('churn_q_' + cid); return raw ? JSON.parse(raw) : {}; }
+  catch(e) { return {}; }
+}
+
+function saveChurnRatings(cid, ratings) {
+  localStorage.setItem('churn_q_' + cid, JSON.stringify(ratings));
+}
+
+function calcChurnFromRatings(ratings) {
+  let total = 0;
+  CHURN_FACTORS.forEach(f => {
+    const idx = ratings[f.key] !== undefined ? ratings[f.key] : -1;
+    if (idx >= 0 && idx < f.scores.length) {
+      total += f.scores[idx] * f.weight;
+    }
+  });
+  return total;
+}
+
+function onChurnRatingChange(cid, factorKey, ratingIdx) {
+  const ratings = loadChurnRatings(cid);
+  ratings[factorKey] = ratingIdx;
+  saveChurnRatings(cid, ratings);
+  renderChurnQuestionnaire(cid);
+  // Re-render KPIs using questionnaire override
+  const c = getCustomer(cid);
+  if (c) { renderCustomerKPIs(c); renderStrategiesSingle(c); }
+}
+
+function predictChurnWithQuestionnaire(c) {
+  const ratings = loadChurnRatings(c.id);
+  const keys = Object.keys(ratings);
+  if (keys.length === 0) return null; // no questionnaire filled = use formula
+  return calcChurnFromRatings(ratings);
+}
+
+function renderChurnQuestionnaire(cid) {
+  const container = document.getElementById('churnQuestionnaire');
+  if (!container) return;
+  const ratings = loadChurnRatings(cid);
+  const totalChurn = calcChurnFromRatings(ratings);
+  const filledCount = Object.keys(ratings).length;
+
+  let html = '<div class="churn-quest-section">';
+  html += '<h3>Cuestionario Riesgo de Churn (1-5)</h3>';
+  html += '<p class="quest-subtitle">Califica cada factor. El puntaje reemplaza la formula automatica. Aplica a cualquier cliente (A+/A/B/C).</p>';
+
+  CHURN_FACTORS.forEach(f => {
+    const selIdx = ratings[f.key] !== undefined ? ratings[f.key] : -1;
+    html += '<div class="churn-quest-row">';
+    html += `<div class="churn-quest-label"><strong>${f.label}</strong><span>${f.hint}</span></div>`;
+    html += '<div class="churn-quest-rating">';
+    for (let i = 0; i < 5; i++) {
+      html += `<button class="churn-star ${selIdx === i ? 'sel-' + (i+1) : ''}" 
+        onclick="onChurnRatingChange('${cid}','${f.key}',${i})" 
+        title="${f.options[i]}">${i+1}</button>`;
+    }
+    html += '</div>';
+    html += `<div class="churn-quest-impact">${selIdx >= 0 ? '+' + (f.scores[selIdx] * f.weight * 100).toFixed(1) + '%' : '—'}</div>`;
+    html += '</div>';
+  });
+
+  // Total
+  const pct = (totalChurn * 100).toFixed(0);
+  const color = totalChurn <= 0.3 ? '#34d399' : totalChurn <= 0.6 ? '#f59e0b' : '#ef4444';
+  const label = totalChurn <= 0.3 ? 'BAJO' : totalChurn <= 0.6 ? 'MEDIO' : 'ALTO';
+  html += `<div class="churn-quest-total">`;
+  html += `<span class="total-label">Riesgo estimado (cuestionario)</span>`;
+  html += `<span><span class="total-value" style="color:${color}">${pct}%</span>`;
+  html += `<span class="total-sem" style="background:${color}20;color:${color}">${label}</span></span>`;
+  html += `</div>`;
+  html += `<div class="churn-quest-ref">${filledCount}/5 factores calificados · ${filledCount === 5 ? 'Completo ✓' : filledCount === 0 ? 'Sin calificar — se usa formula automatica' : 'Se usan solo los factores calificados'}</div>`;
+  html += '</div>';
+
+  container.innerHTML = html;
+}
+
+// Override predictChurn to use questionnaire when available
+function renderChurnInlineQuestionnaire(c) {
+  const ratings = loadChurnRatings(c.id);
+  const totalChurn = calcChurnFromRatings(ratings);
+  const filledCount = Object.keys(ratings).length;
+  const pct = (totalChurn * 100).toFixed(0);
+  const color = totalChurn <= 0.3 ? '#34d399' : totalChurn <= 0.6 ? '#f59e0b' : '#ef4444';
+
+  let html = '<div class="churn-inline" style="margin-top:8px;padding-top:6px;border-top:1px solid var(--border);">';
+  html += '<div style="display:flex;gap:3px;align-items:center;flex-wrap:wrap;">';
+  html += '<span style="font-size:0.6rem;color:var(--text2);margin-right:4px;">Cuestionario:</span>';
+
+  CHURN_FACTORS.forEach(f => {
+    const selIdx = ratings[f.key] !== undefined ? ratings[f.key] : -1;
+    const abbr = f.label.replace(' de ',' ').split(' ')[0];
+    html += `<span style="font-size:0.55rem;color:var(--text2);margin-right:2px;">${abbr}</span>`;
+    for (let i = 0; i < 5; i++) {
+      const sel = selIdx === i;
+      html += `<button class="churn-dot ${sel ? 'sel-' + (i+1) : ''}" 
+        onclick="event.stopPropagation();onChurnRatingChange('${c.id}','${f.key}',${i})"
+        title="${f.label}: ${f.options[i]}" style="${sel ? 'opacity:1' : 'opacity:0.35'}">${i+1}</button>`;
+    }
+    html += '<span style="width:3px;"></span>';
+  });
+
+  html += `<span style="font-size:0.65rem;font-weight:700;color:${color};margin-left:4px;">${pct}%</span>`;
+  html += `<span style="font-size:0.5rem;color:var(--text2);margin-left:4px;">${filledCount}/5</span>`;
+  html += '</div></div>';
+  return html;
+}
+
+function predictChurn(c) {
+  const qOverride = predictChurnWithQuestionnaire(c);
+  if (qOverride !== null) return qOverride;
+
+  const trend = getVal(c, 'frecuencia_de_compra.tendencia');
+  const trendScore = trend === 'decreciente' ? 0.8 :
+                     trend === 'estable' ? 0.3 :
+                     trend === 'nuevo' ? 0.5 : 0.05;
+  const complaintScore = getVal(c, 'calidad_del_servicio.quejas_ultimo_trimestre') / 10;
+  const taxSensitivity = getVal(c, 'tensiones_tributarias.score_afectacion') / 10;
+  const deliveryScore = 1 - getVal(c, 'tiempo_de_entrega.entregas_a_tiempo_pct');
+  const activationReject = 1 - getActivacionRate(c);
+  return trendScore*0.30 + complaintScore*0.15 + taxSensitivity*0.20 + deliveryScore*0.15 + activationReject*0.20;
+}
+
+function predictNextTicket(c) {
+  const base = getVal(c, 'ticket_promedio') || c.ticket_promedio;
+  const growthFactor = ((getVal(c, 'potencial_de_crecimiento') || c.potencial_de_crecimiento) - 5) / 100;
+  const seasonFactor = (getVal(c, 'epoca_del_ano.estacionalidad_index') || c.epoca_del_ano.estacionalidad_index) > 0.7 ? 0.05 : 0;
+  const actRate = getActivacionRate(c);
+  const activationFactor = actRate > 0.5 ? 0.08 : -0.03;
+  const churnRisk = predictChurn(c);
+  const riskFactor = churnRisk > 0.6 ? -0.10 : churnRisk > 0.3 ? -0.03 : 0.02;
+  const multiplier = 1 + growthFactor + seasonFactor + activationFactor + riskFactor;
+  return Math.round(base * multiplier);
+}
+
+function getSegmentAverage(segment) {
+  const seg = customers.filter(c => c.segmento === segment);
+  if (seg.length === 0) return { ticket: 1, freq: 1, growth: 1 };
+  return {
+    ticket: seg.reduce((s,c)=>s+c.ticket_promedio,0)/seg.length,
+    freq: seg.reduce((s,c)=>s+c.frecuencia_de_compra.promedio_mensual,0)/seg.length,
+    growth: seg.reduce((s,c)=>s+c.potencial_de_crecimiento,0)/seg.length
+  };
+}
+
+function formatFecha(fechaStr) {
+  if (!fechaStr) return 'N/A';
+  const meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  const [y,m,d] = fechaStr.split('-');
+  return `${parseInt(d)} ${meses[parseInt(m)-1]} ${y}`;
+}
+
+// === CHART HELPER ===
+function makeBar(canvasId, labels, series, opts = {}) {
+  const ctx = document.getElementById(canvasId);
+  if (!ctx) return;
+  charts[canvasId] = new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: series.map(s => ({
+      label: s.label, data: s.data, backgroundColor: s.bg,
+      borderRadius: 4, borderSkipped: false
+    })) },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { labels: { color: '#94a3b8', font: { size: 11 }, padding: 12 } } },
+      scales: {
+        x: { ticks: { color: '#94a3b8', font: { size: 10 } }, grid: { display: false } },
+        y: { ...(opts.yMax ? { max: opts.yMax } : {}),
+             ticks: { color: '#94a3b8', callback: v => opts.yTitle ? v+' '+opts.yTitle : v },
+             grid: { color: '#334155' } }
+      }
+    }
+  });
+}
+
+// === ESTRATEGIAS ===
+function getStrategies(c) {
+  const strategies = [];
+  const churnRisk = predictChurn(c);
+  const upsellScore = predictUpsell(c);
+  const nextTicket = predictNextTicket(c);
+
+  const mesActual = 7;
+  const mesesFuertes = c.epoca_del_ano.meses_fuertes;
+  const proximaTemporada = mesesFuertes.find(m => m > mesActual) || mesesFuertes[0];
+
+  if (c.epoca_del_ano.estacionalidad_index > 0.5) {
+    strategies.push({
+      titulo: 'Aprovechar Temporada Alta (Feria de las Flores)',
+      descripcion: `Estacionalidad ${(c.epoca_del_ano.estacionalidad_index*100).toFixed(0)}%. Preparar propuesta de volumen para agosto. Ticket estimado: $${nextTicket.toLocaleString()}.`,
+      impacto: 'alto', tipo: 'oportunidad',
+      accion: `Enviar propuesta de descuento por volumen antes del 1 de agosto. Stock sugerido segun historial de picos.`
+    });
+  }
+
+  if (c.propuestas_de_activacion.tasa_conversion >= 0.5) {
+    strategies.push({
+      titulo: 'Intensificar Propuestas de Activacion',
+      descripcion: `Alta conversion (${(c.propuestas_de_activacion.tasa_conversion*100).toFixed(0)}%). Preferencia: ${(c.propuestas_de_activacion.tipo_preferido||'').replace(/_/g,' ')}.`,
+      impacto: 'alto', tipo: 'oportunidad',
+      accion: `Disenar 3 propuestas de ${(c.propuestas_de_activacion.tipo_preferido||'descuento').replace(/_/g,' ')} para 60 dias.`
+    });
+  } else if (c.propuestas_de_activacion.tasa_conversion < 0.3 && c.propuestas_de_activacion.enviadas_12m > 0) {
+    strategies.push({
+      titulo: 'Reactivar con Nueva Propuesta de Valor',
+      descripcion: `Baja conversion (${(c.propuestas_de_activacion.tasa_conversion*100).toFixed(0)}%). Probar enfoque diferente.`,
+      impacto: 'medio', tipo: 'seguimiento',
+      accion: 'Visita comercial para entender objeciones. Ofrecer muestra gratis de nuevo estilo.'
+    });
+  }
+
+  if (c.propuestas_activacion_producto.tasa_conversion >= 0.5 && c.calidad_del_producto.devoluciones_pct < 0.05) {
+    strategies.push({
+      titulo: 'Cross-sell con Linea Premium',
+      descripcion: `Receptivo a nuevos productos (${(c.propuestas_activacion_producto.tasa_conversion*100).toFixed(0)}%). Variedad actual: ${c.calidad_del_producto.variedad}/5.`,
+      impacto: 'alto', tipo: 'oportunidad',
+      accion: `Bundle de ${c.propuestas_activacion_producto.categoria_interes.replace(/_/g,' ')} con 15% descuento.`
+    });
+  }
+
+  if (c.participacion_en_eventos.asistencias >= 4) {
+    strategies.push({
+      titulo: 'Programa Embajador en Eventos',
+      descripcion: `${c.participacion_en_eventos.asistencias} asistencias en 12m.`,
+      impacto: 'alto', tipo: 'oportunidad',
+      accion: 'Invitar como co-expositor o caso de exito en proxima feria.'
+    });
+  } else if (c.participacion_en_eventos.invitaciones_12m > 0 && c.participacion_en_eventos.asistencias <= 1) {
+    strategies.push({
+      titulo: 'Evento Exclusivo 1-a-1',
+      descripcion: 'Cliente no asiste a eventos masivos.',
+      impacto: 'medio', tipo: 'seguimiento',
+      accion: 'Coordinar cata privada o visita a planta.'
+    });
+  }
+
+  if (churnRisk > 0.4) {
+    if (c.es_interno) {
+      strategies.push({
+        titulo: 'Mejora Continua (Cliente Interno)',
+        descripcion: `Oportunidades de mejora detectadas: ${(churnRisk*100).toFixed(0)}% de areas a fortalecer. ${c.calidad_del_servicio.quejas_ultimo_trimestre} notas de mejora registradas.`,
+        impacto: 'medio', tipo: 'seguimiento',
+        accion: 'Revisar en comite semanal. Priorizar factores con rating > 3 en el cuestionario. Implementar plan de accion y medir en 30 dias.'
+      });
+    } else {
+      strategies.push({
+        titulo: 'Plan de Retencion',
+        descripcion: `Riesgo churn ${(churnRisk*100).toFixed(0)}%. ${c.calidad_del_servicio.quejas_ultimo_trimestre} quejas.`,
+        impacto: 'critico', tipo: 'urgente',
+        accion: 'Llamada de gerente en 24h. Descuento por lealtad 10% + mejora de condiciones.'
+      });
+    }
+  }
+
+  if (c.tensiones_tributarias.score_afectacion >= 7) {
+    strategies.push({
+      titulo: 'Estructura Anti-Tributaria',
+      descripcion: `Sensibilidad ${c.tensiones_tributarias.score_afectacion}/10.`,
+      impacto: 'alto', tipo: 'urgente',
+      accion: 'Plan de financiamiento a 60/90 dias para mitigar carga tributaria.'
+    });
+  }
+
+  if (c.tiempo_de_entrega.entregas_a_tiempo_pct < 0.85) {
+    strategies.push({
+      titulo: 'Optimizar Logistica de Entrega',
+      descripcion: `${(c.tiempo_de_entrega.entregas_a_tiempo_pct*100).toFixed(0)}% a tiempo. Zona ${c.ubicacion.zona_logistica}.`,
+      impacto: 'alto', tipo: 'urgente',
+      accion: 'Revisar ruta logistica. Compensar con envio gratis 3 pedidos.'
+    });
+  }
+
+  if (c.clima.afectacion_lluvia > 0.35 || c.clima.afectacion_calor > 0.30) {
+    strategies.push({
+      titulo: 'Plan de Contingencia Climatica',
+      descripcion: `Alta sensibilidad climatica.`,
+      impacto: 'medio', tipo: 'seguimiento',
+      accion: 'Stock de seguridad pre-temporada de lluvias con 20% descuento.'
+    });
+  }
+
+  return strategies;
+}
+
+function renderStrategiesAll() {
+  const allStrategies = [];
+  customers.forEach(c => {
+    const s = getStrategies(c);
+    s.forEach(str => allStrategies.push({ cliente: c.nombre, id: c.id, segmento: c.segmento, ...str }));
+  });
+
+  const urgent = allStrategies.filter(s => s.tipo === 'urgente').slice(0, 5);
+  const opportun = allStrategies.filter(s => s.tipo === 'oportunidad').slice(0, 5);
+
+  document.getElementById('strategiesContainer').innerHTML = `
+    <div class="card">
+      <h3>Acciones Urgentes</h3>
+      ${urgent.length === 0 ? '<p style="color:var(--text2);font-size:0.8rem;">Sin acciones urgentes detectadas</p>' : urgent.map(s => `
+        <div class="strategy-item">
+          <h4>${s.titulo} <span class="badge badge-${s.tipo}">${s.tipo.toUpperCase()}</span></h4>
+          <p><strong>${s.id}</strong> | ${s.cliente}</p>
+          <p style="margin-top:4px;">${s.descripcion}</p>
+          <p style="color:var(--primary);font-size:0.75rem;margin-top:4px;">→ ${s.accion}</p>
+        </div>
+      `).join('')}
+    </div>
+    <div class="card">
+      <h3>Oportunidades de Crecimiento</h3>
+      ${opportun.length === 0 ? '<p style="color:var(--text2);font-size:0.8rem;">Sin oportunidades detectadas</p>' : opportun.map(s => `
+        <div class="strategy-item">
+          <h4>${s.titulo} <span class="badge badge-${s.tipo}">${s.tipo.toUpperCase()}</span></h4>
+          <p><strong>${s.id}</strong> | ${s.cliente}</p>
+          <p style="margin-top:4px;">${s.descripcion}</p>
+          <p style="color:var(--primary);font-size:0.75rem;margin-top:4px;">→ ${s.accion}</p>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+function renderStrategiesSingle(c) {
+  const strategies = getStrategies(c);
+  document.getElementById('strategiesContainer').innerHTML = strategies.length === 0
+    ? '<div class="card"><p style="color:var(--text2);">Sin estrategias especificas para este cliente.</p></div>'
+    : strategies.map(s => `
+      <div class="card">
+        <h4>${s.titulo} <span class="badge badge-${s.tipo}">${s.tipo.toUpperCase()}</span></h4>
+        <p style="font-size:0.8rem;margin-top:6px;">${s.descripcion}</p>
+        <p style="color:var(--primary);font-size:0.75rem;margin-top:8px;">→ ${s.accion}</p>
+        <span style="font-size:0.7rem;color:var(--text2);">Impacto: ${s.impacto.toUpperCase()}</span>
+      </div>
+    `).join('');
+}
+
+function exportReport() {
+  const id = document.getElementById('customerSelect').value;
+  const c = id === 'all' ? null : getCustomer(id);
+
+  let report = {
+    fecha_reporte: new Date().toISOString(),
+    tipo: id === 'all' ? 'resumen_general' : 'cliente_individual',
+    datos: id === 'all' ? customers : [c],
+    metricas_predichas: id === 'all' ? null : {
+      probabilidad_recompra_30d: predictRepurchase(c),
+      upsell_potencial_score: predictUpsell(c),
+      churn_risk: predictChurn(c),
+      ticket_estimado_proximo: predictNextTicket(c)
+    },
+    estrategias: id === 'all' ? customers.map(c => ({ id: c.id, estrategias: getStrategies(c) })) : getStrategies(c)
+  };
+
+  const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `reporte_${id}_${new Date().toISOString().slice(0,10)}.json`; a.click();
+  URL.revokeObjectURL(url);
+}
+
+init();
+</script>
+</body>
+</html>

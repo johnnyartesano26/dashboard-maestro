@@ -554,8 +554,8 @@ function copiarSync() {
     <div class="card full">
       <h2>📝 Registrar Nota Crédito</h2>
       <p style="color:var(--mm-dim);font-size:.82em;margin-bottom:16px">
-        Anula una factura existente, restaura el inventario descontado y sube el archivo a Google Drive.
-        <a href="https://drive.google.com/drive/u/0/folders/1Evf823VIPhcUGBv8sx-ZECb9jCBugirK" target="_blank" style="color:var(--mm-blue)">📁 Ver reportes en Drive</a>
+        Consulta la factura original en Alegra y sube el soporte a Google Drive.
+        <a href="https://drive.google.com/drive/u/0/folders/1Evf823VIPhcUGBv8sx-ZECb9jCBugirK" target="_blank" style="color:var(--mm-blue)">📁 Ver Drive</a>
       </p>
       <form id="ncForm" onsubmit="enviarNotaCredito(event)" style="display:flex;flex-direction:column;gap:12px">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
@@ -598,7 +598,7 @@ function copiarSync() {
       <h2>📋 Historial de Notas Crédito <span style="font-size:.75em;color:var(--mm-dim)" id="ncCount"></span></h2>
       <div class="table-wrap">
         <table><thead><tr>
-          <th>Fecha</th><th>Factura</th><th>Nota Crédito</th><th>Cliente</th><th>Drive</th><th>Alegra</th><th>Inventario</th>
+          <th>Fecha</th><th>Factura</th><th>Nota Crédito</th><th>Cliente</th><th>Total</th><th>Drive</th><th>Responsable</th>
         </tr></thead>
         <tbody id="ncHistorial"><tr><td colspan="7" class="loading">Cargando historial...</td></tr></tbody></table>
       </div>
@@ -1976,9 +1976,9 @@ async function cargarHistorialNC() {
         <td><strong>${nc.factura}</strong></td>
         <td>${nc.nc}</td>
         <td>${nc.cliente}</td>
+        <td style="color:var(--mm-green)">$${(nc.factura_total||0).toLocaleString('es-CO')}</td>
         <td>${nc.drive_link ? '<a href="'+nc.drive_link+'" target="_blank" style="color:var(--mm-blue);font-size:.8em">📁 Drive</a>' : '-'}</td>
-        <td style="color:${nc.ok?'var(--mm-green)':'var(--mm-red)'};font-size:.8em">${nc.ok ? '✅ '+nc.alegra_id : '❌'}</td>
-        <td style="font-size:.75em;color:var(--mm-dim)">${nc.inventario_restaurado ? Object.entries(nc.inventario_restaurado).map(([k,v])=>k+' +'+v).join(', ') : '-'}</td>
+        <td style="font-size:.8em">${nc.responsable || '-'}</td>
       </tr>
     `).join('');
   } catch {

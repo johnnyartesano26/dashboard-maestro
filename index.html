@@ -231,11 +231,12 @@
     </div>
   </div>
   <div class="tab-nav">
-    <button class="tab-btn active" onclick="switchTab('resumen')">📊 Resumen General</button>
-    <button class="tab-btn" onclick="switchTab('facturacion')">📄 Facturación</button>
-    <button class="tab-btn" onclick="switchTab('inventario')">🍺 Inventario</button>
-    <button class="tab-btn" onclick="switchTab('ventas')">💰 Ventas</button>
-    <button class="tab-btn" onclick="switchTab('clientes')">👥 Análisis de Clientes</button>
+    <button class="tab-btn active" data-tab="resumen" onclick="switchTab('resumen')">📊 Resumen General</button>
+    <button class="tab-btn" data-tab="facturacion" onclick="switchTab('facturacion')">📄 Facturación</button>
+    <button class="tab-btn" data-tab="inventario" onclick="switchTab('inventario')">🍺 Inventario</button>
+    <button class="tab-btn" data-tab="ventas" onclick="switchTab('ventas')">💰 Ventas</button>
+    <button class="tab-btn" data-tab="clientes" onclick="switchTab('clientes')">👥 Análisis de Clientes</button>
+    <button class="tab-btn" data-tab="notascredito" onclick="switchTab('notascredito')">📝 Notas Crédito</button>
   </div>
   <div id="periodSelector" style="display:none;margin-top:8px">
     <select id="periodoSelect" onchange="cambiarPeriodo()" style="background:var(--mm-bg);border:1px solid var(--mm-border);color:#c88a3d;padding:6px 12px;border-radius:6px;font-size:.85em;font-family:inherit"></select>
@@ -547,6 +548,63 @@ function copiarSync() {
   <iframe src="agenda-clientes.html" style="width:100%;height:calc(100vh - 150px);border:none;border-radius:8px" title="Análisis de Clientes"></iframe>
 </div>
 
+<!-- ═══════════════ TAB: NOTAS CRÉDITO ═══════════════ -->
+<div class="tab-content" id="tab-notascredito">
+  <div class="grid" style="max-width:900px;margin:0 auto">
+    <div class="card full">
+      <h2>📝 Registrar Nota Crédito</h2>
+      <p style="color:var(--mm-dim);font-size:.82em;margin-bottom:16px">
+        Anula una factura existente, restaura el inventario descontado y sube el archivo a Google Drive.
+      </p>
+      <form id="ncForm" onsubmit="enviarNotaCredito(event)" style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div>
+            <label style="color:var(--mm-dim);font-size:.78em;display:block;margin-bottom:4px">Número de Factura</label>
+            <input type="text" id="ncFactura" placeholder="FE-1234" required style="background:var(--mm-bg);border:1px solid var(--mm-border);color:var(--mm-text);padding:10px 12px;border-radius:6px;font-size:.9em;width:100%;box-sizing:border-box">
+          </div>
+          <div>
+            <label style="color:var(--mm-dim);font-size:.78em;display:block;margin-bottom:4px">Número Nota Crédito</label>
+            <input type="text" id="ncNumero" placeholder="NC-001" required style="background:var(--mm-bg);border:1px solid var(--mm-border);color:var(--mm-text);padding:10px 12px;border-radius:6px;font-size:.9em;width:100%;box-sizing:border-box">
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div>
+            <label style="color:var(--mm-dim);font-size:.78em;display:block;margin-bottom:4px">Nombre del Cliente</label>
+            <input type="text" id="ncCliente" placeholder="Nombre del cliente" required style="background:var(--mm-bg);border:1px solid var(--mm-border);color:var(--mm-text);padding:10px 12px;border-radius:6px;font-size:.9em;width:100%;box-sizing:border-box">
+          </div>
+          <div>
+            <label style="color:var(--mm-dim);font-size:.78em;display:block;margin-bottom:4px">Fecha</label>
+            <input type="date" id="ncFecha" required style="background:var(--mm-bg);border:1px solid var(--mm-border);color:var(--mm-text);padding:10px 12px;border-radius:6px;font-size:.9em;width:100%;box-sizing:border-box">
+          </div>
+        </div>
+        <div>
+          <label style="color:var(--mm-dim);font-size:.78em;display:block;margin-bottom:4px">Observaciones</label>
+          <input type="text" id="ncObs" placeholder="Motivo de la nota crédito (opcional)" style="background:var(--mm-bg);border:1px solid var(--mm-border);color:var(--mm-text);padding:10px 12px;border-radius:6px;font-size:.9em;width:100%;box-sizing:border-box">
+        </div>
+        <div>
+          <label style="color:var(--mm-dim);font-size:.78em;display:block;margin-bottom:4px">Archivo (PDF / imagen)</label>
+          <input type="file" id="ncArchivo" accept=".pdf,.jpg,.jpeg,.png" style="background:var(--mm-bg);border:1px solid var(--mm-border);color:var(--mm-text);padding:10px 12px;border-radius:6px;font-size:.9em;width:100%;box-sizing:border-box">
+        </div>
+        <div style="display:flex;gap:10px;align-items:center">
+          <button type="submit" id="ncBtn" style="background:var(--mm-gold);color:#fff;border:none;padding:12px 28px;border-radius:8px;cursor:pointer;font-size:.9em;font-weight:600;font-family:inherit;transition:background .2s">📤 Procesar Nota Crédito</button>
+          <span id="ncStatus" style="color:var(--mm-dim);font-size:.82em"></span>
+        </div>
+      </form>
+      <div id="ncResultado" style="display:none;margin-top:16px;padding:14px;background:var(--mm-block);border:1px solid var(--mm-border);border-radius:8px"></div>
+    </div>
+
+    <div class="card full">
+      <h2>📋 Historial de Notas Crédito <span style="font-size:.75em;color:var(--mm-dim)" id="ncCount"></span></h2>
+      <div class="table-wrap">
+        <table><thead><tr>
+          <th>Fecha</th><th>Factura</th><th>Nota Crédito</th><th>Cliente</th><th>Drive</th><th>Alegra</th><th>Inventario</th>
+        </tr></thead>
+        <tbody id="ncHistorial"><tr><td colspan="7" class="loading">Cargando historial...</td></tr></tbody></table>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════════ TOAST ═══════════════ -->
 <div class="toast" id="toast"></div>
 
@@ -561,7 +619,8 @@ let allData = [];
 let filtered = [];
 let factCharts = {};
 let overviewCharts = {};
-let TAB_STATE = { facturacion: false, inventario: false, resumen: true, ventas: false, clientes: false };
+let TAB_STATE = { facturacion: false, inventario: false, resumen: true, ventas: false, clientes: false, notascredito: false };
+const NC_BRIDGE = 'http://localhost:5000';
 let totalFacturasConsolidado = 0;
 let totalClientesConsolidado = 0;
 let importeConsolidado = 0;
@@ -575,7 +634,7 @@ function switchTab(name) {
   document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
   document.querySelectorAll('.tab-btn').forEach(b => {
-    if (b.textContent.toLowerCase().includes(name)) b.classList.add('active');
+    if (b.getAttribute('data-tab') === name) b.classList.add('active');
   });
 
   if (name === 'facturacion' && !TAB_STATE.facturacion) {
@@ -596,6 +655,10 @@ function switchTab(name) {
   }
   if (name === 'clientes' && !TAB_STATE.clientes) {
     TAB_STATE.clientes = true;
+  }
+  if (name === 'notascredito' && !TAB_STATE.notascredito) {
+    TAB_STATE.notascredito = true;
+    cargarHistorialNC();
   }
 }
 
@@ -1815,6 +1878,111 @@ function filtrarPendientes(){
   }
   document.getElementById('pendientesCount').textContent=`(${t} pendientes)`;
   document.getElementById('listaPendientes').innerHTML=html||'<p style="color:#7a9e7a">✅ Todas las facturas descargadas</p>';
+}
+
+// ═══════════════════════════════════════════════════
+// NOTAS CRÉDITO
+// ═══════════════════════════════════════════════════
+let ncEnviando = false;
+
+async function enviarNotaCredito(e) {
+  e.preventDefault();
+  if (ncEnviando) return;
+  ncEnviando = true;
+  const btn = document.getElementById('ncBtn');
+  const status = document.getElementById('ncStatus');
+  const resultado = document.getElementById('ncResultado');
+  btn.disabled = true;
+  btn.textContent = '⏳ Procesando...';
+  status.textContent = 'Conectando con el bridge...';
+  resultado.style.display = 'none';
+
+  try {
+    const formData = new FormData();
+    formData.append('factura', document.getElementById('ncFactura').value.trim());
+    formData.append('nc_numero', document.getElementById('ncNumero').value.trim());
+    formData.append('cliente', document.getElementById('ncCliente').value.trim());
+    formData.append('fecha', document.getElementById('ncFecha').value);
+    formData.append('observaciones', document.getElementById('ncObs').value.trim());
+    const fileInput = document.getElementById('ncArchivo');
+    if (fileInput.files.length > 0) {
+      formData.append('archivo', fileInput.files[0]);
+    }
+
+    status.textContent = 'Procesando nota crédito (Alegra + Drive + Inventario)...';
+    const resp = await fetch(NC_BRIDGE + '/nota-credito', {
+      method: 'POST',
+      body: formData,
+    });
+
+    const data = await resp.json();
+    resultado.style.display = 'block';
+
+    if (data.ok) {
+      resultado.innerHTML = `
+        <div style="color:var(--mm-green);font-weight:600;margin-bottom:8px">✅ Nota Crédito procesada con éxito</div>
+        <div style="font-size:.82em;color:var(--mm-dim)">
+          <div>📄 Factura: <strong>${data.factura}</strong> → NC: <strong>${data.nc}</strong></div>
+          <div>👤 Cliente: <strong>${data.cliente}</strong> | Fecha: ${data.fecha}</div>
+          ${data.drive_link ? '<div>📁 <a href="'+data.drive_link+'" target="_blank" style="color:var(--mm-blue)">Ver en Google Drive</a></div>' : '<div>⚠️ Archivo no subido a Drive</div>'}
+          ${data.alegra_nc ? '<div>🧾 Alegra NC ID: <strong>'+data.alegra_nc.id+'</strong></div>' : '<div>⚠️ NC no creada en Alegra</div>'}
+          ${data.inventario_restaurado && Object.keys(data.inventario_restaurado).length > 0 ? '<div>📦 Inventario restaurado: '+Object.entries(data.inventario_restaurado).map(([k,v])=>k+' +'+v).join(', ')+'</div>' : ''}
+        </div>
+      `;
+      document.getElementById('ncFactura').value = '';
+      document.getElementById('ncNumero').value = '';
+      document.getElementById('ncCliente').value = '';
+      document.getElementById('ncObs').value = '';
+      document.getElementById('ncArchivo').value = '';
+      cargarHistorialNC();
+    } else {
+      resultado.innerHTML = `
+        <div style="color:var(--mm-red);font-weight:600;margin-bottom:8px">❌ Error al procesar</div>
+        <div style="font-size:.82em;color:var(--mm-dim)">${data.error || 'Error desconocido'}</div>
+        ${data.drive_error ? '<div style="font-size:.78em;color:var(--mm-red)">Drive: '+data.drive_error+'</div>' : ''}
+        ${data.inventario_error ? '<div style="font-size:.78em;color:var(--mm-red)">Inventario: '+data.inventario_error+'</div>' : ''}
+        ${data.alegra_error ? '<div style="font-size:.78em;color:var(--mm-red)">Alegra: '+data.alegra_error+'</div>' : ''}
+      `;
+    }
+    status.textContent = '';
+  } catch (err) {
+    resultado.style.display = 'block';
+    resultado.innerHTML = '<div style="color:var(--mm-red);font-weight:600">❌ Error de conexión con el bridge</div><div style="font-size:.82em;color:var(--mm-dim)">Asegúrate de que el servidor Flask esté corriendo en '+NC_BRIDGE+'</div>';
+    status.textContent = 'Error: ' + err.message;
+  } finally {
+    ncEnviando = false;
+    btn.disabled = false;
+    btn.textContent = '📤 Procesar Nota Crédito';
+  }
+}
+
+async function cargarHistorialNC() {
+  const tbody = document.getElementById('ncHistorial');
+  const count = document.getElementById('ncCount');
+  try {
+    const resp = await fetch(NC_BRIDGE + '/notas-credito');
+    const data = await resp.json();
+    if (!Array.isArray(data) || data.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:20px;color:var(--mm-dim)">Sin notas crédito registradas</td></tr>';
+      if (count) count.textContent = '(0)';
+      return;
+    }
+    if (count) count.textContent = '(' + data.length + ')';
+    data.sort((a, b) => (b.fecha_procesamiento || '').localeCompare(a.fecha_procesamiento || ''));
+    tbody.innerHTML = data.map(nc => `
+      <tr>
+        <td style="color:var(--mm-dim);font-size:.8em">${nc.fecha || '-'}</td>
+        <td><strong>${nc.factura}</strong></td>
+        <td>${nc.nc}</td>
+        <td>${nc.cliente}</td>
+        <td>${nc.drive_link ? '<a href="'+nc.drive_link+'" target="_blank" style="color:var(--mm-blue);font-size:.8em">📁 Drive</a>' : '-'}</td>
+        <td style="color:${nc.ok?'var(--mm-green)':'var(--mm-red)'};font-size:.8em">${nc.ok ? '✅ '+nc.alegra_id : '❌'}</td>
+        <td style="font-size:.75em;color:var(--mm-dim)">${nc.inventario_restaurado ? Object.entries(nc.inventario_restaurado).map(([k,v])=>k+' +'+v).join(', ') : '-'}</td>
+      </tr>
+    `).join('');
+  } catch {
+    tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:20px;color:var(--mm-red)">⚠️ No se pudo conectar con el bridge</td></tr>';
+  }
 }
 
 </script>

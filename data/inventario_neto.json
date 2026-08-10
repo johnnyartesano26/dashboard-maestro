@@ -1,27 +1,27 @@
 {
-  "generado": "2026-08-04T17:30:50.667421",
-  "fecha_lectura": "3/08/2026 12:35:00",
+  "generado": "2026-08-10T17:30:51.463510",
+  "fecha_lectura": "10/08/2026 14:15:24",
   "fermentadores": [
     {
       "nombre": "F1 Frankie",
       "estilo": "STOUT",
-      "litros": 193.0,
+      "litros": 120.0,
       "capacidad": 400,
-      "porcentaje": 48
+      "porcentaje": 30
     },
     {
       "nombre": "F2 Igor",
       "estilo": "IRISH RED ALE",
-      "litros": 440.0,
+      "litros": 340.0,
       "capacidad": 1200,
-      "porcentaje": 37
+      "porcentaje": 28
     },
     {
       "nombre": "F3 Principito",
       "estilo": "GERMAN PILS",
-      "litros": 320.0,
+      "litros": 240.0,
       "capacidad": 400,
-      "porcentaje": 80
+      "porcentaje": 60
     },
     {
       "nombre": "F4 Gargantua",
@@ -33,23 +33,23 @@
     {
       "nombre": "F5 Pantagruel",
       "estilo": "IPA",
-      "litros": 340.0,
+      "litros": 240.0,
       "capacidad": 800,
-      "porcentaje": 42
+      "porcentaje": 30
     },
     {
       "nombre": "F6 Potter",
       "estilo": "GOLDEN ALE",
-      "litros": 410.0,
+      "litros": 210.0,
       "capacidad": 1000,
-      "porcentaje": 41
+      "porcentaje": 21
     },
     {
       "nombre": "F7 HighLander",
       "estilo": "HIDROMIEL",
-      "litros": 316.0,
+      "litros": 310.0,
       "capacidad": 500,
-      "porcentaje": 63
+      "porcentaje": 62
     }
   ],
   "barriles": [
@@ -66,16 +66,31 @@
     {
       "codigo": "PTL03",
       "estilo": "APA",
-      "litros": 86.4
+      "litros": 60.0
     },
     {
       "codigo": "PTL04",
       "estilo": "IPA",
-      "litros": 34.9
+      "litros": 0
     },
     {
       "codigo": "PTL05",
       "estilo": "STOUT",
+      "litros": 0
+    },
+    {
+      "codigo": "",
+      "estilo": "GERMAN PILS",
+      "litros": 0
+    },
+    {
+      "codigo": "",
+      "estilo": "HIDROMIEL",
+      "litros": 0
+    },
+    {
+      "codigo": "",
+      "estilo": "RED IPA",
       "litros": 0
     }
   ],
@@ -83,7 +98,7 @@
     {
       "codigo": "PTB01",
       "estilo": "GOLDEN ALE",
-      "cantidad": 82
+      "cantidad": 0
     },
     {
       "codigo": "PTB02",
@@ -104,11 +119,26 @@
       "codigo": "PTB05",
       "estilo": "STOUT",
       "cantidad": 0
+    },
+    {
+      "codigo": "",
+      "estilo": "GERMAN PILS",
+      "cantidad": 0
+    },
+    {
+      "codigo": "",
+      "estilo": "HIDROMIEL",
+      "cantidad": 0
+    },
+    {
+      "codigo": "",
+      "estilo": "RED IPA",
+      "cantidad": 0
     }
   ],
   "totales": {
-    "litros_fermentando": 1504,
-    "litros_barril": 121,
-    "ventas_cop": 9116300
+    "litros_fermentando": 1519,
+    "litros_barril": 59,
+    "ventas_cop": 13387000
   }
 }

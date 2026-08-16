@@ -1,10 +1,13 @@
 {
-  "fecha": "2026-08-16 14:33:18",
+  "fecha": "2026-08-16 16:20:34",
   "dry_run": false,
   "pendientes_procesar": 2,
   "emitidas": 0,
   "sin_stock": 2,
   "sin_cliente": 0,
   "errores": 0,
+  "inventario_inicial": {},
+  "inventario_final": {},
+  "descuento_inventario": {},
   "resumen": "0 emitidas | 2 sin stock | 0 sin cliente"
 }

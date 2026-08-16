@@ -1,0 +1,10 @@
+{
+  "fecha": "2026-08-16 05:38:17",
+  "dry_run": false,
+  "pendientes_procesar": 1,
+  "emitidas": 0,
+  "sin_stock": 1,
+  "sin_cliente": 0,
+  "errores": 0,
+  "resumen": "0 emitidas | 1 sin stock | 0 sin cliente"
+}

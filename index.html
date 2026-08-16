@@ -342,6 +342,16 @@
 <div class="tab-content" id="tab-facturacion">
   <div class="kpi-row" id="kpiFact"></div>
 
+  <!-- ═══════ DIAGNÓSTICO FACTURACIÓN ═══════ -->
+  <div class="card full" id="cardDiagnostico" style="display:none; border-left: 4px solid var(--mm-gold);">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+      <h2>🩺 Diagnóstico — Última Ejecución <span id="diagFecha" style="font-size:.75em;color:var(--mm-dim);font-weight:400"></span></h2>
+      <span id="diagBadge" style="font-size:.75em;padding:4px 10px;border-radius:12px;font-weight:600"></span>
+    </div>
+    <div class="kpi-row" id="kpiDiag" style="margin-top:0;margin-bottom:8px;"></div>
+    <div id="diagDetalle" style="font-size:.82em;color:var(--mm-dim);max-height:200px;overflow-y:auto;"></div>
+  </div>
+
   <div class="grid" id="gridFact">
     <div class="card full" style="cursor:pointer;border:1px solid #c88a3d" onclick="window.open('https://johnnyartesano26.github.io/crear-factura/','_blank')">
       <h2>📝 Crear Factura — Programa Automático 🔗 <span style="font-size:.75em;color:var(--mm-dim);margin-left:8px">Click para abrir</span></h2>
@@ -427,6 +437,13 @@
     <div class="kpi"><div class="val blue">--</div><div class="lab">Barriles totales</div></div>
     <div class="kpi"><div class="val yellow">--</div><div class="lab">Ocupación tanques</div></div>
     <div class="kpi"><div class="val red">--</div><div class="lab">Alertas</div></div>
+  </div>
+
+  <!-- ═══ CONCILIACIÓN: Físico (Sheet) vs Facturado (Historial) ═══ -->
+  <div class="card full" id="cardConciliacion" style="display:none;border-left:4px solid #39d2c0;">
+    <h2>🧬 Conciliación — Físico (Sheet) vs Facturado (Historial) <span id="conciliacionFecha" style="font-size:.75em;color:var(--mm-dim);font-weight:400"></span></h2>
+    <div style="position:relative;height:340px"><canvas id="chartConciliacion"></canvas></div>
+    <div id="conciliacionDetalle" style="margin-top:10px;max-height:180px;overflow-y:auto;font-size:.82em;color:var(--mm-dim)"></div>
   </div>
 
   <div class="grid" id="gridInv">
@@ -669,6 +686,15 @@ function switchTab(name) {
 window.onload = async function() {
   try {
   document.getElementById('headerSub').textContent = 'Cargando datos...';
+
+  // ── Diagnóstico de facturación ──
+  fetch('data/resumen_facturacion.json')
+    .then(r => r.ok ? r.json() : null)
+    .then(renderDiagnostico)
+    .catch(() => {});
+
+  // ── Conciliación físico vs facturado ──
+  loadConciliacion('data/inventario_conciliado.json');
 
   // Timeout: si clientes tardan >12s, mostrar aviso
   const clientesTimeout = setTimeout(() => {
@@ -1983,6 +2009,108 @@ async function cargarHistorialNC() {
     `).join('');
   } catch {
     tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:20px;color:var(--mm-red)">⚠️ No se pudo conectar con el bridge</td></tr>';
+  }
+}
+
+// ═══════════════ DIAGNÓSTICO FACTURACIÓN ═══════════════
+async function renderDiagnostico(d) {
+  if (!d || !d.fecha) return;
+  const card = document.getElementById('cardDiagnostico');
+  card.style.display = 'block';
+
+  const emitidas = d.emitidas || 0;
+  const pendientes = d.pendientes_procesar || 0;
+  const sinStock = Number(d.sin_stock) || 0;
+  const sinCliente = Number(d.sin_cliente) || 0;
+  const errores = Number(d.errores) || 0;
+  const problemas = sinStock + sinCliente + errores;
+
+  document.getElementById('diagFecha').textContent = d.fecha + (d.dry_run ? ' (SIMULACIÓN)' : '');
+  const badge = document.getElementById('diagBadge');
+  if (problemas === 0 && emitidas > 0) {
+    badge.textContent = '✅ Todo OK';
+    badge.style.background = '#e8f5e9'; badge.style.color = '#2e7d32';
+  } else if (problemas > 0 && emitidas > 0) {
+    badge.textContent = '⚠️ Parcial';
+    badge.style.background = '#fff3e0'; badge.style.color = '#e65100';
+  } else if (emitidas === 0 && pendientes === 0) {
+    badge.textContent = '✓ Sin pendientes';
+    badge.style.background = '#e3f2fd'; badge.style.color = '#1565c0';
+  } else {
+    badge.textContent = '🔴 Falló';
+    badge.style.background = '#ffebee'; badge.style.color = '#c62828';
+  }
+
+  document.getElementById('kpiDiag').innerHTML = `
+    <div class="kpi"><div class="val green">${emitidas}</div><div class="lab">Facturas emitidas</div></div>
+    <div class="kpi"><div class="val cyan">${pendientes}</div><div class="lab">Pendientes detectadas</div></div>
+    <div class="kpi"><div class="val yellow">${sinStock}</div><div class="lab">Sin stock</div></div>
+    <div class="kpi"><div class="val blue">${sinCliente}</div><div class="lab">Sin cliente</div></div>
+    <div class="kpi"><div class="val red">${errores}</div><div class="lab">Errores API</div></div>
+  `;
+
+  let detalle = '';
+  if (emitidas === 0 && pendientes === 0) {
+    detalle = '<p style="color:#7a9e7a">✅ No hay facturas pendientes. Todo al día.</p>';
+  } else {
+    detalle = '<p style="margin-bottom:4px">✅ Emitidas: ' + emitidas + ' · ⛔ Sin stock: ' + sinStock + ' · ❓ Sin cliente: ' + sinCliente + ' · ❌ Errores: ' + errores + '</p>';
+    detalle += '<p style="color:#7a9e7a;font-size:.85em">El detalle por cliente se notifica por Telegram (privado).</p>';
+  }
+  document.getElementById('diagDetalle').innerHTML = detalle || '<p>Sin detalle adicional.</p>';
+}
+
+// ═══════════════ CONCILIACIÓN INVENTARIO ═══════════════
+let conciliacionChart = null;
+async function loadConciliacion(url) {
+  try {
+    const resp = await fetch(url);
+    if (!resp.ok) return;
+    const d = await resp.json();
+    const card = document.getElementById('cardConciliacion');
+    if (card) card.style.display = 'block';
+    document.getElementById('conciliacionFecha').textContent = d.fecha || '';
+
+    const estilos = Object.keys(d.neto || {});
+    const labels = estilos;
+    const fisicoBot = estilos.map(e => d.fisico[e]?.bot || 0);
+    const netoBot = estilos.map(e => d.neto[e]?.bot || 0);
+    const fisicoBarril = estilos.map(e => d.fisico[e]?.barril || 0);
+    const netoBarril = estilos.map(e => d.neto[e]?.barril || 0);
+    const fisicoFerm = estilos.map(e => d.fisico[e]?.litros || 0);
+    const netoFerm = estilos.map(e => d.neto[e]?.litros || 0);
+
+    if (typeof Chart !== 'undefined') {
+      const ctx = document.getElementById('chartConciliacion');
+      if (conciliacionChart) conciliacionChart.destroy();
+      conciliacionChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels,
+          datasets: [
+            { label: 'Físico · Botellas', data: fisicoBot, backgroundColor: '#c88a3d' },
+            { label: 'Neto · Botellas', data: netoBot, backgroundColor: '#39d2c0' },
+            { label: 'Físico · Barril (L)', data: fisicoBarril, backgroundColor: '#7a9e7a' },
+            { label: 'Neto · Barril (L)', data: netoBarril, backgroundColor: '#58a6ff' },
+            { label: 'Físico · Fermentador (L)', data: fisicoFerm, backgroundColor: '#c9685e' },
+            { label: 'Neto · Fermentador (L)', data: netoFerm, backgroundColor: '#e8a84c' },
+          ]
+        },
+        options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }
+      });
+    }
+
+    // Tabla de deducciones acumuladas por estilo
+    const ded = d.deducciones || {};
+    let html = '<table style="width:100%;border-collapse:collapse;font-size:.82em"><tr style="color:var(--mm-dim);text-align:left">'
+      + '<th>Estilo</th><th>Bot descontadas</th><th>Barril (L)</th><th>Fermentador (L)</th></tr>';
+    for (const e of estilos) {
+      const x = ded[e] || {};
+      html += `<tr><td>${e}</td><td>${x.bot || 0}</td><td>${x.barril || 0}</td><td>${x.litros || 0}</td></tr>`;
+    }
+    html += '</table>';
+    document.getElementById('conciliacionDetalle').innerHTML = html;
+  } catch (e) {
+    console.warn('Conciliación no disponible:', e);
   }
 }
 

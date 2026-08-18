@@ -1,72 +1,72 @@
 {
-  "generado": "2026-08-18T12:43:28.493110",
-  "fecha_lectura": "10/08/2026 14:15:24",
+  "generado": "2026-08-18T17:30:59.074130",
+  "fecha_lectura": "18/08/2026 15:29:29",
   "fermentadores": [
     {
       "nombre": "F1 Frankie",
       "estilo": "STOUT",
-      "litros": 120.0,
+      "litros": 23.0,
       "capacidad": 400,
-      "porcentaje": 30
+      "porcentaje": 6
     },
     {
       "nombre": "F2 Igor",
-      "estilo": "IRISH RED ALE",
-      "litros": 340.0,
+      "estilo": "VACIO",
+      "litros": 0.0,
       "capacidad": 1200,
-      "porcentaje": 28
+      "porcentaje": 0
     },
     {
       "nombre": "F3 Principito",
       "estilo": "GERMAN PILS",
-      "litros": 240.0,
+      "litros": 134.0,
       "capacidad": 400,
-      "porcentaje": 60
+      "porcentaje": 34
     },
     {
       "nombre": "F4 Gargantua",
-      "estilo": "VACIO",
-      "litros": 0.0,
+      "estilo": "IPA",
+      "litros": 605.0,
       "capacidad": 700,
-      "porcentaje": 0
+      "porcentaje": 86
     },
     {
       "nombre": "F5 Pantagruel",
       "estilo": "IPA",
-      "litros": 240.0,
+      "litros": 229.0,
       "capacidad": 800,
-      "porcentaje": 30
+      "porcentaje": 29
     },
     {
       "nombre": "F6 Potter",
       "estilo": "GOLDEN ALE",
-      "litros": 210.0,
+      "litros": 125.0,
       "capacidad": 1000,
-      "porcentaje": 21
+      "porcentaje": 12
     },
     {
       "nombre": "F7 HighLander",
       "estilo": "HIDROMIEL",
-      "litros": 310.0,
+      "litros": 316.0,
       "capacidad": 500,
-      "porcentaje": 62
+      "porcentaje": 63
     }
   ],
   "barriles": [
     {
       "codigo": "PTL01",
       "estilo": "GOLDEN ALE",
-      "litros": 6.3
+      "litros": 145.0
     },
     {
       "codigo": "PTL02",
       "estilo": "IRISH RED ALE",
-      "litros": 0
+      "litros": 62.1
     },
     {
       "codigo": "PTL03",
       "estilo": "APA",
-      "litros": 72.2
+      "litros": 48.9
     },
     {
       "codigo": "PTL04",
@@ -76,7 +76,7 @@
     {
       "codigo": "PTL05",
       "estilo": "STOUT",
-      "litros": 0
+      "litros": 22.3
     },
     {
       "codigo": "",
@@ -137,8 +137,8 @@
     }
   ],
   "totales": {
-    "litros_fermentando": 1538,
-    "litros_barril": 78,
-    "ventas_cop": 13342950
+    "litros_fermentando": 1710,
+    "litros_barril": 278,
+    "ventas_cop": 13762950
   }
 }

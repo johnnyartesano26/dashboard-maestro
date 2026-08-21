@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-20T16:36:50.370829",
+  "generado": "2026-08-21T17:04:15.763384",
   "fecha_lectura": "18/08/2026 15:29:29",
   "fermentadores": [
     {
@@ -56,27 +56,27 @@
     {
       "codigo": "PTL01",
       "estilo": "GOLDEN ALE",
-      "litros": 145.0
+      "litros": 144.0
     },
     {
       "codigo": "PTL02",
       "estilo": "IRISH RED ALE",
-      "litros": 110.0
+      "litros": 116.2
     },
     {
       "codigo": "PTL03",
       "estilo": "APA",
-      "litros": 48.9
+      "litros": 44.9
     },
     {
       "codigo": "PTL04",
       "estilo": "IPA",
-      "litros": 8.7
+      "litros": 60.9
     },
     {
       "codigo": "PTL05",
       "estilo": "STOUT",
-      "litros": 22.3
+      "litros": 11.1
     },
     {
       "codigo": "",
@@ -137,8 +137,8 @@
     }
   ],
   "totales": {
-    "litros_fermentando": 1766,
-    "litros_barril": 334,
-    "ventas_cop": 12195150
+    "litros_fermentando": 1809,
+    "litros_barril": 377,
+    "ventas_cop": 11617100
   }
 }

@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-08-21 19:51:16",
+  "fecha": "2026-08-21 20:00:30",
   "dry_run": false,
   "pendientes_procesar": 1,
   "emitidas": 1,
@@ -55,8 +55,8 @@
       "litros": 125.0
     },
     "IRISH RED ALE": {
-      "bot": 0.0,
-      "barril": 382.2,
+      "bot": 8.0,
+      "barril": 370.4,
       "litros": 0.0
     },
     "APA": {
@@ -100,11 +100,11 @@
       "litros_descontados_de_fermentador": 0.0
     },
     "IRISH RED ALE": {
-      "bot_pedidas": 29,
-      "bot_descontadas_de_stock": 8,
-      "bot_cubiertas_por_litros": 21,
-      "litros_pedidos": 0.0,
-      "litros_descontados_de_barril": 6.8,
+      "bot_pedidas": 0,
+      "bot_descontadas_de_stock": 0,
+      "bot_cubiertas_por_litros": 0,
+      "litros_pedidos": 18.6,
+      "litros_descontados_de_barril": 18.6,
       "litros_descontados_de_fermentador": 0.0
     },
     "APA": {

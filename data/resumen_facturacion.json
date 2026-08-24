@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-08-24 21:14:15",
+  "fecha": "2026-08-24 21:23:22",
   "dry_run": false,
   "pendientes_procesar": 1,
   "emitidas": 1,
@@ -55,7 +55,7 @@
       "litros": 0.0
     },
     "IRISH RED ALE": {
-      "bot": 103.0,
+      "bot": 115.0,
       "barril": 157.0,
       "litros": 730.0
     },
@@ -65,12 +65,12 @@
       "litros": 0.0
     },
     "IPA": {
-      "bot": 49.0,
+      "bot": 53.0,
       "barril": 199.0,
       "litros": 600.0
     },
     "STOUT": {
-      "bot": 141.0,
+      "bot": 149.0,
       "barril": 55.0,
       "litros": 0.0
     },
@@ -100,8 +100,8 @@
       "litros_descontados_de_fermentador": 0.0
     },
     "IRISH RED ALE": {
-      "bot_pedidas": 16,
-      "bot_descontadas_de_stock": 16,
+      "bot_pedidas": 4,
+      "bot_descontadas_de_stock": 4,
       "bot_cubiertas_por_litros": 0,
       "litros_pedidos": 0.0,
       "litros_descontados_de_barril": 0.0,
@@ -116,16 +116,16 @@
       "litros_descontados_de_fermentador": 0.0
     },
     "IPA": {
-      "bot_pedidas": 16,
-      "bot_descontadas_de_stock": 16,
+      "bot_pedidas": 12,
+      "bot_descontadas_de_stock": 12,
       "bot_cubiertas_por_litros": 0,
       "litros_pedidos": 0.0,
       "litros_descontados_de_barril": 0.0,
       "litros_descontados_de_fermentador": 0.0
     },
     "STOUT": {
-      "bot_pedidas": 16,
-      "bot_descontadas_de_stock": 16,
+      "bot_pedidas": 8,
+      "bot_descontadas_de_stock": 8,
       "bot_cubiertas_por_litros": 0,
       "litros_pedidos": 0.0,
       "litros_descontados_de_barril": 0.0,

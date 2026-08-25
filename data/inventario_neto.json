@@ -1,48 +1,48 @@
 {
-  "generado": "2026-08-23T19:25:24.717256",
-  "fecha_lectura": "18/08/2026 15:29:29",
+  "generado": "2026-08-25T12:07:49.027318",
+  "fecha_lectura": "24/08/2026 11:56:06",
   "fermentadores": [
     {
       "nombre": "F1 Frankie",
-      "estilo": "STOUT",
-      "litros": 23.0,
+      "estilo": "VACIO",
+      "litros": 0.0,
       "capacidad": 400,
-      "porcentaje": 6
+      "porcentaje": 0
     },
     {
       "nombre": "F2 Igor",
-      "estilo": "VACIO",
-      "litros": 0.0,
+      "estilo": "IRISH RED ALE",
+      "litros": 730.0,
       "capacidad": 1200,
-      "porcentaje": 0
+      "porcentaje": 61
     },
     {
       "nombre": "F3 Principito",
       "estilo": "GERMAN PILS",
-      "litros": 134.0,
+      "litros": 30.0,
       "capacidad": 400,
-      "porcentaje": 34
+      "porcentaje": 8
     },
     {
       "nombre": "F4 Gargantua",
       "estilo": "IPA",
-      "litros": 605.0,
+      "litros": 600.0,
       "capacidad": 700,
       "porcentaje": 86
     },
     {
       "nombre": "F5 Pantagruel",
-      "estilo": "IPA",
-      "litros": 229.0,
+      "estilo": "VACIO",
+      "litros": 0.0,
       "capacidad": 800,
-      "porcentaje": 29
+      "porcentaje": 0
     },
     {
       "nombre": "F6 Potter",
-      "estilo": "GOLDEN ALE",
-      "litros": 125.0,
+      "estilo": "VACIO",
+      "litros": 0.0,
       "capacidad": 1000,
-      "porcentaje": 12
+      "porcentaje": 0
     },
     {
       "nombre": "F7 HighLander",
@@ -56,27 +56,27 @@
     {
       "codigo": "PTL01",
       "estilo": "GOLDEN ALE",
-      "litros": 151.6
+      "litros": 66.6
     },
     {
       "codigo": "PTL02",
       "estilo": "IRISH RED ALE",
-      "litros": 114.5
+      "litros": 0
     },
     {
       "codigo": "PTL03",
       "estilo": "APA",
-      "litros": 49.2
+      "litros": 57.2
     },
     {
       "codigo": "PTL04",
       "estilo": "IPA",
-      "litros": 60.0
+      "litros": 71.7
     },
     {
       "codigo": "PTL05",
       "estilo": "STOUT",
-      "litros": 9.8
+      "litros": 0
     },
     {
       "codigo": "",
@@ -98,7 +98,7 @@
     {
       "codigo": "PTB01",
       "estilo": "GOLDEN ALE",
-      "cantidad": 1
+      "cantidad": 0
     },
     {
       "codigo": "PTB02",
@@ -137,8 +137,8 @@
     }
   ],
   "totales": {
-    "litros_fermentando": 1817,
-    "litros_barril": 385,
-    "ventas_cop": 11416100
+    "litros_fermentando": 1871,
+    "litros_barril": 195,
+    "ventas_cop": 12056100
   }
 }

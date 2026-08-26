@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-08-26 16:23:17",
+  "fecha": "2026-08-26 16:46:14",
   "fisico": {
     "GOLDEN ALE": {
       "bot": 184.0,
@@ -43,18 +43,23 @@
     }
   },
   "deducciones": {
+    "APA": {
+      "bot": 27.0,
+      "barril": 0.0,
+      "litros": 0.0
+    },
+    "GERMAN PILS": {
+      "bot": 0.0,
+      "barril": 0.0,
+      "litros": 0.0
+    },
     "GOLDEN ALE": {
       "bot": 39.0,
       "barril": 0.0,
       "litros": 0.0
     },
-    "IRISH RED ALE": {
-      "bot": 100.0,
-      "barril": 59.2,
-      "litros": 0.0
-    },
-    "APA": {
-      "bot": 27.0,
+    "HIDROMIEL": {
+      "bot": 0.0,
       "barril": 0.0,
       "litros": 0.0
     },
@@ -63,51 +68,26 @@
       "barril": 7.7,
       "litros": 0.0
     },
-    "STOUT": {
-      "bot": 164.0,
-      "barril": 0.0,
-      "litros": 0.0
-    },
-    "GERMAN PILS": {
-      "bot": 0.0,
-      "barril": 0.0,
-      "litros": 0.0
-    },
-    "HIDROMIEL": {
-      "bot": 0.0,
-      "barril": 0.0,
+    "IRISH RED ALE": {
+      "bot": 100.0,
+      "barril": 59.2,
       "litros": 0.0
     },
     "RED IPA": {
       "bot": 0.0,
       "barril": 0.0,
       "litros": 0.0
+    },
+    "STOUT": {
+      "bot": 164.0,
+      "barril": 0.0,
+      "litros": 0.0
     }
   },
   "neto": {
-    "GOLDEN ALE": {
-      "bot": 145.0,
-      "barril": 90.0,
-      "litros": 0.0
-    },
-    "IRISH RED ALE": {
-      "bot": 19.0,
-      "barril": 97.8,
-      "litros": 730.0
-    },
     "APA": {
       "bot": 21.0,
       "barril": 77.0,
-      "litros": 0.0
-    },
-    "IPA": {
-      "bot": -67.0,
-      "barril": 191.3,
-      "litros": 600.0
-    },
-    "STOUT": {
-      "bot": -7.0,
-      "barril": 55.0,
       "litros": 0.0
     },
     "GERMAN PILS": {
@@ -115,14 +95,34 @@
       "barril": 0.0,
       "litros": 30.0
     },
+    "GOLDEN ALE": {
+      "bot": 145.0,
+      "barril": 90.0,
+      "litros": 0.0
+    },
     "HIDROMIEL": {
       "bot": 0.0,
       "barril": 0.0,
       "litros": 316.0
     },
+    "IPA": {
+      "bot": -67.0,
+      "barril": 191.3,
+      "litros": 600.0
+    },
+    "IRISH RED ALE": {
+      "bot": 19.0,
+      "barril": 97.8,
+      "litros": 730.0
+    },
     "RED IPA": {
       "bot": 0.0,
       "barril": 0.0,
+      "litros": 0.0
+    },
+    "STOUT": {
+      "bot": -7.0,
+      "barril": 55.0,
       "litros": 0.0
     }
   }

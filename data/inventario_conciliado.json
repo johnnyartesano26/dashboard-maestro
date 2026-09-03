@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-09-03 23:10:51",
+  "fecha": "2026-09-03 23:26:28",
   "fisico": {
     "GOLDEN ALE": {
       "bot": 162.0,
@@ -44,7 +44,7 @@
   },
   "deducciones": {
     "APA": {
-      "bot": 101.0,
+      "bot": 125.0,
       "barril": 0.0,
       "litros": 0.0
     },
@@ -54,7 +54,7 @@
       "litros": 0.0
     },
     "GOLDEN ALE": {
-      "bot": 124.0,
+      "bot": 148.0,
       "barril": 5.0,
       "litros": 0.0
     },
@@ -69,7 +69,7 @@
       "litros": 0.0
     },
     "IRISH RED ALE": {
-      "bot": 232.0,
+      "bot": 256.0,
       "barril": 87.80000000000001,
       "litros": 0.0
     },
@@ -86,7 +86,7 @@
   },
   "neto": {
     "APA": {
-      "bot": -24.0,
+      "bot": -48.0,
       "barril": 16.0,
       "litros": 0.0
     },
@@ -96,7 +96,7 @@
       "litros": 0.0
     },
     "GOLDEN ALE": {
-      "bot": 38.0,
+      "bot": 14.0,
       "barril": 85.0,
       "litros": 690.0
     },
@@ -111,7 +111,7 @@
       "litros": 373.0
     },
     "IRISH RED ALE": {
-      "bot": -149.0,
+      "bot": -173.0,
       "barril": 62.2,
       "litros": 675.0
     },

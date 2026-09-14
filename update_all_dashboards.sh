@@ -43,21 +43,11 @@ else
     echo "  ❌ Error en update_bar_dashboard.py" >> $LOG
 fi
 
-# ── 2. Dashboard Maestro ──
+# ── 2. Dashboard Maestro (catalogo.json) ──
+# Ya no se actualiza aquí: lo hace el workflow GitHub Actions "actualizar-diario.yml".
+# Solo dejamos la ruta para el informe de Telegram.
 D2=/mnt/c/Users/USUARIO/dashboard-maestro
-echo "[$(date)] Paso 2: Dashboard Maestro ($D2)" >> $LOG
-cd "$D2"
-if python3 update_catalogo_maestro.py >> $LOG 2>&1; then
-    if ! git diff --quiet catalogo.json; then
-        git add catalogo.json update_catalogo_maestro.py update_all_dashboards.sh
-        git commit -m "Auto: $(date '+%Y-%m-%d %H:%M')" >> $LOG 2>&1
-        git_push "$D2" "johnnyartesano26/dashboard-maestro"
-    else
-        echo "  Sin cambios" >> $LOG
-    fi
-else
-    echo "  ❌ Error en update_catalogo_maestro.py" >> $LOG
-fi
+echo "[$(date)] Paso 2: Dashboard Maestro — actualizado por GitHub Actions" >> $LOG
 
 # ── 3. Informe Telegram ──
 echo "[$(date)] Paso 3: Enviando informe..." >> $LOG

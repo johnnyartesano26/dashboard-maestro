@@ -20,6 +20,7 @@ git_push() {
     # $1 = repo dir, $2 = repo path (owner/repo)
     local dir="$1" repo="$2"
     git -C "$dir" remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${repo}.git"
+    git -C "$dir" pull --rebase origin main >> $LOG 2>&1 || { echo "  ⚠️ Pull/rebase falló" >> $LOG; git -C "$dir" rebase --abort >> $LOG 2>&1 || true; }
     git -C "$dir" push origin main >> $LOG 2>&1 && echo "  ✅ Push OK" >> $LOG || echo "  ⚠️ Push falló" >> $LOG
     git -C "$dir" remote set-url origin "https://github.com/${repo}.git"
 }

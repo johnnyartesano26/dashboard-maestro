@@ -30,6 +30,9 @@ done
 # Asegurar que el remote use SSH (HTTPS token puede expirar)
 git -C "$REPO_DIR" remote set-url origin git@github.com:johnnyartesano26/dashboard-maestro.git 2>>$LOG
 
+# Sincronizar con origin antes de generar datos (evita historiales divergentes)
+git -C "$REPO_DIR" pull --rebase origin main >> $LOG 2>&1 || { echo "[$(date)] ⚠️ Pull/rebase falló" >> $LOG; git -C "$REPO_DIR" rebase --abort >> $LOG 2>&1 || true; }
+
 # Backup del JSON anterior
 cp "$REPO_DIR/data/inventario_neto.json" /tmp/inventario_neto_backup.json 2>/dev/null || true
 

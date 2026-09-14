@@ -1,6 +1,6 @@
 {
   "proyecto": "Madre Monte — Catálogo de Datos",
-  "actualizado": "2026-08-17",
+  "actualizado": "2026-09-14",
   "periodos": [
     {
       "mes": "Noviembre 2025",
@@ -166,7 +166,10 @@
         "crecimiento": -30.5,
         "meta_mes": 24000000
       },
-      "inventario": null
+      "inventario": null,
+      "facturacion": {
+        "archivo": "data/facturas_2026-08.json"
+      }
     }
   ],
   "cuentas_bancarias": [

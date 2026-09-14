@@ -1,9 +1,9 @@
 {
-  "fecha": "2026-07-28",
-  "total": 394,
-  "monto": 44823838,
-  "drafts": 10,
-  "drafts_monto": 426245,
+  "fecha": "2026-09-14",
+  "total": 385,
+  "monto": 44418093,
+  "drafts": 1,
+  "drafts_monto": 20500,
   "facturas": [
     {
       "id": "3252",
@@ -671,13 +671,6 @@
       "fecha": "2026-04-22"
     },
     {
-      "id": "3157",
-      "cliente": "Johnny Anderle Guerrero Bucheli",
-      "total": 20500,
-      "status": "draft",
-      "fecha": "2026-04-22"
-    },
-    {
       "id": "3156",
       "cliente": "INVERSIONES BISONTALAS S.A.S.",
       "total": 2218826,
@@ -1245,13 +1238,6 @@
       "fecha": "2026-04-18"
     },
     {
-      "id": "3133",
-      "cliente": "Johnny Anderle Guerrero Bucheli",
-      "total": 100000,
-      "status": "draft",
-      "fecha": "2026-04-17"
-    },
-    {
       "id": "3074",
       "cliente": "Consumidor Final",
       "total": 35000,
@@ -1357,13 +1343,6 @@
       "fecha": "2026-04-17"
     },
     {
-      "id": "3059",
-      "cliente": "Johnny Anderle Guerrero Bucheli",
-      "total": 100000,
-      "status": "draft",
-      "fecha": "2026-04-17"
-    },
-    {
       "id": "3058",
       "cliente": "Consumidor Final",
       "total": 20000,
@@ -1371,37 +1350,9 @@
       "fecha": "2026-04-17"
     },
     {
-      "id": "3057",
-      "cliente": "Johnny Anderle Guerrero Bucheli",
-      "total": 20500,
-      "status": "draft",
-      "fecha": "2026-04-17"
-    },
-    {
       "id": "3056",
       "cliente": "Johnny Anderle Guerrero Bucheli",
       "total": 20500,
-      "status": "draft",
-      "fecha": "2026-04-17"
-    },
-    {
-      "id": "3055",
-      "cliente": "Johnny Anderle Guerrero Bucheli",
-      "total": 35815,
-      "status": "draft",
-      "fecha": "2026-04-17"
-    },
-    {
-      "id": "3054",
-      "cliente": "Johnny Anderle Guerrero Bucheli",
-      "total": 35815,
-      "status": "draft",
-      "fecha": "2026-04-17"
-    },
-    {
-      "id": "3053",
-      "cliente": "Juliana Cardona Cardona",
-      "total": 35815,
       "status": "draft",
       "fecha": "2026-04-17"
     },
@@ -1522,13 +1473,6 @@
       "cliente": "Consumidor Final",
       "total": 18000,
       "status": "closed",
-      "fecha": "2026-04-16"
-    },
-    {
-      "id": "3035",
-      "cliente": "CERVECERIA MADRE MONTE S.A.S.",
-      "total": 35185,
-      "status": "draft",
       "fecha": "2026-04-16"
     },
     {
@@ -2384,13 +2328,6 @@
       "total": 18000,
       "status": "closed",
       "fecha": "2026-04-05"
-    },
-    {
-      "id": "3802",
-      "cliente": "Juliana Cardona Cardona",
-      "total": 22115,
-      "status": "draft",
-      "fecha": "2026-04-04"
     },
     {
       "id": "2912",

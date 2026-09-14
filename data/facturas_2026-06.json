@@ -1,9 +1,9 @@
 {
-  "fecha": "2026-07-28",
-  "total": 352,
-  "monto": 53328666,
-  "drafts": 19,
-  "drafts_monto": 7813596,
+  "fecha": "2026-09-14",
+  "total": 337,
+  "monto": 51403562,
+  "drafts": 4,
+  "drafts_monto": 5888492,
   "facturas": [
     {
       "id": "3975",
@@ -499,7 +499,7 @@
       "id": "3905",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 1243082,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-06-26"
     },
     {
@@ -674,14 +674,7 @@
       "id": "3880",
       "cliente": "Azucena (HOUSE OF DEMONS) Rallon Benjumea",
       "total": 267040,
-      "status": "open",
-      "fecha": "2026-06-24"
-    },
-    {
-      "id": "3879",
-      "cliente": "Martin La Vendimia Emilio Jaramillo Marín",
-      "total": 511800,
-      "status": "draft",
+      "status": "closed",
       "fecha": "2026-06-24"
     },
     {
@@ -926,21 +919,21 @@
       "id": "3845",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 1243082,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-06-19"
     },
     {
       "id": "3844",
       "cliente": "CECILIA ALICIA BRAVO DE NOHAVA",
       "total": 161130,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-06-19"
     },
     {
       "id": "3843",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 621541,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-06-19"
     },
     {
@@ -1210,20 +1203,6 @@
       "fecha": "2026-06-14"
     },
     {
-      "id": "3804",
-      "cliente": "Johnny Anderle Guerrero Bucheli",
-      "total": 22115,
-      "status": "draft",
-      "fecha": "2026-06-14"
-    },
-    {
-      "id": "3803",
-      "cliente": "Johnny Anderle Guerrero Bucheli",
-      "total": 22115,
-      "status": "draft",
-      "fecha": "2026-06-14"
-    },
-    {
       "id": "3801",
       "cliente": "Consumidor Final",
       "total": 189000,
@@ -1329,17 +1308,10 @@
       "fecha": "2026-06-13"
     },
     {
-      "id": "3786",
-      "cliente": "CECILIA ALICIA BRAVO DE NOHAVA",
-      "total": 161130,
-      "status": "draft",
-      "fecha": "2026-06-13"
-    },
-    {
       "id": "3785",
       "cliente": "CECILIA ALICIA BRAVO DE NOHAVA",
       "total": 161130,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-06-13"
     },
     {
@@ -1521,14 +1493,7 @@
       "id": "3759",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 623541,
-      "status": "open",
-      "fecha": "2026-06-11"
-    },
-    {
-      "id": "3758",
-      "cliente": "JUAN CARLOS ORREGO ZAPATA",
-      "total": 611553,
-      "status": "draft",
+      "status": "closed",
       "fecha": "2026-06-11"
     },
     {
@@ -1763,13 +1728,6 @@
       "fecha": "2026-06-09"
     },
     {
-      "id": "3723",
-      "cliente": "Johnny Anderle Guerrero Bucheli",
-      "total": 397356,
-      "status": "draft",
-      "fecha": "2026-06-09"
-    },
-    {
       "id": "3722",
       "cliente": "Hans Sucerquia",
       "total": 634180,
@@ -1787,41 +1745,20 @@
       "id": "3720",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 623541,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-06-09"
     },
     {
       "id": "3719",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 623541,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-06-09"
     },
     {
       "id": "3718",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 300783,
-      "status": "draft",
-      "fecha": "2026-06-09"
-    },
-    {
-      "id": "3717",
-      "cliente": "Johnny Anderle Guerrero Bucheli",
-      "total": 22115,
-      "status": "draft",
-      "fecha": "2026-06-09"
-    },
-    {
-      "id": "3716",
-      "cliente": "Johnny Anderle Guerrero Bucheli",
-      "total": 22115,
-      "status": "draft",
-      "fecha": "2026-06-09"
-    },
-    {
-      "id": "3715",
-      "cliente": "Juliana Cardona Cardona",
-      "total": 22115,
       "status": "draft",
       "fecha": "2026-06-09"
     },
@@ -1991,48 +1928,6 @@
       "cliente": "Consumidor Final",
       "total": 386000,
       "status": "closed",
-      "fecha": "2026-06-06"
-    },
-    {
-      "id": "3690",
-      "cliente": "Johnny Anderle Guerrero Bucheli",
-      "total": 22115,
-      "status": "draft",
-      "fecha": "2026-06-06"
-    },
-    {
-      "id": "3689",
-      "cliente": "Johnny Anderle Guerrero Bucheli",
-      "total": 22115,
-      "status": "draft",
-      "fecha": "2026-06-06"
-    },
-    {
-      "id": "3688",
-      "cliente": "Juliana Cardona Cardona",
-      "total": 22115,
-      "status": "draft",
-      "fecha": "2026-06-06"
-    },
-    {
-      "id": "3687",
-      "cliente": "Johnny Anderle Guerrero Bucheli",
-      "total": 22115,
-      "status": "draft",
-      "fecha": "2026-06-06"
-    },
-    {
-      "id": "3686",
-      "cliente": "Johnny Anderle Guerrero Bucheli",
-      "total": 22115,
-      "status": "draft",
-      "fecha": "2026-06-06"
-    },
-    {
-      "id": "3685",
-      "cliente": "Juliana Cardona Cardona",
-      "total": 22115,
-      "status": "draft",
       "fecha": "2026-06-06"
     },
     {

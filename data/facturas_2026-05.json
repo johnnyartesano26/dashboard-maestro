@@ -1,17 +1,10 @@
 {
-  "fecha": "2026-07-28",
-  "total": 370,
-  "monto": 52588230,
-  "drafts": 9,
-  "drafts_monto": 1367685,
+  "fecha": "2026-09-14",
+  "total": 364,
+  "monto": 51296275,
+  "drafts": 3,
+  "drafts_monto": 75730,
   "facturas": [
-    {
-      "id": "3622",
-      "cliente": "Juliana Cardona Cardona",
-      "total": 22115,
-      "status": "draft",
-      "fecha": "2026-05-31"
-    },
     {
       "id": "3621",
       "cliente": "Consumidor Final",
@@ -198,7 +191,7 @@
       "id": "3595",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 626541,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-05-29"
     },
     {
@@ -405,13 +398,6 @@
       "fecha": "2026-05-27"
     },
     {
-      "id": "3565",
-      "cliente": "Juliana Cardona Cardona",
-      "total": 1165615,
-      "status": "draft",
-      "fecha": "2026-05-27"
-    },
-    {
       "id": "3564",
       "cliente": "Consumidor Final",
       "total": 48000,
@@ -552,27 +538,6 @@
       "fecha": "2026-05-26"
     },
     {
-      "id": "3544",
-      "cliente": "JUAN DIEGO IBATA MADRIGAL",
-      "total": 20230,
-      "status": "draft",
-      "fecha": "2026-05-26"
-    },
-    {
-      "id": "3543",
-      "cliente": "Johnny Anderle Guerrero Bucheli",
-      "total": 43535,
-      "status": "draft",
-      "fecha": "2026-05-26"
-    },
-    {
-      "id": "3542",
-      "cliente": "Jessica Gonzales Perez",
-      "total": 20230,
-      "status": "draft",
-      "fecha": "2026-05-26"
-    },
-    {
       "id": "3541",
       "cliente": "Leonardo Gaitan Zuluaga",
       "total": 267040,
@@ -597,7 +562,7 @@
       "id": "3538",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 641541,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-05-25"
     },
     {
@@ -884,7 +849,7 @@
       "id": "3497",
       "cliente": "Caja de Compensación Familiar de Antioquia - Comfama",
       "total": 10081680,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-05-22"
     },
     {
@@ -962,13 +927,6 @@
       "cliente": "Leonardo Gaitan Zuluaga",
       "total": 133760,
       "status": "closed",
-      "fecha": "2026-05-20"
-    },
-    {
-      "id": "3485",
-      "cliente": "Juliana Cardona Cardona",
-      "total": 20230,
-      "status": "draft",
       "fecha": "2026-05-20"
     },
     {
@@ -1675,7 +1633,7 @@
       "id": "3384",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 1247082,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-05-11"
     },
     {

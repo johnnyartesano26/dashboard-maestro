@@ -1,15 +1,456 @@
 {
-  "fecha": "2026-07-28",
-  "total": 285,
-  "monto": 34153421,
-  "drafts": 1,
-  "drafts_monto": 10115,
+  "fecha": "2026-09-14",
+  "total": 347,
+  "monto": 44506381,
+  "drafts": 2,
+  "drafts_monto": 1754882,
   "facturas": [
+    {
+      "id": "4323",
+      "cliente": "Consumidor Final",
+      "total": 120000,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4322",
+      "cliente": "Consumidor Final",
+      "total": 232000,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4321",
+      "cliente": "Consumidor Final",
+      "total": 63000,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4320",
+      "cliente": "Consumidor Final",
+      "total": 488000,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4319",
+      "cliente": "Consumidor Final",
+      "total": 115000,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4318",
+      "cliente": "Consumidor Final",
+      "total": 119000,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4317",
+      "cliente": "Consumidor Final",
+      "total": 154000,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4316",
+      "cliente": "Consumidor Final",
+      "total": 36000,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4315",
+      "cliente": "Consumidor Final",
+      "total": 60000,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4314",
+      "cliente": "PINEA S.A.S",
+      "total": 260710,
+      "status": "open",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4313",
+      "cliente": "MONKEY BURGER ENVIGADO",
+      "total": 986040,
+      "status": "open",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4312",
+      "cliente": "CAROLINA CROVO SIERRA",
+      "total": 264660,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4311",
+      "cliente": "OTRABANDA PARRILLA Y RANCHO",
+      "total": 263090,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4310",
+      "cliente": "JARDIN CERVECERO MED SAS.",
+      "total": 262900,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4309",
+      "cliente": "Consumidor Final",
+      "total": 38000,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4308",
+      "cliente": "CEMIEL SAS (Papi Tienda)",
+      "total": 269040,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4307",
+      "cliente": "PATRICIA MELO GONZALEZ",
+      "total": 119100,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4306",
+      "cliente": "JOSE DANIEL PIEDRAHITA BETANCUR",
+      "total": 259900,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4305",
+      "cliente": "Andrea Alvarez Ordoñez",
+      "total": 113530,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4304",
+      "cliente": "Leonardo Gaitan Zuluaga",
+      "total": 111150,
+      "status": "closed",
+      "fecha": "2026-07-31"
+    },
+    {
+      "id": "4303",
+      "cliente": "Consumidor Final",
+      "total": 136000,
+      "status": "closed",
+      "fecha": "2026-07-30"
+    },
+    {
+      "id": "4302",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-07-30"
+    },
+    {
+      "id": "4301",
+      "cliente": "Consumidor Final",
+      "total": 21000,
+      "status": "closed",
+      "fecha": "2026-07-30"
+    },
+    {
+      "id": "4300",
+      "cliente": "Consumidor Final",
+      "total": 20000,
+      "status": "closed",
+      "fecha": "2026-07-30"
+    },
+    {
+      "id": "4299",
+      "cliente": "Consumidor Final",
+      "total": 114000,
+      "status": "closed",
+      "fecha": "2026-07-30"
+    },
+    {
+      "id": "4298",
+      "cliente": "Consumidor Final",
+      "total": 50000,
+      "status": "closed",
+      "fecha": "2026-07-30"
+    },
+    {
+      "id": "4297",
+      "cliente": "Consumidor Final",
+      "total": 53000,
+      "status": "closed",
+      "fecha": "2026-07-30"
+    },
+    {
+      "id": "4296",
+      "cliente": "Consumidor Final",
+      "total": 31000,
+      "status": "closed",
+      "fecha": "2026-07-30"
+    },
+    {
+      "id": "4295",
+      "cliente": "Consumidor Final",
+      "total": 219000,
+      "status": "closed",
+      "fecha": "2026-07-30"
+    },
+    {
+      "id": "4294",
+      "cliente": "Consumidor Final",
+      "total": 128000,
+      "status": "closed",
+      "fecha": "2026-07-30"
+    },
+    {
+      "id": "4293",
+      "cliente": "Consumidor Final",
+      "total": 169000,
+      "status": "closed",
+      "fecha": "2026-07-30"
+    },
+    {
+      "id": "4292",
+      "cliente": "Consumidor Final",
+      "total": 38000,
+      "status": "closed",
+      "fecha": "2026-07-30"
+    },
+    {
+      "id": "4291",
+      "cliente": "Martin La Vendimia Emilio Jaramillo Marín",
+      "total": 511800,
+      "status": "draft",
+      "fecha": "2026-07-30"
+    },
+    {
+      "id": "4290",
+      "cliente": "Martin La Vendimia Emilio Jaramillo Marín",
+      "total": 430880,
+      "status": "open",
+      "fecha": "2026-07-30"
+    },
+    {
+      "id": "4289",
+      "cliente": "Consumidor Final",
+      "total": 71000,
+      "status": "closed",
+      "fecha": "2026-07-29"
+    },
+    {
+      "id": "4288",
+      "cliente": "Consumidor Final",
+      "total": 224000,
+      "status": "closed",
+      "fecha": "2026-07-29"
+    },
+    {
+      "id": "4287",
+      "cliente": "Consumidor Final",
+      "total": 130000,
+      "status": "closed",
+      "fecha": "2026-07-29"
+    },
+    {
+      "id": "4286",
+      "cliente": "Consumidor Final",
+      "total": 82000,
+      "status": "closed",
+      "fecha": "2026-07-29"
+    },
+    {
+      "id": "4285",
+      "cliente": "Consumidor Final",
+      "total": 152000,
+      "status": "closed",
+      "fecha": "2026-07-29"
+    },
+    {
+      "id": "4284",
+      "cliente": "Consumidor Final",
+      "total": 21000,
+      "status": "closed",
+      "fecha": "2026-07-29"
+    },
+    {
+      "id": "4283",
+      "cliente": "Consumidor Final",
+      "total": 73000,
+      "status": "closed",
+      "fecha": "2026-07-29"
+    },
+    {
+      "id": "4282",
+      "cliente": "Consumidor Final",
+      "total": 28000,
+      "status": "closed",
+      "fecha": "2026-07-29"
+    },
+    {
+      "id": "4281",
+      "cliente": "Consumidor Final",
+      "total": 45000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4280",
+      "cliente": "Consumidor Final",
+      "total": 10000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4279",
+      "cliente": "Consumidor Final",
+      "total": 25000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4278",
+      "cliente": "Consumidor Final",
+      "total": 40000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4277",
+      "cliente": "Consumidor Final",
+      "total": 8000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4276",
+      "cliente": "Consumidor Final",
+      "total": 7000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4275",
+      "cliente": "Consumidor Final",
+      "total": 26000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4274",
+      "cliente": "Consumidor Final",
+      "total": 68000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4273",
+      "cliente": "Consumidor Final",
+      "total": 245111,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4272",
+      "cliente": "Consumidor Final",
+      "total": 100000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4271",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4270",
+      "cliente": "Consumidor Final",
+      "total": 25000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4269",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4268",
+      "cliente": "Consumidor Final",
+      "total": 31000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4267",
+      "cliente": "Consumidor Final",
+      "total": 26000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4266",
+      "cliente": "Consumidor Final",
+      "total": 25000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4265",
+      "cliente": "Consumidor Final",
+      "total": 19000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4264",
+      "cliente": "Consumidor Final",
+      "total": 77000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4263",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4262",
+      "cliente": "JUAN CARLOS ORREGO ZAPATA",
+      "total": 1243082,
+      "status": "closed",
+      "fecha": "2026-07-28"
+    },
+    {
+      "id": "4261",
+      "cliente": "JUAN CARLOS ORREGO ZAPATA",
+      "total": 1243082,
+      "status": "draft",
+      "fecha": "2026-07-28"
+    },
     {
       "id": "4260",
       "cliente": "Leonardo Gaitan Zuluaga",
       "total": 168270,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-07-27"
     },
     {
@@ -268,21 +709,21 @@
       "id": "4223",
       "cliente": "DANIEL SCHMUTTE",
       "total": 649460,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-07-24"
     },
     {
       "id": "4222",
       "cliente": "MAURICIO GEHOVA JARAMILLO VELASQUEZ",
       "total": 254760,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-07-24"
     },
     {
       "id": "4221",
       "cliente": "SEVEN MINIMERCADO",
       "total": 267040,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-07-24"
     },
     {
@@ -552,13 +993,6 @@
       "fecha": "2026-07-21"
     },
     {
-      "id": "4182",
-      "cliente": "Johnny Anderle Guerrero Bucheli",
-      "total": 10115,
-      "status": "draft",
-      "fecha": "2026-07-21"
-    },
-    {
       "id": "4181",
       "cliente": "Consumidor Final",
       "total": 45000,
@@ -702,14 +1136,14 @@
       "id": "4161",
       "cliente": "CHARCUTERIA CERDEÑA",
       "total": 135660,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-07-18"
     },
     {
       "id": "4160",
       "cliente": "MAURICIO GEHOVA JARAMILLO VELASQUEZ",
       "total": 283320,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-07-18"
     },
     {
@@ -800,28 +1234,28 @@
       "id": "4147",
       "cliente": "DANIEL SCHMUTTE",
       "total": 391420,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-07-17"
     },
     {
       "id": "4146",
       "cliente": "Leonardo Gaitan Zuluaga",
       "total": 292055,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-07-17"
     },
     {
       "id": "4145",
       "cliente": "Hans Sucerquia",
       "total": 649460,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-07-17"
     },
     {
       "id": "4144",
       "cliente": "PINEA S.A.S",
       "total": 283320,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-07-17"
     },
     {
@@ -933,7 +1367,7 @@
       "id": "4128",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 1243082,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-07-15"
     },
     {
@@ -1052,7 +1486,7 @@
       "id": "4111",
       "cliente": "Hans Sucerquia",
       "total": 527080,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-07-14"
     },
     {
@@ -1199,7 +1633,7 @@
       "id": "4090",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 1243082,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-07-10"
     },
     {
@@ -1255,7 +1689,7 @@
       "id": "4082",
       "cliente": "Hans Sucerquia",
       "total": 391420,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-07-09"
     },
     {
@@ -1269,7 +1703,7 @@
       "id": "4080",
       "cliente": "CECILIA ALICIA BRAVO DE NOHAVA",
       "total": 267040,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-07-09"
     },
     {
@@ -1934,7 +2368,7 @@
       "id": "3985",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 1256721,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-07-02"
     },
     {

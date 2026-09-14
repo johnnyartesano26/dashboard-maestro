@@ -22,16 +22,30 @@ MES_ES = {
     "September":"Septiembre","October":"Octubre","November":"Noviembre","December":"Diciembre"
 }
 
+MES_NUM = {
+    "Enero":"01","Febrero":"02","Marzo":"03","Abril":"04",
+    "Mayo":"05","Junio":"06","Julio":"07","Agosto":"08",
+    "Septiembre":"09","Octubre":"10","Noviembre":"11","Diciembre":"12"
+}
+
 def fetch_all():
     """Descarga todas las facturas pagina por pagina."""
     facturas = []
     start = 0
     page = 0
     while True:
-        r = requests.get(BASE, auth=AUTH, params={
-            'start': start, 'limit': LIMIT,
-            'order_direction': 'DESC', 'order_field': 'date'
-        })
+        r = None
+        for intento in range(3):
+            try:
+                r = requests.get(BASE, auth=AUTH, params={
+                    'start': start, 'limit': LIMIT,
+                    'order_direction': 'DESC', 'order_field': 'date'
+                }, timeout=30)
+                break
+            except requests.exceptions.RequestException:
+                if intento == 2:
+                    raise
+                time.sleep(5)
         data = r.json()
         items = data if isinstance(data, list) else data.get('data', [])
         if not items:
@@ -85,18 +99,24 @@ def actualizar_catalogo(exportados):
     with open(CATALOGO_PATH, "r", encoding="utf-8") as f:
         catalogo = json.load(f)
     for p in catalogo["periodos"]:
-        anio, mes = None, None
-        for es, num in MES_ES.items():
-            if p["mes"].startswith(es):
-                partes = p["mes"].split()
-                anio = partes[-1]
-                mes = datetime.strptime(es, "%B").strftime("%m")
-                break
-        if anio and mes:
-            key = f"{anio}-{mes}"
-            if key in exportados:
-                p["facturacion"] = {"archivo": exportados[key]}
-                print(f"  📋 catalogo: {p['mes']} → {exportados[key]}", flush=True)
+        partes = p["mes"].split()
+        if len(partes) < 2:
+            continue
+        nombre_mes = partes[0]
+        anio = partes[-1]
+        mes = MES_NUM.get(nombre_mes)
+        if not anio or not mes:
+            continue
+        key = f"{anio}-{mes}"
+        if key not in exportados:
+            continue
+        # No sobreescribir facturación "rica" (con campos extra como total_facturas)
+        fact_actual = p.get("facturacion")
+        if fact_actual is not None and set(fact_actual.keys()) - {"archivo"}:
+            print(f"  ↪ {p['mes']}: facturación con campos extra, se preserva", flush=True)
+            continue
+        p["facturacion"] = {"archivo": exportados[key]}
+        print(f"  📋 catalogo: {p['mes']} → {exportados[key]}", flush=True)
     catalogo["actualizado"] = datetime.now().strftime("%Y-%m-%d")
     with open(CATALOGO_PATH, "w", encoding="utf-8") as f:
         json.dump(catalogo, f, ensure_ascii=False, indent=2)

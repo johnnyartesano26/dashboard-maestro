@@ -1,34 +1,34 @@
 {
-  "generado": "2026-08-28T13:17:29.274615",
-  "fecha_lectura": "24/08/2026 11:56:06",
+  "generado": "2026-09-14T07:52:20.255010",
+  "fecha_lectura": "7/09/2026 14:33:53",
   "fermentadores": [
     {
       "nombre": "F1 Frankie",
-      "estilo": "VACIO",
-      "litros": 0.0,
+      "estilo": "STOUT",
+      "litros": 337.0,
       "capacidad": 400,
-      "porcentaje": 0
+      "porcentaje": 84
     },
     {
       "nombre": "F2 Igor",
       "estilo": "IRISH RED ALE",
-      "litros": 730.0,
+      "litros": 655.0,
       "capacidad": 1200,
-      "porcentaje": 61
+      "porcentaje": 55
     },
     {
       "nombre": "F3 Principito",
-      "estilo": "GERMAN PILS",
-      "litros": 30.0,
+      "estilo": "APA",
+      "litros": 320.0,
       "capacidad": 400,
-      "porcentaje": 8
+      "porcentaje": 80
     },
     {
       "nombre": "F4 Gargantua",
       "estilo": "IPA",
-      "litros": 600.0,
+      "litros": 330.0,
       "capacidad": 700,
-      "porcentaje": 86
+      "porcentaje": 47
     },
     {
       "nombre": "F5 Pantagruel",
@@ -39,10 +39,10 @@
     },
     {
       "nombre": "F6 Potter",
-      "estilo": "VACIO",
-      "litros": 0.0,
+      "estilo": "GOLDEN ALE",
+      "litros": 683.0,
       "capacidad": 1000,
-      "porcentaje": 0
+      "porcentaje": 68
     },
     {
       "nombre": "F7 HighLander",
@@ -56,7 +56,7 @@
     {
       "codigo": "PTL01",
       "estilo": "GOLDEN ALE",
-      "litros": 65.2
+      "litros": 0
     },
     {
       "codigo": "PTL02",
@@ -66,12 +66,12 @@
     {
       "codigo": "PTL03",
       "estilo": "APA",
-      "litros": 55.5
+      "litros": 0
     },
     {
       "codigo": "PTL04",
       "estilo": "IPA",
-      "litros": 89.9
+      "litros": 0
     },
     {
       "codigo": "PTL05",
@@ -137,8 +137,8 @@
     }
   ],
   "totales": {
-    "litros_fermentando": 1886,
-    "litros_barril": 210,
-    "ventas_cop": 9904050
+    "litros_fermentando": 2641,
+    "litros_barril": 0,
+    "ventas_cop": 11586500
   }
 }

@@ -11,7 +11,7 @@ DATA_DIR = os.path.join(SCRIPT_DIR, "data")
 CATALOGO_PATH = os.path.join(SCRIPT_DIR, "catalogo.json")
 os.makedirs(DATA_DIR, exist_ok=True)
 
-AUTH = (os.environ.get("ALEGRA_EMAIL", ""), os.environ.get("ALEGRA_API_KEY", ""))
+AUTH = (os.environ.get("ALEGRA_EMAIL", ""), os.environ.get("ALEGRA_TOKEN", os.environ.get("ALEGRA_API_KEY", "")))
 BASE = 'https://api.alegra.com/api/v1/invoices'
 LIMIT = 30
 SLEEP = 2.0  # 30 llamadas/min, bien dentro del limite de 60

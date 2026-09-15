@@ -41,6 +41,7 @@ def fetch_all():
                     'start': start, 'limit': LIMIT,
                     'order_direction': 'DESC', 'order_field': 'date'
                 }, timeout=30)
+                r.raise_for_status()
                 break
             except requests.exceptions.RequestException:
                 if intento == 2:
@@ -124,6 +125,9 @@ def actualizar_catalogo(exportados):
 def main():
     print(f"📡 Descargando facturas de Alegra API...", flush=True)
     facturas = fetch_all()
+    if not facturas:
+        print("❌ No se descargó ninguna factura de Alegra. Revisa ALEGRA_EMAIL/ALEGRA_TOKEN.", flush=True)
+        sys.exit(1)
     print(f"\n📦 {len(facturas)} facturas descargadas. Agrupando por mes...", flush=True)
     exportados = agrupar_por_mes(facturas)
     print(f"\n📋 Actualizando catalogo.json...", flush=True)

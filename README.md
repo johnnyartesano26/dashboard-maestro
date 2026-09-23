@@ -77,6 +77,13 @@ python3 -m http.server 8080
 - Lo genera `ledger_inventario.py` y se sincroniza (`_sync_dashboard`) a `dashboard-maestro/data/` y `madremonte-dashboard/data/`.
 - En `dashboard-maestro` **ningún HTML lo consume** (es espejo); su UI lee `inventario_neto.json`. Quien sí lo consume es `madremonte-dashboard` (pestaña "Historial").
 
+### 4. Inventario muestra datos de ayer (fuente, no push) — 23/09/2026
+- El dashboard `madremonte-dashboard` se ve "desactualizado" aunque el push y el deploy estén al día.
+- **Causa:** la pestaña **Producción** lee la última fila del Google Sheet de inventario (`SHEET_CSV_URL`, hoja `1UHqPRV1…`), no un JSON. La última entrada del sheet es del `22/09/2026 09:48:40`.
+- **Consistente con** `inventario_neto.json` → `fecha_lectura: 2026-09-22 09:48:40` (el núcleo leyó el mismo sheet ayer).
+- **Verificado:** `index.html`, `ledger_inventario.json` e `inventario_neto.json` en GitHub Pages son idénticos a lo commiteado (deploy ~18:10 UTC). El desfase está en el **dato fuente**, no en git.
+- **Acción:** actualizar la lectura física en el Google Sheet (o corregir el proceso del núcleo para que genere lectura del día).
+
 ## 🛠 Stack
 
 - HTML5 + CSS3 (tema oscuro GitHub-style)

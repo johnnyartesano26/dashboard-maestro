@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-09-23 19:26:12",
+  "fecha": "2026-09-23 20:01:53",
   "fisico": {
     "GOLDEN ALE": {
       "bot": 0.0,
@@ -43,29 +43,9 @@
     }
   },
   "deducciones": {
-    "APA": {
-      "bot": 125.0,
-      "barril": 0.0,
-      "litros": 7.9
-    },
-    "GERMAN PILS": {
-      "bot": 0.0,
-      "barril": 0.0,
-      "litros": 0.0
-    },
     "GOLDEN ALE": {
       "bot": 335.0,
       "barril": 5.0,
-      "litros": 0.0
-    },
-    "HIDROMIEL": {
-      "bot": 0.0,
-      "barril": 0.0,
-      "litros": 0.0
-    },
-    "IPA": {
-      "bot": 618.0,
-      "barril": 52.300000000000004,
       "litros": 0.0
     },
     "IRISH RED ALE": {
@@ -73,31 +53,24 @@
       "barril": 259.2,
       "litros": 0.0
     },
-    "RED IPA": {
-      "bot": 0.0,
+    "APA": {
+      "bot": 125.0,
       "barril": 0.0,
+      "litros": 7.9
+    },
+    "IPA": {
+      "bot": 618.0,
+      "barril": 52.300000000000004,
       "litros": 0.0
     },
     "STOUT": {
       "bot": 271.0,
       "barril": 70.7,
       "litros": 0.0
-    }
-  },
-  "neto": {
-    "APA": {
-      "bot": -125.0,
-      "barril": 0.0,
-      "litros": -7.9
     },
     "GERMAN PILS": {
       "bot": 0.0,
       "barril": 0.0,
-      "litros": 0.0
-    },
-    "GOLDEN ALE": {
-      "bot": -335.0,
-      "barril": -5.0,
       "litros": 0.0
     },
     "HIDROMIEL": {
@@ -105,9 +78,16 @@
       "barril": 0.0,
       "litros": 0.0
     },
-    "IPA": {
-      "bot": -618.0,
-      "barril": -52.3,
+    "RED IPA": {
+      "bot": 0.0,
+      "barril": 0.0,
+      "litros": 0.0
+    }
+  },
+  "neto": {
+    "GOLDEN ALE": {
+      "bot": -335.0,
+      "barril": -5.0,
       "litros": 0.0
     },
     "IRISH RED ALE": {
@@ -115,15 +95,35 @@
       "barril": -259.2,
       "litros": 0.0
     },
-    "RED IPA": {
-      "bot": 0.0,
+    "APA": {
+      "bot": -125.0,
       "barril": 0.0,
+      "litros": -7.9
+    },
+    "IPA": {
+      "bot": -618.0,
+      "barril": -52.3,
       "litros": 0.0
     },
     "STOUT": {
       "bot": -271.0,
       "barril": -70.7,
       "litros": 80.0
+    },
+    "GERMAN PILS": {
+      "bot": 0.0,
+      "barril": 0.0,
+      "litros": 0.0
+    },
+    "HIDROMIEL": {
+      "bot": 0.0,
+      "barril": 0.0,
+      "litros": 0.0
+    },
+    "RED IPA": {
+      "bot": 0.0,
+      "barril": 0.0,
+      "litros": 0.0
     }
   }
 }

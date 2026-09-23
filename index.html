@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard Maestro — Madre Monte | Junio 2026</title>
+<title>Dashboard Maestro — Madre Monte</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
   :root {
@@ -295,7 +295,7 @@
 
   <div class="grid">
     <div class="card full">
-      <h2>📈 Ventas Mensuales Bar — Nov 2025 a Jun 2026</h2>
+      <h2 id="chartVentasTitle">📈 Ventas Mensuales Bar</h2>
       <canvas id="chartOverviewProd"></canvas>
     </div>
     <div class="card">
@@ -397,7 +397,7 @@
         </tr></thead><tbody id="tbodyFact"></tbody></table>
     </div>
     <div class="card full" id="cardClientes">
-      <h2>👥 Buscador de Clientes <span style="font-size:.75em;color:var(--mm-dim)"> — Datos consolidados Dic 2025 - Jun 2026</span></h2>
+      <h2>👥 Buscador de Clientes <span id="clientesRange" style="font-size:.75em;color:var(--mm-dim)"> — Datos consolidados</span></h2>
       <div class="filters">
         <input type="text" id="searchCliente" placeholder="🔍 Buscar cliente..." oninput="debounceClientes()">
         <select id="filtroMesCliente" onchange="filtrarClientes()">
@@ -645,6 +645,65 @@ let importeConsolidado = 0;
 let ventasSheetData = []; // Datos del Google Sheet para fallback de Estado de Facturas
 
 // ═══════════════════════════════════════════════════
+// ETIQUETAS DINÁMICAS DE RANGOS (meses)
+// ═══════════════════════════════════════════════════
+const MESES_LARGO = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const MESES_CORTO = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+let rangoVentasLabel = '';
+let rangoClientesLabel = '';
+let ultimoMesAlegra = '';
+
+function parseMesAnio(str) {
+  if (!str) return null;
+  const m = String(str).trim().match(/^([A-Za-zÁÉÍÓÚáéíóú]+)\s+(\d{4})$/);
+  if (!m) return null;
+  const mi = MESES_LARGO.indexOf(m[1]);
+  if (mi < 0) return null;
+  const anio = parseInt(m[2], 10);
+  if (anio < 2020 || anio > 2035) return null;
+  return { mi, anio };
+}
+function rangoLabel(min, max) {
+  const a = MESES_CORTO[min.mi] + ' ' + min.anio;
+  const b = MESES_CORTO[max.mi] + ' ' + max.anio;
+  return (min.mi === max.mi && min.anio === max.anio) ? a : (a + ' – ' + b);
+}
+function rangoDeMeses(lista) {
+  const pts = (lista || []).map(parseMesAnio).filter(Boolean);
+  if (!pts.length) return null;
+  let min = pts[0], max = pts[0];
+  pts.forEach(p => {
+    if (p.anio < min.anio || (p.anio === min.anio && p.mi < min.mi)) min = p;
+    if (p.anio > max.anio || (p.anio === max.anio && p.mi > max.mi)) max = p;
+  });
+  return { min, max };
+}
+function actualizarEtiquetasRango() {
+  if (catalogoData && catalogoData.periodos && catalogoData.periodos.length) {
+    const vr = rangoDeMeses(catalogoData.periodos.map(p => p.mes));
+    if (vr) {
+      rangoVentasLabel = rangoLabel(vr.min, vr.max);
+      const elVentas = document.getElementById('chartVentasTitle');
+      if (elVentas) elVentas.textContent = '📈 Ventas Mensuales Bar — ' + rangoVentasLabel;
+    }
+    const conAlegra = catalogoData.periodos.filter(p => p.facturacion && p.facturacion.archivo).map(p => p.mes);
+    if (conAlegra.length) ultimoMesAlegra = conAlegra[conAlegra.length - 1];
+    const ult = catalogoData.periodos[catalogoData.periodos.length - 1];
+    if (ult && ult.mes) document.title = 'Dashboard Maestro — Madre Monte | ' + ult.mes;
+  }
+  if (clientesData && clientesData.length) {
+    const todos = [];
+    clientesData.forEach(c => Object.keys(c.meses || {}).forEach(m => todos.push(m)));
+    const cr = rangoDeMeses(todos);
+    if (cr) {
+      rangoClientesLabel = rangoLabel(cr.min, cr.max);
+      const elCli = document.getElementById('clientesRange');
+      if (elCli) elCli.textContent = ' — Datos consolidados ' + rangoClientesLabel;
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════
 // TAB NAVIGATION
 // ═══════════════════════════════════════════════════
 function switchTab(name) {
@@ -798,6 +857,9 @@ window.onload = async function() {
     }
   }
 
+  // 4.5b Actualizar etiquetas dinámicas (título, rangos de meses)
+  actualizarEtiquetasRango();
+
   // 5. Seleccionar periodo y cargar datos
   if (catalogoData && catalogoData.periodos && catalogoData.periodos.length > 0) {
     cambiarPeriodo(0);
@@ -907,7 +969,7 @@ function cambiarPeriodo(idx) {
       <h2 style="color:var(--mm-gold);margin-bottom:8px;">Sin datos de facturación para ${periodoActual.mes}</h2>
       <p style="color:var(--mm-dim);font-size:.9em;max-width:500px;margin:0 auto 16px;">
         No se encontraron facturas en Google Sheets para este período.
-        Las facturas electrónicas de Alegra están disponibles para <strong>Junio 2026</strong>.
+        Las facturas electrónicas de Alegra están disponibles para <strong>${ultimoMesAlegra || 'el último mes exportado'}</strong>.
       </p>
     `;
   }
@@ -984,7 +1046,7 @@ function updateOverviewFromData() {
       <div class="info">
         <h3>Facturación Total — Consolidado</h3>
         <p>${totalFacturasConsolidado} facturas · $${importeConsolidado.toLocaleString('es-CO')} COP<br>
-        ${totalClientesConsolidado} clientes · Dic 2025 - Jun 2026<br>
+        ${totalClientesConsolidado} clientes · ${rangoClientesLabel || 'Consolidado'}<br>
         Actualizado desde Google Sheets</p>
       </div>
     </div>
@@ -1090,7 +1152,7 @@ function updateOverviewFromCatalogo() {
       <div class="info">
         <h3>Facturación Total — Consolidado</h3>
         <p>${totalFacturasConsolidado} facturas · $${importeConsolidado.toLocaleString('es-CO')} COP<br>
-        ${totalClientesConsolidado} clientes · Dic 2025 - Jun 2026<br>
+        ${totalClientesConsolidado} clientes · ${rangoClientesLabel || 'Consolidado'}<br>
         Actualizado desde Google Sheets</p>
       </div>
     </div>
@@ -1205,7 +1267,7 @@ function renderOverviewCharts() {
     // Sin facturación detallada: intentar usar datos del mes actual desde clientesData
     const mesActual = periodoActual ? periodoActual.mes : null;
     let top5Data = [];
-    let top5Label = 'Consolidado Dic 2025 - Jun 2026';
+    let top5Label = rangoClientesLabel ? ('Consolidado ' + rangoClientesLabel) : 'Consolidado';
 
     if (clientesData && clientesData.length > 0 && mesActual) {
       // Buscar clientes con facturación en el mes actual

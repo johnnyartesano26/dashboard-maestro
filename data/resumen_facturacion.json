@@ -1,9 +1,9 @@
 {
-  "fecha": "2026-09-24 21:17:16",
+  "fecha": "2026-09-24 21:18:55",
   "dry_run": false,
-  "pendientes_procesar": 2,
+  "pendientes_procesar": 3,
   "emitidas": 0,
-  "sin_stock": 2,
+  "sin_stock": 3,
   "sin_cliente": 0,
   "errores": 0,
   "inventario_inicial": {
@@ -132,5 +132,5 @@
       "litros_descontados_de_fermentador": 0.0
     }
   },
-  "resumen": "0 emitidas | 2 sin stock | 0 sin cliente"
+  "resumen": "0 emitidas | 3 sin stock | 0 sin cliente"
 }

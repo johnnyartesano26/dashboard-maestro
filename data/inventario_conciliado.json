@@ -1,29 +1,29 @@
 {
-  "fecha": "2026-09-28 06:29:19",
+  "fecha": "2026-09-28 15:07:56",
   "fisico": {
     "GOLDEN ALE": {
-      "bot": 0.0,
-      "barril": 0.0,
-      "litros": 0.0
+      "bot": 82.0,
+      "barril": 28.0,
+      "litros": 683.0
     },
     "IRISH RED ALE": {
-      "bot": 0.0,
-      "barril": 0.0,
-      "litros": 0.0
+      "bot": 71.0,
+      "barril": 120.0,
+      "litros": 655.0
     },
     "APA": {
       "bot": 0.0,
       "barril": 0.0,
-      "litros": 0.0
+      "litros": 320.0
     },
     "IPA": {
-      "bot": 0.0,
-      "barril": 0.0,
-      "litros": 0.0
+      "bot": 130.0,
+      "barril": 116.0,
+      "litros": 330.0
     },
     "STOUT": {
       "bot": 0.0,
-      "barril": 0.0,
+      "barril": 13.0,
       "litros": 80.0
     },
     "GERMAN PILS": {
@@ -32,9 +32,9 @@
       "litros": 0.0
     },
     "HIDROMIEL": {
-      "bot": 0.0,
-      "barril": 0.0,
-      "litros": 0.0
+      "bot": 14.0,
+      "barril": 25.0,
+      "litros": 316.0
     },
     "RED IPA": {
       "bot": 0.0,
@@ -86,28 +86,28 @@
   },
   "neto": {
     "GOLDEN ALE": {
-      "bot": -335.0,
-      "barril": -5.0,
-      "litros": 0.0
+      "bot": -253.0,
+      "barril": 23.0,
+      "litros": 683.0
     },
     "IRISH RED ALE": {
-      "bot": -458.0,
-      "barril": -259.2,
-      "litros": 0.0
+      "bot": -387.0,
+      "barril": -139.2,
+      "litros": 655.0
     },
     "APA": {
       "bot": -125.0,
       "barril": 0.0,
-      "litros": -7.9
+      "litros": 312.1
     },
     "IPA": {
-      "bot": -618.0,
-      "barril": -52.3,
-      "litros": 0.0
+      "bot": -488.0,
+      "barril": 63.7,
+      "litros": 330.0
     },
     "STOUT": {
       "bot": -271.0,
-      "barril": -70.7,
+      "barril": -57.7,
       "litros": 80.0
     },
     "GERMAN PILS": {
@@ -116,9 +116,9 @@
       "litros": 0.0
     },
     "HIDROMIEL": {
-      "bot": 0.0,
-      "barril": 0.0,
-      "litros": 0.0
+      "bot": 14.0,
+      "barril": 25.0,
+      "litros": 316.0
     },
     "RED IPA": {
       "bot": 0.0,

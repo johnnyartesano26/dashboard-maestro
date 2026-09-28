@@ -13,16 +13,14 @@ fi
 
 LOG=/tmp/madremonte_all_dashboards.log
 
-# Obtener token de GitHub para push
-GH_TOKEN="${GITHUB_TOKEN}"
-
+# Push por SSH (la llave ~/.ssh/id_ed25519 autentica; sin tokens que expiren)
 git_push() {
     # $1 = repo dir, $2 = repo path (owner/repo)
     local dir="$1" repo="$2"
-    git -C "$dir" remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${repo}.git"
+    git -C "$dir" remote set-url origin "git@github.com:${repo}.git"
     git -C "$dir" pull --rebase origin main >> $LOG 2>&1 || { echo "  ⚠️ Pull/rebase falló" >> $LOG; git -C "$dir" rebase --abort >> $LOG 2>&1 || true; }
     git -C "$dir" push origin main >> $LOG 2>&1 && echo "  ✅ Push OK" >> $LOG || echo "  ⚠️ Push falló" >> $LOG
-    git -C "$dir" remote set-url origin "https://github.com/${repo}.git"
+    git -C "$dir" remote set-url origin "git@github.com:${repo}.git"
 }
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] === Sincronización diaria de dashboards ===" >> $LOG

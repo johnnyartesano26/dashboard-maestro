@@ -1,86 +1,9 @@
 {
   "version": "2.0",
-  "actualizado": "2026-09-28T06:44:18.553059",
+  "actualizado": "2026-09-28T11:01:11.191622",
   "movimientos": [
     {
       "id": "mov_0001",
-      "fecha": "2026-07-05 09:11:08",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "IPA",
-      "capa": "fermentador_litros",
-      "cantidad": -940.0,
-      "nota": "Fermentador IPA: 1240.0L → 300.0L",
-      "saldo_capa": 300.0
-    },
-    {
-      "id": "mov_0002",
-      "fecha": "2026-07-05 09:11:08",
-      "tipo": "ENTRADA",
-      "origen": "embarrilado",
-      "estilo": "IPA",
-      "capa": "barril_litros",
-      "cantidad": 80.0,
-      "nota": "Barril IPA: 0.0L → 80.0L",
-      "saldo_capa": 80.0
-    },
-    {
-      "id": "mov_0003",
-      "fecha": "2026-07-05 09:11:08",
-      "tipo": "ENTRADA",
-      "origen": "produccion",
-      "estilo": "APA",
-      "capa": "fermentador_litros",
-      "cantidad": 600.0,
-      "nota": "Fermentador APA: 350.0L → 950.0L",
-      "saldo_capa": 950.0
-    },
-    {
-      "id": "mov_0004",
-      "fecha": "2026-07-05 09:11:08",
-      "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "APA",
-      "capa": "barril_litros",
-      "cantidad": -20.0,
-      "nota": "Barril APA: 20.0L → 0.0L",
-      "saldo_capa": 0.0
-    },
-    {
-      "id": "mov_0005",
-      "fecha": "2026-07-05 09:11:08",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "HIDROMIEL",
-      "capa": "fermentador_litros",
-      "cantidad": -40.0,
-      "nota": "Fermentador HIDROMIEL: 170.0L → 130.0L",
-      "saldo_capa": 130.0
-    },
-    {
-      "id": "mov_0006",
-      "fecha": "2026-07-05 09:11:08",
-      "tipo": "ENTRADA",
-      "origen": "produccion",
-      "estilo": "STOUT",
-      "capa": "fermentador_litros",
-      "cantidad": 145.0,
-      "nota": "Fermentador STOUT: 230.0L → 375.0L",
-      "saldo_capa": 375.0
-    },
-    {
-      "id": "mov_0007",
-      "fecha": "2026-07-05 09:11:08",
-      "tipo": "ENTRADA",
-      "origen": "embarrilado",
-      "estilo": "STOUT",
-      "capa": "barril_litros",
-      "cantidad": 20.0,
-      "nota": "Barril STOUT: 10.0L → 30.0L",
-      "saldo_capa": 30.0
-    },
-    {
-      "id": "mov_0008",
       "fecha": "2026-07-05 09:11:08",
       "tipo": "SALIDA",
       "origen": "transferencia",
@@ -91,7 +14,7 @@
       "saldo_capa": 650.0
     },
     {
-      "id": "mov_0009",
+      "id": "mov_0002",
       "fecha": "2026-07-05 09:11:08",
       "tipo": "SALIDA",
       "origen": "venta",
@@ -102,7 +25,7 @@
       "saldo_capa": 60.0
     },
     {
-      "id": "mov_0010",
+      "id": "mov_0003",
       "fecha": "2026-07-05 09:11:08",
       "tipo": "ENTRADA",
       "origen": "embotellado",
@@ -113,7 +36,40 @@
       "saldo_capa": 79.0
     },
     {
-      "id": "mov_0011",
+      "id": "mov_0004",
+      "fecha": "2026-07-05 09:11:08",
+      "tipo": "SALIDA",
+      "origen": "transferencia",
+      "estilo": "HIDROMIEL",
+      "capa": "fermentador_litros",
+      "cantidad": -40.0,
+      "nota": "Fermentador HIDROMIEL: 170.0L → 130.0L",
+      "saldo_capa": 130.0
+    },
+    {
+      "id": "mov_0005",
+      "fecha": "2026-07-05 09:11:08",
+      "tipo": "ENTRADA",
+      "origen": "produccion",
+      "estilo": "APA",
+      "capa": "fermentador_litros",
+      "cantidad": 600.0,
+      "nota": "Fermentador APA: 350.0L → 950.0L",
+      "saldo_capa": 950.0
+    },
+    {
+      "id": "mov_0006",
+      "fecha": "2026-07-05 09:11:08",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "APA",
+      "capa": "barril_litros",
+      "cantidad": -20.0,
+      "nota": "Barril APA: 20.0L → 0.0L",
+      "saldo_capa": 0.0
+    },
+    {
+      "id": "mov_0007",
       "fecha": "2026-07-05 09:11:08",
       "tipo": "SALIDA",
       "origen": "transferencia",
@@ -124,7 +80,7 @@
       "saldo_capa": 418.0
     },
     {
-      "id": "mov_0012",
+      "id": "mov_0008",
       "fecha": "2026-07-05 09:11:08",
       "tipo": "SALIDA",
       "origen": "venta",
@@ -135,37 +91,81 @@
       "saldo_capa": 0.0
     },
     {
-      "id": "mov_0013",
-      "fecha": "2026-07-06 12:42:16",
-      "tipo": "ENTRADA",
-      "origen": "produccion",
+      "id": "mov_0009",
+      "fecha": "2026-07-05 09:11:08",
+      "tipo": "SALIDA",
+      "origen": "transferencia",
       "estilo": "IPA",
       "capa": "fermentador_litros",
-      "cantidad": 560.0,
-      "nota": "Fermentador IPA: 300.0L → 860.0L",
-      "saldo_capa": 860.0
+      "cantidad": -940.0,
+      "nota": "Fermentador IPA: 1240.0L → 300.0L",
+      "saldo_capa": 300.0
+    },
+    {
+      "id": "mov_0010",
+      "fecha": "2026-07-05 09:11:08",
+      "tipo": "ENTRADA",
+      "origen": "embarrilado",
+      "estilo": "IPA",
+      "capa": "barril_litros",
+      "cantidad": 80.0,
+      "nota": "Barril IPA: 0.0L → 80.0L",
+      "saldo_capa": 80.0
+    },
+    {
+      "id": "mov_0011",
+      "fecha": "2026-07-05 09:11:08",
+      "tipo": "ENTRADA",
+      "origen": "produccion",
+      "estilo": "STOUT",
+      "capa": "fermentador_litros",
+      "cantidad": 145.0,
+      "nota": "Fermentador STOUT: 230.0L → 375.0L",
+      "saldo_capa": 375.0
+    },
+    {
+      "id": "mov_0012",
+      "fecha": "2026-07-05 09:11:08",
+      "tipo": "ENTRADA",
+      "origen": "embarrilado",
+      "estilo": "STOUT",
+      "capa": "barril_litros",
+      "cantidad": 20.0,
+      "nota": "Barril STOUT: 10.0L → 30.0L",
+      "saldo_capa": 30.0
+    },
+    {
+      "id": "mov_0013",
+      "fecha": "2026-07-06 12:42:16",
+      "tipo": "SALIDA",
+      "origen": "transferencia",
+      "estilo": "GOLDEN ALE",
+      "capa": "fermentador_litros",
+      "cantidad": -20.0,
+      "nota": "Fermentador GOLDEN ALE: 650.0L → 630.0L",
+      "saldo_capa": 630.0
     },
     {
       "id": "mov_0014",
       "fecha": "2026-07-06 12:42:16",
       "tipo": "SALIDA",
       "origen": "venta",
-      "estilo": "IPA",
+      "estilo": "GOLDEN ALE",
       "capa": "barril_litros",
-      "cantidad": -80.0,
-      "nota": "Barril IPA: 80.0L → 0.0L",
+      "cantidad": -60.0,
+      "nota": "Barril GOLDEN ALE: 60.0L → 0.0L",
       "saldo_capa": 0.0
     },
     {
       "id": "mov_0015",
       "fecha": "2026-07-06 12:42:16",
       "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "APA",
-      "capa": "fermentador_litros",
-      "cantidad": -680.0,
-      "nota": "Fermentador APA: 950.0L → 270.0L",
-      "saldo_capa": 270.0
+      "origen": "venta",
+      "estilo": "GOLDEN ALE",
+      "capa": "botella_und",
+      "cantidad": -29.0,
+      "nota": "Botella GOLDEN ALE: 79.0 und → 50.0 und",
+      "saldo_capa": 50.0
     },
     {
       "id": "mov_0016",
@@ -182,48 +182,15 @@
       "id": "mov_0017",
       "fecha": "2026-07-06 12:42:16",
       "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "STOUT",
-      "capa": "barril_litros",
-      "cantidad": -30.0,
-      "nota": "Barril STOUT: 30.0L → 0.0L",
-      "saldo_capa": 0.0
+      "origen": "transferencia",
+      "estilo": "APA",
+      "capa": "fermentador_litros",
+      "cantidad": -680.0,
+      "nota": "Fermentador APA: 950.0L → 270.0L",
+      "saldo_capa": 270.0
     },
     {
       "id": "mov_0018",
-      "fecha": "2026-07-06 12:42:16",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "GOLDEN ALE",
-      "capa": "fermentador_litros",
-      "cantidad": -20.0,
-      "nota": "Fermentador GOLDEN ALE: 650.0L → 630.0L",
-      "saldo_capa": 630.0
-    },
-    {
-      "id": "mov_0019",
-      "fecha": "2026-07-06 12:42:16",
-      "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "GOLDEN ALE",
-      "capa": "barril_litros",
-      "cantidad": -60.0,
-      "nota": "Barril GOLDEN ALE: 60.0L → 0.0L",
-      "saldo_capa": 0.0
-    },
-    {
-      "id": "mov_0020",
-      "fecha": "2026-07-06 12:42:16",
-      "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "GOLDEN ALE",
-      "capa": "botella_und",
-      "cantidad": -29.0,
-      "nota": "Botella GOLDEN ALE: 79.0 und → 50.0 und",
-      "saldo_capa": 50.0
-    },
-    {
-      "id": "mov_0021",
       "fecha": "2026-07-06 12:42:16",
       "tipo": "SALIDA",
       "origen": "transferencia",
@@ -234,84 +201,40 @@
       "saldo_capa": 338.0
     },
     {
+      "id": "mov_0019",
+      "fecha": "2026-07-06 12:42:16",
+      "tipo": "ENTRADA",
+      "origen": "produccion",
+      "estilo": "IPA",
+      "capa": "fermentador_litros",
+      "cantidad": 560.0,
+      "nota": "Fermentador IPA: 300.0L → 860.0L",
+      "saldo_capa": 860.0
+    },
+    {
+      "id": "mov_0020",
+      "fecha": "2026-07-06 12:42:16",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "IPA",
+      "capa": "barril_litros",
+      "cantidad": -80.0,
+      "nota": "Barril IPA: 80.0L → 0.0L",
+      "saldo_capa": 0.0
+    },
+    {
+      "id": "mov_0021",
+      "fecha": "2026-07-06 12:42:16",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "STOUT",
+      "capa": "barril_litros",
+      "cantidad": -30.0,
+      "nota": "Barril STOUT: 30.0L → 0.0L",
+      "saldo_capa": 0.0
+    },
+    {
       "id": "mov_0022",
-      "fecha": "2026-07-14 16:43:21",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "IPA",
-      "capa": "fermentador_litros",
-      "cantidad": -100.0,
-      "nota": "Fermentador IPA: 860.0L → 760.0L",
-      "saldo_capa": 760.0
-    },
-    {
-      "id": "mov_0023",
-      "fecha": "2026-07-14 16:43:21",
-      "tipo": "ENTRADA",
-      "origen": "embarrilado",
-      "estilo": "IPA",
-      "capa": "barril_litros",
-      "cantidad": 20.6,
-      "nota": "Barril IPA: 0.0L → 20.6L",
-      "saldo_capa": 20.6
-    },
-    {
-      "id": "mov_0024",
-      "fecha": "2026-07-14 16:43:21",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "APA",
-      "capa": "fermentador_litros",
-      "cantidad": -20.0,
-      "nota": "Fermentador APA: 270.0L → 250.0L",
-      "saldo_capa": 250.0
-    },
-    {
-      "id": "mov_0025",
-      "fecha": "2026-07-14 16:43:21",
-      "tipo": "ENTRADA",
-      "origen": "embarrilado",
-      "estilo": "APA",
-      "capa": "barril_litros",
-      "cantidad": 18.6,
-      "nota": "Barril APA: 0.0L → 18.6L",
-      "saldo_capa": 18.6
-    },
-    {
-      "id": "mov_0026",
-      "fecha": "2026-07-14 16:43:21",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "HIDROMIEL",
-      "capa": "fermentador_litros",
-      "cantidad": -100.0,
-      "nota": "Fermentador HIDROMIEL: 100.0L → 0.0L",
-      "saldo_capa": 100.0
-    },
-    {
-      "id": "mov_0027",
-      "fecha": "2026-07-14 16:43:21",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "STOUT",
-      "capa": "fermentador_litros",
-      "cantidad": -25.0,
-      "nota": "Fermentador STOUT: 375.0L → 350.0L",
-      "saldo_capa": 350.0
-    },
-    {
-      "id": "mov_0028",
-      "fecha": "2026-07-14 16:43:21",
-      "tipo": "ENTRADA",
-      "origen": "embarrilado",
-      "estilo": "STOUT",
-      "capa": "barril_litros",
-      "cantidad": 48.5,
-      "nota": "Barril STOUT: 0.0L → 48.5L",
-      "saldo_capa": 48.5
-    },
-    {
-      "id": "mov_0029",
       "fecha": "2026-07-14 16:43:21",
       "tipo": "ENTRADA",
       "origen": "embarrilado",
@@ -322,7 +245,7 @@
       "saldo_capa": 50.1
     },
     {
-      "id": "mov_0030",
+      "id": "mov_0023",
       "fecha": "2026-07-14 16:43:21",
       "tipo": "ENTRADA",
       "origen": "embotellado",
@@ -333,7 +256,40 @@
       "saldo_capa": 51.0
     },
     {
-      "id": "mov_0031",
+      "id": "mov_0024",
+      "fecha": "2026-07-14 16:43:21",
+      "tipo": "SALIDA",
+      "origen": "transferencia",
+      "estilo": "HIDROMIEL",
+      "capa": "fermentador_litros",
+      "cantidad": -100.0,
+      "nota": "Fermentador HIDROMIEL: 100.0L → 0.0L",
+      "saldo_capa": 100.0
+    },
+    {
+      "id": "mov_0025",
+      "fecha": "2026-07-14 16:43:21",
+      "tipo": "SALIDA",
+      "origen": "transferencia",
+      "estilo": "APA",
+      "capa": "fermentador_litros",
+      "cantidad": -20.0,
+      "nota": "Fermentador APA: 270.0L → 250.0L",
+      "saldo_capa": 250.0
+    },
+    {
+      "id": "mov_0026",
+      "fecha": "2026-07-14 16:43:21",
+      "tipo": "ENTRADA",
+      "origen": "embarrilado",
+      "estilo": "APA",
+      "capa": "barril_litros",
+      "cantidad": 18.6,
+      "nota": "Barril APA: 0.0L → 18.6L",
+      "saldo_capa": 18.6
+    },
+    {
+      "id": "mov_0027",
       "fecha": "2026-07-14 16:43:21",
       "tipo": "ENTRADA",
       "origen": "produccion",
@@ -344,7 +300,7 @@
       "saldo_capa": 680.0
     },
     {
-      "id": "mov_0032",
+      "id": "mov_0028",
       "fecha": "2026-07-14 16:43:21",
       "tipo": "ENTRADA",
       "origen": "embarrilado",
@@ -355,26 +311,70 @@
       "saldo_capa": 222.9
     },
     {
-      "id": "mov_0033",
-      "fecha": "2026-07-21 15:22:55",
+      "id": "mov_0029",
+      "fecha": "2026-07-14 16:43:21",
       "tipo": "SALIDA",
       "origen": "transferencia",
       "estilo": "IPA",
       "capa": "fermentador_litros",
       "cantidad": -100.0,
-      "nota": "Fermentador IPA: 760.0L → 660.0L",
-      "saldo_capa": 660.0
+      "nota": "Fermentador IPA: 860.0L → 760.0L",
+      "saldo_capa": 760.0
     },
     {
-      "id": "mov_0034",
-      "fecha": "2026-07-21 15:22:55",
+      "id": "mov_0030",
+      "fecha": "2026-07-14 16:43:21",
       "tipo": "ENTRADA",
       "origen": "embarrilado",
       "estilo": "IPA",
       "capa": "barril_litros",
-      "cantidad": 47.4,
-      "nota": "Barril IPA: 20.6L → 68.0L",
-      "saldo_capa": 68.0
+      "cantidad": 20.6,
+      "nota": "Barril IPA: 0.0L → 20.6L",
+      "saldo_capa": 20.6
+    },
+    {
+      "id": "mov_0031",
+      "fecha": "2026-07-14 16:43:21",
+      "tipo": "SALIDA",
+      "origen": "transferencia",
+      "estilo": "STOUT",
+      "capa": "fermentador_litros",
+      "cantidad": -25.0,
+      "nota": "Fermentador STOUT: 375.0L → 350.0L",
+      "saldo_capa": 350.0
+    },
+    {
+      "id": "mov_0032",
+      "fecha": "2026-07-14 16:43:21",
+      "tipo": "ENTRADA",
+      "origen": "embarrilado",
+      "estilo": "STOUT",
+      "capa": "barril_litros",
+      "cantidad": 48.5,
+      "nota": "Barril STOUT: 0.0L → 48.5L",
+      "saldo_capa": 48.5
+    },
+    {
+      "id": "mov_0033",
+      "fecha": "2026-07-21 15:22:55",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "GOLDEN ALE",
+      "capa": "barril_litros",
+      "cantidad": -30.1,
+      "nota": "Barril GOLDEN ALE: 50.1L → 20.0L",
+      "saldo_capa": 20.0
+    },
+    {
+      "id": "mov_0034",
+      "fecha": "2026-07-21 15:22:55",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "GOLDEN ALE",
+      "capa": "botella_und",
+      "cantidad": -10.0,
+      "nota": "Botella GOLDEN ALE: 51.0 und → 41.0 und",
+      "saldo_capa": 41.0
     },
     {
       "id": "mov_0035",
@@ -403,25 +403,36 @@
       "fecha": "2026-07-21 15:22:55",
       "tipo": "SALIDA",
       "origen": "venta",
-      "estilo": "GOLDEN ALE",
+      "estilo": "IRISH RED ALE",
       "capa": "barril_litros",
-      "cantidad": -30.1,
-      "nota": "Barril GOLDEN ALE: 50.1L → 20.0L",
-      "saldo_capa": 20.0
+      "cantidad": -102.9,
+      "nota": "Barril IRISH RED ALE: 222.9L → 120.0L",
+      "saldo_capa": 120.0
     },
     {
       "id": "mov_0038",
       "fecha": "2026-07-21 15:22:55",
       "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "GOLDEN ALE",
-      "capa": "botella_und",
-      "cantidad": -10.0,
-      "nota": "Botella GOLDEN ALE: 51.0 und → 41.0 und",
-      "saldo_capa": 41.0
+      "origen": "transferencia",
+      "estilo": "IPA",
+      "capa": "fermentador_litros",
+      "cantidad": -100.0,
+      "nota": "Fermentador IPA: 760.0L → 660.0L",
+      "saldo_capa": 660.0
     },
     {
       "id": "mov_0039",
+      "fecha": "2026-07-21 15:22:55",
+      "tipo": "ENTRADA",
+      "origen": "embarrilado",
+      "estilo": "IPA",
+      "capa": "barril_litros",
+      "cantidad": 47.4,
+      "nota": "Barril IPA: 20.6L → 68.0L",
+      "saldo_capa": 68.0
+    },
+    {
+      "id": "mov_0040",
       "fecha": "2026-07-21 15:22:55",
       "tipo": "ENTRADA",
       "origen": "produccion",
@@ -432,7 +443,7 @@
       "saldo_capa": 353.0
     },
     {
-      "id": "mov_0040",
+      "id": "mov_0041",
       "fecha": "2026-07-21 15:22:55",
       "tipo": "ENTRADA",
       "origen": "embarrilado",
@@ -443,29 +454,7 @@
       "saldo_capa": 75.0
     },
     {
-      "id": "mov_0041",
-      "fecha": "2026-07-21 15:22:55",
-      "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "IRISH RED ALE",
-      "capa": "barril_litros",
-      "cantidad": -102.9,
-      "nota": "Barril IRISH RED ALE: 222.9L → 120.0L",
-      "saldo_capa": 120.0
-    },
-    {
       "id": "mov_0042",
-      "fecha": "2026-07-22 12:05:27",
-      "tipo": "ENTRADA",
-      "origen": "embotellado",
-      "estilo": "IPA",
-      "capa": "botella_und",
-      "cantidad": 80.0,
-      "nota": "Botella IPA: 48.0 und → 128.0 und",
-      "saldo_capa": 128.0
-    },
-    {
-      "id": "mov_0043",
       "fecha": "2026-07-22 12:05:27",
       "tipo": "ENTRADA",
       "origen": "embarrilado",
@@ -474,6 +463,17 @@
       "cantidad": 75.0,
       "nota": "Barril HIDROMIEL: 0.0L → 75.0L",
       "saldo_capa": 75.0
+    },
+    {
+      "id": "mov_0043",
+      "fecha": "2026-07-22 12:05:27",
+      "tipo": "ENTRADA",
+      "origen": "embotellado",
+      "estilo": "IPA",
+      "capa": "botella_und",
+      "cantidad": 80.0,
+      "nota": "Botella IPA: 48.0 und → 128.0 und",
+      "saldo_capa": 128.0
     },
     {
       "id": "mov_0044",
@@ -490,48 +490,15 @@
       "id": "mov_0045",
       "fecha": "2026-07-27 12:39:05",
       "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "IPA",
-      "capa": "fermentador_litros",
-      "cantidad": -170.0,
-      "nota": "Fermentador IPA: 660.0L → 490.0L",
-      "saldo_capa": 490.0
+      "origen": "venta",
+      "estilo": "APA",
+      "capa": "barril_litros",
+      "cantidad": -37.0,
+      "nota": "Barril APA: 210.0L → 173.0L",
+      "saldo_capa": 173.0
     },
     {
       "id": "mov_0046",
-      "fecha": "2026-07-27 12:39:05",
-      "tipo": "ENTRADA",
-      "origen": "embarrilado",
-      "estilo": "IPA",
-      "capa": "barril_litros",
-      "cantidad": 92.0,
-      "nota": "Barril IPA: 68.0L → 160.0L",
-      "saldo_capa": 160.0
-    },
-    {
-      "id": "mov_0047",
-      "fecha": "2026-07-27 12:39:05",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "STOUT",
-      "capa": "fermentador_litros",
-      "cantidad": -63.0,
-      "nota": "Fermentador STOUT: 353.0L → 290.0L",
-      "saldo_capa": 290.0
-    },
-    {
-      "id": "mov_0048",
-      "fecha": "2026-07-27 12:39:05",
-      "tipo": "ENTRADA",
-      "origen": "embarrilado",
-      "estilo": "STOUT",
-      "capa": "barril_litros",
-      "cantidad": 25.0,
-      "nota": "Barril STOUT: 0.0L → 25.0L",
-      "saldo_capa": 25.0
-    },
-    {
-      "id": "mov_0049",
       "fecha": "2026-07-27 12:39:05",
       "tipo": "SALIDA",
       "origen": "venta",
@@ -542,7 +509,7 @@
       "saldo_capa": 25.0
     },
     {
-      "id": "mov_0050",
+      "id": "mov_0047",
       "fecha": "2026-07-27 12:39:05",
       "tipo": "SALIDA",
       "origen": "transferencia",
@@ -553,7 +520,7 @@
       "saldo_capa": 600.0
     },
     {
-      "id": "mov_0051",
+      "id": "mov_0048",
       "fecha": "2026-07-27 12:39:05",
       "tipo": "SALIDA",
       "origen": "venta",
@@ -564,29 +531,29 @@
       "saldo_capa": 100.0
     },
     {
-      "id": "mov_0052",
+      "id": "mov_0049",
       "fecha": "2026-07-27 12:39:05",
       "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "APA",
-      "capa": "barril_litros",
-      "cantidad": -37.0,
-      "nota": "Barril APA: 210.0L → 173.0L",
-      "saldo_capa": 173.0
+      "origen": "transferencia",
+      "estilo": "STOUT",
+      "capa": "fermentador_litros",
+      "cantidad": -63.0,
+      "nota": "Fermentador STOUT: 353.0L → 290.0L",
+      "saldo_capa": 290.0
     },
     {
-      "id": "mov_0053",
+      "id": "mov_0050",
       "fecha": "2026-07-27 12:39:05",
       "tipo": "ENTRADA",
-      "origen": "produccion",
-      "estilo": "GERMAN PILS",
-      "capa": "fermentador_litros",
-      "cantidad": 320.0,
-      "nota": "Fermentador GERMAN PILS: 0.0L → 320.0L",
-      "saldo_capa": 320.0
+      "origen": "embarrilado",
+      "estilo": "STOUT",
+      "capa": "barril_litros",
+      "cantidad": 25.0,
+      "nota": "Barril STOUT: 0.0L → 25.0L",
+      "saldo_capa": 25.0
     },
     {
-      "id": "mov_0054",
+      "id": "mov_0051",
       "fecha": "2026-07-27 12:39:05",
       "tipo": "SALIDA",
       "origen": "transferencia",
@@ -597,7 +564,7 @@
       "saldo_capa": 550.0
     },
     {
-      "id": "mov_0055",
+      "id": "mov_0052",
       "fecha": "2026-07-27 12:39:05",
       "tipo": "ENTRADA",
       "origen": "embarrilado",
@@ -608,7 +575,7 @@
       "saldo_capa": 30.0
     },
     {
-      "id": "mov_0056",
+      "id": "mov_0053",
       "fecha": "2026-07-27 12:39:05",
       "tipo": "ENTRADA",
       "origen": "embotellado",
@@ -619,29 +586,40 @@
       "saldo_capa": 118.0
     },
     {
-      "id": "mov_0057",
-      "fecha": "2026-07-27 13:14:21",
+      "id": "mov_0054",
+      "fecha": "2026-07-27 12:39:05",
       "tipo": "SALIDA",
-      "origen": "venta",
+      "origen": "transferencia",
+      "estilo": "IPA",
+      "capa": "fermentador_litros",
+      "cantidad": -170.0,
+      "nota": "Fermentador IPA: 660.0L → 490.0L",
+      "saldo_capa": 490.0
+    },
+    {
+      "id": "mov_0055",
+      "fecha": "2026-07-27 12:39:05",
+      "tipo": "ENTRADA",
+      "origen": "embarrilado",
       "estilo": "IPA",
       "capa": "barril_litros",
-      "cantidad": -40.0,
-      "nota": "Barril IPA: 160.0L → 120.0L",
-      "saldo_capa": 120.0
+      "cantidad": 92.0,
+      "nota": "Barril IPA: 68.0L → 160.0L",
+      "saldo_capa": 160.0
     },
     {
-      "id": "mov_0058",
-      "fecha": "2026-07-27 13:14:21",
-      "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "IPA",
-      "capa": "botella_und",
-      "cantidad": -82.0,
-      "nota": "Botella IPA: 128.0 und → 46.0 und",
-      "saldo_capa": 46.0
+      "id": "mov_0056",
+      "fecha": "2026-07-27 12:39:05",
+      "tipo": "ENTRADA",
+      "origen": "produccion",
+      "estilo": "GERMAN PILS",
+      "capa": "fermentador_litros",
+      "cantidad": 320.0,
+      "nota": "Fermentador GERMAN PILS: 0.0L → 320.0L",
+      "saldo_capa": 320.0
     },
     {
-      "id": "mov_0059",
+      "id": "mov_0057",
       "fecha": "2026-07-27 13:14:21",
       "tipo": "SALIDA",
       "origen": "venta",
@@ -652,73 +630,29 @@
       "saldo_capa": 42.9
     },
     {
+      "id": "mov_0058",
+      "fecha": "2026-07-27 13:14:21",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "IPA",
+      "capa": "barril_litros",
+      "cantidad": -40.0,
+      "nota": "Barril IPA: 160.0L → 120.0L",
+      "saldo_capa": 120.0
+    },
+    {
+      "id": "mov_0059",
+      "fecha": "2026-07-27 13:14:21",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "IPA",
+      "capa": "botella_und",
+      "cantidad": -82.0,
+      "nota": "Botella IPA: 128.0 und → 46.0 und",
+      "saldo_capa": 46.0
+    },
+    {
       "id": "mov_0060",
-      "fecha": "2026-08-03 12:35:00",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "IPA",
-      "capa": "fermentador_litros",
-      "cantidad": -150.0,
-      "nota": "Fermentador IPA: 490.0L → 340.0L",
-      "saldo_capa": 340.0
-    },
-    {
-      "id": "mov_0061",
-      "fecha": "2026-08-03 12:35:00",
-      "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "IPA",
-      "capa": "barril_litros",
-      "cantidad": -93.0,
-      "nota": "Barril IPA: 120.0L → 27.0L",
-      "saldo_capa": 27.0
-    },
-    {
-      "id": "mov_0062",
-      "fecha": "2026-08-03 12:35:00",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "STOUT",
-      "capa": "fermentador_litros",
-      "cantidad": -97.0,
-      "nota": "Fermentador STOUT: 290.0L → 193.0L",
-      "saldo_capa": 193.0
-    },
-    {
-      "id": "mov_0063",
-      "fecha": "2026-08-03 12:35:00",
-      "tipo": "ENTRADA",
-      "origen": "embarrilado",
-      "estilo": "STOUT",
-      "capa": "barril_litros",
-      "cantidad": 18.0,
-      "nota": "Barril STOUT: 25.0L → 43.0L",
-      "saldo_capa": 43.0
-    },
-    {
-      "id": "mov_0064",
-      "fecha": "2026-08-03 12:35:00",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "IRISH RED ALE",
-      "capa": "fermentador_litros",
-      "cantidad": -189.7,
-      "nota": "Fermentador IRISH RED ALE: 600.0L → 410.4L",
-      "saldo_capa": 410.4
-    },
-    {
-      "id": "mov_0065",
-      "fecha": "2026-08-03 12:35:00",
-      "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "IRISH RED ALE",
-      "capa": "barril_litros",
-      "cantidad": -42.9,
-      "nota": "Barril IRISH RED ALE: 42.9L → 0.0L",
-      "saldo_capa": 0.0
-    },
-    {
-      "id": "mov_0066",
       "fecha": "2026-08-03 12:35:00",
       "tipo": "SALIDA",
       "origen": "venta",
@@ -729,7 +663,7 @@
       "saldo_capa": 106.5
     },
     {
-      "id": "mov_0067",
+      "id": "mov_0061",
       "fecha": "2026-08-03 12:35:00",
       "tipo": "ENTRADA",
       "origen": "produccion",
@@ -740,7 +674,51 @@
       "saldo_capa": 316.0
     },
     {
-      "id": "mov_0068",
+      "id": "mov_0062",
+      "fecha": "2026-08-03 12:35:00",
+      "tipo": "SALIDA",
+      "origen": "transferencia",
+      "estilo": "IRISH RED ALE",
+      "capa": "fermentador_litros",
+      "cantidad": -189.7,
+      "nota": "Fermentador IRISH RED ALE: 600.0L → 410.4L",
+      "saldo_capa": 410.4
+    },
+    {
+      "id": "mov_0063",
+      "fecha": "2026-08-03 12:35:00",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "IRISH RED ALE",
+      "capa": "barril_litros",
+      "cantidad": -42.9,
+      "nota": "Barril IRISH RED ALE: 42.9L → 0.0L",
+      "saldo_capa": 0.0
+    },
+    {
+      "id": "mov_0064",
+      "fecha": "2026-08-03 12:35:00",
+      "tipo": "SALIDA",
+      "origen": "transferencia",
+      "estilo": "STOUT",
+      "capa": "fermentador_litros",
+      "cantidad": -97.0,
+      "nota": "Fermentador STOUT: 290.0L → 193.0L",
+      "saldo_capa": 193.0
+    },
+    {
+      "id": "mov_0065",
+      "fecha": "2026-08-03 12:35:00",
+      "tipo": "ENTRADA",
+      "origen": "embarrilado",
+      "estilo": "STOUT",
+      "capa": "barril_litros",
+      "cantidad": 18.0,
+      "nota": "Barril STOUT: 25.0L → 43.0L",
+      "saldo_capa": 43.0
+    },
+    {
+      "id": "mov_0066",
       "fecha": "2026-08-03 12:35:00",
       "tipo": "SALIDA",
       "origen": "transferencia",
@@ -751,7 +729,7 @@
       "saldo_capa": 410.0
     },
     {
-      "id": "mov_0069",
+      "id": "mov_0067",
       "fecha": "2026-08-03 12:35:00",
       "tipo": "ENTRADA",
       "origen": "embarrilado",
@@ -762,7 +740,7 @@
       "saldo_capa": 34.0
     },
     {
-      "id": "mov_0070",
+      "id": "mov_0068",
       "fecha": "2026-08-03 12:35:00",
       "tipo": "ENTRADA",
       "origen": "embotellado",
@@ -773,48 +751,70 @@
       "saldo_capa": 155.0
     },
     {
-      "id": "mov_0071",
-      "fecha": "2026-08-10 14:15:24",
+      "id": "mov_0069",
+      "fecha": "2026-08-03 12:35:00",
       "tipo": "SALIDA",
       "origen": "transferencia",
       "estilo": "IPA",
       "capa": "fermentador_litros",
-      "cantidad": -100.0,
-      "nota": "Fermentador IPA: 340.0L → 240.0L",
-      "saldo_capa": 240.0
+      "cantidad": -150.0,
+      "nota": "Fermentador IPA: 490.0L → 340.0L",
+      "saldo_capa": 340.0
+    },
+    {
+      "id": "mov_0070",
+      "fecha": "2026-08-03 12:35:00",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "IPA",
+      "capa": "barril_litros",
+      "cantidad": -93.0,
+      "nota": "Barril IPA: 120.0L → 27.0L",
+      "saldo_capa": 27.0
+    },
+    {
+      "id": "mov_0071",
+      "fecha": "2026-08-10 14:15:24",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "APA",
+      "capa": "barril_litros",
+      "cantidad": -15.5,
+      "nota": "Barril APA: 106.5L → 91.0L",
+      "saldo_capa": 91.0
     },
     {
       "id": "mov_0072",
       "fecha": "2026-08-10 14:15:24",
-      "tipo": "ENTRADA",
-      "origen": "embarrilado",
-      "estilo": "IPA",
-      "capa": "barril_litros",
-      "cantidad": 57.0,
-      "nota": "Barril IPA: 27.0L → 84.0L",
-      "saldo_capa": 84.0
+      "tipo": "SALIDA",
+      "origen": "transferencia",
+      "estilo": "HIDROMIEL",
+      "capa": "fermentador_litros",
+      "cantidad": -6.0,
+      "nota": "Fermentador HIDROMIEL: 316.0L → 310.0L",
+      "saldo_capa": 310.0
     },
     {
       "id": "mov_0073",
       "fecha": "2026-08-10 14:15:24",
       "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "IPA",
-      "capa": "botella_und",
-      "cantidad": -37.5,
-      "nota": "Botella IPA: 46.0 und → 8.4 und",
-      "saldo_capa": 8.45
+      "origen": "transferencia",
+      "estilo": "IRISH RED ALE",
+      "capa": "fermentador_litros",
+      "cantidad": -70.3,
+      "nota": "Fermentador IRISH RED ALE: 410.4L → 340.0L",
+      "saldo_capa": 340.0
     },
     {
       "id": "mov_0074",
       "fecha": "2026-08-10 14:15:24",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "GERMAN PILS",
-      "capa": "fermentador_litros",
-      "cantidad": -80.0,
-      "nota": "Fermentador GERMAN PILS: 320.0L → 240.0L",
-      "saldo_capa": 240.0
+      "tipo": "ENTRADA",
+      "origen": "embarrilado",
+      "estilo": "IRISH RED ALE",
+      "capa": "barril_litros",
+      "cantidad": 54.0,
+      "nota": "Barril IRISH RED ALE: 0.0L → 54.0L",
+      "saldo_capa": 54.0
     },
     {
       "id": "mov_0075",
@@ -843,50 +843,6 @@
       "fecha": "2026-08-10 14:15:24",
       "tipo": "SALIDA",
       "origen": "transferencia",
-      "estilo": "IRISH RED ALE",
-      "capa": "fermentador_litros",
-      "cantidad": -70.3,
-      "nota": "Fermentador IRISH RED ALE: 410.4L → 340.0L",
-      "saldo_capa": 340.0
-    },
-    {
-      "id": "mov_0078",
-      "fecha": "2026-08-10 14:15:24",
-      "tipo": "ENTRADA",
-      "origen": "embarrilado",
-      "estilo": "IRISH RED ALE",
-      "capa": "barril_litros",
-      "cantidad": 54.0,
-      "nota": "Barril IRISH RED ALE: 0.0L → 54.0L",
-      "saldo_capa": 54.0
-    },
-    {
-      "id": "mov_0079",
-      "fecha": "2026-08-10 14:15:24",
-      "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "APA",
-      "capa": "barril_litros",
-      "cantidad": -15.5,
-      "nota": "Barril APA: 106.5L → 91.0L",
-      "saldo_capa": 91.0
-    },
-    {
-      "id": "mov_0080",
-      "fecha": "2026-08-10 14:15:24",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "HIDROMIEL",
-      "capa": "fermentador_litros",
-      "cantidad": -6.0,
-      "nota": "Fermentador HIDROMIEL: 316.0L → 310.0L",
-      "saldo_capa": 310.0
-    },
-    {
-      "id": "mov_0081",
-      "fecha": "2026-08-10 14:15:24",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
       "estilo": "GOLDEN ALE",
       "capa": "fermentador_litros",
       "cantidad": -200.0,
@@ -894,7 +850,7 @@
       "saldo_capa": 210.0
     },
     {
-      "id": "mov_0082",
+      "id": "mov_0078",
       "fecha": "2026-08-10 14:15:24",
       "tipo": "ENTRADA",
       "origen": "embarrilado",
@@ -905,84 +861,51 @@
       "saldo_capa": 35.0
     },
     {
-      "id": "mov_0083",
-      "fecha": "2026-08-18 15:29:29",
-      "tipo": "ENTRADA",
-      "origen": "produccion",
+      "id": "mov_0079",
+      "fecha": "2026-08-10 14:15:24",
+      "tipo": "SALIDA",
+      "origen": "transferencia",
       "estilo": "IPA",
       "capa": "fermentador_litros",
-      "cantidad": 594.0,
-      "nota": "Fermentador IPA: 240.0L → 834.0L",
-      "saldo_capa": 834.0
+      "cantidad": -100.0,
+      "nota": "Fermentador IPA: 340.0L → 240.0L",
+      "saldo_capa": 240.0
     },
     {
-      "id": "mov_0084",
-      "fecha": "2026-08-18 15:29:29",
+      "id": "mov_0080",
+      "fecha": "2026-08-10 14:15:24",
       "tipo": "ENTRADA",
       "origen": "embarrilado",
       "estilo": "IPA",
       "capa": "barril_litros",
-      "cantidad": 94.0,
-      "nota": "Barril IPA: 84.0L → 178.0L",
-      "saldo_capa": 178.0
+      "cantidad": 57.0,
+      "nota": "Barril IPA: 27.0L → 84.0L",
+      "saldo_capa": 84.0
     },
     {
-      "id": "mov_0085",
-      "fecha": "2026-08-18 15:29:29",
+      "id": "mov_0081",
+      "fecha": "2026-08-10 14:15:24",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "IPA",
+      "capa": "botella_und",
+      "cantidad": -37.5,
+      "nota": "Botella IPA: 46.0 und → 8.4 und",
+      "saldo_capa": 8.45
+    },
+    {
+      "id": "mov_0082",
+      "fecha": "2026-08-10 14:15:24",
       "tipo": "SALIDA",
       "origen": "transferencia",
       "estilo": "GERMAN PILS",
       "capa": "fermentador_litros",
-      "cantidad": -106.0,
-      "nota": "Fermentador GERMAN PILS: 240.0L → 134.0L",
-      "saldo_capa": 134.0
+      "cantidad": -80.0,
+      "nota": "Fermentador GERMAN PILS: 320.0L → 240.0L",
+      "saldo_capa": 240.0
     },
     {
-      "id": "mov_0086",
-      "fecha": "2026-08-18 15:29:29",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "STOUT",
-      "capa": "fermentador_litros",
-      "cantidad": -97.0,
-      "nota": "Fermentador STOUT: 120.0L → 23.0L",
-      "saldo_capa": 23.0
-    },
-    {
-      "id": "mov_0087",
-      "fecha": "2026-08-18 15:29:29",
-      "tipo": "ENTRADA",
-      "origen": "embarrilado",
-      "estilo": "STOUT",
-      "capa": "barril_litros",
-      "cantidad": 80.0,
-      "nota": "Barril STOUT: 7.0L → 87.0L",
-      "saldo_capa": 87.0
-    },
-    {
-      "id": "mov_0088",
-      "fecha": "2026-08-18 15:29:29",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "IRISH RED ALE",
-      "capa": "fermentador_litros",
-      "cantidad": -340.0,
-      "nota": "Fermentador IRISH RED ALE: 340.0L → 0.0L",
-      "saldo_capa": 340.0
-    },
-    {
-      "id": "mov_0089",
-      "fecha": "2026-08-18 15:29:29",
-      "tipo": "ENTRADA",
-      "origen": "embarrilado",
-      "estilo": "IRISH RED ALE",
-      "capa": "barril_litros",
-      "cantidad": 335.0,
-      "nota": "Barril IRISH RED ALE: 54.0L → 389.0L",
-      "saldo_capa": 389.0
-    },
-    {
-      "id": "mov_0090",
+      "id": "mov_0083",
       "fecha": "2026-08-18 15:29:29",
       "tipo": "SALIDA",
       "origen": "venta",
@@ -993,7 +916,7 @@
       "saldo_capa": 69.0
     },
     {
-      "id": "mov_0091",
+      "id": "mov_0084",
       "fecha": "2026-08-18 15:29:29",
       "tipo": "ENTRADA",
       "origen": "produccion",
@@ -1004,7 +927,51 @@
       "saldo_capa": 316.0
     },
     {
-      "id": "mov_0092",
+      "id": "mov_0085",
+      "fecha": "2026-08-18 15:29:29",
+      "tipo": "SALIDA",
+      "origen": "transferencia",
+      "estilo": "IRISH RED ALE",
+      "capa": "fermentador_litros",
+      "cantidad": -340.0,
+      "nota": "Fermentador IRISH RED ALE: 340.0L → 0.0L",
+      "saldo_capa": 340.0
+    },
+    {
+      "id": "mov_0086",
+      "fecha": "2026-08-18 15:29:29",
+      "tipo": "ENTRADA",
+      "origen": "embarrilado",
+      "estilo": "IRISH RED ALE",
+      "capa": "barril_litros",
+      "cantidad": 335.0,
+      "nota": "Barril IRISH RED ALE: 54.0L → 389.0L",
+      "saldo_capa": 389.0
+    },
+    {
+      "id": "mov_0087",
+      "fecha": "2026-08-18 15:29:29",
+      "tipo": "SALIDA",
+      "origen": "transferencia",
+      "estilo": "STOUT",
+      "capa": "fermentador_litros",
+      "cantidad": -97.0,
+      "nota": "Fermentador STOUT: 120.0L → 23.0L",
+      "saldo_capa": 23.0
+    },
+    {
+      "id": "mov_0088",
+      "fecha": "2026-08-18 15:29:29",
+      "tipo": "ENTRADA",
+      "origen": "embarrilado",
+      "estilo": "STOUT",
+      "capa": "barril_litros",
+      "cantidad": 80.0,
+      "nota": "Barril STOUT: 7.0L → 87.0L",
+      "saldo_capa": 87.0
+    },
+    {
+      "id": "mov_0089",
       "fecha": "2026-08-18 15:29:29",
       "tipo": "SALIDA",
       "origen": "transferencia",
@@ -1015,7 +982,7 @@
       "saldo_capa": 125.0
     },
     {
-      "id": "mov_0093",
+      "id": "mov_0090",
       "fecha": "2026-08-18 15:29:29",
       "tipo": "ENTRADA",
       "origen": "embarrilado",
@@ -1026,7 +993,7 @@
       "saldo_capa": 175.0
     },
     {
-      "id": "mov_0094",
+      "id": "mov_0091",
       "fecha": "2026-08-18 15:29:29",
       "tipo": "SALIDA",
       "origen": "venta",
@@ -1037,95 +1004,40 @@
       "saldo_capa": 72.0
     },
     {
-      "id": "mov_0095",
-      "fecha": "2026-08-24 11:56:06",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
+      "id": "mov_0092",
+      "fecha": "2026-08-18 15:29:29",
+      "tipo": "ENTRADA",
+      "origen": "produccion",
       "estilo": "IPA",
       "capa": "fermentador_litros",
-      "cantidad": -234.0,
-      "nota": "Fermentador IPA: 834.0L → 600.0L",
-      "saldo_capa": 600.0
+      "cantidad": 594.0,
+      "nota": "Fermentador IPA: 240.0L → 834.0L",
+      "saldo_capa": 834.0
     },
     {
-      "id": "mov_0096",
-      "fecha": "2026-08-24 11:56:06",
+      "id": "mov_0093",
+      "fecha": "2026-08-18 15:29:29",
       "tipo": "ENTRADA",
       "origen": "embarrilado",
       "estilo": "IPA",
       "capa": "barril_litros",
-      "cantidad": 21.0,
-      "nota": "Barril IPA: 178.0L → 199.0L",
-      "saldo_capa": 199.0
+      "cantidad": 94.0,
+      "nota": "Barril IPA: 84.0L → 178.0L",
+      "saldo_capa": 178.0
     },
     {
-      "id": "mov_0097",
-      "fecha": "2026-08-24 11:56:06",
-      "tipo": "ENTRADA",
-      "origen": "embotellado",
-      "estilo": "IPA",
-      "capa": "botella_und",
-      "cantidad": 56.5,
-      "nota": "Botella IPA: 8.4 und → 65.0 und",
-      "saldo_capa": 65.0
-    },
-    {
-      "id": "mov_0098",
-      "fecha": "2026-08-24 11:56:06",
+      "id": "mov_0094",
+      "fecha": "2026-08-18 15:29:29",
       "tipo": "SALIDA",
       "origen": "transferencia",
       "estilo": "GERMAN PILS",
       "capa": "fermentador_litros",
-      "cantidad": -104.0,
-      "nota": "Fermentador GERMAN PILS: 134.0L → 30.0L",
-      "saldo_capa": 30.0
+      "cantidad": -106.0,
+      "nota": "Fermentador GERMAN PILS: 240.0L → 134.0L",
+      "saldo_capa": 134.0
     },
     {
-      "id": "mov_0099",
-      "fecha": "2026-08-24 11:56:06",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "STOUT",
-      "capa": "fermentador_litros",
-      "cantidad": -23.0,
-      "nota": "Fermentador STOUT: 23.0L → 0.0L",
-      "saldo_capa": 23.0
-    },
-    {
-      "id": "mov_0100",
-      "fecha": "2026-08-24 11:56:06",
-      "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "STOUT",
-      "capa": "barril_litros",
-      "cantidad": -32.0,
-      "nota": "Barril STOUT: 87.0L → 55.0L",
-      "saldo_capa": 55.0
-    },
-    {
-      "id": "mov_0101",
-      "fecha": "2026-08-24 11:56:06",
-      "tipo": "ENTRADA",
-      "origen": "produccion",
-      "estilo": "IRISH RED ALE",
-      "capa": "fermentador_litros",
-      "cantidad": 730.0,
-      "nota": "Fermentador IRISH RED ALE: 0.0L → 730.0L",
-      "saldo_capa": 730.0
-    },
-    {
-      "id": "mov_0102",
-      "fecha": "2026-08-24 11:56:06",
-      "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "IRISH RED ALE",
-      "capa": "barril_litros",
-      "cantidad": -232.0,
-      "nota": "Barril IRISH RED ALE: 389.0L → 157.0L",
-      "saldo_capa": 157.0
-    },
-    {
-      "id": "mov_0103",
+      "id": "mov_0095",
       "fecha": "2026-08-24 11:56:06",
       "tipo": "ENTRADA",
       "origen": "embarrilado",
@@ -1136,7 +1048,51 @@
       "saldo_capa": 77.0
     },
     {
-      "id": "mov_0104",
+      "id": "mov_0096",
+      "fecha": "2026-08-24 11:56:06",
+      "tipo": "ENTRADA",
+      "origen": "produccion",
+      "estilo": "IRISH RED ALE",
+      "capa": "fermentador_litros",
+      "cantidad": 730.0,
+      "nota": "Fermentador IRISH RED ALE: 0.0L → 730.0L",
+      "saldo_capa": 730.0
+    },
+    {
+      "id": "mov_0097",
+      "fecha": "2026-08-24 11:56:06",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "IRISH RED ALE",
+      "capa": "barril_litros",
+      "cantidad": -232.0,
+      "nota": "Barril IRISH RED ALE: 389.0L → 157.0L",
+      "saldo_capa": 157.0
+    },
+    {
+      "id": "mov_0098",
+      "fecha": "2026-08-24 11:56:06",
+      "tipo": "SALIDA",
+      "origen": "transferencia",
+      "estilo": "STOUT",
+      "capa": "fermentador_litros",
+      "cantidad": -23.0,
+      "nota": "Fermentador STOUT: 23.0L → 0.0L",
+      "saldo_capa": 23.0
+    },
+    {
+      "id": "mov_0099",
+      "fecha": "2026-08-24 11:56:06",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "STOUT",
+      "capa": "barril_litros",
+      "cantidad": -32.0,
+      "nota": "Barril STOUT: 87.0L → 55.0L",
+      "saldo_capa": 55.0
+    },
+    {
+      "id": "mov_0100",
       "fecha": "2026-08-24 11:56:06",
       "tipo": "SALIDA",
       "origen": "transferencia",
@@ -1147,7 +1103,7 @@
       "saldo_capa": 125.0
     },
     {
-      "id": "mov_0105",
+      "id": "mov_0101",
       "fecha": "2026-08-24 11:56:06",
       "tipo": "SALIDA",
       "origen": "venta",
@@ -1158,84 +1114,51 @@
       "saldo_capa": 90.0
     },
     {
-      "id": "mov_0106",
-      "fecha": "2026-09-02 11:31:17",
+      "id": "mov_0102",
+      "fecha": "2026-08-24 11:56:06",
       "tipo": "SALIDA",
       "origen": "transferencia",
       "estilo": "IPA",
       "capa": "fermentador_litros",
-      "cantidad": -227.0,
-      "nota": "Fermentador IPA: 600.0L → 373.0L",
-      "saldo_capa": 373.0
+      "cantidad": -234.0,
+      "nota": "Fermentador IPA: 834.0L → 600.0L",
+      "saldo_capa": 600.0
     },
     {
-      "id": "mov_0107",
-      "fecha": "2026-09-02 11:31:17",
+      "id": "mov_0103",
+      "fecha": "2026-08-24 11:56:06",
       "tipo": "ENTRADA",
       "origen": "embarrilado",
       "estilo": "IPA",
       "capa": "barril_litros",
-      "cantidad": 41.0,
-      "nota": "Barril IPA: 199.0L → 240.0L",
-      "saldo_capa": 240.0
+      "cantidad": 21.0,
+      "nota": "Barril IPA: 178.0L → 199.0L",
+      "saldo_capa": 199.0
     },
     {
-      "id": "mov_0108",
-      "fecha": "2026-09-02 11:31:17",
+      "id": "mov_0104",
+      "fecha": "2026-08-24 11:56:06",
+      "tipo": "ENTRADA",
+      "origen": "embotellado",
+      "estilo": "IPA",
+      "capa": "botella_und",
+      "cantidad": 56.5,
+      "nota": "Botella IPA: 8.4 und → 65.0 und",
+      "saldo_capa": 65.0
+    },
+    {
+      "id": "mov_0105",
+      "fecha": "2026-08-24 11:56:06",
       "tipo": "SALIDA",
       "origen": "transferencia",
       "estilo": "GERMAN PILS",
       "capa": "fermentador_litros",
-      "cantidad": -30.0,
-      "nota": "Fermentador GERMAN PILS: 30.0L → 0.0L",
+      "cantidad": -104.0,
+      "nota": "Fermentador GERMAN PILS: 134.0L → 30.0L",
       "saldo_capa": 30.0
     },
     {
-      "id": "mov_0109",
-      "fecha": "2026-09-02 11:31:17",
-      "tipo": "ENTRADA",
-      "origen": "produccion",
-      "estilo": "STOUT",
-      "capa": "fermentador_litros",
-      "cantidad": 340.0,
-      "nota": "Fermentador STOUT: 0.0L → 340.0L",
-      "saldo_capa": 340.0
-    },
-    {
-      "id": "mov_0110",
-      "fecha": "2026-09-02 11:31:17",
-      "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "STOUT",
-      "capa": "barril_litros",
-      "cantidad": -19.0,
-      "nota": "Barril STOUT: 55.0L → 36.0L",
-      "saldo_capa": 36.0
-    },
-    {
-      "id": "mov_0111",
-      "fecha": "2026-09-02 11:31:17",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "IRISH RED ALE",
-      "capa": "fermentador_litros",
-      "cantidad": -55.0,
-      "nota": "Fermentador IRISH RED ALE: 730.0L → 675.0L",
-      "saldo_capa": 675.0
-    },
-    {
-      "id": "mov_0112",
-      "fecha": "2026-09-02 11:31:17",
-      "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "IRISH RED ALE",
-      "capa": "barril_litros",
-      "cantidad": -7.0,
-      "nota": "Barril IRISH RED ALE: 157.0L → 150.0L",
-      "saldo_capa": 150.0
-    },
-    {
-      "id": "mov_0113",
+      "id": "mov_0106",
       "fecha": "2026-09-02 11:31:17",
       "tipo": "SALIDA",
       "origen": "venta",
@@ -1246,7 +1169,7 @@
       "saldo_capa": 16.0
     },
     {
-      "id": "mov_0114",
+      "id": "mov_0107",
       "fecha": "2026-09-02 11:31:17",
       "tipo": "SALIDA",
       "origen": "transferencia",
@@ -1257,7 +1180,51 @@
       "saldo_capa": 315.0
     },
     {
-      "id": "mov_0115",
+      "id": "mov_0108",
+      "fecha": "2026-09-02 11:31:17",
+      "tipo": "SALIDA",
+      "origen": "transferencia",
+      "estilo": "IRISH RED ALE",
+      "capa": "fermentador_litros",
+      "cantidad": -55.0,
+      "nota": "Fermentador IRISH RED ALE: 730.0L → 675.0L",
+      "saldo_capa": 675.0
+    },
+    {
+      "id": "mov_0109",
+      "fecha": "2026-09-02 11:31:17",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "IRISH RED ALE",
+      "capa": "barril_litros",
+      "cantidad": -7.0,
+      "nota": "Barril IRISH RED ALE: 157.0L → 150.0L",
+      "saldo_capa": 150.0
+    },
+    {
+      "id": "mov_0110",
+      "fecha": "2026-09-02 11:31:17",
+      "tipo": "ENTRADA",
+      "origen": "produccion",
+      "estilo": "STOUT",
+      "capa": "fermentador_litros",
+      "cantidad": 340.0,
+      "nota": "Fermentador STOUT: 0.0L → 340.0L",
+      "saldo_capa": 340.0
+    },
+    {
+      "id": "mov_0111",
+      "fecha": "2026-09-02 11:31:17",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "STOUT",
+      "capa": "barril_litros",
+      "cantidad": -19.0,
+      "nota": "Barril STOUT: 55.0L → 36.0L",
+      "saldo_capa": 36.0
+    },
+    {
+      "id": "mov_0112",
       "fecha": "2026-09-02 11:31:17",
       "tipo": "ENTRADA",
       "origen": "produccion",
@@ -1268,7 +1235,7 @@
       "saldo_capa": 690.0
     },
     {
-      "id": "mov_0116",
+      "id": "mov_0113",
       "fecha": "2026-09-02 11:31:17",
       "tipo": "ENTRADA",
       "origen": "embotellado",
@@ -1279,84 +1246,40 @@
       "saldo_capa": 162.0
     },
     {
+      "id": "mov_0114",
+      "fecha": "2026-09-02 11:31:17",
+      "tipo": "SALIDA",
+      "origen": "transferencia",
+      "estilo": "IPA",
+      "capa": "fermentador_litros",
+      "cantidad": -227.0,
+      "nota": "Fermentador IPA: 600.0L → 373.0L",
+      "saldo_capa": 373.0
+    },
+    {
+      "id": "mov_0115",
+      "fecha": "2026-09-02 11:31:17",
+      "tipo": "ENTRADA",
+      "origen": "embarrilado",
+      "estilo": "IPA",
+      "capa": "barril_litros",
+      "cantidad": 41.0,
+      "nota": "Barril IPA: 199.0L → 240.0L",
+      "saldo_capa": 240.0
+    },
+    {
+      "id": "mov_0116",
+      "fecha": "2026-09-02 11:31:17",
+      "tipo": "SALIDA",
+      "origen": "transferencia",
+      "estilo": "GERMAN PILS",
+      "capa": "fermentador_litros",
+      "cantidad": -30.0,
+      "nota": "Fermentador GERMAN PILS: 30.0L → 0.0L",
+      "saldo_capa": 30.0
+    },
+    {
       "id": "mov_0117",
-      "fecha": "2026-09-07 12:06:44",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "IPA",
-      "capa": "fermentador_litros",
-      "cantidad": -23.0,
-      "nota": "Fermentador IPA: 373.0L → 350.0L",
-      "saldo_capa": 350.0
-    },
-    {
-      "id": "mov_0118",
-      "fecha": "2026-09-07 12:06:44",
-      "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "IPA",
-      "capa": "barril_litros",
-      "cantidad": -144.0,
-      "nota": "Barril IPA: 240.0L → 96.0L",
-      "saldo_capa": 96.0
-    },
-    {
-      "id": "mov_0119",
-      "fecha": "2026-09-07 12:06:44",
-      "tipo": "ENTRADA",
-      "origen": "produccion",
-      "estilo": "APA",
-      "capa": "fermentador_litros",
-      "cantidad": 320.0,
-      "nota": "Fermentador APA: 0.0L → 320.0L",
-      "saldo_capa": 320.0
-    },
-    {
-      "id": "mov_0120",
-      "fecha": "2026-09-07 12:06:44",
-      "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "APA",
-      "capa": "barril_litros",
-      "cantidad": -1.0,
-      "nota": "Barril APA: 16.0L → 15.0L",
-      "saldo_capa": 15.0
-    },
-    {
-      "id": "mov_0121",
-      "fecha": "2026-09-07 12:06:44",
-      "tipo": "ENTRADA",
-      "origen": "produccion",
-      "estilo": "HIDROMIEL",
-      "capa": "fermentador_litros",
-      "cantidad": 1.0,
-      "nota": "Fermentador HIDROMIEL: 315.0L → 316.0L",
-      "saldo_capa": 316.0
-    },
-    {
-      "id": "mov_0122",
-      "fecha": "2026-09-07 12:06:44",
-      "tipo": "SALIDA",
-      "origen": "transferencia",
-      "estilo": "STOUT",
-      "capa": "fermentador_litros",
-      "cantidad": -3.0,
-      "nota": "Fermentador STOUT: 340.0L → 337.0L",
-      "saldo_capa": 337.0
-    },
-    {
-      "id": "mov_0123",
-      "fecha": "2026-09-07 12:06:44",
-      "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "STOUT",
-      "capa": "barril_litros",
-      "cantidad": -18.0,
-      "nota": "Barril STOUT: 36.0L → 18.0L",
-      "saldo_capa": 18.0
-    },
-    {
-      "id": "mov_0124",
       "fecha": "2026-09-07 12:06:44",
       "tipo": "SALIDA",
       "origen": "transferencia",
@@ -1367,7 +1290,7 @@
       "saldo_capa": 683.0
     },
     {
-      "id": "mov_0125",
+      "id": "mov_0118",
       "fecha": "2026-09-07 12:06:44",
       "tipo": "SALIDA",
       "origen": "venta",
@@ -1378,7 +1301,7 @@
       "saldo_capa": 28.0
     },
     {
-      "id": "mov_0126",
+      "id": "mov_0119",
       "fecha": "2026-09-07 12:06:44",
       "tipo": "SALIDA",
       "origen": "venta",
@@ -1389,7 +1312,40 @@
       "saldo_capa": 82.0
     },
     {
-      "id": "mov_0127",
+      "id": "mov_0120",
+      "fecha": "2026-09-07 12:06:44",
+      "tipo": "ENTRADA",
+      "origen": "produccion",
+      "estilo": "HIDROMIEL",
+      "capa": "fermentador_litros",
+      "cantidad": 1.0,
+      "nota": "Fermentador HIDROMIEL: 315.0L → 316.0L",
+      "saldo_capa": 316.0
+    },
+    {
+      "id": "mov_0121",
+      "fecha": "2026-09-07 12:06:44",
+      "tipo": "ENTRADA",
+      "origen": "produccion",
+      "estilo": "APA",
+      "capa": "fermentador_litros",
+      "cantidad": 320.0,
+      "nota": "Fermentador APA: 0.0L → 320.0L",
+      "saldo_capa": 320.0
+    },
+    {
+      "id": "mov_0122",
+      "fecha": "2026-09-07 12:06:44",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "APA",
+      "capa": "barril_litros",
+      "cantidad": -1.0,
+      "nota": "Barril APA: 16.0L → 15.0L",
+      "saldo_capa": 15.0
+    },
+    {
+      "id": "mov_0123",
       "fecha": "2026-09-07 12:06:44",
       "tipo": "SALIDA",
       "origen": "transferencia",
@@ -1400,7 +1356,7 @@
       "saldo_capa": 655.0
     },
     {
-      "id": "mov_0128",
+      "id": "mov_0124",
       "fecha": "2026-09-07 12:06:44",
       "tipo": "SALIDA",
       "origen": "venta",
@@ -1411,7 +1367,62 @@
       "saldo_capa": 120.0
     },
     {
+      "id": "mov_0125",
+      "fecha": "2026-09-07 12:06:44",
+      "tipo": "SALIDA",
+      "origen": "transferencia",
+      "estilo": "IPA",
+      "capa": "fermentador_litros",
+      "cantidad": -23.0,
+      "nota": "Fermentador IPA: 373.0L → 350.0L",
+      "saldo_capa": 350.0
+    },
+    {
+      "id": "mov_0126",
+      "fecha": "2026-09-07 12:06:44",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "IPA",
+      "capa": "barril_litros",
+      "cantidad": -144.0,
+      "nota": "Barril IPA: 240.0L → 96.0L",
+      "saldo_capa": 96.0
+    },
+    {
+      "id": "mov_0127",
+      "fecha": "2026-09-07 12:06:44",
+      "tipo": "SALIDA",
+      "origen": "transferencia",
+      "estilo": "STOUT",
+      "capa": "fermentador_litros",
+      "cantidad": -3.0,
+      "nota": "Fermentador STOUT: 340.0L → 337.0L",
+      "saldo_capa": 337.0
+    },
+    {
+      "id": "mov_0128",
+      "fecha": "2026-09-07 12:06:44",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "STOUT",
+      "capa": "barril_litros",
+      "cantidad": -18.0,
+      "nota": "Barril STOUT: 36.0L → 18.0L",
+      "saldo_capa": 18.0
+    },
+    {
       "id": "mov_0129",
+      "fecha": "2026-09-07 14:33:53",
+      "tipo": "SALIDA",
+      "origen": "venta",
+      "estilo": "APA",
+      "capa": "barril_litros",
+      "cantidad": -15.0,
+      "nota": "Barril APA: 15.0L → 0.0L",
+      "saldo_capa": 0.0
+    },
+    {
+      "id": "mov_0130",
       "fecha": "2026-09-07 14:33:53",
       "tipo": "SALIDA",
       "origen": "transferencia",
@@ -1422,7 +1433,7 @@
       "saldo_capa": 330.0
     },
     {
-      "id": "mov_0130",
+      "id": "mov_0131",
       "fecha": "2026-09-07 14:33:53",
       "tipo": "ENTRADA",
       "origen": "embarrilado",
@@ -1431,17 +1442,6 @@
       "cantidad": 20.0,
       "nota": "Barril IPA: 96.0L → 116.0L",
       "saldo_capa": 116.0
-    },
-    {
-      "id": "mov_0131",
-      "fecha": "2026-09-07 14:33:53",
-      "tipo": "SALIDA",
-      "origen": "venta",
-      "estilo": "APA",
-      "capa": "barril_litros",
-      "cantidad": -15.0,
-      "nota": "Barril APA: 15.0L → 0.0L",
-      "saldo_capa": 0.0
     },
     {
       "id": "mov_0132",
@@ -1733,13 +1733,6 @@
     {
       "tipo": "DESBALANCE_MASAS",
       "urgencia": "alta",
-      "estilo": "STOUT",
-      "fecha": "2026-07-14 16:43:21",
-      "mensaje": "STOUT: entraron 48.5L a barril + 0.0L a botella = 48.5L, pero aguas arriba solo salieron 25.0L (faltante 23.5L). Revisar registro."
-    },
-    {
-      "tipo": "DESBALANCE_MASAS",
-      "urgencia": "alta",
       "estilo": "GOLDEN ALE",
       "fecha": "2026-07-14 16:43:21",
       "mensaje": "GOLDEN ALE: entraron 50.1L a barril + 0.3L a botella = 50.4L, pero aguas arriba solo salieron 0.0L (faltante 50.4L). Revisar registro."
@@ -1747,9 +1740,9 @@
     {
       "tipo": "DESBALANCE_MASAS",
       "urgencia": "alta",
-      "estilo": "IPA",
-      "fecha": "2026-07-22 12:05:27",
-      "mensaje": "IPA: entraron 0.0L a barril + 26.4L a botella = 26.4L, pero aguas arriba solo salieron 0.0L (faltante 26.4L). Revisar registro."
+      "estilo": "STOUT",
+      "fecha": "2026-07-14 16:43:21",
+      "mensaje": "STOUT: entraron 48.5L a barril + 0.0L a botella = 48.5L, pero aguas arriba solo salieron 25.0L (faltante 23.5L). Revisar registro."
     },
     {
       "tipo": "DESBALANCE_MASAS",
@@ -1757,6 +1750,13 @@
       "estilo": "HIDROMIEL",
       "fecha": "2026-07-22 12:05:27",
       "mensaje": "HIDROMIEL: entraron 75.0L a barril + 0.0L a botella = 75.0L, pero aguas arriba solo salieron 0.0L (faltante 75.0L). Revisar registro."
+    },
+    {
+      "tipo": "DESBALANCE_MASAS",
+      "urgencia": "alta",
+      "estilo": "IPA",
+      "fecha": "2026-07-22 12:05:27",
+      "mensaje": "IPA: entraron 0.0L a barril + 26.4L a botella = 26.4L, pero aguas arriba solo salieron 0.0L (faltante 26.4L). Revisar registro."
     },
     {
       "tipo": "DESBALANCE_MASAS",

@@ -1,35 +1,35 @@
 {
-  "fecha": "2026-09-27 19:30:49",
+  "fecha": "2026-09-28 21:34:28",
   "dry_run": false,
-  "pendientes_procesar": 3,
+  "pendientes_procesar": 0,
   "emitidas": 0,
-  "sin_stock": 3,
+  "sin_stock": 0,
   "sin_cliente": 0,
   "errores": 0,
   "inventario_inicial": {
     "GOLDEN ALE": {
-      "bot": 0.0,
-      "barril": 0.0,
-      "litros": 0.0
+      "bot": 82.0,
+      "barril": 28.0,
+      "litros": 683.0
     },
     "IRISH RED ALE": {
-      "bot": 0.0,
-      "barril": 0.0,
-      "litros": 0.0
+      "bot": 71.0,
+      "barril": 120.0,
+      "litros": 655.0
     },
     "APA": {
       "bot": 0.0,
       "barril": 0.0,
-      "litros": 0.0
+      "litros": 320.0
     },
     "IPA": {
-      "bot": 0.0,
-      "barril": 0.0,
-      "litros": 0.0
+      "bot": 130.0,
+      "barril": 116.0,
+      "litros": 330.0
     },
     "STOUT": {
       "bot": 0.0,
-      "barril": 0.0,
+      "barril": 13.0,
       "litros": 80.0
     },
     "GERMAN PILS": {
@@ -38,9 +38,9 @@
       "litros": 0.0
     },
     "HIDROMIEL": {
-      "bot": 0.0,
-      "barril": 0.0,
-      "litros": 0.0
+      "bot": 14.0,
+      "barril": 25.0,
+      "litros": 316.0
     },
     "RED IPA": {
       "bot": 0.0,
@@ -50,28 +50,28 @@
   },
   "inventario_final": {
     "GOLDEN ALE": {
-      "bot": 0.0,
-      "barril": 0.0,
-      "litros": 0.0
+      "bot": 82.0,
+      "barril": 28.0,
+      "litros": 683.0
     },
     "IRISH RED ALE": {
-      "bot": 0.0,
-      "barril": 0.0,
-      "litros": 0.0
+      "bot": 71.0,
+      "barril": 120.0,
+      "litros": 655.0
     },
     "APA": {
       "bot": 0.0,
       "barril": 0.0,
-      "litros": 0.0
+      "litros": 320.0
     },
     "IPA": {
-      "bot": 0.0,
-      "barril": 0.0,
-      "litros": 0.0
+      "bot": 130.0,
+      "barril": 116.0,
+      "litros": 330.0
     },
     "STOUT": {
       "bot": 0.0,
-      "barril": 0.0,
+      "barril": 13.0,
       "litros": 80.0
     },
     "GERMAN PILS": {
@@ -80,9 +80,9 @@
       "litros": 0.0
     },
     "HIDROMIEL": {
-      "bot": 0.0,
-      "barril": 0.0,
-      "litros": 0.0
+      "bot": 14.0,
+      "barril": 25.0,
+      "litros": 316.0
     },
     "RED IPA": {
       "bot": 0.0,
@@ -132,5 +132,5 @@
       "litros_descontados_de_fermentador": 0.0
     }
   },
-  "resumen": "0 emitidas | 3 sin stock | 0 sin cliente"
+  "resumen": "0 emitidas | 0 sin stock | 0 sin cliente"
 }

@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-09-29 23:24:27",
+  "fecha": "2026-09-29 23:36:24",
   "fisico": {
     "GOLDEN ALE": {
       "bot": 82.0,
@@ -46,7 +46,7 @@
     "APA": {
       "bot": 125.0,
       "barril": 0.0,
-      "litros": 23.2
+      "litros": 24.9
     },
     "GERMAN PILS": {
       "bot": 0.0,
@@ -64,7 +64,7 @@
       "litros": 0.0
     },
     "IPA": {
-      "bot": 647.0,
+      "bot": 650.0,
       "barril": 52.300000000000004,
       "litros": 0.0
     },
@@ -88,7 +88,7 @@
     "APA": {
       "bot": -125.0,
       "barril": 0.0,
-      "litros": 296.8
+      "litros": 295.1
     },
     "GERMAN PILS": {
       "bot": 0.0,
@@ -106,7 +106,7 @@
       "litros": 316.0
     },
     "IPA": {
-      "bot": -517.0,
+      "bot": -520.0,
       "barril": 63.7,
       "litros": 330.0
     },

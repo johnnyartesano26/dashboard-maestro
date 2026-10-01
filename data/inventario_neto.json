@@ -1,5 +1,5 @@
 {
-  "generado": "2026-09-29T17:31:00.332574",
+  "generado": "2026-10-01T16:08:21.780490",
   "fecha_lectura": "2026-09-22 09:48:40",
   "fermentadores": [
     {
@@ -71,7 +71,7 @@
     {
       "codigo": "PTL04",
       "estilo": "IPA",
-      "litros": 1.6
+      "litros": 34.8
     },
     {
       "codigo": "PTL05",
@@ -147,8 +147,8 @@
     }
   ],
   "totales": {
-    "litros_fermentando": 2410,
-    "litros_barril": 26,
-    "ventas_cop": 8679150
+    "litros_fermentando": 2443,
+    "litros_barril": 59,
+    "ventas_cop": 8936200
   }
 }

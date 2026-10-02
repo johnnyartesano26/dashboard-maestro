@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-02 23:24:31",
+  "fecha": "2026-10-02 23:37:17",
   "fisico": {
     "GOLDEN ALE": {
       "bot": 82.0,
@@ -64,12 +64,12 @@
       "litros": 0.0
     },
     "IPA": {
-      "bot": 706.0,
+      "bot": 714.0,
       "barril": 80.9,
       "litros": 0.0
     },
     "IRISH RED ALE": {
-      "bot": 545.0,
+      "bot": 553.0,
       "barril": 287.8,
       "litros": 0.0
     },
@@ -80,7 +80,7 @@
     },
     "STOUT": {
       "bot": 271.0,
-      "barril": 89.3,
+      "barril": 91.89999999999999,
       "litros": 0.0
     }
   },
@@ -106,12 +106,12 @@
       "litros": 316.0
     },
     "IPA": {
-      "bot": -576.0,
+      "bot": -584.0,
       "barril": 35.1,
       "litros": 330.0
     },
     "IRISH RED ALE": {
-      "bot": -474.0,
+      "bot": -482.0,
       "barril": -167.8,
       "litros": 655.0
     },
@@ -122,7 +122,7 @@
     },
     "STOUT": {
       "bot": -271.0,
-      "barril": -76.3,
+      "barril": -78.9,
       "litros": 80.0
     }
   }

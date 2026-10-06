@@ -4,6 +4,7 @@ Usa limit=30 (maximo de Alegra) con 2s entre paginas (30/min, seguro para rate l
 """
 import json, os, sys, time
 import requests
+from collections import defaultdict
 from datetime import datetime
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -31,6 +32,7 @@ MES_NUM = {
 def fetch_all():
     """Descarga todas las facturas pagina por pagina."""
     facturas = []
+    productos = []
     start = 0
     page = 0
     while True:
@@ -52,20 +54,28 @@ def fetch_all():
         if not items:
             break
         for inv in items:
+            fecha = (inv.get("date") or "")[:10]
             facturas.append({
                 "id": str(inv.get("id", "")),
                 "cliente": inv.get("client", {}).get("name", "Cliente") or "Consumidor Final",
                 "total": int(inv.get("total", 0)),
                 "status": inv.get("status", "draft"),
-                "fecha": (inv.get("date") or "")[:10]
+                "fecha": fecha
             })
+            for it in (inv.get("items") or []):
+                productos.append({
+                    "nombre": it.get("name") or "Sin nombre",
+                    "cantidad": int(it.get("quantity") or 0),
+                    "total": int(it.get("total") or 0),
+                    "fecha": fecha
+                })
         page += 1
         print(f"  Pag {page:3d} start={start:4d} → {len(items):2d} items (total={len(facturas)})", flush=True)
         if len(items) < LIMIT:
             break
         start += LIMIT
         time.sleep(SLEEP)
-    return facturas
+    return facturas, productos
 
 def agrupar_por_mes(facturas):
     """Agrupa facturas por mes (YYYY-MM) y guarda JSONs."""
@@ -122,9 +132,49 @@ def actualizar_catalogo(exportados):
     with open(CATALOGO_PATH, "w", encoding="utf-8") as f:
         json.dump(catalogo, f, ensure_ascii=False, indent=2)
 
+def generar_resumen_anual(facturas, productos):
+    """Genera data/resumen_alegra.json con agregaciones del año en curso."""
+    anio = datetime.now().year
+    facturas_anio = [f for f in facturas if f["fecha"].startswith(str(anio))]
+    productos_anio = [p for p in productos if p["fecha"].startswith(str(anio))]
+
+    por_mes = defaultdict(lambda: {"total": 0, "count": 0})
+    por_cliente = defaultdict(lambda: {"total": 0, "count": 0})
+    for f in facturas_anio:
+        por_mes[f["fecha"][:7]]["total"] += f["total"]
+        por_mes[f["fecha"][:7]]["count"] += 1
+        por_cliente[f["cliente"]]["total"] += f["total"]
+        por_cliente[f["cliente"]]["count"] += 1
+
+    por_producto = defaultdict(lambda: {"total": 0, "unidades": 0})
+    for p in productos_anio:
+        por_producto[p["nombre"]]["total"] += p["total"]
+        por_producto[p["nombre"]]["unidades"] += p["cantidad"]
+
+    total_anual = sum(f["total"] for f in facturas_anio)
+    num_facturas = len(facturas_anio)
+
+    resumen = {
+        "generado": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "anio": anio,
+        "kpis": {
+            "total_anual": total_anual,
+            "num_facturas": num_facturas,
+            "ticket_promedio": round(total_anual / num_facturas) if num_facturas else 0,
+        },
+        "por_mes": {k: dict(v) for k, v in sorted(por_mes.items())},
+        "por_producto": {k: dict(v) for k, v in sorted(por_producto.items(), key=lambda x: -x[1]["total"])},
+        "por_cliente": {k: dict(v) for k, v in sorted(por_cliente.items(), key=lambda x: -x[1]["total"])},
+    }
+
+    ruta = os.path.join(DATA_DIR, "resumen_alegra.json")
+    with open(ruta, "w", encoding="utf-8") as f:
+        json.dump(resumen, f, ensure_ascii=False, indent=2)
+    print(f"  ✅ resumen_alegra.json: {num_facturas} facturas, ${total_anual:,} COP, {len(por_producto)} productos", flush=True)
+
 def main():
     print(f"📡 Descargando facturas de Alegra API...", flush=True)
-    facturas = fetch_all()
+    facturas, productos = fetch_all()
     if not facturas:
         print("❌ No se descargó ninguna factura de Alegra. Revisa ALEGRA_EMAIL/ALEGRA_TOKEN.", flush=True)
         sys.exit(1)
@@ -132,6 +182,8 @@ def main():
     exportados = agrupar_por_mes(facturas)
     print(f"\n📋 Actualizando catalogo.json...", flush=True)
     actualizar_catalogo(exportados)
+    print(f"\n📊 Generando resumen anual...", flush=True)
+    generar_resumen_anual(facturas, productos)
     print(f"\n✅ Listo: {len(exportados)} meses exportados", flush=True)
 
 if __name__ == "__main__":

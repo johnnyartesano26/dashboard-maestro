@@ -251,6 +251,7 @@
     <button class="tab-btn" data-tab="facturacion" onclick="switchTab('facturacion')">📄 Facturación</button>
     <button class="tab-btn" data-tab="inventario" onclick="switchTab('inventario')">🍺 Inventario</button>
     <button class="tab-btn" data-tab="ventas" onclick="switchTab('ventas')">💰 Ventas</button>
+    <button class="tab-btn" data-tab="alegra" onclick="switchTab('alegra')">📈 Gráficas Alegra</button>
     <button class="tab-btn" data-tab="clientes" onclick="switchTab('clientes')">👥 Análisis de Clientes</button>
     <button class="tab-btn" data-tab="notascredito" onclick="switchTab('notascredito')">📝 Notas Crédito</button>
   </div>
@@ -580,6 +581,32 @@ function copiarSync() {
 </script>
 </div>
 
+<!-- ═══════════════ TAB: GRÁFICAS ALEGRA ═══════════════ -->
+<div class="tab-content" id="tab-alegra">
+  <div class="kpi-row" id="kpiAlegra">
+    <div class="kpi"><div class="val green" id="aTotal">—</div><div class="lab">Total facturado</div></div>
+    <div class="kpi"><div class="val cyan" id="aFacturas">—</div><div class="lab">Facturas</div></div>
+    <div class="kpi"><div class="val blue" id="aTicket">—</div><div class="lab">Ticket promedio</div></div>
+  </div>
+  <div class="grid">
+    <div class="card full">
+      <h2>📈 Facturación mensual <span id="aMesRange" style="font-size:.7em;color:var(--mm-dim);font-weight:400"></span></h2>
+      <canvas id="chartAlegraMes"></canvas>
+    </div>
+    <div class="card">
+      <h2>🍺 Ventas por producto</h2>
+      <canvas id="chartAlegraProducto"></canvas>
+    </div>
+    <div class="card">
+      <h2>👥 Top clientes</h2>
+      <canvas id="chartAlegraCliente"></canvas>
+    </div>
+  </div>
+  <p style="color:var(--mm-dim);font-size:.78em;margin-top:14px;text-align:center">
+    Datos de Alegra (facturación) · se actualiza automáticamente cada día
+  </p>
+</div>
+
 <!-- ═══════════════ TAB: ANALISIS DE CLIENTES ═══════════════ -->
 <div class="tab-content" id="tab-clientes">
   <iframe src="agenda-clientes.html" style="width:100%;height:calc(100vh - 150px);border:none;border-radius:8px" title="Análisis de Clientes"></iframe>
@@ -657,7 +684,7 @@ let allData = [];
 let filtered = [];
 let factCharts = {};
 let overviewCharts = {};
-let TAB_STATE = { facturacion: false, inventario: false, resumen: true, ventas: false, clientes: false, notascredito: false };
+let TAB_STATE = { facturacion: false, inventario: false, resumen: true, ventas: false, alegra: false, clientes: false, notascredito: false };
 const NC_BRIDGE = 'http://localhost:5001';
 let totalFacturasConsolidado = 0;
 let totalClientesConsolidado = 0;
@@ -750,6 +777,10 @@ function switchTab(name) {
     TAB_STATE.ventas = true;
     initVentas();
   }
+  if (name === 'alegra' && !TAB_STATE.alegra) {
+    TAB_STATE.alegra = true;
+    initAlegra();
+  }
   if (name === 'clientes' && !TAB_STATE.clientes) {
     TAB_STATE.clientes = true;
   }
@@ -757,6 +788,89 @@ function switchTab(name) {
     TAB_STATE.notascredito = true;
     cargarHistorialNC();
   }
+}
+
+// ═══════════════════════════════════════════════════
+// GRÁFICAS ALEGRA (facturación anual)
+// ═══════════════════════════════════════════════════
+let alegraCharts = {};
+let resumenAlegra = null;
+
+async function initAlegra() {
+  try {
+    const r = await fetch('data/resumen_alegra.json');
+    if (!r.ok) throw new Error(r.status);
+    resumenAlegra = await r.json();
+  } catch (e) { console.warn('resumen_alegra.json:', e); resumenAlegra = null; }
+  renderAlegraKPIs();
+  renderAlegraMensual();
+  renderAlegraProducto();
+  renderAlegraCliente();
+}
+
+function renderAlegraKPIs() {
+  const k = resumenAlegra && resumenAlegra.kpis;
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+  set('aTotal', k ? '$' + (k.total_anual / 1e6).toFixed(1) + 'M' : '—');
+  set('aFacturas', k ? k.num_facturas.toLocaleString('es-CO') : '—');
+  set('aTicket', k ? '$' + k.ticket_promedio.toLocaleString('es-CO') : '—');
+  const anio = resumenAlegra && resumenAlegra.anio;
+  const lab = document.getElementById('aMesRange');
+  if (lab && anio) lab.textContent = ' · ' + anio;
+}
+
+function renderAlegraMensual() {
+  const ctx = document.getElementById('chartAlegraMes');
+  if (!ctx || typeof Chart === 'undefined') return;
+  if (alegraCharts.mes) alegraCharts.mes.destroy();
+  const meses = resumenAlegra ? Object.keys(resumenAlegra.por_mes || {}) : [];
+  const labels = meses.map(k => MESES_CORTO[parseInt(k.slice(5), 10) - 1]);
+  const data = meses.map(k => resumenAlegra.por_mes[k].total);
+  alegraCharts.mes = new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ label: 'Facturado', data, backgroundColor: '#c88a3d', borderRadius: 4 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: { y: { ticks: { callback: v => '$' + (v / 1e6).toFixed(1) + 'M' } } },
+      plugins: { legend: { display: false } }
+    }
+  });
+}
+
+function renderAlegraProducto() {
+  const ctx = document.getElementById('chartAlegraProducto');
+  if (!ctx || typeof Chart === 'undefined') return;
+  if (alegraCharts.producto) alegraCharts.producto.destroy();
+  const prod = Object.entries(resumenAlegra ? (resumenAlegra.por_producto || {}) : {}).sort((a, b) => b[1].total - a[1].total).slice(0, 10);
+  const labels = prod.map(p => p[0].length > 22 ? p[0].slice(0, 22) + '…' : p[0]);
+  const data = prod.map(p => p[1].total);
+  alegraCharts.producto = new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ label: 'Ventas $', data, backgroundColor: '#7a9e7a', borderRadius: 4 }] },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      scales: { x: { ticks: { callback: v => '$' + (v / 1e6).toFixed(1) + 'M' } } },
+      plugins: { legend: { display: false } }
+    }
+  });
+}
+
+function renderAlegraCliente() {
+  const ctx = document.getElementById('chartAlegraCliente');
+  if (!ctx || typeof Chart === 'undefined') return;
+  if (alegraCharts.cliente) alegraCharts.cliente.destroy();
+  const cli = Object.entries(resumenAlegra ? (resumenAlegra.por_cliente || {}) : {}).sort((a, b) => b[1].total - a[1].total).slice(0, 10);
+  const labels = cli.map(c => c[0].length > 22 ? c[0].slice(0, 22) + '…' : c[0]);
+  const data = cli.map(c => c[1].total);
+  alegraCharts.cliente = new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ label: 'Ventas $', data, backgroundColor: '#e8a84c', borderRadius: 4 }] },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      scales: { x: { ticks: { callback: v => '$' + (v / 1e6).toFixed(1) + 'M' } } },
+      plugins: { legend: { display: false } }
+    }
+  });
 }
 
 // ═══════════════════════════════════════════════════

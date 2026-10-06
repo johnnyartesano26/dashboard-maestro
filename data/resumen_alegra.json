@@ -1,0 +1,462 @@
+{
+  "generado": "2026-10-06 12:21:47",
+  "anio": 2026,
+  "kpis": {
+    "total_anual": 454726988,
+    "num_facturas": 3530,
+    "ticket_promedio": 128818
+  },
+  "por_mes": {
+    "2026-01": {
+      "total": 43952487,
+      "count": 378
+    },
+    "2026-02": {
+      "total": 39770027,
+      "count": 400
+    },
+    "2026-03": {
+      "total": 59129316,
+      "count": 415
+    },
+    "2026-04": {
+      "total": 44418093,
+      "count": 385
+    },
+    "2026-05": {
+      "total": 51296275,
+      "count": 364
+    },
+    "2026-06": {
+      "total": 51403562,
+      "count": 337
+    },
+    "2026-07": {
+      "total": 44506381,
+      "count": 347
+    },
+    "2026-08": {
+      "total": 53454543,
+      "count": 433
+    },
+    "2026-09": {
+      "total": 58554047,
+      "count": 418
+    },
+    "2026-10": {
+      "total": 8242257,
+      "count": 53
+    }
+  },
+  "por_producto": {},
+  "por_cliente": {
+    "Consumidor Final": {
+      "total": 218083957,
+      "count": 3081
+    },
+    "JUAN CARLOS ORREGO ZAPATA": {
+      "total": 41685664,
+      "count": 41
+    },
+    "INVERSIONES LATINERIA S.A.S": {
+      "total": 35650673,
+      "count": 11
+    },
+    "Caja de Compensación Familiar de Antioquia - Comfama": {
+      "total": 17828580,
+      "count": 2
+    },
+    "DANIEL SCHMUTTE": {
+      "total": 9253755,
+      "count": 22
+    },
+    "PINEA S.A.S": {
+      "total": 8972980,
+      "count": 28
+    },
+    "INVERSIONES BISONTALAS S.A.S.": {
+      "total": 8848602,
+      "count": 3
+    },
+    "Leonardo Gaitan Zuluaga": {
+      "total": 8726396,
+      "count": 23
+    },
+    "Hans Sucerquia": {
+      "total": 7572160,
+      "count": 14
+    },
+    "MARTHA ELENA  (Punta Arena) PERDOMO JIMENEZ": {
+      "total": 5083701,
+      "count": 14
+    },
+    "INVERSIONES PULSO S.A.S": {
+      "total": 4485097,
+      "count": 6
+    },
+    "CECILIA ALICIA BRAVO DE NOHAVA": {
+      "total": 4481142,
+      "count": 15
+    },
+    "Martin La Vendimia Emilio Jaramillo Marín": {
+      "total": 4274836,
+      "count": 9
+    },
+    "JUAN ESTEBAN GOMEZ MORENO": {
+      "total": 4253510,
+      "count": 8
+    },
+    "Manuel Felipe  Hernandez Gallego": {
+      "total": 3090636,
+      "count": 3
+    },
+    "Inversiones Zeppelin S.A.S": {
+      "total": 2747649,
+      "count": 5
+    },
+    "LUIS ALFONSO ARANGO VASQUEZ": {
+      "total": 2684905,
+      "count": 2
+    },
+    "Daniela Ruiz Ricardo": {
+      "total": 2654375,
+      "count": 12
+    },
+    "EL ZORRO Y LA": {
+      "total": 2600032,
+      "count": 8
+    },
+    "Jairo licorera Kanana Acevedo Sanchez": {
+      "total": 2323000,
+      "count": 9
+    },
+    "Elena Ossa Sanchez": {
+      "total": 2257614,
+      "count": 9
+    },
+    "CHARCUTERIA CERDEÑA": {
+      "total": 2166990,
+      "count": 6
+    },
+    "CEMIEL SAS (Papi Tienda)": {
+      "total": 1878825,
+      "count": 8
+    },
+    "MAURICIO GEHOVA JARAMILLO VELASQUEZ": {
+      "total": 1799170,
+      "count": 7
+    },
+    "ORLANDO VICENTE CEBALLOS ROMERO": {
+      "total": 1737400,
+      "count": 4
+    },
+    "MONKEY BURGER ENVIGADO": {
+      "total": 1729320,
+      "count": 2
+    },
+    "ANTHONY CRAIG WATSON": {
+      "total": 1682170,
+      "count": 8
+    },
+    "SEVEN MINIMERCADO": {
+      "total": 1574870,
+      "count": 6
+    },
+    "nicolas Fajardo Andrade": {
+      "total": 1546037,
+      "count": 6
+    },
+    "JUAN FELIPE ARTEAGA GIRALDO": {
+      "total": 1512790,
+      "count": 4
+    },
+    "LOREPA AREPAS SAS": {
+      "total": 1510235,
+      "count": 5
+    },
+    "JOSE MAURICIO GALLEGO QUINTERO": {
+      "total": 1421893,
+      "count": 5
+    },
+    "Azucena (HOUSE OF DEMONS) Rallon Benjumea": {
+      "total": 1373690,
+      "count": 6
+    },
+    "ASTRID VERONICA PORRAS GIRALDO": {
+      "total": 1300400,
+      "count": 3
+    },
+    "Inversiones Zeppeling S.A.S": {
+      "total": 1292639,
+      "count": 3
+    },
+    "Carlos Adrián  Vergara Cadavid": {
+      "total": 1282360,
+      "count": 1
+    },
+    "Luis Fernando Quintero Cuervo Club del Ritmo": {
+      "total": 1274518,
+      "count": 5
+    },
+    "PATRICIA MELO GONZALEZ": {
+      "total": 1264380,
+      "count": 7
+    },
+    "INVERSIONES DE PASO S.A.S": {
+      "total": 1218023,
+      "count": 2
+    },
+    "ASTRID ELENA (Divergente) ARANGO QUIROS": {
+      "total": 1057170,
+      "count": 4
+    },
+    "FERNANDO LUIS CUERVO QUINTERO": {
+      "total": 947560,
+      "count": 4
+    },
+    "DIEZ MEDELLIN S.A.S": {
+      "total": 937860,
+      "count": 1
+    },
+    "CONSTRUCTORA ANROL S.A.S (Bar de Laureles)": {
+      "total": 877165,
+      "count": 4
+    },
+    "Andrea Alvarez Ordoñez": {
+      "total": 847780,
+      "count": 6
+    },
+    "JOSE DANIEL PIEDRAHITA BETANCUR": {
+      "total": 780890,
+      "count": 3
+    },
+    "CAROLINA CROVO SIERRA": {
+      "total": 780890,
+      "count": 3
+    },
+    "JUAN FELIPE Vulgaro Bar ARTEAGA GIRALDO": {
+      "total": 773280,
+      "count": 3
+    },
+    "Luz Mariela Morales Velasquez (Plancha Sonora)": {
+      "total": 770130,
+      "count": 2
+    },
+    "Cindy Lorena (Lorepa) Alzate Arbeláez": {
+      "total": 755650,
+      "count": 3
+    },
+    "PROYECTO CAFE SAS": {
+      "total": 752280,
+      "count": 2
+    },
+    "GOMEZ DE MARINILLA S.A.S.": {
+      "total": 743280,
+      "count": 1
+    },
+    "BEDOYA CASTRILLON WBEIMAR": {
+      "total": 726098,
+      "count": 3
+    },
+    "CASA CULTURAL LA TRILLA": {
+      "total": 723511,
+      "count": 3
+    },
+    "BOHORQUEZ ARREDONDO CRISTIAN DANILO": {
+      "total": 721316,
+      "count": 3
+    },
+    "Restaurante bar Mirador de la Eterna Primavera": {
+      "total": 717583,
+      "count": 2
+    },
+    "Cervecería La Cima S.A.S": {
+      "total": 682772,
+      "count": 2
+    },
+    "JARDIN CERVECERO MED SAS.": {
+      "total": 647180,
+      "count": 2
+    },
+    "FUNDACION JARDIN BOTANICO \"JOAQUIN ANTONIO URIBE\" DE MEDELLIN": {
+      "total": 621180,
+      "count": 2
+    },
+    "JUAN MAURICIO VALLEJO MARIN": {
+      "total": 615230,
+      "count": 2
+    },
+    "PROALPINO SAS": {
+      "total": 604574,
+      "count": 1
+    },
+    "Juliana Cardona Cardona": {
+      "total": 583927,
+      "count": 2
+    },
+    "MIX DE LA VILLA": {
+      "total": 567880,
+      "count": 3
+    },
+    "CORPORACIÓN FERNANDO GONZALEZ - OTRAPARTE": {
+      "total": 534560,
+      "count": 2
+    },
+    "SAMUEL DAVID GAMBA LUQUE": {
+      "total": 534080,
+      "count": 2
+    },
+    "Juliana Cuartas Pedraza": {
+      "total": 532520,
+      "count": 2
+    },
+    "Sandra Milena  (Nueva Ola) Orozco Hincapié": {
+      "total": 523230,
+      "count": 2
+    },
+    "CULTURA NATURALISTA S.A.S": {
+      "total": 519800,
+      "count": 2
+    },
+    "THC GROUP SAS": {
+      "total": 509420,
+      "count": 1
+    },
+    "METAMORFOSIS MEDELLÍN S.A.S.": {
+      "total": 500520,
+      "count": 1
+    },
+    "Buena Birra Social Club S.A.S": {
+      "total": 499800,
+      "count": 1
+    },
+    "ORRO S.A.S.": {
+      "total": 497520,
+      "count": 1
+    },
+    "Daraware Sistemas": {
+      "total": 446000,
+      "count": 2
+    },
+    "Dataware Sistemas": {
+      "total": 446000,
+      "count": 2
+    },
+    "Mario Alejandro Ortega Cardona": {
+      "total": 425516,
+      "count": 1
+    },
+    "Jessica Gonzales Perez": {
+      "total": 412341,
+      "count": 1
+    },
+    "ERICA TATIANA CANO": {
+      "total": 329630,
+      "count": 4
+    },
+    "David Miranda tamayo": {
+      "total": 326000,
+      "count": 4
+    },
+    "Esteban Jaramillo Jaramillo": {
+      "total": 283320,
+      "count": 1
+    },
+    "YENI ALEJANDRA MONTOYA GUERRA": {
+      "total": 269710,
+      "count": 1
+    },
+    "JOAQUIN GUERRA": {
+      "total": 269040,
+      "count": 1
+    },
+    "KATERIN OCHOA RESTREPO": {
+      "total": 268710,
+      "count": 1
+    },
+    "SEBASTIAN KILBY RESTREPO": {
+      "total": 266660,
+      "count": 1
+    },
+    "BLACK ELEPHANT GROUP S.A.S.": {
+      "total": 264900,
+      "count": 1
+    },
+    "OTRABANDA PARRILLA Y RANCHO": {
+      "total": 263090,
+      "count": 1
+    },
+    "JOHN CARLOS PINEDA AREVALO": {
+      "total": 261900,
+      "count": 1
+    },
+    "Corporación Cultural MARABUNTAS": {
+      "total": 260710,
+      "count": 1
+    },
+    "John (Calvo) Sanchez Ochoa": {
+      "total": 259900,
+      "count": 1
+    },
+    "LAVATO MED SAS": {
+      "total": 259900,
+      "count": 1
+    },
+    "JHON HARRISON TOBON MARTINEZ": {
+      "total": 259520,
+      "count": 1
+    },
+    "DANIELA HENAO MEJIA": {
+      "total": 256710,
+      "count": 1
+    },
+    "ESTRADA GOURMET SAS": {
+      "total": 255760,
+      "count": 1
+    },
+    "BERTHA VASQUEZ BARBOSA": {
+      "total": 248710,
+      "count": 1
+    },
+    "Monica Elena Cardona Alvarez": {
+      "total": 247520,
+      "count": 1
+    },
+    "Hugo Albeiro Caro Morales": {
+      "total": 242760,
+      "count": 1
+    },
+    "BARROS MADRIGAL MARIA DEL CARMEN": {
+      "total": 223991,
+      "count": 1
+    },
+    "Biviana Marcela Garcia Rendon": {
+      "total": 221008,
+      "count": 1
+    },
+    "CERVBEER S.A.S": {
+      "total": 162993,
+      "count": 1
+    },
+    "A.I.C.": {
+      "total": 75730,
+      "count": 3
+    },
+    "Sotelcom": {
+      "total": 73204,
+      "count": 1
+    },
+    "Johnny Anderle Guerrero Bucheli": {
+      "total": 72265,
+      "count": 2
+    },
+    "MAURICIO ESTEBAN MUÑOZ GARCIA": {
+      "total": 40460,
+      "count": 1
+    },
+    "ADHESIVOS GRAFICOS SAS": {
+      "total": 21420,
+      "count": 1
+    }
+  }
+}

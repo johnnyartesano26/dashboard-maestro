@@ -190,6 +190,31 @@
     transform:translateY(20px); transition:all .3s;
   }
   .toast.show { opacity:1; transform:translateY(0); }
+
+  /* ── MODAL DE CLAVE ── */
+  .lock-overlay {
+    position:fixed; inset:0; background:rgba(61,42,29,.45);
+    display:none; align-items:center; justify-content:center; z-index:2000;
+  }
+  .lock-box {
+    background:var(--mm-card); border:1px solid var(--mm-gold); border-radius:12px;
+    padding:28px 30px; width:min(400px,92vw); box-shadow:0 10px 40px rgba(60,40,20,.25);
+  }
+  .lock-box h3 { color:var(--mm-gold); font-size:1em; margin-bottom:6px; }
+  .lock-box p { color:var(--mm-dim); font-size:.82em; margin-bottom:16px; }
+  .lock-box input {
+    width:100%; box-sizing:border-box; background:var(--mm-bg); border:1px solid var(--mm-border);
+    color:var(--mm-text); padding:11px 14px; border-radius:6px; font-size:.95em; margin-bottom:12px;
+  }
+  .lock-box input:focus { outline:none; border-color:var(--mm-gold); }
+  .lock-actions { display:flex; gap:10px; justify-content:flex-end; }
+  .lock-actions button {
+    border:none; border-radius:6px; padding:10px 20px; cursor:pointer;
+    font-size:.85em; font-weight:600; font-family:inherit;
+  }
+  .lock-cancel { background:var(--mm-block); color:var(--mm-dim); }
+  .lock-ok { background:var(--mm-gold); color:#fff; }
+  .lock-error { display:none; color:var(--mm-red); font-size:.8em; margin-bottom:10px; }
   .loading { text-align:center;padding:20px;color:var(--mm-dim); }
   .clickable-row { cursor:pointer; }
   .clickable-row:hover { background:rgba(200,138,61,.06) !important; }
@@ -251,7 +276,7 @@
     <button class="tab-btn" data-tab="facturacion" onclick="switchTab('facturacion')">📄 Facturación</button>
     <button class="tab-btn" data-tab="inventario" onclick="switchTab('inventario')">🍺 Inventario</button>
     <button class="tab-btn" data-tab="ventas" onclick="switchTab('ventas')">💰 Ventas</button>
-    <button class="tab-btn" data-tab="alegra" onclick="switchTab('alegra')">📈 Gráficas Alegra</button>
+    <button class="tab-btn" data-tab="alegra" onclick="switchTab('alegra')">📈 Gráficas Alegra 🔒</button>
     <button class="tab-btn" data-tab="clientes" onclick="switchTab('clientes')">👥 Análisis de Clientes</button>
     <button class="tab-btn" data-tab="notascredito" onclick="switchTab('notascredito')">📝 Notas Crédito</button>
   </div>
@@ -673,6 +698,21 @@ function copiarSync() {
 <!-- ═══════════════ TOAST ═══════════════ -->
 <div class="toast" id="toast"></div>
 
+<!-- ═══════════════ MODAL CLAVE ALEGRA ═══════════════ -->
+<div class="lock-overlay" id="lockModal">
+  <div class="lock-box">
+    <h3>🔒 Gráficas Alegra protegidas</h3>
+    <p>Ingresa la clave para ver las ventas anuales de Alegra.</p>
+    <div class="lock-error" id="lockError">🔒 Clave incorrecta. Intenta de nuevo.</div>
+    <input type="password" id="lockInput" placeholder="Clave" autocomplete="off"
+           onkeydown="if(event.key==='Enter')desbloquearAlegra()">
+    <div class="lock-actions">
+      <button class="lock-cancel" onclick="cerrarModalAlegra()">Cancelar</button>
+      <button class="lock-ok" onclick="desbloquearAlegra()">Desbloquear</button>
+    </div>
+  </div>
+</div>
+
 <script>
 // ═══════════════════════════════════════════════════
 // GLOBAL STATE
@@ -754,6 +794,10 @@ function actualizarEtiquetasRango() {
 // TAB NAVIGATION
 // ═══════════════════════════════════════════════════
 function switchTab(name) {
+  if (name === 'alegra' && sessionStorage.getItem('alegra_unlock') !== '1') {
+    abrirModalAlegra();
+    return;
+  }
   document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
@@ -795,6 +839,39 @@ function switchTab(name) {
 // ═══════════════════════════════════════════════════
 let alegraCharts = {};
 let resumenAlegra = null;
+
+// Clave de acceso a la pestaña (SHA-256 de "Arrozquemado01!")
+const CLAVE_ALEGRA_HASH = '7532250468e304a66a42feb89dbd34588340d6978ca2ac8ae5dc8991cb0563f1';
+
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function abrirModalAlegra() {
+  document.getElementById('lockModal').style.display = 'flex';
+  document.getElementById('lockInput').value = '';
+  document.getElementById('lockError').style.display = 'none';
+  document.getElementById('lockInput').focus();
+}
+
+function cerrarModalAlegra() {
+  document.getElementById('lockModal').style.display = 'none';
+}
+
+async function desbloquearAlegra() {
+  const input = document.getElementById('lockInput');
+  const hash = await sha256(input.value.trim());
+  if (hash === CLAVE_ALEGRA_HASH) {
+    sessionStorage.setItem('alegra_unlock', '1');
+    cerrarModalAlegra();
+    switchTab('alegra');
+  } else {
+    document.getElementById('lockError').style.display = 'block';
+    input.value = '';
+    input.focus();
+  }
+}
 
 async function initAlegra() {
   try {

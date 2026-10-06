@@ -304,6 +304,8 @@
       <div><strong style="color: var(--mm-gold); font-size: 1.3em;" id="heroFacturado">$--</strong><br><span style="color: var(--mm-dim)">Total Facturado</span></div>
       <div><strong style="color: var(--mm-gold); font-size: 1.3em;" id="heroFacturas">--</strong><br><span style="color: var(--mm-dim)">Facturas Emitidas</span></div>
       <div><strong style="color: var(--mm-gold); font-size: 1.3em;" id="heroClientes">--</strong><br><span style="color: var(--mm-dim)">Clientes Activos</span></div>
+      <div><strong style="color: var(--mm-gold); font-size: 1.3em;" id="heroMeta">$--</strong><br><span style="color: var(--mm-dim)" id="heroMetaLab">Meta Anual</span></div>
+      <div><strong style="color: var(--mm-green); font-size: 1.3em;" id="heroAvance">--</strong><br><span style="color: var(--mm-dim)">Avance Meta</span></div>
       <div><strong style="color: var(--mm-green); font-size: 1.3em;" id="heroPeriodo">--</strong><br><span style="color: var(--mm-dim)">Período Actual</span></div>
     </div>
   </div>
@@ -612,6 +614,8 @@ function copiarSync() {
     <div class="kpi"><div class="val green" id="aTotal">—</div><div class="lab">Total facturado</div></div>
     <div class="kpi"><div class="val cyan" id="aFacturas">—</div><div class="lab">Facturas</div></div>
     <div class="kpi"><div class="val blue" id="aTicket">—</div><div class="lab">Ticket promedio</div></div>
+    <div class="kpi"><div class="val yellow" id="aMeta">—</div><div class="lab" id="aMetaLab">Meta anual</div></div>
+    <div class="kpi"><div class="val green" id="aAvance">—</div><div class="lab" id="aAvanceLab">Avance</div></div>
   </div>
   <div class="grid">
     <div class="card full">
@@ -840,6 +844,12 @@ function switchTab(name) {
 let alegraCharts = {};
 let resumenAlegra = null;
 
+function metaAnual(anio) {
+  const m = catalogoData && catalogoData.metas_anuales;
+  const v = m ? m[String(anio)] : null;
+  return (v === null || v === undefined) ? null : Number(v);
+}
+
 // Clave de acceso a la pestaña (SHA-256 de "Arrozquemado01!")
 const CLAVE_ALEGRA_HASH = '7532250468e304a66a42feb89dbd34588340d6978ca2ac8ae5dc8991cb0563f1';
 
@@ -874,11 +884,13 @@ async function desbloquearAlegra() {
 }
 
 async function initAlegra() {
-  try {
-    const r = await fetch('data/resumen_alegra.json');
-    if (!r.ok) throw new Error(r.status);
-    resumenAlegra = await r.json();
-  } catch (e) { console.warn('resumen_alegra.json:', e); resumenAlegra = null; }
+  if (!resumenAlegra) {
+    try {
+      const r = await fetch('data/resumen_alegra.json');
+      if (!r.ok) throw new Error(r.status);
+      resumenAlegra = await r.json();
+    } catch (e) { console.warn('resumen_alegra.json:', e); resumenAlegra = null; }
+  }
   renderAlegraKPIs();
   renderAlegraMensual();
   renderAlegraProducto();
@@ -892,6 +904,21 @@ function renderAlegraKPIs() {
   set('aFacturas', k ? k.num_facturas.toLocaleString('es-CO') : '—');
   set('aTicket', k ? '$' + k.ticket_promedio.toLocaleString('es-CO') : '—');
   const anio = resumenAlegra && resumenAlegra.anio;
+  const meta = metaAnual(anio);
+  if (meta) {
+    set('aMeta', '$' + (meta / 1e6).toFixed(1) + 'M');
+    const mEl = document.getElementById('aMetaLab'); if (mEl) mEl.textContent = 'Meta ' + anio;
+    if (k && k.total_anual) {
+      const avance = (k.total_anual / meta) * 100;
+      set('aAvance', avance.toFixed(1) + '%');
+      const aEl = document.getElementById('aAvanceLab'); if (aEl) aEl.textContent = avance >= 100 ? 'Meta alcanzada' : 'Avance meta';
+    } else {
+      set('aAvance', '—');
+    }
+  } else {
+    set('aMeta', '—');
+    set('aAvance', '—');
+  }
   const lab = document.getElementById('aMesRange');
   if (lab && anio) lab.textContent = ' · ' + anio;
 }
@@ -903,13 +930,30 @@ function renderAlegraMensual() {
   const meses = resumenAlegra ? Object.keys(resumenAlegra.por_mes || {}) : [];
   const labels = meses.map(k => MESES_CORTO[parseInt(k.slice(5), 10) - 1]);
   const data = meses.map(k => resumenAlegra.por_mes[k].total);
+
+  const anio = resumenAlegra && resumenAlegra.anio;
+  const meta = metaAnual(anio);
+  let acumulado = [], acc = 0;
+  data.forEach(v => { acc += v; acumulado.push(acc); });
+
+  const datasets = [{ label: 'Facturado', data, backgroundColor: '#c88a3d', borderRadius: 4, yAxisID: 'y' }];
+  if (acumulado.length) {
+    datasets.push({ type: 'line', label: 'Acumulado', data: acumulado, borderColor: '#58a6ff', backgroundColor: '#58a6ff', pointRadius: 3, tension: 0.3, yAxisID: 'y1' });
+  }
+  if (meta) {
+    datasets.push({ type: 'line', label: 'Meta ' + anio, data: labels.map(() => meta), borderColor: '#c9685e', borderDash: [6, 4], pointRadius: 0, fill: false, yAxisID: 'y1' });
+  }
+
   alegraCharts.mes = new Chart(ctx, {
     type: 'bar',
-    data: { labels, datasets: [{ label: 'Facturado', data, backgroundColor: '#c88a3d', borderRadius: 4 }] },
+    data: { labels, datasets },
     options: {
       responsive: true, maintainAspectRatio: false,
-      scales: { y: { ticks: { callback: v => '$' + (v / 1e6).toFixed(1) + 'M' } } },
-      plugins: { legend: { display: false } }
+      scales: {
+        y: { position: 'left', ticks: { callback: v => '$' + (v / 1e6).toFixed(1) + 'M' } },
+        y1: { position: 'right', ticks: { callback: v => '$' + (v / 1e6).toFixed(1) + 'M' }, grid: { display: false } }
+      },
+      plugins: { legend: { display: true, labels: { color: '#8c7b6b' } } }
     }
   });
 }
@@ -990,6 +1034,9 @@ window.onload = async function() {
       .catch(() => null),
     fetch('https://docs.google.com/spreadsheets/d/1WFq09-LDg4le6FqC9BnBZfKZXSmb8Kn195wnFZaEMys/gviz/tq?tqx=out:csv&sheet=Respuestas%20de%20formulario%201')
       .then(r => r.ok ? r.text() : Promise.reject('HTTP '+r.status))
+      .catch(() => null),
+    fetch('data/resumen_alegra.json')
+      .then(r => r.ok ? r.json() : Promise.reject('HTTP '+r.status))
       .catch(() => null)
   ]);
 
@@ -1066,6 +1113,11 @@ window.onload = async function() {
       if (y < 2025 || y > 2027) continue;
       ventasSheetData.push({ nombre, factura, valor, domicilio, fecha: new Date(y,m,d), pagoRealizado: pagoR });
     }
+  }
+
+  // 4.6 Procesar resumen Alegra (para metas anuales y % avance)
+  if (results[5] && results[5].status === 'fulfilled' && results[5].value) {
+    resumenAlegra = results[5].value;
   }
 
   // 4.5b Actualizar etiquetas dinámicas (título, rangos de meses)
@@ -1431,10 +1483,25 @@ function updateHeroBanner() {
   const nEl = document.getElementById('heroFacturas');
   const cEl = document.getElementById('heroClientes');
   const pEl = document.getElementById('heroPeriodo');
+  const mEl = document.getElementById('heroMeta');
+  const mLab = document.getElementById('heroMetaLab');
+  const aEl = document.getElementById('heroAvance');
   if (fEl) fEl.textContent = '$' + (importeConsolidado / 1e6).toFixed(1) + 'M';
   if (nEl) nEl.textContent = totalFacturasConsolidado || '--';
   if (cEl) cEl.textContent = totalClientesConsolidado || '--';
   if (pEl) pEl.textContent = periodoActual ? periodoActual.mes : '--';
+
+  const anio = (resumenAlegra && resumenAlegra.anio) || new Date().getFullYear();
+  const meta = metaAnual(anio);
+  if (mEl) mEl.textContent = meta ? '$' + (meta / 1e6).toFixed(1) + 'M' : '--';
+  if (mLab) mLab.textContent = 'Meta Anual ' + anio;
+  if (aEl) {
+    if (meta && resumenAlegra && resumenAlegra.kpis && resumenAlegra.kpis.total_anual) {
+      aEl.textContent = (resumenAlegra.kpis.total_anual / meta * 100).toFixed(1) + '%';
+    } else {
+      aEl.textContent = '--';
+    }
+  }
 }
 
 // ═══════════════════════════════════════════════════

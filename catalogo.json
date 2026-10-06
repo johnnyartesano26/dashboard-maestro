@@ -1,6 +1,10 @@
 {
   "proyecto": "Madre Monte — Catálogo de Datos",
   "actualizado": "2026-10-06",
+  "metas_anuales": {
+    "2026": 527000000,
+    "2027": 1600000000
+  },
   "periodos": [
     {
       "mes": "Noviembre 2025",

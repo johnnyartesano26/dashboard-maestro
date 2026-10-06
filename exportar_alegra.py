@@ -140,11 +140,19 @@ def generar_resumen_anual(facturas, productos):
 
     por_mes = defaultdict(lambda: {"total": 0, "count": 0})
     por_cliente = defaultdict(lambda: {"total": 0, "count": 0})
+    por_mes_bar = defaultdict(lambda: {"total": 0, "count": 0})
+    por_mes_externo = defaultdict(lambda: {"total": 0, "count": 0})
     for f in facturas_anio:
         por_mes[f["fecha"][:7]]["total"] += f["total"]
         por_mes[f["fecha"][:7]]["count"] += 1
         por_cliente[f["cliente"]]["total"] += f["total"]
         por_cliente[f["cliente"]]["count"] += 1
+        if f["cliente"] == "Consumidor Final":
+            por_mes_bar[f["fecha"][:7]]["total"] += f["total"]
+            por_mes_bar[f["fecha"][:7]]["count"] += 1
+        else:
+            por_mes_externo[f["fecha"][:7]]["total"] += f["total"]
+            por_mes_externo[f["fecha"][:7]]["count"] += 1
 
     por_producto = defaultdict(lambda: {"total": 0, "unidades": 0})
     for p in productos_anio:
@@ -163,6 +171,8 @@ def generar_resumen_anual(facturas, productos):
             "ticket_promedio": round(total_anual / num_facturas) if num_facturas else 0,
         },
         "por_mes": {k: dict(v) for k, v in sorted(por_mes.items())},
+        "por_mes_bar": {k: dict(v) for k, v in sorted(por_mes_bar.items())},
+        "por_mes_externo": {k: dict(v) for k, v in sorted(por_mes_externo.items())},
         "por_producto": {k: dict(v) for k, v in sorted(por_producto.items(), key=lambda x: -x[1]["total"])},
         "por_cliente": {k: dict(v) for k, v in sorted(por_cliente.items(), key=lambda x: -x[1]["total"])},
     }

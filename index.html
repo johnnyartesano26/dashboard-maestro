@@ -553,6 +553,10 @@
       <canvas id="chartConsolidadoIngresos"></canvas>
     </div>
     <div class="card full">
+      <h2>🍺 Bar vs Clientes Externos — Alegra (mensual)</h2>
+      <canvas id="chartBarExterno"></canvas>
+    </div>
+    <div class="card full">
       <h2>📊 Evolución Mensual (Facturas + Domicilios) <span id="vUpdate"></span></h2>
       <canvas id="chartVentasMensual"></canvas>
     </div>
@@ -1977,7 +1981,45 @@ function parseCSVLineV(line) {
   r.push(cur); return r;
 }
 
+// ═══════════════════════════════════════════════════
+// COMPARATIVA BAR vs EXTERNOS (Alegra)
+// ═══════════════════════════════════════════════════
+function renderComparativaBarExterno() {
+  const ctx = document.getElementById('chartBarExterno');
+  if (!ctx || typeof Chart === 'undefined') return;
+  if (ventasCharts.barExterno) ventasCharts.barExterno.destroy();
+  const bar = resumenAlegra && resumenAlegra.por_mes_bar;
+  const ext = resumenAlegra && resumenAlegra.por_mes_externo;
+  const keys = [...new Set([...(bar ? Object.keys(bar) : []), ...(ext ? Object.keys(ext) : [])])].sort();
+  if (!keys.length) return;
+  const labels = keys.map(k => MESES_CORTO[parseInt(k.slice(5), 10) - 1] + ' ' + k.slice(2, 4));
+  const barData = keys.map(k => (bar && bar[k] ? bar[k].total : 0));
+  const extData = keys.map(k => (ext && ext[k] ? ext[k].total : 0));
+  ventasCharts.barExterno = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label: 'Bar (Consumidor Final)', data: barData, backgroundColor: '#e8a84c', borderRadius: 4 },
+        { label: 'Clientes Externos', data: extData, backgroundColor: '#58a6ff', borderRadius: 4 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { ticks: { color: '#8c7b6b', font: { size: 10 } }, grid: { color: '#2a2622' } },
+        y: { ticks: { color: '#8c7b6b', callback: v => '$' + (v / 1e6).toFixed(1) + 'M' }, grid: { color: '#2a2622' } }
+      },
+      plugins: {
+        legend: { labels: { color: '#8c7b6b', font: { size: 11 } } },
+        tooltip: { callbacks: { label: c => c.dataset.label + ': $' + c.raw.toLocaleString('es-CO') + ' COP' } }
+      }
+    }
+  });
+}
+
 async function initVentas() {
+  renderComparativaBarExterno();
   try {
     const resp = await fetch(SALES_CSV);
     const csv = await resp.text();

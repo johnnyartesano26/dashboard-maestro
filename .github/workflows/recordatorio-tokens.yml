@@ -1,0 +1,50 @@
+name: Recordatorio de tokens (mensual)
+
+# Verifica que el token de Alegra siga vigente y envía un recordatorio mensual
+# por Telegram para renovar las claves (Alegra, PAT de GitHub, bot de Telegram).
+# Evita que un token vencido vuelva a romper la automatización en silencio.
+on:
+  schedule:
+    - cron: '0 8 1 * *'   # 1er día del mes, 08:00 UTC
+  workflow_dispatch:
+
+jobs:
+  recordatorio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verificar token de Alegra y avisar por Telegram
+        env:
+          ALEGRA_EMAIL: ${{ secrets.ALEGRA_EMAIL }}
+          ALEGRA_TOKEN: ${{ secrets.ALEGRA_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -n "$ALEGRA_EMAIL" ] && [ -n "$ALEGRA_TOKEN" ]; then
+            code=$(curl -s -o /dev/null -w "%{http_code}" -u "$ALEGRA_EMAIL:$ALEGRA_TOKEN" "https://api.alegra.com/api/v1/invoices?limit=1")
+          else
+            code="000"
+          fi
+
+          if [ "$code" = "200" ]; then
+            texto="🔐 <b>Recordatorio mensual de claves</b> — Alegra OK (HTTP 200).
+
+          Revisa que sigan vigentes:
+          • Token de Alegra
+          • PAT de GitHub (DASHBOARD_PAT, etc.)
+          • Bot de Telegram
+
+          Róta/renueva en Settings → Secrets → Actions."
+          else
+            texto="⚠️ <b>Token de Alegra inválido</b> (HTTP ${code}).
+
+          Renueva ALEGRA_TOKEN en Alegra → Configuración → API y actualiza el secret en GitHub."
+          fi
+
+          if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
+            curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+              -d chat_id="${TELEGRAM_CHAT_ID}" -d parse_mode="HTML" \
+              --data-urlencode "text=${texto}"
+            echo ""
+          else
+            echo "Sin credenciales de Telegram; se omite el aviso."
+          fi

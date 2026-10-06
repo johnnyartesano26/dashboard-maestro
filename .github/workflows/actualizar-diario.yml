@@ -28,6 +28,8 @@ jobs:
         run: python3 update_catalogo_maestro.py
 
       - name: Exportar facturas de Alegra
+        id: exportar
+        continue-on-error: true
         env:
           ALEGRA_EMAIL: ${{ secrets.ALEGRA_EMAIL }}
           ALEGRA_TOKEN: ${{ secrets.ALEGRA_TOKEN }}
@@ -45,3 +47,31 @@ jobs:
             git pull --rebase origin main
             git push
           fi
+
+      - name: Aviso por Telegram (falló exportación de Alegra)
+        if: steps.exportar.outcome == 'failure'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            echo "Sin credenciales de Telegram; se omite el aviso."
+            exit 0
+          fi
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" -d parse_mode="HTML" \
+            -d text="⚠️ <b>dashboard-maestro</b>: falló <code>exportar_alegra.py</code>. Revisa el token de Alegra."
+
+      - name: Aviso por Telegram (falló el workflow)
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            echo "Sin credenciales de Telegram; se omite el aviso."
+            exit 0
+          fi
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" -d parse_mode="HTML" \
+            -d text="⚠️ <b>dashboard-maestro</b>: falló el workflow de actualización diaria. Revisa la pestaña Actions."

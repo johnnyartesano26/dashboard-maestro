@@ -1,6 +1,6 @@
 {
   "proyecto": "Madre Monte — Dashboards",
-  "actualizado": "2026-07-08",
+  "actualizado": "2026-10-06",
   "dashboards": [
     {
       "id": "maestro",
@@ -41,13 +41,7 @@
       "archivo_local": "Documents/Madre Monte/MadreMonte_Contexto/documentos/CEO/dashboard_inventario_22_junio_2026.html",
       "datos": "Embebidos en el HTML",
       "pestanas": []
-    }
-  ],
-  "fuentes_de_datos": {
-    "alegra_api": "https://api.alegra.com/api/v1/",
-    "facturas_json": "facturas_junio_2026.json",
-    "recibos_json": "Documents/Madre Monte/MadreMonte_Contexto/finanzas/recibos_caja_junio_2026.json"
-  },
+    },
     {
       "id": "conciliaciones",
       "nombre": "Conciliaciones Bancarias",
@@ -77,8 +71,23 @@
       "archivo_local": "",
       "datos": "Datos de arqueo diario del Bar",
       "pestanas": []
+    },
+    {
+      "id": "scrum",
+      "nombre": "Metodología Scrum — Q4 2026",
+      "descripcion": "Objetivos del trimestre, sprint, visitas Invima, alertas y kaizen",
+      "url_github_pages": "https://johnnyartesano26.github.io/madremonte-dashboard/scrum.html",
+      "url_repo": "https://github.com/johnnyartesano26/madremonte-dashboard",
+      "archivo_local": "madremonte-dashboard/scrum.html",
+      "datos": "data/objetivos.json + data/invima_checklist.json + data/ledger_inventario.json",
+      "pestanas": []
     }
   ],
+  "fuentes_de_datos": {
+    "alegra_api": "https://api.alegra.com/api/v1/",
+    "facturas_json": "facturas_junio_2026.json",
+    "recibos_json": "Documents/Madre Monte/MadreMonte_Contexto/finanzas/recibos_caja_junio_2026.json"
+  },
   "puentes_api": [
     {
       "nombre": "Bridge Odysseus",

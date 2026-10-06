@@ -228,6 +228,22 @@
     <div>
        <h1>Dashboard Maestro</h1>
        <div class="sub" id="headerSub">Cervecería Madre Monte — Ventas, Facturación e Inventario en Tiempo Real · Cargando datos...</div>
+       <div id="etlBadge" style="margin-top:6px;font-size:.78em;color:#8b8b98">⏳ ETL: cargando…</div>
+       <script>
+       fetch('etl-status.json?v=' + Date.now())
+         .then(r => r.ok ? r.json() : Promise.reject('HTTP '+r.status))
+         .then(s => {
+           const b = document.getElementById('etlBadge');
+           if (s.anomalias > 0) {
+             b.innerHTML = '⚠️ <b style="color:#c62828">ETL: ' + s.anomalias + ' anomalías</b> · ' + s.fecha;
+           } else {
+             b.innerHTML = '✅ <b style="color:#2e7d32">ETL al día</b> · ' + s.fecha;
+           }
+         })
+         .catch(() => {
+           document.getElementById('etlBadge').innerHTML = 'ℹ️ ETL: sin datos recientes';
+         });
+       </script>
     </div>
   </div>
   <div class="tab-nav">

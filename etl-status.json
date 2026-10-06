@@ -1,0 +1,20 @@
+{
+  "fecha": "2026-10-05T20:51:43",
+  "total": 201,
+  "anomalias": 22,
+  "facturadas": 187,
+  "pendientes": 9,
+  "tipos": {
+    "CLIENTE_DUPLICADO": 9,
+    "FACTURAR=NO_PERO_FACTURADO": 2,
+    "FACTURA_FUERA_ORDEN": 2,
+    "FACTURAR=NO_ESTADO_VACIO": 9
+  },
+  "estados": {
+    "facturado": 187,
+    "no_facturar": 1,
+    "pendiente": 9,
+    "inventario": 1,
+    "remision": 3
+  }
+}

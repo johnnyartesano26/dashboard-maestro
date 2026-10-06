@@ -557,7 +557,7 @@
       <canvas id="chartBarExterno"></canvas>
     </div>
     <div class="card full">
-      <h2>📊 Evolución Mensual (Facturas + Domicilios) <span id="vUpdate"></span></h2>
+      <h2>📊 Evolución Mensual — Facturación Alegra <span id="vUpdate"></span></h2>
       <canvas id="chartVentasMensual"></canvas>
     </div>
     <div class="card">
@@ -2018,8 +2018,45 @@ function renderComparativaBarExterno() {
   });
 }
 
+function renderEvolucionMensualAlegra() {
+  const ctx = document.getElementById('chartVentasMensual');
+  if (!ctx || typeof Chart === 'undefined') return;
+  const pm = resumenAlegra && resumenAlegra.por_mes;
+  if (!pm) return;
+  if (ventasCharts.mensual) ventasCharts.mensual.destroy();
+  const meses = Object.keys(pm).sort();
+  const mNames = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  const labels = meses.map(m => mNames[parseInt(m.split('-')[1]) - 1] + ' ' + m.split('-')[0].slice(2));
+  const facData = meses.map(m => (resumenAlegra.por_mes_factura && resumenAlegra.por_mes_factura[m] ? resumenAlegra.por_mes_factura[m].total : pm[m].total));
+  const domData = meses.map(m => (resumenAlegra.por_mes_domicilio && resumenAlegra.por_mes_domicilio[m] ? resumenAlegra.por_mes_domicilio[m].total : 0));
+  ventasCharts.mensual = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label: 'Facturas', data: facData, backgroundColor: '#e8a84c', borderRadius: 4 },
+        { label: 'Domicilios', data: domData, backgroundColor: '#7a9e7a', borderRadius: 4 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { stacked: true, ticks: { color: '#8c7b6b' }, grid: { color: '#2a2622' } },
+        y: { stacked: true, ticks: { color: '#8c7b6b', callback: v => '$' + (v / 1e6).toFixed(1) + 'M' }, grid: { color: '#2a2622' } }
+      },
+      plugins: {
+        legend: { labels: { color: '#8c7b6b' } },
+        tooltip: { callbacks: { label: c => c.dataset.label + ': $' + c.raw.toLocaleString('es-CO') + ' COP' } }
+      }
+    }
+  });
+  const el = document.getElementById('vUpdate');
+  if (el) el.textContent = resumenAlegra.generado ? ('Alegra · ' + resumenAlegra.generado.slice(0, 10)) : '';
+}
+
 async function initVentas() {
   renderComparativaBarExterno();
+  renderEvolucionMensualAlegra();
   try {
     const resp = await fetch(SALES_CSV);
     const csv = await resp.text();
@@ -2048,7 +2085,7 @@ async function initVentas() {
     }
     renderVentas(data);
   } catch(e) {
-    document.getElementById('vUpdate').textContent = 'Error cargando datos';
+    showToast('⚠️ Error cargando datos del formulario (Google Sheets)');
   }
 }
 
@@ -2062,42 +2099,9 @@ function renderVentas(data) {
   document.getElementById('vNum').textContent = data.length;
   document.getElementById('vDom').textContent = '$' + totalDom.toLocaleString('es-CO');
   document.getElementById('vDebe').textContent = '$' + totalDebe.toLocaleString('es-CO') + ' (' + debe.length + ')';
-  document.getElementById('vUpdate').textContent = 'actualizado ' + new Date().toLocaleString('es-CO',{dateStyle:'short',timeStyle:'short'});
 
   renderPendingList(data);
-
-  const monthly = {};
-  data.forEach(d => {
-    const k = d.fecha.getFullYear() + '-' + String(d.fecha.getMonth()+1).padStart(2,'0');
-    if (!monthly[k]) monthly[k] = { valor:0, dom:0 };
-    monthly[k].valor += d.valor;
-    monthly[k].dom += d.domicilio;
-  });
-  const meses = Object.keys(monthly).sort();
-  const mNames = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
-
-  if (ventasCharts.mensual) ventasCharts.mensual.destroy();
-  const ctxM = document.getElementById('chartVentasMensual');
-  if (ctxM) {
-    ventasCharts.mensual = new Chart(ctxM.getContext('2d'), {
-      type: 'bar',
-      data: {
-        labels: meses.map(m => mNames[parseInt(m.split('-')[1])-1] + ' ' + m.split('-')[0]),
-        datasets: [
-        { label: 'Facturas', data: meses.map(m => monthly[m].valor), backgroundColor: '#e8a84c', borderRadius: 4 },
-        { label: 'Domicilios', data: meses.map(m => monthly[m].dom), backgroundColor: '#7a9e7a', borderRadius: 4 },
-        ]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        scales: {
-          x: { ticks: { color:'#8c7b6b' }, grid: { color:'#2a2622' } },
-          y: { ticks: { color:'#8c7b6b', callback: v => '$'+(v/1e6).toFixed(1)+'M' }, grid: { color:'#2a2622' } },
-        },
-        plugins: { legend: { labels: { color:'#8c7b6b' } } },
-      }
-    });
-  }
+  renderEvolucionMensualAlegra();
 
   const clients = {};
   data.forEach(d => { clients[d.nombre] = (clients[d.nombre]||0) + d.valor + d.domicilio; });

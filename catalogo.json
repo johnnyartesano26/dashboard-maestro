@@ -190,7 +190,9 @@
       "ventas_bar": {
         "total_ventas": 3214000,
         "dias_con_dato": 4,
-        "promedio_diario": 803500
+        "promedio_diario": 803500,
+        "crecimiento": -87.3,
+        "meta_mes": 26000000
       },
       "inventario": null,
       "facturacion": {

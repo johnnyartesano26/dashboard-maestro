@@ -1,10 +1,17 @@
 {
   "fecha": "2026-10-06",
-  "total": 53,
-  "monto": 8242257,
+  "total": 54,
+  "monto": 8608282,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5230",
+      "cliente": "Leonardo Gaitan Zuluaga",
+      "total": 366025,
+      "status": "open",
+      "fecha": "2026-10-06"
+    },
     {
       "id": "5229",
       "cliente": "Consumidor Final",

@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-09-14",
+  "fecha": "2026-10-06",
   "total": 433,
   "monto": 53454543,
   "drafts": 1,
@@ -240,7 +240,7 @@
       "id": "4725",
       "cliente": "PINEA S.A.S",
       "total": 173840,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-08-29"
     },
     {
@@ -527,7 +527,7 @@
       "id": "4684",
       "cliente": "MAURICIO GEHOVA JARAMILLO VELASQUEZ",
       "total": 269040,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-08-26"
     },
     {
@@ -541,7 +541,7 @@
       "id": "4682",
       "cliente": "CAROLINA CROVO SIERRA",
       "total": 256330,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-08-26"
     },
     {
@@ -737,7 +737,7 @@
       "id": "4654",
       "cliente": "JUAN ESTEBAN GOMEZ MORENO",
       "total": 518560,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-08-24"
     },
     {

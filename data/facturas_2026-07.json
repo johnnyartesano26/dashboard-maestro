@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-09-14",
+  "fecha": "2026-10-06",
   "total": 347,
   "monto": 44506381,
   "drafts": 2,
@@ -1129,7 +1129,7 @@
       "id": "4162",
       "cliente": "JUAN FELIPE ARTEAGA GIRALDO",
       "total": 348075,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-07-18"
     },
     {

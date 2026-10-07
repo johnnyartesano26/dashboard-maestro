@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-06 15:42:51",
+  "generado": "2026-10-07 02:31:38",
   "anio": 2026,
   "kpis": {
-    "total_anual": 455093013,
-    "num_facturas": 3531,
-    "ticket_promedio": 128885
+    "total_anual": 455887933,
+    "num_facturas": 3540,
+    "ticket_promedio": 128782
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 8608282,
-      "count": 54
+      "total": 9403202,
+      "count": 63
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 3672900,
-      "count": 41
+      "total": 3956400,
+      "count": 49
     }
   },
   "por_mes_externo": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 4935382,
-      "count": 13
+      "total": 5446802,
+      "count": 14
     }
   },
   "por_mes_factura": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 8461282,
-      "count": 54
+      "total": 9242202,
+      "count": 63
     }
   },
   "por_mes_domicilio": {
@@ -212,8 +212,8 @@
       "count": 45
     },
     "2026-10": {
-      "total": 147000,
-      "count": 12
+      "total": 161000,
+      "count": 13
     }
   },
   "por_producto": {
@@ -226,24 +226,24 @@
       "unidades": 1837
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 33297987,
-      "unidades": 3007
+      "total": 33411037,
+      "unidades": 3017
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 27981279,
-      "unidades": 2858
+      "total": 28082429,
+      "unidades": 2868
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 27236935,
-      "unidades": 2757
+      "total": 27358315,
+      "unidades": 2769
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 23448757,
-      "unidades": 2407
+      "total": 23549907,
+      "unidades": 2417
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 21168598,
-      "unidades": 1349
+      "total": 21184598,
+      "unidades": 1350
     },
     "Cerveza Golden Ale - Siempre Viva": {
       "total": 18256399,
@@ -258,16 +258,16 @@
       "unidades": 777
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 15084199,
-      "unidades": 856
+      "total": 15102199,
+      "unidades": 857
     },
     "Cerveza APA - Cienfuegos": {
       "total": 14858200,
       "unidades": 853
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
-      "total": 10339712,
-      "unidades": 1051
+      "total": 10400402,
+      "unidades": 1057
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -282,24 +282,24 @@
       "unidades": 358
     },
     "Cerveza industrial": {
-      "total": 7419500,
-      "unidades": 1068
+      "total": 7454500,
+      "unidades": 1073
     },
     "Hamburguesa": {
-      "total": 7379960,
-      "unidades": 212
+      "total": 7449959,
+      "unidades": 214
     },
     "Mini hamburguesa": {
-      "total": 5377906,
-      "unidades": 570
+      "total": 5387906,
+      "unidades": 571
     },
     "Domicilio": {
-      "total": 4721701,
-      "unidades": 355
+      "total": 4735701,
+      "unidades": 356
     },
     "Soda saborizada": {
-      "total": 4374904,
-      "unidades": 438
+      "total": 4384904,
+      "unidades": 439
     },
     "Jarra Irish Red Ale": {
       "total": 4063997,
@@ -338,8 +338,8 @@
       "unidades": 46
     },
     "B Botella Golden Ale": {
-      "total": 1838999,
-      "unidades": 119
+      "total": 1854999,
+      "unidades": 120
     },
     "Evento banda": {
       "total": 1731040,
@@ -362,8 +362,8 @@
       "unidades": 88
     },
     "Soda": {
-      "total": 1517000,
-      "unidades": 253
+      "total": 1523000,
+      "unidades": 254
     },
     "Jarra Hidromiel": {
       "total": 1486000,
@@ -390,8 +390,8 @@
       "unidades": 32
     },
     "B Botella Stout": {
-      "total": 1028999,
-      "unidades": 62
+      "total": 1082999,
+      "unidades": 65
     },
     "Cañita de barril Irish Red Ale - Mística": {
       "total": 1008989,
@@ -442,8 +442,8 @@
       "unidades": 89
     },
     "Coca cola 400 mL": {
-      "total": 676000,
-      "unidades": 92
+      "total": 692000,
+      "unidades": 94
     },
     "Aguas frescas": {
       "total": 665993,
@@ -462,8 +462,8 @@
       "unidades": 9
     },
     "Cañita de barril Stout - Sangre Negra": {
-      "total": 499994,
-      "unidades": 50
+      "total": 509994,
+      "unidades": 51
     },
     "Cañita de barril American Pale Ale - Cienfuegos": {
       "total": 493992,
@@ -490,8 +490,8 @@
       "unidades": 1
     },
     "Tinto": {
-      "total": 261000,
-      "unidades": 69
+      "total": 267000,
+      "unidades": 71
     },
     "Cerveza esclavos IPA": {
       "total": 247000,
@@ -580,8 +580,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 218083957,
-      "count": 3081
+      "total": 218367457,
+      "count": 3089
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 41685664,
@@ -595,6 +595,10 @@
       "total": 17828580,
       "count": 2
     },
+    "PINEA S.A.S": {
+      "total": 9484400,
+      "count": 29
+    },
     "DANIEL SCHMUTTE": {
       "total": 9253755,
       "count": 22
@@ -602,10 +606,6 @@
     "Leonardo Gaitan Zuluaga": {
       "total": 9092421,
       "count": 24
-    },
-    "PINEA S.A.S": {
-      "total": 8972980,
-      "count": 28
     },
     "INVERSIONES BISONTALAS S.A.S.": {
       "total": 8848602,

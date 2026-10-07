@@ -1,10 +1,73 @@
 {
-  "fecha": "2026-10-06",
-  "total": 54,
-  "monto": 8608282,
+  "fecha": "2026-10-07",
+  "total": 63,
+  "monto": 9403202,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5239",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-10-06"
+    },
+    {
+      "id": "5238",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2026-10-06"
+    },
+    {
+      "id": "5237",
+      "cliente": "Consumidor Final",
+      "total": 17000,
+      "status": "closed",
+      "fecha": "2026-10-06"
+    },
+    {
+      "id": "5236",
+      "cliente": "Consumidor Final",
+      "total": 28000,
+      "status": "closed",
+      "fecha": "2026-10-06"
+    },
+    {
+      "id": "5235",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2026-10-06"
+    },
+    {
+      "id": "5234",
+      "cliente": "Consumidor Final",
+      "total": 124500,
+      "status": "closed",
+      "fecha": "2026-10-06"
+    },
+    {
+      "id": "5233",
+      "cliente": "Consumidor Final",
+      "total": 36000,
+      "status": "closed",
+      "fecha": "2026-10-06"
+    },
+    {
+      "id": "5232",
+      "cliente": "Consumidor Final",
+      "total": 34000,
+      "status": "closed",
+      "fecha": "2026-10-06"
+    },
+    {
+      "id": "5231",
+      "cliente": "PINEA S.A.S",
+      "total": 511420,
+      "status": "open",
+      "fecha": "2026-10-06"
+    },
     {
       "id": "5230",
       "cliente": "Leonardo Gaitan Zuluaga",

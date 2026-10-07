@@ -561,11 +561,11 @@
       <canvas id="chartVentasMensual"></canvas>
     </div>
     <div class="card">
-      <h2>🏆 Top 10 Clientes</h2>
+      <h2>🏆 Top 10 Clientes Externos — Alegra</h2>
       <canvas id="chartTopClientes"></canvas>
     </div>
     <div class="card">
-      <h2>📋 Mix Facturas vs Cuentas de Cobro <span>FE vs RC</span></h2>
+      <h2>📋 Estado de Facturas — Alegra <span>por estado</span></h2>
       <canvas id="chartMix"></canvas>
     </div>
   </div>
@@ -2054,9 +2054,71 @@ function renderEvolucionMensualAlegra() {
   if (el) el.textContent = resumenAlegra.generado ? ('Alegra · ' + resumenAlegra.generado.slice(0, 10)) : '';
 }
 
+function renderTopClientesAlegra() {
+  const ctx = document.getElementById('chartTopClientes');
+  if (!ctx || typeof Chart === 'undefined') return;
+  const pc = resumenAlegra && resumenAlegra.por_cliente;
+  if (!pc) return;
+  if (ventasCharts.clientes) ventasCharts.clientes.destroy();
+  const top = Object.entries(pc)
+    .filter(([k]) => k !== 'Consumidor Final')
+    .sort((a, b) => b[1].total - a[1].total)
+    .slice(0, 10);
+  if (!top.length) return;
+  const colors = ['#e8a84c','#7a9e7a','#6ba292','#d4a03c','#b8863e','#5b8c6e','#c9974a','#a3b898','#d68910','#58a6ff'];
+  ventasCharts.clientes = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: top.map(t => t[0].length > 8 ? t[0].slice(0, 8) + '…' : t[0]),
+      datasets: [{ data: top.map(t => t[1].total), backgroundColor: top.map((_, i) => colors[i] || '#e8a84c'), borderRadius: 4 }]
+    },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { ticks: { color: '#8c7b6b', callback: v => '$' + (v / 1e6).toFixed(1) + 'M' }, grid: { color: '#2a2622' } },
+        y: { ticks: { color: '#8c7b6b', font: { size: 10 } }, grid: { display: false } }
+      },
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => '$' + c.raw.toLocaleString('es-CO') + ' COP' } } }
+    }
+  });
+}
+
+function renderEstadoAlegra() {
+  const ctx = document.getElementById('chartMix');
+  if (!ctx || typeof Chart === 'undefined') return;
+  const pe = resumenAlegra && resumenAlegra.por_estado;
+  if (!pe) return;
+  if (ventasCharts.mix) ventasCharts.mix.destroy();
+  const map = {
+    closed: { label: 'Cerradas', color: '#7a9e7a' },
+    open: { label: 'Abiertas', color: '#58a6ff' },
+    sent: { label: 'Enviadas', color: '#39d2c0' },
+    draft: { label: 'Draft', color: '#e8a84c' },
+    void: { label: 'Anuladas', color: '#c9685e' }
+  };
+  const entries = Object.keys(map).filter(k => pe[k]);
+  if (!entries.length) return;
+  const labels = entries.map(k => map[k].label + ' (' + pe[k].count + ')');
+  const data = entries.map(k => pe[k].total);
+  const colors = entries.map(k => map[k].color);
+  ventasCharts.mix = new Chart(ctx, {
+    type: 'doughnut',
+    data: { labels, datasets: [{ data, backgroundColor: colors, borderColor: '#fcf9f2', borderWidth: 2 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { labels: { color: '#8c7b6b' }, position: 'bottom' },
+        tooltip: { callbacks: { label: c => c.label + ': $' + c.raw.toLocaleString('es-CO') } }
+      }
+    }
+  });
+}
+
 async function initVentas() {
   renderComparativaBarExterno();
   renderEvolucionMensualAlegra();
+  renderTopClientesAlegra();
+  renderEstadoAlegra();
   try {
     const resp = await fetch(SALES_CSV);
     const csv = await resp.text();
@@ -2102,56 +2164,6 @@ function renderVentas(data) {
 
   renderPendingList(data);
   renderEvolucionMensualAlegra();
-
-  const clients = {};
-  data.forEach(d => { clients[d.nombre] = (clients[d.nombre]||0) + d.valor + d.domicilio; });
-  const top = Object.entries(clients).sort((a,b) => b[1]-a[1]).slice(0,10);
-  const colors = ['#e8a84c','#e8a84c','#7a9e7a','#6ba292','#d4a03c','#b8863e','#5b8c6e','#c9974a','#a3b898','#d68910'];
-
-  if (ventasCharts.clientes) ventasCharts.clientes.destroy();
-  const ctxC = document.getElementById('chartTopClientes');
-  if (ctxC) {
-    ventasCharts.clientes = new Chart(ctxC.getContext('2d'), {
-      type: 'bar',
-      data: {
-        labels: top.map(t => t[0].length > 8 ? t[0].slice(0, 8) + '…' : t[0]),
-        datasets: [{ data: top.map(t => t[1]), backgroundColor: top.map((_,i) => colors[i]), borderRadius: 4 }]
-      },
-      options: {
-        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-        scales: {
-          x: { ticks: { color:'#8c7b6b', callback: v => '$'+(v/1e6).toFixed(1)+'M' }, grid: { color:'#2a2622' } },
-          y: { ticks: { color:'#8c7b6b', font:{size:10} }, grid: { display:false } },
-        },
-        plugins: { legend: { display:false } },
-      }
-    });
-  }
-
-  let feTotal = 0, rcTotal = 0, feN = 0, rcN = 0;
-  data.forEach(d => {
-    if (d.factura.toUpperCase().startsWith('FE')) { feTotal += d.valor + d.domicilio; feN++; }
-    else { rcTotal += d.valor + d.domicilio; rcN++; }
-  });
-
-  if (ventasCharts.mix) ventasCharts.mix.destroy();
-  const ctxMix = document.getElementById('chartMix');
-  if (ctxMix) {
-    ventasCharts.mix = new Chart(ctxMix.getContext('2d'), {
-      type: 'doughnut',
-      data: {
-        labels: ['Facturas FE ('+feN+')', 'Cuentas Cobro RC ('+rcN+')'],
-        datasets: [{ data: [feTotal, rcTotal], backgroundColor: ['#e8a84c','#7a9e7a'], borderColor:'#fcf9f2', borderWidth:2 }],
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: {
-          legend: { labels: { color:'#8c7b6b' }, position:'bottom' },
-          tooltip: { callbacks: { label: c => c.label+': $'+c.raw.toLocaleString('es-CO') } },
-        },
-      }
-    });
-  }
   renderConsolidadoIngresos(data);
 }
 

@@ -987,5 +987,23 @@
       "total": 21420,
       "count": 1
     }
+  },
+  "por_estado": {
+    "closed": {
+      "total": 372731434,
+      "count": 3384
+    },
+    "draft": {
+      "total": 8896165,
+      "count": 12
+    },
+    "open": {
+      "total": 73488235,
+      "count": 130
+    },
+    "void": {
+      "total": 772099,
+      "count": 14
+    }
   }
 }

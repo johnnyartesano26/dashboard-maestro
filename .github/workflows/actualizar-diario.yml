@@ -1,15 +1,19 @@
-name: Actualizar dashboard diario (ventas + facturación)
+name: Actualizar dashboard (ventas + facturación)
 
 # Actualiza el catálogo (ventas bar + meses nuevos) y la facturación de Alegra
-# todos los días, para que el dashboard refleje datos "hasta el presente".
+# cada 30 minutos, para que el dashboard refleje pagos y ventas casi en vivo.
 # Requiere los secrets: ALEGRA_EMAIL, ALEGRA_TOKEN
 on:
   schedule:
-    - cron: '0 23 * * *'   # diario 23:00 UTC = 18:00 COT
+    - cron: '*/30 * * * *'   # cada 30 minutos
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: actualizar-dashboard
+  cancel-in-progress: false
 
 jobs:
   update:

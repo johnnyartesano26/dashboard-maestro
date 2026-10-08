@@ -1,10 +1,24 @@
 {
   "fecha": "2026-10-08",
-  "total": 85,
-  "monto": 11907259,
+  "total": 87,
+  "monto": 12893399,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5263",
+      "cliente": "JUAN ESTEBAN GOMEZ MORENO",
+      "total": 731380,
+      "status": "open",
+      "fecha": "2026-10-08"
+    },
+    {
+      "id": "5262",
+      "cliente": "ORRO S.A.S.",
+      "total": 254760,
+      "status": "open",
+      "fecha": "2026-10-08"
+    },
     {
       "id": "5261",
       "cliente": "Consumidor Final",

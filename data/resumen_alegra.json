@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-08 06:42:02",
+  "generado": "2026-10-08 14:09:42",
   "anio": 2026,
   "kpis": {
-    "total_anual": 458391990,
-    "num_facturas": 3562,
-    "ticket_promedio": 128689
+    "total_anual": 459378130,
+    "num_facturas": 3564,
+    "ticket_promedio": 128894
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 11907259,
-      "count": 85
+      "total": 12893399,
+      "count": 87
     }
   },
   "por_mes_bar": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 6723859,
-      "count": 15
+      "total": 7709999,
+      "count": 17
     }
   },
   "por_mes_factura": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 11726259,
-      "count": 85
+      "total": 12685399,
+      "count": 87
     }
   },
   "por_mes_domicilio": {
@@ -212,8 +212,8 @@
       "count": 45
     },
     "2026-10": {
-      "total": 181000,
-      "count": 14
+      "total": 208000,
+      "count": 16
     }
   },
   "por_estado": {
@@ -226,8 +226,8 @@
       "count": 12
     },
     "open": {
-      "total": 59362027,
-      "count": 99
+      "total": 60348167,
+      "count": 101
     },
     "void": {
       "total": 772099,
@@ -244,20 +244,20 @@
       "unidades": 1852
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 33411037,
-      "unidades": 3017
+      "total": 33682357,
+      "unidades": 3041
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 28082429,
-      "unidades": 2868
+      "total": 28325189,
+      "unidades": 2892
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 27358315,
-      "unidades": 2769
+      "total": 27681995,
+      "unidades": 2801
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 23549907,
-      "unidades": 2417
+      "total": 23671287,
+      "unidades": 2429
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 21280598,
@@ -312,8 +312,8 @@
       "unidades": 574
     },
     "Domicilio": {
-      "total": 4755701,
-      "unidades": 357
+      "total": 4782701,
+      "unidades": 359
     },
     "Soda saborizada": {
       "total": 4464902,
@@ -637,6 +637,10 @@
       "total": 5083701,
       "count": 14
     },
+    "JUAN ESTEBAN GOMEZ MORENO": {
+      "total": 4984890,
+      "count": 9
+    },
     "INVERSIONES PULSO S.A.S": {
       "total": 4485097,
       "count": 6
@@ -648,10 +652,6 @@
     "Martin La Vendimia Emilio Jaramillo Marín": {
       "total": 4274836,
       "count": 9
-    },
-    "JUAN ESTEBAN GOMEZ MORENO": {
-      "total": 4253510,
-      "count": 8
     },
     "Manuel Felipe  Hernandez Gallego": {
       "total": 3090636,
@@ -793,6 +793,10 @@
       "total": 755650,
       "count": 3
     },
+    "ORRO S.A.S.": {
+      "total": 752280,
+      "count": 2
+    },
     "PROYECTO CAFE SAS": {
       "total": 752280,
       "count": 2
@@ -875,10 +879,6 @@
     },
     "Buena Birra Social Club S.A.S": {
       "total": 499800,
-      "count": 1
-    },
-    "ORRO S.A.S.": {
-      "total": 497520,
       "count": 1
     },
     "Dataware Sistemas": {

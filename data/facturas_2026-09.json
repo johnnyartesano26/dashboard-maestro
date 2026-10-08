@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-07",
+  "fecha": "2026-10-08",
   "total": 418,
   "monto": 58554047,
   "drafts": 0,
@@ -72,7 +72,7 @@
       "id": "5167",
       "cliente": "ORLANDO VICENTE CEBALLOS ROMERO",
       "total": 499800,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-30"
     },
     {
@@ -240,7 +240,7 @@
       "id": "5143",
       "cliente": "PATRICIA MELO GONZALEZ",
       "total": 84490,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-29"
     },
     {
@@ -639,7 +639,7 @@
       "id": "5086",
       "cliente": "SAMUEL DAVID GAMBA LUQUE",
       "total": 267040,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-24"
     },
     {
@@ -660,7 +660,7 @@
       "id": "5083",
       "cliente": "PINEA S.A.S",
       "total": 360670,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-24"
     },
     {
@@ -674,7 +674,7 @@
       "id": "5081",
       "cliente": "SEVEN MINIMERCADO",
       "total": 275370,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-24"
     },
     {
@@ -947,14 +947,14 @@
       "id": "5042",
       "cliente": "CONSTRUCTORA ANROL S.A.S (Bar de Laureles)",
       "total": 218250,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-21"
     },
     {
       "id": "5041",
       "cliente": "PATRICIA MELO GONZALEZ",
       "total": 169675,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-21"
     },
     {
@@ -1213,21 +1213,21 @@
       "id": "5004",
       "cliente": "DANIEL SCHMUTTE",
       "total": 527080,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-18"
     },
     {
       "id": "5003",
       "cliente": "CEMIEL SAS (Papi Tienda)",
       "total": 242760,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-18"
     },
     {
       "id": "5002",
       "cliente": "Sandra Milena  (Nueva Ola) Orozco Hincapié",
       "total": 264900,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-18"
     },
     {
@@ -1269,14 +1269,14 @@
       "id": "4996",
       "cliente": "Restaurante bar Mirador de la Eterna Primavera",
       "total": 488025,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-17"
     },
     {
       "id": "4995",
       "cliente": "PINEA S.A.S",
       "total": 302955,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-17"
     },
     {
@@ -1297,14 +1297,14 @@
       "id": "4992",
       "cliente": "SEBASTIAN KILBY RESTREPO",
       "total": 266660,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-17"
     },
     {
       "id": "4991",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 1864623,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-17"
     },
     {
@@ -1325,7 +1325,7 @@
       "id": "4988",
       "cliente": "Martin La Vendimia Emilio Jaramillo Marín",
       "total": 529080,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-17"
     },
     {
@@ -1507,14 +1507,14 @@
       "id": "4962",
       "cliente": "SAMUEL DAVID GAMBA LUQUE",
       "total": 267040,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-15"
     },
     {
       "id": "4961",
       "cliente": "MARTHA ELENA  (Punta Arena) PERDOMO JIMENEZ",
       "total": 364760,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-13"
     },
     {
@@ -1528,14 +1528,14 @@
       "id": "4959",
       "cliente": "MARTHA ELENA  (Punta Arena) PERDOMO JIMENEZ",
       "total": 261900,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-13"
     },
     {
       "id": "4958",
       "cliente": "ORLANDO VICENTE CEBALLOS ROMERO",
       "total": 242760,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-13"
     },
     {
@@ -1724,7 +1724,7 @@
       "id": "4931",
       "cliente": "PINEA S.A.S",
       "total": 272610,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-12"
     },
     {
@@ -1864,14 +1864,14 @@
       "id": "4911",
       "cliente": "GOMEZ DE MARINILLA S.A.S.",
       "total": 743280,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-11"
     },
     {
       "id": "4910",
       "cliente": "ANTHONY CRAIG WATSON",
       "total": 254760,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-11"
     },
     {
@@ -2158,7 +2158,7 @@
       "id": "4869",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 1868598,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-08"
     },
     {
@@ -2634,7 +2634,7 @@
       "id": "4801",
       "cliente": "ANTHONY CRAIG WATSON",
       "total": 183360,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-03"
     },
     {
@@ -2669,7 +2669,7 @@
       "id": "4796",
       "cliente": "JUAN ESTEBAN GOMEZ MORENO",
       "total": 527580,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-03"
     },
     {
@@ -2739,7 +2739,7 @@
       "id": "4786",
       "cliente": "ORLANDO VICENTE CEBALLOS ROMERO",
       "total": 746130,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-02"
     },
     {

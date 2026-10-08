@@ -1,6 +1,6 @@
 {
   "proyecto": "Madre Monte — Catálogo de Datos",
-  "actualizado": "2026-10-07",
+  "actualizado": "2026-10-08",
   "metas_anuales": {
     "2026": 527000000,
     "2027": 1600000000
@@ -192,10 +192,10 @@
     {
       "mes": "Octubre 2026",
       "ventas_bar": {
-        "total_ventas": 3214000,
-        "dias_con_dato": 4,
-        "promedio_diario": 803500,
-        "crecimiento": -87.3,
+        "total_ventas": 3898000,
+        "dias_con_dato": 5,
+        "promedio_diario": 779600,
+        "crecimiento": -84.6,
         "meta_mes": 26000000
       },
       "inventario": null,

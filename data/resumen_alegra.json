@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-07 02:31:38",
+  "generado": "2026-10-08 00:36:58",
   "anio": 2026,
   "kpis": {
-    "total_anual": 455887933,
-    "num_facturas": 3540,
-    "ticket_promedio": 128782
+    "total_anual": 457619990,
+    "num_facturas": 3553,
+    "ticket_promedio": 128798
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 9403202,
-      "count": 63
+      "total": 11135259,
+      "count": 76
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 3956400,
-      "count": 49
+      "total": 4411400,
+      "count": 61
     }
   },
   "por_mes_externo": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 5446802,
-      "count": 14
+      "total": 6723859,
+      "count": 15
     }
   },
   "por_mes_factura": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 9242202,
-      "count": 63
+      "total": 10954259,
+      "count": 76
     }
   },
   "por_mes_domicilio": {
@@ -212,18 +212,36 @@
       "count": 45
     },
     "2026-10": {
-      "total": 161000,
-      "count": 13
+      "total": 181000,
+      "count": 14
+    }
+  },
+  "por_estado": {
+    "closed": {
+      "total": 388589699,
+      "count": 3428
+    },
+    "draft": {
+      "total": 8896165,
+      "count": 12
+    },
+    "open": {
+      "total": 59362027,
+      "count": 99
+    },
+    "void": {
+      "total": 772099,
+      "count": 14
     }
   },
   "por_producto": {
     "Cerveza por litro Irish Red Ale - Mística": {
-      "total": 50736062,
-      "unidades": 2393
+      "total": 51347603,
+      "unidades": 2421
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 34244998,
-      "unidades": 1837
+      "total": 34320998,
+      "unidades": 1841
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
       "total": 33411037,
@@ -249,21 +267,21 @@
       "total": 18256399,
       "unidades": 1173
     },
+    "Cerveza por litro American India Pale Ale - Vagabundo": {
+      "total": 17920005,
+      "unidades": 805
+    },
     "Experiencia de cata de cerveza": {
       "total": 17828580,
       "unidades": 2
-    },
-    "Cerveza por litro American India Pale Ale - Vagabundo": {
-      "total": 17274490,
-      "unidades": 777
     },
     "Cerveza Stout - Sangre Negra": {
       "total": 15102199,
       "unidades": 857
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 14858200,
-      "unidades": 853
+      "total": 14894200,
+      "unidades": 855
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 10400402,
@@ -282,24 +300,24 @@
       "unidades": 358
     },
     "Cerveza industrial": {
-      "total": 7454500,
-      "unidades": 1073
+      "total": 7550500,
+      "unidades": 1089
     },
     "Hamburguesa": {
-      "total": 7449959,
-      "unidades": 214
+      "total": 7484959,
+      "unidades": 215
     },
     "Mini hamburguesa": {
-      "total": 5387906,
-      "unidades": 571
+      "total": 5412905,
+      "unidades": 574
     },
     "Domicilio": {
-      "total": 4735701,
-      "unidades": 356
+      "total": 4755701,
+      "unidades": 357
     },
     "Soda saborizada": {
-      "total": 4384904,
-      "unidades": 439
+      "total": 4444902,
+      "unidades": 445
     },
     "Jarra Irish Red Ale": {
       "total": 4063997,
@@ -326,8 +344,8 @@
       "unidades": 54
     },
     "Papas y plátanos chips": {
-      "total": 2925556,
-      "unidades": 434
+      "total": 2947556,
+      "unidades": 438
     },
     "Cerveza por litro American Pale Ale - Cienfuegos": {
       "total": 2859650,
@@ -357,13 +375,13 @@
       "total": 1574999,
       "unidades": 87
     },
+    "Soda": {
+      "total": 1565000,
+      "unidades": 261
+    },
     "B Botella APA": {
       "total": 1535999,
       "unidades": 88
-    },
-    "Soda": {
-      "total": 1523000,
-      "unidades": 254
     },
     "Jarra Hidromiel": {
       "total": 1486000,
@@ -401,13 +419,13 @@
       "total": 999000,
       "unidades": 52
     },
+    "Americano": {
+      "total": 989000,
+      "unidades": 142
+    },
     "Patacones con guacamole": {
       "total": 983000,
       "unidades": 99
-    },
-    "Americano": {
-      "total": 977000,
-      "unidades": 140
     },
     "Mini perri-burguer": {
       "total": 971996,
@@ -442,8 +460,8 @@
       "unidades": 89
     },
     "Coca cola 400 mL": {
-      "total": 692000,
-      "unidades": 94
+      "total": 700000,
+      "unidades": 95
     },
     "Aguas frescas": {
       "total": 665993,
@@ -534,8 +552,8 @@
       "unidades": 10
     },
     "Cañita para amigos": {
-      "total": 57000,
-      "unidades": 11
+      "total": 62000,
+      "unidades": 12
     },
     "Espresso": {
       "total": 52000,
@@ -580,12 +598,12 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 218367457,
-      "count": 3089
+      "total": 218822457,
+      "count": 3101
     },
     "JUAN CARLOS ORREGO ZAPATA": {
-      "total": 41685664,
-      "count": 41
+      "total": 42962721,
+      "count": 42
     },
     "INVERSIONES LATINERIA S.A.S": {
       "total": 35650673,
@@ -986,24 +1004,6 @@
     "ADHESIVOS GRAFICOS SAS": {
       "total": 21420,
       "count": 1
-    }
-  },
-  "por_estado": {
-    "closed": {
-      "total": 372731434,
-      "count": 3384
-    },
-    "draft": {
-      "total": 8896165,
-      "count": 12
-    },
-    "open": {
-      "total": 73488235,
-      "count": 130
-    },
-    "void": {
-      "total": 772099,
-      "count": 14
     }
   }
 }

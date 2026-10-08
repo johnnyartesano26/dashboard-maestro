@@ -1,10 +1,101 @@
 {
-  "fecha": "2026-10-07",
-  "total": 63,
-  "monto": 9403202,
+  "fecha": "2026-10-08",
+  "total": 76,
+  "monto": 11135259,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5252",
+      "cliente": "JUAN CARLOS ORREGO ZAPATA",
+      "total": 1277057,
+      "status": "open",
+      "fecha": "2026-10-07"
+    },
+    {
+      "id": "5251",
+      "cliente": "Consumidor Final",
+      "total": 26000,
+      "status": "closed",
+      "fecha": "2026-10-07"
+    },
+    {
+      "id": "5250",
+      "cliente": "Consumidor Final",
+      "total": 92000,
+      "status": "closed",
+      "fecha": "2026-10-07"
+    },
+    {
+      "id": "5249",
+      "cliente": "Consumidor Final",
+      "total": 49000,
+      "status": "closed",
+      "fecha": "2026-10-07"
+    },
+    {
+      "id": "5248",
+      "cliente": "Consumidor Final",
+      "total": 31000,
+      "status": "closed",
+      "fecha": "2026-10-07"
+    },
+    {
+      "id": "5247",
+      "cliente": "Consumidor Final",
+      "total": 50000,
+      "status": "closed",
+      "fecha": "2026-10-07"
+    },
+    {
+      "id": "5246",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-10-06"
+    },
+    {
+      "id": "5245",
+      "cliente": "Consumidor Final",
+      "total": 10000,
+      "status": "closed",
+      "fecha": "2026-10-06"
+    },
+    {
+      "id": "5244",
+      "cliente": "Consumidor Final",
+      "total": 20000,
+      "status": "closed",
+      "fecha": "2026-10-06"
+    },
+    {
+      "id": "5243",
+      "cliente": "Consumidor Final",
+      "total": 80000,
+      "status": "closed",
+      "fecha": "2026-10-06"
+    },
+    {
+      "id": "5242",
+      "cliente": "Consumidor Final",
+      "total": 50000,
+      "status": "closed",
+      "fecha": "2026-10-06"
+    },
+    {
+      "id": "5241",
+      "cliente": "Consumidor Final",
+      "total": 21000,
+      "status": "closed",
+      "fecha": "2026-10-06"
+    },
+    {
+      "id": "5240",
+      "cliente": "Consumidor Final",
+      "total": 10000,
+      "status": "closed",
+      "fecha": "2026-10-06"
+    },
     {
       "id": "5239",
       "cliente": "Consumidor Final",

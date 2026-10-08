@@ -81,6 +81,16 @@
       "archivo_local": "madremonte-dashboard/scrum.html",
       "datos": "data/objetivos.json + data/invima_checklist.json + data/ledger_inventario.json",
       "pestanas": []
+    },
+    {
+      "id": "procesos_creativos",
+      "nombre": "Procesos Creativos",
+      "descripcion": "Proyectos con aliados: 4 fases, dimensiones de impacto, indicadores y medición de avance",
+      "url_github_pages": "https://johnnyartesano26.github.io/madremonte-dashboard/procesos-creativos.html",
+      "url_repo": "https://github.com/johnnyartesano26/madremonte-dashboard",
+      "archivo_local": "madremonte-dashboard/procesos-creativos.html",
+      "datos": "Supabase (proyectos_creativos, fases, dimensiones, preguntas, mediciones, catalogo_preguntas)",
+      "pestanas": ["Fase 1 · Creación", "Fase 2 · Equipo & Timeline", "Fase 3 · Dimensiones & Preguntas", "Fase 4 · Mediciones & Avance"]
     }
   ],
   "fuentes_de_datos": {

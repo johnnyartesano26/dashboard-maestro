@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-08 22:36:07",
+  "fecha": "2026-10-09 00:11:02",
   "fisico": {
     "GOLDEN ALE": {
       "bot": 14.0,
@@ -54,7 +54,7 @@
       "litros": 0.0
     },
     "GOLDEN ALE": {
-      "bot": 513.0,
+      "bot": 514.0,
       "barril": 5.0,
       "litros": 0.0
     },
@@ -96,7 +96,7 @@
       "litros": 0.0
     },
     "GOLDEN ALE": {
-      "bot": -499.0,
+      "bot": -500.0,
       "barril": 23.0,
       "litros": 343.0
     },

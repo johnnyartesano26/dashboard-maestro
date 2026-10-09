@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-08 22:36:07",
+  "fecha": "2026-10-09 00:11:02",
   "dry_run": false,
   "pendientes_procesar": 1,
   "emitidas": 1,
@@ -50,27 +50,27 @@
   },
   "inventario_final": {
     "GOLDEN ALE": {
-      "bot": 9.0,
+      "bot": 13.0,
       "barril": 28.0,
       "litros": 343.0
     },
     "IRISH RED ALE": {
-      "bot": 15.0,
+      "bot": 20.0,
       "barril": 180.0,
       "litros": 736.0
     },
     "APA": {
-      "bot": 40.0,
+      "bot": 45.0,
       "barril": 0.0,
       "litros": 190.0
     },
     "IPA": {
-      "bot": 23.0,
+      "bot": 28.0,
       "barril": 116.0,
       "litros": 580.0
     },
     "STOUT": {
-      "bot": 33.0,
+      "bot": 37.0,
       "barril": 13.0,
       "litros": 55.0
     },
@@ -92,40 +92,40 @@
   },
   "descuento_inventario": {
     "GOLDEN ALE": {
-      "bot_pedidas": 5,
-      "bot_descontadas_de_stock": 5,
+      "bot_pedidas": 1,
+      "bot_descontadas_de_stock": 1,
       "bot_cubiertas_por_litros": 0,
       "litros_pedidos": 0.0,
       "litros_descontados_de_barril": 0.0,
       "litros_descontados_de_fermentador": 0.0
     },
     "IRISH RED ALE": {
-      "bot_pedidas": 5,
-      "bot_descontadas_de_stock": 5,
+      "bot_pedidas": 0,
+      "bot_descontadas_de_stock": 0,
       "bot_cubiertas_por_litros": 0,
       "litros_pedidos": 0.0,
       "litros_descontados_de_barril": 0.0,
       "litros_descontados_de_fermentador": 0.0
     },
     "APA": {
-      "bot_pedidas": 5,
-      "bot_descontadas_de_stock": 5,
+      "bot_pedidas": 0,
+      "bot_descontadas_de_stock": 0,
       "bot_cubiertas_por_litros": 0,
       "litros_pedidos": 0.0,
       "litros_descontados_de_barril": 0.0,
       "litros_descontados_de_fermentador": 0.0
     },
     "IPA": {
-      "bot_pedidas": 5,
-      "bot_descontadas_de_stock": 5,
+      "bot_pedidas": 0,
+      "bot_descontadas_de_stock": 0,
       "bot_cubiertas_por_litros": 0,
       "litros_pedidos": 0.0,
       "litros_descontados_de_barril": 0.0,
       "litros_descontados_de_fermentador": 0.0
     },
     "STOUT": {
-      "bot_pedidas": 4,
-      "bot_descontadas_de_stock": 4,
+      "bot_pedidas": 0,
+      "bot_descontadas_de_stock": 0,
       "bot_cubiertas_por_litros": 0,
       "litros_pedidos": 0.0,
       "litros_descontados_de_barril": 0.0,

@@ -1,10 +1,31 @@
 {
-  "fecha": "2026-10-08",
-  "total": 87,
-  "monto": 12893399,
+  "fecha": "2026-10-09",
+  "total": 90,
+  "monto": 13183109,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5266",
+      "cliente": "Consumidor Final",
+      "total": 7000,
+      "status": "closed",
+      "fecha": "2026-10-08"
+    },
+    {
+      "id": "5265",
+      "cliente": "Consumidor Final",
+      "total": 34000,
+      "status": "closed",
+      "fecha": "2026-10-08"
+    },
+    {
+      "id": "5264",
+      "cliente": "LOREPA AREPAS SAS",
+      "total": 248710,
+      "status": "open",
+      "fecha": "2026-10-08"
+    },
     {
       "id": "5263",
       "cliente": "JUAN ESTEBAN GOMEZ MORENO",

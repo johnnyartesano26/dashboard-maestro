@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-08 19:57:05",
+  "generado": "2026-10-09 00:23:28",
   "anio": 2026,
   "kpis": {
-    "total_anual": 459378130,
-    "num_facturas": 3564,
-    "ticket_promedio": 128894
+    "total_anual": 459695840,
+    "num_facturas": 3568,
+    "ticket_promedio": 128839
   },
   "por_mes": {
     "2026-01": {
@@ -36,16 +36,16 @@
       "count": 347
     },
     "2026-08": {
-      "total": 53454543,
-      "count": 433
+      "total": 53482543,
+      "count": 434
     },
     "2026-09": {
       "total": 58554047,
       "count": 418
     },
     "2026-10": {
-      "total": 12893399,
-      "count": 87
+      "total": 13183109,
+      "count": 90
     }
   },
   "por_mes_bar": {
@@ -78,16 +78,16 @@
       "count": 291
     },
     "2026-08": {
-      "total": 27278107,
-      "count": 370
+      "total": 27306107,
+      "count": 371
     },
     "2026-09": {
       "total": 27028389,
       "count": 357
     },
     "2026-10": {
-      "total": 5183400,
-      "count": 70
+      "total": 5224400,
+      "count": 72
     }
   },
   "por_mes_externo": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 7709999,
-      "count": 17
+      "total": 7958709,
+      "count": 18
     }
   },
   "por_mes_factura": {
@@ -162,16 +162,16 @@
       "count": 347
     },
     "2026-08": {
-      "total": 52874543,
-      "count": 433
+      "total": 52902543,
+      "count": 434
     },
     "2026-09": {
       "total": 57994547,
       "count": 418
     },
     "2026-10": {
-      "total": 12685399,
-      "count": 87
+      "total": 12975109,
+      "count": 90
     }
   },
   "por_mes_domicilio": {
@@ -218,16 +218,16 @@
   },
   "por_estado": {
     "closed": {
-      "total": 389973240,
-      "count": 3438
+      "total": 390042240,
+      "count": 3441
     },
     "draft": {
       "total": 8896165,
       "count": 12
     },
     "open": {
-      "total": 59736626,
-      "count": 100
+      "total": 59985336,
+      "count": 101
     },
     "void": {
       "total": 772099,
@@ -244,24 +244,24 @@
       "unidades": 1852
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 33682357,
-      "unidades": 3041
+      "total": 33738882,
+      "unidades": 3046
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 28325189,
-      "unidades": 2892
+      "total": 28375764,
+      "unidades": 2897
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 27681995,
-      "unidades": 2801
+      "total": 27722455,
+      "unidades": 2805
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 23671287,
-      "unidades": 2429
+      "total": 23721862,
+      "unidades": 2434
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 21280598,
-      "unidades": 1356
+      "total": 21312598,
+      "unidades": 1358
     },
     "Cerveza Golden Ale - Siempre Viva": {
       "total": 18288399,
@@ -280,12 +280,12 @@
       "unidades": 868
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 14966200,
-      "unidades": 859
+      "total": 14984200,
+      "unidades": 860
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
-      "total": 10400402,
-      "unidades": 1057
+      "total": 10450977,
+      "unidades": 1062
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -316,8 +316,8 @@
       "unidades": 359
     },
     "Soda saborizada": {
-      "total": 4464902,
-      "unidades": 447
+      "total": 4474902,
+      "unidades": 448
     },
     "Jarra Irish Red Ale": {
       "total": 4063997,
@@ -344,8 +344,8 @@
       "unidades": 54
     },
     "Papas y plátanos chips": {
-      "total": 2982554,
-      "unidades": 443
+      "total": 2989553,
+      "unidades": 444
     },
     "Cerveza por litro American Pale Ale - Cienfuegos": {
       "total": 2859650,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 219594457,
-      "count": 3110
+      "total": 219663457,
+      "count": 3113
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 42962721,
@@ -693,6 +693,10 @@
       "total": 1799170,
       "count": 7
     },
+    "LOREPA AREPAS SAS": {
+      "total": 1758945,
+      "count": 6
+    },
     "ORLANDO VICENTE CEBALLOS ROMERO": {
       "total": 1737400,
       "count": 4
@@ -716,10 +720,6 @@
     "JUAN FELIPE ARTEAGA GIRALDO": {
       "total": 1512790,
       "count": 4
-    },
-    "LOREPA AREPAS SAS": {
-      "total": 1510235,
-      "count": 5
     },
     "JOSE MAURICIO GALLEGO QUINTERO": {
       "total": 1421893,

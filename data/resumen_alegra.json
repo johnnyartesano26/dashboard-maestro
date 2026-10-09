@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-09 00:23:28",
+  "generado": "2026-10-09 06:43:41",
   "anio": 2026,
   "kpis": {
-    "total_anual": 459695840,
-    "num_facturas": 3568,
-    "ticket_promedio": 128839
+    "total_anual": 460248795,
+    "num_facturas": 3576,
+    "ticket_promedio": 128705
   },
   "por_mes": {
     "2026-01": {
@@ -36,16 +36,16 @@
       "count": 347
     },
     "2026-08": {
-      "total": 53482543,
-      "count": 434
+      "total": 53454543,
+      "count": 433
     },
     "2026-09": {
       "total": 58554047,
       "count": 418
     },
     "2026-10": {
-      "total": 13183109,
-      "count": 90
+      "total": 13764064,
+      "count": 99
     }
   },
   "por_mes_bar": {
@@ -78,16 +78,16 @@
       "count": 291
     },
     "2026-08": {
-      "total": 27306107,
-      "count": 371
+      "total": 27278107,
+      "count": 370
     },
     "2026-09": {
       "total": 27028389,
       "count": 357
     },
     "2026-10": {
-      "total": 5224400,
-      "count": 72
+      "total": 5538200,
+      "count": 79
     }
   },
   "por_mes_externo": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 7958709,
-      "count": 18
+      "total": 8225864,
+      "count": 20
     }
   },
   "por_mes_factura": {
@@ -162,16 +162,16 @@
       "count": 347
     },
     "2026-08": {
-      "total": 52902543,
-      "count": 434
+      "total": 52874543,
+      "count": 433
     },
     "2026-09": {
       "total": 57994547,
       "count": 418
     },
     "2026-10": {
-      "total": 12975109,
-      "count": 90
+      "total": 13556064,
+      "count": 99
     }
   },
   "por_mes_domicilio": {
@@ -218,16 +218,16 @@
   },
   "por_estado": {
     "closed": {
-      "total": 390042240,
-      "count": 3441
+      "total": 390328040,
+      "count": 3447
     },
     "draft": {
-      "total": 8896165,
-      "count": 12
+      "total": 8906280,
+      "count": 13
     },
     "open": {
-      "total": 59985336,
-      "count": 101
+      "total": 60242376,
+      "count": 102
     },
     "void": {
       "total": 772099,
@@ -240,12 +240,12 @@
       "unidades": 2421
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 34529998,
-      "unidades": 1852
+      "total": 34643998,
+      "unidades": 1858
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 33738882,
-      "unidades": 3046
+      "total": 33874542,
+      "unidades": 3058
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 28375764,
@@ -256,8 +256,8 @@
       "unidades": 2805
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 23721862,
-      "unidades": 2434
+      "total": 23792667,
+      "unidades": 2441
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 21312598,
@@ -276,16 +276,16 @@
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 15300199,
-      "unidades": 868
+      "total": 15336199,
+      "unidades": 870
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 14984200,
-      "unidades": 860
+      "total": 15020200,
+      "unidades": 862
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
-      "total": 10450977,
-      "unidades": 1062
+      "total": 10511667,
+      "unidades": 1068
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -308,16 +308,16 @@
       "unidades": 1089
     },
     "Mini hamburguesa": {
-      "total": 5412905,
-      "unidades": 574
+      "total": 5430904,
+      "unidades": 576
     },
     "Domicilio": {
       "total": 4782701,
       "unidades": 359
     },
     "Soda saborizada": {
-      "total": 4474902,
-      "unidades": 448
+      "total": 4464902,
+      "unidades": 447
     },
     "Jarra Irish Red Ale": {
       "total": 4063997,
@@ -327,13 +327,13 @@
       "total": 4022000,
       "unidades": 212
     },
+    "Jarra IPA": {
+      "total": 4020000,
+      "unidades": 62
+    },
     "Chope de vino": {
       "total": 3990000,
       "unidades": 202
-    },
-    "Jarra IPA": {
-      "total": 3964000,
-      "unidades": 61
     },
     "Jarra APA": {
       "total": 3586000,
@@ -412,8 +412,8 @@
       "unidades": 65
     },
     "Cañita de barril Irish Red Ale - Mística": {
-      "total": 1008989,
-      "unidades": 102
+      "total": 1018989,
+      "unidades": 103
     },
     "B Botella Chope de vino": {
       "total": 999000,
@@ -427,13 +427,13 @@
       "total": 983000,
       "unidades": 99
     },
+    "Cañita de barril Golden Ale - Siempre Viva": {
+      "total": 981983,
+      "unidades": 100
+    },
     "Mini perri-burguer": {
       "total": 971996,
       "unidades": 118
-    },
-    "Cañita de barril Golden Ale - Siempre Viva": {
-      "total": 971983,
-      "unidades": 99
     },
     "Cerveza invitada": {
       "total": 970000,
@@ -484,8 +484,8 @@
       "unidades": 51
     },
     "Cañita de barril American Pale Ale - Cienfuegos": {
-      "total": 493992,
-      "unidades": 49
+      "total": 503992,
+      "unidades": 50
     },
     "Agua en botella": {
       "total": 399500,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 219663457,
-      "count": 3113
+      "total": 219949257,
+      "count": 3119
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 42962721,
@@ -673,6 +673,10 @@
       "total": 2600032,
       "count": 8
     },
+    "CHARCUTERIA CERDEÑA": {
+      "total": 2424030,
+      "count": 7
+    },
     "Jairo licorera Kanana Acevedo Sanchez": {
       "total": 2323000,
       "count": 9
@@ -680,10 +684,6 @@
     "Elena Ossa Sanchez": {
       "total": 2257614,
       "count": 9
-    },
-    "CHARCUTERIA CERDEÑA": {
-      "total": 2166990,
-      "count": 6
     },
     "CEMIEL SAS (Papi Tienda)": {
       "total": 1878825,
@@ -985,6 +985,10 @@
       "total": 162993,
       "count": 1
     },
+    "Johnny Anderle Guerrero Bucheli": {
+      "total": 82380,
+      "count": 3
+    },
     "A.I.C.": {
       "total": 75730,
       "count": 3
@@ -992,10 +996,6 @@
     "Sotelcom": {
       "total": 73204,
       "count": 1
-    },
-    "Johnny Anderle Guerrero Bucheli": {
-      "total": 72265,
-      "count": 2
     },
     "MAURICIO ESTEBAN MUÑOZ GARCIA": {
       "total": 40460,

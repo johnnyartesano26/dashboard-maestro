@@ -1,10 +1,73 @@
 {
   "fecha": "2026-10-09",
-  "total": 90,
-  "monto": 13183109,
-  "drafts": 0,
-  "drafts_monto": 0,
+  "total": 99,
+  "monto": 13764064,
+  "drafts": 1,
+  "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5267",
+      "cliente": "Johnny Anderle Guerrero Bucheli",
+      "total": 10115,
+      "status": "draft",
+      "fecha": "2026-10-09"
+    },
+    {
+      "id": "5275",
+      "cliente": "Consumidor Final",
+      "total": 18000,
+      "status": "closed",
+      "fecha": "2026-10-08"
+    },
+    {
+      "id": "5274",
+      "cliente": "Consumidor Final",
+      "total": 80800,
+      "status": "closed",
+      "fecha": "2026-10-08"
+    },
+    {
+      "id": "5273",
+      "cliente": "Consumidor Final",
+      "total": 39000,
+      "status": "closed",
+      "fecha": "2026-10-08"
+    },
+    {
+      "id": "5272",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-10-08"
+    },
+    {
+      "id": "5271",
+      "cliente": "Consumidor Final",
+      "total": 57000,
+      "status": "closed",
+      "fecha": "2026-10-08"
+    },
+    {
+      "id": "5270",
+      "cliente": "Consumidor Final",
+      "total": 67000,
+      "status": "closed",
+      "fecha": "2026-10-08"
+    },
+    {
+      "id": "5269",
+      "cliente": "Consumidor Final",
+      "total": 36000,
+      "status": "closed",
+      "fecha": "2026-10-08"
+    },
+    {
+      "id": "5268",
+      "cliente": "CHARCUTERIA CERDEÑA",
+      "total": 257040,
+      "status": "open",
+      "fecha": "2026-10-08"
+    },
     {
       "id": "5266",
       "cliente": "Consumidor Final",

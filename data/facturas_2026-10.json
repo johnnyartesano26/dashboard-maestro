@@ -1,10 +1,31 @@
 {
   "fecha": "2026-10-09",
-  "total": 99,
-  "monto": 13764064,
+  "total": 102,
+  "monto": 14335759,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5278",
+      "cliente": "DANIEL SCHMUTTE",
+      "total": 466890,
+      "status": "open",
+      "fecha": "2026-10-09"
+    },
+    {
+      "id": "5277",
+      "cliente": "Consumidor Final",
+      "total": 34000,
+      "status": "closed",
+      "fecha": "2026-10-09"
+    },
+    {
+      "id": "5276",
+      "cliente": "ERICA TATIANA CANO",
+      "total": 70805,
+      "status": "open",
+      "fecha": "2026-10-09"
+    },
     {
       "id": "5267",
       "cliente": "Johnny Anderle Guerrero Bucheli",
@@ -317,7 +338,7 @@
       "id": "5231",
       "cliente": "PINEA S.A.S",
       "total": 511420,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-06"
     },
     {
@@ -338,7 +359,7 @@
       "id": "5228",
       "cliente": "CONSTRUCTORA ANROL S.A.S (Bar de Laureles)",
       "total": 259900,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-05"
     },
     {
@@ -506,7 +527,7 @@
       "id": "5204",
       "cliente": "Andrea Alvarez Ordoñez",
       "total": 138520,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-03"
     },
     {
@@ -632,7 +653,7 @@
       "id": "5186",
       "cliente": "JOHN CARLOS PINEDA AREVALO",
       "total": 261900,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-02"
     },
     {
@@ -646,14 +667,14 @@
       "id": "5184",
       "cliente": "ORRO S.A.S.",
       "total": 497520,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-02"
     },
     {
       "id": "5183",
       "cliente": "PINEA S.A.S",
       "total": 261900,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-02"
     },
     {

@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-10 02:48:21",
+  "generado": "2026-10-10 09:38:01",
   "anio": 2026,
   "kpis": {
-    "total_anual": 461179490,
-    "num_facturas": 3586,
-    "ticket_promedio": 128606
+    "total_anual": 462246490,
+    "num_facturas": 3600,
+    "ticket_promedio": 128402
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 14694759,
-      "count": 109
+      "total": 15761759,
+      "count": 123
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 5931200,
-      "count": 87
+      "total": 6998200,
+      "count": 101
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 14473259,
-      "count": 109
+      "total": 15540259,
+      "count": 123
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 392652200,
-      "count": 3461
+      "total": 393719200,
+      "count": 3475
     },
     "draft": {
       "total": 8906280,
@@ -240,8 +240,8 @@
       "unidades": 2421
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 34681998,
-      "unidades": 1860
+      "total": 34966998,
+      "unidades": 1875
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
       "total": 34145862,
@@ -260,12 +260,12 @@
       "unidades": 2443
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 21312598,
-      "unidades": 1358
+      "total": 21440598,
+      "unidades": 1366
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 18288399,
-      "unidades": 1175
+      "total": 18368399,
+      "unidades": 1180
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 17920005,
@@ -276,12 +276,12 @@
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 15408199,
-      "unidades": 874
+      "total": 15534199,
+      "unidades": 881
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 15092200,
-      "unidades": 866
+      "total": 15164200,
+      "unidades": 870
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 10521782,
@@ -319,13 +319,13 @@
       "total": 4474902,
       "unidades": 448
     },
+    "Jarra Irish Red Ale": {
+      "total": 4123997,
+      "unidades": 72
+    },
     "Jarra IPA": {
       "total": 4092000,
       "unidades": 63
-    },
-    "Jarra Irish Red Ale": {
-      "total": 4063997,
-      "unidades": 71
     },
     "Cerveza Red IPA MM": {
       "total": 4022000,
@@ -340,12 +340,12 @@
       "unidades": 58
     },
     "Jarra Golden Ale": {
-      "total": 3079998,
-      "unidades": 54
+      "total": 3199998,
+      "unidades": 56
     },
     "Papas y plátanos chips": {
-      "total": 3001552,
-      "unidades": 446
+      "total": 3022550,
+      "unidades": 449
     },
     "Cerveza por litro American Pale Ale - Cienfuegos": {
       "total": 2859650,
@@ -363,13 +363,13 @@
       "total": 1731040,
       "unidades": 101
     },
+    "Nachos Pulled pork": {
+      "total": 1725000,
+      "unidades": 96
+    },
     "Jarra Golden Ale / Irish Red Ale": {
       "total": 1715998,
       "unidades": 33
-    },
-    "Nachos Pulled pork": {
-      "total": 1707000,
-      "unidades": 95
     },
     "B Botella IPA": {
       "total": 1574999,
@@ -488,8 +488,8 @@
       "unidades": 50
     },
     "Agua en botella": {
-      "total": 399500,
-      "unidades": 133
+      "total": 405500,
+      "unidades": 135
     },
     "Invitada IPA La Barbarie": {
       "total": 380000,
@@ -515,6 +515,10 @@
       "total": 247000,
       "unidades": 26
     },
+    "Kombucha": {
+      "total": 196000,
+      "unidades": 14
+    },
     "Jugos - F. Rojos, F. Amarillos, Mango y maracuyá": {
       "total": 156000,
       "unidades": 13
@@ -526,10 +530,6 @@
     "Cañita de barril Red IPA MM": {
       "total": 130000,
       "unidades": 11
-    },
-    "Kombucha": {
-      "total": 126000,
-      "unidades": 9
     },
     "Shot destilado": {
       "total": 126000,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 220342257,
-      "count": 3127
+      "total": 221409257,
+      "count": 3141
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 42962721,

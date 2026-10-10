@@ -1,10 +1,59 @@
 {
-  "fecha": "2026-10-09",
-  "total": 102,
-  "monto": 14335759,
+  "fecha": "2026-10-10",
+  "total": 109,
+  "monto": 14694759,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5285",
+      "cliente": "Consumidor Final",
+      "total": 40000,
+      "status": "closed",
+      "fecha": "2026-10-09"
+    },
+    {
+      "id": "5284",
+      "cliente": "Consumidor Final",
+      "total": 138000,
+      "status": "closed",
+      "fecha": "2026-10-09"
+    },
+    {
+      "id": "5283",
+      "cliente": "Consumidor Final",
+      "total": 78000,
+      "status": "closed",
+      "fecha": "2026-10-09"
+    },
+    {
+      "id": "5282",
+      "cliente": "Consumidor Final",
+      "total": 36000,
+      "status": "closed",
+      "fecha": "2026-10-09"
+    },
+    {
+      "id": "5281",
+      "cliente": "Consumidor Final",
+      "total": 52000,
+      "status": "closed",
+      "fecha": "2026-10-09"
+    },
+    {
+      "id": "5280",
+      "cliente": "Consumidor Final",
+      "total": 10000,
+      "status": "closed",
+      "fecha": "2026-10-09"
+    },
+    {
+      "id": "5279",
+      "cliente": "Consumidor Final",
+      "total": 5000,
+      "status": "closed",
+      "fecha": "2026-10-09"
+    },
     {
       "id": "5278",
       "cliente": "DANIEL SCHMUTTE",

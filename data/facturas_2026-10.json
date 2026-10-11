@@ -1,10 +1,17 @@
 {
   "fecha": "2026-10-11",
-  "total": 135,
-  "monto": 16614759,
+  "total": 136,
+  "monto": 17005179,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5312",
+      "cliente": "ALTANA ROOFTOP S.A.S",
+      "total": 390420,
+      "status": "open",
+      "fecha": "2026-10-11"
+    },
     {
       "id": "5311",
       "cliente": "Consumidor Final",

@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-11 16:07:54",
+  "generado": "2026-10-11 20:09:41",
   "anio": 2026,
   "kpis": {
-    "total_anual": 463099490,
-    "num_facturas": 3612,
-    "ticket_promedio": 128211
+    "total_anual": 463489910,
+    "num_facturas": 3613,
+    "ticket_promedio": 128284
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 16614759,
-      "count": 135
+      "total": 17005179,
+      "count": 136
     }
   },
   "por_mes_bar": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 8763559,
-      "count": 22
+      "total": 9153979,
+      "count": 23
     }
   },
   "por_mes_factura": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 16393259,
-      "count": 135
+      "total": 16771679,
+      "count": 136
     }
   },
   "por_mes_domicilio": {
@@ -212,8 +212,8 @@
       "count": 45
     },
     "2026-10": {
-      "total": 221500,
-      "count": 17
+      "total": 233500,
+      "count": 18
     }
   },
   "por_estado": {
@@ -226,8 +226,8 @@
       "count": 13
     },
     "open": {
-      "total": 58848911,
-      "count": 98
+      "total": 59239331,
+      "count": 99
     },
     "void": {
       "total": 772099,
@@ -244,20 +244,20 @@
       "unidades": 1882
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 34145862,
-      "unidades": 3082
+      "total": 34281522,
+      "unidades": 3094
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 28456684,
-      "unidades": 2905
+      "total": 28578064,
+      "unidades": 2917
     },
     "Cerveza en botella Stout - Sangre Negra": {
       "total": 27864065,
       "unidades": 2819
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 23812897,
-      "unidades": 2443
+      "total": 23934277,
+      "unidades": 2455
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 21648598,
@@ -312,8 +312,8 @@
       "unidades": 578
     },
     "Domicilio": {
-      "total": 4796201,
-      "unidades": 360
+      "total": 4808201,
+      "unidades": 361
     },
     "Soda saborizada": {
       "total": 4474902,
@@ -900,6 +900,10 @@
     "ERICA TATIANA CANO": {
       "total": 400435,
       "count": 5
+    },
+    "ALTANA ROOFTOP S.A.S": {
+      "total": 390420,
+      "count": 1
     },
     "David Miranda tamayo": {
       "total": 326000,

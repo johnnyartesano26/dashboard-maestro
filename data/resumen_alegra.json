@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-10 23:29:34",
+  "generado": "2026-10-11 02:19:14",
   "anio": 2026,
   "kpis": {
-    "total_anual": 462246490,
-    "num_facturas": 3600,
-    "ticket_promedio": 128402
+    "total_anual": 462406490,
+    "num_facturas": 3604,
+    "ticket_promedio": 128304
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 15761759,
-      "count": 123
+      "total": 15921759,
+      "count": 127
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 6998200,
-      "count": 101
+      "total": 7158200,
+      "count": 105
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 15540259,
-      "count": 123
+      "total": 15700259,
+      "count": 127
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 393719200,
-      "count": 3475
+      "total": 393879200,
+      "count": 3479
     },
     "draft": {
       "total": 8906280,
@@ -260,8 +260,8 @@
       "unidades": 2443
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 21440598,
-      "unidades": 1366
+      "total": 21488598,
+      "unidades": 1369
     },
     "Cerveza Golden Ale - Siempre Viva": {
       "total": 18368399,
@@ -276,8 +276,8 @@
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 15534199,
-      "unidades": 881
+      "total": 15552199,
+      "unidades": 882
     },
     "Cerveza APA - Cienfuegos": {
       "total": 15164200,
@@ -299,13 +299,13 @@
       "total": 8854000,
       "unidades": 358
     },
+    "Cerveza industrial": {
+      "total": 7585500,
+      "unidades": 1094
+    },
     "Hamburguesa": {
       "total": 7554958,
       "unidades": 217
-    },
-    "Cerveza industrial": {
-      "total": 7550500,
-      "unidades": 1089
     },
     "Mini hamburguesa": {
       "total": 5430904,
@@ -319,13 +319,13 @@
       "total": 4474902,
       "unidades": 448
     },
+    "Jarra IPA": {
+      "total": 4142000,
+      "unidades": 64
+    },
     "Jarra Irish Red Ale": {
       "total": 4123997,
       "unidades": 72
-    },
-    "Jarra IPA": {
-      "total": 4092000,
-      "unidades": 63
     },
     "Cerveza Red IPA MM": {
       "total": 4022000,
@@ -344,8 +344,8 @@
       "unidades": 56
     },
     "Papas y plátanos chips": {
-      "total": 3022550,
-      "unidades": 449
+      "total": 3029549,
+      "unidades": 450
     },
     "Cerveza por litro American Pale Ale - Cienfuegos": {
       "total": 2859650,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 221409257,
-      "count": 3141
+      "total": 221569257,
+      "count": 3145
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 42962721,

@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-12 02:49:34",
+  "generado": "2026-10-12 10:29:26",
   "anio": 2026,
   "kpis": {
-    "total_anual": 463489910,
-    "num_facturas": 3613,
-    "ticket_promedio": 128284
+    "total_anual": 464257910,
+    "num_facturas": 3622,
+    "ticket_promedio": 128177
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 17005179,
-      "count": 136
+      "total": 17773179,
+      "count": 145
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 7851200,
-      "count": 113
+      "total": 8619200,
+      "count": 122
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 16771679,
-      "count": 136
+      "total": 17539679,
+      "count": 145
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 394572200,
-      "count": 3487
+      "total": 395340200,
+      "count": 3496
     },
     "draft": {
       "total": 8906280,
@@ -240,8 +240,8 @@
       "unidades": 2421
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 35099998,
-      "unidades": 1882
+      "total": 35403998,
+      "unidades": 1898
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
       "total": 34281522,
@@ -260,12 +260,12 @@
       "unidades": 2455
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 21648598,
-      "unidades": 1379
+      "total": 21728598,
+      "unidades": 1384
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 18368399,
-      "unidades": 1180
+      "total": 18480399,
+      "unidades": 1187
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 17920005,
@@ -276,12 +276,12 @@
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 15624199,
-      "unidades": 886
+      "total": 15696199,
+      "unidades": 890
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 15200200,
-      "unidades": 872
+      "total": 15236200,
+      "unidades": 874
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 10521782,
@@ -344,8 +344,8 @@
       "unidades": 56
     },
     "Papas y plátanos chips": {
-      "total": 3029549,
-      "unidades": 450
+      "total": 3057546,
+      "unidades": 454
     },
     "Cerveza por litro American Pale Ale - Cienfuegos": {
       "total": 2859650,
@@ -372,8 +372,8 @@
       "unidades": 33
     },
     "Soda": {
-      "total": 1577000,
-      "unidades": 263
+      "total": 1583000,
+      "unidades": 264
     },
     "B Botella IPA": {
       "total": 1574999,
@@ -511,13 +511,13 @@
       "total": 267000,
       "unidades": 71
     },
+    "Kombucha": {
+      "total": 266000,
+      "unidades": 19
+    },
     "Cerveza esclavos IPA": {
       "total": 247000,
       "unidades": 26
-    },
-    "Kombucha": {
-      "total": 196000,
-      "unidades": 14
     },
     "Jugos - F. Rojos, F. Amarillos, Mango y maracuyá": {
       "total": 156000,
@@ -555,13 +555,13 @@
       "total": 62000,
       "unidades": 12
     },
+    "IPA Botella": {
+      "total": 56998,
+      "unidades": 3
+    },
     "Espresso": {
       "total": 52000,
       "unidades": 13
-    },
-    "IPA Botella": {
-      "total": 37999,
-      "unidades": 2
     },
     "Irish Red Botella": {
       "total": 31999,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 222262257,
-      "count": 3153
+      "total": 223030257,
+      "count": 3162
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 42962721,

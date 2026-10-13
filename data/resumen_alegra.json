@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-13 09:11:22",
+  "generado": "2026-10-13 17:05:07",
   "anio": 2026,
   "kpis": {
-    "total_anual": 464377910,
-    "num_facturas": 3624,
-    "ticket_promedio": 128140
+    "total_anual": 466284965,
+    "num_facturas": 3630,
+    "ticket_promedio": 128453
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 17893179,
-      "count": 147
+      "total": 19800234,
+      "count": 153
     }
   },
   "por_mes_bar": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 9153979,
-      "count": 23
+      "total": 11061034,
+      "count": 29
     }
   },
   "por_mes_factura": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 17659679,
-      "count": 147
+      "total": 19485734,
+      "count": 153
     }
   },
   "por_mes_domicilio": {
@@ -212,22 +212,22 @@
       "count": 45
     },
     "2026-10": {
-      "total": 233500,
-      "count": 18
+      "total": 314500,
+      "count": 24
     }
   },
   "por_estado": {
     "closed": {
-      "total": 395460200,
-      "count": 3498
+      "total": 395729240,
+      "count": 3499
     },
     "draft": {
-      "total": 8906280,
-      "count": 13
+      "total": 9236010,
+      "count": 14
     },
     "open": {
-      "total": 59239331,
-      "count": 99
+      "total": 60547616,
+      "count": 103
     },
     "void": {
       "total": 772099,
@@ -244,20 +244,20 @@
       "unidades": 1899
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 34281522,
-      "unidades": 3094
+      "total": 34812857,
+      "unidades": 3141
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 28578064,
-      "unidades": 2917
+      "total": 28932089,
+      "unidades": 2952
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 27864065,
-      "unidades": 2819
+      "total": 28400160,
+      "unidades": 2872
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 23934277,
-      "unidades": 2455
+      "total": 24166922,
+      "unidades": 2478
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 21728598,
@@ -284,8 +284,8 @@
       "unidades": 876
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
-      "total": 10521782,
-      "unidades": 1069
+      "total": 10693737,
+      "unidades": 1086
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -312,8 +312,8 @@
       "unidades": 579
     },
     "Domicilio": {
-      "total": 4808201,
-      "unidades": 361
+      "total": 4889201,
+      "unidades": 367
     },
     "Soda saborizada": {
       "total": 4474902,
@@ -634,12 +634,16 @@
       "count": 14
     },
     "MARTHA ELENA  (Punta Arena) PERDOMO JIMENEZ": {
-      "total": 5083701,
-      "count": 14
+      "total": 5345601,
+      "count": 15
     },
     "JUAN ESTEBAN GOMEZ MORENO": {
       "total": 4984890,
       "count": 9
+    },
+    "Martin La Vendimia Emilio Jaramillo Marín": {
+      "total": 4789636,
+      "count": 10
     },
     "INVERSIONES PULSO S.A.S": {
       "total": 4485097,
@@ -648,10 +652,6 @@
     "CECILIA ALICIA BRAVO DE NOHAVA": {
       "total": 4481142,
       "count": 15
-    },
-    "Martin La Vendimia Emilio Jaramillo Marín": {
-      "total": 4274836,
-      "count": 9
     },
     "Manuel Felipe  Hernandez Gallego": {
       "total": 3090636,
@@ -673,6 +673,10 @@
       "total": 2600032,
       "count": 8
     },
+    "Elena Ossa Sanchez": {
+      "total": 2531439,
+      "count": 10
+    },
     "CHARCUTERIA CERDEÑA": {
       "total": 2424030,
       "count": 7
@@ -681,9 +685,9 @@
       "total": 2323000,
       "count": 9
     },
-    "Elena Ossa Sanchez": {
-      "total": 2257614,
-      "count": 9
+    "Azucena (HOUSE OF DEMONS) Rallon Benjumea": {
+      "total": 1972460,
+      "count": 8
     },
     "CEMIEL SAS (Papi Tienda)": {
       "total": 1878825,
@@ -724,10 +728,6 @@
     "JOSE MAURICIO GALLEGO QUINTERO": {
       "total": 1421893,
       "count": 5
-    },
-    "Azucena (HOUSE OF DEMONS) Rallon Benjumea": {
-      "total": 1373690,
-      "count": 6
     },
     "ASTRID VERONICA PORRAS GIRALDO": {
       "total": 1300400,
@@ -787,6 +787,10 @@
     },
     "Luz Mariela Morales Velasquez (Plancha Sonora)": {
       "total": 770130,
+      "count": 2
+    },
+    "METAMORFOSIS MEDELLÍN S.A.S.": {
+      "total": 758280,
       "count": 2
     },
     "Cindy Lorena (Lorepa) Alzate Arbeláez": {
@@ -871,10 +875,6 @@
     },
     "THC GROUP SAS": {
       "total": 509420,
-      "count": 1
-    },
-    "METAMORFOSIS MEDELLÍN S.A.S.": {
-      "total": 500520,
       "count": 1
     },
     "Buena Birra Social Club S.A.S": {

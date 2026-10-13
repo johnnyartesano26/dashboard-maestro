@@ -1,15 +1,29 @@
 {
   "fecha": "2026-10-13",
-  "total": 153,
-  "monto": 19800234,
-  "drafts": 2,
-  "drafts_monto": 339845,
+  "total": 155,
+  "monto": 20593024,
+  "drafts": 1,
+  "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5331",
+      "cliente": "SELMA MED S.A.S",
+      "total": 529080,
+      "status": "open",
+      "fecha": "2026-10-13"
+    },
+    {
+      "id": "5330",
+      "cliente": "Corporación Cultural MARABUNTAS",
+      "total": 263710,
+      "status": "open",
+      "fecha": "2026-10-13"
+    },
     {
       "id": "5329",
       "cliente": "Azucena (HOUSE OF DEMONS) Rallon Benjumea",
       "total": 329730,
-      "status": "draft",
+      "status": "open",
       "fecha": "2026-10-13"
     },
     {

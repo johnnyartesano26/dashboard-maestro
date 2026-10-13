@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-12 20:10:59",
+  "generado": "2026-10-13 02:05:19",
   "anio": 2026,
   "kpis": {
-    "total_anual": 464257910,
-    "num_facturas": 3622,
-    "ticket_promedio": 128177
+    "total_anual": 464377910,
+    "num_facturas": 3624,
+    "ticket_promedio": 128140
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 17773179,
-      "count": 145
+      "total": 17893179,
+      "count": 147
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 8619200,
-      "count": 122
+      "total": 8739200,
+      "count": 124
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 17539679,
-      "count": 145
+      "total": 17659679,
+      "count": 147
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 395340200,
-      "count": 3496
+      "total": 395460200,
+      "count": 3498
     },
     "draft": {
       "total": 8906280,
@@ -240,8 +240,8 @@
       "unidades": 2421
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 35403998,
-      "unidades": 1898
+      "total": 35422998,
+      "unidades": 1899
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
       "total": 34281522,
@@ -280,8 +280,8 @@
       "unidades": 890
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 15236200,
-      "unidades": 874
+      "total": 15272200,
+      "unidades": 876
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 10521782,
@@ -308,8 +308,8 @@
       "unidades": 218
     },
     "Mini hamburguesa": {
-      "total": 5450903,
-      "unidades": 578
+      "total": 5460903,
+      "unidades": 579
     },
     "Domicilio": {
       "total": 4808201,
@@ -531,6 +531,10 @@
       "total": 130000,
       "unidades": 11
     },
+    "Botella mayorista Golden/Irish/APA/Stout": {
+      "total": 127497,
+      "unidades": 15
+    },
     "Shot destilado": {
       "total": 126000,
       "unidades": 22
@@ -542,10 +546,6 @@
     "Vaso roto": {
       "total": 110000,
       "unidades": 7
-    },
-    "Botella mayorista Golden/Irish/APA/Stout": {
-      "total": 93498,
-      "unidades": 11
     },
     "Capuchino": {
       "total": 71000,
@@ -563,6 +563,10 @@
       "total": 52000,
       "unidades": 13
     },
+    "Botella mayorista IPA": {
+      "total": 37998,
+      "unidades": 4
+    },
     "Irish Red Botella": {
       "total": 31999,
       "unidades": 2
@@ -573,10 +577,6 @@
     },
     "Mini cuña queso": {
       "total": 20000,
-      "unidades": 2
-    },
-    "Botella mayorista IPA": {
-      "total": 18999,
       "unidades": 2
     },
     "Domicilio (Auto)": {
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 223030257,
-      "count": 3162
+      "total": 223150257,
+      "count": 3164
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 42962721,

@@ -1,30 +1,30 @@
 {
-  "fecha": "2026-10-14 12:44:15",
+  "fecha": "2026-10-14 17:51:37",
   "fisico": {
     "GOLDEN ALE": {
-      "bot": 14.0,
-      "barril": 28.0,
-      "litros": 343.0
+      "bot": 53.0,
+      "barril": 0.0,
+      "litros": 233.0
     },
     "IRISH RED ALE": {
-      "bot": 20.0,
-      "barril": 180.0,
-      "litros": 736.0
+      "bot": 36.0,
+      "barril": 0.0,
+      "litros": 651.0
     },
     "APA": {
-      "bot": 45.0,
+      "bot": 42.0,
       "barril": 0.0,
-      "litros": 190.0
+      "litros": 100.0
     },
     "IPA": {
-      "bot": 28.0,
-      "barril": 116.0,
-      "litros": 580.0
+      "bot": 164.0,
+      "barril": 0.0,
+      "litros": 250.0
     },
     "STOUT": {
-      "bot": 37.0,
-      "barril": 13.0,
-      "litros": 55.0
+      "bot": 65.0,
+      "barril": 0.0,
+      "litros": 360.0
     },
     "GERMAN PILS": {
       "bot": 0.0,
@@ -33,7 +33,7 @@
     },
     "HIDROMIEL": {
       "bot": 14.0,
-      "barril": 25.0,
+      "barril": 0.0,
       "litros": 316.0
     },
     "RED IPA": {
@@ -86,29 +86,29 @@
   },
   "neto": {
     "GOLDEN ALE": {
-      "bot": -562.0,
-      "barril": 19.7,
-      "litros": 343.0
+      "bot": -523.0,
+      "barril": -8.3,
+      "litros": 233.0
     },
     "IRISH RED ALE": {
-      "bot": -679.0,
-      "barril": -137.7,
-      "litros": 736.0
+      "bot": -663.0,
+      "barril": -317.7,
+      "litros": 651.0
     },
     "APA": {
-      "bot": -120.0,
+      "bot": -123.0,
       "barril": 0.0,
-      "litros": 158.1
+      "litros": 68.1
     },
     "IPA": {
-      "bot": -893.0,
-      "barril": 6.5,
-      "litros": 580.0
+      "bot": -757.0,
+      "barril": -109.5,
+      "litros": 250.0
     },
     "STOUT": {
-      "bot": -353.0,
-      "barril": -93.1,
-      "litros": 55.0
+      "bot": -325.0,
+      "barril": -106.1,
+      "litros": 360.0
     },
     "GERMAN PILS": {
       "bot": 0.0,
@@ -117,7 +117,7 @@
     },
     "HIDROMIEL": {
       "bot": 14.0,
-      "barril": 25.0,
+      "barril": 0.0,
       "litros": 316.0
     },
     "RED IPA": {

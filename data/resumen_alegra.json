@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-14 01:07:06",
+  "generado": "2026-10-14 06:02:59",
   "anio": 2026,
   "kpis": {
-    "total_anual": 467102755,
-    "num_facturas": 3633,
-    "ticket_promedio": 128572
+    "total_anual": 467580755,
+    "num_facturas": 3648,
+    "ticket_promedio": 128175
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 20618024,
-      "count": 156
+      "total": 21096024,
+      "count": 171
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 8764200,
-      "count": 125
+      "total": 9242200,
+      "count": 140
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 20273524,
-      "count": 156
+      "total": 20751524,
+      "count": 171
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 395754240,
-      "count": 3500
+      "total": 396232240,
+      "count": 3515
     },
     "draft": {
       "total": 8906280,
@@ -240,8 +240,8 @@
       "unidades": 2421
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 35422998,
-      "unidades": 1899
+      "total": 35441998,
+      "unidades": 1900
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
       "total": 35140702,
@@ -280,8 +280,8 @@
       "unidades": 890
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 15290200,
-      "unidades": 877
+      "total": 15308200,
+      "unidades": 878
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 10744312,
@@ -300,24 +300,24 @@
       "unidades": 358
     },
     "Cerveza industrial": {
-      "total": 7641500,
-      "unidades": 1102
+      "total": 7788500,
+      "unidades": 1123
     },
     "Hamburguesa": {
       "total": 7589958,
       "unidades": 218
     },
     "Mini hamburguesa": {
-      "total": 5460903,
-      "unidades": 579
+      "total": 5530901,
+      "unidades": 586
     },
     "Domicilio": {
       "total": 4919201,
       "unidades": 369
     },
     "Soda saborizada": {
-      "total": 4474902,
-      "unidades": 448
+      "total": 4544900,
+      "unidades": 455
     },
     "Jarra Irish Red Ale": {
       "total": 4183997,
@@ -344,8 +344,8 @@
       "unidades": 56
     },
     "Papas y plátanos chips": {
-      "total": 3064545,
-      "unidades": 455
+      "total": 3075544,
+      "unidades": 457
     },
     "Cerveza por litro American Pale Ale - Cienfuegos": {
       "total": 2859650,
@@ -360,8 +360,8 @@
       "unidades": 121
     },
     "Nachos Pulled pork": {
-      "total": 1761000,
-      "unidades": 98
+      "total": 1779000,
+      "unidades": 99
     },
     "Evento banda": {
       "total": 1731040,
@@ -371,17 +371,17 @@
       "total": 1715998,
       "unidades": 33
     },
+    "B Botella APA": {
+      "total": 1607999,
+      "unidades": 92
+    },
     "Soda": {
-      "total": 1583000,
-      "unidades": 264
+      "total": 1601000,
+      "unidades": 267
     },
     "B Botella IPA": {
       "total": 1574999,
       "unidades": 87
-    },
-    "B Botella APA": {
-      "total": 1571999,
-      "unidades": 90
     },
     "Jarra Hidromiel": {
       "total": 1486000,
@@ -419,13 +419,13 @@
       "total": 999000,
       "unidades": 52
     },
+    "Americano": {
+      "total": 995000,
+      "unidades": 143
+    },
     "Cañita de barril Golden Ale - Siempre Viva": {
       "total": 991983,
       "unidades": 101
-    },
-    "Americano": {
-      "total": 989000,
-      "unidades": 142
     },
     "Patacones con guacamole": {
       "total": 983000,
@@ -460,8 +460,8 @@
       "unidades": 93
     },
     "Coca cola 400 mL": {
-      "total": 700000,
-      "unidades": 95
+      "total": 732000,
+      "unidades": 99
     },
     "Aguas frescas": {
       "total": 665993,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 223175257,
-      "count": 3165
+      "total": 223653257,
+      "count": 3180
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 42962721,

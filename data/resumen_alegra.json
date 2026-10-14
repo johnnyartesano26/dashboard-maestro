@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-13 22:00:58",
+  "generado": "2026-10-14 01:07:06",
   "anio": 2026,
   "kpis": {
-    "total_anual": 467077755,
-    "num_facturas": 3632,
-    "ticket_promedio": 128601
+    "total_anual": 467102755,
+    "num_facturas": 3633,
+    "ticket_promedio": 128572
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 20593024,
-      "count": 155
+      "total": 20618024,
+      "count": 156
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 8739200,
-      "count": 124
+      "total": 8764200,
+      "count": 125
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 20248524,
-      "count": 155
+      "total": 20273524,
+      "count": 156
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 395729240,
-      "count": 3499
+      "total": 395754240,
+      "count": 3500
     },
     "draft": {
       "total": 8906280,
@@ -280,8 +280,8 @@
       "unidades": 890
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 15272200,
-      "unidades": 876
+      "total": 15290200,
+      "unidades": 877
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 10744312,
@@ -344,8 +344,8 @@
       "unidades": 56
     },
     "Papas y plátanos chips": {
-      "total": 3057546,
-      "unidades": 454
+      "total": 3064545,
+      "unidades": 455
     },
     "Cerveza por litro American Pale Ale - Cienfuegos": {
       "total": 2859650,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 223150257,
-      "count": 3164
+      "total": 223175257,
+      "count": 3165
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 42962721,

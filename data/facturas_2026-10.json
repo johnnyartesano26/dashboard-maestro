@@ -1,10 +1,17 @@
 {
-  "fecha": "2026-10-13",
-  "total": 155,
-  "monto": 20593024,
+  "fecha": "2026-10-14",
+  "total": 156,
+  "monto": 20618024,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5332",
+      "cliente": "Consumidor Final",
+      "total": 25000,
+      "status": "closed",
+      "fecha": "2026-10-13"
+    },
     {
       "id": "5331",
       "cliente": "SELMA MED S.A.S",

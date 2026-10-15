@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-15 17:52:46",
+  "generado": "2026-10-15 21:13:30",
   "anio": 2026,
   "kpis": {
-    "total_anual": 467785755,
-    "num_facturas": 3652,
-    "ticket_promedio": 128090
+    "total_anual": 469136830,
+    "num_facturas": 3656,
+    "ticket_promedio": 128320
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 21301024,
-      "count": 175
+      "total": 22652099,
+      "count": 179
     }
   },
   "por_mes_bar": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 11853824,
-      "count": 31
+      "total": 13204899,
+      "count": 35
     }
   },
   "por_mes_factura": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 20956524,
-      "count": 175
+      "total": 22256599,
+      "count": 179
     }
   },
   "por_mes_domicilio": {
@@ -212,8 +212,8 @@
       "count": 45
     },
     "2026-10": {
-      "total": 344500,
-      "count": 26
+      "total": 395500,
+      "count": 30
     }
   },
   "por_estado": {
@@ -226,8 +226,8 @@
       "count": 13
     },
     "open": {
-      "total": 61670136,
-      "count": 106
+      "total": 63021211,
+      "count": 110
     },
     "void": {
       "total": 772099,
@@ -239,25 +239,25 @@
       "total": 51347603,
       "unidades": 2421
     },
+    "Cerveza en botella American India Pale Ale - Vagabundo": {
+      "total": 35672037,
+      "unidades": 3217
+    },
     "Cerveza American IPA - Vagabundo": {
       "total": 35517998,
       "unidades": 1904
     },
-    "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 35140702,
-      "unidades": 3170
-    },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 28982664,
-      "unidades": 2957
+      "total": 29134389,
+      "unidades": 2972
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 28440620,
-      "unidades": 2876
+      "total": 28642920,
+      "unidades": 2896
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 24460257,
-      "unidades": 2507
+      "total": 24783937,
+      "unidades": 2539
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 21728598,
@@ -284,8 +284,8 @@
       "unidades": 878
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
-      "total": 10744312,
-      "unidades": 1091
+      "total": 10835347,
+      "unidades": 1100
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -312,8 +312,8 @@
       "unidades": 586
     },
     "Domicilio": {
-      "total": 4919201,
-      "unidades": 369
+      "total": 4970201,
+      "unidades": 373
     },
     "Soda saborizada": {
       "total": 4564899,
@@ -633,13 +633,13 @@
       "total": 7572160,
       "count": 14
     },
+    "JUAN ESTEBAN GOMEZ MORENO": {
+      "total": 5529440,
+      "count": 10
+    },
     "MARTHA ELENA  (Punta Arena) PERDOMO JIMENEZ": {
       "total": 5345601,
       "count": 15
-    },
-    "JUAN ESTEBAN GOMEZ MORENO": {
-      "total": 4984890,
-      "count": 9
     },
     "Martin La Vendimia Emilio Jaramillo Marín": {
       "total": 4789636,
@@ -689,6 +689,10 @@
       "total": 1972460,
       "count": 8
     },
+    "ANTHONY CRAIG WATSON": {
+      "total": 1948830,
+      "count": 9
+    },
     "CEMIEL SAS (Papi Tienda)": {
       "total": 1878825,
       "count": 8
@@ -709,10 +713,6 @@
       "total": 1729320,
       "count": 2
     },
-    "ANTHONY CRAIG WATSON": {
-      "total": 1682170,
-      "count": 8
-    },
     "SEVEN MINIMERCADO": {
       "total": 1574870,
       "count": 6
@@ -727,6 +727,10 @@
     },
     "JOSE MAURICIO GALLEGO QUINTERO": {
       "total": 1421893,
+      "count": 5
+    },
+    "ASTRID ELENA (Divergente) ARANGO QUIROS": {
+      "total": 1327995,
       "count": 5
     },
     "ASTRID VERONICA PORRAS GIRALDO": {
@@ -753,9 +757,9 @@
       "total": 1218023,
       "count": 2
     },
-    "ASTRID ELENA (Divergente) ARANGO QUIROS": {
-      "total": 1057170,
-      "count": 4
+    "ORRO S.A.S.": {
+      "total": 1021320,
+      "count": 3
     },
     "FERNANDO LUIS CUERVO QUINTERO": {
       "total": 947560,
@@ -796,10 +800,6 @@
     "Cindy Lorena (Lorepa) Alzate Arbeláez": {
       "total": 755650,
       "count": 3
-    },
-    "ORRO S.A.S.": {
-      "total": 752280,
-      "count": 2
     },
     "PROYECTO CAFE SAS": {
       "total": 752280,

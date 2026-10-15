@@ -1,10 +1,38 @@
 {
   "fecha": "2026-10-15",
-  "total": 175,
-  "monto": 21301024,
+  "total": 179,
+  "monto": 22652099,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5355",
+      "cliente": "JUAN ESTEBAN GOMEZ MORENO",
+      "total": 544550,
+      "status": "open",
+      "fecha": "2026-10-15"
+    },
+    {
+      "id": "5354",
+      "cliente": "ANTHONY CRAIG WATSON",
+      "total": 266660,
+      "status": "open",
+      "fecha": "2026-10-15"
+    },
+    {
+      "id": "5353",
+      "cliente": "ORRO S.A.S.",
+      "total": 269040,
+      "status": "open",
+      "fecha": "2026-10-15"
+    },
+    {
+      "id": "5352",
+      "cliente": "ASTRID ELENA (Divergente) ARANGO QUIROS",
+      "total": 270825,
+      "status": "open",
+      "fecha": "2026-10-15"
+    },
     {
       "id": "5351",
       "cliente": "Consumidor Final",

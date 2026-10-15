@@ -714,7 +714,10 @@ function copiarSync() {
   <div class="card full">
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
       <h2>🔔 Alertas de Conciliación <span style="font-size:.75em;color:var(--mm-dim)" id="conciliacionCount"></span></h2>
-      <button id="btnConciliar" onclick="triggerConciliacion()" style="background:var(--mm-gold);color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-size:.88em;font-weight:600;font-family:inherit;transition:background .2s">🔄 Ejecutar conciliación</button>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfeMy-airtHZZp_0ksFw6G6OP9xzdzyik2f0ncS_Z26bbCILA/viewform?usp=sharing" target="_blank" style="background:var(--mm-green);color:#fff;text-decoration:none;padding:10px 18px;border-radius:8px;font-size:.88em;font-weight:600;transition:opacity .2s">📝 Asentar pago</a>
+        <button id="btnConciliar" onclick="triggerConciliacion()" style="background:var(--mm-gold);color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-size:.88em;font-weight:600;font-family:inherit;transition:background .2s">🔄 Ejecutar conciliación</button>
+      </div>
     </div>
     <p style="color:var(--mm-dim);font-size:.85em;margin-bottom:12px">
       Facturas asentadas por ventas que Alegra reporta como <strong style="color:var(--mm-red)">por cobrar</strong>.

@@ -1,10 +1,24 @@
 {
   "fecha": "2026-10-15",
-  "total": 179,
-  "monto": 22652099,
+  "total": 181,
+  "monto": 24258886,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5357",
+      "cliente": "PINEA S.A.S",
+      "total": 329730,
+      "status": "open",
+      "fecha": "2026-10-15"
+    },
+    {
+      "id": "5356",
+      "cliente": "JUAN CARLOS ORREGO ZAPATA",
+      "total": 1277057,
+      "status": "open",
+      "fecha": "2026-10-15"
+    },
     {
       "id": "5355",
       "cliente": "JUAN ESTEBAN GOMEZ MORENO",
@@ -660,7 +674,7 @@
       "id": "5262",
       "cliente": "ORRO S.A.S.",
       "total": 254760,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-08"
     },
     {

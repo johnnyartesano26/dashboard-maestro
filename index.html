@@ -274,6 +274,7 @@
   <div class="tab-nav">
     <button class="tab-btn active" data-tab="resumen" onclick="switchTab('resumen')">📊 Resumen General</button>
     <button class="tab-btn" data-tab="facturacion" onclick="switchTab('facturacion')">📄 Facturación</button>
+    <button class="tab-btn" data-tab="conciliacion" onclick="switchTab('conciliacion')">🔔 Conciliación Pagos</button>
     <button class="tab-btn" data-tab="inventario" onclick="switchTab('inventario')">🍺 Inventario</button>
     <button class="tab-btn" data-tab="ventas" onclick="switchTab('ventas')">💰 Ventas</button>
     <button class="tab-btn" data-tab="alegra" onclick="switchTab('alegra')">📈 Gráficas Alegra 🔒</button>
@@ -707,6 +708,24 @@ function copiarSync() {
   </div>
 </div>
 
+<!-- ═══════════════ TAB: CONCILIACIÓN PAGOS ═══════════════ -->
+<div class="tab-content" id="tab-conciliacion">
+  <div class="kpi-row" id="kpiConciliacion"></div>
+  <div class="card full">
+    <h2>🔔 Alertas de Conciliación <span style="font-size:.75em;color:var(--mm-dim)" id="conciliacionCount"></span></h2>
+    <p style="color:var(--mm-dim);font-size:.85em;margin-bottom:12px">
+      Facturas asentadas por ventas que Alegra reporta como <strong style="color:var(--mm-red)">por cobrar</strong>.
+      Se marca la fecha de la primera detección de cada inconsistencia.
+    </p>
+    <div class="table-wrap">
+      <table><thead><tr>
+        <th>Factura</th><th>Cliente</th><th>Responsable</th><th>Total pagado</th><th>Balance Alegra</th><th>Fecha inconsistencia</th>
+      </tr></thead>
+      <tbody id="conciliacionAlerts"><tr><td colspan="6" class="loading">Cargando alertas...</td></tr></tbody></table>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════════ TOAST ═══════════════ -->
 <div class="toast" id="toast"></div>
 
@@ -736,7 +755,7 @@ let allData = [];
 let filtered = [];
 let factCharts = {};
 let overviewCharts = {};
-let TAB_STATE = { facturacion: false, inventario: false, resumen: true, ventas: false, alegra: false, clientes: false, notascredito: false };
+let TAB_STATE = { facturacion: false, inventario: false, resumen: true, ventas: false, alegra: false, clientes: false, notascredito: false, conciliacion: false };
 const NC_BRIDGE = 'http://localhost:5001';
 let totalFacturasConsolidado = 0;
 let totalClientesConsolidado = 0;
@@ -843,6 +862,10 @@ function switchTab(name) {
   if (name === 'notascredito' && !TAB_STATE.notascredito) {
     TAB_STATE.notascredito = true;
     cargarHistorialNC();
+  }
+  if (name === 'conciliacion' && !TAB_STATE.conciliacion) {
+    TAB_STATE.conciliacion = true;
+    initConciliacion();
   }
 }
 
@@ -2439,6 +2462,65 @@ async function cargarHistorialNC() {
     `).join('');
   } catch {
     tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:20px;color:var(--mm-red)">⚠️ No se pudo conectar con el bridge</td></tr>';
+  }
+}
+
+// ═══════════════ CONCILIACIÓN PAGOS (Alegra) ═══════════════
+const CONCILIACION_CSV = "https://docs.google.com/spreadsheets/d/1hN2_SYLQN8hkrj4fOPNFPEZshcm5J9RMYL_KpHGOrk4/gviz/tq?tqx=out:csv";
+
+async function initConciliacion() {
+  const tbody = document.getElementById('conciliacionAlerts');
+  const count = document.getElementById('conciliacionCount');
+  try {
+    const resp = await fetch(CONCILIACION_CSV);
+    const csv = await resp.text();
+    const lines = csv.trim().split('\n');
+    if (lines.length < 2) {
+      tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:20px;color:var(--mm-dim)">Sin datos de conciliación aún</td></tr>';
+      if (count) count.textContent = '(0)';
+      return;
+    }
+    const alertas = [];
+    for (let i = 1; i < lines.length; i++) {
+      const cols = parseCSVLineV(lines[i]);
+      if (cols.length < 15) continue;
+      const estado = (cols[11] || '').trim().toLowerCase();
+      if (estado !== 'por cobrar') continue;
+      const prefijo = (cols[1] || '').trim();
+      const numero = (cols[2] || '').trim();
+      alertas.push({
+        factura: prefijo + numero,
+        cliente: (cols[4] || '').trim(),
+        responsable: (cols[9] || '').trim(),
+        totalPagado: parseFloat(String(cols[5] || '0').replace(/[^0-9.]/g, '')) || 0,
+        balance: parseFloat(String(cols[12] || '0').replace(/[^0-9.]/g, '')) || 0,
+        fechaInc: (cols[14] || '').trim()
+      });
+    }
+
+    const balanceRiesgo = alertas.reduce((s, a) => s + a.balance, 0);
+    document.getElementById('kpiConciliacion').innerHTML = `
+      <div class="kpi"><div class="val red">${alertas.length}</div><div class="lab">Facturas por cobrar</div></div>
+      <div class="kpi"><div class="val yellow">$${balanceRiesgo.toLocaleString('es-CO')}</div><div class="lab">Balance en riesgo</div></div>
+    `;
+    if (count) count.textContent = '(' + alertas.length + ')';
+
+    if (!alertas.length) {
+      tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:20px;color:var(--mm-green)">✅ Sin alertas. Todo conciliado.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = alertas.map(a => `
+      <tr>
+        <td><strong>${a.factura}</strong></td>
+        <td>${a.cliente}</td>
+        <td>${a.responsable || '-'}</td>
+        <td style="color:var(--mm-green)">$${a.totalPagado.toLocaleString('es-CO')}</td>
+        <td style="color:var(--mm-red);font-weight:600">$${a.balance.toLocaleString('es-CO')}</td>
+        <td style="font-size:.8em;color:var(--mm-dim)">${a.fechaInc || '-'}</td>
+      </tr>
+    `).join('');
+  } catch (e) {
+    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:20px;color:var(--mm-red)">⚠️ No se pudo cargar la hoja de conciliación</td></tr>';
   }
 }
 

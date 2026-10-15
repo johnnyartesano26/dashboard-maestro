@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-14 23:23:03",
+  "generado": "2026-10-15 01:54:37",
   "anio": 2026,
   "kpis": {
-    "total_anual": 467580755,
-    "num_facturas": 3648,
-    "ticket_promedio": 128175
+    "total_anual": 467773755,
+    "num_facturas": 3651,
+    "ticket_promedio": 128122
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 21096024,
-      "count": 171
+      "total": 21289024,
+      "count": 174
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 9242200,
-      "count": 140
+      "total": 9435200,
+      "count": 143
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 20751524,
-      "count": 171
+      "total": 20944524,
+      "count": 174
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 396232240,
-      "count": 3515
+      "total": 396425240,
+      "count": 3518
     },
     "draft": {
       "total": 8906280,
@@ -240,8 +240,8 @@
       "unidades": 2421
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 35441998,
-      "unidades": 1900
+      "total": 35517998,
+      "unidades": 1904
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
       "total": 35140702,
@@ -300,8 +300,8 @@
       "unidades": 358
     },
     "Cerveza industrial": {
-      "total": 7788500,
-      "unidades": 1123
+      "total": 7800500,
+      "unidades": 1126
     },
     "Hamburguesa": {
       "total": 7589958,
@@ -316,8 +316,8 @@
       "unidades": 369
     },
     "Soda saborizada": {
-      "total": 4544900,
-      "unidades": 455
+      "total": 4564899,
+      "unidades": 457
     },
     "Jarra Irish Red Ale": {
       "total": 4183997,
@@ -336,8 +336,8 @@
       "unidades": 202
     },
     "Jarra APA": {
-      "total": 3586000,
-      "unidades": 58
+      "total": 3654000,
+      "unidades": 59
     },
     "Jarra Golden Ale": {
       "total": 3199998,
@@ -415,13 +415,13 @@
       "total": 1028989,
       "unidades": 104
     },
+    "Americano": {
+      "total": 1001000,
+      "unidades": 144
+    },
     "B Botella Chope de vino": {
       "total": 999000,
       "unidades": 52
-    },
-    "Americano": {
-      "total": 995000,
-      "unidades": 143
     },
     "Cañita de barril Golden Ale - Siempre Viva": {
       "total": 991983,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 223653257,
-      "count": 3180
+      "total": 223846257,
+      "count": 3183
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 42962721,

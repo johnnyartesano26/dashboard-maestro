@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-15 01:54:37",
+  "generado": "2026-10-15 07:12:24",
   "anio": 2026,
   "kpis": {
-    "total_anual": 467773755,
-    "num_facturas": 3651,
-    "ticket_promedio": 128122
+    "total_anual": 467785755,
+    "num_facturas": 3652,
+    "ticket_promedio": 128090
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 21289024,
-      "count": 174
+      "total": 21301024,
+      "count": 175
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 9435200,
-      "count": 143
+      "total": 9447200,
+      "count": 144
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 20944524,
-      "count": 174
+      "total": 20956524,
+      "count": 175
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 396425240,
-      "count": 3518
+      "total": 396437240,
+      "count": 3519
     },
     "draft": {
       "total": 8906280,
@@ -452,8 +452,8 @@
       "unidades": 15
     },
     "Limonadas: Coco, lyche, cereza, hierbabuena": {
-      "total": 766799,
-      "unidades": 64
+      "total": 778799,
+      "unidades": 65
     },
     "Finster": {
       "total": 734983,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 223846257,
-      "count": 3183
+      "total": 223858257,
+      "count": 3184
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 42962721,

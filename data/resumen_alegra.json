@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-15 23:49:30",
+  "generado": "2026-10-16 03:24:26",
   "anio": 2026,
   "kpis": {
-    "total_anual": 470743617,
-    "num_facturas": 3658,
-    "ticket_promedio": 128689
+    "total_anual": 470868617,
+    "num_facturas": 3662,
+    "ticket_promedio": 128582
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 24258886,
-      "count": 181
+      "total": 24383886,
+      "count": 185
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 9447200,
-      "count": 144
+      "total": 9572200,
+      "count": 148
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 23831386,
-      "count": 181
+      "total": 23956386,
+      "count": 185
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 396692000,
-      "count": 3520
+      "total": 396817000,
+      "count": 3524
     },
     "draft": {
       "total": 8906280,
@@ -260,8 +260,8 @@
       "unidades": 2539
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 21728598,
-      "unidades": 1384
+      "total": 21760598,
+      "unidades": 1386
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 18565520,
@@ -280,8 +280,8 @@
       "unidades": 890
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 15308200,
-      "unidades": 878
+      "total": 15326200,
+      "unidades": 879
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 10835347,
@@ -344,8 +344,8 @@
       "unidades": 56
     },
     "Papas y plátanos chips": {
-      "total": 3075544,
-      "unidades": 457
+      "total": 3082543,
+      "unidades": 458
     },
     "Cerveza por litro American Pale Ale - Cienfuegos": {
       "total": 2859650,
@@ -380,8 +380,8 @@
       "unidades": 267
     },
     "B Botella IPA": {
-      "total": 1574999,
-      "unidades": 87
+      "total": 1589999,
+      "unidades": 88
     },
     "Jarra Hidromiel": {
       "total": 1486000,
@@ -392,8 +392,8 @@
       "unidades": 101
     },
     "Sampler x 4 cañitas": {
-      "total": 1375000,
-      "unidades": 42
+      "total": 1405000,
+      "unidades": 43
     },
     "B Botella Irish Red Ale": {
       "total": 1366999,
@@ -507,13 +507,13 @@
       "total": 300000,
       "unidades": 1
     },
+    "Kombucha": {
+      "total": 280000,
+      "unidades": 20
+    },
     "Tinto": {
       "total": 267000,
       "unidades": 71
-    },
-    "Kombucha": {
-      "total": 266000,
-      "unidades": 19
     },
     "Cerveza esclavos IPA": {
       "total": 247000,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 223858257,
-      "count": 3184
+      "total": 223983257,
+      "count": 3188
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 44239778,

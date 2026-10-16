@@ -2620,12 +2620,23 @@ async function initConciliacion() {
 
 // ═══════════════ DISPARADOR MANUAL (GitHub Actions) ═══════════════
 const GITHUB_REPO = 'johnnyartesano26/alegra-conciliacion-pagos';
-const GITHUB_TOKEN = ''; // ← pegar aquí el PAT de alcance limitado (actions:write)
+
+// El token se guarda en el navegador (localStorage), NO en el código,
+// para no exponerlo en el repositorio público.
+function getGithubToken() {
+  let t = localStorage.getItem('gh_token') || '';
+  if (!t) {
+    t = prompt('Pega tu token de GitHub (PAT de alcance limitado, actions:write).\nSe guardará solo en este navegador.');
+    if (t) localStorage.setItem('gh_token', t.trim());
+  }
+  return (t || '').trim();
+}
 
 async function triggerConciliacion() {
   const btn = document.getElementById('btnConciliar');
-  if (!GITHUB_TOKEN) {
-    showToast('⚠️ Falta configurar el token de GitHub en el dashboard');
+  const token = getGithubToken();
+  if (!token) {
+    showToast('⚠️ Falta configurar el token de GitHub');
     return;
   }
   btn.disabled = true;
@@ -2637,7 +2648,7 @@ async function triggerConciliacion() {
         method: 'POST',
         headers: {
           'Accept': 'application/vnd.github+json',
-          'Authorization': 'Bearer ' + GITHUB_TOKEN,
+          'Authorization': 'Bearer ' + token,
           'X-GitHub-Api-Version': '2022-11-28'
         },
         body: JSON.stringify({ ref: 'main' })
@@ -2663,8 +2674,9 @@ async function triggerConciliacion() {
 // ═══════════════ DISPARADOR DE CORRECCIÓN (Fase 2) ═══════════════
 async function triggerCorreccion() {
   const btn = document.getElementById('btnCorregir');
-  if (!GITHUB_TOKEN) {
-    showToast('⚠️ Falta configurar el token de GitHub en el dashboard');
+  const token = getGithubToken();
+  if (!token) {
+    showToast('⚠️ Falta configurar el token de GitHub');
     return;
   }
   if (!confirm('¿Aplicar los pagos pendientes en Alegra?\n\nSolo se corregirán pagos COMPLETOS (una factura, monto coincidente). Los parciales se omiten.')) {
@@ -2679,7 +2691,7 @@ async function triggerCorreccion() {
         method: 'POST',
         headers: {
           'Accept': 'application/vnd.github+json',
-          'Authorization': 'Bearer ' + GITHUB_TOKEN,
+          'Authorization': 'Bearer ' + token,
           'X-GitHub-Api-Version': '2022-11-28'
         },
         body: JSON.stringify({ ref: 'main', inputs: { aplicar: 'true' } })

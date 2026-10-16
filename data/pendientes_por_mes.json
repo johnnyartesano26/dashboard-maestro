@@ -1,14 +1,14 @@
 {
-  "generado": "2026-10-16 12:46:41",
+  "generado": "2026-10-16 20:50:26",
   "anio": "2026",
-  "total_abiertas": 131,
-  "total_anio": 111,
+  "total_abiertas": 127,
+  "total_anio": 107,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 28,
-      "monto": 12336496,
+      "count": 24,
+      "monto": 9957869,
       "facturas": [
         {
           "numero": "FE801",
@@ -16,13 +16,6 @@
           "fecha": "2026-10-16",
           "total": 260710,
           "balance": 260710
-        },
-        {
-          "numero": "FE800",
-          "cliente": "PINEA S.A.S",
-          "fecha": "2026-10-15",
-          "total": 329730,
-          "balance": 329730
         },
         {
           "numero": "FE799",
@@ -88,13 +81,6 @@
           "balance": 273825
         },
         {
-          "numero": "FE788",
-          "cliente": "Martin La Vendimia Emilio Jaramillo Marín",
-          "fecha": "2026-10-13",
-          "total": 514800,
-          "balance": 514800
-        },
-        {
           "numero": "FE787",
           "cliente": "MARTHA ELENA  (Punta Arena) PERDOMO JIMENEZ",
           "fecha": "2026-10-13",
@@ -123,13 +109,6 @@
           "balance": 70805
         },
         {
-          "numero": "FE783",
-          "cliente": "CHARCUTERIA CERDEÑA",
-          "fecha": "2026-10-08",
-          "total": 257040,
-          "balance": 257040
-        },
-        {
           "numero": "FE781",
           "cliente": "LOREPA AREPAS SAS",
           "fecha": "2026-10-08",
@@ -142,13 +121,6 @@
           "fecha": "2026-10-08",
           "total": 731380,
           "balance": 731380
-        },
-        {
-          "numero": "FE778",
-          "cliente": "JUAN CARLOS ORREGO ZAPATA",
-          "fecha": "2026-10-07",
-          "total": 1277057,
-          "balance": 1277057
         },
         {
           "numero": "FE776",

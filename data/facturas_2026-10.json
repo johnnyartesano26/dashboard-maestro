@@ -72,7 +72,7 @@
       "id": "5357",
       "cliente": "PINEA S.A.S",
       "total": 329730,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-15"
     },
     {
@@ -296,7 +296,7 @@
       "id": "5325",
       "cliente": "Martin La Vendimia Emilio Jaramillo Marín",
       "total": 514800,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-13"
     },
     {
@@ -702,7 +702,7 @@
       "id": "5268",
       "cliente": "CHARCUTERIA CERDEÑA",
       "total": 257040,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-08"
     },
     {
@@ -807,7 +807,7 @@
       "id": "5252",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 1277057,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-07"
     },
     {

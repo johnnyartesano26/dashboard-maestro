@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-16 13:42:06",
+  "generado": "2026-10-16 17:54:15",
   "anio": 2026,
   "kpis": {
-    "total_anual": 471110617,
-    "num_facturas": 3666,
-    "ticket_promedio": 128508
+    "total_anual": 471371327,
+    "num_facturas": 3667,
+    "ticket_promedio": 128544
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 24625886,
-      "count": 189
+      "total": 24886596,
+      "count": 190
     }
   },
   "por_mes_bar": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 14811686,
-      "count": 37
+      "total": 15072396,
+      "count": 38
     }
   },
   "por_mes_factura": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 24198386,
-      "count": 189
+      "total": 24447096,
+      "count": 190
     }
   },
   "por_mes_domicilio": {
@@ -212,21 +212,21 @@
       "count": 45
     },
     "2026-10": {
-      "total": 427500,
-      "count": 32
+      "total": 439500,
+      "count": 33
     }
   },
   "por_estado": {
     "closed": {
-      "total": 397059000,
-      "count": 3528
+      "total": 397329825,
+      "count": 3529
     },
     "draft": {
       "total": 8906280,
       "count": 13
     },
     "open": {
-      "total": 64373238,
+      "total": 64363123,
       "count": 111
     },
     "void": {
@@ -240,20 +240,20 @@
       "unidades": 2449
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 35807697,
-      "unidades": 3229
+      "total": 35864222,
+      "unidades": 3234
     },
     "Cerveza American IPA - Vagabundo": {
       "total": 35612998,
       "unidades": 1909
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 29195079,
-      "unidades": 2978
+      "total": 29245654,
+      "unidades": 2983
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 28764300,
-      "unidades": 2908
+      "total": 28855335,
+      "unidades": 2917
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
       "total": 24783937,
@@ -284,8 +284,8 @@
       "unidades": 879
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
-      "total": 10835347,
-      "unidades": 1100
+      "total": 10885922,
+      "unidades": 1105
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -312,8 +312,8 @@
       "unidades": 586
     },
     "Domicilio": {
-      "total": 5002201,
-      "unidades": 375
+      "total": 5014201,
+      "unidades": 376
     },
     "Soda saborizada": {
       "total": 4564899,
@@ -713,6 +713,10 @@
       "total": 1729320,
       "count": 2
     },
+    "ASTRID ELENA (Divergente) ARANGO QUIROS": {
+      "total": 1588705,
+      "count": 6
+    },
     "SEVEN MINIMERCADO": {
       "total": 1574870,
       "count": 6
@@ -727,10 +731,6 @@
     },
     "JOSE MAURICIO GALLEGO QUINTERO": {
       "total": 1421893,
-      "count": 5
-    },
-    "ASTRID ELENA (Divergente) ARANGO QUIROS": {
-      "total": 1327995,
       "count": 5
     },
     "ASTRID VERONICA PORRAS GIRALDO": {

@@ -1,10 +1,17 @@
 {
   "fecha": "2026-10-16",
-  "total": 189,
-  "monto": 24625886,
+  "total": 190,
+  "monto": 24886596,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5366",
+      "cliente": "ASTRID ELENA (Divergente) ARANGO QUIROS",
+      "total": 260710,
+      "status": "open",
+      "fecha": "2026-10-16"
+    },
     {
       "id": "5365",
       "cliente": "Consumidor Final",
@@ -100,7 +107,7 @@
       "id": "5352",
       "cliente": "ASTRID ELENA (Divergente) ARANGO QUIROS",
       "total": 270825,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-15"
     },
     {

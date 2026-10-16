@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-16 03:24:26",
+  "generado": "2026-10-16 08:38:13",
   "anio": 2026,
   "kpis": {
-    "total_anual": 470868617,
-    "num_facturas": 3662,
-    "ticket_promedio": 128582
+    "total_anual": 471110617,
+    "num_facturas": 3666,
+    "ticket_promedio": 128508
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 24383886,
-      "count": 185
+      "total": 24625886,
+      "count": 189
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 9572200,
-      "count": 148
+      "total": 9814200,
+      "count": 152
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 23956386,
-      "count": 185
+      "total": 24198386,
+      "count": 189
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 396817000,
-      "count": 3524
+      "total": 397059000,
+      "count": 3528
     },
     "draft": {
       "total": 8906280,
@@ -244,8 +244,8 @@
       "unidades": 3229
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 35517998,
-      "unidades": 1904
+      "total": 35612998,
+      "unidades": 1909
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 29195079,
@@ -260,24 +260,24 @@
       "unidades": 2539
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 21760598,
-      "unidades": 1386
+      "total": 21776598,
+      "unidades": 1387
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 18565520,
       "unidades": 833
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 18480399,
-      "unidades": 1187
+      "total": 18560399,
+      "unidades": 1192
     },
     "Experiencia de cata de cerveza": {
       "total": 17828580,
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 15696199,
-      "unidades": 890
+      "total": 15714199,
+      "unidades": 891
     },
     "Cerveza APA - Cienfuegos": {
       "total": 15326200,
@@ -508,8 +508,8 @@
       "unidades": 1
     },
     "Kombucha": {
-      "total": 280000,
-      "unidades": 20
+      "total": 294000,
+      "unidades": 21
     },
     "Tinto": {
       "total": 267000,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 223983257,
-      "count": 3188
+      "total": 224225257,
+      "count": 3192
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 44239778,

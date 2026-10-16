@@ -39,11 +39,17 @@ jobs:
           ALEGRA_TOKEN: ${{ secrets.ALEGRA_TOKEN }}
         run: python3 exportar_alegra.py
 
+      - name: Exportar facturas pendientes (por cobrar)
+        env:
+          ALEGRA_EMAIL: ${{ secrets.ALEGRA_EMAIL }}
+          ALEGRA_TOKEN: ${{ secrets.ALEGRA_TOKEN }}
+        run: python3 exportar_pendientes.py
+
       - name: Commit y push (si hay cambios)
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add catalogo.json data/facturas_*.json data/resumen_alegra.json
+          git add catalogo.json data/facturas_*.json data/resumen_alegra.json data/pendientes_por_mes.json
           if git diff --cached --quiet; then
             echo "Sin cambios en catalogo/facturas."
           else

@@ -731,6 +731,15 @@ function copiarSync() {
       <tbody id="conciliacionAlerts"><tr><td colspan="6" class="loading">Cargando alertas...</td></tr></tbody></table>
     </div>
   </div>
+
+  <div class="card full" style="margin-top:16px">
+    <h2>📅 Facturas pendientes por cargar el pago — 2026 <span style="font-size:.75em;color:var(--mm-dim)" id="pendientesCount"></span></h2>
+    <p style="color:var(--mm-dim);font-size:.85em;margin-bottom:12px">
+      Facturas que Alegra aún reporta como <strong style="color:var(--mm-red)">por cobrar</strong>, agrupadas por mes.
+      Haz clic en cada mes para desplegar el detalle.
+    </p>
+    <div id="pendientesMensuales"><div class="loading">Cargando listado...</div></div>
+  </div>
 </div>
 
 <!-- ═══════════════ TOAST ═══════════════ -->
@@ -873,6 +882,7 @@ function switchTab(name) {
   if (name === 'conciliacion' && !TAB_STATE.conciliacion) {
     TAB_STATE.conciliacion = true;
     initConciliacion();
+    cargarPendientesMensuales();
   }
 }
 
@@ -2570,6 +2580,46 @@ async function triggerConciliacion() {
     showToast('❌ No se pudo disparar: ' + e.message);
     btn.disabled = false;
     btn.textContent = '🔄 Ejecutar conciliación';
+  }
+}
+
+// ═══════════════ PENDIENTES POR MES (plegable) ═══════════════
+async function cargarPendientesMensuales() {
+  const cont = document.getElementById('pendientesMensuales');
+  const count = document.getElementById('pendientesCount');
+  try {
+    const resp = await fetch('data/pendientes_por_mes.json');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const d = await resp.json();
+    if (count) count.textContent = '(' + (d.total_anio || 0) + ' facturas)';
+    if (!d.meses || !d.meses.length) {
+      cont.innerHTML = '<p style="color:var(--mm-dim)">Sin facturas pendientes.</p>';
+      return;
+    }
+    cont.innerHTML = d.meses.map((m, i) => `
+      <details style="margin-bottom:8px" ${i === 0 ? 'open' : ''}>
+        <summary style="cursor:pointer;font-weight:600;padding:10px 14px;background:var(--mm-block);border:1px solid var(--mm-border);border-radius:8px;list-style:none">
+          <span style="color:var(--mm-gold)">▸</span> ${m.label} — ${m.count} facturas · <span style="color:var(--mm-red)">$${(m.monto || 0).toLocaleString('es-CO')}</span>
+        </summary>
+        <div class="table-wrap" style="margin-top:6px">
+          <table><thead><tr>
+            <th>Factura</th><th>Cliente</th><th>Fecha</th><th>Total</th><th>Balance</th>
+          </tr></thead>
+          <tbody>
+            ${m.facturas.map(f => `
+              <tr>
+                <td><strong>${f.numero}</strong></td>
+                <td>${f.cliente}</td>
+                <td style="font-size:.8em;color:var(--mm-dim)">${f.fecha}</td>
+                <td>$${(f.total || 0).toLocaleString('es-CO')}</td>
+                <td style="color:var(--mm-red);font-weight:600">$${(f.balance || 0).toLocaleString('es-CO')}</td>
+              </tr>`).join('')}
+          </tbody></table>
+        </div>
+      </details>
+    `).join('');
+  } catch (e) {
+    cont.innerHTML = '<p style="color:var(--mm-red)">⚠️ No se pudo cargar el listado de pendientes.</p>';
   }
 }
 

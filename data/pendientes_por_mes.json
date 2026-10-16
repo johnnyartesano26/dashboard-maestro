@@ -1,0 +1,865 @@
+{
+  "generado": "2026-10-16 12:46:41",
+  "anio": "2026",
+  "total_abiertas": 131,
+  "total_anio": 111,
+  "meses": [
+    {
+      "mes": "2026-10",
+      "label": "Octubre 2026",
+      "count": 28,
+      "monto": 12336496,
+      "facturas": [
+        {
+          "numero": "FE801",
+          "cliente": "ASTRID ELENA (Divergente) ARANGO QUIROS",
+          "fecha": "2026-10-16",
+          "total": 260710,
+          "balance": 260710
+        },
+        {
+          "numero": "FE800",
+          "cliente": "PINEA S.A.S",
+          "fecha": "2026-10-15",
+          "total": 329730,
+          "balance": 329730
+        },
+        {
+          "numero": "FE799",
+          "cliente": "JUAN CARLOS ORREGO ZAPATA",
+          "fecha": "2026-10-15",
+          "total": 1277057,
+          "balance": 1277057
+        },
+        {
+          "numero": "FE798",
+          "cliente": "JUAN ESTEBAN GOMEZ MORENO",
+          "fecha": "2026-10-15",
+          "total": 544550,
+          "balance": 544550
+        },
+        {
+          "numero": "FE797",
+          "cliente": "ANTHONY CRAIG WATSON",
+          "fecha": "2026-10-15",
+          "total": 266660,
+          "balance": 266660
+        },
+        {
+          "numero": "FE796",
+          "cliente": "ORRO S.A.S.",
+          "fecha": "2026-10-15",
+          "total": 269040,
+          "balance": 269040
+        },
+        {
+          "numero": "FE794",
+          "cliente": "SELMA MED S.A.S",
+          "fecha": "2026-10-13",
+          "total": 529080,
+          "balance": 529080
+        },
+        {
+          "numero": "FE793",
+          "cliente": "Corporación Cultural MARABUNTAS",
+          "fecha": "2026-10-13",
+          "total": 263710,
+          "balance": 263710
+        },
+        {
+          "numero": "FE792",
+          "cliente": "Azucena (HOUSE OF DEMONS) Rallon Benjumea",
+          "fecha": "2026-10-13",
+          "total": 329730,
+          "balance": 329730
+        },
+        {
+          "numero": "FE790",
+          "cliente": "METAMORFOSIS MEDELLÍN S.A.S.",
+          "fecha": "2026-10-13",
+          "total": 257760,
+          "balance": 257760
+        },
+        {
+          "numero": "FE789",
+          "cliente": "Elena Ossa Sanchez",
+          "fecha": "2026-10-13",
+          "total": 273825,
+          "balance": 273825
+        },
+        {
+          "numero": "FE788",
+          "cliente": "Martin La Vendimia Emilio Jaramillo Marín",
+          "fecha": "2026-10-13",
+          "total": 514800,
+          "balance": 514800
+        },
+        {
+          "numero": "FE787",
+          "cliente": "MARTHA ELENA  (Punta Arena) PERDOMO JIMENEZ",
+          "fecha": "2026-10-13",
+          "total": 261900,
+          "balance": 261900
+        },
+        {
+          "numero": "FE786",
+          "cliente": "ALTANA ROOFTOP S.A.S",
+          "fecha": "2026-10-11",
+          "total": 390420,
+          "balance": 390420
+        },
+        {
+          "numero": "FE785",
+          "cliente": "DANIEL SCHMUTTE",
+          "fecha": "2026-10-09",
+          "total": 466890,
+          "balance": 466890
+        },
+        {
+          "numero": "FE784",
+          "cliente": "ERICA TATIANA CANO",
+          "fecha": "2026-10-09",
+          "total": 70805,
+          "balance": 70805
+        },
+        {
+          "numero": "FE783",
+          "cliente": "CHARCUTERIA CERDEÑA",
+          "fecha": "2026-10-08",
+          "total": 257040,
+          "balance": 257040
+        },
+        {
+          "numero": "FE781",
+          "cliente": "LOREPA AREPAS SAS",
+          "fecha": "2026-10-08",
+          "total": 248710,
+          "balance": 248710
+        },
+        {
+          "numero": "FE780",
+          "cliente": "JUAN ESTEBAN GOMEZ MORENO",
+          "fecha": "2026-10-08",
+          "total": 731380,
+          "balance": 731380
+        },
+        {
+          "numero": "FE778",
+          "cliente": "JUAN CARLOS ORREGO ZAPATA",
+          "fecha": "2026-10-07",
+          "total": 1277057,
+          "balance": 1277057
+        },
+        {
+          "numero": "FE776",
+          "cliente": "Leonardo Gaitan Zuluaga",
+          "fecha": "2026-10-06",
+          "total": 366025,
+          "balance": 366025
+        },
+        {
+          "numero": "FE774",
+          "cliente": "Daniela Ruiz Ricardo",
+          "fecha": "2026-10-05",
+          "total": 252280,
+          "balance": 252280
+        },
+        {
+          "numero": "FE773",
+          "cliente": "PROYECTO CAFE SAS",
+          "fecha": "2026-10-05",
+          "total": 497520,
+          "balance": 497520
+        },
+        {
+          "numero": "FE770",
+          "cliente": "DANIEL SCHMUTTE",
+          "fecha": "2026-10-03",
+          "total": 336870,
+          "balance": 336870
+        },
+        {
+          "numero": "FE767",
+          "cliente": "ANTHONY CRAIG WATSON",
+          "fecha": "2026-10-02",
+          "total": 264280,
+          "balance": 264280
+        },
+        {
+          "numero": "FE764",
+          "cliente": "DANIELA HENAO MEJIA",
+          "fecha": "2026-10-02",
+          "total": 256710,
+          "balance": 256710
+        },
+        {
+          "numero": "FE763",
+          "cliente": "JUAN CARLOS ORREGO ZAPATA",
+          "fecha": "2026-10-02",
+          "total": 1277057,
+          "balance": 1277057
+        },
+        {
+          "numero": "FE762",
+          "cliente": "BLACK ELEPHANT GROUP S.A.S.",
+          "fecha": "2026-10-01",
+          "total": 264900,
+          "balance": 264900
+        }
+      ]
+    },
+    {
+      "mes": "2026-09",
+      "label": "Septiembre 2026",
+      "count": 16,
+      "monto": 6528693,
+      "facturas": [
+        {
+          "numero": "FE761",
+          "cliente": "JUAN FELIPE ARTEAGA GIRALDO",
+          "fecha": "2026-09-30",
+          "total": 532650,
+          "balance": 532650
+        },
+        {
+          "numero": "FE760",
+          "cliente": "Leonardo Gaitan Zuluaga",
+          "fecha": "2026-09-30",
+          "total": 210135,
+          "balance": 210135
+        },
+        {
+          "numero": "FE758",
+          "cliente": "Elena Ossa Sanchez",
+          "fecha": "2026-09-30",
+          "total": 272040,
+          "balance": 272040
+        },
+        {
+          "numero": "FE756",
+          "cliente": "CONSTRUCTORA ANROL S.A.S (Bar de Laureles)",
+          "fecha": "2026-09-29",
+          "total": 146255,
+          "balance": 146255
+        },
+        {
+          "numero": "FE755",
+          "cliente": "JUAN ESTEBAN GOMEZ MORENO",
+          "fecha": "2026-09-29",
+          "total": 613570,
+          "balance": 613570
+        },
+        {
+          "numero": "FE754",
+          "cliente": "PINEA S.A.S",
+          "fecha": "2026-09-29",
+          "total": 431880,
+          "balance": 431880
+        },
+        {
+          "numero": "FE753",
+          "cliente": "FUNDACION JARDIN BOTANICO \"JOAQUIN ANTONIO URIBE\" DE MEDELLIN",
+          "fecha": "2026-09-29",
+          "total": 155295,
+          "balance": 155295
+        },
+        {
+          "numero": "FE752",
+          "cliente": "DANIEL SCHMUTTE",
+          "fecha": "2026-09-29",
+          "total": 329730,
+          "balance": 329730
+        },
+        {
+          "numero": "FE740",
+          "cliente": "FUNDACION JARDIN BOTANICO \"JOAQUIN ANTONIO URIBE\" DE MEDELLIN",
+          "fecha": "2026-09-19",
+          "total": 465885,
+          "balance": 465885
+        },
+        {
+          "numero": "FE734",
+          "cliente": "JUAN ESTEBAN GOMEZ MORENO",
+          "fecha": "2026-09-17",
+          "total": 513800,
+          "balance": 513800
+        },
+        {
+          "numero": "FE730",
+          "cliente": "Azucena (HOUSE OF DEMONS) Rallon Benjumea",
+          "fecha": "2026-09-17",
+          "total": 140520,
+          "balance": 140520
+        },
+        {
+          "numero": "FE729",
+          "cliente": "Daniela Ruiz Ricardo",
+          "fecha": "2026-09-17",
+          "total": 252280,
+          "balance": 252280
+        },
+        {
+          "numero": "FE722",
+          "cliente": "Caja de Compensación Familiar de Antioquia - Comfama",
+          "fecha": "2026-09-13",
+          "total": 7746900,
+          "balance": 913353
+        },
+        {
+          "numero": "FE720",
+          "cliente": "JUAN ESTEBAN GOMEZ MORENO",
+          "fecha": "2026-09-12",
+          "total": 529080,
+          "balance": 529080
+        },
+        {
+          "numero": "FE707",
+          "cliente": "JUAN ESTEBAN GOMEZ MORENO",
+          "fecha": "2026-09-06",
+          "total": 512800,
+          "balance": 512800
+        },
+        {
+          "numero": "FE699",
+          "cliente": "THC GROUP SAS",
+          "fecha": "2026-09-02",
+          "total": 509420,
+          "balance": 509420
+        }
+      ]
+    },
+    {
+      "mes": "2026-08",
+      "label": "Agosto 2026",
+      "count": 18,
+      "monto": 9393515,
+      "facturas": [
+        {
+          "numero": "FE693",
+          "cliente": "Jairo licorera Kanana Acevedo Sanchez",
+          "fecha": "2026-08-31",
+          "total": 263710,
+          "balance": 263710
+        },
+        {
+          "numero": "FE689",
+          "cliente": "JHON HARRISON TOBON MARTINEZ",
+          "fecha": "2026-08-26",
+          "total": 259520,
+          "balance": 259520
+        },
+        {
+          "numero": "FE683",
+          "cliente": "PINEA S.A.S",
+          "fecha": "2026-08-24",
+          "total": 269040,
+          "balance": 269040
+        },
+        {
+          "numero": "FE679",
+          "cliente": "JUAN ESTEBAN GOMEZ MORENO",
+          "fecha": "2026-08-21",
+          "total": 518560,
+          "balance": 518560
+        },
+        {
+          "numero": "FE677",
+          "cliente": "DANIEL SCHMUTTE",
+          "fecha": "2026-08-21",
+          "total": 648460,
+          "balance": 648460
+        },
+        {
+          "numero": "FE674",
+          "cliente": "Luz Mariela Morales Velasquez (Plancha Sonora)",
+          "fecha": "2026-08-18",
+          "total": 511800,
+          "balance": 511800
+        },
+        {
+          "numero": "FE673",
+          "cliente": "MARTHA ELENA  (Punta Arena) PERDOMO JIMENEZ",
+          "fecha": "2026-08-18",
+          "total": 261900,
+          "balance": 261900
+        },
+        {
+          "numero": "FE672",
+          "cliente": "ASTRID VERONICA PORRAS GIRALDO",
+          "fecha": "2026-08-16",
+          "total": 269040,
+          "balance": 269040
+        },
+        {
+          "numero": "FE662",
+          "cliente": "Elena Ossa Sanchez",
+          "fecha": "2026-08-12",
+          "total": 263710,
+          "balance": 263710
+        },
+        {
+          "numero": "FE660",
+          "cliente": "PINEA S.A.S",
+          "fecha": "2026-08-11",
+          "total": 329730,
+          "balance": 329730
+        },
+        {
+          "numero": "FE659",
+          "cliente": "LOREPA AREPAS SAS",
+          "fecha": "2026-08-10",
+          "total": 495040,
+          "balance": 495040
+        },
+        {
+          "numero": "FE658",
+          "cliente": "Azucena (HOUSE OF DEMONS) Rallon Benjumea",
+          "fecha": "2026-08-10",
+          "total": 257900,
+          "balance": 257900
+        },
+        {
+          "numero": "FE657",
+          "cliente": "Martin La Vendimia Emilio Jaramillo Marín",
+          "fecha": "2026-08-10",
+          "total": 269040,
+          "balance": 269040
+        },
+        {
+          "numero": "FE652",
+          "cliente": "MARTHA ELENA  (Punta Arena) PERDOMO JIMENEZ",
+          "fecha": "2026-08-11",
+          "total": 431416,
+          "balance": 431416
+        },
+        {
+          "numero": "FE647",
+          "cliente": "Jairo licorera Kanana Acevedo Sanchez",
+          "fecha": "2026-08-06",
+          "total": 263710,
+          "balance": 263710
+        },
+        {
+          "numero": "FE646",
+          "cliente": "LAVATO MED SAS",
+          "fecha": "2026-08-05",
+          "total": 259900,
+          "balance": 259900
+        },
+        {
+          "numero": "FE643",
+          "cliente": "INVERSIONES LATINERIA S.A.S",
+          "fecha": "2026-08-04",
+          "total": 2577957,
+          "balance": 2577957
+        },
+        {
+          "numero": "FE639",
+          "cliente": "JUAN CARLOS ORREGO ZAPATA",
+          "fecha": "2026-08-04",
+          "total": 1243082,
+          "balance": 1243082
+        }
+      ]
+    },
+    {
+      "mes": "2026-07",
+      "label": "Julio 2026",
+      "count": 8,
+      "monto": 3171405,
+      "facturas": [
+        {
+          "numero": "FE634",
+          "cliente": "PINEA S.A.S",
+          "fecha": "2026-07-31",
+          "total": 260710,
+          "balance": 260710
+        },
+        {
+          "numero": "FE633",
+          "cliente": "MONKEY BURGER ENVIGADO",
+          "fecha": "2026-07-31",
+          "total": 986040,
+          "balance": 986040
+        },
+        {
+          "numero": "FE623",
+          "cliente": "Martin La Vendimia Emilio Jaramillo Marín",
+          "fecha": "2026-07-30",
+          "total": 430880,
+          "balance": 430880
+        },
+        {
+          "numero": "FE607",
+          "cliente": "ASTRID VERONICA PORRAS GIRALDO",
+          "fecha": "2026-07-16",
+          "total": 518940,
+          "balance": 518940
+        },
+        {
+          "numero": "FE606",
+          "cliente": "Luz Mariela Morales Velasquez (Plancha Sonora)",
+          "fecha": "2026-07-16",
+          "total": 258330,
+          "balance": 258330
+        },
+        {
+          "numero": "FE597",
+          "cliente": "Jairo licorera Kanana Acevedo Sanchez",
+          "fecha": "2026-07-10",
+          "total": 257760,
+          "balance": 257760
+        },
+        {
+          "numero": "FE587",
+          "cliente": "LOREPA AREPAS SAS",
+          "fecha": "2026-07-03",
+          "total": 242760,
+          "balance": 242760
+        },
+        {
+          "numero": "FE586",
+          "cliente": "Daniela Ruiz Ricardo",
+          "fecha": "2026-07-03",
+          "total": 215985,
+          "balance": 215985
+        }
+      ]
+    },
+    {
+      "mes": "2026-06",
+      "label": "Junio 2026",
+      "count": 8,
+      "monto": 7774315,
+      "facturas": [
+        {
+          "numero": "FE573",
+          "cliente": "INVERSIONES LATINERIA S.A.S",
+          "fecha": "2026-06-26",
+          "total": 5086239,
+          "balance": 5086239
+        },
+        {
+          "numero": "FE567",
+          "cliente": "LOREPA AREPAS SAS",
+          "fecha": "2026-06-24",
+          "total": 258825,
+          "balance": 258825
+        },
+        {
+          "numero": "FE564",
+          "cliente": "Martin La Vendimia Emilio Jaramillo Marín",
+          "fecha": "2026-06-24",
+          "total": 511800,
+          "balance": 511800
+        },
+        {
+          "numero": "FE553",
+          "cliente": "ASTRID VERONICA PORRAS GIRALDO",
+          "fecha": "2026-06-19",
+          "total": 512420,
+          "balance": 512420
+        },
+        {
+          "numero": "FE550",
+          "cliente": "JUAN CARLOS ORREGO ZAPATA",
+          "fecha": "2026-06-17",
+          "total": 623541,
+          "balance": 623541
+        },
+        {
+          "numero": "FE541",
+          "cliente": "METAMORFOSIS MEDELLÍN S.A.S.",
+          "fecha": "2026-06-13",
+          "total": 500520,
+          "balance": 500520
+        },
+        {
+          "numero": "FE532",
+          "cliente": "Cindy Lorena (Lorepa) Alzate Arbeláez",
+          "fecha": "2026-06-09",
+          "total": 253470,
+          "balance": 253470
+        },
+        {
+          "numero": "3463",
+          "cliente": "Consumidor Final",
+          "fecha": "2026-06-29",
+          "total": 27500,
+          "balance": 27500
+        }
+      ]
+    },
+    {
+      "mes": "2026-05",
+      "label": "Mayo 2026",
+      "count": 6,
+      "monto": 1729041,
+      "facturas": [
+        {
+          "numero": "FE505",
+          "cliente": "JUAN CARLOS ORREGO ZAPATA",
+          "fecha": "2026-05-28",
+          "total": 623541,
+          "balance": 623541
+        },
+        {
+          "numero": "FE498",
+          "cliente": "JUAN FELIPE Vulgaro Bar ARTEAGA GIRALDO",
+          "fecha": "2026-05-25",
+          "total": 257760,
+          "balance": 257760
+        },
+        {
+          "numero": "FE494",
+          "cliente": "Elena Ossa Sanchez",
+          "fecha": "2026-05-22",
+          "total": 260710,
+          "balance": 260710
+        },
+        {
+          "numero": "FE490",
+          "cliente": "Jairo licorera Kanana Acevedo Sanchez",
+          "fecha": "2026-05-21",
+          "total": 263710,
+          "balance": 263710
+        },
+        {
+          "numero": "FE481",
+          "cliente": "Elena Ossa Sanchez",
+          "fecha": "2026-05-19",
+          "total": 263710,
+          "balance": 263710
+        },
+        {
+          "numero": "FE478",
+          "cliente": "Jairo licorera Kanana Acevedo Sanchez",
+          "fecha": "2026-05-13",
+          "total": 263710,
+          "balance": 59610
+        }
+      ]
+    },
+    {
+      "mes": "2026-04",
+      "label": "Abril 2026",
+      "count": 2,
+      "monto": 2460688,
+      "facturas": [
+        {
+          "numero": "FE439",
+          "cliente": "INVERSIONES BISONTALAS S.A.S.",
+          "fecha": "2026-04-16",
+          "total": 2196978,
+          "balance": 2196978
+        },
+        {
+          "numero": "FE437",
+          "cliente": "Elena Ossa Sanchez",
+          "fecha": "2026-04-15",
+          "total": 263710,
+          "balance": 263710
+        }
+      ]
+    },
+    {
+      "mes": "2026-03",
+      "label": "Marzo 2026",
+      "count": 12,
+      "monto": 4341663,
+      "facturas": [
+        {
+          "numero": "FE428",
+          "cliente": "BEDOYA CASTRILLON WBEIMAR",
+          "fecha": "2026-03-31",
+          "total": 257040,
+          "balance": 257040
+        },
+        {
+          "numero": "FE424",
+          "cliente": "Daniela Ruiz Ricardo",
+          "fecha": "2026-03-31",
+          "total": 202300,
+          "balance": 202300
+        },
+        {
+          "numero": "FE420",
+          "cliente": "PROYECTO CAFE SAS",
+          "fecha": "2026-03-30",
+          "total": 254760,
+          "balance": 254760
+        },
+        {
+          "numero": "FE416",
+          "cliente": "INVERSIONES PULSO S.A.S",
+          "fecha": "2026-03-30",
+          "total": 737800,
+          "balance": 737800
+        },
+        {
+          "numero": "FE413",
+          "cliente": "Sandra Milena  (Nueva Ola) Orozco Hincapié",
+          "fecha": "2026-03-30",
+          "total": 258330,
+          "balance": 258330
+        },
+        {
+          "numero": "FE411",
+          "cliente": "INVERSIONES PULSO S.A.S",
+          "fecha": "2026-03-30",
+          "total": 397341,
+          "balance": 397341
+        },
+        {
+          "numero": "FE406",
+          "cliente": "Monica Elena Cardona Alvarez",
+          "fecha": "2026-03-25",
+          "total": 247520,
+          "balance": 247520
+        },
+        {
+          "numero": "FE395",
+          "cliente": "BOHORQUEZ ARREDONDO CRISTIAN DANILO",
+          "fecha": "2026-03-16",
+          "total": 267280,
+          "balance": 267280
+        },
+        {
+          "numero": "FE391",
+          "cliente": "INVERSIONES PULSO S.A.S",
+          "fecha": "2026-03-12",
+          "total": 379140,
+          "balance": 379140
+        },
+        {
+          "numero": "FE389",
+          "cliente": "Jairo licorera Kanana Acevedo Sanchez",
+          "fecha": "2026-03-12",
+          "total": 263710,
+          "balance": 263710
+        },
+        {
+          "numero": "FE373",
+          "cliente": "ESTRADA GOURMET SAS",
+          "fecha": "2026-03-02",
+          "total": 255760,
+          "balance": 255760
+        },
+        {
+          "numero": "FE372",
+          "cliente": "INVERSIONES DE PASO S.A.S",
+          "fecha": "2026-03-02",
+          "total": 820682,
+          "balance": 820682
+        }
+      ]
+    },
+    {
+      "mes": "2026-02",
+      "label": "Febrero 2026",
+      "count": 5,
+      "monto": 1677967,
+      "facturas": [
+        {
+          "numero": "FE359",
+          "cliente": "JUAN CARLOS ORREGO ZAPATA",
+          "fecha": "2026-02-16",
+          "total": 1047756,
+          "balance": 1047756
+        },
+        {
+          "numero": "FE358",
+          "cliente": "nicolas Fajardo Andrade",
+          "fecha": "2026-02-16",
+          "total": 225018,
+          "balance": 225018
+        },
+        {
+          "numero": "FE348",
+          "cliente": "CERVBEER S.A.S",
+          "fecha": "2026-02-12",
+          "total": 162993,
+          "balance": 162993
+        },
+        {
+          "numero": "FE346",
+          "cliente": "FERNANDO LUIS CUERVO QUINTERO",
+          "fecha": "2026-02-11",
+          "total": 208000,
+          "balance": 208000
+        },
+        {
+          "numero": "1971",
+          "cliente": "Consumidor Final",
+          "fecha": "2026-02-13",
+          "total": 40000,
+          "balance": 34200
+        }
+      ]
+    },
+    {
+      "mes": "2026-01",
+      "label": "Enero 2026",
+      "count": 8,
+      "monto": 5805893,
+      "facturas": [
+        {
+          "numero": "FE337",
+          "cliente": "Cervecería La Cima S.A.S",
+          "fecha": "2026-01-31",
+          "total": 348886,
+          "balance": 248886
+        },
+        {
+          "numero": "FE334",
+          "cliente": "INVERSIONES LATINERIA S.A.S",
+          "fecha": "2026-01-31",
+          "total": 3832098,
+          "balance": 1832098
+        },
+        {
+          "numero": "FE315",
+          "cliente": "Azucena (HOUSE OF DEMONS) Rallon Benjumea",
+          "fecha": "2026-01-19",
+          "total": 226031,
+          "balance": 226031
+        },
+        {
+          "numero": "FE304",
+          "cliente": "INVERSIONES LATINERIA S.A.S",
+          "fecha": "2026-01-14",
+          "total": 2530282,
+          "balance": 2530282
+        },
+        {
+          "numero": "FE303",
+          "cliente": "nicolas Fajardo Andrade",
+          "fecha": "2026-01-14",
+          "total": 226031,
+          "balance": 226031
+        },
+        {
+          "numero": "FE300",
+          "cliente": "Daniela Ruiz Ricardo",
+          "fecha": "2026-01-14",
+          "total": 208005,
+          "balance": 208005
+        },
+        {
+          "numero": "FE296",
+          "cliente": "CORPORACIÓN FERNANDO GONZALEZ - OTRAPARTE",
+          "fecha": "2026-01-09",
+          "total": 195880,
+          "balance": 195880
+        },
+        {
+          "numero": "FE294",
+          "cliente": "CORPORACIÓN FERNANDO GONZALEZ - OTRAPARTE",
+          "fecha": "2026-01-09",
+          "total": 338680,
+          "balance": 338680
+        }
+      ]
+    }
+  ]
+}

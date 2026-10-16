@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-16 20:50:26",
+  "generado": "2026-10-16 23:32:39",
   "anio": "2026",
-  "total_abiertas": 127,
-  "total_anio": 107,
+  "total_abiertas": 126,
+  "total_anio": 106,
   "meses": [
     {
       "mes": "2026-10",
@@ -772,16 +772,9 @@
     {
       "mes": "2026-01",
       "label": "Enero 2026",
-      "count": 8,
-      "monto": 5805893,
+      "count": 7,
+      "monto": 5557007,
       "facturas": [
-        {
-          "numero": "FE337",
-          "cliente": "Cervecería La Cima S.A.S",
-          "fecha": "2026-01-31",
-          "total": 348886,
-          "balance": 248886
-        },
         {
           "numero": "FE334",
           "cliente": "INVERSIONES LATINERIA S.A.S",

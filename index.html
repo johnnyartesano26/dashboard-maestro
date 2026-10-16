@@ -346,6 +346,16 @@
     </div>
   </div>
 
+  <!-- ═══ ANOMALÍAS ETL (remisiones) ═══ -->
+  <div class="card full" style="margin-bottom:20px">
+    <h2>🔎 Anomalías ETL — Remisiones <span style="font-size:.75em;color:var(--mm-dim)" id="anomaliasEtlFecha"></span></h2>
+    <p style="color:var(--mm-dim);font-size:.85em;margin-bottom:12px">
+      Inconsistencias detectadas en el control de remisiones. Despliega cada tipo para ver el
+      significado y la solución sugerida.
+    </p>
+    <div id="anomaliasEtl"><div class="loading">Cargando anomalías...</div></div>
+  </div>
+
   <div class="grid">
     <div class="card full">
       <h2 id="chartVentasTitle">📈 Ventas Mensuales Bar</h2>
@@ -1045,9 +1055,75 @@ function renderAlegraCliente() {
 // ═══════════════════════════════════════════════════
 // INIT: Cargar todo en paralelo
 // ═══════════════════════════════════════════════════
+// ═══════════════ ANOMALÍAS ETL (remisiones) ═══════════════
+const ANOMALIAS_CATALOGO = {
+  "CLIENTE_DUPLICADO": {
+    nombre: "Cliente duplicado",
+    significado: "El mismo cliente aparece registrado más de una vez (posible variación en la escritura del nombre).",
+    solucion: "Unificar el nombre del cliente en una sola remisión o corregir la escritura para evitar duplicados."
+  },
+  "FACTURAR=SI_SIN_FACTURA": {
+    nombre: "Marcada para facturar, sin número",
+    significado: "La remisión dice 'Facturar = Sí' pero no tiene número de factura asentado.",
+    solucion: "Generar la factura en Alegra y completar el número en la remisión."
+  },
+  "FACTURAR=NO_PERO_FACTURADO": {
+    nombre: "Marcada 'no facturar' pero facturada",
+    significado: "La remisión dice 'Facturar = No' pero sí tiene número de factura (se facturó igual).",
+    solucion: "Verificar si fue un error; si sí se debía facturar, cambiar a 'Facturar = Sí'."
+  },
+  "FACTURAR=NO_ESTADO_VACIO": {
+    nombre: "Marcada 'no facturar' con estado vacío",
+    significado: "La remisión dice 'Facturar = No' y la columna 'Facturado' quedó vacía o pendiente.",
+    solucion: "Completar el estado (por ejemplo 'no facturar' o 'remisión') para quitar la ambigüedad."
+  },
+  "FACTURA_FUERA_ORDEN": {
+    nombre: "Factura fuera de orden cronológico",
+    significado: "Un número de factura es menor que otro anterior en el tiempo (debería ser creciente).",
+    solucion: "Verificar que el número de factura corresponda a la fecha correcta (posible error de digitación)."
+  }
+};
+
+async function cargarAnomaliasETL() {
+  const cont = document.getElementById('anomaliasEtl');
+  if (!cont) return;
+  try {
+    const r = await fetch('etl-status.json?v=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const s = await r.json();
+    const fecha = document.getElementById('anomaliasEtlFecha');
+    if (fecha) fecha.textContent = '· ' + (s.fecha || '');
+    const tipos = s.tipos || {};
+    const claves = Object.keys(tipos).sort((a, b) => (tipos[b] || 0) - (tipos[a] || 0));
+    if (!claves.length) {
+      cont.innerHTML = '<p style="color:var(--mm-green)">✅ Sin anomalías detectadas.</p>';
+      return;
+    }
+    cont.innerHTML = claves.map(k => {
+      const c = ANOMALIAS_CATALOGO[k] || { nombre: k, significado: 'Sin descripción.', solucion: 'Revisar manualmente el registro.' };
+      return `
+        <details style="margin-bottom:8px">
+          <summary style="cursor:pointer;font-weight:600;padding:10px 14px;background:var(--mm-block);border:1px solid var(--mm-border);border-radius:8px;list-style:none">
+            <span style="color:var(--mm-gold)">▸</span> ${c.nombre} — <b style="color:#c62828">${tipos[k]}</b>
+          </summary>
+          <div style="padding:10px 14px;font-size:.85em;color:var(--mm-dim);line-height:1.55">
+            <p style="margin:0 0 6px"><b style="color:var(--mm-text)">Significado:</b> ${c.significado}</p>
+            <p style="margin:0"><b style="color:var(--mm-text)">Solución sugerida:</b> ${c.solucion}</p>
+          </div>
+        </details>
+      `;
+    }).join('');
+  } catch (e) {
+    cont.innerHTML = '<p style="color:var(--mm-red)">⚠️ No se pudo cargar el estado ETL.</p>';
+  }
+}
+
 window.onload = async function() {
   try {
   document.getElementById('headerSub').textContent = 'Cargando datos...';
+
+  // ── Anomalías ETL (remisiones) ──
+  cargarAnomaliasETL();
 
   // ── Diagnóstico de facturación ──
   fetch('data/resumen_facturacion.json')

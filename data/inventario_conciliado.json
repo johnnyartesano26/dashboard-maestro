@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-17 18:08:31",
+  "fecha": "2026-10-17 18:35:42",
   "fisico": {
     "GOLDEN ALE": {
       "bot": 53.0,
@@ -44,7 +44,7 @@
   },
   "deducciones": {
     "APA": {
-      "bot": 179.0,
+      "bot": 183.0,
       "barril": 0.0,
       "litros": 31.9
     },
@@ -54,7 +54,7 @@
       "litros": 0.0
     },
     "GOLDEN ALE": {
-      "bot": 608.0,
+      "bot": 612.0,
       "barril": 8.3,
       "litros": 0.0
     },
@@ -64,7 +64,7 @@
       "litros": 0.0
     },
     "IPA": {
-      "bot": 985.0,
+      "bot": 997.0,
       "barril": 109.5,
       "litros": 28.6
     },
@@ -86,7 +86,7 @@
   },
   "neto": {
     "APA": {
-      "bot": -137.0,
+      "bot": -141.0,
       "barril": 0.0,
       "litros": 68.1
     },
@@ -96,7 +96,7 @@
       "litros": 0.0
     },
     "GOLDEN ALE": {
-      "bot": -555.0,
+      "bot": -559.0,
       "barril": -8.3,
       "litros": 233.0
     },
@@ -106,7 +106,7 @@
       "litros": 316.0
     },
     "IPA": {
-      "bot": -821.0,
+      "bot": -833.0,
       "barril": -109.5,
       "litros": 221.4
     },

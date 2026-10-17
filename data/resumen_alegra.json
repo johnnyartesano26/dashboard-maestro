@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-17 17:07:47",
+  "generado": "2026-10-17 19:18:58",
   "anio": 2026,
   "kpis": {
-    "total_anual": 472730327,
-    "num_facturas": 3681,
-    "ticket_promedio": 128424
+    "total_anual": 473526447,
+    "num_facturas": 3683,
+    "ticket_promedio": 128571
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 26245596,
-      "count": 204
+      "total": 27041716,
+      "count": 206
     }
   },
   "por_mes_bar": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 15072396,
-      "count": 38
+      "total": 15868516,
+      "count": 40
     }
   },
   "por_mes_factura": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 25806096,
-      "count": 204
+      "total": 26577216,
+      "count": 206
     }
   },
   "por_mes_domicilio": {
@@ -212,8 +212,8 @@
       "count": 45
     },
     "2026-10": {
-      "total": 439500,
-      "count": 33
+      "total": 464500,
+      "count": 35
     }
   },
   "por_estado": {
@@ -222,8 +222,8 @@
       "count": 3549
     },
     "draft": {
-      "total": 8906280,
-      "count": 13
+      "total": 9702400,
+      "count": 15
     },
     "open": {
       "total": 61374900,
@@ -239,25 +239,25 @@
       "total": 51959144,
       "unidades": 2449
     },
+    "Cerveza en botella American India Pale Ale - Vagabundo": {
+      "total": 36271202,
+      "unidades": 3270
+    },
     "Cerveza American IPA - Vagabundo": {
       "total": 36030998,
       "unidades": 1931
-    },
-    "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 35864222,
-      "unidades": 3234
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 29245654,
       "unidades": 2983
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 28855335,
-      "unidades": 2917
+      "total": 29017175,
+      "unidades": 2933
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 24783937,
-      "unidades": 2539
+      "total": 24945777,
+      "unidades": 2555
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 21856598,
@@ -284,8 +284,8 @@
       "unidades": 894
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
-      "total": 10885922,
-      "unidades": 1105
+      "total": 10926382,
+      "unidades": 1109
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -312,8 +312,8 @@
       "unidades": 586
     },
     "Domicilio": {
-      "total": 5014201,
-      "unidades": 376
+      "total": 5039201,
+      "unidades": 378
     },
     "Soda saborizada": {
       "total": 4564899,
@@ -614,8 +614,8 @@
       "count": 2
     },
     "PINEA S.A.S": {
-      "total": 9814130,
-      "count": 30
+      "total": 10083170,
+      "count": 31
     },
     "DANIEL SCHMUTTE": {
       "total": 9720645,
@@ -757,6 +757,10 @@
       "total": 1218023,
       "count": 2
     },
+    "SAMUEL DAVID GAMBA LUQUE": {
+      "total": 1061160,
+      "count": 3
+    },
     "ORRO S.A.S.": {
       "total": 1021320,
       "count": 3
@@ -855,10 +859,6 @@
     },
     "CORPORACIÓN FERNANDO GONZALEZ - OTRAPARTE": {
       "total": 534560,
-      "count": 2
-    },
-    "SAMUEL DAVID GAMBA LUQUE": {
-      "total": 534080,
       "count": 2
     },
     "Juliana Cuartas Pedraza": {

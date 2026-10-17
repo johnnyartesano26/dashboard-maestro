@@ -1,10 +1,24 @@
 {
   "fecha": "2026-10-17",
-  "total": 204,
-  "monto": 26245596,
-  "drafts": 1,
-  "drafts_monto": 10115,
+  "total": 206,
+  "monto": 27041716,
+  "drafts": 3,
+  "drafts_monto": 806235,
   "facturas": [
+    {
+      "id": "5382",
+      "cliente": "SAMUEL DAVID GAMBA LUQUE",
+      "total": 527080,
+      "status": "draft",
+      "fecha": "2026-10-17"
+    },
+    {
+      "id": "5381",
+      "cliente": "PINEA S.A.S",
+      "total": 269040,
+      "status": "draft",
+      "fecha": "2026-10-17"
+    },
     {
       "id": "5380",
       "cliente": "Consumidor Final",

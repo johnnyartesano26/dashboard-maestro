@@ -1,10 +1,59 @@
 {
   "fecha": "2026-10-17",
-  "total": 194,
-  "monto": 25075596,
+  "total": 201,
+  "monto": 26035596,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5377",
+      "cliente": "Consumidor Final",
+      "total": 72000,
+      "status": "closed",
+      "fecha": "2026-10-17"
+    },
+    {
+      "id": "5376",
+      "cliente": "Consumidor Final",
+      "total": 200000,
+      "status": "closed",
+      "fecha": "2026-10-17"
+    },
+    {
+      "id": "5375",
+      "cliente": "Consumidor Final",
+      "total": 96000,
+      "status": "closed",
+      "fecha": "2026-10-17"
+    },
+    {
+      "id": "5374",
+      "cliente": "Consumidor Final",
+      "total": 377000,
+      "status": "closed",
+      "fecha": "2026-10-16"
+    },
+    {
+      "id": "5373",
+      "cliente": "Consumidor Final",
+      "total": 35000,
+      "status": "closed",
+      "fecha": "2026-10-16"
+    },
+    {
+      "id": "5372",
+      "cliente": "Consumidor Final",
+      "total": 80000,
+      "status": "closed",
+      "fecha": "2026-10-16"
+    },
+    {
+      "id": "5371",
+      "cliente": "Consumidor Final",
+      "total": 100000,
+      "status": "closed",
+      "fecha": "2026-10-16"
+    },
     {
       "id": "5370",
       "cliente": "Consumidor Final",
@@ -37,7 +86,7 @@
       "id": "5366",
       "cliente": "ASTRID ELENA (Divergente) ARANGO QUIROS",
       "total": 260710,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-16"
     },
     {

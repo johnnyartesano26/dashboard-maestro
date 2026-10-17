@@ -1,22 +1,15 @@
 {
-  "generado": "2026-10-17 01:40:55",
+  "generado": "2026-10-17 06:09:10",
   "anio": "2026",
-  "total_abiertas": 126,
-  "total_anio": 106,
+  "total_abiertas": 125,
+  "total_anio": 105,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 24,
-      "monto": 9957869,
+      "count": 23,
+      "monto": 9697159,
       "facturas": [
-        {
-          "numero": "FE801",
-          "cliente": "ASTRID ELENA (Divergente) ARANGO QUIROS",
-          "fecha": "2026-10-16",
-          "total": 260710,
-          "balance": 260710
-        },
         {
           "numero": "FE799",
           "cliente": "JUAN CARLOS ORREGO ZAPATA",

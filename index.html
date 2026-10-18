@@ -2812,14 +2812,14 @@ async function loadConciliacion(url) {
     if (card) card.style.display = 'block';
     document.getElementById('conciliacionFecha').textContent = d.fecha || '';
 
-    const estilos = Object.keys(d.neto || {});
+    const estilos = Object.keys(d.fisico || {});
     const labels = estilos;
     const fisicoBot = estilos.map(e => d.fisico[e]?.bot || 0);
-    const netoBot = estilos.map(e => d.neto[e]?.bot || 0);
+    const dedBot = estilos.map(e => (d.deducciones?.[e]?.bot) || 0);
     const fisicoBarril = estilos.map(e => d.fisico[e]?.barril || 0);
-    const netoBarril = estilos.map(e => d.neto[e]?.barril || 0);
+    const dedBarril = estilos.map(e => (d.deducciones?.[e]?.barril) || 0);
     const fisicoFerm = estilos.map(e => d.fisico[e]?.litros || 0);
-    const netoFerm = estilos.map(e => d.neto[e]?.litros || 0);
+    const dedFerm = estilos.map(e => (d.deducciones?.[e]?.litros) || 0);
 
     if (typeof Chart !== 'undefined') {
       const ctx = document.getElementById('chartConciliacion');
@@ -2830,11 +2830,11 @@ async function loadConciliacion(url) {
           labels,
           datasets: [
             { label: 'Físico · Botellas', data: fisicoBot, backgroundColor: '#c88a3d' },
-            { label: 'Neto · Botellas', data: netoBot, backgroundColor: '#39d2c0' },
+            { label: 'Facturado · Botellas', data: dedBot, backgroundColor: '#39d2c0' },
             { label: 'Físico · Barril (L)', data: fisicoBarril, backgroundColor: '#7a9e7a' },
-            { label: 'Neto · Barril (L)', data: netoBarril, backgroundColor: '#58a6ff' },
+            { label: 'Facturado · Barril (L)', data: dedBarril, backgroundColor: '#58a6ff' },
             { label: 'Físico · Fermentador (L)', data: fisicoFerm, backgroundColor: '#c9685e' },
-            { label: 'Neto · Fermentador (L)', data: netoFerm, backgroundColor: '#e8a84c' },
+            { label: 'Facturado · Fermentador (L)', data: dedFerm, backgroundColor: '#e8a84c' },
           ]
         },
         options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }

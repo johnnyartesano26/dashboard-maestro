@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-18 00:01:09",
+  "generado": "2026-10-18 03:17:10",
   "anio": 2026,
   "kpis": {
-    "total_anual": 473526447,
-    "num_facturas": 3683,
-    "ticket_promedio": 128571
+    "total_anual": 473881447,
+    "num_facturas": 3687,
+    "ticket_promedio": 128528
   },
   "por_mes": {
     "2026-01": {
@@ -28,8 +28,8 @@
       "count": 364
     },
     "2026-06": {
-      "total": 51403562,
-      "count": 337
+      "total": 51629562,
+      "count": 338
     },
     "2026-07": {
       "total": 44506381,
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 27041716,
-      "count": 206
+      "total": 27170716,
+      "count": 209
     }
   },
   "por_mes_bar": {
@@ -70,8 +70,8 @@
       "count": 322
     },
     "2026-06": {
-      "total": 20301636,
-      "count": 283
+      "total": 20527636,
+      "count": 284
     },
     "2026-07": {
       "total": 22663778,
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 11173200,
-      "count": 166
+      "total": 11302200,
+      "count": 169
     }
   },
   "por_mes_externo": {
@@ -154,8 +154,8 @@
       "count": 364
     },
     "2026-06": {
-      "total": 50849562,
-      "count": 337
+      "total": 51075562,
+      "count": 338
     },
     "2026-07": {
       "total": 43931381,
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 26577216,
-      "count": 206
+      "total": 26706216,
+      "count": 209
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 401677048,
-      "count": 3549
+      "total": 402032048,
+      "count": 3553
     },
     "draft": {
       "total": 9702400,
@@ -244,8 +244,8 @@
       "unidades": 3270
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 36030998,
-      "unidades": 1931
+      "total": 36068998,
+      "unidades": 1933
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 29245654,
@@ -260,12 +260,12 @@
       "unidades": 2555
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 21856598,
-      "unidades": 1392
+      "total": 21920598,
+      "unidades": 1396
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 18752399,
-      "unidades": 1204
+      "total": 18768399,
+      "unidades": 1205
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 18565520,
@@ -276,8 +276,8 @@
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 15732199,
-      "unidades": 892
+      "total": 15750199,
+      "unidades": 893
     },
     "Cerveza APA - Cienfuegos": {
       "total": 15596200,
@@ -344,8 +344,8 @@
       "unidades": 56
     },
     "Papas y plátanos chips": {
-      "total": 3089542,
-      "unidades": 459
+      "total": 3096541,
+      "unidades": 460
     },
     "Cerveza por litro American Pale Ale - Cienfuegos": {
       "total": 2859650,
@@ -371,6 +371,10 @@
       "total": 1715998,
       "unidades": 33
     },
+    "Jarra Hidromiel": {
+      "total": 1682000,
+      "unidades": 19
+    },
     "B Botella APA": {
       "total": 1607999,
       "unidades": 92
@@ -382,10 +386,6 @@
     "B Botella IPA": {
       "total": 1589999,
       "unidades": 88
-    },
-    "Jarra Hidromiel": {
-      "total": 1486000,
-      "unidades": 17
     },
     "Cañita Hidromiel": {
       "total": 1464500,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 225584257,
-      "count": 3206
+      "total": 225939257,
+      "count": 3210
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 44239778,

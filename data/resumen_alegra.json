@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-18 21:30:07",
+  "generado": "2026-10-18 23:43:39",
   "anio": 2026,
   "kpis": {
-    "total_anual": 476058447,
-    "num_facturas": 3703,
-    "ticket_promedio": 128560
+    "total_anual": 476128447,
+    "num_facturas": 3704,
+    "ticket_promedio": 128544
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 29573716,
-      "count": 226
+      "total": 29643716,
+      "count": 227
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 13705200,
-      "count": 186
+      "total": 13775200,
+      "count": 187
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 29109216,
-      "count": 226
+      "total": 29179216,
+      "count": 227
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 404209048,
-      "count": 3569
+      "total": 404279048,
+      "count": 3570
     },
     "draft": {
       "total": 9702400,
@@ -371,6 +371,10 @@
       "total": 1715998,
       "unidades": 33
     },
+    "B Botella IPA": {
+      "total": 1627999,
+      "unidades": 90
+    },
     "B Botella APA": {
       "total": 1625999,
       "unidades": 93
@@ -378,10 +382,6 @@
     "Soda": {
       "total": 1607000,
       "unidades": 268
-    },
-    "B Botella IPA": {
-      "total": 1589999,
-      "unidades": 88
     },
     "Cañita Hidromiel": {
       "total": 1494500,
@@ -391,13 +391,13 @@
       "total": 1486000,
       "unidades": 17
     },
+    "B Botella Irish Red Ale": {
+      "total": 1430999,
+      "unidades": 94
+    },
     "Sampler x 4 cañitas": {
       "total": 1405000,
       "unidades": 43
-    },
-    "B Botella Irish Red Ale": {
-      "total": 1398999,
-      "unidades": 92
     },
     "Cañita de barril American India Pale Ale - Vagabundo": {
       "total": 1280997,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 228116257,
-      "count": 3226
+      "total": 228186257,
+      "count": 3227
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 44239778,

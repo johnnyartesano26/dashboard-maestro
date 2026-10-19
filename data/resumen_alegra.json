@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-19 01:48:26",
+  "generado": "2026-10-19 07:33:35",
   "anio": 2026,
   "kpis": {
-    "total_anual": 476128447,
-    "num_facturas": 3704,
-    "ticket_promedio": 128544
+    "total_anual": 476166447,
+    "num_facturas": 3705,
+    "ticket_promedio": 128520
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 29643716,
-      "count": 227
+      "total": 29681716,
+      "count": 228
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 13775200,
-      "count": 187
+      "total": 13813200,
+      "count": 188
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 29179216,
-      "count": 227
+      "total": 29217216,
+      "count": 228
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 404279048,
-      "count": 3570
+      "total": 404317048,
+      "count": 3571
     },
     "draft": {
       "total": 9702400,
@@ -239,13 +239,13 @@
       "total": 51959144,
       "unidades": 2449
     },
+    "Cerveza American IPA - Vagabundo": {
+      "total": 36277998,
+      "unidades": 1944
+    },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
       "total": 36271202,
       "unidades": 3270
-    },
-    "Cerveza American IPA - Vagabundo": {
-      "total": 36239998,
-      "unidades": 1942
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 29245654,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 228186257,
-      "count": 3227
+      "total": 228224257,
+      "count": 3228
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 44239778,

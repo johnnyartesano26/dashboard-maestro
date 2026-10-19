@@ -1,55 +1,55 @@
 {
-  "generado": "2026-10-19T12:17:05.287705",
-  "fecha_lectura": "2026-10-14 09:59:57",
+  "generado": "2026-10-19T17:31:17.846830",
+  "fecha_lectura": "2026-10-19 14:50:12",
   "fermentadores": [
     {
       "nombre": "F1 Frankie",
       "estilo": "STOUT",
-      "litros": 360.0,
+      "litros": 350.0,
       "capacidad": 400,
-      "porcentaje": 90
+      "porcentaje": 88
     },
     {
       "nombre": "F2 Igor",
       "estilo": "IRISH RED ALE",
-      "litros": 651.0,
+      "litros": 621.0,
       "capacidad": 1200,
-      "porcentaje": 54
+      "porcentaje": 52
     },
     {
       "nombre": "F3 Principito",
       "estilo": "APA",
-      "litros": 100.0,
+      "litros": 70.0,
       "capacidad": 400,
-      "porcentaje": 25
+      "porcentaje": 18
     },
     {
       "nombre": "F4 Gargantua",
-      "estilo": "",
-      "litros": 0.0,
+      "estilo": "IPA",
+      "litros": 600.0,
       "capacidad": 700,
-      "porcentaje": 0
+      "porcentaje": 86
     },
     {
       "nombre": "F5 Pantagruel",
       "estilo": "IPA",
-      "litros": 250.0,
+      "litros": 100.0,
       "capacidad": 800,
-      "porcentaje": 31
+      "porcentaje": 12
     },
     {
       "nombre": "F6 Potter",
       "estilo": "GOLDEN ALE",
-      "litros": 233.0,
+      "litros": 180.0,
       "capacidad": 1000,
-      "porcentaje": 23
+      "porcentaje": 18
     },
     {
       "nombre": "F7 HighLander",
       "estilo": "HIDROMIEL",
-      "litros": 316.0,
+      "litros": 266.0,
       "capacidad": 500,
-      "porcentaje": 63
+      "porcentaje": 53
     }
   ],
   "barriles": [
@@ -86,7 +86,7 @@
     {
       "codigo": "",
       "estilo": "HIDROMIEL",
-      "litros": 0
+      "litros": 30.0
     },
     {
       "codigo": "",
@@ -147,8 +147,8 @@
     }
   ],
   "totales": {
-    "litros_fermentando": 1910,
-    "litros_barril": 0,
-    "ventas_cop": 10429200
+    "litros_fermentando": 2217,
+    "litros_barril": 30,
+    "ventas_cop": 13231550
   }
 }

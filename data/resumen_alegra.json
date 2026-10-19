@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-19 15:11:56",
+  "generado": "2026-10-19 20:43:29",
   "anio": 2026,
   "kpis": {
-    "total_anual": 476166447,
-    "num_facturas": 3705,
-    "ticket_promedio": 128520
+    "total_anual": 478757984,
+    "num_facturas": 3709,
+    "ticket_promedio": 129080
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 29681716,
-      "count": 228
+      "total": 32273253,
+      "count": 232
     }
   },
   "por_mes_bar": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 15868516,
-      "count": 40
+      "total": 18460053,
+      "count": 44
     }
   },
   "por_mes_factura": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 29217216,
-      "count": 228
+      "total": 31773753,
+      "count": 232
     }
   },
   "por_mes_domicilio": {
@@ -212,8 +212,8 @@
       "count": 45
     },
     "2026-10": {
-      "total": 464500,
-      "count": 35
+      "total": 499500,
+      "count": 38
     }
   },
   "por_estado": {
@@ -222,12 +222,12 @@
       "count": 3571
     },
     "draft": {
-      "total": 9702400,
-      "count": 15
+      "total": 9433360,
+      "count": 14
     },
     "open": {
-      "total": 61374900,
-      "count": 105
+      "total": 64235477,
+      "count": 110
     },
     "void": {
       "total": 772099,
@@ -236,40 +236,40 @@
   },
   "por_producto": {
     "Cerveza por litro Irish Red Ale - Mística": {
-      "total": 51959144,
-      "unidades": 2449
+      "total": 52570685,
+      "unidades": 2477
+    },
+    "Cerveza en botella American India Pale Ale - Vagabundo": {
+      "total": 37085162,
+      "unidades": 3342
     },
     "Cerveza American IPA - Vagabundo": {
       "total": 36277998,
       "unidades": 1944
     },
-    "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 36271202,
-      "unidades": 3270
-    },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 29245654,
-      "unidades": 2983
+      "total": 29286114,
+      "unidades": 2987
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 29017175,
-      "unidades": 2933
+      "total": 29138555,
+      "unidades": 2945
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 24945777,
-      "unidades": 2555
+      "total": 25228997,
+      "unidades": 2583
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 22048598,
       "unidades": 1404
     },
+    "Cerveza por litro American India Pale Ale - Vagabundo": {
+      "total": 19211035,
+      "unidades": 861
+    },
     "Cerveza Golden Ale - Siempre Viva": {
       "total": 18944399,
       "unidades": 1216
-    },
-    "Cerveza por litro American India Pale Ale - Vagabundo": {
-      "total": 18565520,
-      "unidades": 833
     },
     "Experiencia de cata de cerveza": {
       "total": 17828580,
@@ -284,8 +284,8 @@
       "unidades": 894
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
-      "total": 10926382,
-      "unidades": 1109
+      "total": 10966842,
+      "unidades": 1113
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -312,8 +312,8 @@
       "unidades": 594
     },
     "Domicilio": {
-      "total": 5039201,
-      "unidades": 378
+      "total": 5074201,
+      "unidades": 381
     },
     "Jarra IPA": {
       "total": 4718000,
@@ -602,8 +602,8 @@
       "count": 3228
     },
     "JUAN CARLOS ORREGO ZAPATA": {
-      "total": 44239778,
-      "count": 43
+      "total": 45496835,
+      "count": 44
     },
     "INVERSIONES LATINERIA S.A.S": {
       "total": 35650673,
@@ -717,6 +717,10 @@
       "total": 1588705,
       "count": 6
     },
+    "ASTRID VERONICA PORRAS GIRALDO": {
+      "total": 1579580,
+      "count": 4
+    },
     "SEVEN MINIMERCADO": {
       "total": 1574870,
       "count": 6
@@ -733,9 +737,9 @@
       "total": 1421893,
       "count": 5
     },
-    "ASTRID VERONICA PORRAS GIRALDO": {
-      "total": 1300400,
-      "count": 3
+    "SELMA MED S.A.S": {
+      "total": 1329480,
+      "count": 2
     },
     "Inversiones Zeppeling S.A.S": {
       "total": 1292639,
@@ -865,10 +869,6 @@
       "total": 532520,
       "count": 2
     },
-    "SELMA MED S.A.S": {
-      "total": 529080,
-      "count": 1
-    },
     "Corporación Cultural MARABUNTAS": {
       "total": 524420,
       "count": 2
@@ -888,6 +888,10 @@
     "Buena Birra Social Club S.A.S": {
       "total": 499800,
       "count": 1
+    },
+    "Hugo Albeiro Caro Morales": {
+      "total": 497660,
+      "count": 2
     },
     "Dataware Sistemas": {
       "total": 446000,
@@ -975,10 +979,6 @@
     },
     "Monica Elena Cardona Alvarez": {
       "total": 247520,
-      "count": 1
-    },
-    "Hugo Albeiro Caro Morales": {
-      "total": 242760,
       "count": 1
     },
     "BARROS MADRIGAL MARIA DEL CARMEN": {

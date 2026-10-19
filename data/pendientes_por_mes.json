@@ -1,15 +1,57 @@
 {
-  "generado": "2026-10-19 15:12:30",
+  "generado": "2026-10-19 20:44:05",
   "anio": "2026",
-  "total_abiertas": 125,
-  "total_anio": 105,
+  "total_abiertas": 131,
+  "total_anio": 111,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 23,
-      "monto": 9697159,
+      "count": 29,
+      "monto": 13100096,
       "facturas": [
+        {
+          "numero": "FE807",
+          "cliente": "Hugo Albeiro Caro Morales",
+          "fecha": "2026-10-19",
+          "total": 254900,
+          "balance": 254900
+        },
+        {
+          "numero": "FE806",
+          "cliente": "ASTRID VERONICA PORRAS GIRALDO",
+          "fecha": "2026-10-19",
+          "total": 279180,
+          "balance": 279180
+        },
+        {
+          "numero": "FE805",
+          "cliente": "SELMA MED S.A.S",
+          "fecha": "2026-10-19",
+          "total": 800400,
+          "balance": 800400
+        },
+        {
+          "numero": "FE804",
+          "cliente": "JUAN CARLOS ORREGO ZAPATA",
+          "fecha": "2026-10-19",
+          "total": 1257057,
+          "balance": 1257057
+        },
+        {
+          "numero": "FE803",
+          "cliente": "SAMUEL DAVID GAMBA LUQUE",
+          "fecha": "2026-10-19",
+          "total": 542360,
+          "balance": 542360
+        },
+        {
+          "numero": "FE802",
+          "cliente": "PINEA S.A.S",
+          "fecha": "2026-10-19",
+          "total": 269040,
+          "balance": 269040
+        },
         {
           "numero": "FE799",
           "cliente": "JUAN CARLOS ORREGO ZAPATA",

@@ -1,10 +1,45 @@
 {
   "fecha": "2026-10-19",
-  "total": 228,
-  "monto": 29681716,
-  "drafts": 3,
-  "drafts_monto": 806235,
+  "total": 232,
+  "monto": 32273253,
+  "drafts": 2,
+  "drafts_monto": 537195,
   "facturas": [
+    {
+      "id": "5408",
+      "cliente": "Hugo Albeiro Caro Morales",
+      "total": 254900,
+      "status": "open",
+      "fecha": "2026-10-19"
+    },
+    {
+      "id": "5407",
+      "cliente": "ASTRID VERONICA PORRAS GIRALDO",
+      "total": 279180,
+      "status": "open",
+      "fecha": "2026-10-19"
+    },
+    {
+      "id": "5406",
+      "cliente": "SELMA MED S.A.S",
+      "total": 800400,
+      "status": "open",
+      "fecha": "2026-10-19"
+    },
+    {
+      "id": "5405",
+      "cliente": "JUAN CARLOS ORREGO ZAPATA",
+      "total": 1257057,
+      "status": "open",
+      "fecha": "2026-10-19"
+    },
+    {
+      "id": "5381",
+      "cliente": "PINEA S.A.S",
+      "total": 269040,
+      "status": "open",
+      "fecha": "2026-10-19"
+    },
     {
       "id": "5404",
       "cliente": "Consumidor Final",
@@ -163,13 +198,6 @@
       "id": "5382",
       "cliente": "SAMUEL DAVID GAMBA LUQUE",
       "total": 527080,
-      "status": "draft",
-      "fecha": "2026-10-17"
-    },
-    {
-      "id": "5381",
-      "cliente": "PINEA S.A.S",
-      "total": 269040,
       "status": "draft",
       "fecha": "2026-10-17"
     },

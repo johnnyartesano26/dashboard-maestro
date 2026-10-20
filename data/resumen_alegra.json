@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-20 03:40:13",
+  "generado": "2026-10-20 09:02:13",
   "anio": 2026,
   "kpis": {
-    "total_anual": 479794188,
-    "num_facturas": 3714,
-    "ticket_promedio": 129185
+    "total_anual": 479915588,
+    "num_facturas": 3715,
+    "ticket_promedio": 129183
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 33309457,
-      "count": 237
+      "total": 33430857,
+      "count": 238
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 14046144,
-      "count": 191
+      "total": 14167544,
+      "count": 192
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 32784957,
-      "count": 237
+      "total": 32906357,
+      "count": 238
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 404549992,
-      "count": 3574
+      "total": 404671392,
+      "count": 3575
     },
     "draft": {
       "total": 8906280,
@@ -276,8 +276,8 @@
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 15966199,
-      "unidades": 905
+      "total": 15984199,
+      "unidades": 906
     },
     "Cerveza APA - Cienfuegos": {
       "total": 15614200,
@@ -296,8 +296,8 @@
       "unidades": 420
     },
     "Hidromiel - Bandada": {
-      "total": 8979000,
-      "unidades": 363
+      "total": 9004000,
+      "unidades": 364
     },
     "Cerveza industrial": {
       "total": 7800500,
@@ -347,13 +347,13 @@
       "total": 3089542,
       "unidades": 459
     },
+    "Jarra Stout": {
+      "total": 2908600,
+      "unidades": 48
+    },
     "Cerveza por litro American Pale Ale - Cienfuegos": {
       "total": 2859650,
       "unidades": 146
-    },
-    "Jarra Stout": {
-      "total": 2840600,
-      "unidades": 47
     },
     "B Botella Golden Ale": {
       "total": 1886999,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 228457201,
-      "count": 3231
+      "total": 228578601,
+      "count": 3232
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 45496835,

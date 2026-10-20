@@ -1,15 +1,29 @@
 {
-  "generado": "2026-10-19 20:44:05",
+  "generado": "2026-10-20 00:10:08",
   "anio": "2026",
-  "total_abiertas": 131,
-  "total_anio": 111,
+  "total_abiertas": 133,
+  "total_anio": 113,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 29,
-      "monto": 13100096,
+      "count": 31,
+      "monto": 13888076,
       "facturas": [
+        {
+          "numero": "FE809",
+          "cliente": "MIX DE LA VILLA",
+          "fecha": "2026-10-19",
+          "total": 259900,
+          "balance": 259900
+        },
+        {
+          "numero": "FE808",
+          "cliente": "DANIEL SCHMUTTE",
+          "fecha": "2026-10-19",
+          "total": 528080,
+          "balance": 528080
+        },
         {
           "numero": "FE807",
           "cliente": "Hugo Albeiro Caro Morales",

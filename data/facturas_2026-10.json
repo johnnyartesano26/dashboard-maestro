@@ -1,10 +1,24 @@
 {
-  "fecha": "2026-10-19",
-  "total": 232,
-  "monto": 32273253,
-  "drafts": 2,
-  "drafts_monto": 537195,
+  "fecha": "2026-10-20",
+  "total": 234,
+  "monto": 33076513,
+  "drafts": 1,
+  "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5410",
+      "cliente": "MIX DE LA VILLA",
+      "total": 259900,
+      "status": "open",
+      "fecha": "2026-10-19"
+    },
+    {
+      "id": "5409",
+      "cliente": "DANIEL SCHMUTTE",
+      "total": 528080,
+      "status": "open",
+      "fecha": "2026-10-19"
+    },
     {
       "id": "5408",
       "cliente": "Hugo Albeiro Caro Morales",
@@ -30,6 +44,13 @@
       "id": "5405",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 1257057,
+      "status": "open",
+      "fecha": "2026-10-19"
+    },
+    {
+      "id": "5382",
+      "cliente": "SAMUEL DAVID GAMBA LUQUE",
+      "total": 542360,
       "status": "open",
       "fecha": "2026-10-19"
     },
@@ -192,13 +213,6 @@
       "cliente": "Consumidor Final",
       "total": 75000,
       "status": "closed",
-      "fecha": "2026-10-17"
-    },
-    {
-      "id": "5382",
-      "cliente": "SAMUEL DAVID GAMBA LUQUE",
-      "total": 527080,
-      "status": "draft",
       "fecha": "2026-10-17"
     },
     {

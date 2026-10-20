@@ -1,14 +1,14 @@
 {
-  "generado": "2026-10-20 18:54:08",
+  "generado": "2026-10-20 22:25:54",
   "anio": "2026",
-  "total_abiertas": 133,
-  "total_anio": 113,
+  "total_abiertas": 132,
+  "total_anio": 112,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 31,
-      "monto": 13888076,
+      "count": 30,
+      "monto": 13619036,
       "facturas": [
         {
           "numero": "FE809",
@@ -86,13 +86,6 @@
           "fecha": "2026-10-15",
           "total": 266660,
           "balance": 266660
-        },
-        {
-          "numero": "FE796",
-          "cliente": "ORRO S.A.S.",
-          "fecha": "2026-10-15",
-          "total": 269040,
-          "balance": 269040
         },
         {
           "numero": "FE794",

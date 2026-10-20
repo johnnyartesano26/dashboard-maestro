@@ -1,10 +1,31 @@
 {
   "fecha": "2026-10-20",
-  "total": 234,
-  "monto": 33076513,
+  "total": 237,
+  "monto": 33309457,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5413",
+      "cliente": "Consumidor Final",
+      "total": 52444,
+      "status": "closed",
+      "fecha": "2026-10-19"
+    },
+    {
+      "id": "5412",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-10-19"
+    },
+    {
+      "id": "5411",
+      "cliente": "Consumidor Final",
+      "total": 164500,
+      "status": "closed",
+      "fecha": "2026-10-19"
+    },
     {
       "id": "5410",
       "cliente": "MIX DE LA VILLA",

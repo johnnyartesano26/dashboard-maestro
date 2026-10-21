@@ -1,10 +1,31 @@
 {
-  "fecha": "2026-10-20",
-  "total": 238,
-  "monto": 33430857,
+  "fecha": "2026-10-21",
+  "total": 241,
+  "monto": 33660857,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5417",
+      "cliente": "Consumidor Final",
+      "total": 120000,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5416",
+      "cliente": "Consumidor Final",
+      "total": 72000,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5415",
+      "cliente": "Consumidor Final",
+      "total": 38000,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
     {
       "id": "5414",
       "cliente": "Consumidor Final",
@@ -436,7 +457,7 @@
       "id": "5353",
       "cliente": "ORRO S.A.S.",
       "total": 269040,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-15"
     },
     {

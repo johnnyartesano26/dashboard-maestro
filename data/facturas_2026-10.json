@@ -1,10 +1,136 @@
 {
   "fecha": "2026-10-21",
-  "total": 241,
-  "monto": 33660857,
+  "total": 259,
+  "monto": 35631907,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5435",
+      "cliente": "Consumidor Final",
+      "total": 31000,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5434",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5433",
+      "cliente": "Consumidor Final",
+      "total": 10000,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5432",
+      "cliente": "Consumidor Final",
+      "total": 23000,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5431",
+      "cliente": "Consumidor Final",
+      "total": 29000,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5430",
+      "cliente": "Consumidor Final",
+      "total": 94000,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5429",
+      "cliente": "Consumidor Final",
+      "total": 50000,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5428",
+      "cliente": "Consumidor Final",
+      "total": 40500,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5427",
+      "cliente": "Consumidor Final",
+      "total": 67000,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5426",
+      "cliente": "Consumidor Final",
+      "total": 27000,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5425",
+      "cliente": "Consumidor Final",
+      "total": 24000,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5424",
+      "cliente": "Consumidor Final",
+      "total": 65000,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5423",
+      "cliente": "Consumidor Final",
+      "total": 15000,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5422",
+      "cliente": "PINEA S.A.S",
+      "total": 450230,
+      "status": "open",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5421",
+      "cliente": "ORRO S.A.S. Los Patios Boutique",
+      "total": 269040,
+      "status": "open",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5420",
+      "cliente": "ORRO S.A.S. Los Patios Boutique",
+      "total": 254760,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5419",
+      "cliente": "ORRO S.A.S. Los Patios Boutique",
+      "total": 497520,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
+    {
+      "id": "5418",
+      "cliente": "Consumidor Final",
+      "total": 10000,
+      "status": "closed",
+      "fecha": "2026-10-20"
+    },
     {
       "id": "5417",
       "cliente": "Consumidor Final",

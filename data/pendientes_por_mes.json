@@ -1,15 +1,29 @@
 {
-  "generado": "2026-10-21 01:01:57",
+  "generado": "2026-10-21 05:58:53",
   "anio": "2026",
-  "total_abiertas": 132,
-  "total_anio": 112,
+  "total_abiertas": 134,
+  "total_anio": 114,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 30,
-      "monto": 13619036,
+      "count": 32,
+      "monto": 14338306,
       "facturas": [
+        {
+          "numero": "FE813",
+          "cliente": "PINEA S.A.S",
+          "fecha": "2026-10-20",
+          "total": 450230,
+          "balance": 450230
+        },
+        {
+          "numero": "FE812",
+          "cliente": "ORRO S.A.S. Los Patios Boutique",
+          "fecha": "2026-10-20",
+          "total": 269040,
+          "balance": 269040
+        },
         {
           "numero": "FE809",
           "cliente": "MIX DE LA VILLA",

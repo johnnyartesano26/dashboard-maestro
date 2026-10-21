@@ -1,10 +1,17 @@
 {
   "fecha": "2026-10-21",
-  "total": 260,
-  "monto": 35852157,
+  "total": 261,
+  "monto": 35871157,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5437",
+      "cliente": "Consumidor Final",
+      "total": 19000,
+      "status": "closed",
+      "fecha": "2026-10-21"
+    },
     {
       "id": "5436",
       "cliente": "PATRICIA MELO GONZALEZ",
@@ -198,7 +205,7 @@
       "id": "5409",
       "cliente": "DANIEL SCHMUTTE",
       "total": 528080,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-19"
     },
     {

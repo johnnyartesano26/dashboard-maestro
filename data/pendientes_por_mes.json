@@ -1,14 +1,14 @@
 {
-  "generado": "2026-10-21 20:36:34",
+  "generado": "2026-10-21 23:47:06",
   "anio": "2026",
-  "total_abiertas": 135,
-  "total_anio": 115,
+  "total_abiertas": 132,
+  "total_anio": 112,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 33,
-      "monto": 14558556,
+      "count": 30,
+      "monto": 13501536,
       "facturas": [
         {
           "numero": "FE814",
@@ -23,27 +23,6 @@
           "fecha": "2026-10-20",
           "total": 450230,
           "balance": 450230
-        },
-        {
-          "numero": "FE812",
-          "cliente": "ORRO S.A.S. Los Patios Boutique",
-          "fecha": "2026-10-20",
-          "total": 269040,
-          "balance": 269040
-        },
-        {
-          "numero": "FE809",
-          "cliente": "MIX DE LA VILLA",
-          "fecha": "2026-10-19",
-          "total": 259900,
-          "balance": 259900
-        },
-        {
-          "numero": "FE808",
-          "cliente": "DANIEL SCHMUTTE",
-          "fecha": "2026-10-19",
-          "total": 528080,
-          "balance": 528080
         },
         {
           "numero": "FE807",

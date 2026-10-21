@@ -1,10 +1,17 @@
 {
   "fecha": "2026-10-21",
-  "total": 259,
-  "monto": 35631907,
+  "total": 260,
+  "monto": 35852157,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5436",
+      "cliente": "PATRICIA MELO GONZALEZ",
+      "total": 220250,
+      "status": "open",
+      "fecha": "2026-10-21"
+    },
     {
       "id": "5435",
       "cliente": "Consumidor Final",

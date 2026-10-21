@@ -1,15 +1,22 @@
 {
-  "generado": "2026-10-21 16:21:27",
+  "generado": "2026-10-21 20:36:34",
   "anio": "2026",
-  "total_abiertas": 134,
-  "total_anio": 114,
+  "total_abiertas": 135,
+  "total_anio": 115,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 32,
-      "monto": 14338306,
+      "count": 33,
+      "monto": 14558556,
       "facturas": [
+        {
+          "numero": "FE814",
+          "cliente": "PATRICIA MELO GONZALEZ",
+          "fecha": "2026-10-21",
+          "total": 220250,
+          "balance": 220250
+        },
         {
           "numero": "FE813",
           "cliente": "PINEA S.A.S",

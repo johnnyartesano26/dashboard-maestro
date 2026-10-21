@@ -192,10 +192,10 @@
     {
       "mes": "Octubre 2026",
       "ventas_bar": {
-        "total_ventas": 13108500,
-        "dias_con_dato": 19,
-        "promedio_diario": 689921,
-        "crecimiento": -48.1,
+        "total_ventas": 13784500,
+        "dias_con_dato": 20,
+        "promedio_diario": 689225,
+        "crecimiento": -45.5,
         "meta_mes": 26000000
       },
       "inventario": null,

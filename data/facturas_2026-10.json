@@ -1,10 +1,45 @@
 {
   "fecha": "2026-10-22",
-  "total": 265,
-  "monto": 36158657,
+  "total": 270,
+  "monto": 36406657,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5446",
+      "cliente": "Consumidor Final",
+      "total": 45000,
+      "status": "closed",
+      "fecha": "2026-10-22"
+    },
+    {
+      "id": "5445",
+      "cliente": "Consumidor Final",
+      "total": 60000,
+      "status": "closed",
+      "fecha": "2026-10-21"
+    },
+    {
+      "id": "5444",
+      "cliente": "Consumidor Final",
+      "total": 68000,
+      "status": "closed",
+      "fecha": "2026-10-21"
+    },
+    {
+      "id": "5443",
+      "cliente": "Consumidor Final",
+      "total": 37000,
+      "status": "closed",
+      "fecha": "2026-10-21"
+    },
+    {
+      "id": "5442",
+      "cliente": "Consumidor Final",
+      "total": 38000,
+      "status": "closed",
+      "fecha": "2026-10-21"
+    },
     {
       "id": "5441",
       "cliente": "DISTRINES LTDA",

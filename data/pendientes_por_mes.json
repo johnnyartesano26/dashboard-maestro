@@ -1,15 +1,22 @@
 {
-  "generado": "2026-10-22 19:01:32",
+  "generado": "2026-10-22 22:24:44",
   "anio": "2026",
-  "total_abiertas": 132,
-  "total_anio": 112,
+  "total_abiertas": 133,
+  "total_anio": 113,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 30,
-      "monto": 13501536,
+      "count": 31,
+      "monto": 14030616,
       "facturas": [
+        {
+          "numero": "FE816",
+          "cliente": "JUAN ESTEBAN GOMEZ MORENO",
+          "fecha": "2026-10-22",
+          "total": 529080,
+          "balance": 529080
+        },
         {
           "numero": "FE814",
           "cliente": "PATRICIA MELO GONZALEZ",

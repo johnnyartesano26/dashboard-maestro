@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-21 23:46:37",
+  "generado": "2026-10-22 03:33:09",
   "anio": 2026,
   "kpis": {
-    "total_anual": 482355888,
-    "num_facturas": 3738,
-    "ticket_promedio": 129041
+    "total_anual": 482750388,
+    "num_facturas": 3743,
+    "ticket_promedio": 128974
   },
   "por_mes": {
     "2026-01": {
@@ -36,16 +36,16 @@
       "count": 347
     },
     "2026-08": {
-      "total": 53454543,
-      "count": 433
+      "total": 53561543,
+      "count": 434
     },
     "2026-09": {
       "total": 58554047,
       "count": 418
     },
     "2026-10": {
-      "total": 35871157,
-      "count": 261
+      "total": 36158657,
+      "count": 265
     }
   },
   "por_mes_bar": {
@@ -78,16 +78,16 @@
       "count": 291
     },
     "2026-08": {
-      "total": 27278107,
-      "count": 370
+      "total": 27385107,
+      "count": 371
     },
     "2026-09": {
       "total": 27028389,
       "count": 357
     },
     "2026-10": {
-      "total": 14916044,
-      "count": 210
+      "total": 15037544,
+      "count": 213
     }
   },
   "por_mes_externo": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 20955113,
-      "count": 51
+      "total": 21121113,
+      "count": 52
     }
   },
   "por_mes_factura": {
@@ -162,16 +162,16 @@
       "count": 347
     },
     "2026-08": {
-      "total": 52874543,
-      "count": 433
+      "total": 52981543,
+      "count": 434
     },
     "2026-09": {
       "total": 57994547,
       "count": 418
     },
     "2026-10": {
-      "total": 35285157,
-      "count": 261
+      "total": 35572657,
+      "count": 265
     }
   },
   "por_mes_domicilio": {
@@ -218,16 +218,16 @@
   },
   "por_estado": {
     "closed": {
-      "total": 406969292,
-      "count": 3597
+      "total": 407892732,
+      "count": 3604
     },
     "draft": {
       "total": 8906280,
       "count": 13
     },
     "open": {
-      "total": 65708217,
-      "count": 114
+      "total": 65179277,
+      "count": 112
     },
     "void": {
       "total": 772099,
@@ -244,8 +244,8 @@
       "unidades": 3411
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 36467998,
-      "unidades": 1954
+      "total": 36543998,
+      "unidades": 1958
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 29680599,
@@ -260,16 +260,16 @@
       "unidades": 2640
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 22048598,
-      "unidades": 1404
+      "total": 22064598,
+      "unidades": 1405
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 19211035,
       "unidades": 861
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 19008399,
-      "unidades": 1220
+      "total": 19024399,
+      "unidades": 1221
     },
     "Experiencia de cata de cerveza": {
       "total": 17828580,
@@ -296,8 +296,8 @@
       "unidades": 420
     },
     "Hidromiel - Bandada": {
-      "total": 9004000,
-      "unidades": 364
+      "total": 9029000,
+      "unidades": 365
     },
     "Cerveza industrial": {
       "total": 7975500,
@@ -308,16 +308,16 @@
       "unidades": 224
     },
     "Mini hamburguesa": {
-      "total": 5660897,
-      "unidades": 599
+      "total": 5770896,
+      "unidades": 610
     },
     "Domicilio": {
       "total": 5160701,
       "unidades": 388
     },
     "Jarra IPA": {
-      "total": 4718000,
-      "unidades": 72
+      "total": 4790000,
+      "unidades": 73
     },
     "Soda saborizada": {
       "total": 4684897,
@@ -344,8 +344,8 @@
       "unidades": 61
     },
     "Papas y plátanos chips": {
-      "total": 3110539,
-      "unidades": 462
+      "total": 3117538,
+      "unidades": 463
     },
     "Jarra Stout": {
       "total": 2908600,
@@ -384,8 +384,8 @@
       "unidades": 274
     },
     "Cañita Hidromiel": {
-      "total": 1509500,
-      "unidades": 104
+      "total": 1539500,
+      "unidades": 106
     },
     "Jarra Hidromiel": {
       "total": 1486000,
@@ -415,6 +415,10 @@
       "total": 1036989,
       "unidades": 105
     },
+    "Cañita de barril Golden Ale - Siempre Viva": {
+      "total": 1011982,
+      "unidades": 103
+    },
     "Cerveza invitada": {
       "total": 1010000,
       "unidades": 55
@@ -426,10 +430,6 @@
     "B Botella Chope de vino": {
       "total": 999000,
       "unidades": 52
-    },
-    "Cañita de barril Golden Ale - Siempre Viva": {
-      "total": 991983,
-      "unidades": 101
     },
     "Patacones con guacamole": {
       "total": 983000,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 229327101,
-      "count": 3250
+      "total": 229555601,
+      "count": 3254
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 45496835,
@@ -991,6 +991,10 @@
     },
     "Biviana Marcela Garcia Rendon": {
       "total": 221008,
+      "count": 1
+    },
+    "DISTRINES LTDA": {
+      "total": 166000,
       "count": 1
     },
     "CERVBEER S.A.S": {

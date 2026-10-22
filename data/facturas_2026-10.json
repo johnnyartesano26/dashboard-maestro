@@ -1,10 +1,38 @@
 {
-  "fecha": "2026-10-21",
-  "total": 261,
-  "monto": 35871157,
+  "fecha": "2026-10-22",
+  "total": 265,
+  "monto": 36158657,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5441",
+      "cliente": "DISTRINES LTDA",
+      "total": 166000,
+      "status": "closed",
+      "fecha": "2026-10-21"
+    },
+    {
+      "id": "5440",
+      "cliente": "Consumidor Final",
+      "total": 20000,
+      "status": "closed",
+      "fecha": "2026-10-21"
+    },
+    {
+      "id": "5439",
+      "cliente": "Consumidor Final",
+      "total": 60500,
+      "status": "closed",
+      "fecha": "2026-10-21"
+    },
+    {
+      "id": "5438",
+      "cliente": "Consumidor Final",
+      "total": 41000,
+      "status": "closed",
+      "fecha": "2026-10-21"
+    },
     {
       "id": "5437",
       "cliente": "Consumidor Final",
@@ -121,7 +149,7 @@
       "id": "5421",
       "cliente": "ORRO S.A.S. Los Patios Boutique",
       "total": 269040,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-20"
     },
     {
@@ -198,7 +226,7 @@
       "id": "5410",
       "cliente": "MIX DE LA VILLA",
       "total": 259900,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-19"
     },
     {

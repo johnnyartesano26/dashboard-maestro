@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-23 01:05:30",
+  "generado": "2026-10-23 06:00:06",
   "anio": 2026,
   "kpis": {
-    "total_anual": 483632468,
-    "num_facturas": 3751,
-    "ticket_promedio": 128934
+    "total_anual": 483740968,
+    "num_facturas": 3755,
+    "ticket_promedio": 128826
   },
   "por_mes": {
     "2026-01": {
@@ -16,8 +16,8 @@
       "count": 400
     },
     "2026-03": {
-      "total": 59273316,
-      "count": 416
+      "total": 59129316,
+      "count": 415
     },
     "2026-04": {
       "total": 44418093,
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 37003737,
-      "count": 273
+      "total": 37256237,
+      "count": 278
     }
   },
   "por_mes_bar": {
@@ -58,8 +58,8 @@
       "count": 371
     },
     "2026-03": {
-      "total": 22997742,
-      "count": 357
+      "total": 22853742,
+      "count": 356
     },
     "2026-04": {
       "total": 24287333,
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 15353544,
-      "count": 220
+      "total": 15606044,
+      "count": 225
     }
   },
   "por_mes_externo": {
@@ -142,8 +142,8 @@
       "count": 400
     },
     "2026-03": {
-      "total": 58517316,
-      "count": 416
+      "total": 58373316,
+      "count": 415
     },
     "2026-04": {
       "total": 44132093,
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 36402737,
-      "count": 273
+      "total": 36655237,
+      "count": 278
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 408245732,
-      "count": 3611
+      "total": 408354232,
+      "count": 3615
     },
     "draft": {
       "total": 8906280,
@@ -260,28 +260,28 @@
       "unidades": 2640
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 22176598,
-      "unidades": 1412
+      "total": 22192598,
+      "unidades": 1413
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 19211035,
       "unidades": 861
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 19024399,
-      "unidades": 1221
+      "total": 19056399,
+      "unidades": 1223
     },
     "Experiencia de cata de cerveza": {
       "total": 17828580,
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 16092199,
-      "unidades": 912
+      "total": 16002199,
+      "unidades": 907
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 15650200,
-      "unidades": 897
+      "total": 15722200,
+      "unidades": 901
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 11108452,
@@ -296,8 +296,8 @@
       "unidades": 420
     },
     "Hidromiel - Bandada": {
-      "total": 9054000,
-      "unidades": 366
+      "total": 9079000,
+      "unidades": 367
     },
     "Cerveza industrial": {
       "total": 7975500,
@@ -384,16 +384,16 @@
       "unidades": 274
     },
     "Cañita Hidromiel": {
-      "total": 1539500,
-      "unidades": 106
+      "total": 1554500,
+      "unidades": 107
     },
     "Jarra Hidromiel": {
       "total": 1486000,
       "unidades": 17
     },
     "Sampler x 4 cañitas": {
-      "total": 1442500,
-      "unidades": 44
+      "total": 1472500,
+      "unidades": 45
     },
     "B Botella Irish Red Ale": {
       "total": 1430999,
@@ -416,8 +416,8 @@
       "unidades": 105
     },
     "Cañita de barril Golden Ale - Siempre Viva": {
-      "total": 1011982,
-      "unidades": 103
+      "total": 1021982,
+      "unidades": 104
     },
     "Cerveza invitada": {
       "total": 1010000,
@@ -432,8 +432,8 @@
       "unidades": 52
     },
     "Patacones con guacamole": {
-      "total": 993000,
-      "unidades": 100
+      "total": 983000,
+      "unidades": 99
     },
     "Mini perri-burguer": {
       "total": 971996,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 229908601,
-      "count": 3261
+      "total": 230017101,
+      "count": 3265
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 45496835,

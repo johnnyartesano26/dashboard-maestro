@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-23 16:11:04",
+  "generado": "2026-10-23 20:06:56",
   "anio": 2026,
   "kpis": {
     "total_anual": 483740968,
@@ -218,16 +218,16 @@
   },
   "por_estado": {
     "closed": {
-      "total": 408354232,
-      "count": 3615
+      "total": 414584692,
+      "count": 3620
     },
     "draft": {
       "total": 8906280,
       "count": 13
     },
     "open": {
-      "total": 65708357,
-      "count": 113
+      "total": 59477897,
+      "count": 108
     },
     "void": {
       "total": 772099,

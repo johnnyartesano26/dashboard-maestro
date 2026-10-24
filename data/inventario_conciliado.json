@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-24 18:34:14",
+  "fecha": "2026-10-24 18:44:23",
   "fisico": {
     "GOLDEN ALE": {
       "bot": 33.0,
@@ -54,7 +54,7 @@
       "litros": 0.0
     },
     "GOLDEN ALE": {
-      "bot": 685.0,
+      "bot": 691.0,
       "barril": 8.3,
       "litros": 0.0
     },
@@ -64,12 +64,12 @@
       "litros": 0.0
     },
     "IPA": {
-      "bot": 1164.0,
+      "bot": 1179.0,
       "barril": 109.5,
       "litros": 57.2
     },
     "IRISH RED ALE": {
-      "bot": 806.0,
+      "bot": 809.0,
       "barril": 317.70000000000005,
       "litros": 57.2
     },

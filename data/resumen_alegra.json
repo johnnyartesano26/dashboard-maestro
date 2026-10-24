@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-24 06:28:12",
+  "generado": "2026-10-24 11:40:16",
   "anio": 2026,
   "kpis": {
-    "total_anual": 485725558,
-    "num_facturas": 3768,
-    "ticket_promedio": 128908
+    "total_anual": 485800558,
+    "num_facturas": 3769,
+    "ticket_promedio": 128894
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 39240827,
-      "count": 291
+      "total": 39315827,
+      "count": 292
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 17018044,
-      "count": 235
+      "total": 17093044,
+      "count": 236
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 38615827,
-      "count": 291
+      "total": 38690827,
+      "count": 292
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 416216942,
-      "count": 3631
+      "total": 416291942,
+      "count": 3632
     },
     "draft": {
       "total": 8906280,
@@ -292,8 +292,8 @@
       "unidades": 473
     },
     "Hidromiel - Bandada": {
-      "total": 9139000,
-      "unidades": 370
+      "total": 9214000,
+      "unidades": 373
     },
     "Cerveza por litro Stout - Sangre Negra": {
       "total": 9114210,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 231429101,
-      "count": 3275
+      "total": 231504101,
+      "count": 3276
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 45496835,

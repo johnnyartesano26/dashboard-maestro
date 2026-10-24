@@ -1,15 +1,43 @@
 {
-  "generado": "2026-10-24 18:07:09",
+  "generado": "2026-10-24 20:32:09",
   "anio": "2026",
-  "total_abiertas": 130,
-  "total_anio": 110,
+  "total_abiertas": 134,
+  "total_anio": 114,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 29,
-      "monto": 11984594,
+      "count": 33,
+      "monto": 13042904,
       "facturas": [
+        {
+          "numero": "FE823",
+          "cliente": "GOMEZ DE MARINILLA S.A.S. (LA PAMPA PROVENZA)",
+          "fecha": "2026-10-24",
+          "total": 254760,
+          "balance": 254760
+        },
+        {
+          "numero": "FE822",
+          "cliente": "GOMEZ DE MARINILLA S.A.S. (LA PAMPA INTERPLAZA)",
+          "fecha": "2026-10-24",
+          "total": 254760,
+          "balance": 254760
+        },
+        {
+          "numero": "FE821",
+          "cliente": "ORRO S.A.S. Los Patios Boutique",
+          "fecha": "2026-10-24",
+          "total": 276180,
+          "balance": 276180
+        },
+        {
+          "numero": "FE820",
+          "cliente": "PINEA S.A.S",
+          "fecha": "2026-10-24",
+          "total": 272610,
+          "balance": 272610
+        },
         {
           "numero": "FE819",
           "cliente": "ERICA TATIANA CANO",

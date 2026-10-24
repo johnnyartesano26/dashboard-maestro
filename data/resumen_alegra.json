@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-24 18:06:39",
+  "generado": "2026-10-24 20:31:36",
   "anio": 2026,
   "kpis": {
-    "total_anual": 485800558,
-    "num_facturas": 3769,
-    "ticket_promedio": 128894
+    "total_anual": 486858868,
+    "num_facturas": 3773,
+    "ticket_promedio": 129038
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 39315827,
-      "count": 292
+      "total": 40374137,
+      "count": 296
     }
   },
   "por_mes_bar": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 22222783,
-      "count": 56
+      "total": 23281093,
+      "count": 60
     }
   },
   "por_mes_factura": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 38690827,
-      "count": 292
+      "total": 39701137,
+      "count": 296
     }
   },
   "por_mes_domicilio": {
@@ -212,8 +212,8 @@
       "count": 45
     },
     "2026-10": {
-      "total": 625000,
-      "count": 48
+      "total": 673000,
+      "count": 52
     }
   },
   "por_estado": {
@@ -226,8 +226,8 @@
       "count": 13
     },
     "open": {
-      "total": 59830237,
-      "count": 110
+      "total": 60888547,
+      "count": 114
     },
     "void": {
       "total": 772099,
@@ -240,24 +240,24 @@
       "unidades": 2477
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 38159137,
-      "unidades": 3437
+      "total": 38532202,
+      "unidades": 3470
     },
     "Cerveza American IPA - Vagabundo": {
       "total": 36904998,
       "unidades": 1977
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 30186349,
-      "unidades": 3076
+      "total": 30459454,
+      "unidades": 3103
     },
     "Cerveza en botella Stout - Sangre Negra": {
       "total": 29674650,
       "unidades": 2998
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 26048312,
-      "unidades": 2664
+      "total": 26412452,
+      "unidades": 2700
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 22288598,
@@ -312,8 +312,8 @@
       "unidades": 610
     },
     "Domicilio": {
-      "total": 5199701,
-      "unidades": 391
+      "total": 5247701,
+      "unidades": 395
     },
     "Jarra IPA": {
       "total": 4862000,
@@ -614,8 +614,8 @@
       "count": 2
     },
     "PINEA S.A.S": {
-      "total": 10533400,
-      "count": 32
+      "total": 10806010,
+      "count": 33
     },
     "DANIEL SCHMUTTE": {
       "total": 10248725,
@@ -745,6 +745,10 @@
       "total": 1329480,
       "count": 2
     },
+    "ORRO S.A.S. Los Patios Boutique": {
+      "total": 1297500,
+      "count": 4
+    },
     "Inversiones Zeppeling S.A.S": {
       "total": 1292639,
       "count": 3
@@ -763,10 +767,6 @@
     },
     "SAMUEL DAVID GAMBA LUQUE": {
       "total": 1076440,
-      "count": 3
-    },
-    "ORRO S.A.S. Los Patios Boutique": {
-      "total": 1021320,
       "count": 3
     },
     "ORRO S.A.S.": {
@@ -975,6 +975,14 @@
     },
     "ESTRADA GOURMET SAS": {
       "total": 255760,
+      "count": 1
+    },
+    "GOMEZ DE MARINILLA S.A.S. (LA PAMPA PROVENZA)": {
+      "total": 254760,
+      "count": 1
+    },
+    "GOMEZ DE MARINILLA S.A.S. (LA PAMPA INTERPLAZA)": {
+      "total": 254760,
       "count": 1
     },
     "GOMEZ DE MARINILLA S.A.S. (LAURELES PLAZA 2° PARQUE)": {

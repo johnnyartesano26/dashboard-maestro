@@ -1,10 +1,38 @@
 {
   "fecha": "2026-10-24",
-  "total": 292,
-  "monto": 39315827,
+  "total": 296,
+  "monto": 40374137,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5472",
+      "cliente": "GOMEZ DE MARINILLA S.A.S. (LA PAMPA PROVENZA)",
+      "total": 254760,
+      "status": "open",
+      "fecha": "2026-10-24"
+    },
+    {
+      "id": "5471",
+      "cliente": "GOMEZ DE MARINILLA S.A.S. (LA PAMPA INTERPLAZA)",
+      "total": 254760,
+      "status": "open",
+      "fecha": "2026-10-24"
+    },
+    {
+      "id": "5470",
+      "cliente": "ORRO S.A.S. Los Patios Boutique",
+      "total": 276180,
+      "status": "open",
+      "fecha": "2026-10-24"
+    },
+    {
+      "id": "5469",
+      "cliente": "PINEA S.A.S",
+      "total": 272610,
+      "status": "open",
+      "fecha": "2026-10-24"
+    },
     {
       "id": "5468",
       "cliente": "Consumidor Final",

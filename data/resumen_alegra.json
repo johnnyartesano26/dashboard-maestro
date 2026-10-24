@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-23 23:11:54",
+  "generado": "2026-10-24 01:37:58",
   "anio": 2026,
   "kpis": {
-    "total_anual": 483740968,
-    "num_facturas": 3755,
-    "ticket_promedio": 128826
+    "total_anual": 484710558,
+    "num_facturas": 3763,
+    "ticket_promedio": 128810
   },
   "por_mes": {
     "2026-01": {
@@ -12,8 +12,8 @@
       "count": 378
     },
     "2026-02": {
-      "total": 39770027,
-      "count": 400
+      "total": 39787027,
+      "count": 401
     },
     "2026-03": {
       "total": 59129316,
@@ -40,12 +40,12 @@
       "count": 433
     },
     "2026-09": {
-      "total": 58554047,
-      "count": 418
+      "total": 58648047,
+      "count": 419
     },
     "2026-10": {
-      "total": 37256237,
-      "count": 278
+      "total": 38114827,
+      "count": 284
     }
   },
   "por_mes_bar": {
@@ -54,8 +54,8 @@
       "count": 332
     },
     "2026-02": {
-      "total": 25385656,
-      "count": 371
+      "total": 25402656,
+      "count": 372
     },
     "2026-03": {
       "total": 22853742,
@@ -82,12 +82,12 @@
       "count": 370
     },
     "2026-09": {
-      "total": 27028389,
-      "count": 357
+      "total": 27122389,
+      "count": 358
     },
     "2026-10": {
-      "total": 15606044,
-      "count": 225
+      "total": 15892044,
+      "count": 228
     }
   },
   "por_mes_externo": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 21650193,
-      "count": 53
+      "total": 22222783,
+      "count": 56
     }
   },
   "por_mes_factura": {
@@ -138,8 +138,8 @@
       "count": 378
     },
     "2026-02": {
-      "total": 39443027,
-      "count": 400
+      "total": 39460027,
+      "count": 401
     },
     "2026-03": {
       "total": 58373316,
@@ -166,12 +166,12 @@
       "count": 433
     },
     "2026-09": {
-      "total": 57994547,
-      "count": 418
+      "total": 58088547,
+      "count": 419
     },
     "2026-10": {
-      "total": 36655237,
-      "count": 278
+      "total": 37489827,
+      "count": 284
     }
   },
   "por_mes_domicilio": {
@@ -212,22 +212,22 @@
       "count": 45
     },
     "2026-10": {
-      "total": 601000,
-      "count": 46
+      "total": 625000,
+      "count": 48
     }
   },
   "por_estado": {
     "closed": {
-      "total": 414584692,
-      "count": 3620
+      "total": 415201942,
+      "count": 3626
     },
     "draft": {
       "total": 8906280,
       "count": 13
     },
     "open": {
-      "total": 59477897,
-      "count": 108
+      "total": 59830237,
+      "count": 110
     },
     "void": {
       "total": 772099,
@@ -240,44 +240,44 @@
       "unidades": 2477
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 38136527,
-      "unidades": 3435
+      "total": 38159137,
+      "unidades": 3437
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 36638998,
-      "unidades": 1963
+      "total": 36826998,
+      "unidades": 1973
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 29923359,
-      "unidades": 3050
+      "total": 30186349,
+      "unidades": 3076
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 29654420,
-      "unidades": 2996
+      "total": 29674650,
+      "unidades": 2998
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 25805552,
-      "unidades": 2640
+      "total": 26048312,
+      "unidades": 2664
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 22192598,
-      "unidades": 1413
+      "total": 22256598,
+      "unidades": 1417
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 19211035,
       "unidades": 861
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 19056399,
-      "unidades": 1223
+      "total": 19072399,
+      "unidades": 1224
     },
     "Experiencia de cata de cerveza": {
       "total": 17828580,
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 16002199,
-      "unidades": 907
+      "total": 16038199,
+      "unidades": 909
     },
     "Cerveza APA - Cienfuegos": {
       "total": 15722200,
@@ -291,13 +291,13 @@
       "total": 10019664,
       "unidades": 473
     },
+    "Hidromiel - Bandada": {
+      "total": 9129000,
+      "unidades": 369
+    },
     "Cerveza por litro Stout - Sangre Negra": {
       "total": 9114210,
       "unidades": 420
-    },
-    "Hidromiel - Bandada": {
-      "total": 9079000,
-      "unidades": 367
     },
     "Cerveza industrial": {
       "total": 7975500,
@@ -308,12 +308,12 @@
       "unidades": 224
     },
     "Mini hamburguesa": {
-      "total": 5770896,
-      "unidades": 610
+      "total": 5780896,
+      "unidades": 611
     },
     "Domicilio": {
-      "total": 5175701,
-      "unidades": 389
+      "total": 5199701,
+      "unidades": 391
     },
     "Jarra IPA": {
       "total": 4718000,
@@ -344,8 +344,8 @@
       "unidades": 61
     },
     "Papas y plátanos chips": {
-      "total": 3145534,
-      "unidades": 467
+      "total": 3159533,
+      "unidades": 469
     },
     "Jarra Stout": {
       "total": 2908600,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 230017101,
-      "count": 3265
+      "total": 230414101,
+      "count": 3270
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 45496835,
@@ -897,6 +897,10 @@
       "total": 497660,
       "count": 2
     },
+    "ERICA TATIANA CANO": {
+      "total": 463505,
+      "count": 6
+    },
     "Dataware Sistemas": {
       "total": 446000,
       "count": 2
@@ -912,10 +916,6 @@
     "Jessica Gonzales Perez": {
       "total": 412341,
       "count": 1
-    },
-    "ERICA TATIANA CANO": {
-      "total": 400435,
-      "count": 5
     },
     "ALTANA ROOFTOP S.A.S": {
       "total": 390420,
@@ -975,6 +975,14 @@
     },
     "ESTRADA GOURMET SAS": {
       "total": 255760,
+      "count": 1
+    },
+    "GOMEZ DE MARINILLA S.A.S. (LAURELES PLAZA 2° PARQUE)": {
+      "total": 254760,
+      "count": 1
+    },
+    "GOMEZ DE MARINILLA S.A.S. (LA PAMPA AV JARDIN)": {
+      "total": 254760,
       "count": 1
     },
     "BERTHA VASQUEZ BARBOSA": {

@@ -1,28 +1,42 @@
 {
-  "generado": "2026-10-23 23:12:24",
+  "generado": "2026-10-24 01:38:29",
   "anio": "2026",
-  "total_abiertas": 128,
-  "total_anio": 108,
+  "total_abiertas": 130,
+  "total_anio": 110,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 27,
-      "monto": 11632254,
+      "count": 29,
+      "monto": 11984594,
       "facturas": [
+        {
+          "numero": "FE819",
+          "cliente": "ERICA TATIANA CANO",
+          "fecha": "2026-10-23",
+          "total": 63070,
+          "balance": 63070
+        },
+        {
+          "numero": "FE818",
+          "cliente": "GOMEZ DE MARINILLA S.A.S. (LAURELES PLAZA 2° PARQUE)",
+          "fecha": "2026-10-23",
+          "total": 254760,
+          "balance": 254760
+        },
+        {
+          "numero": "FE817",
+          "cliente": "GOMEZ DE MARINILLA S.A.S. (LA PAMPA AV JARDIN)",
+          "fecha": "2026-10-23",
+          "total": 254760,
+          "balance": 254760
+        },
         {
           "numero": "FE816",
           "cliente": "JUAN ESTEBAN GOMEZ MORENO",
           "fecha": "2026-10-22",
           "total": 529080,
           "balance": 529080
-        },
-        {
-          "numero": "FE814",
-          "cliente": "PATRICIA MELO GONZALEZ",
-          "fecha": "2026-10-21",
-          "total": 220250,
-          "balance": 220250
         },
         {
           "numero": "FE813",

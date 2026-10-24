@@ -1,10 +1,52 @@
 {
-  "fecha": "2026-10-23",
-  "total": 278,
-  "monto": 37256237,
+  "fecha": "2026-10-24",
+  "total": 284,
+  "monto": 38114827,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5460",
+      "cliente": "Consumidor Final",
+      "total": 160000,
+      "status": "closed",
+      "fecha": "2026-10-23"
+    },
+    {
+      "id": "5459",
+      "cliente": "Consumidor Final",
+      "total": 56000,
+      "status": "closed",
+      "fecha": "2026-10-23"
+    },
+    {
+      "id": "5458",
+      "cliente": "Consumidor Final",
+      "total": 70000,
+      "status": "closed",
+      "fecha": "2026-10-23"
+    },
+    {
+      "id": "5457",
+      "cliente": "ERICA TATIANA CANO",
+      "total": 63070,
+      "status": "open",
+      "fecha": "2026-10-23"
+    },
+    {
+      "id": "5456",
+      "cliente": "GOMEZ DE MARINILLA S.A.S. (LAURELES PLAZA 2° PARQUE)",
+      "total": 254760,
+      "status": "open",
+      "fecha": "2026-10-23"
+    },
+    {
+      "id": "5455",
+      "cliente": "GOMEZ DE MARINILLA S.A.S. (LA PAMPA AV JARDIN)",
+      "total": 254760,
+      "status": "open",
+      "fecha": "2026-10-23"
+    },
     {
       "id": "5454",
       "cliente": "Consumidor Final",
@@ -135,7 +177,7 @@
       "id": "5436",
       "cliente": "PATRICIA MELO GONZALEZ",
       "total": 220250,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-21"
     },
     {

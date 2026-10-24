@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-23T21:17:09.517576",
+  "generado": "2026-10-24T04:11:06.515593",
   "fecha_lectura": "2026-10-19 14:50:12",
   "fermentadores": [
     {
@@ -149,6 +149,6 @@
   "totales": {
     "litros_fermentando": 2217,
     "litros_barril": 30,
-    "ventas_cop": 13107050
+    "ventas_cop": 12511700
   }
 }

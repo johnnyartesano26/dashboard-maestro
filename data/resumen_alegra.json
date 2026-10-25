@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-25 01:05:45",
+  "generado": "2026-10-25 05:56:34",
   "anio": 2026,
   "kpis": {
-    "total_anual": 486884868,
-    "num_facturas": 3774,
-    "ticket_promedio": 129010
+    "total_anual": 488237868,
+    "num_facturas": 3791,
+    "ticket_promedio": 128789
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 40400137,
-      "count": 297
+      "total": 41753137,
+      "count": 314
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 17119044,
-      "count": 237
+      "total": 18472044,
+      "count": 254
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 39727137,
-      "count": 297
+      "total": 41080137,
+      "count": 314
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 416317942,
-      "count": 3633
+      "total": 417670942,
+      "count": 3650
     },
     "draft": {
       "total": 8906280,
@@ -244,8 +244,8 @@
       "unidades": 3470
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 36923998,
-      "unidades": 1978
+      "total": 37037998,
+      "unidades": 1984
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 30459454,
@@ -260,24 +260,24 @@
       "unidades": 2700
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 22288598,
-      "unidades": 1419
+      "total": 22576598,
+      "unidades": 1437
+    },
+    "Cerveza Golden Ale - Siempre Viva": {
+      "total": 19296399,
+      "unidades": 1238
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 19211035,
       "unidades": 861
-    },
-    "Cerveza Golden Ale - Siempre Viva": {
-      "total": 19200399,
-      "unidades": 1232
     },
     "Experiencia de cata de cerveza": {
       "total": 17828580,
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 16092199,
-      "unidades": 912
+      "total": 16272199,
+      "unidades": 922
     },
     "Cerveza APA - Cienfuegos": {
       "total": 15722200,
@@ -292,8 +292,8 @@
       "unidades": 473
     },
     "Hidromiel - Bandada": {
-      "total": 9214000,
-      "unidades": 373
+      "total": 9339000,
+      "unidades": 378
     },
     "Cerveza por litro Stout - Sangre Negra": {
       "total": 9114210,
@@ -304,12 +304,12 @@
       "unidades": 1152
     },
     "Hamburguesa": {
-      "total": 7869956,
-      "unidades": 226
+      "total": 7904956,
+      "unidades": 227
     },
     "Mini hamburguesa": {
-      "total": 5770896,
-      "unidades": 610
+      "total": 5790896,
+      "unidades": 612
     },
     "Domicilio": {
       "total": 5247701,
@@ -324,8 +324,8 @@
       "unidades": 471
     },
     "Jarra Irish Red Ale": {
-      "total": 4243997,
-      "unidades": 74
+      "total": 4303997,
+      "unidades": 75
     },
     "Cerveza Red IPA MM": {
       "total": 4022000,
@@ -340,12 +340,12 @@
       "unidades": 62
     },
     "Jarra Golden Ale": {
-      "total": 3559998,
-      "unidades": 62
+      "total": 3619998,
+      "unidades": 63
     },
     "Papas y plátanos chips": {
-      "total": 3166532,
-      "unidades": 470
+      "total": 3187530,
+      "unidades": 473
     },
     "Jarra Stout": {
       "total": 2908600,
@@ -355,17 +355,17 @@
       "total": 2859650,
       "unidades": 146
     },
+    "Nachos Pulled pork": {
+      "total": 1923000,
+      "unidades": 107
+    },
     "B Botella Golden Ale": {
       "total": 1886999,
       "unidades": 122
     },
-    "Nachos Pulled pork": {
-      "total": 1851000,
-      "unidades": 103
-    },
     "Evento banda": {
-      "total": 1731040,
-      "unidades": 101
+      "total": 1821040,
+      "unidades": 107
     },
     "Jarra Golden Ale / Irish Red Ale": {
       "total": 1715998,
@@ -384,12 +384,12 @@
       "unidades": 275
     },
     "Cañita Hidromiel": {
-      "total": 1584500,
-      "unidades": 109
+      "total": 1614500,
+      "unidades": 111
     },
     "Sampler x 4 cañitas": {
-      "total": 1562500,
-      "unidades": 48
+      "total": 1597500,
+      "unidades": 49
     },
     "Jarra Hidromiel": {
       "total": 1486000,
@@ -416,8 +416,8 @@
       "unidades": 105
     },
     "Cañita de barril Golden Ale - Siempre Viva": {
-      "total": 1021982,
-      "unidades": 104
+      "total": 1031982,
+      "unidades": 105
     },
     "Cerveza invitada": {
       "total": 1010000,
@@ -488,12 +488,12 @@
       "unidades": 50
     },
     "Kombucha": {
-      "total": 420000,
-      "unidades": 30
+      "total": 448000,
+      "unidades": 32
     },
     "Agua en botella": {
-      "total": 411500,
-      "unidades": 137
+      "total": 416500,
+      "unidades": 138
     },
     "Invitada IPA La Barbarie": {
       "total": 380000,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 231530101,
-      "count": 3277
+      "total": 232883101,
+      "count": 3294
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 45496835,

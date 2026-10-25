@@ -1,10 +1,17 @@
 {
-  "fecha": "2026-10-24",
-  "total": 296,
-  "monto": 40374137,
+  "fecha": "2026-10-25",
+  "total": 297,
+  "monto": 40400137,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5473",
+      "cliente": "Consumidor Final",
+      "total": 26000,
+      "status": "closed",
+      "fecha": "2026-10-24"
+    },
     {
       "id": "5472",
       "cliente": "GOMEZ DE MARINILLA S.A.S. (LA PAMPA PROVENZA)",

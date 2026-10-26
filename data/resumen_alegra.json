@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-25 23:42:58",
+  "generado": "2026-10-26 01:45:57",
   "anio": 2026,
   "kpis": {
-    "total_anual": 488528868,
-    "num_facturas": 3796,
-    "ticket_promedio": 128696
+    "total_anual": 488563868,
+    "num_facturas": 3797,
+    "ticket_promedio": 128671
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 42044137,
-      "count": 319
+      "total": 42079137,
+      "count": 320
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 18763044,
-      "count": 259
+      "total": 18798044,
+      "count": 260
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 41371137,
-      "count": 319
+      "total": 41406137,
+      "count": 320
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 417961942,
-      "count": 3655
+      "total": 417996942,
+      "count": 3656
     },
     "draft": {
       "total": 8906280,
@@ -244,8 +244,8 @@
       "unidades": 3470
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 37139998,
-      "unidades": 1990
+      "total": 37158998,
+      "unidades": 1991
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 30459454,
@@ -260,8 +260,8 @@
       "unidades": 2700
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 22656598,
-      "unidades": 1442
+      "total": 22672598,
+      "unidades": 1443
     },
     "Cerveza Golden Ale - Siempre Viva": {
       "total": 19296399,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 233174101,
-      "count": 3299
+      "total": 233209101,
+      "count": 3300
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 45496835,

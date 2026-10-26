@@ -1,10 +1,24 @@
 {
   "fecha": "2026-10-26",
-  "total": 320,
-  "monto": 42079137,
+  "total": 322,
+  "monto": 43878094,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5498",
+      "cliente": "Leonardo Gaitan Zuluaga",
+      "total": 511900,
+      "status": "open",
+      "fecha": "2026-10-26"
+    },
+    {
+      "id": "5497",
+      "cliente": "JUAN CARLOS ORREGO ZAPATA",
+      "total": 1287057,
+      "status": "open",
+      "fecha": "2026-10-26"
+    },
     {
       "id": "5496",
       "cliente": "Consumidor Final",

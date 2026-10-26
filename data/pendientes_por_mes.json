@@ -1,15 +1,29 @@
 {
-  "generado": "2026-10-26 14:11:36",
+  "generado": "2026-10-26 20:04:43",
   "anio": "2026",
-  "total_abiertas": 134,
-  "total_anio": 114,
+  "total_abiertas": 136,
+  "total_anio": 116,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 33,
-      "monto": 13042904,
+      "count": 35,
+      "monto": 14841861,
       "facturas": [
+        {
+          "numero": "FE825",
+          "cliente": "Leonardo Gaitan Zuluaga",
+          "fecha": "2026-10-26",
+          "total": 511900,
+          "balance": 511900
+        },
+        {
+          "numero": "FE824",
+          "cliente": "JUAN CARLOS ORREGO ZAPATA",
+          "fecha": "2026-10-26",
+          "total": 1287057,
+          "balance": 1287057
+        },
         {
           "numero": "FE823",
           "cliente": "GOMEZ DE MARINILLA S.A.S. (LA PAMPA PROVENZA)",

@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-26 14:11:03",
+  "generado": "2026-10-26 20:04:09",
   "anio": 2026,
   "kpis": {
-    "total_anual": 488563868,
-    "num_facturas": 3797,
-    "ticket_promedio": 128671
+    "total_anual": 490362825,
+    "num_facturas": 3799,
+    "ticket_promedio": 129077
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 42079137,
-      "count": 320
+      "total": 43878094,
+      "count": 322
     }
   },
   "por_mes_bar": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 23281093,
-      "count": 60
+      "total": 25080050,
+      "count": 62
     }
   },
   "por_mes_factura": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 41406137,
-      "count": 320
+      "total": 43151094,
+      "count": 322
     }
   },
   "por_mes_domicilio": {
@@ -212,8 +212,8 @@
       "count": 45
     },
     "2026-10": {
-      "total": 673000,
-      "count": 52
+      "total": 727000,
+      "count": 54
     }
   },
   "por_estado": {
@@ -226,8 +226,8 @@
       "count": 13
     },
     "open": {
-      "total": 60888547,
-      "count": 114
+      "total": 62687504,
+      "count": 116
     },
     "void": {
       "total": 772099,
@@ -236,40 +236,40 @@
   },
   "por_producto": {
     "Cerveza por litro Irish Red Ale - Mística": {
-      "total": 52570685,
-      "unidades": 2477
+      "total": 53182226,
+      "unidades": 2505
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 38532202,
-      "unidades": 3470
+      "total": 38554812,
+      "unidades": 3472
     },
     "Cerveza American IPA - Vagabundo": {
       "total": 37158998,
       "unidades": 1991
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 30459454,
-      "unidades": 3103
+      "total": 30520144,
+      "unidades": 3109
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 29674650,
-      "unidades": 2998
+      "total": 29745455,
+      "unidades": 3005
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 26412452,
-      "unidades": 2700
+      "total": 26695672,
+      "unidades": 2728
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 22672598,
       "unidades": 1443
     },
+    "Cerveza por litro American India Pale Ale - Vagabundo": {
+      "total": 19856550,
+      "unidades": 889
+    },
     "Cerveza Golden Ale - Siempre Viva": {
       "total": 19296399,
       "unidades": 1238
-    },
-    "Cerveza por litro American India Pale Ale - Vagabundo": {
-      "total": 19211035,
-      "unidades": 861
     },
     "Experiencia de cata de cerveza": {
       "total": 17828580,
@@ -284,8 +284,8 @@
       "unidades": 901
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
-      "total": 11108452,
-      "unidades": 1127
+      "total": 11159027,
+      "unidades": 1132
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -312,8 +312,8 @@
       "unidades": 612
     },
     "Domicilio": {
-      "total": 5247701,
-      "unidades": 395
+      "total": 5301701,
+      "unidades": 397
     },
     "Jarra IPA": {
       "total": 4862000,
@@ -602,8 +602,8 @@
       "count": 3300
     },
     "JUAN CARLOS ORREGO ZAPATA": {
-      "total": 45496835,
-      "count": 44
+      "total": 46783892,
+      "count": 45
     },
     "INVERSIONES LATINERIA S.A.S": {
       "total": 35650673,
@@ -622,8 +622,8 @@
       "count": 24
     },
     "Leonardo Gaitan Zuluaga": {
-      "total": 9092421,
-      "count": 24
+      "total": 9604321,
+      "count": 25
     },
     "INVERSIONES BISONTALAS S.A.S.": {
       "total": 8848602,

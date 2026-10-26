@@ -1,62 +1,62 @@
 {
-  "generado": "2026-10-26T12:41:06.619077",
-  "fecha_lectura": "2026-10-19 14:50:12",
+  "generado": "2026-10-26T20:24:17.193899",
+  "fecha_lectura": "2026-10-26 11:55:27",
   "fermentadores": [
     {
       "nombre": "F1 Frankie",
       "estilo": "STOUT",
-      "litros": 350.0,
+      "litros": 260.0,
       "capacidad": 400,
-      "porcentaje": 88
+      "porcentaje": 65
     },
     {
       "nombre": "F2 Igor",
       "estilo": "IRISH RED ALE",
-      "litros": 621.0,
+      "litros": 480.0,
       "capacidad": 1200,
-      "porcentaje": 52
+      "porcentaje": 40
     },
     {
       "nombre": "F3 Principito",
       "estilo": "APA",
-      "litros": 70.0,
+      "litros": 320.0,
       "capacidad": 400,
-      "porcentaje": 18
+      "porcentaje": 80
     },
     {
       "nombre": "F4 Gargantua",
       "estilo": "IPA",
-      "litros": 600.0,
+      "litros": 610.0,
       "capacidad": 700,
-      "porcentaje": 86
+      "porcentaje": 87
     },
     {
       "nombre": "F5 Pantagruel",
       "estilo": "IPA",
-      "litros": 100.0,
+      "litros": 90.0,
       "capacidad": 800,
-      "porcentaje": 12
+      "porcentaje": 11
     },
     {
       "nombre": "F6 Potter",
-      "estilo": "GOLDEN ALE",
-      "litros": 180.0,
+      "estilo": "",
+      "litros": 0.0,
       "capacidad": 1000,
-      "porcentaje": 18
+      "porcentaje": 0
     },
     {
       "nombre": "F7 HighLander",
       "estilo": "HIDROMIEL",
-      "litros": 266.0,
+      "litros": 192.0,
       "capacidad": 500,
-      "porcentaje": 53
+      "porcentaje": 38
     }
   ],
   "barriles": [
     {
       "codigo": "PTL01",
       "estilo": "GOLDEN ALE",
-      "litros": 0
+      "litros": 89.9
     },
     {
       "codigo": "PTL02",
@@ -66,7 +66,7 @@
     {
       "codigo": "PTL03",
       "estilo": "APA",
-      "litros": 0
+      "litros": 99.2
     },
     {
       "codigo": "PTL04",
@@ -86,7 +86,7 @@
     {
       "codigo": "",
       "estilo": "HIDROMIEL",
-      "litros": 30.0
+      "litros": 46.0
     },
     {
       "codigo": "",
@@ -147,8 +147,8 @@
     }
   ],
   "totales": {
-    "litros_fermentando": 2217,
-    "litros_barril": 30,
-    "ventas_cop": 11680700
+    "litros_fermentando": 2187,
+    "litros_barril": 235,
+    "ventas_cop": 13147050
   }
 }

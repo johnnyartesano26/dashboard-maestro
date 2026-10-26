@@ -296,7 +296,7 @@
       "id": "5457",
       "cliente": "ERICA TATIANA CANO",
       "total": 63070,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-23"
     },
     {
@@ -541,7 +541,7 @@
       "id": "5422",
       "cliente": "PINEA S.A.S",
       "total": 450230,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-20"
     },
     {
@@ -667,14 +667,14 @@
       "id": "5382",
       "cliente": "SAMUEL DAVID GAMBA LUQUE",
       "total": 542360,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-19"
     },
     {
       "id": "5381",
       "cliente": "PINEA S.A.S",
       "total": 269040,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-19"
     },
     {
@@ -1017,7 +1017,7 @@
       "id": "5354",
       "cliente": "ANTHONY CRAIG WATSON",
       "total": 266660,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-15"
     },
     {

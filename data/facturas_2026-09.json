@@ -254,7 +254,7 @@
       "id": "5141",
       "cliente": "JUAN ESTEBAN GOMEZ MORENO",
       "total": 613570,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-29"
     },
     {
@@ -1129,7 +1129,7 @@
       "id": "5016",
       "cliente": "FUNDACION JARDIN BOTANICO \"JOAQUIN ANTONIO URIBE\" DE MEDELLIN",
       "total": 465885,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-19"
     },
     {
@@ -1283,7 +1283,7 @@
       "id": "4994",
       "cliente": "JUAN ESTEBAN GOMEZ MORENO",
       "total": 513800,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-09-17"
     },
     {

@@ -1,21 +1,21 @@
 {
-  "generado": "2026-10-26 20:04:43",
+  "generado": "2026-10-26 23:51:43",
   "anio": "2026",
-  "total_abiertas": 136,
-  "total_anio": 116,
+  "total_abiertas": 128,
+  "total_anio": 108,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 35,
-      "monto": 14841861,
+      "count": 30,
+      "monto": 12885476,
       "facturas": [
         {
           "numero": "FE825",
           "cliente": "Leonardo Gaitan Zuluaga",
           "fecha": "2026-10-26",
           "total": 511900,
-          "balance": 511900
+          "balance": 146875
         },
         {
           "numero": "FE824",
@@ -53,13 +53,6 @@
           "balance": 272610
         },
         {
-          "numero": "FE819",
-          "cliente": "ERICA TATIANA CANO",
-          "fecha": "2026-10-23",
-          "total": 63070,
-          "balance": 63070
-        },
-        {
           "numero": "FE818",
           "cliente": "GOMEZ DE MARINILLA S.A.S. (LAURELES PLAZA 2° PARQUE)",
           "fecha": "2026-10-23",
@@ -79,13 +72,6 @@
           "fecha": "2026-10-22",
           "total": 529080,
           "balance": 529080
-        },
-        {
-          "numero": "FE813",
-          "cliente": "PINEA S.A.S",
-          "fecha": "2026-10-20",
-          "total": 450230,
-          "balance": 450230
         },
         {
           "numero": "FE807",
@@ -116,20 +102,6 @@
           "balance": 1257057
         },
         {
-          "numero": "FE803",
-          "cliente": "SAMUEL DAVID GAMBA LUQUE",
-          "fecha": "2026-10-19",
-          "total": 542360,
-          "balance": 542360
-        },
-        {
-          "numero": "FE802",
-          "cliente": "PINEA S.A.S",
-          "fecha": "2026-10-19",
-          "total": 269040,
-          "balance": 269040
-        },
-        {
           "numero": "FE799",
           "cliente": "JUAN CARLOS ORREGO ZAPATA",
           "fecha": "2026-10-15",
@@ -142,13 +114,6 @@
           "fecha": "2026-10-15",
           "total": 544550,
           "balance": 544550
-        },
-        {
-          "numero": "FE797",
-          "cliente": "ANTHONY CRAIG WATSON",
-          "fecha": "2026-10-15",
-          "total": 266660,
-          "balance": 266660
         },
         {
           "numero": "FE794",
@@ -260,8 +225,8 @@
     {
       "mes": "2026-09",
       "label": "Septiembre 2026",
-      "count": 16,
-      "monto": 6528693,
+      "count": 13,
+      "monto": 4935438,
       "facturas": [
         {
           "numero": "FE761",
@@ -292,13 +257,6 @@
           "balance": 146255
         },
         {
-          "numero": "FE755",
-          "cliente": "JUAN ESTEBAN GOMEZ MORENO",
-          "fecha": "2026-09-29",
-          "total": 613570,
-          "balance": 613570
-        },
-        {
           "numero": "FE754",
           "cliente": "PINEA S.A.S",
           "fecha": "2026-09-29",
@@ -318,20 +276,6 @@
           "fecha": "2026-09-29",
           "total": 329730,
           "balance": 329730
-        },
-        {
-          "numero": "FE740",
-          "cliente": "FUNDACION JARDIN BOTANICO \"JOAQUIN ANTONIO URIBE\" DE MEDELLIN",
-          "fecha": "2026-09-19",
-          "total": 465885,
-          "balance": 465885
-        },
-        {
-          "numero": "FE734",
-          "cliente": "JUAN ESTEBAN GOMEZ MORENO",
-          "fecha": "2026-09-17",
-          "total": 513800,
-          "balance": 513800
         },
         {
           "numero": "FE730",

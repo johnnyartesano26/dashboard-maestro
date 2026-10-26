@@ -1,8 +1,8 @@
 {
-  "fecha": "2026-10-25 18:42:49",
+  "fecha": "2026-10-26 14:15:35",
   "dry_run": false,
-  "pendientes_procesar": 0,
-  "emitidas": 0,
+  "pendientes_procesar": 1,
+  "emitidas": 1,
   "sin_stock": 0,
   "sin_cliente": 0,
   "errores": 0,
@@ -56,8 +56,8 @@
     },
     "IRISH RED ALE": {
       "bot": 139.0,
-      "barril": 20.0,
-      "litros": 621.0
+      "barril": 0.0,
+      "litros": 612.5
     },
     "APA": {
       "bot": 11.0,
@@ -66,7 +66,7 @@
     },
     "IPA": {
       "bot": 48.0,
-      "barril": 140.0,
+      "barril": 111.5,
       "litros": 700.0
     },
     "STOUT": {
@@ -92,45 +92,69 @@
   },
   "descuento_inventario": {
     "GOLDEN ALE": {
+      "bot_pedidas": 0,
       "bot_descontadas_de_stock": 0,
+      "bot_cubiertas_por_litros": 0,
+      "litros_pedidos": 0.0,
       "litros_descontados_de_barril": 0.0,
       "litros_descontados_de_fermentador": 0.0
     },
     "IRISH RED ALE": {
+      "bot_pedidas": 0,
       "bot_descontadas_de_stock": 0,
-      "litros_descontados_de_barril": 0.0,
-      "litros_descontados_de_fermentador": 0.0
+      "bot_cubiertas_por_litros": 0,
+      "litros_pedidos": 28.6,
+      "litros_descontados_de_barril": 20.0,
+      "litros_descontados_de_fermentador": 8.6
     },
     "APA": {
+      "bot_pedidas": 0,
       "bot_descontadas_de_stock": 0,
+      "bot_cubiertas_por_litros": 0,
+      "litros_pedidos": 0.0,
       "litros_descontados_de_barril": 0.0,
       "litros_descontados_de_fermentador": 0.0
     },
     "IPA": {
+      "bot_pedidas": 0,
       "bot_descontadas_de_stock": 0,
-      "litros_descontados_de_barril": 0.0,
+      "bot_cubiertas_por_litros": 0,
+      "litros_pedidos": 28.6,
+      "litros_descontados_de_barril": 28.6,
       "litros_descontados_de_fermentador": 0.0
     },
     "STOUT": {
+      "bot_pedidas": 0,
       "bot_descontadas_de_stock": 0,
+      "bot_cubiertas_por_litros": 0,
+      "litros_pedidos": 0.0,
       "litros_descontados_de_barril": 0.0,
       "litros_descontados_de_fermentador": 0.0
     },
     "GERMAN PILS": {
+      "bot_pedidas": 0,
       "bot_descontadas_de_stock": 0,
+      "bot_cubiertas_por_litros": 0,
+      "litros_pedidos": 0.0,
       "litros_descontados_de_barril": 0.0,
       "litros_descontados_de_fermentador": 0.0
     },
     "HIDROMIEL": {
+      "bot_pedidas": 0,
       "bot_descontadas_de_stock": 0,
+      "bot_cubiertas_por_litros": 0,
+      "litros_pedidos": 0.0,
       "litros_descontados_de_barril": 0.0,
       "litros_descontados_de_fermentador": 0.0
     },
     "RED IPA": {
+      "bot_pedidas": 0,
       "bot_descontadas_de_stock": 0,
+      "bot_cubiertas_por_litros": 0,
+      "litros_pedidos": 0.0,
       "litros_descontados_de_barril": 0.0,
       "litros_descontados_de_fermentador": 0.0
     }
   },
-  "resumen": "0 emitidas | 0 sin stock | 0 sin cliente"
+  "resumen": "1 emitidas | 0 sin stock | 0 sin cliente | 0 errores"
 }

@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-26 23:51:14",
+  "generado": "2026-10-27 03:57:44",
   "anio": 2026,
   "kpis": {
-    "total_anual": 490362825,
-    "num_facturas": 3799,
-    "ticket_promedio": 129077
+    "total_anual": 490532825,
+    "num_facturas": 3803,
+    "ticket_promedio": 128986
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 43878094,
-      "count": 322
+      "total": 44048094,
+      "count": 326
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 18798044,
-      "count": 260
+      "total": 18968044,
+      "count": 264
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 43151094,
-      "count": 322
+      "total": 43321094,
+      "count": 326
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 421181557,
-      "count": 3664
+      "total": 421351557,
+      "count": 3668
     },
     "draft": {
       "total": 8906280,
@@ -260,16 +260,16 @@
       "unidades": 2728
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 22672598,
-      "unidades": 1443
+      "total": 22704598,
+      "unidades": 1445
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 19856550,
       "unidades": 889
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 19296399,
-      "unidades": 1238
+      "total": 19360399,
+      "unidades": 1242
     },
     "Experiencia de cata de cerveza": {
       "total": 17828580,
@@ -336,8 +336,8 @@
       "unidades": 202
     },
     "Jarra APA": {
-      "total": 3858000,
-      "unidades": 62
+      "total": 3912000,
+      "unidades": 63
     },
     "Jarra Golden Ale": {
       "total": 3619998,
@@ -412,8 +412,8 @@
       "unidades": 66
     },
     "Cañita de barril Irish Red Ale - Mística": {
-      "total": 1036989,
-      "unidades": 105
+      "total": 1046989,
+      "unidades": 106
     },
     "Cañita de barril Golden Ale - Siempre Viva": {
       "total": 1031982,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 233209101,
-      "count": 3300
+      "total": 233379101,
+      "count": 3304
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 46783892,

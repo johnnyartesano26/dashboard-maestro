@@ -1,10 +1,38 @@
 {
-  "fecha": "2026-10-26",
-  "total": 322,
-  "monto": 43878094,
+  "fecha": "2026-10-27",
+  "total": 326,
+  "monto": 44048094,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5502",
+      "cliente": "Consumidor Final",
+      "total": 59000,
+      "status": "closed",
+      "fecha": "2026-10-26"
+    },
+    {
+      "id": "5501",
+      "cliente": "Consumidor Final",
+      "total": 64000,
+      "status": "closed",
+      "fecha": "2026-10-26"
+    },
+    {
+      "id": "5500",
+      "cliente": "Consumidor Final",
+      "total": 10000,
+      "status": "closed",
+      "fecha": "2026-10-26"
+    },
+    {
+      "id": "5499",
+      "cliente": "Consumidor Final",
+      "total": 37000,
+      "status": "closed",
+      "fecha": "2026-10-26"
+    },
     {
       "id": "5498",
       "cliente": "Leonardo Gaitan Zuluaga",

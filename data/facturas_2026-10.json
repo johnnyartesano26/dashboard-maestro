@@ -1,10 +1,31 @@
 {
   "fecha": "2026-10-27",
-  "total": 326,
-  "monto": 44048094,
-  "drafts": 1,
-  "drafts_monto": 10115,
+  "total": 329,
+  "monto": 45347924,
+  "drafts": 2,
+  "drafts_monto": 790525,
   "facturas": [
+    {
+      "id": "5505",
+      "cliente": "GRUPO BACCHUS S.A.S",
+      "total": 780410,
+      "status": "draft",
+      "fecha": "2026-10-27"
+    },
+    {
+      "id": "5504",
+      "cliente": "CULTURA NATURALISTA S.A.S",
+      "total": 257520,
+      "status": "open",
+      "fecha": "2026-10-27"
+    },
+    {
+      "id": "5503",
+      "cliente": "PINEA S.A.S",
+      "total": 261900,
+      "status": "open",
+      "fecha": "2026-10-27"
+    },
     {
       "id": "5502",
       "cliente": "Consumidor Final",

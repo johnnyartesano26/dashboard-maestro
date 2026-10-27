@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-27 16:02:38",
+  "generado": "2026-10-27 20:43:07",
   "anio": 2026,
   "kpis": {
-    "total_anual": 490532825,
-    "num_facturas": 3803,
-    "ticket_promedio": 128986
+    "total_anual": 491832655,
+    "num_facturas": 3806,
+    "ticket_promedio": 129226
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 44048094,
-      "count": 326
+      "total": 45347924,
+      "count": 329
     }
   },
   "por_mes_bar": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 25080050,
-      "count": 62
+      "total": 26379880,
+      "count": 65
     }
   },
   "por_mes_factura": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 43321094,
-      "count": 326
+      "total": 44578924,
+      "count": 329
     }
   },
   "por_mes_domicilio": {
@@ -212,8 +212,8 @@
       "count": 45
     },
     "2026-10": {
-      "total": 727000,
-      "count": 54
+      "total": 769000,
+      "count": 57
     }
   },
   "por_estado": {
@@ -222,12 +222,12 @@
       "count": 3668
     },
     "draft": {
-      "total": 8906280,
-      "count": 13
+      "total": 9686690,
+      "count": 14
     },
     "open": {
-      "total": 59502889,
-      "count": 108
+      "total": 60022309,
+      "count": 110
     },
     "void": {
       "total": 772099,
@@ -240,24 +240,24 @@
       "unidades": 2505
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 38554812,
-      "unidades": 3472
+      "total": 38780912,
+      "unidades": 3492
     },
     "Cerveza American IPA - Vagabundo": {
       "total": 37158998,
       "unidades": 1991
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 30520144,
-      "unidades": 3109
+      "total": 30874169,
+      "unidades": 3144
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 29745455,
-      "unidades": 3005
+      "total": 30038790,
+      "unidades": 3034
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 26695672,
-      "unidades": 2728
+      "total": 26857512,
+      "unidades": 2744
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 22704598,
@@ -284,8 +284,8 @@
       "unidades": 901
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
-      "total": 11159027,
-      "unidades": 1132
+      "total": 11381557,
+      "unidades": 1154
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -312,8 +312,8 @@
       "unidades": 612
     },
     "Domicilio": {
-      "total": 5301701,
-      "unidades": 397
+      "total": 5343701,
+      "unidades": 400
     },
     "Jarra IPA": {
       "total": 4862000,
@@ -614,8 +614,8 @@
       "count": 2
     },
     "PINEA S.A.S": {
-      "total": 10806010,
-      "count": 33
+      "total": 11067910,
+      "count": 34
     },
     "DANIEL SCHMUTTE": {
       "total": 10248725,
@@ -801,6 +801,14 @@
       "total": 780890,
       "count": 3
     },
+    "GRUPO BACCHUS S.A.S": {
+      "total": 780410,
+      "count": 1
+    },
+    "CULTURA NATURALISTA S.A.S": {
+      "total": 777320,
+      "count": 3
+    },
     "JUAN FELIPE Vulgaro Bar ARTEAGA GIRALDO": {
       "total": 773280,
       "count": 3
@@ -879,10 +887,6 @@
     },
     "Sandra Milena  (Nueva Ola) Orozco Hincapié": {
       "total": 523230,
-      "count": 2
-    },
-    "CULTURA NATURALISTA S.A.S": {
-      "total": 519800,
       "count": 2
     },
     "THC GROUP SAS": {

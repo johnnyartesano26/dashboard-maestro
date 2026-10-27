@@ -1,15 +1,29 @@
 {
-  "generado": "2026-10-27 16:03:10",
+  "generado": "2026-10-27 20:43:37",
   "anio": "2026",
-  "total_abiertas": 128,
-  "total_anio": 108,
+  "total_abiertas": 130,
+  "total_anio": 110,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 30,
-      "monto": 12885476,
+      "count": 32,
+      "monto": 13404896,
       "facturas": [
+        {
+          "numero": "FE827",
+          "cliente": "CULTURA NATURALISTA S.A.S",
+          "fecha": "2026-10-27",
+          "total": 257520,
+          "balance": 257520
+        },
+        {
+          "numero": "FE826",
+          "cliente": "PINEA S.A.S",
+          "fecha": "2026-10-27",
+          "total": 261900,
+          "balance": 261900
+        },
         {
           "numero": "FE825",
           "cliente": "Leonardo Gaitan Zuluaga",

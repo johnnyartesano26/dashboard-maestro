@@ -1,10 +1,24 @@
 {
-  "fecha": "2026-10-28",
-  "total": 351,
-  "monto": 46190924,
+  "fecha": "2026-10-29",
+  "total": 353,
+  "monto": 46286924,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5529",
+      "cliente": "Consumidor Final",
+      "total": 62000,
+      "status": "closed",
+      "fecha": "2026-10-28"
+    },
+    {
+      "id": "5528",
+      "cliente": "Consumidor Final",
+      "total": 34000,
+      "status": "closed",
+      "fecha": "2026-10-28"
+    },
     {
       "id": "5527",
       "cliente": "Consumidor Final",
@@ -170,7 +184,7 @@
       "id": "5504",
       "cliente": "CULTURA NATURALISTA S.A.S",
       "total": 257520,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-27"
     },
     {

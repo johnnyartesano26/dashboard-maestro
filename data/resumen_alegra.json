@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-28 21:51:30",
+  "generado": "2026-10-29 01:27:47",
   "anio": 2026,
   "kpis": {
-    "total_anual": 492675655,
-    "num_facturas": 3828,
-    "ticket_promedio": 128703
+    "total_anual": 492771655,
+    "num_facturas": 3830,
+    "ticket_promedio": 128661
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 46190924,
-      "count": 351
+      "total": 46286924,
+      "count": 353
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 19811044,
-      "count": 286
+      "total": 19907044,
+      "count": 288
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 45421924,
-      "count": 351
+      "total": 45517924,
+      "count": 353
     }
   },
   "por_mes_domicilio": {
@@ -218,16 +218,16 @@
   },
   "por_estado": {
     "closed": {
-      "total": 422194557,
-      "count": 3690
+      "total": 422548077,
+      "count": 3693
     },
     "draft": {
       "total": 8906280,
       "count": 13
     },
     "open": {
-      "total": 60802719,
-      "count": 111
+      "total": 60545199,
+      "count": 110
     },
     "void": {
       "total": 772099,
@@ -244,8 +244,8 @@
       "unidades": 3492
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 37329998,
-      "unidades": 2000
+      "total": 37386998,
+      "unidades": 2003
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 30874169,
@@ -260,8 +260,8 @@
       "unidades": 2744
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 22752598,
-      "unidades": 1448
+      "total": 22768598,
+      "unidades": 1449
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 19856550,
@@ -371,13 +371,13 @@
       "total": 1722999,
       "unidades": 95
     },
+    "B Botella APA": {
+      "total": 1715999,
+      "unidades": 98
+    },
     "Jarra Golden Ale / Irish Red Ale": {
       "total": 1715998,
       "unidades": 33
-    },
-    "B Botella APA": {
-      "total": 1697999,
-      "unidades": 97
     },
     "Soda": {
       "total": 1667000,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 234222101,
-      "count": 3326
+      "total": 234318101,
+      "count": 3328
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 46783892,

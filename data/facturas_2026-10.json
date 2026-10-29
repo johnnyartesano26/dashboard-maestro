@@ -1,10 +1,24 @@
 {
   "fecha": "2026-10-29",
-  "total": 354,
-  "monto": 46358924,
+  "total": 356,
+  "monto": 47271354,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5532",
+      "cliente": "CAROLINA CROVO SIERRA",
+      "total": 263470,
+      "status": "open",
+      "fecha": "2026-10-29"
+    },
+    {
+      "id": "5531",
+      "cliente": "DANIEL SCHMUTTE",
+      "total": 648960,
+      "status": "open",
+      "fecha": "2026-10-29"
+    },
     {
       "id": "5530",
       "cliente": "Consumidor Final",

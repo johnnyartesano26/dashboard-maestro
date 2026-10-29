@@ -1,15 +1,29 @@
 {
-  "generado": "2026-10-29 14:56:26",
+  "generado": "2026-10-29 20:29:51",
   "anio": "2026",
-  "total_abiertas": 130,
-  "total_anio": 110,
+  "total_abiertas": 132,
+  "total_anio": 112,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 32,
-      "monto": 13927786,
+      "count": 34,
+      "monto": 14840216,
       "facturas": [
+        {
+          "numero": "FE830",
+          "cliente": "CAROLINA CROVO SIERRA",
+          "fecha": "2026-10-29",
+          "total": 263470,
+          "balance": 263470
+        },
+        {
+          "numero": "FE829",
+          "cliente": "DANIEL SCHMUTTE",
+          "fecha": "2026-10-29",
+          "total": 648960,
+          "balance": 648960
+        },
         {
           "numero": "FE828",
           "cliente": "GRUPO BACCHUS S.A.S",

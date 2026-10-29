@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-29 14:55:54",
+  "generado": "2026-10-29 20:29:09",
   "anio": 2026,
   "kpis": {
-    "total_anual": 492843655,
-    "num_facturas": 3831,
-    "ticket_promedio": 128646
+    "total_anual": 493756085,
+    "num_facturas": 3833,
+    "ticket_promedio": 128817
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 46358924,
-      "count": 354
+      "total": 47271354,
+      "count": 356
     }
   },
   "por_mes_bar": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 26379880,
-      "count": 65
+      "total": 27292310,
+      "count": 67
     }
   },
   "por_mes_factura": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 45589924,
-      "count": 354
+      "total": 46478854,
+      "count": 356
     }
   },
   "por_mes_domicilio": {
@@ -212,8 +212,8 @@
       "count": 45
     },
     "2026-10": {
-      "total": 769000,
-      "count": 57
+      "total": 792500,
+      "count": 59
     }
   },
   "por_estado": {
@@ -226,8 +226,8 @@
       "count": 13
     },
     "open": {
-      "total": 60545199,
-      "count": 110
+      "total": 61457629,
+      "count": 112
     },
     "void": {
       "total": 772099,
@@ -240,20 +240,20 @@
       "unidades": 2505
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 38780912,
-      "unidades": 3492
+      "total": 39153977,
+      "unidades": 3525
     },
     "Cerveza American IPA - Vagabundo": {
       "total": 37386998,
       "unidades": 2003
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 30874169,
-      "unidades": 3144
+      "total": 31056239,
+      "unidades": 3162
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 30038790,
-      "unidades": 3034
+      "total": 30372585,
+      "unidades": 3067
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
       "total": 26857512,
@@ -312,8 +312,8 @@
       "unidades": 612
     },
     "Domicilio": {
-      "total": 5343701,
-      "unidades": 400
+      "total": 5367201,
+      "unidades": 402
     },
     "Jarra IPA": {
       "total": 4862000,
@@ -618,8 +618,8 @@
       "count": 34
     },
     "DANIEL SCHMUTTE": {
-      "total": 10248725,
-      "count": 24
+      "total": 10897685,
+      "count": 25
     },
     "Leonardo Gaitan Zuluaga": {
       "total": 9604321,
@@ -769,6 +769,10 @@
       "total": 1076440,
       "count": 3
     },
+    "CAROLINA CROVO SIERRA": {
+      "total": 1044360,
+      "count": 4
+    },
     "ORRO S.A.S.": {
       "total": 1021320,
       "count": 3
@@ -792,10 +796,6 @@
     "MIX DE LA VILLA": {
       "total": 827780,
       "count": 4
-    },
-    "CAROLINA CROVO SIERRA": {
-      "total": 780890,
-      "count": 3
     },
     "JOSE DANIEL PIEDRAHITA BETANCUR": {
       "total": 780890,

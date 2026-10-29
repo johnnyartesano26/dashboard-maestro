@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-29 01:27:47",
+  "generado": "2026-10-29 07:44:10",
   "anio": 2026,
   "kpis": {
-    "total_anual": 492771655,
-    "num_facturas": 3830,
-    "ticket_promedio": 128661
+    "total_anual": 492843655,
+    "num_facturas": 3831,
+    "ticket_promedio": 128646
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 46286924,
-      "count": 353
+      "total": 46358924,
+      "count": 354
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 19907044,
-      "count": 288
+      "total": 19979044,
+      "count": 289
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 45517924,
-      "count": 353
+      "total": 45589924,
+      "count": 354
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 422548077,
-      "count": 3693
+      "total": 422620077,
+      "count": 3694
     },
     "draft": {
       "total": 8906280,
@@ -268,8 +268,8 @@
       "unidades": 889
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 19456399,
-      "unidades": 1248
+      "total": 19472399,
+      "unidades": 1249
     },
     "Experiencia de cata de cerveza": {
       "total": 17828580,
@@ -304,8 +304,8 @@
       "unidades": 1165
     },
     "Hamburguesa": {
-      "total": 7904956,
-      "unidades": 227
+      "total": 7939956,
+      "unidades": 228
     },
     "Mini hamburguesa": {
       "total": 5790896,
@@ -384,8 +384,8 @@
       "unidades": 278
     },
     "Cañita Hidromiel": {
-      "total": 1614500,
-      "unidades": 111
+      "total": 1629500,
+      "unidades": 112
     },
     "Sampler x 4 cañitas": {
       "total": 1597500,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 234318101,
-      "count": 3328
+      "total": 234390101,
+      "count": 3329
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 46783892,

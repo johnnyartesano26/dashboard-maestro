@@ -1,10 +1,17 @@
 {
-  "fecha": "2026-10-29",
-  "total": 356,
-  "monto": 47271354,
+  "fecha": "2026-10-30",
+  "total": 357,
+  "monto": 47837564,
   "drafts": 1,
   "drafts_monto": 10115,
   "facturas": [
+    {
+      "id": "5533",
+      "cliente": "GRUPO BACCHUS S.A.S",
+      "total": 566210,
+      "status": "open",
+      "fecha": "2026-10-29"
+    },
     {
       "id": "5532",
       "cliente": "CAROLINA CROVO SIERRA",
@@ -198,7 +205,7 @@
       "id": "5505",
       "cliente": "GRUPO BACCHUS S.A.S",
       "total": 780410,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-27"
     },
     {

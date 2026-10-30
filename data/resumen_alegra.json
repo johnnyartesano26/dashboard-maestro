@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-29 20:29:09",
+  "generado": "2026-10-30 00:22:07",
   "anio": 2026,
   "kpis": {
-    "total_anual": 493756085,
-    "num_facturas": 3833,
-    "ticket_promedio": 128817
+    "total_anual": 494322295,
+    "num_facturas": 3834,
+    "ticket_promedio": 128931
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 47271354,
-      "count": 356
+      "total": 47837564,
+      "count": 357
     }
   },
   "por_mes_bar": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 27292310,
-      "count": 67
+      "total": 27858520,
+      "count": 68
     }
   },
   "por_mes_factura": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 46478854,
-      "count": 356
+      "total": 47025064,
+      "count": 357
     }
   },
   "por_mes_domicilio": {
@@ -212,21 +212,21 @@
       "count": 45
     },
     "2026-10": {
-      "total": 792500,
-      "count": 59
+      "total": 812500,
+      "count": 60
     }
   },
   "por_estado": {
     "closed": {
-      "total": 422620077,
-      "count": 3694
+      "total": 423400487,
+      "count": 3695
     },
     "draft": {
       "total": 8906280,
       "count": 13
     },
     "open": {
-      "total": 61457629,
+      "total": 61243429,
       "count": 112
     },
     "void": {
@@ -248,16 +248,16 @@
       "unidades": 2003
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 31056239,
-      "unidades": 3162
+      "total": 31278769,
+      "unidades": 3184
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 30372585,
-      "unidades": 3067
+      "total": 30595115,
+      "unidades": 3089
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 26857512,
-      "unidades": 2744
+      "total": 26958662,
+      "unidades": 2754
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 22768598,
@@ -312,8 +312,8 @@
       "unidades": 612
     },
     "Domicilio": {
-      "total": 5367201,
-      "unidades": 402
+      "total": 5387201,
+      "unidades": 403
     },
     "Jarra IPA": {
       "total": 4862000,
@@ -741,6 +741,10 @@
       "total": 1421893,
       "count": 5
     },
+    "GRUPO BACCHUS S.A.S": {
+      "total": 1346620,
+      "count": 2
+    },
     "SELMA MED S.A.S": {
       "total": 1329480,
       "count": 2
@@ -800,10 +804,6 @@
     "JOSE DANIEL PIEDRAHITA BETANCUR": {
       "total": 780890,
       "count": 3
-    },
-    "GRUPO BACCHUS S.A.S": {
-      "total": 780410,
-      "count": 1
     },
     "CULTURA NATURALISTA S.A.S": {
       "total": 777320,

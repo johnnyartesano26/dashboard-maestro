@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-29 20:29:51",
+  "generado": "2026-10-30 00:22:37",
   "anio": "2026",
   "total_abiertas": 132,
   "total_anio": 112,
@@ -8,8 +8,15 @@
       "mes": "2026-10",
       "label": "Octubre 2026",
       "count": 34,
-      "monto": 14840216,
+      "monto": 14626016,
       "facturas": [
+        {
+          "numero": "FE831",
+          "cliente": "GRUPO BACCHUS S.A.S",
+          "fecha": "2026-10-29",
+          "total": 566210,
+          "balance": 566210
+        },
         {
           "numero": "FE830",
           "cliente": "CAROLINA CROVO SIERRA",
@@ -23,13 +30,6 @@
           "fecha": "2026-10-29",
           "total": 648960,
           "balance": 648960
-        },
-        {
-          "numero": "FE828",
-          "cliente": "GRUPO BACCHUS S.A.S",
-          "fecha": "2026-10-27",
-          "total": 780410,
-          "balance": 780410
         },
         {
           "numero": "FE826",

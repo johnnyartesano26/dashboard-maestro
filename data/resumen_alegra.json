@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-30 06:28:03",
+  "generado": "2026-10-30 13:37:50",
   "anio": 2026,
   "kpis": {
-    "total_anual": 494613295,
-    "num_facturas": 3841,
-    "ticket_promedio": 128772
+    "total_anual": 494637295,
+    "num_facturas": 3842,
+    "ticket_promedio": 128745
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 48128564,
-      "count": 364
+      "total": 48152564,
+      "count": 365
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 20270044,
-      "count": 296
+      "total": 20294044,
+      "count": 297
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 47316064,
-      "count": 364
+      "total": 47340064,
+      "count": 365
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 423691487,
-      "count": 3702
+      "total": 423715487,
+      "count": 3703
     },
     "draft": {
       "total": 8906280,
@@ -268,8 +268,8 @@
       "unidades": 889
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 19520399,
-      "unidades": 1252
+      "total": 19536399,
+      "unidades": 1253
     },
     "Experiencia de cata de cerveza": {
       "total": 17828580,
@@ -460,8 +460,8 @@
       "unidades": 66
     },
     "Finster": {
-      "total": 742983,
-      "unidades": 94
+      "total": 750983,
+      "unidades": 95
     },
     "Aguas frescas": {
       "total": 665993,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 234681101,
-      "count": 3336
+      "total": 234705101,
+      "count": 3337
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 46783892,

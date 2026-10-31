@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-30 23:05:11",
+  "generado": "2026-10-31 02:16:47",
   "anio": 2026,
   "kpis": {
-    "total_anual": 494637295,
-    "num_facturas": 3842,
-    "ticket_promedio": 128745
+    "total_anual": 494716295,
+    "num_facturas": 3844,
+    "ticket_promedio": 128698
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 48152564,
-      "count": 365
+      "total": 48231564,
+      "count": 367
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 20294044,
-      "count": 297
+      "total": 20373044,
+      "count": 299
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 47340064,
-      "count": 365
+      "total": 47419064,
+      "count": 367
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 423715487,
-      "count": 3703
+      "total": 423794487,
+      "count": 3705
     },
     "draft": {
       "total": 8906280,
@@ -276,12 +276,12 @@
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 16362199,
-      "unidades": 927
+      "total": 16398199,
+      "unidades": 929
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 15758200,
-      "unidades": 903
+      "total": 15776200,
+      "unidades": 904
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 11381557,
@@ -292,8 +292,8 @@
       "unidades": 473
     },
     "Hidromiel - Bandada": {
-      "total": 9439000,
-      "unidades": 382
+      "total": 9464000,
+      "unidades": 383
     },
     "Cerveza por litro Stout - Sangre Negra": {
       "total": 9114210,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 234705101,
-      "count": 3337
+      "total": 234784101,
+      "count": 3339
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 46783892,

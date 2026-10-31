@@ -1,14 +1,14 @@
 {
-  "generado": "2026-10-31 15:20:56",
+  "generado": "2026-10-31 19:44:29",
   "anio": "2026",
-  "total_abiertas": 132,
-  "total_anio": 112,
+  "total_abiertas": 131,
+  "total_anio": 111,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 34,
-      "monto": 14626016,
+      "count": 33,
+      "monto": 13894636,
       "facturas": [
         {
           "numero": "FE831",
@@ -205,13 +205,6 @@
           "fecha": "2026-10-08",
           "total": 248710,
           "balance": 248710
-        },
-        {
-          "numero": "FE780",
-          "cliente": "JUAN ESTEBAN GOMEZ MORENO",
-          "fecha": "2026-10-08",
-          "total": 731380,
-          "balance": 731380
         },
         {
           "numero": "FE774",

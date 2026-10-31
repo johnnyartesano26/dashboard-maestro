@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-31 15:20:25",
+  "generado": "2026-10-31 19:43:58",
   "anio": 2026,
   "kpis": {
-    "total_anual": 495786295,
-    "num_facturas": 3855,
-    "ticket_promedio": 128609
+    "total_anual": 496269635,
+    "num_facturas": 3856,
+    "ticket_promedio": 128701
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 49301564,
-      "count": 378
+      "total": 49784904,
+      "count": 379
     }
   },
   "por_mes_bar": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 27858520,
-      "count": 68
+      "total": 28341860,
+      "count": 69
     }
   },
   "por_mes_factura": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 48489064,
-      "count": 378
+      "total": 48948404,
+      "count": 379
     }
   },
   "por_mes_domicilio": {
@@ -212,22 +212,22 @@
       "count": 45
     },
     "2026-10": {
-      "total": 812500,
-      "count": 60
+      "total": 836500,
+      "count": 62
     }
   },
   "por_estado": {
     "closed": {
-      "total": 424864487,
-      "count": 3716
+      "total": 426079207,
+      "count": 3718
     },
     "draft": {
       "total": 8906280,
       "count": 13
     },
     "open": {
-      "total": 61243429,
-      "count": 112
+      "total": 60512049,
+      "count": 111
     },
     "void": {
       "total": 772099,
@@ -240,24 +240,24 @@
       "unidades": 2505
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 39153977,
-      "unidades": 3525
+      "total": 39289637,
+      "unidades": 3537
     },
     "Cerveza American IPA - Vagabundo": {
       "total": 37538998,
       "unidades": 2011
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 31278769,
-      "unidades": 3184
+      "total": 31359689,
+      "unidades": 3192
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 30595115,
-      "unidades": 3089
+      "total": 30716495,
+      "unidades": 3101
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 26958662,
-      "unidades": 2754
+      "total": 27080042,
+      "unidades": 2766
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 22784598,
@@ -312,8 +312,8 @@
       "unidades": 612
     },
     "Domicilio": {
-      "total": 5387201,
-      "unidades": 403
+      "total": 5411201,
+      "unidades": 405
     },
     "Jarra IPA": {
       "total": 4934000,
@@ -641,6 +641,10 @@
       "total": 5345601,
       "count": 15
     },
+    "CECILIA ALICIA BRAVO DE NOHAVA": {
+      "total": 4964482,
+      "count": 16
+    },
     "Martin La Vendimia Emilio Jaramillo Marín": {
       "total": 4789636,
       "count": 10
@@ -648,10 +652,6 @@
     "INVERSIONES PULSO S.A.S": {
       "total": 4485097,
       "count": 6
-    },
-    "CECILIA ALICIA BRAVO DE NOHAVA": {
-      "total": 4481142,
-      "count": 15
     },
     "Manuel Felipe  Hernandez Gallego": {
       "total": 3090636,

@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-31 19:43:58",
+  "generado": "2026-10-31 22:59:10",
   "anio": 2026,
   "kpis": {
-    "total_anual": 496269635,
-    "num_facturas": 3856,
-    "ticket_promedio": 128701
+    "total_anual": 498508535,
+    "num_facturas": 3864,
+    "ticket_promedio": 129014
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 49784904,
-      "count": 379
+      "total": 52023804,
+      "count": 387
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 21443044,
-      "count": 310
+      "total": 21837044,
+      "count": 314
     }
   },
   "por_mes_externo": {
@@ -128,8 +128,8 @@
       "count": 61
     },
     "2026-10": {
-      "total": 28341860,
-      "count": 69
+      "total": 30186760,
+      "count": 73
     }
   },
   "por_mes_factura": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 48948404,
-      "count": 379
+      "total": 51139304,
+      "count": 387
     }
   },
   "por_mes_domicilio": {
@@ -212,22 +212,22 @@
       "count": 45
     },
     "2026-10": {
-      "total": 836500,
-      "count": 62
+      "total": 884500,
+      "count": 66
     }
   },
   "por_estado": {
     "closed": {
-      "total": 426079207,
-      "count": 3718
+      "total": 426473207,
+      "count": 3722
     },
     "draft": {
-      "total": 8906280,
-      "count": 13
+      "total": 9377620,
+      "count": 14
     },
     "open": {
-      "total": 60512049,
-      "count": 111
+      "total": 61885609,
+      "count": 114
     },
     "void": {
       "total": 772099,
@@ -240,36 +240,36 @@
       "unidades": 2505
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 39289637,
-      "unidades": 3537
+      "total": 39832277,
+      "unidades": 3585
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 37538998,
-      "unidades": 2011
+      "total": 37633998,
+      "unidades": 2016
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 31359689,
-      "unidades": 3192
+      "total": 31561989,
+      "unidades": 3212
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 30716495,
-      "unidades": 3101
+      "total": 31161555,
+      "unidades": 3145
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 27080042,
-      "unidades": 2766
+      "total": 27484642,
+      "unidades": 2806
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 22784598,
-      "unidades": 1450
+      "total": 22800598,
+      "unidades": 1451
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 19856550,
       "unidades": 889
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 19632399,
-      "unidades": 1259
+      "total": 19664399,
+      "unidades": 1261
     },
     "Experiencia de cata de cerveza": {
       "total": 17828580,
@@ -280,12 +280,12 @@
       "unidades": 931
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 15794200,
-      "unidades": 905
+      "total": 15812200,
+      "unidades": 906
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
-      "total": 11381557,
-      "unidades": 1154
+      "total": 11583857,
+      "unidades": 1174
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -300,28 +300,28 @@
       "unidades": 420
     },
     "Cerveza industrial": {
-      "total": 8069500,
-      "unidades": 1165
+      "total": 8111500,
+      "unidades": 1171
     },
     "Hamburguesa": {
       "total": 7974956,
       "unidades": 229
     },
     "Mini hamburguesa": {
-      "total": 5790896,
-      "unidades": 612
+      "total": 5830895,
+      "unidades": 616
     },
     "Domicilio": {
-      "total": 5411201,
-      "unidades": 405
+      "total": 5459201,
+      "unidades": 409
     },
     "Jarra IPA": {
       "total": 4934000,
       "unidades": 75
     },
     "Soda saborizada": {
-      "total": 4774895,
-      "unidades": 478
+      "total": 4834894,
+      "unidades": 484
     },
     "Jarra Irish Red Ale": {
       "total": 4363997,
@@ -344,8 +344,8 @@
       "unidades": 65
     },
     "Papas y plátanos chips": {
-      "total": 3229525,
-      "unidades": 479
+      "total": 3250523,
+      "unidades": 482
     },
     "Jarra Stout": {
       "total": 2908600,
@@ -356,8 +356,8 @@
       "unidades": 146
     },
     "Nachos Pulled pork": {
-      "total": 1941000,
-      "unidades": 108
+      "total": 1959000,
+      "unidades": 109
     },
     "B Botella Golden Ale": {
       "total": 1886999,
@@ -380,8 +380,8 @@
       "unidades": 33
     },
     "Soda": {
-      "total": 1667000,
-      "unidades": 278
+      "total": 1673000,
+      "unidades": 279
     },
     "Cañita Hidromiel": {
       "total": 1664500,
@@ -423,13 +423,13 @@
       "total": 1046989,
       "unidades": 106
     },
+    "Patacones con guacamole": {
+      "total": 1031000,
+      "unidades": 103
+    },
     "Americano": {
       "total": 1019000,
       "unidades": 147
-    },
-    "Patacones con guacamole": {
-      "total": 1013000,
-      "unidades": 102
     },
     "Cerveza invitada": {
       "total": 1010000,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 235854101,
-      "count": 3350
+      "total": 236248101,
+      "count": 3354
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 46783892,
@@ -637,13 +637,13 @@
       "total": 6058520,
       "count": 11
     },
+    "CECILIA ALICIA BRAVO DE NOHAVA": {
+      "total": 5907162,
+      "count": 18
+    },
     "MARTHA ELENA  (Punta Arena) PERDOMO JIMENEZ": {
       "total": 5345601,
       "count": 15
-    },
-    "CECILIA ALICIA BRAVO DE NOHAVA": {
-      "total": 4964482,
-      "count": 16
     },
     "Martin La Vendimia Emilio Jaramillo Marín": {
       "total": 4789636,
@@ -681,6 +681,10 @@
       "total": 2424030,
       "count": 7
     },
+    "CEMIEL SAS (Papi Tienda)": {
+      "total": 2395385,
+      "count": 9
+    },
     "Jairo licorera Kanana Acevedo Sanchez": {
       "total": 2323000,
       "count": 9
@@ -692,10 +696,6 @@
     "ANTHONY CRAIG WATSON": {
       "total": 1948830,
       "count": 9
-    },
-    "CEMIEL SAS (Papi Tienda)": {
-      "total": 1878825,
-      "count": 8
     },
     "MAURICIO GEHOVA JARAMILLO VELASQUEZ": {
       "total": 1799170,
@@ -853,6 +853,10 @@
       "total": 682772,
       "count": 2
     },
+    "SEBASTIAN KILBY RESTREPO": {
+      "total": 652320,
+      "count": 2
+    },
     "JARDIN CERVECERO MED SAS.": {
       "total": 647180,
       "count": 2
@@ -943,10 +947,6 @@
     },
     "KATERIN OCHOA RESTREPO": {
       "total": 268710,
-      "count": 1
-    },
-    "SEBASTIAN KILBY RESTREPO": {
-      "total": 266660,
       "count": 1
     },
     "BLACK ELEPHANT GROUP S.A.S.": {

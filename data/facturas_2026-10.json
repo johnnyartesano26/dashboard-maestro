@@ -1,10 +1,66 @@
 {
   "fecha": "2026-10-31",
-  "total": 379,
-  "monto": 49784904,
-  "drafts": 1,
-  "drafts_monto": 10115,
+  "total": 387,
+  "monto": 52023804,
+  "drafts": 2,
+  "drafts_monto": 481455,
   "facturas": [
+    {
+      "id": "5563",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-10-31"
+    },
+    {
+      "id": "5562",
+      "cliente": "Consumidor Final",
+      "total": 182000,
+      "status": "closed",
+      "fecha": "2026-10-31"
+    },
+    {
+      "id": "5561",
+      "cliente": "Consumidor Final",
+      "total": 96000,
+      "status": "closed",
+      "fecha": "2026-10-31"
+    },
+    {
+      "id": "5560",
+      "cliente": "Consumidor Final",
+      "total": 100000,
+      "status": "closed",
+      "fecha": "2026-10-31"
+    },
+    {
+      "id": "5559",
+      "cliente": "CEMIEL SAS (Papi Tienda)",
+      "total": 516560,
+      "status": "open",
+      "fecha": "2026-10-31"
+    },
+    {
+      "id": "5558",
+      "cliente": "SEBASTIAN KILBY RESTREPO",
+      "total": 385660,
+      "status": "open",
+      "fecha": "2026-10-31"
+    },
+    {
+      "id": "5557",
+      "cliente": "CECILIA ALICIA BRAVO DE NOHAVA",
+      "total": 471340,
+      "status": "open",
+      "fecha": "2026-10-31"
+    },
+    {
+      "id": "5556",
+      "cliente": "CECILIA ALICIA BRAVO DE NOHAVA",
+      "total": 471340,
+      "status": "draft",
+      "fecha": "2026-10-31"
+    },
     {
       "id": "5555",
       "cliente": "CECILIA ALICIA BRAVO DE NOHAVA",

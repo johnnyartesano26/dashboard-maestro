@@ -1,15 +1,36 @@
 {
-  "generado": "2026-10-31 19:44:29",
+  "generado": "2026-10-31 22:59:39",
   "anio": "2026",
-  "total_abiertas": 131,
-  "total_anio": 111,
+  "total_abiertas": 134,
+  "total_anio": 114,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 33,
-      "monto": 13894636,
+      "count": 36,
+      "monto": 15268196,
       "facturas": [
+        {
+          "numero": "FE836",
+          "cliente": "CEMIEL SAS (Papi Tienda)",
+          "fecha": "2026-10-31",
+          "total": 516560,
+          "balance": 516560
+        },
+        {
+          "numero": "FE835",
+          "cliente": "SEBASTIAN KILBY RESTREPO",
+          "fecha": "2026-10-31",
+          "total": 385660,
+          "balance": 385660
+        },
+        {
+          "numero": "FE834",
+          "cliente": "CECILIA ALICIA BRAVO DE NOHAVA",
+          "fecha": "2026-10-31",
+          "total": 471340,
+          "balance": 471340
+        },
         {
           "numero": "FE831",
           "cliente": "GRUPO BACCHUS S.A.S",

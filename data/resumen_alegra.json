@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-01 16:00:46",
+  "generado": "2026-11-01 20:26:09",
   "anio": 2026,
   "kpis": {
-    "total_anual": 502493505,
-    "num_facturas": 3899,
-    "ticket_promedio": 128878
+    "total_anual": 503746587,
+    "num_facturas": 3900,
+    "ticket_promedio": 129166
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 1807000,
-      "count": 19
+      "total": 3060082,
+      "count": 20
     }
   },
   "por_mes_bar": {
@@ -140,8 +140,8 @@
       "count": 75
     },
     "2026-11": {
-      "total": 80000,
-      "count": 1
+      "total": 1333082,
+      "count": 2
     }
   },
   "por_mes_factura": {
@@ -186,8 +186,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 1807000,
-      "count": 19
+      "total": 3030082,
+      "count": 20
     }
   },
   "por_mes_domicilio": {
@@ -230,6 +230,10 @@
     "2026-10": {
       "total": 911500,
       "count": 68
+    },
+    "2026-11": {
+      "total": 30000,
+      "count": 1
     }
   },
   "por_estado": {
@@ -238,8 +242,8 @@
       "count": 3755
     },
     "draft": {
-      "total": 9377620,
-      "count": 14
+      "total": 10630702,
+      "count": 15
     },
     "open": {
       "total": 62582579,
@@ -252,8 +256,8 @@
   },
   "por_producto": {
     "Cerveza por litro Irish Red Ale - Mística": {
-      "total": 53182226,
-      "unidades": 2505
+      "total": 54405308,
+      "unidades": 2562
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
       "total": 39854887,
@@ -328,8 +332,8 @@
       "unidades": 619
     },
     "Domicilio": {
-      "total": 5486201,
-      "unidades": 411
+      "total": 5516201,
+      "unidades": 412
     },
     "Jarra IPA": {
       "total": 5006000,
@@ -622,8 +626,8 @@
       "count": 3386
     },
     "JUAN CARLOS ORREGO ZAPATA": {
-      "total": 46783892,
-      "count": 45
+      "total": 48036974,
+      "count": 46
     },
     "INVERSIONES LATINERIA S.A.S": {
       "total": 35650673,

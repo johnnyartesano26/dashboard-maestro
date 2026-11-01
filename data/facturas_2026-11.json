@@ -1,10 +1,17 @@
 {
   "fecha": "2026-11-01",
-  "total": 19,
-  "monto": 1807000,
-  "drafts": 0,
-  "drafts_monto": 0,
+  "total": 20,
+  "monto": 3060082,
+  "drafts": 1,
+  "drafts_monto": 1253082,
   "facturas": [
+    {
+      "id": "5599",
+      "cliente": "JUAN CARLOS ORREGO ZAPATA",
+      "total": 1253082,
+      "status": "draft",
+      "fecha": "2026-11-01"
+    },
     {
       "id": "5598",
       "cliente": "Consumidor Final",

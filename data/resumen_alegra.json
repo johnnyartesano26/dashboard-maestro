@@ -1,10 +1,10 @@
 {
-  "generado": "2026-10-31 22:59:10",
+  "generado": "2026-11-01 02:06:20",
   "anio": 2026,
   "kpis": {
-    "total_anual": 498508535,
-    "num_facturas": 3864,
-    "ticket_promedio": 129014
+    "total_anual": 498999535,
+    "num_facturas": 3870,
+    "ticket_promedio": 128940
   },
   "por_mes": {
     "2026-01": {
@@ -44,8 +44,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 52023804,
-      "count": 387
+      "total": 52514804,
+      "count": 393
     }
   },
   "por_mes_bar": {
@@ -86,8 +86,8 @@
       "count": 357
     },
     "2026-10": {
-      "total": 21837044,
-      "count": 314
+      "total": 22328044,
+      "count": 320
     }
   },
   "por_mes_externo": {
@@ -170,8 +170,8 @@
       "count": 418
     },
     "2026-10": {
-      "total": 51139304,
-      "count": 387
+      "total": 51630304,
+      "count": 393
     }
   },
   "por_mes_domicilio": {
@@ -218,8 +218,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 426473207,
-      "count": 3722
+      "total": 426964207,
+      "count": 3728
     },
     "draft": {
       "total": 9377620,
@@ -244,8 +244,8 @@
       "unidades": 3585
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 37633998,
-      "unidades": 2016
+      "total": 37690998,
+      "unidades": 2019
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 31561989,
@@ -260,8 +260,8 @@
       "unidades": 2806
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 22800598,
-      "unidades": 1451
+      "total": 22832598,
+      "unidades": 1453
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 19856550,
@@ -280,8 +280,8 @@
       "unidades": 931
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 15812200,
-      "unidades": 906
+      "total": 15830200,
+      "unidades": 907
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 11583857,
@@ -292,40 +292,40 @@
       "unidades": 473
     },
     "Hidromiel - Bandada": {
-      "total": 9489000,
-      "unidades": 384
+      "total": 9509000,
+      "unidades": 385
     },
     "Cerveza por litro Stout - Sangre Negra": {
       "total": 9114210,
       "unidades": 420
     },
     "Cerveza industrial": {
-      "total": 8111500,
-      "unidades": 1171
+      "total": 8146500,
+      "unidades": 1176
     },
     "Hamburguesa": {
       "total": 7974956,
       "unidades": 229
     },
     "Mini hamburguesa": {
-      "total": 5830895,
-      "unidades": 616
+      "total": 5850894,
+      "unidades": 618
     },
     "Domicilio": {
       "total": 5459201,
       "unidades": 409
     },
     "Jarra IPA": {
-      "total": 4934000,
-      "unidades": 75
+      "total": 5006000,
+      "unidades": 76
     },
     "Soda saborizada": {
-      "total": 4834894,
-      "unidades": 484
+      "total": 4864893,
+      "unidades": 487
     },
     "Jarra Irish Red Ale": {
-      "total": 4363997,
-      "unidades": 76
+      "total": 4463996,
+      "unidades": 78
     },
     "Cerveza Red IPA MM": {
       "total": 4022000,
@@ -380,8 +380,8 @@
       "unidades": 33
     },
     "Soda": {
-      "total": 1673000,
-      "unidades": 279
+      "total": 1679000,
+      "unidades": 280
     },
     "Cañita Hidromiel": {
       "total": 1664500,
@@ -495,13 +495,13 @@
       "total": 425500,
       "unidades": 141
     },
+    "Invitada IPA La Barbarie": {
+      "total": 418000,
+      "unidades": 22
+    },
     "Cañita cerveza invitada": {
       "total": 396000,
       "unidades": 33
-    },
-    "Invitada IPA La Barbarie": {
-      "total": 380000,
-      "unidades": 20
     },
     "Cerveza esclavos": {
       "total": 365500,
@@ -519,6 +519,10 @@
       "total": 247000,
       "unidades": 26
     },
+    "Shot destilado": {
+      "total": 166000,
+      "unidades": 28
+    },
     "Jugos - F. Rojos, F. Amarillos, Mango y maracuyá": {
       "total": 156000,
       "unidades": 13
@@ -534,10 +538,6 @@
     "Botella mayorista Golden/Irish/APA/Stout": {
       "total": 143496,
       "unidades": 17
-    },
-    "Shot destilado": {
-      "total": 138000,
-      "unidades": 24
     },
     "Cañita de barril Red IPA MM": {
       "total": 130000,
@@ -598,8 +598,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 236248101,
-      "count": 3354
+      "total": 236739101,
+      "count": 3360
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 46783892,

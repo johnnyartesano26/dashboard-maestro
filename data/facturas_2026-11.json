@@ -1,0 +1,142 @@
+{
+  "fecha": "2026-11-01",
+  "total": 19,
+  "monto": 1807000,
+  "drafts": 0,
+  "drafts_monto": 0,
+  "facturas": [
+    {
+      "id": "5598",
+      "cliente": "Consumidor Final",
+      "total": 32000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5597",
+      "cliente": "Consumidor Final",
+      "total": 42000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5596",
+      "cliente": "Consumidor Final",
+      "total": 188000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5595",
+      "cliente": "Consumidor Final",
+      "total": 50000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5594",
+      "cliente": "Consumidor Final",
+      "total": 105000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5593",
+      "cliente": "Consumidor Final",
+      "total": 25000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5592",
+      "cliente": "Consumidor Final",
+      "total": 220000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5591",
+      "cliente": "Consumidor Final",
+      "total": 65000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5590",
+      "cliente": "Consumidor Final",
+      "total": 50000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5589",
+      "cliente": "Consumidor Final",
+      "total": 37000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5588",
+      "cliente": "Consumidor Final",
+      "total": 105000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5587",
+      "cliente": "Consumidor Final",
+      "total": 166000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5586",
+      "cliente": "David Miranda tamayo",
+      "total": 80000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5585",
+      "cliente": "Consumidor Final",
+      "total": 102000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5584",
+      "cliente": "Consumidor Final",
+      "total": 25000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5583",
+      "cliente": "Consumidor Final",
+      "total": 125000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5582",
+      "cliente": "Consumidor Final",
+      "total": 74000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5581",
+      "cliente": "Consumidor Final",
+      "total": 76000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    },
+    {
+      "id": "5580",
+      "cliente": "Consumidor Final",
+      "total": 240000,
+      "status": "closed",
+      "fecha": "2026-11-01"
+    }
+  ]
+}

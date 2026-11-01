@@ -1,15 +1,29 @@
 {
-  "generado": "2026-11-01 02:06:50",
+  "generado": "2026-11-01 08:58:51",
   "anio": "2026",
-  "total_abiertas": 134,
-  "total_anio": 114,
+  "total_abiertas": 136,
+  "total_anio": 116,
   "meses": [
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 36,
-      "monto": 15268196,
+      "count": 38,
+      "monto": 15965166,
       "facturas": [
+        {
+          "numero": "FE838",
+          "cliente": "PINEA S.A.S",
+          "fecha": "2026-10-31",
+          "total": 196450,
+          "balance": 196450
+        },
+        {
+          "numero": "FE837",
+          "cliente": "JUAN ESTEBAN GOMEZ MORENO",
+          "fecha": "2026-10-31",
+          "total": 500520,
+          "balance": 500520
+        },
         {
           "numero": "FE836",
           "cliente": "CEMIEL SAS (Papi Tienda)",

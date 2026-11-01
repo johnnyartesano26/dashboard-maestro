@@ -1,10 +1,80 @@
 {
   "fecha": "2026-11-01",
-  "total": 393,
-  "monto": 52514804,
+  "total": 403,
+  "monto": 54201774,
   "drafts": 2,
   "drafts_monto": 481455,
   "facturas": [
+    {
+      "id": "5579",
+      "cliente": "PINEA S.A.S",
+      "total": 196450,
+      "status": "open",
+      "fecha": "2026-10-31"
+    },
+    {
+      "id": "5578",
+      "cliente": "JUAN ESTEBAN GOMEZ MORENO",
+      "total": 500520,
+      "status": "open",
+      "fecha": "2026-10-31"
+    },
+    {
+      "id": "5577",
+      "cliente": "Consumidor Final",
+      "total": 86000,
+      "status": "closed",
+      "fecha": "2026-10-31"
+    },
+    {
+      "id": "5576",
+      "cliente": "Consumidor Final",
+      "total": 74000,
+      "status": "closed",
+      "fecha": "2026-10-31"
+    },
+    {
+      "id": "5575",
+      "cliente": "Consumidor Final",
+      "total": 132000,
+      "status": "closed",
+      "fecha": "2026-10-31"
+    },
+    {
+      "id": "5574",
+      "cliente": "Consumidor Final",
+      "total": 67000,
+      "status": "closed",
+      "fecha": "2026-10-31"
+    },
+    {
+      "id": "5573",
+      "cliente": "Consumidor Final",
+      "total": 50000,
+      "status": "closed",
+      "fecha": "2026-10-31"
+    },
+    {
+      "id": "5572",
+      "cliente": "Consumidor Final",
+      "total": 180000,
+      "status": "closed",
+      "fecha": "2026-10-31"
+    },
+    {
+      "id": "5571",
+      "cliente": "Consumidor Final",
+      "total": 314000,
+      "status": "closed",
+      "fecha": "2026-10-31"
+    },
+    {
+      "id": "5570",
+      "cliente": "Consumidor Final",
+      "total": 87000,
+      "status": "closed",
+      "fecha": "2026-10-31"
+    },
     {
       "id": "5569",
       "cliente": "Consumidor Final",

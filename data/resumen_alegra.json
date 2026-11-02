@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-02 04:42:35",
+  "generado": "2026-11-02 13:02:38",
   "anio": 2026,
   "kpis": {
-    "total_anual": 504243587,
-    "num_facturas": 3909,
-    "ticket_promedio": 128996
+    "total_anual": 504456587,
+    "num_facturas": 3913,
+    "ticket_promedio": 128918
   },
   "por_mes": {
     "2026-01": {
@@ -28,8 +28,8 @@
       "count": 364
     },
     "2026-06": {
-      "total": 51406562,
-      "count": 338
+      "total": 51403562,
+      "count": 337
     },
     "2026-07": {
       "total": 44506381,
@@ -48,8 +48,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 3554082,
-      "count": 28
+      "total": 3770082,
+      "count": 33
     }
   },
   "por_mes_bar": {
@@ -74,8 +74,8 @@
       "count": 322
     },
     "2026-06": {
-      "total": 20304636,
-      "count": 284
+      "total": 20301636,
+      "count": 283
     },
     "2026-07": {
       "total": 22663778,
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 2221000,
-      "count": 26
+      "total": 2437000,
+      "count": 31
     }
   },
   "por_mes_externo": {
@@ -166,8 +166,8 @@
       "count": 364
     },
     "2026-06": {
-      "total": 50852562,
-      "count": 338
+      "total": 50849562,
+      "count": 337
     },
     "2026-07": {
       "total": 43931381,
@@ -186,8 +186,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 3524082,
-      "count": 28
+      "total": 3740082,
+      "count": 33
     }
   },
   "por_mes_domicilio": {
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 430258207,
-      "count": 3764
+      "total": 430471207,
+      "count": 3768
     },
     "draft": {
       "total": 9377620,
@@ -264,8 +264,8 @@
       "unidades": 3587
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 38124998,
-      "unidades": 2042
+      "total": 38143998,
+      "unidades": 2043
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 31804749,
@@ -280,12 +280,12 @@
       "unidades": 2822
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 23104598,
-      "unidades": 1470
+      "total": 23120598,
+      "unidades": 1471
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 20048399,
-      "unidades": 1285
+      "total": 20064399,
+      "unidades": 1286
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 19856550,
@@ -344,8 +344,8 @@
       "unidades": 488
     },
     "Jarra Irish Red Ale": {
-      "total": 4723995,
-      "unidades": 83
+      "total": 4783995,
+      "unidades": 84
     },
     "Chope de vino": {
       "total": 4110000,
@@ -400,12 +400,12 @@
       "unidades": 33
     },
     "Soda": {
-      "total": 1697000,
-      "unidades": 283
+      "total": 1703000,
+      "unidades": 284
     },
     "Cañita Hidromiel": {
-      "total": 1684500,
-      "unidades": 115
+      "total": 1699500,
+      "unidades": 116
     },
     "Sampler x 4 cañitas": {
       "total": 1597500,
@@ -436,8 +436,8 @@
       "unidades": 66
     },
     "Cañita de barril Golden Ale - Siempre Viva": {
-      "total": 1051982,
-      "unidades": 107
+      "total": 1061982,
+      "unidades": 108
     },
     "Patacones con guacamole": {
       "total": 1051000,
@@ -499,13 +499,13 @@
       "total": 612000,
       "unidades": 9
     },
+    "Cañita de barril Stout - Sangre Negra": {
+      "total": 587993,
+      "unidades": 58
+    },
     "Cañita de barril American Pale Ale - Cienfuegos": {
       "total": 533992,
       "unidades": 53
-    },
-    "Cañita de barril Stout - Sangre Negra": {
-      "total": 519994,
-      "unidades": 52
     },
     "Kombucha": {
       "total": 462000,
@@ -516,8 +516,8 @@
       "unidades": 23
     },
     "Agua en botella": {
-      "total": 428500,
-      "unidades": 142
+      "total": 425500,
+      "unidades": 141
     },
     "Cañita cerveza invitada": {
       "total": 396000,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 239953101,
-      "count": 3395
+      "total": 240166101,
+      "count": 3399
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,

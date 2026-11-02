@@ -1,9 +1,24 @@
 {
-  "generado": "2026-11-02 00:01:47",
+  "generado": "2026-11-02 04:43:02",
   "anio": "2026",
-  "total_abiertas": 136,
-  "total_anio": 116,
+  "total_abiertas": 137,
+  "total_anio": 117,
   "meses": [
+    {
+      "mes": "2026-11",
+      "label": "Noviembre 2026",
+      "count": 1,
+      "monto": 1253082,
+      "facturas": [
+        {
+          "numero": "FE840",
+          "cliente": "JUAN CARLOS ORREGO ZAPATA",
+          "fecha": "2026-11-01",
+          "total": 1253082,
+          "balance": 1253082
+        }
+      ]
+    },
     {
       "mes": "2026-10",
       "label": "Octubre 2026",

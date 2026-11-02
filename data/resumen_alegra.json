@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-02 00:01:20",
+  "generado": "2026-11-02 04:42:35",
   "anio": 2026,
   "kpis": {
-    "total_anual": 503746587,
-    "num_facturas": 3900,
-    "ticket_promedio": 129166
+    "total_anual": 504243587,
+    "num_facturas": 3909,
+    "ticket_promedio": 128996
   },
   "por_mes": {
     "2026-01": {
@@ -28,8 +28,8 @@
       "count": 364
     },
     "2026-06": {
-      "total": 51403562,
-      "count": 337
+      "total": 51406562,
+      "count": 338
     },
     "2026-07": {
       "total": 44506381,
@@ -48,8 +48,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 3060082,
-      "count": 20
+      "total": 3554082,
+      "count": 28
     }
   },
   "por_mes_bar": {
@@ -74,8 +74,8 @@
       "count": 322
     },
     "2026-06": {
-      "total": 20301636,
-      "count": 283
+      "total": 20304636,
+      "count": 284
     },
     "2026-07": {
       "total": 22663778,
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 1727000,
-      "count": 18
+      "total": 2221000,
+      "count": 26
     }
   },
   "por_mes_externo": {
@@ -166,8 +166,8 @@
       "count": 364
     },
     "2026-06": {
-      "total": 50849562,
-      "count": 337
+      "total": 50852562,
+      "count": 338
     },
     "2026-07": {
       "total": 43931381,
@@ -186,8 +186,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 3030082,
-      "count": 20
+      "total": 3524082,
+      "count": 28
     }
   },
   "por_mes_domicilio": {
@@ -238,16 +238,16 @@
   },
   "por_estado": {
     "closed": {
-      "total": 429761207,
-      "count": 3755
+      "total": 430258207,
+      "count": 3764
     },
     "draft": {
-      "total": 10630702,
-      "count": 15
+      "total": 9377620,
+      "count": 14
     },
     "open": {
-      "total": 62582579,
-      "count": 116
+      "total": 63835661,
+      "count": 117
     },
     "void": {
       "total": 772099,
@@ -264,8 +264,8 @@
       "unidades": 3587
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 38038998,
-      "unidades": 2037
+      "total": 38124998,
+      "unidades": 2042
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 31804749,
@@ -280,12 +280,12 @@
       "unidades": 2822
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 23088598,
-      "unidades": 1469
+      "total": 23104598,
+      "unidades": 1470
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 20032399,
-      "unidades": 1284
+      "total": 20048399,
+      "unidades": 1285
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 19856550,
@@ -296,12 +296,12 @@
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 16704199,
-      "unidades": 946
+      "total": 16830199,
+      "unidades": 953
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 15902200,
-      "unidades": 911
+      "total": 15952200,
+      "unidades": 914
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 11745697,
@@ -348,8 +348,8 @@
       "unidades": 83
     },
     "Chope de vino": {
-      "total": 4090000,
-      "unidades": 207
+      "total": 4110000,
+      "unidades": 208
     },
     "Cerveza Red IPA MM": {
       "total": 4022000,
@@ -364,8 +364,8 @@
       "unidades": 66
     },
     "Papas y plátanos chips": {
-      "total": 3257522,
-      "unidades": 483
+      "total": 3264521,
+      "unidades": 484
     },
     "Jarra Stout": {
       "total": 2976600,
@@ -388,8 +388,8 @@
       "unidades": 107
     },
     "B Botella IPA": {
-      "total": 1722999,
-      "unidades": 95
+      "total": 1741999,
+      "unidades": 96
     },
     "B Botella APA": {
       "total": 1715999,
@@ -404,8 +404,8 @@
       "unidades": 283
     },
     "Cañita Hidromiel": {
-      "total": 1664500,
-      "unidades": 114
+      "total": 1684500,
+      "unidades": 115
     },
     "Sampler x 4 cañitas": {
       "total": 1597500,
@@ -420,8 +420,8 @@
       "unidades": 97
     },
     "Cañita de barril American India Pale Ale - Vagabundo": {
-      "total": 1308997,
-      "unidades": 108
+      "total": 1332997,
+      "unidades": 110
     },
     "Jarra Chope de vino": {
       "total": 1116997,
@@ -499,13 +499,13 @@
       "total": 612000,
       "unidades": 9
     },
+    "Cañita de barril American Pale Ale - Cienfuegos": {
+      "total": 533992,
+      "unidades": 53
+    },
     "Cañita de barril Stout - Sangre Negra": {
       "total": 519994,
       "unidades": 52
-    },
-    "Cañita de barril American Pale Ale - Cienfuegos": {
-      "total": 513992,
-      "unidades": 51
     },
     "Kombucha": {
       "total": 462000,
@@ -516,8 +516,8 @@
       "unidades": 23
     },
     "Agua en botella": {
-      "total": 425500,
-      "unidades": 141
+      "total": 428500,
+      "unidades": 142
     },
     "Cañita cerveza invitada": {
       "total": 396000,
@@ -538,6 +538,10 @@
     "Cerveza esclavos IPA": {
       "total": 247000,
       "unidades": 26
+    },
+    "Botella Finster": {
+      "total": 180000,
+      "unidades": 3
     },
     "Shot destilado": {
       "total": 176000,
@@ -562,10 +566,6 @@
     "Cañita de barril Red IPA MM": {
       "total": 130000,
       "unidades": 11
-    },
-    "Botella Finster": {
-      "total": 120000,
-      "unidades": 2
     },
     "Capuchino": {
       "total": 71000,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 239456101,
-      "count": 3386
+      "total": 239953101,
+      "count": 3395
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,

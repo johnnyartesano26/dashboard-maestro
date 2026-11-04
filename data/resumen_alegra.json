@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-03 19:19:58",
+  "generado": "2026-11-04 00:21:21",
   "anio": 2026,
   "kpis": {
-    "total_anual": 504638587,
-    "num_facturas": 3917,
-    "ticket_promedio": 128833
+    "total_anual": 504646587,
+    "num_facturas": 3918,
+    "ticket_promedio": 128802
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 3952082,
-      "count": 37
+      "total": 3960082,
+      "count": 38
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 2619000,
-      "count": 35
+      "total": 2627000,
+      "count": 36
     }
   },
   "por_mes_externo": {
@@ -186,8 +186,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 3922082,
-      "count": 37
+      "total": 3930082,
+      "count": 38
     }
   },
   "por_mes_domicilio": {
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 430653207,
-      "count": 3772
+      "total": 430661207,
+      "count": 3773
     },
     "draft": {
       "total": 9377620,
@@ -480,8 +480,8 @@
       "unidades": 66
     },
     "Finster": {
-      "total": 750983,
-      "unidades": 95
+      "total": 758983,
+      "unidades": 96
     },
     "Aguas frescas": {
       "total": 665993,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 240348101,
-      "count": 3403
+      "total": 240356101,
+      "count": 3404
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,

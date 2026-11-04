@@ -1,6 +1,6 @@
 {
   "proyecto": "Madre Monte — Catálogo de Datos",
-  "actualizado": "2026-11-03",
+  "actualizado": "2026-11-04",
   "metas_anuales": {
     "2026": 527000000,
     "2027": 1600000000
@@ -201,6 +201,18 @@
       "inventario": null,
       "facturacion": {
         "archivo": "data/facturas_2026-10.json"
+      }
+    },
+    {
+      "mes": "Noviembre 2026",
+      "ventas_bar": {
+        "total_ventas": 856000,
+        "dias_con_dato": 2,
+        "promedio_diario": 428000
+      },
+      "inventario": null,
+      "facturacion": {
+        "archivo": "data/facturas_2026-11.json"
       }
     }
   ],

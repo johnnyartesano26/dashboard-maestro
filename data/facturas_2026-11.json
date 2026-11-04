@@ -1,10 +1,164 @@
 {
   "fecha": "2026-11-04",
-  "total": 38,
-  "monto": 3960082,
+  "total": 60,
+  "monto": 4617582,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5639",
+      "cliente": "Consumidor Final",
+      "total": 34000,
+      "status": "closed",
+      "fecha": "2026-11-04"
+    },
+    {
+      "id": "5638",
+      "cliente": "Consumidor Final",
+      "total": 18000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5637",
+      "cliente": "Consumidor Final",
+      "total": 21000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5636",
+      "cliente": "Consumidor Final",
+      "total": 12000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5635",
+      "cliente": "Consumidor Final",
+      "total": 38000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5634",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5633",
+      "cliente": "Consumidor Final",
+      "total": 40000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5632",
+      "cliente": "Consumidor Final",
+      "total": 20000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5631",
+      "cliente": "Consumidor Final",
+      "total": 7000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5630",
+      "cliente": "Consumidor Final",
+      "total": 28000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5629",
+      "cliente": "Consumidor Final",
+      "total": 86000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5628",
+      "cliente": "Consumidor Final",
+      "total": 43000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5627",
+      "cliente": "Consumidor Final",
+      "total": 15000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5626",
+      "cliente": "Consumidor Final",
+      "total": 24000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5625",
+      "cliente": "Consumidor Final",
+      "total": 35500,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5624",
+      "cliente": "Consumidor Final",
+      "total": 80000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5623",
+      "cliente": "Consumidor Final",
+      "total": 38000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5622",
+      "cliente": "Consumidor Final",
+      "total": 30000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5621",
+      "cliente": "Consumidor Final",
+      "total": 7000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5620",
+      "cliente": "Consumidor Final",
+      "total": 25000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5619",
+      "cliente": "Consumidor Final",
+      "total": 10000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
+    {
+      "id": "5618",
+      "cliente": "Consumidor Final",
+      "total": 30000,
+      "status": "closed",
+      "fecha": "2026-11-03"
+    },
     {
       "id": "5617",
       "cliente": "Consumidor Final",

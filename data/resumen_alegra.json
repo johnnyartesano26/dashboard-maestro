@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-05 09:12:16",
+  "generado": "2026-11-05 17:28:49",
   "anio": 2026,
   "kpis": {
-    "total_anual": 505483087,
-    "num_facturas": 3946,
-    "ticket_promedio": 128100
+    "total_anual": 506033447,
+    "num_facturas": 3948,
+    "ticket_promedio": 128175
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 4796582,
-      "count": 66
+      "total": 5346942,
+      "count": 68
     }
   },
   "por_mes_bar": {
@@ -140,8 +140,8 @@
       "count": 75
     },
     "2026-11": {
-      "total": 1333082,
-      "count": 2
+      "total": 1883442,
+      "count": 4
     }
   },
   "por_mes_factura": {
@@ -186,8 +186,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 4766582,
-      "count": 66
+      "total": 5294942,
+      "count": 68
     }
   },
   "por_mes_domicilio": {
@@ -232,8 +232,8 @@
       "count": 68
     },
     "2026-11": {
-      "total": 30000,
-      "count": 1
+      "total": 52000,
+      "count": 3
     }
   },
   "por_estado": {
@@ -246,8 +246,8 @@
       "count": 14
     },
     "open": {
-      "total": 63306581,
-      "count": 116
+      "total": 63856941,
+      "count": 118
     },
     "void": {
       "total": 772099,
@@ -260,16 +260,16 @@
       "unidades": 2562
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 39854887,
-      "unidades": 3587
+      "total": 40261867,
+      "unidades": 3623
     },
     "Cerveza American IPA - Vagabundo": {
       "total": 38314998,
       "unidades": 2052
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 31804749,
-      "unidades": 3236
+      "total": 31865439,
+      "unidades": 3242
     },
     "Cerveza en botella Stout - Sangre Negra": {
       "total": 31242475,
@@ -304,8 +304,8 @@
       "unidades": 915
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
-      "total": 11745697,
-      "unidades": 1190
+      "total": 11806387,
+      "unidades": 1196
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -332,8 +332,8 @@
       "unidades": 628
     },
     "Domicilio": {
-      "total": 5516201,
-      "unidades": 412
+      "total": 5538201,
+      "unidades": 414
     },
     "Jarra IPA": {
       "total": 5006000,
@@ -638,8 +638,8 @@
       "count": 2
     },
     "PINEA S.A.S": {
-      "total": 11264360,
-      "count": 35
+      "total": 11540540,
+      "count": 36
     },
     "DANIEL SCHMUTTE": {
       "total": 10897685,
@@ -765,6 +765,10 @@
       "total": 1421893,
       "count": 5
     },
+    "SAMUEL DAVID GAMBA LUQUE": {
+      "total": 1350620,
+      "count": 4
+    },
     "GRUPO BACCHUS S.A.S": {
       "total": 1346620,
       "count": 2
@@ -792,10 +796,6 @@
     "INVERSIONES DE PASO S.A.S": {
       "total": 1218023,
       "count": 2
-    },
-    "SAMUEL DAVID GAMBA LUQUE": {
-      "total": 1076440,
-      "count": 3
     },
     "CAROLINA CROVO SIERRA": {
       "total": 1044360,

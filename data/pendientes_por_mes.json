@@ -1,15 +1,29 @@
 {
-  "generado": "2026-11-05 09:12:44",
+  "generado": "2026-11-05 17:29:20",
   "anio": "2026",
-  "total_abiertas": 136,
-  "total_anio": 116,
+  "total_abiertas": 138,
+  "total_anio": 118,
   "meses": [
     {
       "mes": "2026-11",
       "label": "Noviembre 2026",
-      "count": 1,
-      "monto": 1253082,
+      "count": 3,
+      "monto": 1803442,
       "facturas": [
+        {
+          "numero": "FE842",
+          "cliente": "SAMUEL DAVID GAMBA LUQUE",
+          "fecha": "2026-11-05",
+          "total": 274180,
+          "balance": 274180
+        },
+        {
+          "numero": "FE841",
+          "cliente": "PINEA S.A.S",
+          "fecha": "2026-11-05",
+          "total": 276180,
+          "balance": 276180
+        },
         {
           "numero": "FE840",
           "cliente": "JUAN CARLOS ORREGO ZAPATA",

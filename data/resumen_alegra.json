@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-04 21:42:49",
+  "generado": "2026-11-05 01:53:46",
   "anio": 2026,
   "kpis": {
-    "total_anual": 505304087,
-    "num_facturas": 3940,
-    "ticket_promedio": 128250
+    "total_anual": 505373087,
+    "num_facturas": 3942,
+    "ticket_promedio": 128202
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 4617582,
-      "count": 60
+      "total": 4686582,
+      "count": 62
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 3284500,
-      "count": 58
+      "total": 3353500,
+      "count": 60
     }
   },
   "por_mes_externo": {
@@ -186,8 +186,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 4587582,
-      "count": 60
+      "total": 4656582,
+      "count": 62
     }
   },
   "por_mes_domicilio": {
@@ -238,16 +238,16 @@
   },
   "por_estado": {
     "closed": {
-      "total": 431318707,
-      "count": 3795
+      "total": 431916787,
+      "count": 3798
     },
     "draft": {
       "total": 9377620,
       "count": 14
     },
     "open": {
-      "total": 63835661,
-      "count": 117
+      "total": 63306581,
+      "count": 116
     },
     "void": {
       "total": 772099,
@@ -264,8 +264,8 @@
       "unidades": 3587
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 38219998,
-      "unidades": 2047
+      "total": 38276998,
+      "unidades": 2050
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 31804749,
@@ -420,8 +420,8 @@
       "unidades": 97
     },
     "Cañita de barril American India Pale Ale - Vagabundo": {
-      "total": 1332997,
-      "unidades": 110
+      "total": 1344997,
+      "unidades": 111
     },
     "Jarra Chope de vino": {
       "total": 1116997,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 241013601,
-      "count": 3426
+      "total": 241082601,
+      "count": 3428
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,

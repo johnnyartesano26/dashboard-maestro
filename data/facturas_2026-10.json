@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-04",
+  "fecha": "2026-11-05",
   "total": 403,
   "monto": 54201774,
   "drafts": 2,
@@ -1745,7 +1745,7 @@
       "id": "5331",
       "cliente": "SELMA MED S.A.S",
       "total": 529080,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-13"
     },
     {

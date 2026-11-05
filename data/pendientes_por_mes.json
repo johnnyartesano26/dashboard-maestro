@@ -1,8 +1,8 @@
 {
-  "generado": "2026-11-04 21:43:19",
+  "generado": "2026-11-05 01:54:15",
   "anio": "2026",
-  "total_abiertas": 137,
-  "total_anio": 117,
+  "total_abiertas": 136,
+  "total_anio": 116,
   "meses": [
     {
       "mes": "2026-11",
@@ -22,8 +22,8 @@
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 38,
-      "monto": 15965166,
+      "count": 37,
+      "monto": 15436086,
       "facturas": [
         {
           "numero": "FE838",
@@ -192,13 +192,6 @@
           "fecha": "2026-10-15",
           "total": 544550,
           "balance": 544550
-        },
-        {
-          "numero": "FE794",
-          "cliente": "SELMA MED S.A.S",
-          "fecha": "2026-10-13",
-          "total": 529080,
-          "balance": 529080
         },
         {
           "numero": "FE793",

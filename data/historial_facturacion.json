@@ -42232,5 +42232,165 @@
       }
     },
     "resumen": "0 emitidas | 0 sin stock | 0 sin cliente"
+  },
+  {
+    "fecha": "2026-11-05 13:18:53",
+    "dry_run": false,
+    "pendientes_procesar": 1,
+    "emitidas": 1,
+    "sin_stock": 0,
+    "sin_cliente": 0,
+    "errores": 0,
+    "inventario_inicial": {
+      "GOLDEN ALE": {
+        "bot": 52.0,
+        "barril": 57.0,
+        "litros": 740.0
+      },
+      "IRISH RED ALE": {
+        "bot": 42.0,
+        "barril": 58.0,
+        "litros": 419.0
+      },
+      "APA": {
+        "bot": 65.0,
+        "barril": 30.0,
+        "litros": 320.0
+      },
+      "IPA": {
+        "bot": 6.0,
+        "barril": 58.0,
+        "litros": 449.0
+      },
+      "STOUT": {
+        "bot": 20.0,
+        "barril": 76.0,
+        "litros": 195.0
+      },
+      "GERMAN PILS": {
+        "bot": 0.0,
+        "barril": 0.0,
+        "litros": 0.0
+      },
+      "HIDROMIEL": {
+        "bot": 14.0,
+        "barril": 46.0,
+        "litros": 152.0
+      },
+      "RED IPA": {
+        "bot": 0.0,
+        "barril": 0.0,
+        "litros": 0.0
+      }
+    },
+    "inventario_final": {
+      "GOLDEN ALE": {
+        "bot": 52.0,
+        "barril": 57.0,
+        "litros": 740.0
+      },
+      "IRISH RED ALE": {
+        "bot": 42.0,
+        "barril": 58.0,
+        "litros": 419.0
+      },
+      "APA": {
+        "bot": 59.0,
+        "barril": 30.0,
+        "litros": 320.0
+      },
+      "IPA": {
+        "bot": 0.0,
+        "barril": 54.0,
+        "litros": 449.0
+      },
+      "STOUT": {
+        "bot": 20.0,
+        "barril": 76.0,
+        "litros": 195.0
+      },
+      "GERMAN PILS": {
+        "bot": 0.0,
+        "barril": 0.0,
+        "litros": 0.0
+      },
+      "HIDROMIEL": {
+        "bot": 14.0,
+        "barril": 46.0,
+        "litros": 152.0
+      },
+      "RED IPA": {
+        "bot": 0.0,
+        "barril": 0.0,
+        "litros": 0.0
+      }
+    },
+    "descuento_inventario": {
+      "GOLDEN ALE": {
+        "bot_pedidas": 0,
+        "bot_descontadas_de_stock": 0,
+        "bot_cubiertas_por_litros": 0,
+        "litros_pedidos": 0.0,
+        "litros_descontados_de_barril": 0.0,
+        "litros_descontados_de_fermentador": 0.0
+      },
+      "IRISH RED ALE": {
+        "bot_pedidas": 0,
+        "bot_descontadas_de_stock": 0,
+        "bot_cubiertas_por_litros": 0,
+        "litros_pedidos": 0.0,
+        "litros_descontados_de_barril": 0.0,
+        "litros_descontados_de_fermentador": 0.0
+      },
+      "APA": {
+        "bot_pedidas": 6,
+        "bot_descontadas_de_stock": 6,
+        "bot_cubiertas_por_litros": 0,
+        "litros_pedidos": 0.0,
+        "litros_descontados_de_barril": 0.0,
+        "litros_descontados_de_fermentador": 0.0
+      },
+      "IPA": {
+        "bot_pedidas": 18,
+        "bot_descontadas_de_stock": 6,
+        "bot_cubiertas_por_litros": 12,
+        "litros_pedidos": 0.0,
+        "litros_descontados_de_barril": 4.0,
+        "litros_descontados_de_fermentador": 0.0
+      },
+      "STOUT": {
+        "bot_pedidas": 0,
+        "bot_descontadas_de_stock": 0,
+        "bot_cubiertas_por_litros": 0,
+        "litros_pedidos": 0.0,
+        "litros_descontados_de_barril": 0.0,
+        "litros_descontados_de_fermentador": 0.0
+      },
+      "GERMAN PILS": {
+        "bot_pedidas": 0,
+        "bot_descontadas_de_stock": 0,
+        "bot_cubiertas_por_litros": 0,
+        "litros_pedidos": 0.0,
+        "litros_descontados_de_barril": 0.0,
+        "litros_descontados_de_fermentador": 0.0
+      },
+      "HIDROMIEL": {
+        "bot_pedidas": 0,
+        "bot_descontadas_de_stock": 0,
+        "bot_cubiertas_por_litros": 0,
+        "litros_pedidos": 0.0,
+        "litros_descontados_de_barril": 0.0,
+        "litros_descontados_de_fermentador": 0.0
+      },
+      "RED IPA": {
+        "bot_pedidas": 0,
+        "bot_descontadas_de_stock": 0,
+        "bot_cubiertas_por_litros": 0,
+        "litros_pedidos": 0.0,
+        "litros_descontados_de_barril": 0.0,
+        "litros_descontados_de_fermentador": 0.0
+      }
+    },
+    "resumen": "1 emitidas | 0 sin stock | 0 sin cliente | 0 errores"
   }
 ]

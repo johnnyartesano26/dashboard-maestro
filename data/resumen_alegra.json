@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-05 01:53:46",
+  "generado": "2026-11-05 09:12:16",
   "anio": 2026,
   "kpis": {
-    "total_anual": 505373087,
-    "num_facturas": 3942,
-    "ticket_promedio": 128202
+    "total_anual": 505483087,
+    "num_facturas": 3946,
+    "ticket_promedio": 128100
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 4686582,
-      "count": 62
+      "total": 4796582,
+      "count": 66
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 3353500,
-      "count": 60
+      "total": 3463500,
+      "count": 64
     }
   },
   "por_mes_externo": {
@@ -186,8 +186,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 4656582,
-      "count": 62
+      "total": 4766582,
+      "count": 66
     }
   },
   "por_mes_domicilio": {
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 431916787,
-      "count": 3798
+      "total": 432026787,
+      "count": 3802
     },
     "draft": {
       "total": 9377620,
@@ -264,8 +264,8 @@
       "unidades": 3587
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 38276998,
-      "unidades": 2050
+      "total": 38314998,
+      "unidades": 2052
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 31804749,
@@ -348,8 +348,8 @@
       "unidades": 84
     },
     "Chope de vino": {
-      "total": 4130000,
-      "unidades": 209
+      "total": 4162000,
+      "unidades": 211
     },
     "Cerveza Red IPA MM": {
       "total": 4022000,
@@ -364,8 +364,8 @@
       "unidades": 66
     },
     "Papas y plátanos chips": {
-      "total": 3299517,
-      "unidades": 489
+      "total": 3313515,
+      "unidades": 491
     },
     "Jarra Stout": {
       "total": 2976600,
@@ -395,6 +395,10 @@
       "total": 1741999,
       "unidades": 96
     },
+    "Cañita Hidromiel": {
+      "total": 1732500,
+      "unidades": 118
+    },
     "B Botella APA": {
       "total": 1715999,
       "unidades": 98
@@ -402,10 +406,6 @@
     "Jarra Golden Ale / Irish Red Ale": {
       "total": 1715998,
       "unidades": 33
-    },
-    "Cañita Hidromiel": {
-      "total": 1714500,
-      "unidades": 117
     },
     "Sampler x 4 cañitas": {
       "total": 1627500,
@@ -467,13 +467,13 @@
       "total": 946000,
       "unidades": 84
     },
+    "Coca cola 400 mL": {
+      "total": 848000,
+      "unidades": 114
+    },
     "1/2 Aguardiente": {
       "total": 843000,
       "unidades": 15
-    },
-    "Coca cola 400 mL": {
-      "total": 840000,
-      "unidades": 113
     },
     "Limonadas: Coco, lyche, cereza, hierbabuena": {
       "total": 790799,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 241082601,
-      "count": 3428
+      "total": 241192601,
+      "count": 3432
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,

@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-05T06:09:42.719826",
+  "generado": "2026-11-05T17:16:40.370205",
   "fecha_lectura": "2026-11-03 14:25:33",
   "fermentadores": [
     {
@@ -66,7 +66,7 @@
     {
       "codigo": "PTL03",
       "estilo": "APA",
-      "litros": 7.6
+      "litros": 7.2
     },
     {
       "codigo": "PTL04",
@@ -76,7 +76,7 @@
     {
       "codigo": "PTL05",
       "estilo": "STOUT",
-      "litros": 22.5
+      "litros": 24.2
     },
     {
       "codigo": "",
@@ -147,8 +147,8 @@
     }
   ],
   "totales": {
-    "litros_fermentando": 2351,
-    "litros_barril": 76,
-    "ventas_cop": 9133150
+    "litros_fermentando": 2352,
+    "litros_barril": 77,
+    "ventas_cop": 9402150
   }
 }

@@ -1,10 +1,59 @@
 {
-  "fecha": "2026-11-05",
-  "total": 68,
-  "monto": 5346942,
+  "fecha": "2026-11-06",
+  "total": 75,
+  "monto": 5549942,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5654",
+      "cliente": "Consumidor Final",
+      "total": 15000,
+      "status": "closed",
+      "fecha": "2026-11-05"
+    },
+    {
+      "id": "5653",
+      "cliente": "Consumidor Final",
+      "total": 42000,
+      "status": "closed",
+      "fecha": "2026-11-05"
+    },
+    {
+      "id": "5652",
+      "cliente": "Consumidor Final",
+      "total": 37000,
+      "status": "closed",
+      "fecha": "2026-11-05"
+    },
+    {
+      "id": "5651",
+      "cliente": "Consumidor Final",
+      "total": 14000,
+      "status": "closed",
+      "fecha": "2026-11-05"
+    },
+    {
+      "id": "5650",
+      "cliente": "Consumidor Final",
+      "total": 40000,
+      "status": "closed",
+      "fecha": "2026-11-05"
+    },
+    {
+      "id": "5649",
+      "cliente": "Consumidor Final",
+      "total": 20000,
+      "status": "closed",
+      "fecha": "2026-11-05"
+    },
+    {
+      "id": "5648",
+      "cliente": "Consumidor Final",
+      "total": 35000,
+      "status": "closed",
+      "fecha": "2026-11-05"
+    },
     {
       "id": "5647",
       "cliente": "SAMUEL DAVID GAMBA LUQUE",

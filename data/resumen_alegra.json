@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-05 23:04:02",
+  "generado": "2026-11-06 03:26:19",
   "anio": 2026,
   "kpis": {
-    "total_anual": 506033447,
-    "num_facturas": 3948,
-    "ticket_promedio": 128175
+    "total_anual": 506236447,
+    "num_facturas": 3955,
+    "ticket_promedio": 127999
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 5346942,
-      "count": 68
+      "total": 5549942,
+      "count": 75
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 3463500,
-      "count": 64
+      "total": 3666500,
+      "count": 71
     }
   },
   "por_mes_externo": {
@@ -186,8 +186,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 5294942,
-      "count": 68
+      "total": 5497942,
+      "count": 75
     }
   },
   "por_mes_domicilio": {
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 432026787,
-      "count": 3802
+      "total": 432229787,
+      "count": 3809
     },
     "draft": {
       "total": 9377620,
@@ -280,12 +280,12 @@
       "unidades": 2822
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 23196598,
-      "unidades": 1476
+      "total": 23212598,
+      "unidades": 1477
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 20080399,
-      "unidades": 1287
+      "total": 20128399,
+      "unidades": 1290
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 19856550,
@@ -296,8 +296,8 @@
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 16884199,
-      "unidades": 956
+      "total": 16902199,
+      "unidades": 957
     },
     "Cerveza APA - Cienfuegos": {
       "total": 15970200,
@@ -364,8 +364,8 @@
       "unidades": 66
     },
     "Papas y plátanos chips": {
-      "total": 3313515,
-      "unidades": 491
+      "total": 3320514,
+      "unidades": 492
     },
     "Jarra Stout": {
       "total": 2976600,
@@ -387,6 +387,10 @@
       "total": 1821040,
       "unidades": 107
     },
+    "Cañita Hidromiel": {
+      "total": 1787500,
+      "unidades": 121
+    },
     "Soda": {
       "total": 1745000,
       "unidades": 291
@@ -394,10 +398,6 @@
     "B Botella IPA": {
       "total": 1741999,
       "unidades": 96
-    },
-    "Cañita Hidromiel": {
-      "total": 1732500,
-      "unidades": 118
     },
     "B Botella APA": {
       "total": 1715999,
@@ -420,8 +420,8 @@
       "unidades": 97
     },
     "Cañita de barril American India Pale Ale - Vagabundo": {
-      "total": 1344997,
-      "unidades": 111
+      "total": 1358997,
+      "unidades": 112
     },
     "Jarra Chope de vino": {
       "total": 1116997,
@@ -475,13 +475,13 @@
       "total": 843000,
       "unidades": 15
     },
+    "Finster": {
+      "total": 794982,
+      "unidades": 101
+    },
     "Limonadas: Coco, lyche, cereza, hierbabuena": {
       "total": 790799,
       "unidades": 66
-    },
-    "Finster": {
-      "total": 762983,
-      "unidades": 97
     },
     "Aguas frescas": {
       "total": 665993,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 241192601,
-      "count": 3432
+      "total": 241395601,
+      "count": 3439
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,

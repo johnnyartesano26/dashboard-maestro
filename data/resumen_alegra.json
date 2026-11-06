@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-06 03:26:19",
+  "generado": "2026-11-06 11:34:15",
   "anio": 2026,
   "kpis": {
-    "total_anual": 506236447,
-    "num_facturas": 3955,
-    "ticket_promedio": 127999
+    "total_anual": 506296447,
+    "num_facturas": 3956,
+    "ticket_promedio": 127982
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 5549942,
-      "count": 75
+      "total": 5609942,
+      "count": 76
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 3666500,
-      "count": 71
+      "total": 3726500,
+      "count": 72
     }
   },
   "por_mes_externo": {
@@ -186,8 +186,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 5497942,
-      "count": 75
+      "total": 5557942,
+      "count": 76
     }
   },
   "por_mes_domicilio": {
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 432229787,
-      "count": 3809
+      "total": 432289787,
+      "count": 3810
     },
     "draft": {
       "total": 9377620,
@@ -264,8 +264,8 @@
       "unidades": 3623
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 38314998,
-      "unidades": 2052
+      "total": 38333998,
+      "unidades": 2053
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 31865439,
@@ -296,12 +296,12 @@
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 16902199,
-      "unidades": 957
+      "total": 16920199,
+      "unidades": 958
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 15970200,
-      "unidades": 915
+      "total": 15988200,
+      "unidades": 916
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 11806387,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 241395601,
-      "count": 3439
+      "total": 241455601,
+      "count": 3440
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,

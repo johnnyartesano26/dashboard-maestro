@@ -1,10 +1,94 @@
 {
   "fecha": "2026-11-07",
-  "total": 82,
-  "monto": 6040942,
+  "total": 94,
+  "monto": 7010942,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5673",
+      "cliente": "Consumidor Final",
+      "total": 55000,
+      "status": "closed",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "5672",
+      "cliente": "Consumidor Final",
+      "total": 57000,
+      "status": "closed",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "5671",
+      "cliente": "Consumidor Final",
+      "total": 87000,
+      "status": "closed",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "5670",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "5669",
+      "cliente": "Consumidor Final",
+      "total": 187000,
+      "status": "closed",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "5668",
+      "cliente": "Consumidor Final",
+      "total": 145000,
+      "status": "closed",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "5667",
+      "cliente": "Consumidor Final",
+      "total": 39000,
+      "status": "closed",
+      "fecha": "2026-11-06"
+    },
+    {
+      "id": "5666",
+      "cliente": "Consumidor Final",
+      "total": 58000,
+      "status": "closed",
+      "fecha": "2026-11-06"
+    },
+    {
+      "id": "5665",
+      "cliente": "Consumidor Final",
+      "total": 56000,
+      "status": "closed",
+      "fecha": "2026-11-06"
+    },
+    {
+      "id": "5664",
+      "cliente": "Consumidor Final",
+      "total": 25000,
+      "status": "closed",
+      "fecha": "2026-11-06"
+    },
+    {
+      "id": "5663",
+      "cliente": "Consumidor Final",
+      "total": 60000,
+      "status": "closed",
+      "fecha": "2026-11-06"
+    },
+    {
+      "id": "5662",
+      "cliente": "Consumidor Final",
+      "total": 185000,
+      "status": "closed",
+      "fecha": "2026-11-06"
+    },
     {
       "id": "5661",
       "cliente": "Consumidor Final",

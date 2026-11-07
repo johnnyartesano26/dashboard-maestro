@@ -1,10 +1,24 @@
 {
   "fecha": "2026-11-07",
-  "total": 94,
-  "monto": 7010942,
+  "total": 96,
+  "monto": 7941462,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5675",
+      "cliente": "JUAN ESTEBAN GOMEZ MORENO",
+      "total": 402940,
+      "status": "open",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "5674",
+      "cliente": "DANIEL SCHMUTTE",
+      "total": 527580,
+      "status": "open",
+      "fecha": "2026-11-07"
+    },
     {
       "id": "5673",
       "cliente": "Consumidor Final",

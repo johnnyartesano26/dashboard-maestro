@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-07 10:48:59",
+  "generado": "2026-11-07 17:02:09",
   "anio": 2026,
   "kpis": {
-    "total_anual": 507697447,
-    "num_facturas": 3974,
-    "ticket_promedio": 127755
+    "total_anual": 508627967,
+    "num_facturas": 3976,
+    "ticket_promedio": 127925
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 7010942,
-      "count": 94
+      "total": 7941462,
+      "count": 96
     }
   },
   "por_mes_bar": {
@@ -140,8 +140,8 @@
       "count": 75
     },
     "2026-11": {
-      "total": 1883442,
-      "count": 4
+      "total": 2813962,
+      "count": 6
     }
   },
   "por_mes_factura": {
@@ -186,8 +186,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 6958942,
-      "count": 94
+      "total": 7860962,
+      "count": 96
     }
   },
   "por_mes_domicilio": {
@@ -232,8 +232,8 @@
       "count": 68
     },
     "2026-11": {
-      "total": 52000,
-      "count": 3
+      "total": 80500,
+      "count": 5
     }
   },
   "por_estado": {
@@ -246,8 +246,8 @@
       "count": 14
     },
     "open": {
-      "total": 63856941,
-      "count": 118
+      "total": 64787461,
+      "count": 120
     },
     "void": {
       "total": 772099,
@@ -260,20 +260,20 @@
       "unidades": 2562
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 40261867,
-      "unidades": 3623
+      "total": 40759287,
+      "unidades": 3667
     },
     "Cerveza American IPA - Vagabundo": {
       "total": 38580998,
       "unidades": 2066
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 31865439,
-      "unidades": 3242
+      "total": 31986819,
+      "unidades": 3254
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 31242475,
-      "unidades": 3153
+      "total": 31525695,
+      "unidades": 3181
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
       "total": 27646482,
@@ -332,8 +332,8 @@
       "unidades": 628
     },
     "Domicilio": {
-      "total": 5538201,
-      "unidades": 414
+      "total": 5566701,
+      "unidades": 416
     },
     "Jarra IPA": {
       "total": 5006000,
@@ -642,8 +642,8 @@
       "count": 36
     },
     "DANIEL SCHMUTTE": {
-      "total": 10897685,
-      "count": 25
+      "total": 11425265,
+      "count": 26
     },
     "Leonardo Gaitan Zuluaga": {
       "total": 9604321,
@@ -658,8 +658,8 @@
       "count": 14
     },
     "JUAN ESTEBAN GOMEZ MORENO": {
-      "total": 6559040,
-      "count": 12
+      "total": 6961980,
+      "count": 13
     },
     "CECILIA ALICIA BRAVO DE NOHAVA": {
       "total": 5907162,

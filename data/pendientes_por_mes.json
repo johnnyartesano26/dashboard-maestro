@@ -1,15 +1,29 @@
 {
-  "generado": "2026-11-07 10:49:29",
+  "generado": "2026-11-07 17:02:40",
   "anio": "2026",
-  "total_abiertas": 138,
-  "total_anio": 118,
+  "total_abiertas": 140,
+  "total_anio": 120,
   "meses": [
     {
       "mes": "2026-11",
       "label": "Noviembre 2026",
-      "count": 3,
-      "monto": 1803442,
+      "count": 5,
+      "monto": 2733962,
       "facturas": [
+        {
+          "numero": "FE844",
+          "cliente": "JUAN ESTEBAN GOMEZ MORENO",
+          "fecha": "2026-11-07",
+          "total": 402940,
+          "balance": 402940
+        },
+        {
+          "numero": "FE843",
+          "cliente": "DANIEL SCHMUTTE",
+          "fecha": "2026-11-07",
+          "total": 527580,
+          "balance": 527580
+        },
         {
           "numero": "FE842",
           "cliente": "SAMUEL DAVID GAMBA LUQUE",

@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-06T22:57:03.378468",
+  "generado": "2026-11-07T05:35:44.459974",
   "fecha_lectura": "2026-11-03 14:25:33",
   "fermentadores": [
     {
@@ -56,7 +56,7 @@
     {
       "codigo": "PTL01",
       "estilo": "GOLDEN ALE",
-      "litros": 0
+      "litros": 4.9
     },
     {
       "codigo": "PTL02",
@@ -76,7 +76,7 @@
     {
       "codigo": "PTL05",
       "estilo": "STOUT",
-      "litros": 24.2
+      "litros": 24.8
     },
     {
       "codigo": "",
@@ -147,8 +147,8 @@
     }
   ],
   "totales": {
-    "litros_fermentando": 2352,
-    "litros_barril": 77,
-    "ventas_cop": 9402150
+    "litros_fermentando": 2357,
+    "litros_barril": 82,
+    "ventas_cop": 8509150
   }
 }

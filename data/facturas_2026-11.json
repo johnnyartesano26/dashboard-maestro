@@ -1,10 +1,115 @@
 {
   "fecha": "2026-11-08",
-  "total": 98,
-  "monto": 8017462,
+  "total": 113,
+  "monto": 9711462,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5692",
+      "cliente": "Consumidor Final",
+      "total": 114000,
+      "status": "closed",
+      "fecha": "2026-11-08"
+    },
+    {
+      "id": "5691",
+      "cliente": "Consumidor Final",
+      "total": 94000,
+      "status": "closed",
+      "fecha": "2026-11-08"
+    },
+    {
+      "id": "5690",
+      "cliente": "Consumidor Final",
+      "total": 112000,
+      "status": "closed",
+      "fecha": "2026-11-08"
+    },
+    {
+      "id": "5689",
+      "cliente": "Consumidor Final",
+      "total": 784000,
+      "status": "closed",
+      "fecha": "2026-11-08"
+    },
+    {
+      "id": "5688",
+      "cliente": "Consumidor Final",
+      "total": 169000,
+      "status": "closed",
+      "fecha": "2026-11-08"
+    },
+    {
+      "id": "5687",
+      "cliente": "Consumidor Final",
+      "total": 140000,
+      "status": "closed",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "5686",
+      "cliente": "Consumidor Final",
+      "total": 41000,
+      "status": "closed",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "5685",
+      "cliente": "Consumidor Final",
+      "total": 24000,
+      "status": "closed",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "5684",
+      "cliente": "Consumidor Final",
+      "total": 26000,
+      "status": "closed",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "5683",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "5682",
+      "cliente": "Consumidor Final",
+      "total": 28000,
+      "status": "closed",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "5681",
+      "cliente": "Consumidor Final",
+      "total": 20000,
+      "status": "closed",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "5680",
+      "cliente": "Consumidor Final",
+      "total": 20000,
+      "status": "closed",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "5679",
+      "cliente": "Consumidor Final",
+      "total": 27000,
+      "status": "closed",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "5678",
+      "cliente": "Consumidor Final",
+      "total": 79000,
+      "status": "closed",
+      "fecha": "2026-11-07"
+    },
     {
       "id": "5677",
       "cliente": "Consumidor Final",

@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-07 20:56:23",
+  "generado": "2026-11-08 00:27:21",
   "anio": 2026,
   "kpis": {
-    "total_anual": 508627967,
-    "num_facturas": 3976,
-    "ticket_promedio": 127925
+    "total_anual": 508703967,
+    "num_facturas": 3978,
+    "ticket_promedio": 127879
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 7941462,
-      "count": 96
+      "total": 8017462,
+      "count": 98
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 5127500,
-      "count": 90
+      "total": 5203500,
+      "count": 92
     }
   },
   "por_mes_externo": {
@@ -186,8 +186,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 7860962,
-      "count": 96
+      "total": 7936962,
+      "count": 98
     }
   },
   "por_mes_domicilio": {
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 433690787,
-      "count": 3828
+      "total": 433766787,
+      "count": 3830
     },
     "draft": {
       "total": 9377620,
@@ -280,12 +280,12 @@
       "unidades": 2822
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 23372598,
-      "unidades": 1487
+      "total": 23404598,
+      "unidades": 1489
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 20224399,
-      "unidades": 1296
+      "total": 20240399,
+      "unidades": 1297
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 19856550,
@@ -296,8 +296,8 @@
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 16956199,
-      "unidades": 960
+      "total": 16974199,
+      "unidades": 961
     },
     "Cerveza APA - Cienfuegos": {
       "total": 16078200,
@@ -396,8 +396,8 @@
       "unidades": 98
     },
     "Soda": {
-      "total": 1757000,
-      "unidades": 293
+      "total": 1763000,
+      "unidades": 294
     },
     "B Botella APA": {
       "total": 1733999,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 242856601,
-      "count": 3458
+      "total": 242932601,
+      "count": 3460
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,

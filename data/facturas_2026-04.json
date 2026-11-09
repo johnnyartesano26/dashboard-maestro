@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-08",
-  "total": 385,
-  "monto": 44418093,
+  "fecha": "2026-11-09",
+  "total": 386,
+  "monto": 44618093,
   "drafts": 1,
   "drafts_monto": 20500,
   "facturas": [
@@ -1262,6 +1262,13 @@
       "id": "3071",
       "cliente": "Consumidor Final",
       "total": 74296,
+      "status": "closed",
+      "fecha": "2026-04-17"
+    },
+    {
+      "id": "3070",
+      "cliente": "Consumidor Final",
+      "total": 200000,
       "status": "closed",
       "fecha": "2026-04-17"
     },

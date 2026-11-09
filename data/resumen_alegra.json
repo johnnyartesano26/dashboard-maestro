@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-09 10:20:03",
+  "generado": "2026-11-09 21:16:26",
   "anio": 2026,
   "kpis": {
-    "total_anual": 512243967,
-    "num_facturas": 4013,
-    "ticket_promedio": 127646
+    "total_anual": 513226597,
+    "num_facturas": 4017,
+    "ticket_promedio": 127764
   },
   "por_mes": {
     "2026-01": {
@@ -44,12 +44,12 @@
       "count": 418
     },
     "2026-10": {
-      "total": 54201774,
-      "count": 403
+      "total": 53730434,
+      "count": 402
     },
     "2026-11": {
-      "total": 11557462,
-      "count": 133
+      "total": 13011432,
+      "count": 138
     }
   },
   "por_mes_bar": {
@@ -136,12 +136,12 @@
       "count": 61
     },
     "2026-10": {
-      "total": 30883730,
-      "count": 75
+      "total": 30412390,
+      "count": 74
     },
     "2026-11": {
-      "total": 2813962,
-      "count": 6
+      "total": 4267932,
+      "count": 11
     }
   },
   "por_mes_factura": {
@@ -182,12 +182,12 @@
       "count": 418
     },
     "2026-10": {
-      "total": 53290274,
-      "count": 403
+      "total": 52830934,
+      "count": 402
     },
     "2026-11": {
-      "total": 11476962,
-      "count": 133
+      "total": 12860932,
+      "count": 138
     }
   },
   "por_mes_domicilio": {
@@ -228,12 +228,12 @@
       "count": 45
     },
     "2026-10": {
-      "total": 911500,
-      "count": 68
+      "total": 899500,
+      "count": 67
     },
     "2026-11": {
-      "total": 80500,
-      "count": 5
+      "total": 150500,
+      "count": 10
     }
   },
   "por_estado": {
@@ -242,12 +242,12 @@
       "count": 3865
     },
     "draft": {
-      "total": 9377620,
-      "count": 14
+      "total": 8906280,
+      "count": 13
     },
     "open": {
-      "total": 64787461,
-      "count": 120
+      "total": 66241431,
+      "count": 125
     },
     "void": {
       "total": 772099,
@@ -260,24 +260,24 @@
       "unidades": 2562
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 40759287,
-      "unidades": 3667
+      "total": 41087132,
+      "unidades": 3696
     },
     "Cerveza American IPA - Vagabundo": {
       "total": 38848898,
       "unidades": 2081
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 31986819,
-      "unidades": 3254
+      "total": 32199234,
+      "unidades": 3275
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 31525695,
-      "unidades": 3181
+      "total": 31748225,
+      "unidades": 3203
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 27646482,
-      "unidades": 2822
+      "total": 27575677,
+      "unidades": 2815
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 23737398,
@@ -304,8 +304,8 @@
       "unidades": 933
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
-      "total": 11806387,
-      "unidades": 1196
+      "total": 12039032,
+      "unidades": 1219
     },
     "Hidromiel - Bandada": {
       "total": 10504000,
@@ -336,8 +336,8 @@
       "unidades": 85
     },
     "Domicilio": {
-      "total": 5566701,
-      "unidades": 416
+      "total": 5624701,
+      "unidades": 420
     },
     "Soda saborizada": {
       "total": 5064892,
@@ -662,16 +662,16 @@
       "count": 13
     },
     "CECILIA ALICIA BRAVO DE NOHAVA": {
-      "total": 5907162,
-      "count": 18
+      "total": 5435822,
+      "count": 17
     },
     "MARTHA ELENA  (Punta Arena) PERDOMO JIMENEZ": {
       "total": 5345601,
       "count": 15
     },
     "Martin La Vendimia Emilio Jaramillo Marín": {
-      "total": 4789636,
-      "count": 10
+      "total": 5304436,
+      "count": 11
     },
     "INVERSIONES PULSO S.A.S": {
       "total": 4485097,
@@ -697,6 +697,10 @@
       "total": 2600032,
       "count": 8
     },
+    "Jairo licorera Kanana Acevedo Sanchez": {
+      "total": 2586710,
+      "count": 10
+    },
     "Elena Ossa Sanchez": {
       "total": 2531439,
       "count": 10
@@ -709,9 +713,9 @@
       "total": 2395385,
       "count": 9
     },
-    "Jairo licorera Kanana Acevedo Sanchez": {
-      "total": 2323000,
-      "count": 9
+    "ORLANDO VICENTE CEBALLOS ROMERO": {
+      "total": 2002300,
+      "count": 5
     },
     "Azucena (HOUSE OF DEMONS) Rallon Benjumea": {
       "total": 1972460,
@@ -728,10 +732,6 @@
     "LOREPA AREPAS SAS": {
       "total": 1758945,
       "count": 6
-    },
-    "ORLANDO VICENTE CEBALLOS ROMERO": {
-      "total": 1737400,
-      "count": 4
     },
     "MONKEY BURGER ENVIGADO": {
       "total": 1729320,
@@ -777,6 +777,10 @@
       "total": 1329480,
       "count": 2
     },
+    "CAROLINA CROVO SIERRA": {
+      "total": 1304260,
+      "count": 5
+    },
     "ORRO S.A.S. Los Patios Boutique": {
       "total": 1297500,
       "count": 4
@@ -796,10 +800,6 @@
     "INVERSIONES DE PASO S.A.S": {
       "total": 1218023,
       "count": 2
-    },
-    "CAROLINA CROVO SIERRA": {
-      "total": 1044360,
-      "count": 4
     },
     "ORRO S.A.S.": {
       "total": 1021320,
@@ -877,6 +877,10 @@
       "total": 682772,
       "count": 2
     },
+    "THC GROUP SAS": {
+      "total": 660080,
+      "count": 2
+    },
     "SEBASTIAN KILBY RESTREPO": {
       "total": 652320,
       "count": 2
@@ -916,10 +920,6 @@
     "Sandra Milena  (Nueva Ola) Orozco Hincapié": {
       "total": 523230,
       "count": 2
-    },
-    "THC GROUP SAS": {
-      "total": 509420,
-      "count": 1
     },
     "Buena Birra Social Club S.A.S": {
       "total": 499800,

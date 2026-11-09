@@ -1,15 +1,50 @@
 {
-  "generado": "2026-11-09 10:20:32",
+  "generado": "2026-11-09 21:17:09",
   "anio": "2026",
-  "total_abiertas": 140,
-  "total_anio": 120,
+  "total_abiertas": 145,
+  "total_anio": 125,
   "meses": [
     {
       "mes": "2026-11",
       "label": "Noviembre 2026",
-      "count": 5,
-      "monto": 2733962,
+      "count": 10,
+      "monto": 4187932,
       "facturas": [
+        {
+          "numero": "FE849",
+          "cliente": "CAROLINA CROVO SIERRA",
+          "fecha": "2026-11-09",
+          "total": 259900,
+          "balance": 259900
+        },
+        {
+          "numero": "FE848",
+          "cliente": "THC GROUP SAS",
+          "fecha": "2026-11-09",
+          "total": 150660,
+          "balance": 150660
+        },
+        {
+          "numero": "FE847",
+          "cliente": "Martin La Vendimia Emilio Jaramillo Marín",
+          "fecha": "2026-11-09",
+          "total": 514800,
+          "balance": 514800
+        },
+        {
+          "numero": "FE846",
+          "cliente": "ORLANDO VICENTE CEBALLOS ROMERO",
+          "fecha": "2026-11-09",
+          "total": 264900,
+          "balance": 264900
+        },
+        {
+          "numero": "FE845",
+          "cliente": "Jairo licorera Kanana Acevedo Sanchez",
+          "fecha": "2026-11-09",
+          "total": 263710,
+          "balance": 263710
+        },
         {
           "numero": "FE844",
           "cliente": "JUAN ESTEBAN GOMEZ MORENO",

@@ -1,10 +1,45 @@
 {
   "fecha": "2026-11-09",
-  "total": 133,
-  "monto": 11557462,
+  "total": 138,
+  "monto": 13011432,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5717",
+      "cliente": "CAROLINA CROVO SIERRA",
+      "total": 259900,
+      "status": "open",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5716",
+      "cliente": "THC GROUP SAS",
+      "total": 150660,
+      "status": "open",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5715",
+      "cliente": "Martin La Vendimia Emilio Jaramillo Marín",
+      "total": 514800,
+      "status": "open",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5714",
+      "cliente": "ORLANDO VICENTE CEBALLOS ROMERO",
+      "total": 264900,
+      "status": "open",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5713",
+      "cliente": "Jairo licorera Kanana Acevedo Sanchez",
+      "total": 263710,
+      "status": "open",
+      "fecha": "2026-11-09"
+    },
     {
       "id": "5712",
       "cliente": "Consumidor Final",

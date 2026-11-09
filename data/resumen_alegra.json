@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-09 02:38:27",
+  "generado": "2026-11-09 10:20:03",
   "anio": 2026,
   "kpis": {
-    "total_anual": 511994967,
-    "num_facturas": 4008,
-    "ticket_promedio": 127743
+    "total_anual": 512243967,
+    "num_facturas": 4013,
+    "ticket_promedio": 127646
   },
   "por_mes": {
     "2026-01": {
@@ -20,12 +20,12 @@
       "count": 415
     },
     "2026-04": {
-      "total": 44618093,
-      "count": 386
+      "total": 44418093,
+      "count": 385
     },
     "2026-05": {
-      "total": 51520275,
-      "count": 365
+      "total": 51296275,
+      "count": 364
     },
     "2026-06": {
       "total": 51403562,
@@ -48,8 +48,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 10884462,
-      "count": 126
+      "total": 11557462,
+      "count": 133
     }
   },
   "por_mes_bar": {
@@ -66,12 +66,12 @@
       "count": 356
     },
     "2026-04": {
-      "total": 24487333,
-      "count": 359
+      "total": 24287333,
+      "count": 358
     },
     "2026-05": {
-      "total": 23069845,
-      "count": 323
+      "total": 22845845,
+      "count": 322
     },
     "2026-06": {
       "total": 20301636,
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 8070500,
-      "count": 120
+      "total": 8743500,
+      "count": 127
     }
   },
   "por_mes_externo": {
@@ -158,12 +158,12 @@
       "count": 415
     },
     "2026-04": {
-      "total": 44332093,
-      "count": 386
+      "total": 44132093,
+      "count": 385
     },
     "2026-05": {
-      "total": 51046275,
-      "count": 365
+      "total": 50822275,
+      "count": 364
     },
     "2026-06": {
       "total": 50849562,
@@ -186,8 +186,8 @@
       "count": 403
     },
     "2026-11": {
-      "total": 10803962,
-      "count": 126
+      "total": 11476962,
+      "count": 133
     }
   },
   "por_mes_domicilio": {
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 437057787,
-      "count": 3860
+      "total": 437306787,
+      "count": 3865
     },
     "draft": {
       "total": 9377620,
@@ -264,8 +264,8 @@
       "unidades": 3667
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 38867898,
-      "unidades": 2082
+      "total": 38848898,
+      "unidades": 2081
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 31986819,
@@ -280,12 +280,12 @@
       "unidades": 2822
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 23801398,
-      "unidades": 1514
+      "total": 23737398,
+      "unidades": 1510
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 20440399,
-      "unidades": 1310
+      "total": 20456399,
+      "unidades": 1311
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 19856550,
@@ -296,20 +296,20 @@
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 17222599,
-      "unidades": 975
+      "total": 17240599,
+      "unidades": 976
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 16270800,
-      "unidades": 932
+      "total": 16288800,
+      "unidades": 933
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 11806387,
       "unidades": 1196
     },
     "Hidromiel - Bandada": {
-      "total": 10329000,
-      "unidades": 418
+      "total": 10504000,
+      "unidades": 425
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -320,7 +320,7 @@
       "unidades": 420
     },
     "Hamburguesa": {
-      "total": 8485952,
+      "total": 8485953,
       "unidades": 244
     },
     "Cerveza industrial": {
@@ -328,8 +328,8 @@
       "unidades": 1197
     },
     "Mini hamburguesa": {
-      "total": 5970891,
-      "unidades": 630
+      "total": 6000890,
+      "unidades": 633
     },
     "Jarra IPA": {
       "total": 5654000,
@@ -340,8 +340,8 @@
       "unidades": 416
     },
     "Soda saborizada": {
-      "total": 5054892,
-      "unidades": 506
+      "total": 5064892,
+      "unidades": 507
     },
     "Jarra Irish Red Ale": {
       "total": 4843995,
@@ -364,8 +364,8 @@
       "unidades": 67
     },
     "Papas y plátanos chips": {
-      "total": 3411505,
-      "unidades": 505
+      "total": 3418504,
+      "unidades": 506
     },
     "Jarra Stout": {
       "total": 2976600,
@@ -376,16 +376,16 @@
       "unidades": 146
     },
     "Nachos Pulled pork": {
-      "total": 2049000,
-      "unidades": 114
+      "total": 2085000,
+      "unidades": 116
     },
     "B Botella Golden Ale": {
-      "total": 1982999,
-      "unidades": 128
+      "total": 1998999,
+      "unidades": 129
     },
     "Cañita Hidromiel": {
-      "total": 1832500,
-      "unidades": 124
+      "total": 1847500,
+      "unidades": 125
     },
     "Evento banda": {
       "total": 1821040,
@@ -424,8 +424,8 @@
       "unidades": 112
     },
     "Jarra Chope de vino": {
-      "total": 1268997,
-      "unidades": 17
+      "total": 1192997,
+      "unidades": 16
     },
     "B Botella Stout": {
       "total": 1118999,
@@ -476,8 +476,8 @@
       "unidades": 15
     },
     "Limonadas: Coco, lyche, cereza, hierbabuena": {
-      "total": 814799,
-      "unidades": 68
+      "total": 826799,
+      "unidades": 69
     },
     "Finster": {
       "total": 810982,
@@ -511,13 +511,13 @@
       "total": 504000,
       "unidades": 36
     },
+    "Invitada IPA La Barbarie": {
+      "total": 456000,
+      "unidades": 24
+    },
     "Agua en botella": {
       "total": 449500,
       "unidades": 149
-    },
-    "Invitada IPA La Barbarie": {
-      "total": 437000,
-      "unidades": 23
     },
     "Cañita cerveza invitada": {
       "total": 396000,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 246223601,
-      "count": 3490
+      "total": 246472601,
+      "count": 3495
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,

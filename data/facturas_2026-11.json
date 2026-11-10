@@ -1,10 +1,164 @@
 {
-  "fecha": "2026-11-09",
-  "total": 138,
-  "monto": 13011432,
+  "fecha": "2026-11-10",
+  "total": 160,
+  "monto": 13660432,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5739",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5738",
+      "cliente": "Consumidor Final",
+      "total": 19000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5737",
+      "cliente": "Consumidor Final",
+      "total": 49000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5736",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5735",
+      "cliente": "Consumidor Final",
+      "total": 48000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5734",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5733",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5732",
+      "cliente": "Consumidor Final",
+      "total": 34000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5731",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5730",
+      "cliente": "Consumidor Final",
+      "total": 34000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5729",
+      "cliente": "Consumidor Final",
+      "total": 15000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5728",
+      "cliente": "Consumidor Final",
+      "total": 19000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5727",
+      "cliente": "Consumidor Final",
+      "total": 34000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5726",
+      "cliente": "Consumidor Final",
+      "total": 40000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5725",
+      "cliente": "Consumidor Final",
+      "total": 28000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5724",
+      "cliente": "Consumidor Final",
+      "total": 25000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5723",
+      "cliente": "Consumidor Final",
+      "total": 82000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5722",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5721",
+      "cliente": "Consumidor Final",
+      "total": 40000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5720",
+      "cliente": "Consumidor Final",
+      "total": 34000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5719",
+      "cliente": "Consumidor Final",
+      "total": 34000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
+    {
+      "id": "5718",
+      "cliente": "Consumidor Final",
+      "total": 18000,
+      "status": "closed",
+      "fecha": "2026-11-09"
+    },
     {
       "id": "5717",
       "cliente": "CAROLINA CROVO SIERRA",

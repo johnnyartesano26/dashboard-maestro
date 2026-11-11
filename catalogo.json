@@ -206,10 +206,10 @@
     {
       "mes": "Noviembre 2026",
       "ventas_bar": {
-        "total_ventas": 6526700,
-        "dias_con_dato": 8,
-        "promedio_diario": 815837,
-        "crecimiento": -72.3,
+        "total_ventas": 7303700,
+        "dias_con_dato": 9,
+        "promedio_diario": 811522,
+        "crecimiento": -69.0,
         "meta_mes": 26000000
       },
       "inventario": null,

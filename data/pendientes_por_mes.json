@@ -1,15 +1,36 @@
 {
-  "generado": "2026-11-11 15:12:11",
+  "generado": "2026-11-11 22:00:17",
   "anio": "2026",
-  "total_abiertas": 147,
-  "total_anio": 127,
+  "total_abiertas": 150,
+  "total_anio": 130,
   "meses": [
     {
       "mes": "2026-11",
       "label": "Noviembre 2026",
-      "count": 12,
-      "monto": 4721252,
+      "count": 15,
+      "monto": 5398347,
       "facturas": [
+        {
+          "numero": "FE853",
+          "cliente": "Consumidor Final",
+          "fecha": "2026-11-11",
+          "total": 51765,
+          "balance": 51765
+        },
+        {
+          "numero": "FE852",
+          "cliente": "SEVEN MINIMERCADO",
+          "fecha": "2026-11-11",
+          "total": 259900,
+          "balance": 259900
+        },
+        {
+          "numero": "FE851",
+          "cliente": "Leonardo Gaitan Zuluaga",
+          "fecha": "2026-11-11",
+          "total": 365430,
+          "balance": 365430
+        },
         {
           "numero": "FE850",
           "cliente": "ORRO S.A.S. Los Patios Boutique",

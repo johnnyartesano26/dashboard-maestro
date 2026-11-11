@@ -1,10 +1,31 @@
 {
   "fecha": "2026-11-11",
-  "total": 186,
-  "monto": 15390752,
+  "total": 189,
+  "monto": 16067847,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5768",
+      "cliente": "Consumidor Final",
+      "total": 51765,
+      "status": "open",
+      "fecha": "2026-11-11"
+    },
+    {
+      "id": "5767",
+      "cliente": "SEVEN MINIMERCADO",
+      "total": 259900,
+      "status": "open",
+      "fecha": "2026-11-11"
+    },
+    {
+      "id": "5766",
+      "cliente": "Leonardo Gaitan Zuluaga",
+      "total": 365430,
+      "status": "open",
+      "fecha": "2026-11-11"
+    },
     {
       "id": "5765",
       "cliente": "Consumidor Final",

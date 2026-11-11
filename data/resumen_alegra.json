@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-11 15:11:39",
+  "generado": "2026-11-11 21:59:46",
   "anio": 2026,
   "kpis": {
-    "total_anual": 515605917,
-    "num_facturas": 4065,
-    "ticket_promedio": 126840
+    "total_anual": 516283012,
+    "num_facturas": 4068,
+    "ticket_promedio": 126913
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 15390752,
-      "count": 186
+      "total": 16067847,
+      "count": 189
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 10589500,
-      "count": 173
+      "total": 10641265,
+      "count": 174
     }
   },
   "por_mes_externo": {
@@ -140,8 +140,8 @@
       "count": 74
     },
     "2026-11": {
-      "total": 4801252,
-      "count": 13
+      "total": 5426582,
+      "count": 15
     }
   },
   "por_mes_factura": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 15216252,
-      "count": 186
+      "total": 15871347,
+      "count": 189
     }
   },
   "por_mes_domicilio": {
@@ -232,8 +232,8 @@
       "count": 67
     },
     "2026-11": {
-      "total": 174500,
-      "count": 12
+      "total": 196500,
+      "count": 14
     }
   },
   "por_estado": {
@@ -246,8 +246,8 @@
       "count": 13
     },
     "open": {
-      "total": 66774751,
-      "count": 127
+      "total": 67451846,
+      "count": 130
     },
     "void": {
       "total": 772099,
@@ -260,24 +260,24 @@
       "unidades": 2562
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 41313232,
-      "unidades": 3716
+      "total": 41482807,
+      "unidades": 3731
     },
     "Cerveza American IPA - Vagabundo": {
       "total": 38943898,
       "unidades": 2086
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 32199234,
-      "unidades": 3275
+      "total": 32280154,
+      "unidades": 3283
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 31829145,
-      "unidades": 3211
+      "total": 31970755,
+      "unidades": 3225
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 27777977,
-      "unidades": 2835
+      "total": 27848782,
+      "unidades": 2842
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 23913398,
@@ -304,8 +304,8 @@
       "unidades": 937
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
-      "total": 12039032,
-      "unidades": 1219
+      "total": 12231217,
+      "unidades": 1238
     },
     "Hidromiel - Bandada": {
       "total": 10579000,
@@ -331,13 +331,13 @@
       "total": 6035890,
       "unidades": 637
     },
+    "Domicilio": {
+      "total": 5670701,
+      "unidades": 424
+    },
     "Jarra IPA": {
       "total": 5654000,
       "unidades": 85
-    },
-    "Domicilio": {
-      "total": 5648701,
-      "unidades": 422
     },
     "Soda saborizada": {
       "total": 5124891,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 248318601,
-      "count": 3541
+      "total": 248370366,
+      "count": 3542
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,
@@ -646,8 +646,8 @@
       "count": 26
     },
     "Leonardo Gaitan Zuluaga": {
-      "total": 9604321,
-      "count": 25
+      "total": 9969751,
+      "count": 26
     },
     "INVERSIONES BISONTALAS S.A.S.": {
       "total": 8848602,
@@ -725,6 +725,10 @@
       "total": 1972460,
       "count": 8
     },
+    "SEVEN MINIMERCADO": {
+      "total": 1834770,
+      "count": 7
+    },
     "MAURICIO GEHOVA JARAMILLO VELASQUEZ": {
       "total": 1799170,
       "count": 7
@@ -744,10 +748,6 @@
     "ASTRID VERONICA PORRAS GIRALDO": {
       "total": 1579580,
       "count": 4
-    },
-    "SEVEN MINIMERCADO": {
-      "total": 1574870,
-      "count": 6
     },
     "ORRO S.A.S. Los Patios Boutique": {
       "total": 1566540,

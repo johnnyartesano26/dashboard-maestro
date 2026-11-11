@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-10 19:36:21",
+  "generado": "2026-11-11 00:24:29",
   "anio": 2026,
   "kpis": {
-    "total_anual": 514003597,
-    "num_facturas": 4041,
-    "ticket_promedio": 127197
+    "total_anual": 514536917,
+    "num_facturas": 4043,
+    "ticket_promedio": 127266
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 13788432,
-      "count": 162
+      "total": 14321752,
+      "count": 164
     }
   },
   "por_mes_bar": {
@@ -140,8 +140,8 @@
       "count": 74
     },
     "2026-11": {
-      "total": 4267932,
-      "count": 11
+      "total": 4801252,
+      "count": 13
     }
   },
   "por_mes_factura": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 13637932,
-      "count": 162
+      "total": 14147252,
+      "count": 164
     }
   },
   "por_mes_domicilio": {
@@ -232,8 +232,8 @@
       "count": 67
     },
     "2026-11": {
-      "total": 150500,
-      "count": 10
+      "total": 174500,
+      "count": 12
     }
   },
   "por_estado": {
@@ -246,8 +246,8 @@
       "count": 13
     },
     "open": {
-      "total": 66241431,
-      "count": 125
+      "total": 66774751,
+      "count": 127
     },
     "void": {
       "total": 772099,
@@ -260,8 +260,8 @@
       "unidades": 2562
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 41087132,
-      "unidades": 3696
+      "total": 41313232,
+      "unidades": 3716
     },
     "Cerveza American IPA - Vagabundo": {
       "total": 38886898,
@@ -272,12 +272,12 @@
       "unidades": 3275
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 31748225,
-      "unidades": 3203
+      "total": 31829145,
+      "unidades": 3211
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 27575677,
-      "unidades": 2815
+      "total": 27777977,
+      "unidades": 2835
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 23785398,
@@ -336,8 +336,8 @@
       "unidades": 85
     },
     "Domicilio": {
-      "total": 5624701,
-      "unidades": 420
+      "total": 5648701,
+      "unidades": 422
     },
     "Soda saborizada": {
       "total": 5064892,
@@ -713,6 +713,10 @@
       "total": 2395385,
       "count": 9
     },
+    "ANTHONY CRAIG WATSON": {
+      "total": 2213110,
+      "count": 10
+    },
     "ORLANDO VICENTE CEBALLOS ROMERO": {
       "total": 2002300,
       "count": 5
@@ -720,10 +724,6 @@
     "Azucena (HOUSE OF DEMONS) Rallon Benjumea": {
       "total": 1972460,
       "count": 8
-    },
-    "ANTHONY CRAIG WATSON": {
-      "total": 1948830,
-      "count": 9
     },
     "MAURICIO GEHOVA JARAMILLO VELASQUEZ": {
       "total": 1799170,
@@ -748,6 +748,10 @@
     "SEVEN MINIMERCADO": {
       "total": 1574870,
       "count": 6
+    },
+    "ORRO S.A.S. Los Patios Boutique": {
+      "total": 1566540,
+      "count": 5
     },
     "nicolas Fajardo Andrade": {
       "total": 1546037,
@@ -780,10 +784,6 @@
     "CAROLINA CROVO SIERRA": {
       "total": 1304260,
       "count": 5
-    },
-    "ORRO S.A.S. Los Patios Boutique": {
-      "total": 1297500,
-      "count": 4
     },
     "Inversiones Zeppeling S.A.S": {
       "total": 1292639,

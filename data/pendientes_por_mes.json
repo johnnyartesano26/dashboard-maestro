@@ -1,15 +1,22 @@
 {
-  "generado": "2026-11-10 19:36:54",
+  "generado": "2026-11-11 00:24:57",
   "anio": "2026",
-  "total_abiertas": 145,
-  "total_anio": 125,
+  "total_abiertas": 147,
+  "total_anio": 127,
   "meses": [
     {
       "mes": "2026-11",
       "label": "Noviembre 2026",
-      "count": 10,
-      "monto": 4187932,
+      "count": 12,
+      "monto": 4721252,
       "facturas": [
+        {
+          "numero": "FE850",
+          "cliente": "ORRO S.A.S. Los Patios Boutique",
+          "fecha": "2026-11-10",
+          "total": 269040,
+          "balance": 269040
+        },
         {
           "numero": "FE849",
           "cliente": "CAROLINA CROVO SIERRA",
@@ -79,6 +86,13 @@
           "fecha": "2026-11-01",
           "total": 1253082,
           "balance": 1253082
+        },
+        {
+          "numero": "FE833",
+          "cliente": "ANTHONY CRAIG WATSON",
+          "fecha": "2026-11-10",
+          "total": 264280,
+          "balance": 264280
         }
       ]
     },

@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-11 07:09:47",
+  "generado": "2026-11-11 15:11:39",
   "anio": 2026,
   "kpis": {
-    "total_anual": 515575917,
-    "num_facturas": 4064,
-    "ticket_promedio": 126864
+    "total_anual": 515605917,
+    "num_facturas": 4065,
+    "ticket_promedio": 126840
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 15360752,
-      "count": 185
+      "total": 15390752,
+      "count": 186
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 10559500,
-      "count": 172
+      "total": 10589500,
+      "count": 173
     }
   },
   "por_mes_externo": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 15186252,
-      "count": 185
+      "total": 15216252,
+      "count": 186
     }
   },
   "por_mes_domicilio": {
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 439122787,
-      "count": 3910
+      "total": 439152787,
+      "count": 3911
     },
     "draft": {
       "total": 8906280,
@@ -520,8 +520,8 @@
       "unidades": 150
     },
     "Cañita cerveza invitada": {
-      "total": 408000,
-      "unidades": 34
+      "total": 434000,
+      "unidades": 36
     },
     "Cerveza esclavos": {
       "total": 365500,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 248288601,
-      "count": 3540
+      "total": 248318601,
+      "count": 3541
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,

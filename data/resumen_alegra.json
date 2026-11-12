@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-12 02:55:36",
+  "generado": "2026-11-12 10:53:23",
   "anio": 2026,
   "kpis": {
-    "total_anual": 518225932,
-    "num_facturas": 4077,
-    "ticket_promedio": 127110
+    "total_anual": 518499932,
+    "num_facturas": 4082,
+    "ticket_promedio": 127021
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 18010767,
-      "count": 198
+      "total": 18284767,
+      "count": 203
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 11298265,
-      "count": 182
+      "total": 11572265,
+      "count": 187
     }
   },
   "por_mes_externo": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 17799267,
-      "count": 198
+      "total": 18073267,
+      "count": 203
     }
   },
   "por_mes_domicilio": {
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 439809787,
-      "count": 3919
+      "total": 440083787,
+      "count": 3924
     },
     "draft": {
       "total": 8906280,
@@ -264,8 +264,8 @@
       "unidades": 3779
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 39095898,
-      "unidades": 2094
+      "total": 39190898,
+      "unidades": 2099
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 32280154,
@@ -280,8 +280,8 @@
       "unidades": 2914
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 23977398,
-      "unidades": 1525
+      "total": 23993398,
+      "unidades": 1526
     },
     "Cerveza Golden Ale - Siempre Viva": {
       "total": 20840399,
@@ -296,8 +296,8 @@
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 17276599,
-      "unidades": 978
+      "total": 17366599,
+      "unidades": 983
     },
     "Cerveza APA - Cienfuegos": {
       "total": 16378800,
@@ -340,8 +340,8 @@
       "unidades": 85
     },
     "Soda saborizada": {
-      "total": 5124891,
-      "unidades": 513
+      "total": 5134891,
+      "unidades": 514
     },
     "Jarra Irish Red Ale": {
       "total": 4843995,
@@ -364,8 +364,8 @@
       "unidades": 69
     },
     "Papas y plátanos chips": {
-      "total": 3464499,
-      "unidades": 513
+      "total": 3485497,
+      "unidades": 516
     },
     "Jarra Stout": {
       "total": 2976600,
@@ -480,8 +480,8 @@
       "unidades": 70
     },
     "Finster": {
-      "total": 818982,
-      "unidades": 104
+      "total": 826982,
+      "unidades": 105
     },
     "Aguas frescas": {
       "total": 665993,
@@ -508,8 +508,8 @@
       "unidades": 53
     },
     "Kombucha": {
-      "total": 518000,
-      "unidades": 37
+      "total": 532000,
+      "unidades": 38
     },
     "Invitada IPA La Barbarie": {
       "total": 456000,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 249027366,
-      "count": 3550
+      "total": 249301366,
+      "count": 3555
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,

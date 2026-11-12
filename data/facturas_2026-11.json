@@ -1,10 +1,45 @@
 {
   "fecha": "2026-11-12",
-  "total": 198,
-  "monto": 18010767,
+  "total": 203,
+  "monto": 18284767,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5782",
+      "cliente": "Consumidor Final",
+      "total": 36000,
+      "status": "closed",
+      "fecha": "2026-11-11"
+    },
+    {
+      "id": "5781",
+      "cliente": "Consumidor Final",
+      "total": 10000,
+      "status": "closed",
+      "fecha": "2026-11-11"
+    },
+    {
+      "id": "5780",
+      "cliente": "Consumidor Final",
+      "total": 73000,
+      "status": "closed",
+      "fecha": "2026-11-11"
+    },
+    {
+      "id": "5779",
+      "cliente": "Consumidor Final",
+      "total": 128000,
+      "status": "closed",
+      "fecha": "2026-11-11"
+    },
+    {
+      "id": "5778",
+      "cliente": "Consumidor Final",
+      "total": 27000,
+      "status": "closed",
+      "fecha": "2026-11-11"
+    },
     {
       "id": "5777",
       "cliente": "Consumidor Final",

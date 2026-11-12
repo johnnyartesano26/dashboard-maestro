@@ -576,7 +576,7 @@
       "id": "5497",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 1287057,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-26"
     },
     {
@@ -1220,7 +1220,7 @@
       "id": "5405",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",
       "total": 1257057,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-19"
     },
     {
@@ -1752,7 +1752,7 @@
       "id": "5329",
       "cliente": "Azucena (HOUSE OF DEMONS) Rallon Benjumea",
       "total": 329730,
-      "status": "open",
+      "status": "closed",
       "fecha": "2026-10-13"
     },
     {

@@ -1,8 +1,8 @@
 {
-  "generado": "2026-11-12 10:53:51",
+  "generado": "2026-11-12 18:57:41",
   "anio": "2026",
-  "total_abiertas": 151,
-  "total_anio": 131,
+  "total_abiertas": 148,
+  "total_anio": 128,
   "meses": [
     {
       "mes": "2026-11",
@@ -127,8 +127,8 @@
     {
       "mes": "2026-10",
       "label": "Octubre 2026",
-      "count": 37,
-      "monto": 15436086,
+      "count": 34,
+      "monto": 12562242,
       "facturas": [
         {
           "numero": "FE838",
@@ -201,13 +201,6 @@
           "balance": 146875
         },
         {
-          "numero": "FE824",
-          "cliente": "JUAN CARLOS ORREGO ZAPATA",
-          "fecha": "2026-10-26",
-          "total": 1287057,
-          "balance": 1287057
-        },
-        {
           "numero": "FE823",
           "cliente": "GOMEZ DE MARINILLA S.A.S. (LA PAMPA PROVENZA)",
           "fecha": "2026-10-24",
@@ -278,13 +271,6 @@
           "balance": 800400
         },
         {
-          "numero": "FE804",
-          "cliente": "JUAN CARLOS ORREGO ZAPATA",
-          "fecha": "2026-10-19",
-          "total": 1257057,
-          "balance": 1257057
-        },
-        {
           "numero": "FE799",
           "cliente": "JUAN CARLOS ORREGO ZAPATA",
           "fecha": "2026-10-15",
@@ -304,13 +290,6 @@
           "fecha": "2026-10-13",
           "total": 263710,
           "balance": 263710
-        },
-        {
-          "numero": "FE792",
-          "cliente": "Azucena (HOUSE OF DEMONS) Rallon Benjumea",
-          "fecha": "2026-10-13",
-          "total": 329730,
-          "balance": 329730
         },
         {
           "numero": "FE789",

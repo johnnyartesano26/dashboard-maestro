@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-11 21:59:46",
+  "generado": "2026-11-12 02:55:36",
   "anio": 2026,
   "kpis": {
-    "total_anual": 516283012,
-    "num_facturas": 4068,
-    "ticket_promedio": 126913
+    "total_anual": 518225932,
+    "num_facturas": 4077,
+    "ticket_promedio": 127110
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 16067847,
-      "count": 189
+      "total": 18010767,
+      "count": 198
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 10641265,
-      "count": 174
+      "total": 11298265,
+      "count": 182
     }
   },
   "por_mes_externo": {
@@ -140,8 +140,8 @@
       "count": 74
     },
     "2026-11": {
-      "total": 5426582,
-      "count": 15
+      "total": 6712502,
+      "count": 16
     }
   },
   "por_mes_factura": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 15871347,
-      "count": 189
+      "total": 17799267,
+      "count": 198
     }
   },
   "por_mes_domicilio": {
@@ -232,22 +232,22 @@
       "count": 67
     },
     "2026-11": {
-      "total": 196500,
-      "count": 14
+      "total": 211500,
+      "count": 15
     }
   },
   "por_estado": {
     "closed": {
-      "total": 439152787,
-      "count": 3911
+      "total": 439809787,
+      "count": 3919
     },
     "draft": {
       "total": 8906280,
       "count": 13
     },
     "open": {
-      "total": 67451846,
-      "count": 130
+      "total": 68737766,
+      "count": 131
     },
     "void": {
       "total": 772099,
@@ -260,12 +260,12 @@
       "unidades": 2562
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 41482807,
-      "unidades": 3731
+      "total": 42025447,
+      "unidades": 3779
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 38943898,
-      "unidades": 2086
+      "total": 39095898,
+      "unidades": 2094
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 32280154,
@@ -276,16 +276,16 @@
       "unidades": 3225
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 27848782,
-      "unidades": 2842
+      "total": 28577062,
+      "unidades": 2914
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 23913398,
-      "unidades": 1521
+      "total": 23977398,
+      "unidades": 1525
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 20744399,
-      "unidades": 1329
+      "total": 20840399,
+      "unidades": 1335
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 19856550,
@@ -300,16 +300,16 @@
       "unidades": 978
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 16360800,
-      "unidades": 937
+      "total": 16378800,
+      "unidades": 938
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 12231217,
       "unidades": 1238
     },
     "Hidromiel - Bandada": {
-      "total": 10579000,
-      "unidades": 428
+      "total": 10679000,
+      "unidades": 432
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -319,21 +319,21 @@
       "total": 9114210,
       "unidades": 420
     },
+    "Hamburguesa": {
+      "total": 8625952,
+      "unidades": 248
+    },
     "Cerveza industrial": {
       "total": 8539500,
       "unidades": 1233
-    },
-    "Hamburguesa": {
-      "total": 8520953,
-      "unidades": 245
     },
     "Mini hamburguesa": {
       "total": 6035890,
       "unidades": 637
     },
     "Domicilio": {
-      "total": 5670701,
-      "unidades": 424
+      "total": 5685701,
+      "unidades": 425
     },
     "Jarra IPA": {
       "total": 5654000,
@@ -364,8 +364,8 @@
       "unidades": 69
     },
     "Papas y plátanos chips": {
-      "total": 3436502,
-      "unidades": 509
+      "total": 3464499,
+      "unidades": 513
     },
     "Jarra Stout": {
       "total": 2976600,
@@ -376,8 +376,8 @@
       "unidades": 146
     },
     "Nachos Pulled pork": {
-      "total": 2121000,
-      "unidades": 118
+      "total": 2139000,
+      "unidades": 119
     },
     "B Botella Golden Ale": {
       "total": 2010999,
@@ -388,8 +388,8 @@
       "unidades": 131
     },
     "Soda": {
-      "total": 1841000,
-      "unidades": 307
+      "total": 1847000,
+      "unidades": 308
     },
     "Evento banda": {
       "total": 1821040,
@@ -468,8 +468,8 @@
       "unidades": 85
     },
     "Coca cola 400 mL": {
-      "total": 872000,
-      "unidades": 117
+      "total": 880000,
+      "unidades": 118
     },
     "1/2 Aguardiente": {
       "total": 843000,
@@ -508,8 +508,8 @@
       "unidades": 53
     },
     "Kombucha": {
-      "total": 504000,
-      "unidades": 36
+      "total": 518000,
+      "unidades": 37
     },
     "Invitada IPA La Barbarie": {
       "total": 456000,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 248370366,
-      "count": 3542
+      "total": 249027366,
+      "count": 3550
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,
@@ -692,6 +692,10 @@
     "Daniela Ruiz Ricardo": {
       "total": 2654375,
       "count": 12
+    },
+    "SELMA MED S.A.S": {
+      "total": 2615400,
+      "count": 3
     },
     "EL ZORRO Y LA": {
       "total": 2600032,
@@ -775,10 +779,6 @@
     },
     "GRUPO BACCHUS S.A.S": {
       "total": 1346620,
-      "count": 2
-    },
-    "SELMA MED S.A.S": {
-      "total": 1329480,
       "count": 2
     },
     "CAROLINA CROVO SIERRA": {

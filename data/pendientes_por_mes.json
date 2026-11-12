@@ -1,15 +1,22 @@
 {
-  "generado": "2026-11-11 22:00:17",
+  "generado": "2026-11-12 02:56:05",
   "anio": "2026",
-  "total_abiertas": 150,
-  "total_anio": 130,
+  "total_abiertas": 151,
+  "total_anio": 131,
   "meses": [
     {
       "mes": "2026-11",
       "label": "Noviembre 2026",
-      "count": 15,
-      "monto": 5398347,
+      "count": 16,
+      "monto": 6684267,
       "facturas": [
+        {
+          "numero": "FE854",
+          "cliente": "SELMA MED S.A.S",
+          "fecha": "2026-11-11",
+          "total": 1285920,
+          "balance": 1285920
+        },
         {
           "numero": "FE853",
           "cliente": "Consumidor Final",

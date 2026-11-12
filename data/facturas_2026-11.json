@@ -1,10 +1,73 @@
 {
-  "fecha": "2026-11-11",
-  "total": 189,
-  "monto": 16067847,
+  "fecha": "2026-11-12",
+  "total": 198,
+  "monto": 18010767,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5777",
+      "cliente": "Consumidor Final",
+      "total": 128000,
+      "status": "closed",
+      "fecha": "2026-11-11"
+    },
+    {
+      "id": "5776",
+      "cliente": "Consumidor Final",
+      "total": 201000,
+      "status": "closed",
+      "fecha": "2026-11-11"
+    },
+    {
+      "id": "5775",
+      "cliente": "Consumidor Final",
+      "total": 133000,
+      "status": "closed",
+      "fecha": "2026-11-11"
+    },
+    {
+      "id": "5774",
+      "cliente": "Consumidor Final",
+      "total": 58000,
+      "status": "closed",
+      "fecha": "2026-11-11"
+    },
+    {
+      "id": "5773",
+      "cliente": "Consumidor Final",
+      "total": 35000,
+      "status": "closed",
+      "fecha": "2026-11-11"
+    },
+    {
+      "id": "5772",
+      "cliente": "Consumidor Final",
+      "total": 55000,
+      "status": "closed",
+      "fecha": "2026-11-11"
+    },
+    {
+      "id": "5771",
+      "cliente": "Consumidor Final",
+      "total": 32000,
+      "status": "closed",
+      "fecha": "2026-11-11"
+    },
+    {
+      "id": "5770",
+      "cliente": "Consumidor Final",
+      "total": 15000,
+      "status": "closed",
+      "fecha": "2026-11-11"
+    },
+    {
+      "id": "5769",
+      "cliente": "SELMA MED S.A.S",
+      "total": 1285920,
+      "status": "open",
+      "fecha": "2026-11-11"
+    },
     {
       "id": "5768",
       "cliente": "Consumidor Final",

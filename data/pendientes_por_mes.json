@@ -1,15 +1,22 @@
 {
-  "generado": "2026-11-13 00:13:08",
+  "generado": "2026-11-13 06:02:40",
   "anio": "2026",
-  "total_abiertas": 148,
-  "total_anio": 128,
+  "total_abiertas": 149,
+  "total_anio": 129,
   "meses": [
     {
       "mes": "2026-11",
       "label": "Noviembre 2026",
-      "count": 16,
-      "monto": 6684267,
+      "count": 17,
+      "monto": 6899757,
       "facturas": [
+        {
+          "numero": "FE855",
+          "cliente": "PINEA S.A.S",
+          "fecha": "2026-11-12",
+          "total": 215490,
+          "balance": 215490
+        },
         {
           "numero": "FE854",
           "cliente": "SELMA MED S.A.S",

@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-13 00:12:39",
+  "generado": "2026-11-13 06:02:13",
   "anio": 2026,
   "kpis": {
-    "total_anual": 518499932,
-    "num_facturas": 4082,
-    "ticket_promedio": 127021
+    "total_anual": 519282422,
+    "num_facturas": 4092,
+    "ticket_promedio": 126902
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 18284767,
-      "count": 203
+      "total": 19067257,
+      "count": 213
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 11572265,
-      "count": 187
+      "total": 12139265,
+      "count": 196
     }
   },
   "por_mes_externo": {
@@ -140,8 +140,8 @@
       "count": 74
     },
     "2026-11": {
-      "total": 6712502,
-      "count": 16
+      "total": 6927992,
+      "count": 17
     }
   },
   "por_mes_factura": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 18073267,
-      "count": 203
+      "total": 18843757,
+      "count": 213
     }
   },
   "por_mes_domicilio": {
@@ -232,22 +232,22 @@
       "count": 67
     },
     "2026-11": {
-      "total": 211500,
-      "count": 15
+      "total": 223500,
+      "count": 16
     }
   },
   "por_estado": {
     "closed": {
-      "total": 442957631,
-      "count": 3927
+      "total": 443524631,
+      "count": 3936
     },
     "draft": {
       "total": 8906280,
       "count": 13
     },
     "open": {
-      "total": 65863922,
-      "count": 128
+      "total": 66079412,
+      "count": 129
     },
     "void": {
       "total": 772099,
@@ -260,12 +260,12 @@
       "unidades": 2562
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 42025447,
-      "unidades": 3779
+      "total": 42228937,
+      "unidades": 3797
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 39190898,
-      "unidades": 2099
+      "total": 39285898,
+      "unidades": 2104
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 32280154,
@@ -280,12 +280,12 @@
       "unidades": 2914
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 23993398,
-      "unidades": 1526
+      "total": 24169398,
+      "unidades": 1537
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 20840399,
-      "unidades": 1335
+      "total": 20908399,
+      "unidades": 1339
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 19856550,
@@ -296,20 +296,20 @@
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 17366599,
-      "unidades": 983
+      "total": 17384599,
+      "unidades": 984
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 16378800,
-      "unidades": 938
+      "total": 16396800,
+      "unidades": 939
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 12231217,
       "unidades": 1238
     },
     "Hidromiel - Bandada": {
-      "total": 10679000,
-      "unidades": 432
+      "total": 10704000,
+      "unidades": 433
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -332,8 +332,8 @@
       "unidades": 637
     },
     "Domicilio": {
-      "total": 5685701,
-      "unidades": 425
+      "total": 5697701,
+      "unidades": 426
     },
     "Jarra IPA": {
       "total": 5654000,
@@ -348,8 +348,8 @@
       "unidades": 85
     },
     "Chope de vino": {
-      "total": 4274000,
-      "unidades": 217
+      "total": 4314000,
+      "unidades": 219
     },
     "Cerveza Red IPA MM": {
       "total": 4022000,
@@ -364,8 +364,8 @@
       "unidades": 69
     },
     "Papas y plátanos chips": {
-      "total": 3485497,
-      "unidades": 516
+      "total": 3492496,
+      "unidades": 517
     },
     "Jarra Stout": {
       "total": 2976600,
@@ -416,8 +416,8 @@
       "unidades": 18
     },
     "B Botella Irish Red Ale": {
-      "total": 1490999,
-      "unidades": 98
+      "total": 1522999,
+      "unidades": 100
     },
     "Cañita de barril American India Pale Ale - Vagabundo": {
       "total": 1370997,
@@ -471,13 +471,13 @@
       "total": 880000,
       "unidades": 118
     },
+    "Limonadas: Coco, lyche, cereza, hierbabuena": {
+      "total": 862799,
+      "unidades": 72
+    },
     "1/2 Aguardiente": {
       "total": 843000,
       "unidades": 15
-    },
-    "Limonadas: Coco, lyche, cereza, hierbabuena": {
-      "total": 838799,
-      "unidades": 70
     },
     "Finster": {
       "total": 826982,
@@ -543,13 +543,13 @@
       "total": 240000,
       "unidades": 4
     },
+    "Invitada IPA Cima Sur": {
+      "total": 190000,
+      "unidades": 10
+    },
     "Shot destilado": {
       "total": 181000,
       "unidades": 31
-    },
-    "Invitada IPA Cima Sur": {
-      "total": 171000,
-      "unidades": 9
     },
     "Jugos - F. Rojos, F. Amarillos, Mango y maracuyá": {
       "total": 156000,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 249301366,
-      "count": 3555
+      "total": 249868366,
+      "count": 3564
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,
@@ -638,8 +638,8 @@
       "count": 2
     },
     "PINEA S.A.S": {
-      "total": 11540540,
-      "count": 36
+      "total": 11756030,
+      "count": 37
     },
     "DANIEL SCHMUTTE": {
       "total": 11425265,

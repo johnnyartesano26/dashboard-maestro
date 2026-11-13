@@ -1,10 +1,80 @@
 {
   "fecha": "2026-11-13",
-  "total": 203,
-  "monto": 18284767,
+  "total": 213,
+  "monto": 19067257,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5792",
+      "cliente": "Consumidor Final",
+      "total": 38000,
+      "status": "closed",
+      "fecha": "2026-11-12"
+    },
+    {
+      "id": "5791",
+      "cliente": "Consumidor Final",
+      "total": 44000,
+      "status": "closed",
+      "fecha": "2026-11-12"
+    },
+    {
+      "id": "5790",
+      "cliente": "Consumidor Final",
+      "total": 160000,
+      "status": "closed",
+      "fecha": "2026-11-12"
+    },
+    {
+      "id": "5789",
+      "cliente": "PINEA S.A.S",
+      "total": 215490,
+      "status": "open",
+      "fecha": "2026-11-12"
+    },
+    {
+      "id": "5788",
+      "cliente": "Consumidor Final",
+      "total": 35000,
+      "status": "closed",
+      "fecha": "2026-11-12"
+    },
+    {
+      "id": "5787",
+      "cliente": "Consumidor Final",
+      "total": 103000,
+      "status": "closed",
+      "fecha": "2026-11-12"
+    },
+    {
+      "id": "5786",
+      "cliente": "Consumidor Final",
+      "total": 21000,
+      "status": "closed",
+      "fecha": "2026-11-12"
+    },
+    {
+      "id": "5785",
+      "cliente": "Consumidor Final",
+      "total": 20000,
+      "status": "closed",
+      "fecha": "2026-11-12"
+    },
+    {
+      "id": "5784",
+      "cliente": "Consumidor Final",
+      "total": 32000,
+      "status": "closed",
+      "fecha": "2026-11-12"
+    },
+    {
+      "id": "5783",
+      "cliente": "Consumidor Final",
+      "total": 114000,
+      "status": "closed",
+      "fecha": "2026-11-12"
+    },
     {
       "id": "5782",
       "cliente": "Consumidor Final",

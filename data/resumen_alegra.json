@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-13 21:01:35",
+  "generado": "2026-11-14 01:32:33",
   "anio": 2026,
   "kpis": {
-    "total_anual": 519282422,
-    "num_facturas": 4092,
-    "ticket_promedio": 126902
+    "total_anual": 520624582,
+    "num_facturas": 4098,
+    "ticket_promedio": 127044
   },
   "por_mes": {
     "2026-01": {
@@ -24,8 +24,8 @@
       "count": 385
     },
     "2026-05": {
-      "total": 51296275,
-      "count": 364
+      "total": 51352275,
+      "count": 365
     },
     "2026-06": {
       "total": 51403562,
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 19067257,
-      "count": 213
+      "total": 20353417,
+      "count": 218
     }
   },
   "por_mes_bar": {
@@ -70,8 +70,8 @@
       "count": 358
     },
     "2026-05": {
-      "total": 22845845,
-      "count": 322
+      "total": 22901845,
+      "count": 323
     },
     "2026-06": {
       "total": 20301636,
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 12139265,
-      "count": 196
+      "total": 12241265,
+      "count": 198
     }
   },
   "por_mes_externo": {
@@ -140,8 +140,8 @@
       "count": 74
     },
     "2026-11": {
-      "total": 6927992,
-      "count": 17
+      "total": 8112152,
+      "count": 20
     }
   },
   "por_mes_factura": {
@@ -162,8 +162,8 @@
       "count": 385
     },
     "2026-05": {
-      "total": 50822275,
-      "count": 364
+      "total": 50878275,
+      "count": 365
     },
     "2026-06": {
       "total": 50849562,
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 18843757,
-      "count": 213
+      "total": 20092917,
+      "count": 218
     }
   },
   "por_mes_domicilio": {
@@ -232,22 +232,22 @@
       "count": 67
     },
     "2026-11": {
-      "total": 223500,
-      "count": 16
+      "total": 260500,
+      "count": 19
     }
   },
   "por_estado": {
     "closed": {
-      "total": 443524631,
-      "count": 3936
+      "total": 443682631,
+      "count": 3939
     },
     "draft": {
       "total": 8906280,
       "count": 13
     },
     "open": {
-      "total": 66079412,
-      "count": 129
+      "total": 67263572,
+      "count": 132
     },
     "void": {
       "total": 772099,
@@ -260,24 +260,24 @@
       "unidades": 2562
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 42228937,
-      "unidades": 3797
+      "total": 42748967,
+      "unidades": 3843
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 39285898,
-      "unidades": 2104
+      "total": 39380898,
+      "unidades": 2109
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 32280154,
-      "unidades": 3283
+      "total": 32563374,
+      "unidades": 3311
     },
     "Cerveza en botella Stout - Sangre Negra": {
       "total": 31970755,
       "unidades": 3225
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 28577062,
-      "unidades": 2914
+      "total": 28920972,
+      "unidades": 2948
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 24169398,
@@ -300,8 +300,8 @@
       "unidades": 984
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 16396800,
-      "unidades": 939
+      "total": 16414800,
+      "unidades": 940
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 12231217,
@@ -332,8 +332,8 @@
       "unidades": 637
     },
     "Domicilio": {
-      "total": 5697701,
-      "unidades": 426
+      "total": 5734701,
+      "unidades": 429
     },
     "Jarra IPA": {
       "total": 5654000,
@@ -364,8 +364,8 @@
       "unidades": 69
     },
     "Papas y plátanos chips": {
-      "total": 3492496,
-      "unidades": 517
+      "total": 3499495,
+      "unidades": 518
     },
     "Jarra Stout": {
       "total": 2976600,
@@ -420,8 +420,8 @@
       "unidades": 100
     },
     "Cañita de barril American India Pale Ale - Vagabundo": {
-      "total": 1370997,
-      "unidades": 113
+      "total": 1382997,
+      "unidades": 114
     },
     "Jarra Chope de vino": {
       "total": 1192997,
@@ -567,6 +567,10 @@
       "total": 130000,
       "unidades": 11
     },
+    "IPA Botella": {
+      "total": 75997,
+      "unidades": 4
+    },
     "Capuchino": {
       "total": 71000,
       "unidades": 10
@@ -574,10 +578,6 @@
     "Cañita para amigos": {
       "total": 62000,
       "unidades": 12
-    },
-    "IPA Botella": {
-      "total": 56998,
-      "unidades": 3
     },
     "Espresso": {
       "total": 52000,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 249868366,
-      "count": 3564
+      "total": 250026366,
+      "count": 3567
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,
@@ -658,12 +658,12 @@
       "count": 14
     },
     "JUAN ESTEBAN GOMEZ MORENO": {
-      "total": 6961980,
-      "count": 13
+      "total": 7481540,
+      "count": 14
     },
     "CECILIA ALICIA BRAVO DE NOHAVA": {
-      "total": 5435822,
-      "count": 17
+      "total": 5826242,
+      "count": 18
     },
     "MARTHA ELENA  (Punta Arena) PERDOMO JIMENEZ": {
       "total": 5345601,
@@ -745,6 +745,10 @@
       "total": 1729320,
       "count": 2
     },
+    "SAMUEL DAVID GAMBA LUQUE": {
+      "total": 1624800,
+      "count": 5
+    },
     "ASTRID ELENA (Divergente) ARANGO QUIROS": {
       "total": 1588705,
       "count": 6
@@ -772,10 +776,6 @@
     "JOSE MAURICIO GALLEGO QUINTERO": {
       "total": 1421893,
       "count": 5
-    },
-    "SAMUEL DAVID GAMBA LUQUE": {
-      "total": 1350620,
-      "count": 4
     },
     "GRUPO BACCHUS S.A.S": {
       "total": 1346620,

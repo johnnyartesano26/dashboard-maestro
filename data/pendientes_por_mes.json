@@ -1,15 +1,36 @@
 {
-  "generado": "2026-11-13 21:02:03",
+  "generado": "2026-11-14 01:33:04",
   "anio": "2026",
-  "total_abiertas": 149,
-  "total_anio": 129,
+  "total_abiertas": 152,
+  "total_anio": 132,
   "meses": [
     {
       "mes": "2026-11",
       "label": "Noviembre 2026",
-      "count": 17,
-      "monto": 6899757,
+      "count": 20,
+      "monto": 8083917,
       "facturas": [
+        {
+          "numero": "FE858",
+          "cliente": "SAMUEL DAVID GAMBA LUQUE",
+          "fecha": "2026-11-13",
+          "total": 274180,
+          "balance": 274180
+        },
+        {
+          "numero": "FE857",
+          "cliente": "CECILIA ALICIA BRAVO DE NOHAVA",
+          "fecha": "2026-11-13",
+          "total": 390420,
+          "balance": 390420
+        },
+        {
+          "numero": "FE856",
+          "cliente": "JUAN ESTEBAN GOMEZ MORENO",
+          "fecha": "2026-11-13",
+          "total": 519560,
+          "balance": 519560
+        },
         {
           "numero": "FE855",
           "cliente": "PINEA S.A.S",

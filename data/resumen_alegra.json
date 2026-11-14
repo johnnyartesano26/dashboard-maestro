@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-14 01:32:33",
+  "generado": "2026-11-14 08:04:35",
   "anio": 2026,
   "kpis": {
-    "total_anual": 520624582,
-    "num_facturas": 4098,
-    "ticket_promedio": 127044
+    "total_anual": 522479887,
+    "num_facturas": 4120,
+    "ticket_promedio": 126816
   },
   "por_mes": {
     "2026-01": {
@@ -24,8 +24,8 @@
       "count": 385
     },
     "2026-05": {
-      "total": 51352275,
-      "count": 365
+      "total": 51296275,
+      "count": 364
     },
     "2026-06": {
       "total": 51403562,
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 20353417,
-      "count": 218
+      "total": 22264722,
+      "count": 241
     }
   },
   "por_mes_bar": {
@@ -70,8 +70,8 @@
       "count": 358
     },
     "2026-05": {
-      "total": 22901845,
-      "count": 323
+      "total": 22845845,
+      "count": 322
     },
     "2026-06": {
       "total": 20301636,
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 12241265,
-      "count": 198
+      "total": 14057965,
+      "count": 220
     }
   },
   "por_mes_externo": {
@@ -140,8 +140,8 @@
       "count": 74
     },
     "2026-11": {
-      "total": 8112152,
-      "count": 20
+      "total": 8206757,
+      "count": 21
     }
   },
   "por_mes_factura": {
@@ -162,8 +162,8 @@
       "count": 385
     },
     "2026-05": {
-      "total": 50878275,
-      "count": 365
+      "total": 50822275,
+      "count": 364
     },
     "2026-06": {
       "total": 50849562,
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 20092917,
-      "count": 218
+      "total": 22004222,
+      "count": 241
     }
   },
   "por_mes_domicilio": {
@@ -238,16 +238,16 @@
   },
   "por_estado": {
     "closed": {
-      "total": 443682631,
-      "count": 3939
+      "total": 445443331,
+      "count": 3960
     },
     "draft": {
       "total": 8906280,
       "count": 13
     },
     "open": {
-      "total": 67263572,
-      "count": 132
+      "total": 67358177,
+      "count": 133
     },
     "void": {
       "total": 772099,
@@ -260,32 +260,32 @@
       "unidades": 2562
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 42748967,
-      "unidades": 3843
+      "total": 42782882,
+      "unidades": 3846
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 39380898,
-      "unidades": 2109
+      "total": 39475898,
+      "unidades": 2114
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 32563374,
-      "unidades": 3311
+      "total": 32593719,
+      "unidades": 3314
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 31970755,
-      "unidades": 3225
+      "total": 32001100,
+      "unidades": 3228
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
       "total": 28920972,
       "unidades": 2948
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 24169398,
-      "unidades": 1537
+      "total": 24265398,
+      "unidades": 1543
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 20908399,
-      "unidades": 1339
+      "total": 21148399,
+      "unidades": 1354
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 19856550,
@@ -296,20 +296,20 @@
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 17384599,
-      "unidades": 984
+      "total": 17636599,
+      "unidades": 998
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 16414800,
-      "unidades": 940
+      "total": 16594800,
+      "unidades": 950
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 12231217,
       "unidades": 1238
     },
     "Hidromiel - Bandada": {
-      "total": 10704000,
-      "unidades": 433
+      "total": 10754000,
+      "unidades": 435
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -320,36 +320,40 @@
       "unidades": 420
     },
     "Hamburguesa": {
-      "total": 8625952,
-      "unidades": 248
+      "total": 8660952,
+      "unidades": 249
     },
     "Cerveza industrial": {
       "total": 8539500,
       "unidades": 1233
     },
     "Mini hamburguesa": {
-      "total": 6035890,
-      "unidades": 637
+      "total": 6065889,
+      "unidades": 640
+    },
+    "Jarra IPA": {
+      "total": 5798000,
+      "unidades": 87
     },
     "Domicilio": {
       "total": 5734701,
       "unidades": 429
     },
-    "Jarra IPA": {
-      "total": 5654000,
-      "unidades": 85
-    },
     "Soda saborizada": {
-      "total": 5134891,
-      "unidades": 514
+      "total": 5164890,
+      "unidades": 517
     },
     "Jarra Irish Red Ale": {
-      "total": 4843995,
-      "unidades": 85
+      "total": 4903995,
+      "unidades": 86
     },
     "Chope de vino": {
-      "total": 4314000,
-      "unidades": 219
+      "total": 4334000,
+      "unidades": 220
+    },
+    "Jarra Golden Ale": {
+      "total": 4179997,
+      "unidades": 73
     },
     "Cerveza Red IPA MM": {
       "total": 4022000,
@@ -359,13 +363,9 @@
       "total": 3980000,
       "unidades": 64
     },
-    "Jarra Golden Ale": {
-      "total": 3939997,
-      "unidades": 69
-    },
     "Papas y plátanos chips": {
-      "total": 3499495,
-      "unidades": 518
+      "total": 3506494,
+      "unidades": 519
     },
     "Jarra Stout": {
       "total": 2976600,
@@ -376,20 +376,20 @@
       "unidades": 146
     },
     "Nachos Pulled pork": {
-      "total": 2139000,
-      "unidades": 119
+      "total": 2157000,
+      "unidades": 120
     },
     "B Botella Golden Ale": {
-      "total": 2010999,
-      "unidades": 130
+      "total": 2042999,
+      "unidades": 132
     },
     "Cañita Hidromiel": {
       "total": 1937500,
       "unidades": 131
     },
     "Soda": {
-      "total": 1847000,
-      "unidades": 308
+      "total": 1853000,
+      "unidades": 309
     },
     "Evento banda": {
       "total": 1821040,
@@ -420,8 +420,8 @@
       "unidades": 100
     },
     "Cañita de barril American India Pale Ale - Vagabundo": {
-      "total": 1382997,
-      "unidades": 114
+      "total": 1370997,
+      "unidades": 113
     },
     "Jarra Chope de vino": {
       "total": 1192997,
@@ -436,16 +436,16 @@
       "unidades": 32
     },
     "Patacones con guacamole": {
-      "total": 1089000,
-      "unidades": 108
-    },
-    "Cañita de barril Golden Ale - Siempre Viva": {
-      "total": 1071982,
+      "total": 1099000,
       "unidades": 109
     },
+    "Cañita de barril Golden Ale - Siempre Viva": {
+      "total": 1081982,
+      "unidades": 110
+    },
     "Cañita de barril Irish Red Ale - Mística": {
-      "total": 1046989,
-      "unidades": 106
+      "total": 1056989,
+      "unidades": 107
     },
     "Americano": {
       "total": 1031000,
@@ -495,21 +495,21 @@
       "total": 648000,
       "unidades": 9
     },
+    "Cañita de barril Stout - Sangre Negra": {
+      "total": 617993,
+      "unidades": 61
+    },
     "Jarra Temporada / Invitadas": {
       "total": 612000,
       "unidades": 9
     },
-    "Cañita de barril Stout - Sangre Negra": {
-      "total": 607993,
-      "unidades": 60
+    "Kombucha": {
+      "total": 588000,
+      "unidades": 42
     },
     "Cañita de barril American Pale Ale - Cienfuegos": {
-      "total": 533992,
-      "unidades": 53
-    },
-    "Kombucha": {
-      "total": 532000,
-      "unidades": 38
+      "total": 543992,
+      "unidades": 54
     },
     "Invitada IPA La Barbarie": {
       "total": 456000,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 250026366,
-      "count": 3567
+      "total": 251787066,
+      "count": 3588
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,
@@ -905,6 +905,10 @@
       "total": 583927,
       "count": 2
     },
+    "ERICA TATIANA CANO": {
+      "total": 558110,
+      "count": 7
+    },
     "CORPORACIÓN FERNANDO GONZALEZ - OTRAPARTE": {
       "total": 534560,
       "count": 2
@@ -928,10 +932,6 @@
     "Hugo Albeiro Caro Morales": {
       "total": 497660,
       "count": 2
-    },
-    "ERICA TATIANA CANO": {
-      "total": 463505,
-      "count": 6
     },
     "Dataware Sistemas": {
       "total": 446000,

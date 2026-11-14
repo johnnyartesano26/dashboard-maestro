@@ -1,10 +1,171 @@
 {
   "fecha": "2026-11-14",
-  "total": 218,
-  "monto": 20353417,
+  "total": 241,
+  "monto": 22264722,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5820",
+      "cliente": "Consumidor Final",
+      "total": 118000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5819",
+      "cliente": "Consumidor Final",
+      "total": 158000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5818",
+      "cliente": "Consumidor Final",
+      "total": 72000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5817",
+      "cliente": "Consumidor Final",
+      "total": 299000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5816",
+      "cliente": "Consumidor Final",
+      "total": 18000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5815",
+      "cliente": "Consumidor Final",
+      "total": 124000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5814",
+      "cliente": "Consumidor Final",
+      "total": 48000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5813",
+      "cliente": "Consumidor Final",
+      "total": 19000,
+      "status": "closed",
+      "fecha": "2026-11-13"
+    },
+    {
+      "id": "5812",
+      "cliente": "Consumidor Final",
+      "total": 71000,
+      "status": "closed",
+      "fecha": "2026-11-13"
+    },
+    {
+      "id": "5811",
+      "cliente": "Consumidor Final",
+      "total": 56000,
+      "status": "closed",
+      "fecha": "2026-11-13"
+    },
+    {
+      "id": "5810",
+      "cliente": "Consumidor Final",
+      "total": 34000,
+      "status": "closed",
+      "fecha": "2026-11-13"
+    },
+    {
+      "id": "5809",
+      "cliente": "Consumidor Final",
+      "total": 70000,
+      "status": "closed",
+      "fecha": "2026-11-13"
+    },
+    {
+      "id": "5808",
+      "cliente": "Consumidor Final",
+      "total": 46000,
+      "status": "closed",
+      "fecha": "2026-11-13"
+    },
+    {
+      "id": "5807",
+      "cliente": "Consumidor Final",
+      "total": 19000,
+      "status": "closed",
+      "fecha": "2026-11-13"
+    },
+    {
+      "id": "5806",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-11-13"
+    },
+    {
+      "id": "5805",
+      "cliente": "Consumidor Final",
+      "total": 54000,
+      "status": "closed",
+      "fecha": "2026-11-13"
+    },
+    {
+      "id": "5804",
+      "cliente": "ERICA TATIANA CANO",
+      "total": 94605,
+      "status": "open",
+      "fecha": "2026-11-13"
+    },
+    {
+      "id": "5803",
+      "cliente": "Consumidor Final",
+      "total": 116000,
+      "status": "closed",
+      "fecha": "2026-11-13"
+    },
+    {
+      "id": "5802",
+      "cliente": "Consumidor Final",
+      "total": 104000,
+      "status": "closed",
+      "fecha": "2026-11-13"
+    },
+    {
+      "id": "5801",
+      "cliente": "Consumidor Final",
+      "total": 220000,
+      "status": "closed",
+      "fecha": "2026-11-13"
+    },
+    {
+      "id": "5800",
+      "cliente": "Consumidor Final",
+      "total": 43700,
+      "status": "closed",
+      "fecha": "2026-11-13"
+    },
+    {
+      "id": "5799",
+      "cliente": "Consumidor Final",
+      "total": 37000,
+      "status": "closed",
+      "fecha": "2026-11-13"
+    },
+    {
+      "id": "5798",
+      "cliente": "Consumidor Final",
+      "total": 74000,
+      "status": "closed",
+      "fecha": "2026-11-13"
+    },
     {
       "id": "5797",
       "cliente": "Consumidor Final",

@@ -1,15 +1,22 @@
 {
-  "generado": "2026-11-14 01:33:04",
+  "generado": "2026-11-14 08:05:09",
   "anio": "2026",
-  "total_abiertas": 152,
-  "total_anio": 132,
+  "total_abiertas": 153,
+  "total_anio": 133,
   "meses": [
     {
       "mes": "2026-11",
       "label": "Noviembre 2026",
-      "count": 20,
-      "monto": 8083917,
+      "count": 21,
+      "monto": 8178522,
       "facturas": [
+        {
+          "numero": "FE859",
+          "cliente": "ERICA TATIANA CANO",
+          "fecha": "2026-11-13",
+          "total": 94605,
+          "balance": 94605
+        },
         {
           "numero": "FE858",
           "cliente": "SAMUEL DAVID GAMBA LUQUE",

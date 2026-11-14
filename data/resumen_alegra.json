@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-14 19:56:50",
+  "generado": "2026-11-14 23:52:19",
   "anio": 2026,
   "kpis": {
-    "total_anual": 522479887,
-    "num_facturas": 4120,
-    "ticket_promedio": 126816
+    "total_anual": 522505887,
+    "num_facturas": 4121,
+    "ticket_promedio": 126791
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 22264722,
-      "count": 241
+      "total": 22290722,
+      "count": 242
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 14057965,
-      "count": 220
+      "total": 14083965,
+      "count": 221
     }
   },
   "por_mes_externo": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 22004222,
-      "count": 241
+      "total": 22030222,
+      "count": 242
     }
   },
   "por_mes_domicilio": {
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 445443331,
-      "count": 3960
+      "total": 445469331,
+      "count": 3961
     },
     "draft": {
       "total": 8906280,
@@ -264,8 +264,8 @@
       "unidades": 3846
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 39475898,
-      "unidades": 2114
+      "total": 39494898,
+      "unidades": 2115
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 32593719,
@@ -364,8 +364,8 @@
       "unidades": 64
     },
     "Papas y plátanos chips": {
-      "total": 3506494,
-      "unidades": 519
+      "total": 3513493,
+      "unidades": 520
     },
     "Jarra Stout": {
       "total": 2976600,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 251787066,
-      "count": 3588
+      "total": 251813066,
+      "count": 3589
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,

@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-14T01:22:57.311856",
+  "generado": "2026-11-14T10:01:05.170498",
   "fecha_lectura": "2026-11-03 14:25:33",
   "fermentadores": [
     {
@@ -61,7 +61,7 @@
     {
       "codigo": "PTL02",
       "estilo": "IRISH RED ALE",
-      "litros": 0
+      "litros": 29.6
     },
     {
       "codigo": "PTL03",
@@ -76,7 +76,7 @@
     {
       "codigo": "PTL05",
       "estilo": "STOUT",
-      "litros": 48.3
+      "litros": 47.3
     },
     {
       "codigo": "",
@@ -147,8 +147,8 @@
     }
   ],
   "totales": {
-    "litros_fermentando": 2394,
-    "litros_barril": 119,
-    "ventas_cop": 6574300
+    "litros_fermentando": 2423,
+    "litros_barril": 148,
+    "ventas_cop": 5626000
   }
 }

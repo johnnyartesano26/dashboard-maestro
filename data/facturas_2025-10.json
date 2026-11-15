@@ -1,7 +1,7 @@
 {
   "fecha": "2026-11-15",
-  "total": 293,
-  "monto": 32489242,
+  "total": 292,
+  "monto": 32333248,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
@@ -387,13 +387,6 @@
       "id": "973",
       "cliente": "Gabriel Jaime Gallo Arango",
       "total": 226025,
-      "status": "closed",
-      "fecha": "2025-10-27"
-    },
-    {
-      "id": "972",
-      "cliente": "Azucena (HOUSE OF DEMONS) Rallon Benjumea",
-      "total": 155994,
       "status": "closed",
       "fecha": "2025-10-27"
     },

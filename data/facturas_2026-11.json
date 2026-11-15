@@ -1,10 +1,73 @@
 {
   "fecha": "2026-11-15",
-  "total": 255,
-  "monto": 23653302,
+  "total": 264,
+  "monto": 24358802,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5843",
+      "cliente": "Consumidor Final",
+      "total": 228000,
+      "status": "closed",
+      "fecha": "2026-11-15"
+    },
+    {
+      "id": "5842",
+      "cliente": "Consumidor Final",
+      "total": 156000,
+      "status": "closed",
+      "fecha": "2026-11-15"
+    },
+    {
+      "id": "5841",
+      "cliente": "Consumidor Final",
+      "total": 58000,
+      "status": "closed",
+      "fecha": "2026-11-15"
+    },
+    {
+      "id": "5840",
+      "cliente": "Consumidor Final",
+      "total": 57000,
+      "status": "closed",
+      "fecha": "2026-11-15"
+    },
+    {
+      "id": "5839",
+      "cliente": "Consumidor Final",
+      "total": 52000,
+      "status": "closed",
+      "fecha": "2026-11-15"
+    },
+    {
+      "id": "5838",
+      "cliente": "Consumidor Final",
+      "total": 120000,
+      "status": "closed",
+      "fecha": "2026-11-15"
+    },
+    {
+      "id": "5837",
+      "cliente": "Consumidor Final",
+      "total": 8500,
+      "status": "closed",
+      "fecha": "2026-11-15"
+    },
+    {
+      "id": "5836",
+      "cliente": "Consumidor Final",
+      "total": 13000,
+      "status": "closed",
+      "fecha": "2026-11-15"
+    },
+    {
+      "id": "5835",
+      "cliente": "Consumidor Final",
+      "total": 13000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
     {
       "id": "5834",
       "cliente": "David Miranda tamayo",

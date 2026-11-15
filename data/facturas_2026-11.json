@@ -1,10 +1,101 @@
 {
-  "fecha": "2026-11-14",
-  "total": 242,
-  "monto": 22290722,
+  "fecha": "2026-11-15",
+  "total": 255,
+  "monto": 23653302,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5834",
+      "cliente": "David Miranda tamayo",
+      "total": 96000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5833",
+      "cliente": "Consumidor Final",
+      "total": 50000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5832",
+      "cliente": "Consumidor Final",
+      "total": 73000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5831",
+      "cliente": "Consumidor Final",
+      "total": 26000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5830",
+      "cliente": "Consumidor Final",
+      "total": 164000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5829",
+      "cliente": "Consumidor Final",
+      "total": 170000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5828",
+      "cliente": "Consumidor Final",
+      "total": 26000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5827",
+      "cliente": "Consumidor Final",
+      "total": 22000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5826",
+      "cliente": "Consumidor Final",
+      "total": 101000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5825",
+      "cliente": "Consumidor Final",
+      "total": 38000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5824",
+      "cliente": "Consumidor Final",
+      "total": 53000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5823",
+      "cliente": "DANIEL SCHMUTTE",
+      "total": 527580,
+      "status": "open",
+      "fecha": "2026-11-14"
+    },
+    {
+      "id": "5822",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-11-14"
+    },
     {
       "id": "5821",
       "cliente": "Consumidor Final",

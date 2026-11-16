@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-15 23:41:45",
+  "generado": "2026-11-16 03:11:53",
   "anio": 2026,
   "kpis": {
-    "total_anual": 524573967,
-    "num_facturas": 4143,
-    "ticket_promedio": 126617
+    "total_anual": 524778967,
+    "num_facturas": 4149,
+    "ticket_promedio": 126483
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 24358802,
-      "count": 264
+      "total": 24563802,
+      "count": 270
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 15528465,
-      "count": 241
+      "total": 15733465,
+      "count": 247
     }
   },
   "por_mes_externo": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 24084802,
-      "count": 264
+      "total": 24289802,
+      "count": 270
     }
   },
   "por_mes_domicilio": {
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 447009831,
-      "count": 3982
+      "total": 447214831,
+      "count": 3988
     },
     "draft": {
       "total": 8906280,
@@ -264,8 +264,8 @@
       "unidades": 3870
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 39779898,
-      "unidades": 2130
+      "total": 39836898,
+      "unidades": 2133
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 32836479,
@@ -284,8 +284,8 @@
       "unidades": 1549
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 21368399,
-      "unidades": 1370
+      "total": 21420399,
+      "unidades": 1374
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 19856550,
@@ -296,12 +296,12 @@
       "unidades": 2
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 17708599,
-      "unidades": 1002
+      "total": 17770598,
+      "unidades": 1005
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 16594800,
-      "unidades": 950
+      "total": 16612800,
+      "unidades": 951
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 12231217,
@@ -432,8 +432,8 @@
       "unidades": 69
     },
     "Cerveza invitada": {
-      "total": 1126000,
-      "unidades": 63
+      "total": 1139000,
+      "unidades": 64
     },
     "Cañita de barril Irish Red Ale - Mística": {
       "total": 1116988,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 253257566,
-      "count": 3609
+      "total": 253462566,
+      "count": 3615
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,

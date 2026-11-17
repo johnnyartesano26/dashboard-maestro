@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-17 12:31:35",
+  "generado": "2026-11-17 21:28:42",
   "anio": 2026,
   "kpis": {
-    "total_anual": 525683967,
-    "num_facturas": 4160,
-    "ticket_promedio": 126366
+    "total_anual": 527205924,
+    "num_facturas": 4162,
+    "ticket_promedio": 126671
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 25468802,
-      "count": 281
+      "total": 26990759,
+      "count": 283
     }
   },
   "por_mes_bar": {
@@ -140,8 +140,8 @@
       "count": 74
     },
     "2026-11": {
-      "total": 8830337,
-      "count": 23
+      "total": 10352294,
+      "count": 25
     }
   },
   "por_mes_factura": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 25194802,
-      "count": 281
+      "total": 26701759,
+      "count": 283
     }
   },
   "por_mes_domicilio": {
@@ -232,8 +232,8 @@
       "count": 67
     },
     "2026-11": {
-      "total": 274000,
-      "count": 20
+      "total": 289000,
+      "count": 21
     }
   },
   "por_estado": {
@@ -246,8 +246,8 @@
       "count": 13
     },
     "open": {
-      "total": 67885757,
-      "count": 134
+      "total": 69407714,
+      "count": 136
     },
     "void": {
       "total": 772099,
@@ -256,28 +256,28 @@
   },
   "por_producto": {
     "Cerveza por litro Irish Red Ale - Mística": {
-      "total": 54405308,
-      "unidades": 2562
+      "total": 55016849,
+      "unidades": 2590
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 43054202,
-      "unidades": 3870
+      "total": 43122032,
+      "unidades": 3876
     },
     "Cerveza American IPA - Vagabundo": {
       "total": 39881898,
       "unidades": 2136
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 32836479,
-      "unidades": 3338
+      "total": 32897169,
+      "unidades": 3344
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 32001100,
-      "unidades": 3228
+      "total": 32061790,
+      "unidades": 3234
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 28920972,
-      "unidades": 2948
+      "total": 28981662,
+      "unidades": 2954
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 24489398,
@@ -288,8 +288,8 @@
       "unidades": 1381
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
-      "total": 19856550,
-      "unidades": 889
+      "total": 20502065,
+      "unidades": 917
     },
     "Experiencia de cata de cerveza": {
       "total": 17828580,
@@ -336,8 +336,8 @@
       "unidades": 87
     },
     "Domicilio": {
-      "total": 5748201,
-      "unidades": 430
+      "total": 5763201,
+      "unidades": 431
     },
     "Soda saborizada": {
       "total": 5174890,
@@ -626,8 +626,8 @@
       "count": 3626
     },
     "JUAN CARLOS ORREGO ZAPATA": {
-      "total": 48036974,
-      "count": 46
+      "total": 49309031,
+      "count": 47
     },
     "INVERSIONES LATINERIA S.A.S": {
       "total": 35650673,
@@ -721,6 +721,10 @@
       "total": 2213110,
       "count": 10
     },
+    "LOREPA AREPAS SAS": {
+      "total": 2008845,
+      "count": 7
+    },
     "ORLANDO VICENTE CEBALLOS ROMERO": {
       "total": 2002300,
       "count": 5
@@ -736,10 +740,6 @@
     "MAURICIO GEHOVA JARAMILLO VELASQUEZ": {
       "total": 1799170,
       "count": 7
-    },
-    "LOREPA AREPAS SAS": {
-      "total": 1758945,
-      "count": 6
     },
     "MONKEY BURGER ENVIGADO": {
       "total": 1729320,

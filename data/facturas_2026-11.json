@@ -1,10 +1,24 @@
 {
   "fecha": "2026-11-17",
-  "total": 281,
-  "monto": 25468802,
+  "total": 283,
+  "monto": 26990759,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5862",
+      "cliente": "JUAN CARLOS ORREGO ZAPATA",
+      "total": 1272057,
+      "status": "open",
+      "fecha": "2026-11-17"
+    },
+    {
+      "id": "5861",
+      "cliente": "LOREPA AREPAS SAS",
+      "total": 249900,
+      "status": "open",
+      "fecha": "2026-11-17"
+    },
     {
       "id": "5860",
       "cliente": "Consumidor Final",

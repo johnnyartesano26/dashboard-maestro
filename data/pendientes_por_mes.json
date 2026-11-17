@@ -1,15 +1,29 @@
 {
-  "generado": "2026-11-17 12:32:07",
+  "generado": "2026-11-17 21:29:19",
   "anio": "2026",
-  "total_abiertas": 154,
-  "total_anio": 134,
+  "total_abiertas": 156,
+  "total_anio": 136,
   "meses": [
     {
       "mes": "2026-11",
       "label": "Noviembre 2026",
-      "count": 22,
-      "monto": 8706102,
+      "count": 24,
+      "monto": 10228059,
       "facturas": [
+        {
+          "numero": "FE863",
+          "cliente": "JUAN CARLOS ORREGO ZAPATA",
+          "fecha": "2026-11-17",
+          "total": 1272057,
+          "balance": 1272057
+        },
+        {
+          "numero": "FE862",
+          "cliente": "LOREPA AREPAS SAS",
+          "fecha": "2026-11-17",
+          "total": 249900,
+          "balance": 249900
+        },
         {
           "numero": "FE860",
           "cliente": "DANIEL SCHMUTTE",

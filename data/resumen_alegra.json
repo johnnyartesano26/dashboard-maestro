@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-17 03:38:09",
+  "generado": "2026-11-17 12:31:35",
   "anio": 2026,
   "kpis": {
-    "total_anual": 525438967,
-    "num_facturas": 4157,
-    "ticket_promedio": 126399
+    "total_anual": 525683967,
+    "num_facturas": 4160,
+    "ticket_promedio": 126366
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 25223802,
-      "count": 278
+      "total": 25468802,
+      "count": 281
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 16393465,
-      "count": 255
+      "total": 16638465,
+      "count": 258
     }
   },
   "por_mes_externo": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 24949802,
-      "count": 278
+      "total": 25194802,
+      "count": 281
     }
   },
   "por_mes_domicilio": {
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 447874831,
-      "count": 3996
+      "total": 448119831,
+      "count": 3999
     },
     "draft": {
       "total": 8906280,
@@ -264,8 +264,8 @@
       "unidades": 3870
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 39855898,
-      "unidades": 2134
+      "total": 39881898,
+      "unidades": 2136
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 32836479,
@@ -308,8 +308,8 @@
       "unidades": 1238
     },
     "Hidromiel - Bandada": {
-      "total": 10975000,
-      "unidades": 446
+      "total": 11025000,
+      "unidades": 448
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -419,13 +419,13 @@
       "total": 1538999,
       "unidades": 101
     },
+    "Cerveza invitada": {
+      "total": 1490000,
+      "unidades": 91
+    },
     "Cañita de barril American India Pale Ale - Vagabundo": {
       "total": 1370997,
       "unidades": 113
-    },
-    "Cerveza invitada": {
-      "total": 1321000,
-      "unidades": 78
     },
     "Jarra Chope de vino": {
       "total": 1192997,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 254122566,
-      "count": 3623
+      "total": 254367566,
+      "count": 3626
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 48036974,

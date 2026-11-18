@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-17 21:28:42",
+  "generado": "2026-11-18 03:16:46",
   "anio": 2026,
   "kpis": {
-    "total_anual": 527205924,
-    "num_facturas": 4162,
-    "ticket_promedio": 126671
+    "total_anual": 527326924,
+    "num_facturas": 4163,
+    "ticket_promedio": 126670
   },
   "por_mes": {
     "2026-01": {
@@ -32,8 +32,8 @@
       "count": 337
     },
     "2026-07": {
-      "total": 44506381,
-      "count": 347
+      "total": 44627381,
+      "count": 348
     },
     "2026-08": {
       "total": 53454543,
@@ -78,8 +78,8 @@
       "count": 283
     },
     "2026-07": {
-      "total": 22663778,
-      "count": 291
+      "total": 22784778,
+      "count": 292
     },
     "2026-08": {
       "total": 27278107,
@@ -170,8 +170,8 @@
       "count": 337
     },
     "2026-07": {
-      "total": 43931381,
-      "count": 347
+      "total": 44052381,
+      "count": 348
     },
     "2026-08": {
       "total": 52874543,
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 448119831,
-      "count": 3999
+      "total": 448240831,
+      "count": 4000
     },
     "draft": {
       "total": 8906280,
@@ -264,8 +264,8 @@
       "unidades": 3876
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 39881898,
-      "unidades": 2136
+      "total": 39919898,
+      "unidades": 2138
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 32897169,
@@ -280,8 +280,8 @@
       "unidades": 2954
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 24489398,
-      "unidades": 1557
+      "total": 24505398,
+      "unidades": 1558
     },
     "Cerveza Golden Ale - Siempre Viva": {
       "total": 21511399,
@@ -424,8 +424,8 @@
       "unidades": 91
     },
     "Cañita de barril American India Pale Ale - Vagabundo": {
-      "total": 1370997,
-      "unidades": 113
+      "total": 1382997,
+      "unidades": 114
     },
     "Jarra Chope de vino": {
       "total": 1192997,
@@ -439,6 +439,10 @@
       "total": 1116988,
       "unidades": 113
     },
+    "Americano": {
+      "total": 1106000,
+      "unidades": 155
+    },
     "Tabla de quesos": {
       "total": 1105000,
       "unidades": 32
@@ -450,10 +454,6 @@
     "Cañita de barril Golden Ale - Siempre Viva": {
       "total": 1081982,
       "unidades": 110
-    },
-    "Americano": {
-      "total": 1061000,
-      "unidades": 154
     },
     "B Botella Chope de vino": {
       "total": 999000,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 254367566,
-      "count": 3626
+      "total": 254488566,
+      "count": 3627
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 49309031,

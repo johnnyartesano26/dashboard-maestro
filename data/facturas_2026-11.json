@@ -1,10 +1,31 @@
 {
   "fecha": "2026-11-18",
-  "total": 292,
-  "monto": 27478759,
+  "total": 295,
+  "monto": 28356084,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5874",
+      "cliente": "FUNDACION JARDIN BOTANICO \"JOAQUIN ANTONIO URIBE\" DE MEDELLIN",
+      "total": 249900,
+      "status": "open",
+      "fecha": "2026-11-18"
+    },
+    {
+      "id": "5873",
+      "cliente": "MIX DE LA VILLA",
+      "total": 256330,
+      "status": "open",
+      "fecha": "2026-11-18"
+    },
+    {
+      "id": "5872",
+      "cliente": "PINEA S.A.S",
+      "total": 371095,
+      "status": "open",
+      "fecha": "2026-11-18"
+    },
     {
       "id": "5871",
       "cliente": "Consumidor Final",

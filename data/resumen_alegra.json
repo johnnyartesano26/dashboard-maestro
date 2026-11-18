@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-18 12:18:50",
+  "generado": "2026-11-18 21:04:23",
   "anio": 2026,
   "kpis": {
-    "total_anual": 527693924,
-    "num_facturas": 4171,
-    "ticket_promedio": 126515
+    "total_anual": 528571249,
+    "num_facturas": 4174,
+    "ticket_promedio": 126634
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 27478759,
-      "count": 292
+      "total": 28356084,
+      "count": 295
     }
   },
   "por_mes_bar": {
@@ -140,8 +140,8 @@
       "count": 74
     },
     "2026-11": {
-      "total": 10352294,
-      "count": 25
+      "total": 11229619,
+      "count": 28
     }
   },
   "por_mes_factura": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 27189759,
-      "count": 292
+      "total": 28043584,
+      "count": 295
     }
   },
   "por_mes_domicilio": {
@@ -232,8 +232,8 @@
       "count": 67
     },
     "2026-11": {
-      "total": 289000,
-      "count": 21
+      "total": 312500,
+      "count": 23
     }
   },
   "por_estado": {
@@ -246,8 +246,8 @@
       "count": 13
     },
     "open": {
-      "total": 69407714,
-      "count": 136
+      "total": 70285039,
+      "count": 139
     },
     "void": {
       "total": 772099,
@@ -260,24 +260,24 @@
       "unidades": 2590
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 43122032,
-      "unidades": 3876
+      "total": 43449877,
+      "unidades": 3905
     },
     "Cerveza American IPA - Vagabundo": {
       "total": 39881898,
       "unidades": 2136
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 32897169,
-      "unidades": 3344
+      "total": 33059009,
+      "unidades": 3360
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 32061790,
-      "unidades": 3234
+      "total": 32243860,
+      "unidades": 3252
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 28981662,
-      "unidades": 2954
+      "total": 29163732,
+      "unidades": 2972
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 24553398,
@@ -336,8 +336,8 @@
       "unidades": 87
     },
     "Domicilio": {
-      "total": 5763201,
-      "unidades": 431
+      "total": 5786701,
+      "unidades": 433
     },
     "Soda saborizada": {
       "total": 5174890,
@@ -637,13 +637,13 @@
       "total": 17828580,
       "count": 2
     },
+    "PINEA S.A.S": {
+      "total": 12127125,
+      "count": 38
+    },
     "DANIEL SCHMUTTE": {
       "total": 11952845,
       "count": 27
-    },
-    "PINEA S.A.S": {
-      "total": 11756030,
-      "count": 37
     },
     "Leonardo Gaitan Zuluaga": {
       "total": 9969751,
@@ -801,6 +801,10 @@
       "total": 1218023,
       "count": 2
     },
+    "MIX DE LA VILLA": {
+      "total": 1084110,
+      "count": 5
+    },
     "ORRO S.A.S.": {
       "total": 1021320,
       "count": 3
@@ -817,13 +821,13 @@
       "total": 877165,
       "count": 4
     },
+    "FUNDACION JARDIN BOTANICO \"JOAQUIN ANTONIO URIBE\" DE MEDELLIN": {
+      "total": 871080,
+      "count": 3
+    },
     "Andrea Alvarez Ordoñez": {
       "total": 847780,
       "count": 6
-    },
-    "MIX DE LA VILLA": {
-      "total": 827780,
-      "count": 4
     },
     "JOSE DANIEL PIEDRAHITA BETANCUR": {
       "total": 780890,
@@ -887,10 +891,6 @@
     },
     "JARDIN CERVECERO MED SAS.": {
       "total": 647180,
-      "count": 2
-    },
-    "FUNDACION JARDIN BOTANICO \"JOAQUIN ANTONIO URIBE\" DE MEDELLIN": {
-      "total": 621180,
       "count": 2
     },
     "JUAN MAURICIO VALLEJO MARIN": {

@@ -1,15 +1,43 @@
 {
-  "generado": "2026-11-18 12:19:23",
+  "generado": "2026-11-18 21:04:58",
   "anio": "2026",
-  "total_abiertas": 156,
-  "total_anio": 136,
+  "total_abiertas": 160,
+  "total_anio": 140,
   "meses": [
     {
       "mes": "2026-11",
       "label": "Noviembre 2026",
-      "count": 24,
-      "monto": 10228059,
+      "count": 28,
+      "monto": 12384441,
       "facturas": [
+        {
+          "numero": "FE867",
+          "cliente": "JUAN CARLOS ORREGO ZAPATA",
+          "fecha": "2026-11-18",
+          "total": 1279057,
+          "balance": 1279057
+        },
+        {
+          "numero": "FE866",
+          "cliente": "FUNDACION JARDIN BOTANICO \"JOAQUIN ANTONIO URIBE\" DE MEDELLIN",
+          "fecha": "2026-11-18",
+          "total": 249900,
+          "balance": 249900
+        },
+        {
+          "numero": "FE865",
+          "cliente": "MIX DE LA VILLA",
+          "fecha": "2026-11-18",
+          "total": 256330,
+          "balance": 256330
+        },
+        {
+          "numero": "FE864",
+          "cliente": "PINEA S.A.S",
+          "fecha": "2026-11-18",
+          "total": 371095,
+          "balance": 371095
+        },
         {
           "numero": "FE863",
           "cliente": "JUAN CARLOS ORREGO ZAPATA",

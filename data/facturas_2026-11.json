@@ -1,10 +1,73 @@
 {
   "fecha": "2026-11-18",
-  "total": 283,
-  "monto": 26990759,
+  "total": 292,
+  "monto": 27478759,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5871",
+      "cliente": "Consumidor Final",
+      "total": 99000,
+      "status": "closed",
+      "fecha": "2026-11-18"
+    },
+    {
+      "id": "5870",
+      "cliente": "Consumidor Final",
+      "total": 13000,
+      "status": "closed",
+      "fecha": "2026-11-18"
+    },
+    {
+      "id": "5869",
+      "cliente": "Consumidor Final",
+      "total": 39000,
+      "status": "closed",
+      "fecha": "2026-11-18"
+    },
+    {
+      "id": "5868",
+      "cliente": "Consumidor Final",
+      "total": 13000,
+      "status": "closed",
+      "fecha": "2026-11-18"
+    },
+    {
+      "id": "5867",
+      "cliente": "Consumidor Final",
+      "total": 48000,
+      "status": "closed",
+      "fecha": "2026-11-17"
+    },
+    {
+      "id": "5866",
+      "cliente": "Consumidor Final",
+      "total": 86000,
+      "status": "closed",
+      "fecha": "2026-11-17"
+    },
+    {
+      "id": "5865",
+      "cliente": "Consumidor Final",
+      "total": 70000,
+      "status": "closed",
+      "fecha": "2026-11-17"
+    },
+    {
+      "id": "5864",
+      "cliente": "Consumidor Final",
+      "total": 105000,
+      "status": "closed",
+      "fecha": "2026-11-17"
+    },
+    {
+      "id": "5863",
+      "cliente": "Consumidor Final",
+      "total": 15000,
+      "status": "closed",
+      "fecha": "2026-11-17"
+    },
     {
       "id": "5862",
       "cliente": "JUAN CARLOS ORREGO ZAPATA",

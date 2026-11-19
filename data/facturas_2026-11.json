@@ -1,10 +1,17 @@
 {
-  "fecha": "2026-11-18",
-  "total": 295,
-  "monto": 28356084,
+  "fecha": "2026-11-19",
+  "total": 296,
+  "monto": 29635141,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5875",
+      "cliente": "JUAN CARLOS ORREGO ZAPATA",
+      "total": 1279057,
+      "status": "open",
+      "fecha": "2026-11-18"
+    },
     {
       "id": "5874",
       "cliente": "FUNDACION JARDIN BOTANICO \"JOAQUIN ANTONIO URIBE\" DE MEDELLIN",

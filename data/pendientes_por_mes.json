@@ -1,15 +1,22 @@
 {
-  "generado": "2026-11-19 19:38:36",
+  "generado": "2026-11-20 01:39:02",
   "anio": "2026",
-  "total_abiertas": 160,
-  "total_anio": 140,
+  "total_abiertas": 161,
+  "total_anio": 141,
   "meses": [
     {
       "mes": "2026-11",
       "label": "Noviembre 2026",
-      "count": 28,
-      "monto": 12384441,
+      "count": 29,
+      "monto": 12604691,
       "facturas": [
+        {
+          "numero": "FE868",
+          "cliente": "PATRICIA MELO GONZALEZ",
+          "fecha": "2026-11-19",
+          "total": 220250,
+          "balance": 220250
+        },
         {
           "numero": "FE867",
           "cliente": "JUAN CARLOS ORREGO ZAPATA",

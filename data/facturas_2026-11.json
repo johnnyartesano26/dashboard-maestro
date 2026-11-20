@@ -1,10 +1,31 @@
 {
-  "fecha": "2026-11-19",
-  "total": 302,
-  "monto": 29893141,
+  "fecha": "2026-11-20",
+  "total": 305,
+  "monto": 30156391,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5884",
+      "cliente": "Consumidor Final",
+      "total": 19000,
+      "status": "closed",
+      "fecha": "2026-11-19"
+    },
+    {
+      "id": "5883",
+      "cliente": "Consumidor Final",
+      "total": 24000,
+      "status": "closed",
+      "fecha": "2026-11-19"
+    },
+    {
+      "id": "5882",
+      "cliente": "PATRICIA MELO GONZALEZ",
+      "total": 220250,
+      "status": "open",
+      "fecha": "2026-11-19"
+    },
     {
       "id": "5881",
       "cliente": "Consumidor Final",

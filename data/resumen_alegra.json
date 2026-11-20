@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-19 19:38:00",
+  "generado": "2026-11-20 01:38:32",
   "anio": 2026,
   "kpis": {
-    "total_anual": 530108306,
-    "num_facturas": 4181,
-    "ticket_promedio": 126790
+    "total_anual": 530371556,
+    "num_facturas": 4184,
+    "ticket_promedio": 126762
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 29893141,
-      "count": 302
+      "total": 30156391,
+      "count": 305
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 17384465,
-      "count": 273
+      "total": 17427465,
+      "count": 275
     }
   },
   "por_mes_externo": {
@@ -140,8 +140,8 @@
       "count": 74
     },
     "2026-11": {
-      "total": 12508676,
-      "count": 29
+      "total": 12728926,
+      "count": 30
     }
   },
   "por_mes_factura": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 29558641,
-      "count": 302
+      "total": 29809891,
+      "count": 305
     }
   },
   "por_mes_domicilio": {
@@ -232,22 +232,22 @@
       "count": 67
     },
     "2026-11": {
-      "total": 334500,
-      "count": 24
+      "total": 346500,
+      "count": 25
     }
   },
   "por_estado": {
     "closed": {
-      "total": 448865831,
-      "count": 4014
+      "total": 448908831,
+      "count": 4016
     },
     "draft": {
       "total": 8906280,
       "count": 13
     },
     "open": {
-      "total": 71564096,
-      "count": 140
+      "total": 71784346,
+      "count": 141
     },
     "void": {
       "total": 772099,
@@ -260,20 +260,20 @@
       "unidades": 2618
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 43449877,
-      "unidades": 3905
+      "total": 43506402,
+      "unidades": 3910
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 39938898,
-      "unidades": 2139
+      "total": 39957898,
+      "unidades": 2140
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 33059009,
-      "unidades": 3360
+      "total": 33109584,
+      "unidades": 3365
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 32243860,
-      "unidades": 3252
+      "total": 32294435,
+      "unidades": 3257
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
       "total": 29163732,
@@ -304,8 +304,8 @@
       "unidades": 952
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
-      "total": 12231217,
-      "unidades": 1238
+      "total": 12281792,
+      "unidades": 1243
     },
     "Hidromiel - Bandada": {
       "total": 11098000,
@@ -332,8 +332,8 @@
       "unidades": 642
     },
     "Domicilio": {
-      "total": 5808701,
-      "unidades": 434
+      "total": 5820701,
+      "unidades": 435
     },
     "Jarra IPA": {
       "total": 5798000,
@@ -424,8 +424,8 @@
       "unidades": 101
     },
     "Cañita de barril American India Pale Ale - Vagabundo": {
-      "total": 1370997,
-      "unidades": 113
+      "total": 1382997,
+      "unidades": 114
     },
     "Jarra Chope de vino": {
       "total": 1192997,
@@ -496,8 +496,8 @@
       "unidades": 9
     },
     "Cañita de barril Stout - Sangre Negra": {
-      "total": 617993,
-      "unidades": 61
+      "total": 627993,
+      "unidades": 62
     },
     "Kombucha": {
       "total": 616000,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 255113566,
-      "count": 3641
+      "total": 255156566,
+      "count": 3643
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 50588088,
@@ -745,6 +745,10 @@
       "total": 1729320,
       "count": 2
     },
+    "PATRICIA MELO GONZALEZ": {
+      "total": 1704880,
+      "count": 9
+    },
     "SAMUEL DAVID GAMBA LUQUE": {
       "total": 1624800,
       "count": 5
@@ -768,10 +772,6 @@
     "JUAN FELIPE ARTEAGA GIRALDO": {
       "total": 1512790,
       "count": 4
-    },
-    "PATRICIA MELO GONZALEZ": {
-      "total": 1484630,
-      "count": 8
     },
     "JOSE MAURICIO GALLEGO QUINTERO": {
       "total": 1421893,

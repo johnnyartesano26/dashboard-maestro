@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-20T02:11:17.993382",
+  "generado": "2026-11-20T11:13:52.352592",
   "fecha_lectura": "2026-11-03 14:25:33",
   "fermentadores": [
     {
@@ -76,7 +76,7 @@
     {
       "codigo": "PTL05",
       "estilo": "STOUT",
-      "litros": 41.7
+      "litros": 47.0
     },
     {
       "codigo": "",
@@ -147,8 +147,8 @@
     }
   ],
   "totales": {
-    "litros_fermentando": 2380,
-    "litros_barril": 105,
-    "ventas_cop": 8397200
+    "litros_fermentando": 2385,
+    "litros_barril": 110,
+    "ventas_cop": 8071200
   }
 }

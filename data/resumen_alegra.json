@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-21 14:29:10",
+  "generado": "2026-11-21 20:54:08",
   "anio": 2026,
   "kpis": {
-    "total_anual": 532687556,
-    "num_facturas": 4208,
-    "ticket_promedio": 126589
+    "total_anual": 533907036,
+    "num_facturas": 4211,
+    "ticket_promedio": 126789
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 32472391,
-      "count": 329
+      "total": 33691871,
+      "count": 332
     }
   },
   "por_mes_bar": {
@@ -140,8 +140,8 @@
       "count": 74
     },
     "2026-11": {
-      "total": 12728926,
-      "count": 30
+      "total": 13948406,
+      "count": 33
     }
   },
   "por_mes_factura": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 32125891,
-      "count": 329
+      "total": 33306371,
+      "count": 332
     }
   },
   "por_mes_domicilio": {
@@ -232,8 +232,8 @@
       "count": 67
     },
     "2026-11": {
-      "total": 346500,
-      "count": 25
+      "total": 385500,
+      "count": 28
     }
   },
   "por_estado": {
@@ -246,8 +246,8 @@
       "count": 13
     },
     "open": {
-      "total": 71784346,
-      "count": 141
+      "total": 73003826,
+      "count": 144
     },
     "void": {
       "total": 772099,
@@ -260,20 +260,20 @@
       "unidades": 2618
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 43506402,
-      "unidades": 3910
+      "total": 43958602,
+      "unidades": 3950
     },
     "Cerveza American IPA - Vagabundo": {
       "total": 40420897,
       "unidades": 2175
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 33109584,
-      "unidades": 3365
+      "total": 33392804,
+      "unidades": 3393
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 32294435,
-      "unidades": 3257
+      "total": 32658575,
+      "unidades": 3293
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
       "total": 29163732,
@@ -304,8 +304,8 @@
       "unidades": 973
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
-      "total": 12281792,
-      "unidades": 1243
+      "total": 12362712,
+      "unidades": 1251
     },
     "Hidromiel - Bandada": {
       "total": 11223000,
@@ -332,8 +332,8 @@
       "unidades": 642
     },
     "Domicilio": {
-      "total": 5820701,
-      "unidades": 435
+      "total": 5859701,
+      "unidades": 438
     },
     "Jarra IPA": {
       "total": 5798000,
@@ -637,13 +637,13 @@
       "total": 17828580,
       "count": 2
     },
+    "DANIEL SCHMUTTE": {
+      "total": 12343265,
+      "count": 28
+    },
     "PINEA S.A.S": {
       "total": 12127125,
       "count": 38
-    },
-    "DANIEL SCHMUTTE": {
-      "total": 11952845,
-      "count": 27
     },
     "Leonardo Gaitan Zuluaga": {
       "total": 9969751,
@@ -653,12 +653,12 @@
       "total": 8848602,
       "count": 3
     },
+    "JUAN ESTEBAN GOMEZ MORENO": {
+      "total": 8046320,
+      "count": 15
+    },
     "Hans Sucerquia": {
       "total": 7572160,
-      "count": 14
-    },
-    "JUAN ESTEBAN GOMEZ MORENO": {
-      "total": 7481540,
       "count": 14
     },
     "CECILIA ALICIA BRAVO DE NOHAVA": {
@@ -709,6 +709,10 @@
       "total": 2531439,
       "count": 10
     },
+    "ANTHONY CRAIG WATSON": {
+      "total": 2477390,
+      "count": 11
+    },
     "CHARCUTERIA CERDEÑA": {
       "total": 2424030,
       "count": 7
@@ -716,10 +720,6 @@
     "CEMIEL SAS (Papi Tienda)": {
       "total": 2395385,
       "count": 9
-    },
-    "ANTHONY CRAIG WATSON": {
-      "total": 2213110,
-      "count": 10
     },
     "LOREPA AREPAS SAS": {
       "total": 2008845,

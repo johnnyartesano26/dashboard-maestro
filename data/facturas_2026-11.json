@@ -1,10 +1,24 @@
 {
-  "fecha": "2026-11-21",
-  "total": 332,
-  "monto": 33691871,
+  "fecha": "2026-11-22",
+  "total": 334,
+  "monto": 33767871,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5913",
+      "cliente": "Consumidor Final",
+      "total": 50000,
+      "status": "closed",
+      "fecha": "2026-11-21"
+    },
+    {
+      "id": "5912",
+      "cliente": "Consumidor Final",
+      "total": 26000,
+      "status": "closed",
+      "fecha": "2026-11-21"
+    },
     {
       "id": "5911",
       "cliente": "ANTHONY CRAIG WATSON",

@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-23 11:16:49",
+  "generado": "2026-11-23 23:07:29",
   "anio": 2026,
   "kpis": {
-    "total_anual": 534828536,
-    "num_facturas": 4227,
-    "ticket_promedio": 126527
+    "total_anual": 534948536,
+    "num_facturas": 4229,
+    "ticket_promedio": 126495
   },
   "por_mes": {
     "2026-01": {
@@ -40,16 +40,16 @@
       "count": 433
     },
     "2026-09": {
-      "total": 58554047,
-      "count": 418
+      "total": 58637047,
+      "count": 419
     },
     "2026-10": {
       "total": 53730434,
       "count": 402
     },
     "2026-11": {
-      "total": 34613371,
-      "count": 348
+      "total": 34650371,
+      "count": 349
     }
   },
   "por_mes_bar": {
@@ -86,16 +86,16 @@
       "count": 370
     },
     "2026-09": {
-      "total": 27028389,
-      "count": 357
+      "total": 27111389,
+      "count": 358
     },
     "2026-10": {
       "total": 23318044,
       "count": 328
     },
     "2026-11": {
-      "total": 20664965,
-      "count": 315
+      "total": 20701965,
+      "count": 316
     }
   },
   "por_mes_externo": {
@@ -178,16 +178,16 @@
       "count": 433
     },
     "2026-09": {
-      "total": 57994547,
-      "count": 418
+      "total": 58077547,
+      "count": 419
     },
     "2026-10": {
       "total": 52830934,
       "count": 402
     },
     "2026-11": {
-      "total": 34227871,
-      "count": 348
+      "total": 34264871,
+      "count": 349
     }
   },
   "por_mes_domicilio": {
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 452146331,
-      "count": 4056
+      "total": 452266331,
+      "count": 4058
     },
     "draft": {
       "total": 8906280,
@@ -264,8 +264,8 @@
       "unidades": 3950
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 40796395,
-      "unidades": 2209
+      "total": 40809395,
+      "unidades": 2210
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 33392804,
@@ -356,8 +356,8 @@
       "unidades": 75
     },
     "Cerveza Red IPA MM": {
-      "total": 4022000,
-      "unidades": 212
+      "total": 4098000,
+      "unidades": 216
     },
     "Jarra APA": {
       "total": 3980000,
@@ -436,8 +436,8 @@
       "unidades": 69
     },
     "Cañita de barril Irish Red Ale - Mística": {
-      "total": 1116988,
-      "unidades": 113
+      "total": 1126988,
+      "unidades": 114
     },
     "Tabla de quesos": {
       "total": 1105000,
@@ -483,6 +483,10 @@
       "total": 843000,
       "unidades": 15
     },
+    "Kombucha": {
+      "total": 672000,
+      "unidades": 48
+    },
     "Aguas frescas": {
       "total": 665993,
       "unidades": 61
@@ -490,10 +494,6 @@
     "Jarra APA / Stout": {
       "total": 660000,
       "unidades": 11
-    },
-    "Kombucha": {
-      "total": 658000,
-      "unidades": 47
     },
     "Jarra Red IPA MM": {
       "total": 648000,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 258394066,
-      "count": 3683
+      "total": 258514066,
+      "count": 3685
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 50588088,

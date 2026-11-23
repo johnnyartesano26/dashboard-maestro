@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-23 02:30:54",
+  "generado": "2026-11-23 11:16:49",
   "anio": 2026,
   "kpis": {
-    "total_anual": 534366536,
-    "num_facturas": 4221,
-    "ticket_promedio": 126597
+    "total_anual": 534828536,
+    "num_facturas": 4227,
+    "ticket_promedio": 126527
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 34151371,
-      "count": 342
+      "total": 34613371,
+      "count": 348
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 20202965,
-      "count": 309
+      "total": 20664965,
+      "count": 315
     }
   },
   "por_mes_externo": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 33765871,
-      "count": 342
+      "total": 34227871,
+      "count": 348
     }
   },
   "por_mes_domicilio": {
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 451684331,
-      "count": 4050
+      "total": 452146331,
+      "count": 4056
     },
     "draft": {
       "total": 8906280,
@@ -264,8 +264,8 @@
       "unidades": 3950
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 40602897,
-      "unidades": 2189
+      "total": 40796395,
+      "unidades": 2209
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 33392804,
@@ -280,36 +280,36 @@
       "unidades": 2972
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 24814397,
-      "unidades": 1580
+      "total": 24831396,
+      "unidades": 1582
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 22120398,
-      "unidades": 1429
+      "total": 22179397,
+      "unidades": 1434
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 21147580,
       "unidades": 945
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 18016597,
-      "unidades": 1021
+      "total": 18060096,
+      "unidades": 1025
     },
     "Experiencia de cata de cerveza": {
       "total": 17828580,
       "unidades": 2
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 16978799,
-      "unidades": 973
+      "total": 17013798,
+      "unidades": 976
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 12362712,
       "unidades": 1251
     },
     "Hidromiel - Bandada": {
-      "total": 11223000,
-      "unidades": 457
+      "total": 11273000,
+      "unidades": 459
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -400,8 +400,8 @@
       "unidades": 107
     },
     "Cerveza invitada": {
-      "total": 1776000,
-      "unidades": 113
+      "total": 1789000,
+      "unidades": 114
     },
     "B Botella APA": {
       "total": 1769999,
@@ -443,13 +443,13 @@
       "total": 1105000,
       "unidades": 32
     },
+    "Americano": {
+      "total": 1102000,
+      "unidades": 156
+    },
     "Patacones con guacamole": {
       "total": 1099000,
       "unidades": 109
-    },
-    "Americano": {
-      "total": 1096000,
-      "unidades": 155
     },
     "Cañita de barril Golden Ale - Siempre Viva": {
       "total": 1081982,
@@ -475,13 +475,13 @@
       "total": 862799,
       "unidades": 72
     },
+    "Finster": {
+      "total": 850982,
+      "unidades": 108
+    },
     "1/2 Aguardiente": {
       "total": 843000,
       "unidades": 15
-    },
-    "Finster": {
-      "total": 842982,
-      "unidades": 107
     },
     "Aguas frescas": {
       "total": 665993,
@@ -580,8 +580,8 @@
       "unidades": 12
     },
     "Espresso": {
-      "total": 52000,
-      "unidades": 13
+      "total": 60000,
+      "unidades": 15
     },
     "Botella mayorista IPA": {
       "total": 37998,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 257932066,
-      "count": 3677
+      "total": 258394066,
+      "count": 3683
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 50588088,

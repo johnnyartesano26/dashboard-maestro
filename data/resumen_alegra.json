@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-22 21:47:18",
+  "generado": "2026-11-23 02:30:54",
   "anio": 2026,
   "kpis": {
-    "total_anual": 534327536,
-    "num_facturas": 4220,
-    "ticket_promedio": 126618
+    "total_anual": 534366536,
+    "num_facturas": 4221,
+    "ticket_promedio": 126597
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 34112371,
-      "count": 341
+      "total": 34151371,
+      "count": 342
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 20163965,
-      "count": 308
+      "total": 20202965,
+      "count": 309
     }
   },
   "por_mes_externo": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 33726871,
-      "count": 341
+      "total": 33765871,
+      "count": 342
     }
   },
   "por_mes_domicilio": {
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 451645331,
-      "count": 4049
+      "total": 451684331,
+      "count": 4050
     },
     "draft": {
       "total": 8906280,
@@ -264,8 +264,8 @@
       "unidades": 3950
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 40589897,
-      "unidades": 2188
+      "total": 40602897,
+      "unidades": 2189
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 33392804,
@@ -284,8 +284,8 @@
       "unidades": 1580
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 22107398,
-      "unidades": 1428
+      "total": 22120398,
+      "unidades": 1429
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 21147580,
@@ -399,13 +399,13 @@
       "total": 1821040,
       "unidades": 107
     },
+    "Cerveza invitada": {
+      "total": 1776000,
+      "unidades": 113
+    },
     "B Botella APA": {
       "total": 1769999,
       "unidades": 102
-    },
-    "Cerveza invitada": {
-      "total": 1763000,
-      "unidades": 112
     },
     "Jarra Golden Ale / Irish Red Ale": {
       "total": 1715998,
@@ -622,8 +622,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 257893066,
-      "count": 3676
+      "total": 257932066,
+      "count": 3677
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 50588088,

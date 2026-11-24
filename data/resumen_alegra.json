@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-23 23:07:29",
+  "generado": "2026-11-24 07:00:26",
   "anio": 2026,
   "kpis": {
-    "total_anual": 534948536,
-    "num_facturas": 4229,
-    "ticket_promedio": 126495
+    "total_anual": 535324336,
+    "num_facturas": 4236,
+    "ticket_promedio": 126375
   },
   "por_mes": {
     "2026-01": {
@@ -40,16 +40,16 @@
       "count": 433
     },
     "2026-09": {
-      "total": 58637047,
-      "count": 419
+      "total": 58554047,
+      "count": 418
     },
     "2026-10": {
       "total": 53730434,
       "count": 402
     },
     "2026-11": {
-      "total": 34650371,
-      "count": 349
+      "total": 35109171,
+      "count": 357
     }
   },
   "por_mes_bar": {
@@ -86,16 +86,16 @@
       "count": 370
     },
     "2026-09": {
-      "total": 27111389,
-      "count": 358
+      "total": 27028389,
+      "count": 357
     },
     "2026-10": {
       "total": 23318044,
       "count": 328
     },
     "2026-11": {
-      "total": 20701965,
-      "count": 316
+      "total": 21160765,
+      "count": 324
     }
   },
   "por_mes_externo": {
@@ -178,16 +178,16 @@
       "count": 433
     },
     "2026-09": {
-      "total": 58077547,
-      "count": 419
+      "total": 57994547,
+      "count": 418
     },
     "2026-10": {
       "total": 52830934,
       "count": 402
     },
     "2026-11": {
-      "total": 34264871,
-      "count": 349
+      "total": 34723671,
+      "count": 357
     }
   },
   "por_mes_domicilio": {
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 452266331,
-      "count": 4058
+      "total": 452642131,
+      "count": 4065
     },
     "draft": {
       "total": 8906280,
@@ -264,8 +264,8 @@
       "unidades": 3950
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 40809395,
-      "unidades": 2210
+      "total": 40928395,
+      "unidades": 2217
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 33392804,
@@ -280,12 +280,12 @@
       "unidades": 2972
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 24831396,
-      "unidades": 1582
+      "total": 24847396,
+      "unidades": 1583
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 22179397,
-      "unidades": 1434
+      "total": 22218397,
+      "unidades": 1437
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 21147580,
@@ -300,8 +300,8 @@
       "unidades": 2
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 17013798,
-      "unidades": 976
+      "total": 17085798,
+      "unidades": 980
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 12362712,
@@ -320,8 +320,8 @@
       "unidades": 420
     },
     "Hamburguesa": {
-      "total": 8695952,
-      "unidades": 250
+      "total": 8800951,
+      "unidades": 253
     },
     "Cerveza industrial": {
       "total": 8539500,
@@ -356,16 +356,16 @@
       "unidades": 75
     },
     "Cerveza Red IPA MM": {
-      "total": 4098000,
-      "unidades": 216
+      "total": 4022000,
+      "unidades": 212
     },
     "Jarra APA": {
       "total": 3980000,
       "unidades": 64
     },
     "Papas y plátanos chips": {
-      "total": 3639480,
-      "unidades": 538
+      "total": 3646479,
+      "unidades": 539
     },
     "Jarra Stout": {
       "total": 2976600,
@@ -376,8 +376,8 @@
       "unidades": 146
     },
     "Nachos Pulled pork": {
-      "total": 2193000,
-      "unidades": 122
+      "total": 2211000,
+      "unidades": 123
     },
     "Cañita Hidromiel": {
       "total": 2077500,
@@ -388,8 +388,8 @@
       "unidades": 132
     },
     "Soda": {
-      "total": 1859000,
-      "unidades": 310
+      "total": 1871000,
+      "unidades": 312
     },
     "B Botella IPA": {
       "total": 1830999,
@@ -575,6 +575,10 @@
       "total": 71000,
       "unidades": 10
     },
+    "Locos por las polas - Invitadas": {
+      "total": 65000,
+      "unidades": 5
+    },
     "Cañita para amigos": {
       "total": 62000,
       "unidades": 12
@@ -622,8 +626,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 258514066,
-      "count": 3685
+      "total": 258889866,
+      "count": 3692
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 50588088,

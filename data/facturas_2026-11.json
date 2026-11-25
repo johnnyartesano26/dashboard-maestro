@@ -1,10 +1,17 @@
 {
   "fecha": "2026-11-25",
-  "total": 385,
-  "monto": 36473671,
+  "total": 386,
+  "monto": 36672501,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5965",
+      "cliente": "PINEA S.A.S",
+      "total": 198830,
+      "status": "open",
+      "fecha": "2026-11-25"
+    },
     {
       "id": "5964",
       "cliente": "Consumidor Final",

@@ -1,15 +1,22 @@
 {
-  "generado": "2026-11-25 12:30:02",
+  "generado": "2026-11-25 22:14:53",
   "anio": "2026",
-  "total_abiertas": 164,
-  "total_anio": 144,
+  "total_abiertas": 165,
+  "total_anio": 145,
   "meses": [
     {
       "mes": "2026-11",
       "label": "Noviembre 2026",
-      "count": 32,
-      "monto": 13824171,
+      "count": 33,
+      "monto": 14023001,
       "facturas": [
+        {
+          "numero": "FE872",
+          "cliente": "PINEA S.A.S",
+          "fecha": "2026-11-25",
+          "total": 198830,
+          "balance": 198830
+        },
         {
           "numero": "FE871",
           "cliente": "ANTHONY CRAIG WATSON",

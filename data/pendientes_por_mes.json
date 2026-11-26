@@ -1,15 +1,22 @@
 {
-  "generado": "2026-11-25 22:14:53",
+  "generado": "2026-11-26 04:14:55",
   "anio": "2026",
-  "total_abiertas": 165,
-  "total_anio": 145,
+  "total_abiertas": 166,
+  "total_anio": 146,
   "meses": [
     {
       "mes": "2026-11",
       "label": "Noviembre 2026",
-      "count": 33,
-      "monto": 14023001,
+      "count": 34,
+      "monto": 14292421,
       "facturas": [
+        {
+          "numero": "FE873",
+          "cliente": "SAMUEL DAVID GAMBA LUQUE",
+          "fecha": "2026-11-25",
+          "total": 269420,
+          "balance": 269420
+        },
         {
           "numero": "FE872",
           "cliente": "PINEA S.A.S",

@@ -1,10 +1,80 @@
 {
-  "fecha": "2026-11-25",
-  "total": 386,
-  "monto": 36672501,
+  "fecha": "2026-11-26",
+  "total": 396,
+  "monto": 37293921,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5975",
+      "cliente": "Consumidor Final",
+      "total": 15000,
+      "status": "closed",
+      "fecha": "2026-11-25"
+    },
+    {
+      "id": "5974",
+      "cliente": "Consumidor Final",
+      "total": 50000,
+      "status": "closed",
+      "fecha": "2026-11-25"
+    },
+    {
+      "id": "5973",
+      "cliente": "Consumidor Final",
+      "total": 16000,
+      "status": "closed",
+      "fecha": "2026-11-25"
+    },
+    {
+      "id": "5972",
+      "cliente": "Consumidor Final",
+      "total": 20000,
+      "status": "closed",
+      "fecha": "2026-11-25"
+    },
+    {
+      "id": "5971",
+      "cliente": "Consumidor Final",
+      "total": 135000,
+      "status": "closed",
+      "fecha": "2026-11-25"
+    },
+    {
+      "id": "5970",
+      "cliente": "SAMUEL DAVID GAMBA LUQUE",
+      "total": 269420,
+      "status": "open",
+      "fecha": "2026-11-25"
+    },
+    {
+      "id": "5969",
+      "cliente": "Consumidor Final",
+      "total": 66000,
+      "status": "closed",
+      "fecha": "2026-11-25"
+    },
+    {
+      "id": "5968",
+      "cliente": "Consumidor Final",
+      "total": 18000,
+      "status": "closed",
+      "fecha": "2026-11-25"
+    },
+    {
+      "id": "5967",
+      "cliente": "Consumidor Final",
+      "total": 6000,
+      "status": "closed",
+      "fecha": "2026-11-25"
+    },
+    {
+      "id": "5966",
+      "cliente": "Consumidor Final",
+      "total": 26000,
+      "status": "closed",
+      "fecha": "2026-11-25"
+    },
     {
       "id": "5965",
       "cliente": "PINEA S.A.S",

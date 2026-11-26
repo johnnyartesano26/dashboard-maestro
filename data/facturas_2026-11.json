@@ -1,10 +1,17 @@
 {
   "fecha": "2026-11-26",
-  "total": 399,
-  "monto": 37521921,
-  "drafts": 0,
-  "drafts_monto": 0,
+  "total": 400,
+  "monto": 38350881,
+  "drafts": 1,
+  "drafts_monto": 828960,
   "facturas": [
+    {
+      "id": "5979",
+      "cliente": "SELMA MED S.A.S",
+      "total": 828960,
+      "status": "draft",
+      "fecha": "2026-11-26"
+    },
     {
       "id": "5978",
       "cliente": "Consumidor Final",

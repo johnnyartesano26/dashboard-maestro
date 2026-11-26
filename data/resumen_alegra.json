@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-26 13:55:27",
+  "generado": "2026-11-26 22:53:46",
   "anio": 2026,
   "kpis": {
-    "total_anual": 537737086,
-    "num_facturas": 4278,
-    "ticket_promedio": 125698
+    "total_anual": 538566046,
+    "num_facturas": 4279,
+    "ticket_promedio": 125863
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 37521921,
-      "count": 399
+      "total": 38350881,
+      "count": 400
     }
   },
   "por_mes_bar": {
@@ -140,8 +140,8 @@
       "count": 74
     },
     "2026-11": {
-      "total": 14416656,
-      "count": 35
+      "total": 15245616,
+      "count": 36
     }
   },
   "por_mes_factura": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 37114421,
-      "count": 399
+      "total": 37928381,
+      "count": 400
     }
   },
   "por_mes_domicilio": {
@@ -232,8 +232,8 @@
       "count": 67
     },
     "2026-11": {
-      "total": 407500,
-      "count": 30
+      "total": 422500,
+      "count": 31
     }
   },
   "por_estado": {
@@ -242,8 +242,8 @@
       "count": 4104
     },
     "draft": {
-      "total": 8906280,
-      "count": 13
+      "total": 9735240,
+      "count": 14
     },
     "open": {
       "total": 73472076,
@@ -260,8 +260,8 @@
       "unidades": 2618
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 44162092,
-      "unidades": 3968
+      "total": 44976052,
+      "unidades": 4040
     },
     "Cerveza American IPA - Vagabundo": {
       "total": 41227395,
@@ -332,8 +332,8 @@
       "unidades": 648
     },
     "Domicilio": {
-      "total": 5881701,
-      "unidades": 440
+      "total": 5896701,
+      "unidades": 441
     },
     "Jarra IPA": {
       "total": 5798000,
@@ -681,6 +681,10 @@
       "total": 4485097,
       "count": 6
     },
+    "SELMA MED S.A.S": {
+      "total": 3444360,
+      "count": 4
+    },
     "Manuel Felipe  Hernandez Gallego": {
       "total": 3090636,
       "count": 3
@@ -696,10 +700,6 @@
     "Daniela Ruiz Ricardo": {
       "total": 2654375,
       "count": 12
-    },
-    "SELMA MED S.A.S": {
-      "total": 2615400,
-      "count": 3
     },
     "EL ZORRO Y LA": {
       "total": 2600032,

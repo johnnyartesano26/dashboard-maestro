@@ -1,10 +1,101 @@
 {
-  "fecha": "2026-11-26",
-  "total": 400,
-  "monto": 38350881,
+  "fecha": "2026-11-27",
+  "total": 413,
+  "monto": 39330881,
   "drafts": 1,
   "drafts_monto": 828960,
   "facturas": [
+    {
+      "id": "5992",
+      "cliente": "Consumidor Final",
+      "total": 19000,
+      "status": "closed",
+      "fecha": "2026-11-26"
+    },
+    {
+      "id": "5991",
+      "cliente": "Consumidor Final",
+      "total": 38000,
+      "status": "closed",
+      "fecha": "2026-11-26"
+    },
+    {
+      "id": "5990",
+      "cliente": "Consumidor Final",
+      "total": 22000,
+      "status": "closed",
+      "fecha": "2026-11-26"
+    },
+    {
+      "id": "5989",
+      "cliente": "Consumidor Final",
+      "total": 127000,
+      "status": "closed",
+      "fecha": "2026-11-26"
+    },
+    {
+      "id": "5988",
+      "cliente": "Consumidor Final",
+      "total": 190000,
+      "status": "closed",
+      "fecha": "2026-11-26"
+    },
+    {
+      "id": "5987",
+      "cliente": "Consumidor Final",
+      "total": 34000,
+      "status": "closed",
+      "fecha": "2026-11-26"
+    },
+    {
+      "id": "5986",
+      "cliente": "Consumidor Final",
+      "total": 68000,
+      "status": "closed",
+      "fecha": "2026-11-26"
+    },
+    {
+      "id": "5985",
+      "cliente": "Consumidor Final",
+      "total": 110000,
+      "status": "closed",
+      "fecha": "2026-11-26"
+    },
+    {
+      "id": "5984",
+      "cliente": "Consumidor Final",
+      "total": 28000,
+      "status": "closed",
+      "fecha": "2026-11-26"
+    },
+    {
+      "id": "5983",
+      "cliente": "Consumidor Final",
+      "total": 22000,
+      "status": "closed",
+      "fecha": "2026-11-26"
+    },
+    {
+      "id": "5982",
+      "cliente": "Consumidor Final",
+      "total": 190000,
+      "status": "closed",
+      "fecha": "2026-11-26"
+    },
+    {
+      "id": "5981",
+      "cliente": "Consumidor Final",
+      "total": 99000,
+      "status": "closed",
+      "fecha": "2026-11-26"
+    },
+    {
+      "id": "5980",
+      "cliente": "Consumidor Final",
+      "total": 33000,
+      "status": "closed",
+      "fecha": "2026-11-26"
+    },
     {
       "id": "5979",
       "cliente": "SELMA MED S.A.S",

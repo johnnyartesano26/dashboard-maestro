@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-27 04:53:11",
+  "generado": "2026-11-27 14:47:23",
   "anio": 2026,
   "kpis": {
-    "total_anual": 539546046,
-    "num_facturas": 4292,
-    "ticket_promedio": 125710
+    "total_anual": 541539368,
+    "num_facturas": 4294,
+    "ticket_promedio": 126115
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 39330881,
-      "count": 413
+      "total": 41324203,
+      "count": 415
     }
   },
   "por_mes_bar": {
@@ -94,7 +94,7 @@
       "count": 328
     },
     "2026-11": {
-      "total": 24085265,
+      "total": 24080265,
       "count": 377
     }
   },
@@ -140,8 +140,8 @@
       "count": 74
     },
     "2026-11": {
-      "total": 15245616,
-      "count": 36
+      "total": 17243938,
+      "count": 38
     }
   },
   "por_mes_factura": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 38908381,
-      "count": 413
+      "total": 40866703,
+      "count": 415
     }
   },
   "por_mes_domicilio": {
@@ -232,22 +232,22 @@
       "count": 67
     },
     "2026-11": {
-      "total": 422500,
-      "count": 31
+      "total": 457500,
+      "count": 33
     }
   },
   "por_estado": {
     "closed": {
-      "total": 455524631,
+      "total": 455519631,
       "count": 4117
     },
     "draft": {
-      "total": 9735240,
-      "count": 14
+      "total": 8906280,
+      "count": 13
     },
     "open": {
-      "total": 73472076,
-      "count": 146
+      "total": 76299358,
+      "count": 149
     },
     "void": {
       "total": 814099,
@@ -256,28 +256,28 @@
   },
   "por_producto": {
     "Cerveza por litro Irish Red Ale - Mística": {
-      "total": 55628390,
-      "unidades": 2618
+      "total": 56239931,
+      "unidades": 2646
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 44976052,
-      "unidades": 4040
+      "total": 45247372,
+      "unidades": 4064
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 41493395,
-      "unidades": 2260
+      "total": 41474395,
+      "unidades": 2259
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 33493954,
-      "unidades": 3403
+      "total": 33564759,
+      "unidades": 3410
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 32699035,
-      "unidades": 3297
+      "total": 32820415,
+      "unidades": 3309
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
-      "total": 29264882,
-      "unidades": 2982
+      "total": 29507642,
+      "unidades": 3006
     },
     "Cerveza Irish Red Ale - Mística": {
       "total": 25136396,
@@ -288,8 +288,8 @@
       "unidades": 1444
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
-      "total": 21147580,
-      "unidades": 945
+      "total": 21793095,
+      "unidades": 973
     },
     "Cerveza Stout - Sangre Negra": {
       "total": 18132096,
@@ -300,8 +300,8 @@
       "unidades": 4
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 17157798,
-      "unidades": 984
+      "total": 17139798,
+      "unidades": 983
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 12362712,
@@ -332,8 +332,8 @@
       "unidades": 652
     },
     "Domicilio": {
-      "total": 5896701,
-      "unidades": 441
+      "total": 5931701,
+      "unidades": 443
     },
     "Jarra IPA": {
       "total": 5798000,
@@ -420,8 +420,8 @@
       "unidades": 19
     },
     "B Botella Irish Red Ale": {
-      "total": 1554999,
-      "unidades": 102
+      "total": 1586999,
+      "unidades": 104
     },
     "Cañita de barril American India Pale Ale - Vagabundo": {
       "total": 1382997,
@@ -626,12 +626,12 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 261814366,
+      "total": 261809366,
       "count": 3745
     },
     "JUAN CARLOS ORREGO ZAPATA": {
-      "total": 50588088,
-      "count": 48
+      "total": 51865145,
+      "count": 49
     },
     "INVERSIONES LATINERIA S.A.S": {
       "total": 35650673,
@@ -805,6 +805,10 @@
       "total": 1218023,
       "count": 2
     },
+    "ALTANA ROOFTOP S.A.S": {
+      "total": 1111685,
+      "count": 2
+    },
     "MIX DE LA VILLA": {
       "total": 1084110,
       "count": 5
@@ -955,10 +959,6 @@
     },
     "Jessica Gonzales Perez": {
       "total": 412341,
-      "count": 1
-    },
-    "ALTANA ROOFTOP S.A.S": {
-      "total": 390420,
       "count": 1
     },
     "Esteban Jaramillo Jaramillo": {

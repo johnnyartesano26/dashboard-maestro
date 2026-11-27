@@ -1,15 +1,36 @@
 {
-  "generado": "2026-11-27 04:53:22",
+  "generado": "2026-11-27 14:47:33",
   "anio": "2026",
-  "total_abiertas": 166,
-  "total_anio": 146,
+  "total_abiertas": 169,
+  "total_anio": 149,
   "meses": [
     {
       "mes": "2026-11",
       "label": "Noviembre 2026",
-      "count": 34,
-      "monto": 14292421,
+      "count": 37,
+      "monto": 17119703,
       "facturas": [
+        {
+          "numero": "FE876",
+          "cliente": "ALTANA ROOFTOP S.A.S",
+          "fecha": "2026-11-27",
+          "total": 721265,
+          "balance": 721265
+        },
+        {
+          "numero": "FE875",
+          "cliente": "JUAN CARLOS ORREGO ZAPATA",
+          "fecha": "2026-11-27",
+          "total": 1277057,
+          "balance": 1277057
+        },
+        {
+          "numero": "FE874",
+          "cliente": "SELMA MED S.A.S",
+          "fecha": "2026-11-27",
+          "total": 828960,
+          "balance": 828960
+        },
         {
           "numero": "FE873",
           "cliente": "SAMUEL DAVID GAMBA LUQUE",

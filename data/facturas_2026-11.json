@@ -1,10 +1,31 @@
 {
   "fecha": "2026-11-27",
-  "total": 413,
-  "monto": 39330881,
-  "drafts": 1,
-  "drafts_monto": 828960,
+  "total": 415,
+  "monto": 41324203,
+  "drafts": 0,
+  "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "5994",
+      "cliente": "ALTANA ROOFTOP S.A.S",
+      "total": 721265,
+      "status": "open",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "5993",
+      "cliente": "JUAN CARLOS ORREGO ZAPATA",
+      "total": 1277057,
+      "status": "open",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "5979",
+      "cliente": "SELMA MED S.A.S",
+      "total": 828960,
+      "status": "open",
+      "fecha": "2026-11-27"
+    },
     {
       "id": "5992",
       "cliente": "Consumidor Final",
@@ -94,13 +115,6 @@
       "cliente": "Consumidor Final",
       "total": 33000,
       "status": "closed",
-      "fecha": "2026-11-26"
-    },
-    {
-      "id": "5979",
-      "cliente": "SELMA MED S.A.S",
-      "total": 828960,
-      "status": "draft",
       "fecha": "2026-11-26"
     },
     {
@@ -1042,13 +1056,6 @@
       "fecha": "2026-11-15"
     },
     {
-      "id": "5844",
-      "cliente": "Consumidor Final",
-      "total": 37000,
-      "status": "closed",
-      "fecha": "2026-11-15"
-    },
-    {
       "id": "5843",
       "cliente": "Consumidor Final",
       "total": 228000,
@@ -1458,6 +1465,13 @@
       "id": "5785",
       "cliente": "Consumidor Final",
       "total": 20000,
+      "status": "closed",
+      "fecha": "2026-11-12"
+    },
+    {
+      "id": "5784",
+      "cliente": "Consumidor Final",
+      "total": 32000,
       "status": "closed",
       "fecha": "2026-11-12"
     },

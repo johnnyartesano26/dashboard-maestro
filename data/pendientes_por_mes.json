@@ -1,15 +1,22 @@
 {
-  "generado": "2026-11-28 04:57:47",
+  "generado": "2026-11-28 13:58:49",
   "anio": "2026",
-  "total_abiertas": 169,
-  "total_anio": 149,
+  "total_abiertas": 170,
+  "total_anio": 150,
   "meses": [
     {
       "mes": "2026-11",
       "label": "Noviembre 2026",
-      "count": 37,
-      "monto": 17119703,
+      "count": 38,
+      "monto": 17379603,
       "facturas": [
+        {
+          "numero": "FE877",
+          "cliente": "SEVEN MINIMERCADO",
+          "fecha": "2026-11-28",
+          "total": 259900,
+          "balance": 259900
+        },
         {
           "numero": "FE876",
           "cliente": "ALTANA ROOFTOP S.A.S",

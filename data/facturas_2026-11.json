@@ -1,10 +1,38 @@
 {
   "fecha": "2026-11-28",
-  "total": 426,
-  "monto": 42265203,
+  "total": 430,
+  "monto": 42856103,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "6009",
+      "cliente": "SEVEN MINIMERCADO",
+      "total": 259900,
+      "status": "open",
+      "fecha": "2026-11-28"
+    },
+    {
+      "id": "6008",
+      "cliente": "Consumidor Final",
+      "total": 178000,
+      "status": "closed",
+      "fecha": "2026-11-28"
+    },
+    {
+      "id": "6007",
+      "cliente": "Consumidor Final",
+      "total": 127000,
+      "status": "closed",
+      "fecha": "2026-11-28"
+    },
+    {
+      "id": "6006",
+      "cliente": "Consumidor Final",
+      "total": 26000,
+      "status": "closed",
+      "fecha": "2026-11-28"
+    },
     {
       "id": "6005",
       "cliente": "Consumidor Final",

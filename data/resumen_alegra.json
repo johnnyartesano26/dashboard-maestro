@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-28 04:57:37",
+  "generado": "2026-11-28 13:58:38",
   "anio": 2026,
   "kpis": {
-    "total_anual": 542480368,
-    "num_facturas": 4305,
-    "ticket_promedio": 126012
+    "total_anual": 543071268,
+    "num_facturas": 4309,
+    "ticket_promedio": 126032
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 42265203,
-      "count": 426
+      "total": 42856103,
+      "count": 430
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 25021265,
-      "count": 388
+      "total": 25352265,
+      "count": 391
     }
   },
   "por_mes_externo": {
@@ -140,8 +140,8 @@
       "count": 74
     },
     "2026-11": {
-      "total": 17243938,
-      "count": 38
+      "total": 17503838,
+      "count": 39
     }
   },
   "por_mes_factura": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 41807703,
-      "count": 426
+      "total": 42388603,
+      "count": 430
     }
   },
   "por_mes_domicilio": {
@@ -232,22 +232,22 @@
       "count": 67
     },
     "2026-11": {
-      "total": 457500,
-      "count": 33
+      "total": 467500,
+      "count": 34
     }
   },
   "por_estado": {
     "closed": {
-      "total": 456460631,
-      "count": 4128
+      "total": 456791631,
+      "count": 4131
     },
     "draft": {
       "total": 8906280,
       "count": 13
     },
     "open": {
-      "total": 76299358,
-      "count": 149
+      "total": 76559258,
+      "count": 150
     },
     "void": {
       "total": 814099,
@@ -260,20 +260,20 @@
       "unidades": 2646
     },
     "Cerveza en botella American India Pale Ale - Vagabundo": {
-      "total": 45247372,
-      "unidades": 4064
+      "total": 45315202,
+      "unidades": 4070
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 41720395,
-      "unidades": 2277
+      "total": 41863395,
+      "unidades": 2288
     },
     "Cerveza en botella Irish Red Ale - Mística": {
-      "total": 33564759,
-      "unidades": 3410
+      "total": 33686139,
+      "unidades": 3422
     },
     "Cerveza en botella Stout - Sangre Negra": {
-      "total": 32820415,
-      "unidades": 3309
+      "total": 32881105,
+      "unidades": 3315
     },
     "Cerveza en botella Golden Ale - Siempre Viva": {
       "total": 29507642,
@@ -284,24 +284,24 @@
       "unidades": 1608
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 22413397,
-      "unidades": 1452
+      "total": 22465397,
+      "unidades": 1456
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 21793095,
       "unidades": 973
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 18150096,
-      "unidades": 1030
+      "total": 18168096,
+      "unidades": 1031
     },
     "Experiencia de cata de cerveza": {
       "total": 17958580,
       "unidades": 4
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 17175798,
-      "unidades": 985
+      "total": 17247798,
+      "unidades": 989
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 12362712,
@@ -332,8 +332,8 @@
       "unidades": 652
     },
     "Domicilio": {
-      "total": 5931701,
-      "unidades": 443
+      "total": 5941701,
+      "unidades": 444
     },
     "Jarra IPA": {
       "total": 5798000,
@@ -364,8 +364,8 @@
       "unidades": 212
     },
     "Papas y plátanos chips": {
-      "total": 3692473,
-      "unidades": 546
+      "total": 3699472,
+      "unidades": 547
     },
     "Jarra Stout": {
       "total": 2976600,
@@ -500,8 +500,8 @@
       "unidades": 9
     },
     "Cañita de barril Stout - Sangre Negra": {
-      "total": 637993,
-      "unidades": 63
+      "total": 647993,
+      "unidades": 64
     },
     "Jarra Temporada / Invitadas": {
       "total": 612000,
@@ -626,8 +626,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 262750366,
-      "count": 3756
+      "total": 263081366,
+      "count": 3759
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 51865145,
@@ -725,6 +725,10 @@
       "total": 2395385,
       "count": 9
     },
+    "SEVEN MINIMERCADO": {
+      "total": 2094670,
+      "count": 8
+    },
     "LOREPA AREPAS SAS": {
       "total": 2008845,
       "count": 7
@@ -740,10 +744,6 @@
     "SAMUEL DAVID GAMBA LUQUE": {
       "total": 1894220,
       "count": 6
-    },
-    "SEVEN MINIMERCADO": {
-      "total": 1834770,
-      "count": 7
     },
     "MAURICIO GEHOVA JARAMILLO VELASQUEZ": {
       "total": 1799170,

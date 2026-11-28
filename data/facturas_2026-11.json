@@ -1,10 +1,87 @@
 {
-  "fecha": "2026-11-27",
-  "total": 415,
-  "monto": 41329203,
+  "fecha": "2026-11-28",
+  "total": 426,
+  "monto": 42265203,
   "drafts": 0,
   "drafts_monto": 0,
   "facturas": [
+    {
+      "id": "6005",
+      "cliente": "Consumidor Final",
+      "total": 267000,
+      "status": "closed",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "6004",
+      "cliente": "Consumidor Final",
+      "total": 42000,
+      "status": "closed",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "6003",
+      "cliente": "Consumidor Final",
+      "total": 121000,
+      "status": "closed",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "6002",
+      "cliente": "Consumidor Final",
+      "total": 32000,
+      "status": "closed",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "6001",
+      "cliente": "Consumidor Final",
+      "total": 168000,
+      "status": "closed",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "6000",
+      "cliente": "Consumidor Final",
+      "total": 118000,
+      "status": "closed",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "5999",
+      "cliente": "Consumidor Final",
+      "total": 42000,
+      "status": "closed",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "5998",
+      "cliente": "Consumidor Final",
+      "total": 48000,
+      "status": "closed",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "5997",
+      "cliente": "Consumidor Final",
+      "total": 72000,
+      "status": "closed",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "5996",
+      "cliente": "Consumidor Final",
+      "total": 13000,
+      "status": "closed",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "5995",
+      "cliente": "Consumidor Final",
+      "total": 13000,
+      "status": "closed",
+      "fecha": "2026-11-27"
+    },
     {
       "id": "5994",
       "cliente": "ALTANA ROOFTOP S.A.S",

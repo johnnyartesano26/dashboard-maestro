@@ -1,10 +1,10 @@
 {
-  "generado": "2026-11-27 23:19:13",
+  "generado": "2026-11-28 04:57:37",
   "anio": 2026,
   "kpis": {
-    "total_anual": 541544368,
-    "num_facturas": 4294,
-    "ticket_promedio": 126117
+    "total_anual": 542480368,
+    "num_facturas": 4305,
+    "ticket_promedio": 126012
   },
   "por_mes": {
     "2026-01": {
@@ -48,8 +48,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 41329203,
-      "count": 415
+      "total": 42265203,
+      "count": 426
     }
   },
   "por_mes_bar": {
@@ -94,8 +94,8 @@
       "count": 328
     },
     "2026-11": {
-      "total": 24085265,
-      "count": 377
+      "total": 25021265,
+      "count": 388
     }
   },
   "por_mes_externo": {
@@ -186,8 +186,8 @@
       "count": 402
     },
     "2026-11": {
-      "total": 40871703,
-      "count": 415
+      "total": 41807703,
+      "count": 426
     }
   },
   "por_mes_domicilio": {
@@ -238,8 +238,8 @@
   },
   "por_estado": {
     "closed": {
-      "total": 455524631,
-      "count": 4117
+      "total": 456460631,
+      "count": 4128
     },
     "draft": {
       "total": 8906280,
@@ -264,8 +264,8 @@
       "unidades": 4064
     },
     "Cerveza American IPA - Vagabundo": {
-      "total": 41493395,
-      "unidades": 2260
+      "total": 41720395,
+      "unidades": 2277
     },
     "Cerveza en botella Irish Red Ale - Mística": {
       "total": 33564759,
@@ -280,36 +280,36 @@
       "unidades": 3006
     },
     "Cerveza Irish Red Ale - Mística": {
-      "total": 25136396,
-      "unidades": 1605
+      "total": 25184396,
+      "unidades": 1608
     },
     "Cerveza Golden Ale - Siempre Viva": {
-      "total": 22309397,
-      "unidades": 1444
+      "total": 22413397,
+      "unidades": 1452
     },
     "Cerveza por litro American India Pale Ale - Vagabundo": {
       "total": 21793095,
       "unidades": 973
     },
     "Cerveza Stout - Sangre Negra": {
-      "total": 18132096,
-      "unidades": 1029
+      "total": 18150096,
+      "unidades": 1030
     },
     "Experiencia de cata de cerveza": {
       "total": 17958580,
       "unidades": 4
     },
     "Cerveza APA - Cienfuegos": {
-      "total": 17157798,
-      "unidades": 984
+      "total": 17175798,
+      "unidades": 985
     },
     "Cerveza en botella American Pale Ale - Cienfuegos": {
       "total": 12362712,
       "unidades": 1251
     },
     "Hidromiel - Bandada": {
-      "total": 11398000,
-      "unidades": 464
+      "total": 11573000,
+      "unidades": 471
     },
     "Cerveza por litro Golden Ale - Siempre Viva": {
       "total": 10019664,
@@ -320,8 +320,8 @@
       "unidades": 420
     },
     "Hamburguesa": {
-      "total": 8905951,
-      "unidades": 256
+      "total": 9010950,
+      "unidades": 259
     },
     "Cerveza industrial": {
       "total": 8714500,
@@ -364,8 +364,8 @@
       "unidades": 212
     },
     "Papas y plátanos chips": {
-      "total": 3678475,
-      "unidades": 544
+      "total": 3692473,
+      "unidades": 546
     },
     "Jarra Stout": {
       "total": 2976600,
@@ -376,8 +376,8 @@
       "unidades": 146
     },
     "Nachos Pulled pork": {
-      "total": 2229000,
-      "unidades": 124
+      "total": 2265000,
+      "unidades": 126
     },
     "Cañita Hidromiel": {
       "total": 2077500,
@@ -404,8 +404,8 @@
       "unidades": 107
     },
     "B Botella APA": {
-      "total": 1769999,
-      "unidades": 102
+      "total": 1793999,
+      "unidades": 104
     },
     "Sampler x 4 cañitas": {
       "total": 1727500,
@@ -420,20 +420,20 @@
       "unidades": 19
     },
     "B Botella Irish Red Ale": {
-      "total": 1554999,
-      "unidades": 102
+      "total": 1578999,
+      "unidades": 104
     },
     "Cañita de barril American India Pale Ale - Vagabundo": {
       "total": 1382997,
       "unidades": 114
     },
+    "B Botella Stout": {
+      "total": 1208999,
+      "unidades": 73
+    },
     "Jarra Chope de vino": {
       "total": 1192997,
       "unidades": 16
-    },
-    "B Botella Stout": {
-      "total": 1148999,
-      "unidades": 69
     },
     "Cañita de barril Irish Red Ale - Mística": {
       "total": 1126988,
@@ -472,8 +472,8 @@
       "unidades": 119
     },
     "Limonadas: Coco, lyche, cereza, hierbabuena": {
-      "total": 862799,
-      "unidades": 72
+      "total": 874799,
+      "unidades": 73
     },
     "Finster": {
       "total": 858982,
@@ -626,8 +626,8 @@
   },
   "por_cliente": {
     "Consumidor Final": {
-      "total": 261814366,
-      "count": 3745
+      "total": 262750366,
+      "count": 3756
     },
     "JUAN CARLOS ORREGO ZAPATA": {
       "total": 51865145,
